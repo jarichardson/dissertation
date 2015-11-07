@@ -1,0 +1,78 @@
+% This file was created with JabRef 2.9.2.
+% Encoding: UTF-8
+
+@ARTICLE{belousov2015overview,
+  author = {Belousov, Alexander and Belousova, Marina and Edwards, Benjamin and
+	Volynets, Anna and Melnikov, Dmitry},
+  title = {Overview of the precursors and dynamics of the 2012--13 basaltic
+	fissure eruption of Tolbachik Volcano, Kamchatka, Russia},
+  journal = {Journal of Volcanology and Geothermal Research},
+  year = {2015},
+  volume = {299},
+  pages = {19--34},
+  owner = {jacob},
+  publisher = {Elsevier},
+  timestamp = {2015.07.09}
+}
+
+@INBOOK{harris2013lava,
+  chapter = {Lava Flows},
+  title = {Modeling volcanic processes: the physics and mathematics of volcanism},
+  publisher = {Cambridge University Press},
+  year = {2013},
+  author = {Harris, AJL},
+  owner = {jacob},
+  timestamp = {2015.07.09}
+}
+
+@ARTICLE{kauahikaua1995applications,
+  author = {Kauahikaua, Jim and Margriter, Sandy and Lockwood, Jack and Trusdell,
+	Frank},
+  title = {Applications of GIS to the estimation of lava flow hazards on Mauna
+	Loa Volcano, Hawai'i},
+  journal = {Mauna Loa Revealed: structure, composition, history, and hazards},
+  year = {1995},
+  pages = {315--325},
+  owner = {jacob},
+  publisher = {Wiley Online Library},
+  timestamp = {2015.07.09}
+}
+
+@INCOLLECTION{kilburn2000lava,
+  author = {Kilburn, CRJ},
+  title = {Lava flow and flow fields},
+  booktitle = {Encyclopedia of Volcanoes},
+  publisher = {Academic Press},
+  year = {2000},
+  editor = {Sigurdsson, H.},
+  pages = {331--343},
+  address = {San Diego, CA},
+  keywords = {volcanism, Earth},
+  owner = {jacob},
+  timestamp = {2013.07.17}
+}
+
+@ARTICLE{kubanek2015lava,
+  author = {Kubanek, J. and Richardson, J. A. and Charbonnier, S. and Connor,
+	L.},
+  title = {Lava flow mapping and volume calculations of the 2012-13 {Tolbachik,
+	Kamchatka} fissure eruption using bistatic {TanDEM-X InSAR}},
+  journal = {Bulletin of Volcanology},
+  year = {Submitted},
+  owner = {jacob},
+  timestamp = {2015.07.09}
+}
+
+@ARTICLE{rodriguez2006global,
+  author = {Rodr\'{i}guez, Ernesto and Morris, Charles S and Belz, J Eric},
+  title = {A global assessment of the SRTM performance},
+  journal = {Photogrammetric Engineering \& Remote Sensing},
+  year = {2006},
+  volume = {72},
+  pages = {249--260},
+  number = {3},
+  owner = {jacob},
+  publisher = {American Society for Photogrammetry and Remote Sensing},
+  timestamp = {2015.07.09}
+}
+

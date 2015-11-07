@@ -1,0 +1,46 @@
+This is BibTeX, Version 0.99d (TeX Live 2013/TeX Live for SUSE Linux)
+Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
+The top-level auxiliary file: Benchmarking_lavaflows.aux
+The style file: plainnat.bst
+Database file #1: lava.bib
+You've used 11 entries,
+            2773 wiz_defined-function locations,
+            671 strings with 7364 characters,
+and the built_in function-call counts, 6164 in all, are:
+= -- 532
+> -- 465
+< -- 2
++ -- 155
+- -- 144
+* -- 589
+:= -- 975
+add.period$ -- 35
+call.type$ -- 11
+change.case$ -- 81
+chr.to.int$ -- 11
+cite$ -- 22
+duplicate$ -- 227
+empty$ -- 427
+format.name$ -- 159
+if$ -- 1242
+int.to.chr$ -- 1
+int.to.str$ -- 1
+missing$ -- 11
+newline$ -- 65
+num.names$ -- 44
+pop$ -- 138
+preamble$ -- 1
+purify$ -- 70
+quote$ -- 0
+skip$ -- 187
+stack$ -- 0
+substring$ -- 232
+swap$ -- 11
+text.length$ -- 0
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 121
+warning$ -- 0
+while$ -- 51
+width$ -- 0
+write$ -- 154

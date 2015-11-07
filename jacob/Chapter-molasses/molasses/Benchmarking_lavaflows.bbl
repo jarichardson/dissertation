@@ -1,0 +1,92 @@
+\begin{thebibliography}{11}
+\providecommand{\natexlab}[1]{#1}
+\providecommand{\url}[1]{\texttt{#1}}
+\expandafter\ifx\csname urlstyle\endcsname\relax
+  \providecommand{\doi}[1]{doi: #1}\else
+  \providecommand{\doi}{doi: \begingroup \urlstyle{rm}\Url}\fi
+
+\bibitem[Avolio et~al.(2006)Avolio, Crisci, Di~Gregorio, Rongo, Spataro, and
+  Trunfio]{avolio2006sciara}
+Maria~Vittoria Avolio, Gino~Mirocle Crisci, Salvatore Di~Gregorio, Rocco Rongo,
+  William Spataro, and Giuseppe~A Trunfio.
+\newblock Sciara $\gamma$2: An improved cellular automata model for lava flows
+  and applications to the 2002 etnean crisis.
+\newblock \emph{Computers \& Geosciences}, 32\penalty0 (7):\penalty0 876--889,
+  2006.
+
+\bibitem[Barca et~al.(1994)Barca, Crisci, Gregorio, and
+  Nicoletta]{barca1994cellular}
+D~Barca, GM~Crisci, S~Di Gregorio, and F~Nicoletta.
+\newblock Cellular automata for simulating lava flows: a method and examples of
+  the etnean eruptions.
+\newblock \emph{Transport theory and statistical physics}, 23\penalty0
+  (1-3):\penalty0 195--232, 1994.
+
+\bibitem[Bayarri et~al.(2007)Bayarri, Berger, Paulo, Sacks, Cafeo, Cavendish,
+  Lin, and Tu]{bayarri2007framework}
+Maria~J Bayarri, James~O Berger, Rui Paulo, Jerry Sacks, John~A Cafeo, James
+  Cavendish, Chin-Hsu Lin, and Jian Tu.
+\newblock A framework for validation of computer models.
+\newblock \emph{Technometrics}, 49\penalty0 (2), 2007.
+
+\bibitem[Connor et~al.(2012)Connor, Connor, Meliksetian, and Savov]{connor2012}
+Laura~J Connor, Charles~B Connor, Khachatur Meliksetian, and Ivan Savov.
+\newblock Probabilistic approach to modeling lava flow inundation: a lava flow
+  hazard assessment for a nuclear facility in armenia.
+\newblock \emph{Journal of Applied Volcanology}, 1\penalty0 (1):\penalty0
+  1--19, 2012.
+\newblock \doi{10.1186/2191-5040-1-3}.
+
+\bibitem[Crisci et~al.(2004)Crisci, Rongo, Di~Gregorio, and
+  Spataro]{crisci2004simulation}
+Gino~M Crisci, Rocco Rongo, Salvatore Di~Gregorio, and William Spataro.
+\newblock The simulation model sciara: the 1991 and 2001 lava flows at mount
+  etna.
+\newblock \emph{Journal of Volcanology and Geothermal Research}, 132\penalty0
+  (2):\penalty0 253--267, 2004.
+
+\bibitem[Crisci et~al.(2008)Crisci, Iovine, Di~Gregorio, and
+  Lupiano]{crisci2008lava}
+GM~Crisci, G~Iovine, S~Di~Gregorio, and V~Lupiano.
+\newblock Lava-flow hazard on the se flank of mt. etna (southern italy).
+\newblock \emph{Journal of Volcanology and Geothermal Research}, 177\penalty0
+  (4):\penalty0 778--796, 2008.
+
+\bibitem[Damiani et~al.(2006)Damiani, Groppelli, Norini, Bertino, Gigliuto, and
+  Nucita]{damiani2006lava}
+Maria~Luisa Damiani, G~Groppelli, G~Norini, Elisa Bertino, A~Gigliuto, and
+  Andrea Nucita.
+\newblock A lava flow simulation model for the development of volcanic hazard
+  maps for mount etna (italy).
+\newblock \emph{Computers \& geosciences}, 32\penalty0 (4):\penalty0 512--526,
+  2006.
+
+\bibitem[Del~Negro et~al.(2008)Del~Negro, Fortuna, Herault, and
+  Vicari]{del2008simulations}
+Ciro Del~Negro, Luigi Fortuna, Alexis Herault, and Annamaria Vicari.
+\newblock Simulations of the 2004 lava flow at etna volcano using the magflow
+  cellular automata model.
+\newblock \emph{Bulletin of Volcanology}, 70\penalty0 (7):\penalty0 805--812,
+  2008.
+
+\bibitem[Glaze and Baloga(2003)]{Glaze2003}
+LS~Glaze and SM~Baloga.
+\newblock Dem flow path prediction algorithm for geologic mass movements.
+\newblock \emph{Environmental \& Engineering Geoscience}, 9\penalty0
+  (3):\penalty0 225--240, 2003.
+\newblock \doi{10.2113/9.3.225}.
+
+\bibitem[Harris and Rowland(2001)]{harris2001flowgo}
+Andrew~J Harris and S~Rowland.
+\newblock Flowgo: a kinematic thermo-rheological model for lava flowing in a
+  channel.
+\newblock \emph{Bulletin of Volcanology}, 63\penalty0 (1):\penalty0 20--44,
+  2001.
+
+\bibitem[Hidaka et~al.(2005)Hidaka, Goto, Umino, and Fujita]{hidaka2005vtfs}
+Masataka Hidaka, Akio Goto, Susumu Umino, and Eisuke Fujita.
+\newblock Vtfs project: Development of the lava flow simulation code lavasim
+  with a model for three-dimensional convection, spreading, and solidification.
+\newblock \emph{Geochemistry, Geophysics, Geosystems}, 6\penalty0 (7), 2005.
+
+\end{thebibliography}
