@@ -1,0 +1,20 @@
+Figure 1:
+Geologic Map of Syria Planum. The study area is shown inside the thick black line with a MOLA-derived hillshade basemap. The study area of Baptista et al. (2008) is shown as a rectangle in the south--central region of the study area. In the east a dotted line surrounds an area where no volcanic vents are found and is therefore not included in the study area (crater counting was not performed in this area). Volcanic vents are represented as a solid black point, likely volcanic vents as a white point outlined in black, and Syria Mons is represented as a star. Graben are shown as thin black lines. White lines separate geologic units. From north to south these units are: Hp, a unit on the margins of the plateau that features scattered individual vents; Hnsf, a northern shield field of coalesced volcanic vents; Hssf, a southern shield field of coalesced volcanic vents; Hsm, lava flows of Syria Mons; Hg, a graben-rich unit; Hlp, a unit of lava flows on the southeast margin of Syria Planum that hosts relatively few volcanic vents.
+
+Figure 2:
+Graphical summary of age-dating results by unit.
+
+Figure 3:
+Plot of vents with lines drawn to their nearest neighbors.
+
+Figure 4:
+Plots of skewness vs. kurtosis values for 95% of 1000 simulated Poisson spatial distributions. Diamonds represent the corresponding experimental values for a) all cataloged vents on Syria Planum, b) vents in both shield fields, c) vents in the northern shield field, and d) vents in the southern shield field. Randomness is rejected for all vents and for the combined shield fields (a, b respectively) at the 0.05 significance interval and accepted for both shield fields (c,d) individually. Simulated Poisson spatial distributions for a, b, and d use 300 data points; for c, 30 data points.
+
+Figure 5:
+Plot of vents and all inter-vent relationships less than the minimum significant distance.
+
+Figure 6:
+a) Distribution of inter-vent distances. Azimuths of inter-vent relationships are used if the inter-vent distance is less than 39.6 km, the defined minimum significant distance. Distances shaded dark gray are anomalously long and might trend in the overall vent field. Distances shaded light gray are of moderate length and are considered to be background noise. b) Directional distribution considering all inter-vent relationships. The plotted northwest mode is a result of including long distance inter-vent relationships. c) Direction distribution of inter-vent alignments below the minimum significant distance. The inner dotted line represents the mean quantity of inter-vent relationships. The outer dotted line represents the quantity of relationships one standard deviation above the mean. Directional wedges shaded gray (70-90 deg, 310-330 deg, 350-10 deg) have anomalously high quantities of inter-vent relationships.
+
+Figure 7:
+Anderson et al. (2001) described tectonic centers located at numbered circles: 1) between Syria and Claritas Fossae in the Noachian, 2) along the southern-central portion of Valles Marineris in the Late Noachian and Early Hesperian, and 3) northwest of Syria into the Early Hesperian. Black circles: vents in this study; star: Syria Mons. The rose diagram of Figure 6c is reproduced in the bottom right to illustrate similarities between inter--vent alignments and directions between Syria Planum and tectonic centers.
