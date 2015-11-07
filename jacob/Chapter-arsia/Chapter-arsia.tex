@@ -1,0 +1,109 @@
+\documentclass[12pt,letter]{article}
+
+%compile with pdflatex:
+%:! bibtex %:r
+%:! pdflatex -synctex=1 -interaction=nonstopmode --shell-escape %
+
+\usepackage{amsmath}
+\usepackage{natbib}
+\usepackage{graphicx}
+
+\title{Recurrence rate and magma effusion rate for the latest volcanism on Arsia Mons, Mars}
+\date{}
+\author{}
+
+\usepackage[margin=1in]{geometry}
+\usepackage{setspace}
+%\doublespacing
+
+\usepackage{lineno}
+%\linenumbers
+
+%Geology Papers are limited to ~5000 words
+
+\begin{document}
+
+\maketitle
+
+
+\section{Introduction}
+
+Greeley and Schneid (1991) produced one of the first extrusive magma flux estimates for the surface of Mars and used terrestrial intrusive/extrusive ratios to calculate that $6.5\cdot 10^8$ km$^3$ of magma has been generated on Mars in the past 3.8 Ga. For the most recent 500 Ma, magma production was observed to wane, and only $2.11\cdot 10^6$ km$^3$ of magma was modeled to have erupted (Greeley and Schneid, 1991). This global extrusive magma flux of 0.004 km$^3$/yr (0.13 m$^3$/s) remains one of few such estimates of magma production. Constraining past and recent magma production and extrusion rates, however, is of vital importance in understanding evolution of the Martian climate (e.g. Mouginis-Mark, 2002; Halevy and Head, 2014), lithosphere and mantle (Grott et al. 2013), surface (Wilson and Head, 1994), and the ability of Mars to sustain biotic or pre-biotic material over time (Scanlon et al., 2015b).
+
+The large volcanic edifices of the Tharsis region have been given a time-averaged magma flux estimate of 0.05 m$^3$/s, with a factor of 3 uncertainty, for an active construction period of 1 Gyr (again with a factor of 3 uncertainty) by Wilson et al. (2001). Wilson et al. (2001) further constrained periodic flux under these volcanoes by assuming each of the many summit calderas was formed in association with one stable magma body at depth. By calculating the necessary flux to achieve the magma bodies that could form such calderas, Wilson et al. (2001) found that the magma delivery rate to the volcanoes had to persist at 1-10 m$^3$/s for hundreds of thousands to millions of years, followed by orders of magnitude longer periods of quiescence before new large magma bodies could be emplaced. For example, assuming a magma chamber size of 50,000 km$^3$ under the Arsia Mons caldera (Wilson et al. 2001), it would take a 10 m$^3$/s magma flux 140 kyr to fill the magma chamber, representing $\sim$3\% of Arsia's total volume in just 0.01\% of a 1 Gyr constructional period.
+
+We seek to estimate both the recurrence rate of volcanism and the extrusive magma delivery rate for the most recent volcanic unit on Arsia Mons—a patchwork of lava flows and 29 associated volcanic vents within the volcano caldera. To constrain these values, absolute ages and associated age uncertainty of each flow have been modeled using the size-frequency distribution of observed craters, relative ages between flows have been determined using superposition relationships, and volumes have been modeled using Mars Orbiter Laser Altimeter (MOLA) data (Smith et al., 2003). Crater-retention age models and stratigraphic relations are integrated in a Volcanic Event Recurrence Rate Model (VERRM) to better characterize event age uncertainty and estimate recurrence rate throughout the period of time during which these lavas were emplaced.
+
+\section{Geologic Background of Arsia Mons}
+
+Arsia Mons is a major shield volcano on Mars and a member of the Tharsis Montes. With a diameter of over 300 km and slopes of 5$^{\circ}$ (Plescia, 2004), the surface of Arsia contains lava flows, which served as the primary construction material of the shield (Mouginis-Mark and Rowland, 2008), prodigious ash deposits (Mouginis-Mark, 2002), and glacial deposits (Head and Marchant, 2003) emplaced under both cold- and warm-based glacial conditions (Scanlon et al., 2015b). At the summit of Arsia is a single collapse caldera measuring $\sim$4000 km$^3$ in volume (Wilson et al., 2001). Within this 110 km wide caldera, a linear cluster of secondary shield volcanoes comprise one of the youngest geologic units in the Arsia region (Carr et al., 1977; Scott and Zimbelman, 1995). No craters larger than 1 km exist within the caldera and several detailed crater retention studies with different image datasets have independently produced 130 Ma as a single age estimate of the entire caldera floor (Neukum et al., 2004; Werner, 2009; Robbins et al., 2011).
+
+Through Mariner 9 and Viking Orbiter images of the Tharsis region, Crumpler and Aubele (1978) determined that of the three Tharsis Montes, Arsia Mons is the most structurally evolved shield volcano. This conclusion was backed up by Bleacher et al (2007a) with extensive mapping using HRSC and THEMIS. Bleacher et al. suggested that the northward trending structural complexity of the Tharsis Montes might indicate a migrating magma source along the axis of the three volcanoes, similar to a Tharsis plume model by Mège and Masson (1996). If such a migrating magma source did exist, then magma production at Arsia would have waned, decreasing the amount of melt available for continued summit volcanism.
+
+On the flank of Arsia Mons, Mouginis-Mark and Rowland (2008) identified $>$1000 layered units in a graben, which were interpreted to be lava flows. Using MOLA data, they were able to estimate the height of the graben wall, enabling the estimation of layer thicknesses between 10-80 m, with most being $>$30 m. As no unique and laterally extensive layers were observed in the stack of $<$2 km wide layers, Mouginis-Mark and Rowland concluded that no major glacial events were emplaced between the deposition of these layers, perhaps indicating relatively rapid emplacement of 885 m of lava. By instead assuming constant activity of Arsia Mons for either 2 or 3 billion years, Mouginis-Mark and Rowland (2008) estimated that the stack could have been emplaced over 290 or 435 million years, respectively. 
+
+\section{Methods}
+
+\subsection{Unit and stratigraphic mapping}
+
+The 29 mapped volcanic vents within the caldera each have lava flows emanating from them that form positive topographic features over the surrounding terrain. Flows corresponding to each vent have been mapped in ArcGIS 10.2 with georeferenced Context Imager (CTX) photographs (Malin et al., 2007) serving as a 6-m resolution basemap. Flows are mapped in association with an observed vent where flows can be unambiguously traced directly back to the vent using flow features. Some lava flows on the eastern and western margins of the caldera appear to flow away from the caldera center and might have been created during an event that formed any of the observed vents; however, because they are covered in subsequent flows and are separated from their parent vent by at least one flow front, they cannot be traced to a vent and are not included in our catalog.
+
+Mapped flows which abut each other have an inherent superposition relationship. Using available CTX images, these relationships are documented for all neighboring flows by identifying features such as 1) diverted flows around pre-existing topography, 2) infilling of graben or volcanic vents, and 3) continuous flow features suddenly vanishing under overlying flows.
+
+\subsection{Crater retention age modeling}
+All craters with diameters $\ge$100 m are counted over the entire caldera using CTX images. Even though CTX images have a resolution of 6 m, enabling smaller craters to be identifies, we choose 100 m as the diameter cut off as Robbins et al. (2011) found that crater frequency roll-off occurs around diameters of $\le$93 m, due to dust cover. One area of secondary craters within the caldera also identified by Robbins et al. (2011) was excluded from this study, though it does not cover any of the 29 mapped flows.
+
+Each of the 29 flows are assigned a modeled age by inputting the crater-size frequency distribution within their mapped perimeters into the craterstats2 software (Michael and Neukum, 2010). To model age and age uncertainty, the production function of Ivanov (2001) was selected along with the Hartmann (2005) chronology model. 
+
+\subsection{Volume estimation}
+Volumes have been estimated in two ways to find minimum and maximum constraints on eruption volume in this volcanic unit. A primary initial assumption of these methods is that the erupted material was predominantly effusive, while insignificant material would have been advected far from the source.
+
+First, volumes are estimated for each individual flow. Elevation values are assigned to the perimeter of each flow from the gridded-MOLA topographic dataset. A tight surface is interpolated within the perimeter using the GMT surface utility, assuming no flow thicknesses are negative. The surface is then subtracted from the MOLA grid, producing a thickness map which is integrated to estimate flow volume. This estimate should be considered to be a minimum estimate of flow volume, because the modeled sub-flow surface tightly connects the lava flow margins, while in real life lava flows invert topography and should likely have a deeper, more concave upward subsurface. Though these volumes are underestimates, their advantage is that they are carried out for each flow.
+
+Second, volume is estimated for the entire caldera using a convex hull of the MOLA topography. The underlying surface in this method is linearly interpolated between triangular faces of the topographic convex hull. Again, this underlying surface is subtracted from the MOLA grid, resulting in a thickness distribution within the caldera. Unlike the previous method, this volume cannot easily be divided amongst the mapped flows, might include buried events, and does include distal flows that are not included in the catalog but might correspond to mapped vents. The resulting volume is likely a maximum estimate and does not provide volume estimates for individual events.
+
+\subsection{Volcanic Event Recurrence Rate Model (VERRM)}
+
+Together, stratigraphic information and crater retention age estimates can be consolidated to improve age uncertainty estimation for volcanic events. This is especially applicable to recent volcanic landforms on Mars as crater-based dates alone might be biased due to crater burial, local topography, or secondary crater background populations (Robbins et al., 2011; Platz and Michael, 2011).
+
+To accomplish the task of constraining modeled age estimates with stratigraphy, and ultimately to describe the repose interval of volcanic events in the region, we have devised an algorithm, which we call the Volcanic Event Recurrence Rate Model (VERRM). VERRM implements a monte carlo algorithm that assigns a potential age to each volcanic event using the Gaussian age distribution function, $A_i(\mu_i,\sigma_i^2)$ where $\mu$ is the estimated age determined by crater retention and σ is the uncertainty of the estimated age of cataloged event $i$. VERRM constrains A with a binary stratigraphy function, with possible ages having a value of 1 and ages outside an acceptable age range having a value of 0. This stratigraphy function is defined by previously dated events in the VERRM simulation; stratigraphically higher events connected to the event at hand give a minimum age of the stratigraphy function, while lower events give a maximum age. The normalized product of the two functions gives an age distribution function which does not violate stratigraphy but is informed by crater retention age estimates. This function is sampled to date an event and the process repeats for the next event. By repeating this process 10,000 times, the potential age ranges for each event is determined. Each of 10,000 runs also reports the event recurrence rate as a function of time.
+
+\section{Results}
+The 29 lava flows in our catalog are mapped to cover 6700 km$^2$, $\sim$70\%, of the caldera, representing the majority of surface lavas within the caldera walls. Individual lava flow volume estimates range from $6.4\cdot 10^{-3}$ to 11 km$^3$, with an average of 2.0 km$^3$ per flow. The total volume using the individual volume estimations, again assumed to be a minimum, is 57 km$^3$. The total volume using the convex hull approach over the entire caldera is 280 km$^3$. This estimate is nearly a five-fold increase over the minimum volume estimate and would mean each vent expelled roughly 10 km$^3$ of lava. 
+
+Dividing the total minimum volume estimate by the mapped flow coverage area, and the total maximum volume by the entire caldera floor area (9500 km$^2$), average flow thickness is calculated to be 8.5 and 29 m, respectively. These averages are in agreement with other studies of lava flow thickness, including flows  in Elysium Mons with thicknesses of 7-35 m (Pasckert et al., 2012), flows on Ascreaus Mons between 24-88 m (Hiesinger et al., 2007), 37 m and 50 m thick flows in the Elysium region and on Pavonis Mons (Glaze et al., 2003; Baloga et al., 2003), and average flow thicknesses on the Arsia Mons flanks of 10-30 m ( Mouginis-Mark and Rowland, 2008).
+
+\section{Discussion}
+
+\subsection{Comparisons to other studies}
+
+Modeled ages of these flows with our crater counts lay between 70-400 Ma, with uncertainties reported by craterstats2 to be between 10-100 Myr. Our ages confirm modeled ages produced by other authors, where we find the crater-derived model age of the entire caldera to be 130 Ma, similar to  Neukum et al. (2004), Werner (2009) and (Robbins et al., 2011). Robbins et al. (2011) also used crater retention rates (for D≥93 m) to date a single endogenous crater located within the caldera at 9.70°S, 239.18°E as having an age of 97$\pm$49 Ma. We independently date the lava flow associated with this vent to have an age of 99$\pm$10 Ma.
+
+Our initial VERRM results suggest that the Arsia field might have been active for 230 Myr, ending about 70 Mya. If 280 km$^3$ of basalt was emplaced as lavas during this time, the time-averaged volume flux of the field would have been 1,200 m$^3$ a$^{-1}$.($3.6\cdot 10^{-4}$ m$^3$ s$^{-1}$). This is two orders of magnitude less active than the magma flux estimated for Central Elysium Planitia, calculated by Vaucher et al. (2009) to be $1.4\cdot 10^{-2}$ to $1.8\cdot 10^{-2}$ m$^3$/s over the most recent 234 Myr, through similar volume estimates of lava flows and a crater retention rate study. Our estimate is also 5 orders of magnitude lower than the average magma flux (30 m$^3$ s$^{-1}$) Wilson et al. (2001) calculated would be needed to charge the most recent magma chamber under Arsia Mons. If we employ the same 8.5:1 intrusive/extrusive ratio used by Greeley and Schneid (1991), the total magma production at depth during the emplacement of the caldera flows would be $3.4\cdot 10^{-3}$ m$^3$ s$^{-1}$). This is still much lower than the estimated flux necessary to sustain a magma chamber, but is only one order of magnitude smaller than the average flux needed to build Arsia Mons in 1 Gyr, 0.05 m$^3$ s$^{-1}$ (Wilson et al., 2001).
+
+Time-averaged recurrence can be estimated by dividing the total elapsed time of volcanic activity by number of events. For instance, Richardson et al. (2013) identified 263 monogenetic volcanic vents within Syria Planum, which were interpreted to be emplaced from 3.6-2.9 Ga, or 700 Myr. If volcanism were constant in that area, a new volcanic vent would have been formed every 2.7 Myr. In a graben on the northwest flank of Arsia, Mouginis-Mark and Rowland (2008) mapped >1000 lava flows and estimated construction rates of 290 and 435 million years, based on the time to build all of Arsia Mons. This would correspond to a recurrence of at least one episode of lava emplacement every 290 or 440 kyr. A time-averaged recurrence for our 29 vents, created over 230 Myr, would be one event every 8 Myr. This alone would imply that the latest volcanic activity on Arsia Mons was much closer in style to the volcanism on Syria Planum than during the main constructional phases of Arsia Mons.
+
+\subsection{Effects on tropical mountain glaciers on Arsia Mons}
+
+In the past decade, studies have interpreted fan-shaped deposits on the western flanks of the Tharsis Montes to be recent glacial deposits, due to the presence of fresh moraines and possible stranded ice blocks, analogous to kettles on Earth (Shean et al., 2007; Kadish et al., 2014; Scanlon et al., 2015a). The material on these broad deposits have been dated by Kadish et al. (2014) to have been emplaced around 200 Ma. Scanlon et al (2015b) identified fan-shaped deposits on the western flank of Arsia Mons which contain evidence of basal melting in clear association with sub-glacial volcanic eruptions. 
+
+Recent analysis of smooth facies deposits to the northwest of the Arsia summit has provided evidence that tropical mountain glaciers are, in fact, extant and covered in ash (Scanlon et al., 2015a). The penetration depth of viscously relaxed ring-mold craters on these deposits indicates a maximum material blanket thickness of less than 230 m over tens to hundreds of meters of ice or ice-rich material (Head and Weiss, 2014). A large portion of this insulating material might in fact be volcanic ash (Wilson and Head, 2009, Mouginis-Mark, 2002).
+
+The presence of volcanic ash on remaining tropical mountain glaciers on the flank of Arsia might be a result of the most recent volcanism in the Arsia caldera. If this is the case, our volume estimates would likely be severely underestimated, as a large portion of erupted material would have been transported away from the vent as tephra. However, as Kadish et al. (2014) estimated the resurfacing age of the fan-shaped deposits to be about 200 Ma, roughly our interpreted age of onset of effusive activity within the caldera, it is possible that the ash on the flanks and the lavas in the caldera represent a transition from explosive to effusive volcanism at Arsia Mons. The provenance of the ash might be buried by the recent lavas or might be the ``parasitic calderas'' observed by Crumpler and Aubele (1978), which form a rift of the south and north caldera walls of Arsia, in line with the shield volcanoes in our catalog.
+
+\subsection{Other recent volcanism in the Tharsis Region}
+
+If recent Arsia volcanism transitioned from explosive to effusive at about 200 Ma, it might be analogous to transitions in eruption dynamics at other major volcanic edifices on Mars. The latest lava flows on the flanks of Olympus Mons appear to have also changed from long tube-fed flows to shorter, channel-fed flows, suggesting that magma flux per flow emplacement event has waned over the late Amazonian (Bleacher et al., 2007b). Bleacher et al. (2007b) concluded that this might be evidence of a larger waning of activity at Olympus and might also signal a transition from a deep mantle source of volcanism to shallower sources, based on long-term volcanic patterns observed at the Hawaiian volcanic chain. While the morphologies of the most recent lava flows on Arsia and Olympus might both indicate waning magma production, these observations might be consistent with the Wilson et al. (2001) model that most of the history of these volcanoes is spent dormant after hyper-active edifice building episodes wane and end.
+
+Volcanism elsewhere in Tharsis has occurred recently in a more distributed fashion (Hauber et al., 2011), including a lava field filling the southeast ``moat'' of Olympus Mons (Chadwick et al., 2015). Indeed, Chadwick et al. (2015) identified lava flows at the base of Olympus emplaced between 64-210 Ma, roughly during the same period as the lava flows in this study. The emplacement direction of these lavas are systematically offset from the current downward direction, due to recent subsidence of Olympus Mons. The required magma to be injected in the past 200 Myr into Olympus Mons to cause this subsidence might be 10$^5$-10$^6$ km$^3$ (Chadwick et al., 2015), suggesting that the large volcanoes of the Tharsis Region are not yet extinct.
+
+
+
+%\begin{figure}
+%\centering
+%\includegraphics[width=\linewidth]{map_diff}
+%\label{fig:map_diff}
+%\end{figure}
+
+
+\end{document}
