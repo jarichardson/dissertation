@@ -1,0 +1,156 @@
+\begin{thebibliography}{}
+
+\bibitem[Bj{\"o}rnsson, 1996]{bjornsson1996scales}
+Bj{\"o}rnsson, H. (1996).
+\newblock {Scales and rates of glacial sediment removal: a 20 km long and 300 m
+  deep trench created beneath Brei{\dh}amerkurj{\"o}kull during the Little Ice
+  Age}.
+\newblock {\em Annals of Glaciology}, 22:141--146.
+
+\bibitem[Bj{\"o}rnsson et~al., 2001]{bjornsson2001jokulsarlon}
+Bj{\"o}rnsson, H., P{\'a}lsson, F., and Gu{\dh}mundsson, S. (2001).
+\newblock {J{\"o}kuls{\'a}rl{\'o}n at Brei{\dh}amerkursandur, Vatnaj{\"o}kull,
+  Iceland: 20th century changes and future outlook}.
+\newblock {\em J{\"o}kull}, 50:1--18.
+
+\bibitem[Brandon et~al., 2013]{brandon2013hydrographic}
+Brandon, M., Hodgkins, R., Bj{\"o}rnsson, H., and {\'O}laffson, J. (2013).
+\newblock {Hydrographic measurements in J{\"o}kuls{\'a}rl{\'o}n lagoon,
+  Iceland}.
+
+\bibitem[Buhmann, 2003]{buhmann2003radial}
+Buhmann, M.~D. (2003).
+\newblock {\em {Radial basis functions: theory and implementations}}, volume~5.
+\newblock Cambridge university press Cambridge.
+
+\bibitem[Carr et~al., 2001]{carr2001reconstruction}
+Carr, J.~C., Beatson, R.~K., Cherrie, J.~B., Mitchell, T.~J., Fright, W.~R.,
+  McCallum, B.~C., and Evans, T.~R. (2001).
+\newblock {Reconstruction and representation of 3D objects with radial basis
+  functions}.
+\newblock In {\em {Proceedings of the 28th annual conference on Computer
+  graphics and interactive techniques}}, pages 67--76. ACM.
+
+\bibitem[Carr et~al., 1997]{carr1997surface}
+Carr, J.~C., Fright, W., and Beatson, R.~K. (1997).
+\newblock {Surface interpolation with radial basis functions for medical
+  imaging}.
+\newblock {\em Medical Imaging, IEEE Transactions on}, 16(1):96--107.
+
+\bibitem[Creutin et~al., 2003]{creutin2003river}
+Creutin, J., Muste, M., Bradley, A., Kim, S., and Kruger, A. (2003).
+\newblock {River gauging using PIV techniques: a proof of concept experiment on
+  the Iowa River}.
+\newblock {\em Journal of Hydrology}, 277(3):182--194.
+
+\bibitem[Dixon et~al., 2012]{DIXONEOS}
+Dixon, T.~H., Voytenko, D., Lembke, C., de~la Peña, S., Howat, I., Gourmelen,
+  N., Werner, C., and Oddsson, B. (2012).
+\newblock Emerging technology monitors ice-sea interface at outlet glaciers.
+\newblock {\em Eos, Transactions American Geophysical Union}, 93(48):497--498.
+
+\bibitem[Gumerov and Duraiswami, 2007]{gumerov2007fast}
+Gumerov, N.~A. and Duraiswami, R. (2007).
+\newblock {Fast radial basis function interpolation via preconditioned Krylov
+  iteration}.
+\newblock {\em SIAM Journal on Scientific Computing}, 29(5):1876--1899.
+
+\bibitem[Hardy, 1971]{hardy1971multiquadric}
+Hardy, R.~L. (1971).
+\newblock {Multiquadric equations of topography and other irregular surfaces}.
+\newblock {\em Journal of geophysical research}, 76(8):1905--1915.
+
+\bibitem[Haug, 2012]{haug2012bayesian}
+Haug, A.~J. (2012).
+\newblock {\em {Bayesian Estimation and Tracking: A Practical Guide}}.
+\newblock John Wiley \& Sons.
+
+\bibitem[Holland et~al., 2008]{holland2008acceleration}
+Holland, D.~M., Thomas, R.~H., De~Young, B., Ribergaard, M.~H., and Lyberth, B.
+  (2008).
+\newblock {Acceleration of Jakobshavn Isbrae triggered by warm subsurface ocean
+  waters}.
+\newblock {\em Nature Geoscience}, 1(10):659--664.
+
+\bibitem[Howat et~al., 2008]{howat2008dynamic}
+Howat, I.~M., Tulaczyk, S., Waddington, E., and Bj{\"o}rnsson, H. (2008).
+\newblock {Dynamic controls on glacier basal motion inferred from surface ice
+  motion}.
+\newblock {\em Journal of Geophysical Research: Earth Surface (2003--2012)},
+  113(F3).
+
+\bibitem[Hunter, 2007]{hunter2007matplotlib}
+Hunter, J.~D. (2007).
+\newblock {Matplotlib: A 2D graphics environment}.
+\newblock {\em Computing in Science \& Engineering}, 9(3):0090--95.
+
+\bibitem[Langebrake et~al., 2002]{langebrake2002design}
+Langebrake, L.~C., Lembke, C.~E., Weisberg, R.~H., Byrne, R.~H., Russell,
+  D.~R., Tilbury, G., and Carr, R. (2002).
+\newblock {Design and initial results of a bottom stationing ocean profiler}.
+\newblock In {\em {OCEANS'02 MTS/IEEE}}, volume~1, pages 98--103. IEEE.
+
+\bibitem[Motyka et~al., 2003]{motyka2003submarine}
+Motyka, R.~J., Hunter, L., Echelmeyer, K.~A., and Connor, C. (2003).
+\newblock {Submarine melting at the terminus of a temperate tidewater glacier,
+  LeConte Glacier, Alaska, USA}.
+\newblock {\em Annals of Glaciology}, 36(1):57--65.
+
+\bibitem[Oliphant, 2007]{oliphant2007python}
+Oliphant, T.~E. (2007).
+\newblock {Python for scientific computing}.
+\newblock {\em Computing in Science \& Engineering}, 9(3):10--20.
+
+\bibitem[Rosenfeld and Pfaltz, 1966]{rosenfeld1966sequential}
+Rosenfeld, A. and Pfaltz, J.~L. (1966).
+\newblock {Sequential operations in digital picture processing}.
+\newblock {\em Journal of the ACM (JACM)}, 13(4):471--494.
+
+\bibitem[Silva and Bigg, 2005]{silva2005computer}
+Silva, T.~A. and Bigg, G.~R. (2005).
+\newblock {Computer-based identification and tracking of Antarctic icebergs in
+  SAR images}.
+\newblock {\em Remote sensing of environment}, 94(3):287--297.
+
+\bibitem[Smith and Banke, 1983]{smith1983influence}
+Smith, S.~D. and Banke, E.~G. (1983).
+\newblock {The influence of winds, currents and towing forces on the drift of
+  icebergs}.
+\newblock {\em Cold Regions Science and Technology}, 6(3):241--255.
+
+\bibitem[Straneo et~al., 2010]{straneo2010rapid}
+Straneo, F., Hamilton, G.~S., Sutherland, D.~A., Stearns, L.~A., Davidson, F.,
+  Hammill, M.~O., Stenson, G.~B., and Rosing-Asvid, A. (2010).
+\newblock {Rapid circulation of warm subtropical waters in a major glacial
+  fjord in East Greenland}.
+\newblock {\em Nature Geoscience}, 3(3):182--186.
+
+\bibitem[Straneo et~al., 2013]{straneo2013challenges}
+Straneo, F., Heimbach, P., Sergienko, O., Hamilton, G., Catania, G., Griffies,
+  S., Hallberg, R., Jenkins, A., Joughin, I., Motyka, R., et~al. (2013).
+\newblock {Challenges to Understanding the Dynamic Response of Greenland's
+  Marine Terminating Glaciers to Oceanic and Atmospheric Forcing}.
+\newblock {\em Bulletin of the American Meteorological Society}, 94(8).
+
+\bibitem[Sutherland et~al., 2014]{sutherland2014quantifying}
+Sutherland, D.~A., Roth, G.~E., Hamilton, G.~S., Mernild, S.~H., Stearns,
+  L.~A., and Straneo, F. (2014).
+\newblock {Quantifying flow regimes in a Greenland glacial fjord using iceberg
+  drifters}.
+\newblock {\em Geophysical Research Letters}.
+
+\bibitem[Voytenko et~al., 2015]{voytenko2014}
+Voytenko, D., Dixon, T.~H., Howat, I.~M., Gourmelen, N., Lembke, C., Werner,
+  C.~L., de~la Peña, S., and Oddsson, B. (2015).
+\newblock {Multi-year observations of Brei{\dh}amerkurjökull, a
+  marine-terminating glacier in southeastern Iceland, using Terrestrial Radar
+  Interferometry}.
+\newblock {\em Journal of Glaciology}, 61(225):42--54.
+
+\bibitem[Werner et~al., 2008]{werner2008real}
+Werner, C., Strozzi, T., Wiesmann, A., and Wegmuller, U. (2008).
+\newblock {A real-aperture radar for ground-based differential interferometry}.
+\newblock In {\em {Geoscience and Remote Sensing Symposium, 2008. IGARSS 2008.
+  IEEE International}}, volume~3, pages III--210. IEEE.
+
+\end{thebibliography}

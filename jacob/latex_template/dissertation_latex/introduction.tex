@@ -1,0 +1,106 @@
+\chapter{Introduction}
+\label{ch:intro}
+\section{Research overview}
+Improving our understanding of glacial processes is crucial for addressing changes in 
+the Earth's system and their impact on society. Glaciers are a controlling factor in variations of sea level and store a substantial amount of the world's freshwater reserves. There is much to be learned about the short term behavior of glaciers and how it impacts their overall health.
+Recently, scientists have focused on the influence of ice-ocean interactions on the mechanics of tidewater glaciers. However,  the observations needed to improve our understanding of these processes require frequent and spatially-dense measurements, which historically have been difficult to obtain. Terrestrial Radar Inteferometry  (TRI) is a new method developed to address these issues. TRI relies on a ground-based radar system to measure ice displacement rates over areas of order \textasciitilde100~km$^2$ with minute-scale sampling rates and millimeter-scale precision. 
+
+
+One way to improve our understanding of glacial mechanics is to learn more about the velocity changes at the terminus of the glacier due to tidal forcing and/or calving. This may involve both glacier and ocean measurements. During the melt season, calving events may occur every few days, while tidal forcing occurs over diurnal and semidiurnal scales, meaning that satellite-based methods do not provide the necessary temporal sampling to observe the velocity changes due to long revisit times. Satellite-based methods using interferometry are sensitive to motion in the satellite line-of-sight, meaning that the full horizontal velocity field of the ice surface is generally not measured, but can be obtained with lower spatial and temporal resolution using feature tracking (see Appendix C for more details). GPS devices deployed on the ice surface can provide the full three-dimensional motion vector and the necessary (minute scale or better) temporal sampling, but because they effectively act as point measurements, which move in a Lagrangian sense with the ice, they cannot provide high spatial density, and are difficult to deploy on the heavily-crevassed surface of a glacier. TRI effectively combines the spatial sampling advantages of satellite-based remote sensing methods with the temporal sampling advantages of GPS.
+
+
+This work is divided into three research papers. The first paper (Chapter 2) focuses on a TRI survey of Breiðamerkurjökull, a marine-terminating glacier in southeastern Iceland. Here, I imaged the terminus of the glacier with the TRI at the end of the melt season in 2011, 2012, and 2013. I measure maximum ice velocities of around 5 m/d, with fastest velocities near the calving front. The glacier retreated over the three-year period and formed embayments, which are likely related to increased fluxes of subglacial drainage at the end of the melt season. I also use manual iceberg tracking to show that there are high current velocities in the lagoon near the embayment, probably indicating strong meltwater outflow and mixing with relatively warm lagoon water.
+
+The second paper (Chapter 3) is based on a part of the same TRI survey at Breiðamerkurjökull, but focuses on an additional application of TRI: automated intensity-based iceberg tracking for determining the motion of near-surface lagoon currents. Here I use the TRI data to obtain maps of currents within the proglacial lagoon. The radar intensity images are preprocessed by blurring, thresholding, and masking, and are subsequently processed with a connected component labeling algorithm to
+label and detect the icebergs. I find the centroids of each iceberg in each image and then
+track their location in time using a nearest-neighbor approach to determine the speed and direction of each iceberg. I combine sequences of measurements to produce maps of near-surface currents within Jökulsárlón. I show that most of the currents within the observed time period show a strong clockwise circulation pattern and fall between 3-8 cm/s, with occasional bursts of up to 15 cm/s. Most of the current motion can be described as inertial.
+
+The third paper (Chapter 4) focuses on a TRI survey at Helheim Glacier in southeastern Greenland.  Here, I use a TRI to study the effects of tidal forcing on the terminal zone of a tidewater glacier. I show that the glacier moves out of phase with the semidiurnal tides and
+the densely-packed mélange in the fjord.  I determine that there is a phase transition between the glacier and the mélange that happens within a narrow zone in the fjord in front of the ice cliff. The TRI data also suggest that the impact of tidal forcing decreases rapidly up-glacier from the terminus. Model results show that the tidally-driven glacier velocity perturbation is consistent with very weak ice flowing over a weakly nonlinear bed.
+
+
+\section{Instrument overview}
+Terrestrial Radar Interferometers (or ground-based interferometric radars) have been used to measure ground deformation in many applications other than glaciology, e.g., for landslide, volcano, and bridge and dam monitoring \citep{luzi2010advanced,schulz2012kinematics,werner2012gpri, lowry2013high}. TRIs have a number of advantages for remote sensing of ground deformation including: mm-scale accuracy, spatial resolution, and relative insensitivity to clouds compared to LiDAR (laser scanners). TRI also has the ability to conduct frequent measurements (to observe fast, minute-scale, displacement variations and to reduce atmospheric effects) at a variety of imaging geometries with flexible survey timing compared to aircraft or satellite-based radars. TRI also provides zero-baseline measurements, avoiding the impact of topographic variation on the displacement caused by small variations of the viewing field geometry (assuming the monument and instrument remain stationary during the survey).
+
+The instrument used for this dissertation is the Gamma Portable Radar Interferometer (GPRI) \citep{werner2008gamma,werner2012gpri}. A general review of Terrestrial Radar Interferometry is provided by \citet{caduff2014review} and \citet{monserrat2014review}  These are briefly summarized here. 
+
+The  GPRI is an real-aperture interferometric radar with one transmitting and two receiving antennas with a fan-beam pattern which acquires the images line-by-line in a rotational manner A single, fast, scan-line mode is also available. The GPRI has an azimuth resolution of 0.385 degrees, a nominal range resolution of 0.75 m (0.9 m actual), a maximum range of \textasciitilde16 km, and a repeat interval of 1-2 minutes for typical scan geometries. 
+
+The  GPRI is not the only TRI system on the market. Currently, there are at least three other systems available: the Slope Stability Radar (SSR) system from Ground-Probe with a dish antenna; the IBIS-L, a rail-based synthetic aperture system produced by IDS; and FastGBSAR, a rail-based synthetic aperture system produced by Meta-Sensing. 
+The SSR is an X-band (9.4-9.5 GHz, 3.2 cm wavelength) real-aperture radar which was primarily designed to monitor slope stability of mine and quarry walls. The SSR generates a pencil-shaped beam illuminating a very small area and images the scene by moving the antenna in a raster-scan manner. The SSR has a maximum range of either 1.4 or 3.5 km depending on antenna size (0.9 m or 1.8 m), an azimuth resolution of 9 mrad (0.516 degrees, or 9 m at 1 km), a range resolution of 1.5 m, and a repeat interval of less than half an hour \citep{reeves2001slope,ssr}
+
+The IBIS-L is a Ku-band (17.2 GHz, 1.7 cm wavelength) radar which is mounted on a 2-m long rail. The synthetic aperture image is formed when the antenna moves along the rail (linear drive). The instrument has a 0.75 m range resolution, an azimuth resolution of 4.4 mrad (0.258 degrees, or 4.5 m at 1 km), a maximum operating range of \textasciitilde4 km, and a repeat interval of \textasciitilde5 minutes  \citep{schulz2012kinematics}.
+
+The FastGBSAR has similar properties to the IBIS-L, but can also be operated in a real-aperture mode for fast measurements (up to 4 kHz sampling rate) along a single scanline (line-of-sight) \citep{roedelsperger2013novel,fastgb}.
+
+The faster repeat acquisition timing and comparatively long range are the primary advantages of the GPRI compared to the other commercial systems for studying fast-moving glaciers.
+
+\section{Principles of terrestrial radar interferometry}
+Radars used for studying ground deformation or ice motion need the transmitted waves to scatter off the surface rather than penetrate it like a ground-penetrating radar, and therefore have much shorter (cm-scale) wavelengths, and higher (GHz-scale) frequencies. In radar terminology, slant range is the shortest distance from the radar to the target. Ground range is the distance along a flat plane on the ground from the radar to the target. For TRI, these are virtually identical. The basic range measurement is made by measuring the two-way travel time (to target and back), combined with knowledge of the speed of light ($C$=2.998e8 m/s). Imaging radars are also typically considered to be line-of-sight instruments, meaning that the radar sees targets or measures motion in the direction of the beam sent out from the antenna. 
+
+
+The GPRI is a frequency modulated continuous wave (FMCW) radar, meaning that the radar continuously sends out different frequencies over time in a ramp-shaped way. For an FMCW radar, the transmitted frequency is linearly-modulated at a constant rate and the transmitted wave is effectively timestamped at all times (Figure \ref{fig:fmcw}). Then, by looking at the frequency of the signal coming back (which is different from the transmitted frequency), the time delay between transmission and reception can be calculated and used to calculate the range. The frequency pulse is transmitted over a range of frequencies (200 MHz, or a bandwidth between 17.1-17.3 GHz in case of the GPRI) which repeats itself upon completion for every azimuth scan line. The duration of each individual cycle (chirp or pulse) is known as the pulse repetition frequency (PRF) or chirp duration. The chirp can be adjusted before acquisition. A high slope of the transmission ramp represents a fast chirp that is preferential for scanning in close range. A low slope, on the other hand, implies a slow chirp that is more favorable for scanning further away. 
+
+The beamwidth of an antenna describes how well the radar can resolve targets by specifying how much power is radiated in a given direction.  One common way to describe the beamwidth of an antenna is the Half Power Beamwidth (HPBW), which represents the distance between two points (beamwidth) that covers one half of the antennas maximum power (Figure \ref{fig:hpbw}).
+
+The azimuth resolution depends on the horizontal beamwidth of the antenna, which in turn depends on the antenna length and the waveguide geometry. A narrow beam is necessary to provide good resolution. Consequently, the pixels in the radar image get stretched out in azimuth with increasing range when converted from radar (polar) coordinates to map (rectangular) coordinates. The GPRI antenna HPBW is 0.385 degrees, so the azimuth resolution is $R \cdot d\theta$ where $d\theta$ is 0.385 degrees expressed as radians and $R$ is the distance. Therefore, the azimuth resolution degrades with range (e.g., 7.5 m at 1 km and 75 m at 10 km). 
+
+The range resolution, on the other hand, depends on the bandwidth of the instrument. Here,  $dr = C/2B$  where $B$ is the radar bandwidth. In our case, this is 2.998e8/(2*200e6). or about .75 meters. Due to a window function that is applied to reduce range side lobes, the actual resolution (half-power) is 0.9 meters.
+
+The GPRI has three identical slotted-waveguide antennas. The slotted waveguides antennas are used because they are mechanically simple and form a horizontally-narrow fan-shaped beam in the desired direction. The transmitting and receiving antennas are separated to keep transmitted and received signals separate. The two receiving antennas are separated by a 25~cm baseline to provide depth perception of the scene which allows for creation of Digital Elevation Models (DEMs) during every scan.
+
+
+Since synthetic aperture (SAR) instruments generate imagery via overlapping areas from different angles acquired from different points along the direction of antenna motion, they require good coherence/correlation (similarity of scattering properties of the target) over the time of the scan. Loss of coherence, or decorrelation, is likely to occur if there are large displacements or random motion of scatterers within the resolution element (e.g., wind moving trees,  melting, or fast-moving ice).  Since ground-based SAR systems have longer scan times, decorrelation issues may arise during acquisition when monitoring fast-moving (20 m/d or greater) glaciers. Since the real-aperture GPRI only requires coherence over a single line scan (which takes \textasciitilde2 milliseconds), the lack of  decorrelation during acquisition gives the GPRI an advantage at the expense of spatial resolution (a ground-based SAR system will have better spatial resolution in the azimuth direction compared to a real-aperture radar). Since the GPRI is a real-aperture instrument, the antennas can scan rotationally, allowing imaging a wide arc.
+
+
+However, decorrelation is still an issue over slightly longer (hour-scale) periods when studying fast-moving glaciers.  The glacier surface can decorrelate rapidly due to either surface melting (which changes the scattering properties of the surface) or when the motion between acquisitions is greater than many multiples of the radar wavelength. Both of these situations  reduce the correlation and make phase unwrapping difficult (see Appendix A for more details).
+
+After the raw radar returns are collected, they need to be focused, which is done using the Fast Fourier Transform. The focused data are stored in a single-look complex (SLC) format. Single-look implies that the data have not been spatially averaged, while “complex” refers to the fact that every pixel in azimuth and range contains a complex value related to the amplitude and phase information of the reflected signal.   A complex value has two components: real ($re$) and imaginary ($im$). The amplitude is given by $\sqrt{re^2+im^2}$, the phase is given by $\arctan{(im/re)}$, and the intensity (used for the photo-like radar imagery) is given by $re^2+im^2$. The amplitude of the reflected signal is related to the roughness and material properties of the target, and the phase is related to the distance to the target, but to very high precision (the phase captures, and measures, a fraction of a wavelength).  The phase of the resolution element is an average of many different scatterers within the pixel, and each resolution element has a random phase. If there is no motion and the atmosphere remains constant, then the phase does not change between acquisitions. If the entire resolution element moves together, then the phase changes by $\frac{-4\pi}{\lambda}$ ($dR$) where $dR$ is the range change along the line-of-sight.
+
+We can think of the SLC as a grid of value pairs, with the columns being the range pixels (each pixel represents a volume illuminated by the radar at a given slant range) and the rows being the distinct angle steps.  Since the phase measurements are very precise, we can compare two of them ($\phi_1$ and $\phi_2$) acquired at different times to measure displacement of the target (pixel).
+
+
+We form an interferogram by differencing the phases of the images to be compared, or by multiplying one complex image by the complex conjugate of the second image. The resulting interferogram is wrapped, meaning that all of the phase differences fall within one cycle of a wave, and thus range over an interval of $2\pi$, or from $-\pi$ to $\pi$. Wrapping poses a problem if motion exceeds one cycle of the wave; the measurement will appear as only a fraction of a cycle. Therefore, to resolve the phase ambiguities and to generate reasonable motion measurements, the phase values need to be unwrapped. In a general sense, the purpose of phase unwrapping is to resolve phase ambiguities by trying to minimize the number of places where the spatial phase differences exceed one half of a cycle. One issue with phase unwrapping is that there are infinite solutions. If we carefully add up (unwrap) the fringes starting at a motionless reference point, we can calculate the amount of motion everywhere in the image, and calculate a velocity map by scaling the unwrapped interferogram by the wavelength, two way travel time, and the interval between acquisitions.
+
+
+The current data processing chain includes: image acquisition, SLC generation (focusing, performed by the instrument in the field), intensity image generation (spatial averaging or multilooking can be performed at this step, with consequent steps relying on the averaged data), wrapped interferogram generation, wrapped interferogram filtering (\citet{goldstein1998radar}, not always used), DEM generation (if applicable), conversion to map coordinates, and georeferencing (Figure \ref{fig:flowchart}).   To convert the polar imagery into map (rectangular) coordinates, the data can be mapped onto the rectangular grid by first determining the spatial extent of the radar coverage (adjusted for the pixel spacing), and  filling in the grid pixel by pixel by finding the corresponding pixel in the radar coordinates considering the angle and range from the pixel to the radar. Subsequently, the map-coordinate imagery can be  rotated around the pixel with the radar location and visually matched to an aerial or satellite image resulting in a georeferenced TRI image. 
+
+
+Deploying the TRI requires some preliminary planning. The instrument should be set up on stable ground, covering the desired area of interest. The location should insure that significant motion occurs in the line-of-sight direction and include stationary points for noise analysis. It is also important to ensure that the area of interest will have high coherence over the acquisition period to allow for successful phase unwrapping. Therefore, deployments covering highly-vegetated areas may not be favorable, an issue for landslide monitoring.
+
+
+
+\section{References}
+% \newpagec
+\bibliography{sar1}
+\bibliographystyle{apalike}
+
+% \begin{figure*}
+% \centering
+% \includegraphics[width=178mm]{flowchart.png}
+% \caption{Instrument description.}
+% \label{fig:instrumentdescription}
+% \end{figure*}	
+
+
+\begin{figure*}
+\centering
+\includegraphics[width=\textwidth]{figinp/chirp.png}
+\caption[An illustration of the FMCW chirp and range calculation. ]{An illustration of the FMCW chirp and range calculation. The steepness of the transmitted chirp slope (solid line) controls the measurement range (a long chirp means a longer distance). The radar measures, $\Delta$f, the difference in transmitted and received (dashed line) frequency which is used to calculate $\Delta$t, and subsequently the range. }
+\label{fig:fmcw}
+\end{figure*}	
+
+\begin{figure*}
+\centering
+\includegraphics[width=\textwidth]{figinp/hpbw.png}
+\caption[The main lobe of an antenna pattern represents desired direction and angle arc of the radiated power.]{The main lobe of an antenna pattern represents desired direction and angle arc of the radiated power. The HPBW is the beamwidth in the main lobe between which half of the maximum power is radiated. The side lobes are artifacts which radiate power in undesired directions.}
+\label{fig:hpbw}
+\end{figure*}	
+
+\begin{figure*}
+\centering
+\includegraphics[width=\textwidth]{flowchart.png}
+\caption{Typical TRI data processing steps.}
+\label{fig:flowchart}
+\end{figure*}
+

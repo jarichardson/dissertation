@@ -1,0 +1,36 @@
+Requires: nowidow.sty, tocloft.sty, titlesec.sty, chngcntr.sty. I've included them here, but if some issues occur, it may be worth it to reinstall them from ctan or something.
+
+To have proper refereneces, need to run pdflatex once on main.tex, then run bibtex on every chapter containing references (but NOT main.tex) , and then pdflatex on main.tex 2-3 times (the multiple runs of pdflatex are needed to have it properly do the page numbers and table of contents).
+
+Currently at the top of main.tex the thesis is in draft mode to avoid putting in figures, leaving white boxes instead to make it run better. 
+
+Note that every paper that has been published (probably by day of defense, but definitely check with the ETD people)
+needs to have a copyright permission form in the appendices, and a footnote in each chapter saying something like "this has been published with permisssion from Journal X as X et al".
+
+I've included main_prepared.pdf as what it should look like in the end (but with placeholders for figures due to draft mode).
+
+I have a separate bibliography file for every section requiring one. This may not be required, but I am not sure.
+
+
+
+The "template" consists of:
+main.tex - this has the preamble commands with all settings and the abstract. This is the file to run pdflatex on to get the pdf of the dissertation. This is also where we reference each "paper" as a chapter. 
+
+titlepage.tex -has the properly formatted dissertation title page
+
+intoduction.tex -introduction
+
+paper1a.tex - paper1
+
+paper2a.tex - paper2 
+
+paper3a.tex - paper3 
+
+conclusions.tex - conclusions
+
+appendices.tex - appendices. This is where the copyright permission goes as a separate section.
+
+
+
+
+

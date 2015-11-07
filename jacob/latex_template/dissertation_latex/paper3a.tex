@@ -1,0 +1,245 @@
+% % igs2eguide.tex
+% % v2.00 12-jun-08
+% 
+% % \NeedsTeXFormat{LaTeX2e}
+% 
+% % The default is for Journal of Glaciology, one column, A4 paper. The other options are listed below:
+% 
+% %\documentclass{igs}
+% %   \documentclass[twocolumn]{igs}
+% % \documentclass[annals]{igs}
+% % \documentclass[annals,twocolumn]{igs}
+% 
+% % \documentclass[letterpaper]{igs}
+% % \documentclass[twocolumn,letterpaper]{igs}
+% % \documentclass[annals,letterpaper]{igs}
+% % \documentclass[annals,twocolumn,letterpaper]{igs}
+% 
+% % when submitting your article for review, use one
+% % of the following two options:
+% 
+% % \documentclass[review]{igs}
+% % \documentclass[review]{igs}
+% 
+% % \documentclass[annals,review]{igs}
+% 
+%   \usepackage{igsnatbib}
+%   \usepackage{stfloats}
+% 
+% % check if we are compiling under latex or pdflatex
+%   \ifx\pdftexversion\undefined
+%     \usepackage[dvips]{graphicx}
+%   \else
+%     \usepackage[pdftex]{graphicx}
+%   \fi
+% 
+% \usepackage[T1]{fontenc}
+% \usepackage{lmodern} %this is needed with T1
+% \usepackage[utf8]{inputenc}  
+% % the default is for unnumbered section heads
+% % if you really must have numbered sections, remove
+% % the % from the beginning of the following command
+% % and insert the level of sections you wish to be
+% % numbered (up to 4):
+% 
+% % \setcounter{secnumdepth}{2}
+% 
+% \begin{document}
+
+% \chapter[Tidally-driven ice speed variation at Helheim Glacier, Greenland observed with terrestrial radar interferometry ]{Tidally-driven ice speed variation at Helheim Glacier, Greenland observed with terrestrial radar interferometry \footnote{This chapter is in press as: Voytenko, D., Stern, A., Holland, D. M., Dixon, T. H., Walker, R. T., Christianson, K., (2015), 
+% Tidally-­driven ice speed variation at Helheim Glacier, Greenland observed with Terrestrial Radar Interferometry, Journal of Glaciology.
+% }}
+% 
+% \chapter{He}
+
+\chapter[Tidally-driven Ice Speed Variation at Helheim Glacier, Greenland Observed with Terrestrial Radar Interferometry ]{Tidally-driven Ice Speed Variation at Helheim Glacier, Greenland Observed with Terrestrial Radar Interferometry \footnote{This chapter is in press as: Voytenko, D., Stern, A., Holland, D. M., Dixon, T. H., Walker, R. T., Christianson, K., (2015), Tidally-driven ice speed variation at Helheim Glacier, Greenland observed with terrestrial radar interferometry, Journal of Glaciology.}}
+
+% \chapter[Tidally-driven ice speed variation at Helheim Glacier, Greenland observed with terrestrial radar interferometry ]{Tidally-driven ice speed variation at Helheim Glacier, Greenland observed with terrestrial radar interferometry \footnote{This chapter is in press as: Voytenko, D., Stern, A., Holland, D. M., Dixon, T. H., Walker, R. T., Christianson, K., (2015), Tidally-driven ice speed variation at Helheim Glacier, Greenland observed with terrestrial radar interferometry, Journal of Glaciology.}}
+
+
+% 
+% \author[Voytenko and others]{Denis VOYTENKO,$^1$ Alon STERN,$^2$ David M. HOLLAND,$^2$ Timothy H. DIXON,$^1$ Knut CHRISTIANSON,$^2$ Ryan T. WALKER$^{3,4}$}
+% 
+% \affiliation{%
+% $^1$School of Geosciences,
+% University of South Florida, Tampa, Florida, USA.\\
+% E-mail: dvoytenk@mail.usf.edu\\
+% $^2$Courant Institute of Mathematical Sciences, New York University, New York, New York, USA\\
+% $^3$Cryospheric Sciences Laboratory, NASA Goddard Space Flight Center, Greenbelt, Maryland, USA\\
+% $^4$Earth System Science Interdisciplinary Center, University of Maryland, College Park, Maryland, USA
+% }
+
+\section{Abstract} We used a Terrestrial Radar Interferometer (TRI) at Helheim, Greenland in August of 2013 to study the effects of tidal forcing on the terminal zone of this tidewater glacier. During our study period, the glacier velocity was up to 25~m~d$^{-1}$. Our measurements show that the glacier moves out-of-phase with the semidiurnal tides and the densely-packed m\'elange in the fjord. Here, detrended glacier displacement lags behind the forecasted tidal height by $\sim$8~h. The transition in phase lag between the glacier and the m\'elange happens within a narrow ($\sim$500~m) zone in the fjord in front of the ice cliff. The TRI data also suggest that the impact of tidal forcing decreases rapidly up-glacier from the terminus. A flow line model suggests that this pattern of velocity perturbation is consistent with weak ice flowing over a weakly nonlinear bed.
+
+% \maketitle
+
+
+\section{Introduction}
+
+Tidal forcing of the speed of marine-terminating glaciers is an important aspect of ice-ocean interactions.
+ Observing tidal forcing in a glacier's terminal region benefits from minute-scale, spatially-dense measurements, which are now possible using Terrestrial Radar Interferometry (TRI) \citep{rolstad2009ground,dixon2012emerging}. Here we present new TRI measurements showing terminus-wide spatial and temporal impacts of tidal forcing along with a a model consistent with our observations at Helheim Glacier,  a major marine-terminating outlet glacier on Greenland's southeast coast and one that is known to respond to tidal forcing \citep{de2010sudden}. 
+
+	
+Helheim terminates into the 600-900 m deep Sermilik Fjord. The fjord is stratified with upper cold, polar water and deeper, warm Atlantic water \citep{andresen2012rapid,straneo2012characteristics,straneo2013challenges}. The first $\sim$20~km adjacent to Helheim's terminus are usually packed with dense ice m\'elange. Helheim Glacier accelerated and retreated between 2000 and 2005 \citep{howat2005rapid,rignot2006changes} while in aggregate gaining mass between 2000 and 2010 due to a likely increase in accumulation \citep{howat2011mass}. It is now considered to be  Greenland's fifth largest glacier in terms of discharge \citep{enderlin2014improved}.
+	
+	
+Tidal signals have been observed in tidewater and floating tongue glaciers throughout the world, with the tidal influence being present as far as 80 km up-glacier from the grounding line \citep{anandakrishnan2003ice}.  However, the effect of tides on ice motion is highly variable. Some glaciers, like the Ekstroem Ice Shelf \citep{heinert2007parametric}, move in-phase with the tides (i.e., high tide induces high velocity), while others, including Helheim \citep{de2010sudden}, Jakobshavn \citep{podrasky2014quantifying}, Columbia Glacier \citep{meier1987fast,walters1987analysis}, LeConte Glacier \citep{oneel2001leconte}, and the Brunt Ice Shelf \citep{doake2002tide} move out-of-phase with the tides (i.e., high tide induces low velocity). 
+
+
+Causes for out-of-phase motion have been summarized by \citet{murray2007ice} and include grounding-line backstress reduction at low tide \citep{thomas2007tide}, till properties that interact with changing water pressure to change resolved normal stress or effective friction at the glacier base \citep{gudmundsson2005long}, ocean currents that similarly change basal conditions \citep{doake2002tide}, and variations in basal drag due to shifting of the grounding line \citep{heinert2007parametric,sayag2013elastic}.
+
+Recently it has also been suggested that velocity at Helheim may be subject to diurnal variations caused by bed lubrication resulting from solar-driven surface melting \citep{davis2014tides}, while calving may be strongly influenced by crevasse water depth and basal water pressure \citep{cook2014modelling} and may happen in  a buoyancy-driven manner \citep{james2014buoyant}.
+
+
+	
+\section{Methods and results}
+We observed Helheim's terminal zone with a TRI (Figure \ref{fig:sitelocation}) by collecting five days of radar observations (16-20 August, 2013). Our TRI instrument is a GAMMA Portable Radar Interferometer, a real-aperture radar that generates phase and amplitude images, and makes line-of-sight displacement measurements. The instrument operates at Ku-band (1.74 cm wavelength), and acquires images by rotational scanning \citep{werner2008gamma}. In normal operating conditions, the TRI has one transmitting and two receiving antennas, allowing generation of digital elevation models (DEMs) of the imaged surface (Figure \ref{fig:DEM}). The instrument has a 0.75 m range resolution, and azimuth resolution that varies with distance. Our results are resampled to map coordinates with 10 m pixel spacing. Other characteristics of the instrument are summarized in \citet{voytenko2014}.
+
+
+The TRI was positioned above the fjord (300 m a.s.l.) $\sim$5 km away from the terminus (Figure \ref{fig:sitelocation}).  The observations included 50~h of continuous measurements with a single receiving antenna (the second antenna failed shortly after set-up), although we were able to obtain an initial DEM (Figure \ref{fig:DEM}). We scanned a 120$^{\circ}$ arc covering the m\'elange and the glacier surface every 2 minutes. We also compared the TRI measurements with GPS measurements from a single-frequency (L1) unit deployed on the glacier about 2~km from the terminus (Figure \ref{fig:sitelocation}).  
+No major calving events occurred during our study (see supplementary information). 
+
+
+Our velocity analysis is based on interferometric measurements, i.e. the difference in backscattered phase from two consecutive observations.  The unwrapped phase differences produce interferograms which show displacement over a given time period (two minutes in this case). We averaged 2~h of acquisitions to obtain a representative velocity map of the glacier surface and the proglacial m\'elange  (Figure \ref{fig:velocities}a).  Integrating the displacement over time produces a displacement time series for each pixel in the radar image, the slope of which is the average line-of-sight glacier velocity over that period. 
+
+
+The glacier has a mostly-uniform average line-of-sight motion up to 25~m~d$^{-1}$ (Figure \ref{fig:velocities}a), similar to the rate measured by \citet{de2010sudden}. Data from the GPS unit give a similar velocity to the TRI when converted to the radar line-of-sight (22~m~d$^{-1}$ by TRI vs 23~m~d$^{-1}$ by GPS around the same location). A simple comparison of the terminus location in radar amplitude images from the beginning and  end of the study also gives an average velocity of $\sim$25~m~d$^{-1}$. We estimate velocity uncertainty ($\pm$0.02~m~d$^{-1}$) by measuring the displacement at motionless points (i.e, bare rock). It is also possible to estimate the glacier velocity in the direction of motion by assuming a negligible surface slope and dividing the measured line-of-sight velocity at any pixel by the cosine of the angle given by the difference between the radar look direction to that point and the direction of ice motion (95 degrees clockwise from north in this case) (Figure \ref{fig:velocities}b) \citep{voytenko2014}.
+
+
+Detrending the displacement time series allows us to observe small-scale variations in the glacier motion (Figure \ref{fig:transition}). To generate the time series, we selected points where 90\% of the time series was available (infilling the remaining 10\% with the average rate of motion). In all cases, the non-detrended time series show mostly linear motion (Figure \ref{fig:transition}a), while the detrended time series show the influence of the semidiurnal ($\sim$12~h period) tide (Figure \ref{fig:transition}b).  Since our time series span only a few days, it is not possible to identify longer-period tidal components.  Components shorter than 12~h are not significant in the detrended time series.
+
+
+
+In order to compare the velocity of the glacier and m\'elange with the tidal amplitude in Sermilik Fjord, we used two approaches. First, we used forecasted tide data from Tasiilaq, $\sim$100 km away, available from the Danish Meteorological Institute \footnote{http://www.dmi.dk/en/groenland/hav/tidevandstabeller-groenland/}. We fitted a cubic spline to the forecasted high/low tide data to generate a smooth tidal signal and used it as a proxy for the tidal signal in the fjord, comparing it to the detrended m\'elange and ice motion signals (Figure \ref{fig:transition}b). The predicted tides at Tasiilaq have a strong semidiurnal signal, which appears in both the m\'elange and glacier motion. The m\'elange moves in-phase with the tides ($\sim$0$^{\circ}$ phase angle, with small variations around large blocks of ice), while the glacier moves out-of-phase with a lag of $\sim$8~h, or $\sim$230$^{\circ}$. 
+
+
+
+Second, we used the TRI data to estimate tides directly. Although the m\'elange has significant vertical as well as horizontal motion, we can extract only one component from our line-of-sight measurements.  If we assume that the vertical component dominates, we can use the TRI data to compare m\'elange motion to the forecasted tide from Tasiilaq, as follows. We take the displacement time series for a pixel in the m\'elange whose horizontal motion (assumed down-fjord) is perpendicular to the radar line-of-sight (i.e. we assume that the line-of-sight measurement is little affected by horizontal motion and that there is no side-to-side motion in the fjord).  Since the radar is positioned $\sim$300~m above the fjord, its near range observations include a significant component of vertical motion of this pixel due to the vertical beamwidth of the antennas. Therefore, the radar measures a projection of the vertical motion of this pixel onto the look vector (line-of-sight) (see supplementary information).  Subsequently, the full vertical motion can be estimated by dividing the measured motion by the ratio of radar elevation to slant range to the pixel. This projection closely matches the predicted tidal range (Figure \ref{fig:transition}b). 
+
+
+During our observation period, high tide and high m\'elange decrease the speed of the glacier by about 10\%.  We used spectral analysis to investigate the impact of tides on glacier and m\'elange motion, specifically the spatial variability of a single tidal frequency (i.e., the dominant semidiurnal tide) in the detrended displacement time series. We decomposed each detrended displacement time series into its respective frequencies using a Fast Fourier Transform (FFT), and found the power of the frequency associated with the semidiurnal tidal signal (12.6 h from the FFT, close to the M2 and N2 tidal periods of 12.42 and 12.66 h respectively). A periodogram for each pixel shows the relationship between the spatial location and the power of the tidal frequency (proportional to the square of the tidal amplitude). This information was used to produce a map of tidal power (Figure \ref{fig:maps}a) using the method of \citet{glover2011modeling}. 
+
+There is an apparent change in the power of the tidal frequency, with higher values close to the open fjord diminishing with proximity towards the terminus. This is a geometric artifact reflecting the higher sensitivity of the instrument to vertical motion in the near field.  With this geometry, the line-of-sight sensitivity of the radar to vertical motion decreases with distance as a function of radar elevation divided by slant range. We corrected for this in the power map (Figure \ref{fig:maps}a) and in Figure \ref{fig:profiles}a by subtracting a theoretical sensitivity curve. After accounting for this effect, we observe a narrow zone ($\sim$500~m wide) of increased tidal power in the vicinity of the terminus (Figure \ref{fig:profiles}a).
+
+
+We can also use the phase of the dominant frequency in the FFT to investigate changes in phase over the m\'elange and ice front. We offset the phase to be 0~h at the m\'elange, and use it as a reference for the lag times. The phase is relatively constant within the m\'elange up to the transition zone, where it begins to lag by $\sim$6~h (170$^{\circ}$). The glacier ice experiences an additional lag of $\sim$30-60 minutes ($\sim$15-30$^{\circ}$) over the first 1 km from the ice front (Figure \ref{fig:maps}b, Figure \ref{fig:profiles}b). A comparison profile between the tidal power and the phase lag is shown in Figure \ref{fig:profiles}b, and examples of the detrended m\'elange, transition zone, and glacier motion signals are shown in Figure \ref{fig:transition}. The location of the transition zone is shown in Figure \ref{fig:maps}.
+
+We model the glacier’s velocity response to tidal forcing using the viscoelastic flow line model of \citet{walker2012viscoelastic,walker2014ice}, configured without an ice shelf. This model assumes negligible lateral drag from the glacier margins.   Tidal forcing is considered a perturbation to a steady background velocity, defined by the momentum equation, which balances gravitational driving forces, related to ice density, ice thickness and basal topography,  and resisting forces from basal drag, $\tau_b$, related to ice velocity $u$ and shear stress exponent $m$ for the glacier bed: $\tau_b (u)=\beta^2 u^{\frac{1}{m}}$, where $\beta^2$ is an empirically-determined coefficient fitted to velocity measurements. Ice rheology is represented by a simple Maxwell viscoelastic model, whereby ice responds elasticly (defined by Young’s modulus $E$) on short time scales, and viscously on long time scales.  For the short time scales considered here, the viscous term, ice thickness and bed topography can all be considered constant.  At some upstream limit determined from observations, tidal perturbations can be considered negligible, leading to constant velocity and driving stress boundary conditions.  
+
+We focused on determining an optimal average Young's modulus (\textit{E}) for the glacier ice, and an average sliding law exponent (\textit{m}) for the glacier bed over first 10 km upglacier from the terminus (the area imaged by the TRI that is sensitive to tidal forcing).   The boundary conditions of the model include a periodic stress rate at the ice front, implying that the only stress causing the velocity perturbation is the hydrostatic pressure change from the tide forced solely by the M2 tidal component.  The model also assumes a constant ice thickness of 700~m (which also represents flat bed topography, as the model depends on ice thickness rather than directly on the bed) and an ice viscosity of $10^{14}$~Pa$\cdot$s. Following \citet{verger2011tidewater}, we assigned a background basal shear stress of 170~kPa, and set the upstream distance parameter and upstream velocity at which the tidal forcing becomes negligible to 12-16~km and 10~m~d$^{-1}$ respectively. In order to increase signal to noise ratio for input data to the model, we used a synthetic inline velocity time series derived from the tidal data and the TRI measurements by filtering the data for the dominant M2 tidal constituent using T-TIDE \citep{pawlowicz2002classical}, a Matlab-based toolkit for analyzing the harmonic properties of ocean tides.  We tested \textit{E} values between 0.1~GPa (weak ice) and 1~GPa (stronger ice) and varied the sliding law exponent between 1 (linear bed), 3 (weakly nonlinear bed), and 8 (nonlinear bed). The best fit model for the glacier's response to tidal forcing suggests weak ice (\textit{E}=0.1~GPa) flowing over a linear or weakly nonlinear bed (\textit{m}=3) (Figure \ref{fig:model}). 
+
+
+
+\section{Discussion}
+While the majority of glacier speed variation we observe is associated with a 12~h tidal period, the m\'elange and glacier motion are out-of-phase (Figure \ref{fig:profiles}). This transition happens in the fjord in front of the terminus. In this zone, the m\'elange, which is in-phase with the tides far from the glacier, transitions to an out-of-phase signal synchronized with the glacier motion. Figure \ref{fig:transition} shows the comparison of the glacier/m\'elange motion with the tides and illustrates the presence of the transition zone and the existence of phase lags on the glacier surface, which increase with distance from the terminus. There is no apparent transition zone in the m\'elange between the deeper portion of the fjord and the fjord walls (Figure \ref{fig:maps}), likely suggesting that the m\'elange near the walls is reasonably loose and is directly influenced by the tides. However, a broader radar coverage of both fjord walls (currently only the south wall is visible in the radar imagery) would be necessary to confirm this. 
+
+
+The transition from in-phase m\'elange motion to out-of-phase glacier motion, and the narrowness of the transition zone, we hypothesize can be explained as follows. The fjord is dominated by the tightly packed m\'elange, which moves in-phase with the tidal signal, and has a relatively constant tidal power up to about one km from the glacier terminus. The drop in tidal power before the sharp increase corresponds to the  location in the m\'elange that is starting to feel the frictional resistance of the ice wall (damping vertical motions of the m\'elange), and where the signal starts to change to an out-of-phase signal like that of the glacier (i.e., the phase change happens in the fjord). Destructive interference nearly eliminates the tidal signal in a band near the calving front (Figure \ref{fig:maps}).  Approximately 300~m from the terminus (still in the m\'elange) the tidal signal picks up again, but this time, out-of-phase with the tides (high tide equals slow velocity) reaching a local power maximum around the ice cliff.  Subsequently, the power of the tidal frequency begins to diminish with distance inland from the terminus. 
+
+
+The m\'elange/glacier profile shows a small phase lag with increasing up-glacier
+distance from the calving front (30-60 minutes over the first
+kilometer, in addition to the phase lag difference between the terminus and the m\'elange) (Figure \ref{fig:profiles}). The phase lag may reflect glacier bed rheology,
+as friction from sliding over the bed sediments may dampen and offset
+the glacier's response to tides \citep{walker2014ice}. 
+In the first kilometer up-glacier from the calving front, the amplitude of the detrended displacement is damped by a factor of 3 (0.15~m amplitude at the ice front vs 0.05~m amplitude behind the ice front) with a small change in phase lag (Figures \ref{fig:transition} and \ref{fig:profiles}). The glacier's response to tides is also highly
+dependent on the rate of applied stress, which is controlled by the
+tidal period. A semidiurnal tide has higher applied stress rates than
+a diurnal tide, suggesting that a semidiurnal tide can cause the same velocity perturbation as a diurnal tide but with only half of the tidal amplitude \citep{walker2014ice}.
+  
+The two key variables  in the flow line model are Young’s modulus, \textit{E}, reflecting the elastic properties of ice, and the sliding law exponent, \textit{m}, reflecting bed rheology. The modeling goal was to get \textit{E} low enough and \textit{m} high enough such that the modeled signal matched the measured velocity perturbation at the terminus, without propagating tidal effects too far upstream. High \textit{E} makes the ice stiffer and harder to deform for a given forcing, and causes deformation to extend further upstream. Low \textit{E} has the opposite effect, and looks more like our data, resulting in a reasonably large response relative to the size of the forcing with a lack of upstream propagation. High \textit{m} (i.e., plastic bed) leads to a large response to forcing that propagates upstream strongly and rapidly. Plasticity (infinitely high \textit{m}) also causes the glacier to respond instantaneously to the tide rate, which is not observed in the data. In the best fit model with weak ice (\textit{E}=0.1~GPa) flowing over a linear or weakly nonlinear bed (\textit{m}=3), the lag between the glacier's velocity response and the applied tidal rate is $\sim$1.5~h, or $\sim$45$^{\circ}$ for the semidiurnal tide, matching the observations shown in Figure \ref{fig:model}. 
+
+
+The low value of Young’s modulus (\textit{E}=0.1~GPa) compared to laboratory results for unfractured ice (\textit{E}=9.3~GPa) \citep{reeh2003tidal}
+probably reflects the deeply crevassed and damaged ice in the first $\sim$10 km upstream from the terminus. Furthermore, the modeled area also happens to be the zone where trunks of the glacier merge and bend, which may influence the ice behavior due to additional compression. The weakly nonlinear bed parameter likely suggests that the glacier motion may be controlled by ice deformation, sliding over a hard-bed, or low-stress-exponent till deformation, as opposed to sliding over weakly velocity-strengthening till arising from a plastic bed \citep{licciardi1998deglaciation,walker2012viscoelastic}. 
+
+
+
+Although we did not observe any calving events, the modeling from this study can be used as a starting point for more detailed modeling efforts (e.g., those that include a two-dimensional map plane version of the flowline model, calving, and additional TRI measurements). It is also important to note that our current model focuses only on the first 10 km upstream from the terminus, assumes uniform and time-invariant bed properties, and does not address any changes in the surface slope of the glacier with time.  Changing the ice thickness (also a proxy for bed topography) changes only the amplitude of the tidal signal (but not its timing) with negligible effects considering that the ice is very weak. Furthermore, the upstream distance and velocity where the tidal forcing becomes negligible were determined from an older data set \citep{verger2011tidewater}, suggesting that concurrent TRI measurements near the terminus and GPS measurements further upstream may be valuable for future studies. Targeted radio-echo sounding is also needed to account for the variable bed topography and the possibility of temperate ice at depth, which would result in a depth-dependent ice rheology, not considered in our model.
+
+
+
+\section{Conclusions}
+We present a new method for observing the relationship between tides, proglacial m\'elange, and glacier velocity. At Helheim Glacier, the m\'elange/glacier motion relationship suggests that tidal forcing has a direct impact on glacier velocity. High tide resists and slows the glacier, while low tide allows the glacier to speed up. During our study period, the glacier velocity was up to 25~m~d$^{-1}$ and detrended glacier displacement was $\sim$8~h out-of-phase with the tidal height.  Modeling suggests that the magnitude and timing of the glacier's velocity response to tidal forcing represents weak ice flowing over a weakly nonlinear bed, suggesting that the motion may be controlled by ice deformation, sliding over a hard-bed, or low-stress-exponent till deformation. The dense spatial and temporal coverage of the glacier provided by TRI allowed us to produce spatial maps of the tidal response and lag, where previously this has only been done on a streamline. The TRI also allowed us to describe the variability in the phase lag between the m\'elange and the glacier, in particular, imaging a narrow ($\sim$500~m wide) transition zone in front of the terminus.
+
+% \conclusions  %% \conclusions[modified heading if necessary]
+% TEXT
+%                              %% Appendix A1, A2, etc.
+
+
+
+
+\section{Acknowledgments}
+Field support for this project was provided by NYU Abu Dhabi grant G1204 and NSF Office of Polar Programs grant ARC-0806393.  Analysis was supported in part by NASA grant NNX12AB69G to DMH and NNX12AK29G to THD.  Denise Holland is thanked for organizing the field logistics and project meetings. Additional support to DV and THD was provided by start-up funds from the University of South Florida. Please contact Denis Voytenko about any data-related questions. We thank Martin Truffer, Ted Scambos, and one anonymous reviewer along with two anonymous reviewers of an earlier version of the manuscript for their valuable comments.
+
+
+
+% \newpage
+\section{References}
+
+% 
+% authors generating their own bbl file would uncomment the following two lines, and comment out/delete the references below:
+\bibliography{refsnew_firstname}% reads igs2eguide.bib
+\bibliographystyle{apalike}  % imposes IGS bibliography style on output
+% 
+% % however, we are going to include igs2eguide.bbl here:
+% 
+\newpage
+
+\begin{figure}
+\centering
+\includegraphics[width=.6\textwidth]{fig1new.png}
+\caption[(a) TRI radar amplitude image overlain on a LANDSAT image (2002/07/27; obtained from landsatlook.usgs.gov).]{(a) TRI radar amplitude image overlain on a LANDSAT image (2002/07/27; obtained from landsatlook.usgs.gov). The arc indicates the area scanned by the radar. The blue star represents the radar location, the black box outlines the area shown in Figures \ref{fig:DEM}, \ref{fig:velocities} and \ref{fig:maps}, the orange dots (G, F, T, and M) show the locations of sampled points in Figure \ref{fig:transition}, and the yellow star represents the location of the GPS. Coordinates are in UTM zone 24N. Inset map shows location of Helheim Glacier (red star) along the southeast coast of Greenland. Dashed contours show InSAR-derived velocities from 2008-2009 MEaSUREs Greenland Ice Sheet Velocity Map \citep{joughin2010measures,joughin2010greenland}.}
+\label{fig:sitelocation}
+\end{figure}
+
+\begin{figure}
+\centering
+\includegraphics[width=.5\textwidth]{dem.png}
+\caption[TRI-derived Digital Elevation Model illustrating small variations in glacier topography near the terminus (elevations relative to local sea level).]{TRI-derived Digital Elevation Model illustrating small variations in glacier topography near the terminus (elevations relative to local sea level). The contours represent velocities measured with the TRI adjusted for the direction of flow (Figure \ref{fig:velocities}b). There are higher velocities north and south of the lower-elevation medial moraine, outlining the trunks of the glacier. }
+\label{fig:DEM}
+\end{figure}
+
+
+\begin{figure}
+\centering
+\includegraphics[width=\textwidth]{velfig.png}
+\caption[Comparison of measured line-of-sight velocity (a) and velocity in the direction of glacier motion (b).]{Comparison of measured line-of-sight velocity (a) and velocity in the direction of glacier motion (b). The velocity in the direction of glacier motion was obtained by dividing the measured line-of-sight velocity by the cosine of the angle given by the difference between the radar look direction to that point and the direction of ice motion (95 degrees clockwise from north). This suggests that it is possible recover values close to the true magnitude of the glacier's velocity from the line-of-sight measurements. Note that the area covered by the adjusted map is smaller than the area of the measured velocity. This is because this method does not work well in zones where the cosine of the angle between the radar look direction and the direction of ice motion approaches zero.}
+\label{fig:velocities}
+\end{figure}
+
+
+\begin{figure}
+\centering
+\includegraphics[width=\textwidth]{combined_new.pdf}
+\caption[Time series from August, 2013.]{Time series from August, 2013. (a) Raw displacement time series for points on the glacier surface. (b) A comparison between the forecasted tides at Tasiilaq, m\'elange motion measured directly by the TRI, and glacier motion. Note that even though the raw displacement time series appear to be almost linear, the precision of the TRI allows us to observe small-scale variations in the detrended data. The m\'elange (M) has a similar vertical range and moves in-phase with the tides, while the glacier  (G, F) moves out-of-phase. The signal in the transition zone (T) has weak tidal power and consequently lacks a characteristic sinusoid associated with a tidal signal. The motion of the glacier surface behind the terminus (G) has a lower amplitude and an increased lag compared to the motion signal at the terminus (F). All acquisition times are UTC. The measurement uncertainty is of order 1~mm and the velocity uncertainty is of order 0.02~m~d$^{-1}$. }
+\label{fig:transition}
+\end{figure}
+
+\begin{figure}
+\centering
+\includegraphics[width=\textwidth]{powlag.png}
+\caption[(a) Spatial variability in corrected tidal power.]{(a) Spatial variability in corrected tidal power. Note that the tidal power is strong within the m\'elange, and that it sharply drops off in front of the terminus, defining the transition zone. (b) Map of phase lag, with the m\'elange lag set to 0~h for reference. Note the sharp increase in phase lag at the  transition zone at the terminus, followed by a gentle increase in phase lag up-glacier from the terminus. Also note that there is relatively sparse data coverage along the central trunk of the glacier due to heavy crevassing. The black line represents the profile in Figure \ref{fig:profiles}. The terminus outline is given by the dashed black line.}
+\label{fig:maps}
+\end{figure}
+
+
+
+\begin{figure}
+\centering
+\includegraphics[width=\textwidth]{mod_inset2anew_mod.pdf}
+\caption[A smoothed transect along the flow direction of the glacier showing variability in tidal power (a) and phase lag (b).]{A smoothed transect along the flow direction of the glacier showing variability in tidal power (a) and phase lag (b). The power is the sum of the squares of the real and imaginary components of the dominant FFT signal, the phase is the inverse tangent ratio.  The terminus location is marked by the vertical red line. Note the relatively sharp spike (i.e. dropoff and pickup) in the tidal power around the terminus and the corresponding rapid change in phase. The inset in (b) shows the typical detrended signal in glacier motion (displacement vs time) with increasing distance from the terminus (distances given in legend). Increasing up-glacier distance from the terminus reduces tidal amplitude and slightly increases the phase lag, which is visible in the inset above the legend. This phase lag corresponds with the sloping portion of the main part of the figure directly below the inset. The full vertical range in the inset is approximately 20~cm while the horizontal axis spans roughly 2~d.}
+\label{fig:profiles}
+\end{figure}
+
+\begin{figure}
+\centering
+\includegraphics[width=\textwidth]{model_mod1.pdf}
+\caption[Model results and comparison to tidal height, negative applied tidal rate, and velocity perturbation.]{Model results and comparison to tidal height, negative applied tidal rate, and velocity perturbation. The best fit model (black line) with \textit{E}=0.1~GPa (weak ice) and \textit{m}=3 (weakly nonlinear bed) closely matches the velocity response of the terminus to tidal perturbations (red circles, M2 velocity component). When \textit{E}=1~GPa and \textit{m}=3 (yellow line) there is little response at the terminus and too much upstream. When \textit{m}=1 and \textit{E}=0.1~GPa (blue line) there is an inadequate response at the terminus, suggesting that \textit{E} would need to be lowered even more to match the terminus value. However, this might not be physically plausible. When \textit{m}=8 and \textit{E}=0.1~GPa (green line), the velocity response at the terminus is too high, while increasing \textit{E} to 1~GPa (magenta line) reduces the terminus response too much and causes a greater response upstream. Note that the plotted velocity perturbation (M2 velocity) appears smoothed because it is a single tidal frequency representation of the data from the TRI measurements. }
+\label{fig:model}
+\end{figure}
+
+%use 86mm or 178mm
+
+
+% \end{document}

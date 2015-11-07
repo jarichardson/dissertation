@@ -1,0 +1,50 @@
+This is BibTeX, Version 0.99d (TeX Live 2013/TeX Live for SUSE Linux)
+Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
+The top-level auxiliary file: paper1a.aux
+The style file: apalike.bst
+Database file #1: refs.bib
+Warning--empty journal in brandon2013hydrographic
+Warning--there's a number but no volume in coates1985space
+Warning--empty journal in fofonoff1983algorithms
+You've used 50 entries,
+            1935 wiz_defined-function locations,
+            755 strings with 14341 characters,
+and the built_in function-call counts, 22896 in all, are:
+= -- 2185
+> -- 1243
+< -- 19
++ -- 440
+- -- 440
+* -- 2134
+:= -- 4024
+add.period$ -- 152
+call.type$ -- 50
+change.case$ -- 465
+chr.to.int$ -- 50
+cite$ -- 53
+duplicate$ -- 741
+empty$ -- 1418
+format.name$ -- 502
+if$ -- 4358
+int.to.chr$ -- 1
+int.to.str$ -- 0
+missing$ -- 52
+newline$ -- 251
+num.names$ -- 150
+pop$ -- 397
+preamble$ -- 1
+purify$ -- 467
+quote$ -- 0
+skip$ -- 570
+stack$ -- 0
+substring$ -- 1521
+swap$ -- 88
+text.length$ -- 6
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 296
+warning$ -- 3
+while$ -- 172
+width$ -- 0
+write$ -- 647
+(There were 3 warnings)
