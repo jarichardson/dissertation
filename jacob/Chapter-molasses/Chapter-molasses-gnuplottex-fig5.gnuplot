@@ -1,5 +1,5 @@
 set terminal latex rotate
-set output 'bayesian_flow_analysis-gnuplottex-fig5.tex'
+set output 'Chapter-molasses-gnuplottex-fig5.tex'
 unset key
 set size 0.65,1
 set format xy "$%g$"

@@ -1,4 +1,4 @@
-\begin{thebibliography}{11}
+\begin{thebibliography}{17}
 \providecommand{\natexlab}[1]{#1}
 \providecommand{\url}[1]{\texttt{#1}}
 \expandafter\ifx\csname urlstyle\endcsname\relax
@@ -28,6 +28,15 @@ Maria~J Bayarri, James~O Berger, Rui Paulo, Jerry Sacks, John~A Cafeo, James
   Cavendish, Chin-Hsu Lin, and Jian Tu.
 \newblock A framework for validation of computer models.
 \newblock \emph{Technometrics}, 49\penalty0 (2), 2007.
+
+\bibitem[Belousov et~al.(2015)Belousov, Belousova, Edwards, Volynets, and
+  Melnikov]{belousov2015overview}
+Alexander Belousov, Marina Belousova, Benjamin Edwards, Anna Volynets, and
+  Dmitry Melnikov.
+\newblock Overview of the precursors and dynamics of the 2012--13 basaltic
+  fissure eruption of tolbachik volcano, kamchatka, russia.
+\newblock \emph{Journal of Volcanology and Geothermal Research}, 299:\penalty0
+  19--34, 2015.
 
 \bibitem[Connor et~al.(2012)Connor, Connor, Meliksetian, and Savov]{connor2012}
 Laura~J Connor, Charles~B Connor, Khachatur Meliksetian, and Ivan Savov.
@@ -76,6 +85,13 @@ LS~Glaze and SM~Baloga.
   (3):\penalty0 225--240, 2003.
 \newblock \doi{10.2113/9.3.225}.
 
+\bibitem[Harris(2013)]{harris2013lava}
+AJL Harris.
+\newblock Lava flows.
+\newblock In Sarah~A Fagents, Tracy~KP Gregg, and Rosaly~MC Lopes, editors,
+  \emph{Modeling volcanic processes: the physics and mathematics of volcanism},
+  chapter Lava Flows. Cambridge University Press, 2013.
+
 \bibitem[Harris and Rowland(2001)]{harris2001flowgo}
 Andrew~J Harris and S~Rowland.
 \newblock Flowgo: a kinematic thermo-rheological model for lava flowing in a
@@ -88,5 +104,33 @@ Masataka Hidaka, Akio Goto, Susumu Umino, and Eisuke Fujita.
 \newblock Vtfs project: Development of the lava flow simulation code lavasim
   with a model for three-dimensional convection, spreading, and solidification.
 \newblock \emph{Geochemistry, Geophysics, Geosystems}, 6\penalty0 (7), 2005.
+
+\bibitem[Kauahikaua et~al.(1995)Kauahikaua, Margriter, Lockwood, and
+  Trusdell]{kauahikaua1995applications}
+Jim Kauahikaua, Sandy Margriter, Jack Lockwood, and Frank Trusdell.
+\newblock Applications of gis to the estimation of lava flow hazards on mauna
+  loa volcano, hawai'i.
+\newblock \emph{Mauna Loa Revealed: structure, composition, history, and
+  hazards}, pages 315--325, 1995.
+
+\bibitem[Kilburn(2000)]{kilburn2000lava}
+CRJ Kilburn.
+\newblock Lava flow and flow fields.
+\newblock In H.~Sigurdsson, editor, \emph{Encyclopedia of Volcanoes}, pages
+  331--343. Academic Press, San Diego, CA, 2000.
+
+\bibitem[Kubanek et~al.(Submitted)Kubanek, Richardson, Charbonnier, and
+  Connor]{kubanek2015lava}
+J.~Kubanek, J.~A. Richardson, S.~Charbonnier, and L.~Connor.
+\newblock Lava flow mapping and volume calculations of the 2012-13 {Tolbachik,
+  Kamchatka} fissure eruption using bistatic {TanDEM-X InSAR}.
+\newblock \emph{Bulletin of Volcanology}, Submitted.
+
+\bibitem[Rodr\'{i}guez et~al.(2006)Rodr\'{i}guez, Morris, and
+  Belz]{rodriguez2006global}
+Ernesto Rodr\'{i}guez, Charles~S Morris, and J~Eric Belz.
+\newblock A global assessment of the srtm performance.
+\newblock \emph{Photogrammetric Engineering \& Remote Sensing}, 72\penalty0
+  (3):\penalty0 249--260, 2006.
 
 \end{thebibliography}
