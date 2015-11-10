@@ -46,18 +46,14 @@
 	Methods of forecasting lava flows range from simple predictions using empirical relationships between magma flux and flow length \citep{Glaze2003}, to 1-D numerical solutions such as FLOWGO \citep{harris2001flowgo}, to advanced computational fluid dynamics codes like lavaSIM \citep{hidaka2005vtfs}. All modern numerical flow models by nature trade precision in simulating physical processes with computer run-time, so that while FLOWGO is relatively fast it only predicts downslope flow length, while lavaSIM solves Navier-Stokes equations to produce a 3-D flow distribution at the expense of large computational requirements.
 	
 	Cellular Automata (CA) methods have been developed to simulate fluid flow, including lava spreading \citep{barca1994cellular}. In contrast to CFD codes, these do not generally attempt to compute Navier-Stokes equations but instead abstract many physical parameters, such as viscosity and temperature, into more or less empirical rules. The benefit of CA methods for simulating lava flows is most noticeable in the reduced computer time necessary for simulation compared to CFD methods.
-
-	CA in lava flows has historically been defined as a 2-dimensional space, which is divided into equal-area cells, such as those found in a common digital elevation model (DEM). Within the location of each cell is defined an ``elementary automaton'' (\textit{ea}) that has a set of properties, is governed by a set of global rules, and has a set list of neighboring automata. While the behavior rules each \textit{ea} is identical to those of all other automata, its behavior is only dictated by local phenomena. Specifically, the amount of lava that flows in or out of an \textit{ea} will depend on properties such as lava thickness and elevation within it and its neighbors. Traditionally, CA is specified as a series of states:
-	\begin{equation}
-		\mathbf{A} = \mathrm{\{E,S,X\}}
-	\end{equation}
-	where E is the set of point locations of cellular automata in \textbf{A}, S is the set of substates within each automaton, and X is a set of automata within the neighborhood that influence the state of each automaton \citep{barca1994cellular}. Specifically, for a cell, E is a coordinate pair (i,j) denoting the row and column address of that cell in the larger grid. The set S fundamentally includes S$_e$, the underlying elevation of an automaton; S$_h$, the thickness of lava within the cell; and S$_h0$, the critical thickness, above which lava will spread from a cell. Some algorithms include S$_T$, or the cell temperature in this set. X, in a four-connected CA system is given as \{(0,1), (0,-1), (1,0), (-1,0)\}, where (0,0) is the location of an automaton under evaluation. The implementation of these sets within the CA structure \textbf{A} is described in detail in Section \ref{sec:MOLASSES}.
 	
 	Multiple CA lava flow algorithms exist, such as SCIARA \citep{crisci2004simulation}, MAGFLOW \citep{del2008simulations}, ELFM \citep{damiani2006lava}, and LavaPL \citep{connor2012}. These algorithms are variations on a theme, where the largest difference between each is how lava is distributed from one automaton to its neighbors. For instance, three versions of SCIARA allow for lava to spread in cardinal directions \citep{barca1994cellular}, in hexagonal directions \citep{crisci2008lava}, or in directions based on an inherent velocity calculated in an eulerian way for each automaton \citep{avolio2006sciara}. MAGFLOW and ELFM by contrast to the original SCIARA algorithm implements 8 directions of spreading. LavaPL and SCIARA both spread in four directions but the apportionment of lava from one automaton to neighbors is based on a different algorithm.
 
 	While several lava flow simulators now exist, each have been made and tested with different lava flows or aspects of flows in mind. Because of this, selecting a specific algorithm to effectively model lava flow hazards can be a necessary, if unwanted challenge. To address this problem, we propose a hierarchical benchmarking scheme to objectively rank different flow spreading algorithms. This hierarchy tests simulated output against increasingly complex tests, from simply conserving mass to replicating the paths and ultimate areal extents of real lava flows. These benchmarking methods can be applied to any flow algorithm that provides at least a list or map of inundated locations over various topographies.
 
-	Multiple lava flow algorithms are tested using a new modular lava flow code, which I have named MOLASSES (tentatively standing for \textit{MOdular LAva Simulation Software in Earth Science}). This code, implemented in C, is a Cellular Automata code which tracks a population of equal-area spaced cells over a grid, that is defined by a digital elevation model (DEM). These cells may or may not be inundated with lava and they are governed by universal rules which dictate if and how lava can move into and out of them, in line with the CA method described above. Because MOLASSES has been designed in a modular way, it is relatively quick to assign spreading rules and modify the flow algorithm. Using this code while changing methods of lava distribution enables code output in a constant format, which simplifies the comparison of methods.
+	In this paper, multiple lava flow algorithms are tested using a new modular lava flow code, which I have named MOLASSES (standing for \textit{MOdular LAva Simulation Software in Earth Science}). This code, implemented in C, is a Cellular Automata code which tracks a population of equal-area spaced cells over a grid, that is defined by a digital elevation model (DEM). These cells may or may not be inundated with lava and they are governed by universal rules. Because MOLASSES has been designed in a modular way, it is relatively quick to modify the flow algorithm. Using this code while changing methods of lava distribution enables code output in a constant format, which simplifies the comparison of methods.
+	
+	In Section \ref{sec:MOLASSES}, I will further describe how CA is applied to lava flows and detail how a CA simulation is carried out in the MOLASSES code. I will introduce a hierarchy of benchmarks in Section \ref{sec:benchmark} that can be used to verify and validate different lava flow algorithms using increasingly complex model parameters. Results from applying these benchmarks to six flow algorithms will be presented in Section \ref{sec:BMResults}. In Section \ref{sec:Bayesian} I will then expand on the final benchmark level (validation against real flows) with a Bayesian approach to improving model performance for the 2012-3 Tolbachik Lava Flow. The results from these Sections will be discussed in Section \ref{sec:discussion}.
 	
 	\subsection{Case Study Area: 2012-3 Tolbachik Lava Flow}
 The Tolbachik lava flow began in November 2012, originally being sourced from a long fissure vent south of Tolbachik Dol. Initial magma flux was estimated to be 440~m$^3$~s$^{-1}$ \citep{belousov2015overview}. The fissure vent ultimately coalesced into two main vents, seen in TanDEM-X data and the flux dropped significantly to between 100 and 200~m$^3$~s$^{-1}$. Early stages of the flow carried lava west to a maximum runout of 14.5~km and later stages beginning in January or February, carried lava east. The total emplacement volume is $\sim$0.5~cu.~km. with 0.38~cu.~km. of that being to the west. TanDEM-X data show that the modal thickness of the flow is 7.8~m, and that the overall thickness distribution is log-normal. After the flow ceased, the total emplacement area was mapped using orthophotos and TanDEM-X data where clouds were present in the images by \citet{kubanek2015lava}.
@@ -69,243 +65,75 @@ The Tolbachik lava flow began in November 2012, originally being sourced from a 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\section{CA and The modular flow simulator MOLASSES}\label{sec:MOLASSES}
+\section{A Modular Cellular Automata Algorithm for lava flows}\label{sec:MOLASSES}
 
-	MOLASSES is a modular CA framework into which different distribution schemes can be fitted. Different modules have been constructed for use in MOLASSES which serve a specific purpose in the execution of a generic CA lava flow model, such as incrementally adding volume to vents (the PULSE module) or distributing lava between cells (the DISTRIBUTE module). In total 10 modules have been created including the module DRIVER which has the purpose of calling the modules.
+CA in lava flows has historically been defined as a 2-dimensional space, which is divided into equal-area grid cells, such as those found in a common digital elevation model (DEM). Within the location of each cell is defined an ``elementary automaton'' (\textit{ea}) that has a set of properties, is governed by a set of global rules, and has a set list of neighboring automata. While the behavior rules that each \textit{ea} follow is identical to those of all other automata, its behavior is only dictated by local phenomena. Specifically, the amount of lava that flows in or out of an \textit{ea} will depend on properties such as lava thickness and elevation within it and its neighbors. Because grid cells and \textit{ea} are fundamentally inseperable in this application, I will refer to \text{ea} as cells.
+
+The set of cellular automata is defined as
+	\begin{equation}
+		\mathbf{A} = \mathrm{\{E^2, V, S, X, \sigma, \gamma\}}
+	\end{equation}
+	where E$^2$ is the set of point locations of cells in \textbf{A}, V$\subset$E$^2$ is the set of vent or source locations, S is the set of substates within each cell, and X is the local neighborhood that each cell can directly influence \citep{barca1994cellular}. $\sigma$ and $\gamma$ represent the transition functions and source functions within \textbf{A}. 
 	
-	By creating variations of a single module, it is possible to have multiple algorithms which can be tested against each benchmarking level and compared. As most of the variation between CA lava flow algorithms is found in how lava is distributed from cell to cell, the focus here will be on creating multiple versions of the DISTRIBUTE module. Other modules which affect this module will also be altered to properly execute the algorithms we wish to recreate.
+	Practically, E$^2$ is a set of coordinate pairs denoting row and column addresses of cells in a larger grid. S($i$,$j$), which represents the set of substates for the cell at row $i$, column $j$, includes S$_e$, the underlying elevation of an automaton; S$_h$, the thickness of lava within the cell; and S$_h0$, the critical thickness, above which lava will spread from a cell. Some algorithms include S$_T$, or the cell temperature in this set. X, in a four-connected neighborhood scheme, is given as \{(0,1), (0,-1), (1,0), (-1,0)\}, where (0,0) is the location of a cell under evaluation. $\sigma$ is the change of substates in S for each cell from timestep $t$ to $t+1$, or S$^{t}\rightarrow$S$^{t+1}$. $\gamma$ specifies the lava emitted at locations within V. The implementation of these sets within the CA structure \textbf{A} is described in detail below.
 	
-	In addition to the CA structure \textbf{A} (composed of states E, S, and X described in the introduction), MOLASSES also uses a global data structure, \textbf{G}, which holds location-specific data in areas regardless of the presence of lava during a simulation. This primarily includes the surface elevation of the underlying topography in the simulation, but \textbf{G} also includes the critical, or residual, thickness (identical to S$_h0$) at which automaton will spread lava. In most distribution algorithms, the residual thickness is the same everywhere within the simulation, but future algorithms might predetermine residual thickness based on slope, giving a reason to store this value initially within the global data structure \textbf{G}.
-
-	\subsection{Modules}
-		\subsubsection{DRIVER}
-			The DRIVER module is the backbone of the MOLASSES code and determines the sequence through which to call each other module. It takes one argument supplied by the user in the command line when MOLASSES is first executed. For instance, a valid execution of MOLASSES might be begun with the command
-			\begin{verbatim}
-				> molasses sample.cfg
-			\end{verbatim}
-			where sample.cfg is a configuration file similar to the one described in the INITIALIZE module description below. 
-			
-			A basic DRIVER algorithm is given here where parameters are read in and assigned to a CA and a global data structure, lava is delivered to vents and distributed to other cells until no more lava exists to be erupted. The DRIVER code then ends by checking for conservation of mass, writing model output, and exiting.
-			\begin{center}
-				\begin{tabular}{l}
-					\toprule
-					\textbf{DRIVER Module Algorithm}\\
-					\midrule
-					\textbf{Input: configuration file}\\
-					model parameters, file paths~$\leftarrow$~\textbf{INITIALIZE}(configuration file)\\
-					\textbf{G}$_{\mathrm{elev}},\mathrm{i}_{max},\mathrm{j}_{max}\leftarrow$~\textbf{DEM LOADER}(DEM file path)\\
-					\textbf{G}$_{h0}\leftarrow$~MODAL\_THICKNESS\\
-					\textbf{G}$_{\mathrm{elev~uncert}}\leftarrow$~ELEVATION\_UNCERT\\
-					\textbf{A},\textbf{G}$_{\mathrm{elev}}\leftarrow$~\textbf{FLOW INITIALIZER}(\textbf{G},NEW\_VENT parameters)\\\\
-					
-					\textbf{While} $\displaystyle\sum^{v=vents} Volume_{v}>0$:\\
-					~~\textbf{A}, vent volumes~$\leftarrow$~\textbf{PULSE}(\textbf{A}, PULSE\_VOLUME)\\
-					~~\textbf{A}~$\leftarrow$~\textbf{DISTRIBUTE}(\textbf{A})\\\\
-					
-					\textbf{\textit{Conservation of mass check}}\\
-					\textbf{OUTPUT}\\
-					
-					\bottomrule
-				\end{tabular}
-			\end{center}
-
+	\subsection{MOLASSES Algorithm Outline}
+		MOLASSES is constructed with nine modules which each have a specific task, either carrying out the CA simulation, reading model input, or writing model output. The nine modules are:
+		\begin{enumerate}
+			\item{\textbf{DRIVER}} Calls modules in sequence to execute the flow algorithm.
+			\item{\textbf{INITIALIZE}} Reads a user-provided configuration file to define model parameters.
+			\item{\textbf{DEM\_LOADER}} Imports a raster file to define the elevation model.
+			\item{\textbf{INITFLOW}} Uses model parameters to define data arrays.
+			\item{\textbf{PULSE}} Incrementally adds lava to source locations.
+			\item{\textbf{DISTRIBUTE}} Determines whether to spread and how to spread lava between cells.
+			\item{\textbf{NEIGHBOR\_ID}} Identifies the cell neighborhood.
+			\item{\textbf{ACTIVATE}} Adds newly inundated cells to the list of active cells.
+			\item{\textbf{OUTPUT}} Writes model results to a file using user-specified formats.
+		\end{enumerate}
 		
-		\subsubsection{INITIALIZE}
-			The purpose of the INITIALIZE module is to read a configuration file set by the user in the command line. This is the first module to be called in the MOLASSES code and it assigns parameters for future modules. As each parameter is assigned from the configuration file, INITIALIZE will report the value as assigned in standard output. The configuration file must be a text document with the following structure:
-			
-			\begin{verbatim}
-				#Sample Configuration File
-
-				DEM_FILE = sample/raster.tif
-				ELEVATION_UNCERT = 0
-
-				#Output Files
-				OUTFILE_A_THICKNESS = flow_pancake.xyz
-				OUTFILE_R_HITMAP = hit_R.tif
-				OUTFILE_R_THICKNESS = thickness.tif
-				OUTFILE_R_ELEVATION = paleosurf.tif
-				OUTFILE_R_NEW_ELEV = new_elev.tif
-
-				#Model Parameters
-				MODAL_THICKNESS = 5.0
-
-				NEW_VENT
-				VENT_EASTING = 100
-				VENT_NORTHING = 200
-				VENT_PULSE_VOLUME = 1000
-				VENT_TOTAL_VOLUME = 100000000
-			\end{verbatim}
-			
-			The configuration file is somewhat flexible as some variables can be repeated and some can be discarded. It is important to note that each variable name (always written in all uppercase) must be separated from its value by an equals sign with spaces, ``~=~''. Any line starting with a POUND is treated as a comment and ignored. The configuration file can be separated into three sections, dealing with the elevation model, model outputs, and model parameters. Each section is detailed below.
-			
-			\paragraph{Elevation Model} The path to a GDAL-readable raster digital elevation model must be given after the \textit{DEM\_FILE} flag. GDAL-readable rasters include GeoTiffs, NetCDF Grids, and ArcInfo ASCII Grids. If there is known uncertainty in the DEM, this can be included in the MOLASSES model by using the \textit{ELEVATION\_UNCERT} flag. The value of this should be the standard deviation of the error funtion of the DEM. If this parameter is not needed, it can be set to zero, commented out with a POUND or discarded from the file.
-				
-			\paragraph{Output File Types} At least one output file path must be assigned for the MOLASSES model to run, due to the assumption that no one would want to run MOLASSES without getting something out of it. Between 1 and 5 output types may be requested and all requested output types will be created. Calling \textit{OUTFILE\_A\_THICKNESS} will produce a text list of flow inundation where each inundated cell will have its easting, northing, and flow thickness written to the file path given by the user. \textit{OUTFILE\_R\_HITMAP} creates a binary raster file where inundated cells are given a value of 1 and not-inundated cells are given a value of 0. \textit{OUTFILE\_R\_THICKNESS} creates a float-precision raster file where all cells are assigned the thickness of lava within them. \textit{OUTFILE\_R\_ELEVATION} outputs a pre-flow elevation map; if the elevation uncertainty of the DEM is set to 0 or left out, this raster will be identical to the DEM raster. Finally, \textit{OUTFILE\_R\_NEW\_ELEV} outputs a post-flow elevation map. More information is given in Section \ref{mod:output}.
-			
-			\paragraph{Model Parameters} These variables define the morphometric parameters of the flow. \textit{MODAL\_THICKNESS} is required, as is at least one vent location. To create a vent location, the flag \textit{NEW\_VENT} must be given alone on a line before other parameters are given for that vent. Required parameters for each vent are \textit{VENT\_EASTING}, \textit{VENT\_NORTHING}, \textit{VENT\_PULSE\_VOLUME}, and \textit{VENT\_TOTAL\_VOLUME}. If additional vents are required for the same lava flow, the user only needs to call \textit{NEW\_VENT} for each vent followed by the corresponding vent parameters.
-				
-				Values for all parameters in this section should be given in meters (or cubic meters where appropriate), including vent northing and easting.
-
-		\subsubsection{DEM LOADER}
-			The global data grid, \textbf{G}, is created in this module using a digital elevation model defined by the user and read in by the INITIALIZE module. This module implements the GDAL API which enables MOLASSES to read binary and ascii raster files recognized by GDAL. The DEM file is opened and projection information is read. This information is used to allocate memory for the size of the global data grid. Elevation values are finally read into the data grid from the raster.
-			
-			\begin{center}
-				\begin{tabular}{l}
-					\toprule
-					\textbf{DEM LOADER Module Algorithm}\\
-					\midrule
-					\textbf{Input:} DEM file path\\
-					i$_{max}$,j$_{max}\leftarrow$~number of rows and columns in DEM.\\
-					Allocate memory for \textbf{G} using i$_{max}$ and j$_{max}$.\\
-					$\forall$ (i,j) $\in$~\textbf{G}:\\
-					~~\textbf{G}$_{\mathrm{elev}}\leftarrow$~DEM(i,j)\\
-					
-					\textbf{Output: G}\\
-					\bottomrule
-				\end{tabular}
-			\end{center}
+		Model parameters are specified by a user through a text configuration file, which must include 1) a digital elevation model (DEM), 2) a residual lava flow thickness, 3) at least one vent location, 4) the total volume and ``pulse volume'' of this vent, and 5) an output file path. The lava flow thickness defines the CA value of S$_h0$, where cells with flow thicknesses S$h>$S$_h0$ will spread all lava to their neighboring cells, while cells with less lava will retain their lava. The ``pulse volume'' defines $\gamma$ and the amount of lava to emit at the source location at each time step. The total volume constrains $\gamma$ as lava will not be introduced to the source location after the total volume has been delivered. Modules within MOLASSES that further execute the CA simulation are detailed below.
 		
-		\subsubsection{FLOW INITIALIZER}
-			Preparing the CA list, \textbf{A}, and global data grid, \textbf{G}, in a suitable way for other modules to use is important enough for its own module, which is why the FLOW INITIALIZER exists. This module first alters \textbf{G}$_\mathrm{elev}$ if the user inputs an elevation uncertainty value in the configuration file.  The given DEM elevation is adjusted by a random number, $\epsilon$, determined by a Gaussian distribution where the elevation uncertainty is the standard deviation.
-			
-			Once each elevation value has been calculated if necessary, the CA list, \textbf{A}, is created by allocating memory for the structure. The first automata are appended to this list in this module in the location of the source cells, or vents. The geographic location of each vent is translated into a row i, column j coordinate and FLOW INITIALIZER checks that these are within the map area. The module then calls the ACTIVATE module for these vents and returns the updated \textbf{A} to the DRIVER module.
-			
-			\begin{center}
-				\begin{tabular}{l}
-					\toprule
-					\textbf{FLOW INITIALIZER Module Algorithm}\\
-					\midrule
-					\textbf{Input: G}, Vent Array\\
-					\textbf{If} \textbf{G}$_{\mathrm{elev~uncert}}>0$:\\
-					~~\textbf{G}$_{\mathrm{elev}}\leftarrow$~\textbf{G}$_{\mathrm{elev}}+\epsilon$\\
-					Allocate memory for \textbf{A}.\\
-					
-					$\forall \alpha \in$~Vent array:\\
-					~~\textbf{If} $0<$i$_{\alpha}<$i$_{max}$ and $0<$j$_{\alpha}<$j$_{max}$:\\
-					~~~~\textbf{A}~$\leftarrow$~\textbf{ACTIVATE}(i$_\alpha$,j$_\alpha$)\\
-					
-					\textbf{Output: A}, \textbf{G}\\
-					\bottomrule
-				\end{tabular}
-			\end{center}
-		
-		\subsubsection{PULSE}
-			When the PULSE module is called, the thicknesses of all vents in the EA quadruple \textbf{A} are updated by adding a user-defined pulse volume, set in the configuration file. An exception to this is when the pulse volume is greater than the remaining total volume, (V$_{\mathrm{vent}}$, of a vent. In this case the pulse volume is redefined as the total remaining volume. Once the vent EAs are updated, the total remaining volume for each vent is updated by subtracting the pulse volume.
-			
-			Let V be the array of total volumes which erupt at vents in the lava flow model and dx and dy be the dimensions of the grid cells underlying all EA. For all total eruptive volumes, V, total eruptive heights, H, can be calculated by dividing V by the product of dx and dy. In the algorithm below, H is used. S$_h$ and dS$_h$ represent the local lava thickness and change in thickness (i.e. the pulse volume).
-			\begin{center}
-				\begin{tabular}{l}
-					\toprule
-					\textbf{PULSE Module Algorithm}\\
-					\midrule
-					\textbf{Input: A}, dS$_h$, H\\
-					$\forall \alpha \in \mathbf{A}|_{\mathrm{Vents}}$:\\
-					~~\textbf{If} H$_\alpha>0$:\\
-					~~~~dS$(\alpha)_h\leftarrow$~min\{dS$(\alpha)_h$,H$(\alpha)$\}\\
-					~~~~S$(\alpha)_h\leftarrow$~S$(\alpha)_h+$dS$(\alpha)_h$\\
-					~~~~H$(\alpha)\leftarrow$~H$(\alpha)-$dS$(\alpha)_h$\\
-					\textbf{Output: A}, H\\
-					\bottomrule
-				\end{tabular}
-			\end{center}
-		
-		\subsubsection{DISTRIBUTE}\label{mod:DISTRIBUTE}
-			
-			The critical module in MOLASSES is the DISTRIBUTE module, which uses a transition function to spread lava from each cell to neighboring cells. This module evaluates each cell in the CA list \textbf{A} first to see if the cell's thickness, S$(\alpha)_h$, is greater than the residual thickness, S$(\alpha)_{h0}$, and then to see if any cells within the neighborhood, X, of the cell in question are lower than the cell. If there are lower neighboring cells, the transition function determines how much lava to move out of the cell, whose lava thickness state is given as S($\alpha$)$_h$, and into each neighbor cell, with thickness S($\xi$)$_h$.
-			
-			\begin{center}
-				\begin{tabular}{l}
-					\toprule
-					\textbf{DISTRIBUTE Module Algorithm}\\
-					\midrule
-					\textbf{Input: A}, \textbf{G}\\
-					$\forall \alpha \in \mathbf{A}$:\\
-					~~\textbf{If} S$(\alpha)_h>$~S$(\alpha)_{h0}$:\\
-					~~~~\textbf{A}$^{\mathbf{X}}$,N$^\mathrm{X}\leftarrow$~\textbf{NEIGHBOR ID}(E($\alpha$))\\
-					~~~~\textbf{If} N$^\mathrm{X}>0$, $\forall \xi \in \mathbf{A^X}$:\\
-					~~~~~~S$(\alpha)_h$,S$(\xi)_h\leftarrow$~\textbf{transition func.}\\
-					\textbf{Output: A}\\
-					\bottomrule
-				\end{tabular}
-			\end{center}
-			
-			\paragraph{The Transition Function}
-%Choose 3-6 sample algorithms, possibly 1 from another paper.
-			Multiple possible transition functions can effectively spread lava from and to cells in a manner that might replicate lava in real life. Selecting the best transition function is the purpose of the benchmarking tests described above. In this project three main variations are combined and tested which vary how slopes are treated, the neighborhood size, and if any neighbors are eliminated from the neighborhood based on their relationship to the cell.
-			
-			In the LavaPL algorithm given by \citet{connor2012}, lava is apportioned from one cell to its neighboring cells proportional to slope. The total relief between a cell and its lower neighboring cells is measured and each lower cell gets the amount of lava given by the central cell, S$(\alpha)_h-$~S$(\alpha)_{h0}$, multiplied by its proportional relief given by 
-			\begin{equation}
-				\mathrm{S}(\alpha)_h-\left(\mathrm{S}(\xi)_h\times\sum^{i=N^x}(\mathrm{S}(\alpha)_h-\mathrm{S}(i)_h\right)
-			\end{equation}
-			where $N^x$ is the number of lower neighbors. Another spreading strategy would be to spread lava independent of the slope, or ``slope-blind'' where all lower neighbors receive the same amount of lava.
-			
-			The size of the neighborhood, X, in CA algorithms is commonly 4 or 8 in cardinal or ordinal directions. Here both have been implemented, which enables the benchmarks to test whether 8 spreading directions increases the performance of these tests.
+	\subsection{Cells in E$^2$}
+		%DEM_LOADER
+		%INITFLOW
+		%ACTIVATE
+		Information for cells in the grid defined by E$^2$ is stored in two ways, for code efficiency. First, some information of the CA structure \textbf{A} is stored in a Global Data Grid. This grid stores information known at the beginning of the simulation, such as the user supplied residual flow thickness and the elevation. Grid dimensions are set in the \textbf{DEM\_LOADER} module to be identical to the user-specified raster DEM. This module then imports the elevation of each raster pixel into the corresponding grid cell location. After this operation, the residual flow thickness is also stored in the grid.
 
-			Though the size of the neighborhood is set identically for each cell, fewer neighboring cells will actually receive lava from a central cell due to the transition function. For instance, only neighboring cells lower than the central cell receive lava, as described above. However, other neighbor elimination rules can be implemented. One has been designed by \citet{connor2012}, where the cell that initially gives lava to another cell is forever eliminated from the receiving cell's neighborhood. This is done by creating a parent-child relationship for each activated cell in \textbf{A}. Simply, child cells cannot give lava to their parent cells. This transition function rule is tested against no parentage rules in competing MOLASSES algorithms.
-			
-		\subsubsection{NEIGHBOR ID}
-			
-			The NEIGHBOR ID module is implemented within the DISTRIBUTE module to evaluate cells within X, the list of neighbors which effect the behavior of a given cell. Two versions of this module have been written to serve for two different configurations of X, specifically 4-connected and 8-connected grid strategies. The 4-connected module evaluates cells which neighbor a given location in cardinal directions (i.e. where a cell is exactly one row or exactly one column away from the input row, i, and column, j, coordinate), while the 8-connected module evaluates additional neighbors in diagonal directions (i.e. where a cell is within one row and one column of the input coordinate).
-			
-			First, the effective elevation (topographic elevation plus lava thickness) of a cell is compared with that of a neighboring cell in X. If the neighboring cell is active, information about its current state is gathered from the EA list, \textbf{A}. If it has not yet been inundated with lava, information about its elevation is taken from the global grid, \textbf{G}. If the effective elevation of the neighbor is lower than the cell being evaluated, information about the neighbor including elevation and location are stored in a temporary EA list, \textbf{A}$^{\mathbf{X}}$, for use in the DISTRIBUTE module. The number of cells in \textbf{A}$^{\mathbf{X}}$ is also output for the DISTRIBUTE module.
-			
-			\begin{center}
-				\begin{tabular}{l}
-					\toprule
-					\textbf{NEIGHBOR ID (4-directions) Module Algorithm}\\
-					\midrule
-					\textbf{Input: A}, \textbf{G}, i, j\\
-					X~$\leftarrow$~\{(0,j+1),~(0,j-1),~(i+1,0),~(i-1,0)\}\\
-					N$^{\mathrm{X}}\leftarrow0$\\
-					$\forall \xi \in \mathbf{X}$:\\
-					~~\textbf{If} \textbf{G}($\xi$)$_{\textrm{active}}=0$ and \textbf{G}($\xi$)$_{\textrm{elev}}<$~S(i,j)$_e$:\\
-					~~~~\textbf{A}$^{\mathbf{X}}({\mathrm{N^X}})\leftarrow\{\xi,\mathbf{G}(\xi)_{\mathrm{elev}}\}$\\
-					~~~~N$^{\mathrm{X}}$++\\
-					~~\textbf{Else if} S($\xi$)$_e<$~S(i,j)$_e$: (\textit{neighbor location is active})\\
-					~~~~\textbf{A}$^{\mathbf{X}}({\mathrm{N^X}})\leftarrow\{\xi,\mathrm{S}(\xi)_{\mathrm{elev}}\}$\\
-					~~~~N$^{\mathrm{X}}$++\\
-					\textbf{Output: A}$^{\mathbf{X}}$, N$^{\mathrm{X}}$\\
-					\bottomrule
-				\end{tabular}
-			\end{center}
-			
-		\subsubsection{ACTIVATE}
-			Within the MOLASSES framework, the EA list, \textbf{A}, containing flow data during simulation is stored as a seperate data structure from the global grid, \textbf{G}, which contains local, flow-independent data such as topographic elevation. This enables transition states of EA in \textbf{A} to only be calculated for inundated locations, saving computer time. \textbf{A} must therefore be scalable, which is executed throught the ACTIVATE module.
-			
-			When the DISTRIBUTE module determines that a new location will be inundated by lava, ACTIVATE assigns local attributes from the global data grid to the active EA list. As a bookkeeping measure to keep track of where and the order in which lava has been added over the surface of interest, the global data grid is assigned the total number of active EA to the grid location that has just been inundated. This number assignment serves as a quasi-timestamp for inundation and also, by replacing the grid's previous active value of 0, querying the active value of a grid location enables a quick determination of whether the grid cell is inundated or not.
-			
-			The algorithm below shows the fundamental workflow of the ACTIVATE module. If the global data grid at input row i and column j, \textbf{G}(i,j), has a value of 0, no flow automaton has been assigned at the location. The number of active automata is incremented and assigned to the active value of \textbf{G}(i,j). Then values from \textbf{G}(i,j) are assigned to the Nth automaton, including row, column, elevation, and critical thickness ($h_0$).
+		The second information storage method is a list defined in the \textbf{INITFLOW} module. The ``Active List'' is declared with a length that corresponds to the theoretical maximum number of cells that can be inundated by lava. This list contains data that is updated during the simulation, including lava thicknesses, $S_h$, within cells. As cells are determined within the simulation to be inundated with lava for the first time, their row and column addresses, as well as their lava thicknesses are appended to the Active List with the module \textbf{ACTIVATE}.
 		
-			\begin{center}
-				\begin{tabular}{l}
-					\toprule
-					\textbf{ACTIVATE Module Algorithm}\\
-					\midrule
-					\textbf{Input: A}, \textbf{G}, N, i, j\\
-					\textbf{If} \textbf{G}(i,j)$_{\textrm{active}}=0$:\\
-					~~N++\\
-					~~\textbf{G}(i,j)$_{\textrm{active}}\leftarrow$~N\\
-					~~E$(\textrm{N})\leftarrow$~(i,j)\\
-					~~S$(\textrm{N})_e\leftarrow$~\textbf{G}(i,j)$_{\mathrm{elev}}$\\
-					~~S$(\textrm{N})_{h0}\leftarrow$~\textbf{G}(i,j)$_{h0}$\\
-					~~S$(\textrm{N})_{h}\leftarrow0$\\
-					\textbf{Output: A}, N\\
-					\bottomrule
-				\end{tabular}
-			\end{center}
+	\subsection{Source Locations, L, and the Source Function, $\gamma$}
+		%INITFLOW
+		%PULSE
+		Initially in the Active List, \textbf{INITFLOW} only declares source location(s) as the first few elements of the list. These source locations are flagged in the list to be identified as source locations by other modules.
+
+		The \textbf{PULSE} module carries out the source function, $\gamma$. In this module, a separate array stores each source vent's volume parameters. The pulse volume is added to the quantity of lava in the source cell and is subtracted from the remaining volume. The remaining volume is initially set as the total volume given in the configuration file, so PULSE continues to add lava to the source locations at each time step until remaining volume is 0.
 		
-			Other values may be flagged in the EA list \textbf{A} using the ACTIVATE module for the model's specific needs. For instance, in the FLOW INITIALIZER module, ACTIVATE is called for the first time to assign automata at vent locations and a vent flag is assigned. Another important flag is a parentage flag, which denotes the location from which the automaton being assigned first received lava. This affects the transition state, S, of the automaton by removing the parent location from the list of possible spreading directions, X.
+	\subsection{Substates, S, and the Transition Function, $\sigma$}
+		%INITFLOW
+		%DISTRIBUTE
+		Substates which cannot change, such as the cell elevation S$_e$ and the residual flow thickness S$_h0$, are stored within the Global Data Grid. Substates which do change, primarily flow thickness, S$_h$, are stored in the Active List and are allowed to change from timestep to timestep. These values are initialized in \textbf{INITFLOW} where thicknesses are set to 0.
 		
-		\subsubsection{OUTPUT}\label{mod:output}
+		The transition function, $\sigma$, is defined in the \textbf{DISTRIBUTE} module. Cells in this module are evaluated in order of their inundation (i.e. vents are evaluated first and distal cells are evaluated last). The incoming and outgoing quantity of lava from each cell is stored in the Active List. Generally, if a cell has a flow thicknesses S$h>$S$_h0$, it will spread the lava above S$_h0$ to any neighbors lower in elevation than itself. Transition algorithms can vary, leading to multiple DISTRIBUTE module algorithms.
+		
+		
+		Multiple possible transition functions can effectively spread lava from and to cells in a manner that might replicate lava in real life. Selecting the best transition function is the purpose of the validation benchmarks described in Section \ref{sec:benchmark}. In this project three main variations are combined and tested which vary how slopes are treated, the neighborhood size, and if any neighbors are eliminated from the neighborhood based on their relationship to the cell.
 			
-			OUTPUT is called when model results are ready to be exported to an ascii or raster format. Currently, five possible output types are allowed to be set in the incoming configuration file. While the only ASCII output is a simple x,y,z list of locations inundated by lava, all raster files are exported in GeoTiff format in the identical geographic format (projection, size, spatial resolution) of the incoming DEM. ASCII output is essentially a readable output of the CA list \textbf{A}, while raster outputs are combinations of \textbf{A} and \textbf{G}.
-			\begin{itemize}
-			\item Thickness ASCII Output: lines contain geographic x, y, and lava thickness values for all values of \textbf{A}.
-			\item Thickness Raster Output: pixels contain thickness values for all values of \textbf{A}, or 0 where no lava is present.
-			\item Hitmap Raster Output: pixels contain a value of 1 for all locations with an activated automaton in \textbf{A} and a value of 0 otherwise.
-			\item Elevation Raster Output: pixels contain the elevation value of \textbf{G}. If elevation uncertainty is 0, this will be identical to the incoming DEM.
-			\item New Elevation Raster Output: pixels contain the elevation value of \textbf{G} plus the thickness values for all values of \textbf{A}.
-			\end{itemize}
+		In the LavaPL algorithm given by \citet{connor2012}, lava is apportioned from one cell to its neighboring cells proportional to slope. The total relief between a cell and its lower neighboring cells is measured and each lower cell gets the amount of lava given by the central cell, S$(\alpha)_h-$~S$(\alpha)_{h0}$, multiplied by its proportional relief given by 
+		\begin{equation}
+			\mathrm{S}(\alpha)_h-\left(\mathrm{S}(\xi)_h\times\sum^{i=N^x}(\mathrm{S}(\alpha)_h-\mathrm{S}(i)_h\right)
+		\end{equation}
+		where $N^x$ is the number of lower neighbors. Another spreading strategy would be to spread lava independent of the slope, or ``slope-blind'' where all lower neighbors receive the same amount of lava.
+		
+		The size of the neighborhood, X, in CA algorithms is commonly 4 or 8 in cardinal or ordinal directions. Here both have been implemented, which enables the benchmarks to test whether 8 spreading directions increases the performance of these tests.
+
+		Though the size of the neighborhood is set identically for each cell, fewer neighboring cells will actually receive lava from a central cell due to the transition function. For instance, only neighboring cells lower than the central cell receive lava, as described above. However, other neighbor elimination rules can be implemented. One has been designed by \citet{connor2012}, where the cell that initially gives lava to another cell is forever eliminated from the receiving cell's neighborhood. This is done by creating a ``parent-child'' relationship for each activated cell in \textbf{A}. Simply, child cells cannot give lava to their parent cells. This transition function rule is tested against no parentage rules in competing MOLASSES algorithms.
+		
+	\subsection{Cell Neighborhood, X}
+		%NEIGHBOR_ID
+		The final set in the CA is the cell neighborhood X and is defined by the \textbf{NEIGHBOR\_ID} module. This neighborhood is usually either 4-connected (von Neumann neighborhood) or 8-connected (Moore neighborhood). Four-connected neighborhoods are defined as the row, column coordinates \{(0,1), (0,-1), (1,0), (-1,0)\}, where (0,0) is the location of a cell under evaluation, while the set elements might correspond to North, South, East, and West. Eight-connected neighbors include the ordinal directions, Northeast, Southeast, Northwest, and Southwest: \{(0,1), (0,-1), (1,0), (-1,0), (1,1), (-1,-1), (1,-1), (-1,-1)\}.
+		
+		NEIGHBOR\_ID is implemented within the DISTRIBUTE module to evaluate cells within X, and determine whether they are lower in elevation (including their lava) than the central cell. If one is lower, NEIGHBOR\_ID returns their relief, or the difference in elevation between the cell and the central cell, to the DISTRIBUTE module.
+
 			
 			
 			
@@ -313,7 +141,7 @@ The Tolbachik lava flow began in November 2012, originally being sourced from a 
 %HIERARCHY
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-	\section{A Benchmarking Hierarchy}
+	\section{A Benchmarking Hierarchy}\label{sec:benchmark}
 	
 	The strategy implemented in this paper follows the advice of \citet{bayarri2007framework} for validating computer models, namely ``1) defining the problem; 2) establishing evaluation criteria; 3) designing experiments; 4) approximating computer model output; 5) analyzing the combination of field and computer run data.'' The sixth step in their validation process, feeding results back to revise models, has been done informally in determining how to alter spreading algorithms in future benchmarking attempts. Each level below presents a problem for a lava spreading algorithm to complete. These fundamental problems (e.g. replicating a Bingham flow) are evaluated using simple tests that demonstrate the problem. The relevant model output for each of these tests is a list of locations that have been inundated by lava. Planned future tests will also require the thickness of lava at each location inundated by lava in a given test. Lastly, tests compare model output with expected output. After verification (Level 0), the first validation level tests model results with other model results; the second tests model output against expected analytical solutions; and the third level tests model output from field data.
 
@@ -459,7 +287,7 @@ The Tolbachik lava flow began in November 2012, originally being sourced from a 
 %RESULTS
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\section{Results}
+\section{Results}\label{sec:BMResults}
 	
 	In order to be considered for benchmark validation, all algorithms had to conserve mass, so the verification level 0 will not be further discussed here. For the following tests, algorithms are described using the components discussed in Section \ref{mod:DISTRIBUTE}. The three letter codes thus describe whether the spreading algorithm uses 1) 4 or 8 neighbors, 2) Parent-child relationships or not, and 3) Slope-proportional or Equal spreading. For the algorithm used by LavaPL in \citet{connor2012}, the code would therefore be 4/P/S.
 
@@ -568,7 +396,7 @@ The Tolbachik lava flow began in November 2012, originally being sourced from a 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{Bayesian Applications to the Tolbachik Flow}
+\section{Bayesian Applications to the Tolbachik Flow}\label{sec:Bayesian}
 	Bayesian statistics are a primary tool by which scientists can update their belief in a certain phenomenon given new information, such as model output. Simple examples of this are often medical in nature. For instance, if a woman's female relatives have had breast cancer in their lives, she has a certain probability (i.e.~$P$(Cancer)) of having breast cancer herself. If a reliable medical test is administered and gives a positive result for breast cancer, the patient will rationally increase her belief in potentially having breast cancer, above the probability, $P$(Cancer) she assumed prior to the test. This belief updating occurs as long as the test is reliable, even if the test is not perfect. Likewise, if the test gave a negative result for cancer, she would rationally decrease her belief in having breast cancer, below $P$(Cancer).
 
 	In hazard analysis, this tool can be similarly used to test the reliability of lava flow models. Toward this, I examine the different ways that Bayesian analysis can test the capability of related lava flow spreading algorithms in forecasting the areal extent of the 2012-3 Tolbachik lava flow in Kamchakta Russia. First, I will give an outline of this eruption in Section \ref{sec:tolb_back} and a basic background on Bayesian statistics in Section \ref{sec:bayes_back}. Then I will test results from the MOLASSES lava flow model with varying ``Pulse Volume'' parameters using Bayesian statistics in Section \ref{sec:lava_app}. I will further explore the applications of Bayesian statistics when dealing with model uncertainty in a Monte Carlo fashion in Section \ref{sec:lava_MC}. The following Discussion Section will look at a way to use multiple metrics to identify an optimal model, defined as a model that most reduces unexpected economic loss, and will describe best practices to avoid artificially improving model fit statistics.
@@ -847,7 +675,7 @@ By using this Monte Carlo method to incorporate uncertainty for an advancing lav
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\section{Discussion and Conclusion}
+\section{Discussion and Conclusion}\label{sec:discussion}
 	\subsection{Benchmark Validation}
 	A valid model can be determined by elimination. Spreading algorithms that are not slope-proportional spreading methods can be eliminated in the Level 1 test. Of the four remaining algorithms, only 8-connected transition functions succeed in Level 2. Luckily, both of these 8-connected, slope-proportional spreading funtions also perform best in replicating the Tolbachik flows over SRTM. However, they do not pass the 50\% fit test over TanDEM-X.
 	
