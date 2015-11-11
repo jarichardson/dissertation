@@ -1,3 +1,20 @@
+Spatial density can tell us about the depth of the magma source and/or the conductivity of the crust between the magma source and the surface. It also is dependent on the productivity of the magma source or, to be more exact, how many volcanoes are produced. Possibly this can be normalized (or made more complicated instead) by factoring in volume.
+
+Fundamental questions:
+1) What are the differences in spatial density on different planets and in different tectonic regions
+2) What are the diffences in volume flux density on different planets and "   "   "
+
+Interpretive questions:
+1) Can these differences tell us about the source depth?
+2) Can these differences tell us about lithospheric differences?
+3) Can these differences tell us about source productivity?
+4) If not any of these, what accounts for the differences in spatial density?
+	a) water? magma chemistry? gravity?
+
+
+
+valentine and perry doi:10.1029/2006GL026743
+
 ### AGU 2012
 Clusters of tens to thousands of monogenetic volcanoes are present on Earth, Venus, and Mars. In this investigation, volcano clusters from Venus and Mars are analyzed and compared to monogenetic volcanic fields on Earth. Spatial intensity (vents/sq km) of volcano clusters is calculated using nonparametric kernel methods and an optimized elliptical bandwidth uniquely defined for each cluster. This objective data-driven technique allows for comparison between volcanic fields in different regions and on different planets.
 
