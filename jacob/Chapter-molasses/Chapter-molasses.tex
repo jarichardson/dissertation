@@ -1,5 +1,9 @@
 \documentclass[12pt,letter]{article}
 
+%compile with pdflatex:
+%:! bibtex %:r
+%:! pdflatex -synctex=1 -interaction=nonstopmode --shell-escape %
+
 \usepackage{amsmath}
 \usepackage{natbib}
 \usepackage{graphicx}
@@ -53,9 +57,9 @@
 
 	In this paper, multiple lava flow algorithms are tested using a new modular lava flow code, which I have named MOLASSES (standing for \textit{MOdular LAva Simulation Software in Earth Science}). This code, implemented in C, is a Cellular Automata code which tracks a population of equal-area spaced cells over a grid, that is defined by a digital elevation model (DEM). These cells may or may not be inundated with lava and they are governed by universal rules. Because MOLASSES has been designed in a modular way, it is relatively quick to modify the flow algorithm. Using this code while changing methods of lava distribution enables code output in a constant format, which simplifies the comparison of methods.
 	
-	In Section \ref{sec:MOLASSES}, I will further describe how CA is applied to lava flows and detail how a CA simulation is carried out in the MOLASSES code. I will introduce a hierarchy of benchmarks in Section \ref{sec:benchmark} that can be used to verify and validate different lava flow algorithms using increasingly complex model parameters. Results from applying these benchmarks to six flow algorithms will be presented in Section \ref{sec:BMResults}. In Section \ref{sec:Bayesian} I will then expand on the final benchmark level (validation against real flows) with a Bayesian approach to improving model performance for the 2012-3 Tolbachik Lava Flow. The results from these Sections will be discussed in Section \ref{sec:discussion}.
+	In Section \ref{sec:MOLASSES}, I will demonstrate how CA is applied to lava flows and detail how a CA simulation is carried out in the MOLASSES code. I will introduce a hierarchy of benchmarks in Section \ref{sec:benchmark} that can be used to verify and validate different lava flow algorithms using increasingly complex model parameters. Results from applying these benchmarks to six flow algorithms will be presented in Section \ref{sec:BMResults}. In Section \ref{sec:Bayesian}, I will expand on the final benchmark level (validation against real flows) with a Bayesian approach to improving model performance for the 2012-3 Tolbachik Lava Flow. The results from these Sections will be discussed in Section \ref{sec:discussion}.
 	
-	\subsection{Case Study Area: 2012-3 Tolbachik Lava Flow}
+	\subsection{Case Study Area: 2012-3 Tolbachik Lava Flow}\label{sec:tolb_back}
 The Tolbachik lava flow began in November 2012, originally being sourced from a long fissure vent south of Tolbachik Dol. Initial magma flux was estimated to be 440~m$^3$~s$^{-1}$ \citep{belousov2015overview}. The fissure vent ultimately coalesced into two main vents, seen in TanDEM-X data and the flux dropped significantly to between 100 and 200~m$^3$~s$^{-1}$. Early stages of the flow carried lava west to a maximum runout of 14.5~km and later stages beginning in January or February, carried lava east. The total emplacement volume is $\sim$0.5~cu.~km. with 0.38~cu.~km. of that being to the west. TanDEM-X data show that the modal thickness of the flow is 7.8~m, and that the overall thickness distribution is log-normal. After the flow ceased, the total emplacement area was mapped using orthophotos and TanDEM-X data where clouds were present in the images by \citet{kubanek2015lava}.
 	
 
@@ -75,7 +79,7 @@ The set of cellular automata is defined as
 	\end{equation}
 	where E$^2$ is the set of point locations of cells in \textbf{A}, V$\subset$E$^2$ is the set of vent or source locations, S is the set of substates within each cell, and X is the local neighborhood that each cell can directly influence \citep{barca1994cellular}. $\sigma$ and $\gamma$ represent the transition functions and source functions within \textbf{A}. 
 	
-	Practically, E$^2$ is a set of coordinate pairs denoting row and column addresses of cells in a larger grid. S($i$,$j$), which represents the set of substates for the cell at row $i$, column $j$, includes S$_e$, the underlying elevation of an automaton; S$_h$, the thickness of lava within the cell; and S$_h0$, the critical thickness, above which lava will spread from a cell. Some algorithms include S$_T$, or the cell temperature in this set. X, in a four-connected neighborhood scheme, is given as \{(0,1), (0,-1), (1,0), (-1,0)\}, where (0,0) is the location of a cell under evaluation. $\sigma$ is the change of substates in S for each cell from timestep $t$ to $t+1$, or S$^{t}\rightarrow$S$^{t+1}$. $\gamma$ specifies the lava emitted at locations within V. The implementation of these sets within the CA structure \textbf{A} is described in detail below.
+	Practically, E$^2$ is a set of coordinate pairs denoting row and column addresses of cells in a larger grid. S($i$,$j$), which represents the set of substates for the cell at row $i$, column $j$, includes S$_e$, the underlying elevation of an automaton; S$_h$, the thickness of lava within the cell; and S$_{h0}$, the critical thickness, above which lava will spread from a cell. Some algorithms include S$_T$, or the cell temperature in this set. X, in a four-connected neighborhood scheme, is given as \{(0,1), (0,-1), (1,0), (-1,0)\}, where (0,0) is the location of a cell under evaluation. $\sigma$ is the change of substates in S for each cell from timestep $t$ to $t+1$, or S$^{t}\rightarrow$S$^{t+1}$. $\gamma$ specifies the lava emitted at locations within V. The implementation of these sets within the CA structure \textbf{A} is described in detail below.
 	
 	\subsection{MOLASSES Algorithm Outline}
 		MOLASSES is constructed with nine modules which each have a specific task, either carrying out the CA simulation, reading model input, or writing model output. The nine modules are:
@@ -91,7 +95,7 @@ The set of cellular automata is defined as
 			\item{\textbf{OUTPUT}} Writes model results to a file using user-specified formats.
 		\end{enumerate}
 		
-		Model parameters are specified by a user through a text configuration file, which must include 1) a digital elevation model (DEM), 2) a residual lava flow thickness, 3) at least one vent location, 4) the total volume and ``pulse volume'' of this vent, and 5) an output file path. The lava flow thickness defines the CA value of S$_h0$, where cells with flow thicknesses S$h>$S$_h0$ will spread all lava to their neighboring cells, while cells with less lava will retain their lava. The ``pulse volume'' defines $\gamma$ and the amount of lava to emit at the source location at each time step. The total volume constrains $\gamma$ as lava will not be introduced to the source location after the total volume has been delivered. Modules within MOLASSES that further execute the CA simulation are detailed below.
+		Model parameters are specified by a user through a text configuration file, which must include 1) a digital elevation model (DEM), 2) a residual lava flow thickness, 3) at least one vent location, 4) the total volume and ``pulse volume'' of this vent, and 5) an output file path. The lava flow thickness defines the CA value of S$_{h0}$, where cells with flow thicknesses S$_h>$S$_{h0}$ will spread all lava to their neighboring cells, while cells with less lava will retain their lava. The ``pulse volume'' defines $\gamma$ and the amount of lava to emit at the source location at each time step. The total volume constrains $\gamma$ as lava will not be introduced to the source location after the total volume has been delivered. Modules within MOLASSES that further execute the CA simulation are detailed below.
 		
 	\subsection{Cells in E$^2$}
 		%DEM_LOADER
@@ -101,7 +105,7 @@ The set of cellular automata is defined as
 
 		The second information storage method is a list defined in the \textbf{INITFLOW} module. The ``Active List'' is declared with a length that corresponds to the theoretical maximum number of cells that can be inundated by lava. This list contains data that is updated during the simulation, including lava thicknesses, $S_h$, within cells. As cells are determined within the simulation to be inundated with lava for the first time, their row and column addresses, as well as their lava thicknesses are appended to the Active List with the module \textbf{ACTIVATE}.
 		
-	\subsection{Source Locations, L, and the Source Function, $\gamma$}
+	\subsection{Source Locations, V, and the Source Function, $\gamma$}
 		%INITFLOW
 		%PULSE
 		Initially in the Active List, \textbf{INITFLOW} only declares source location(s) as the first few elements of the list. These source locations are flagged in the list to be identified as source locations by other modules.
@@ -111,10 +115,9 @@ The set of cellular automata is defined as
 	\subsection{Substates, S, and the Transition Function, $\sigma$}
 		%INITFLOW
 		%DISTRIBUTE
-		Substates which cannot change, such as the cell elevation S$_e$ and the residual flow thickness S$_h0$, are stored within the Global Data Grid. Substates which do change, primarily flow thickness, S$_h$, are stored in the Active List and are allowed to change from timestep to timestep. These values are initialized in \textbf{INITFLOW} where thicknesses are set to 0.
+		Substates which cannot change, such as the cell elevation S$_e$ and the residual flow thickness S$_{h0}$, are stored within the Global Data Grid. Substates which do change, primarily flow thickness, S$_h$, are stored in the Active List and are allowed to change from timestep to timestep. These values are initialized in \textbf{INITFLOW} where thicknesses are set to 0.
 		
-		The transition function, $\sigma$, is defined in the \textbf{DISTRIBUTE} module. Cells in this module are evaluated in order of their inundation (i.e. vents are evaluated first and distal cells are evaluated last). The incoming and outgoing quantity of lava from each cell is stored in the Active List. Generally, if a cell has a flow thicknesses S$h>$S$_h0$, it will spread the lava above S$_h0$ to any neighbors lower in elevation than itself. Transition algorithms can vary, leading to multiple DISTRIBUTE module algorithms.
-		
+		The transition function, $\sigma$, is defined in the \textbf{DISTRIBUTE} module. Cells in this module are evaluated in order of their inundation (i.e. vents are evaluated first and distal cells are evaluated last). The incoming and outgoing quantity of lava from each cell is stored in the Active List. Generally, if a cell has a flow thicknesses S$_h>$S$_{h0}$, it will spread the lava above S$_{h0}$ to any neighbors lower in elevation than itself. When all inundated cells have been evaluated, the incoming and outgoing quantities of lava of each cell are applied to the cells. This flow transition represents a timestep as all cells are updated at once.
 		
 		Multiple possible transition functions can effectively spread lava from and to cells in a manner that might replicate lava in real life. Selecting the best transition function is the purpose of the validation benchmarks described in Section \ref{sec:benchmark}. In this project three main variations are combined and tested which vary how slopes are treated, the neighborhood size, and if any neighbors are eliminated from the neighborhood based on their relationship to the cell.
 			
@@ -146,57 +149,33 @@ The set of cellular automata is defined as
 	The strategy implemented in this paper follows the advice of \citet{bayarri2007framework} for validating computer models, namely ``1) defining the problem; 2) establishing evaluation criteria; 3) designing experiments; 4) approximating computer model output; 5) analyzing the combination of field and computer run data.'' The sixth step in their validation process, feeding results back to revise models, has been done informally in determining how to alter spreading algorithms in future benchmarking attempts. Each level below presents a problem for a lava spreading algorithm to complete. These fundamental problems (e.g. replicating a Bingham flow) are evaluated using simple tests that demonstrate the problem. The relevant model output for each of these tests is a list of locations that have been inundated by lava. Planned future tests will also require the thickness of lava at each location inundated by lava in a given test. Lastly, tests compare model output with expected output. After verification (Level 0), the first validation level tests model results with other model results; the second tests model output against expected analytical solutions; and the third level tests model output from field data.
 
 	\subsection{Level 0: Conservation of Mass}
-		\subsubsection{Conservation of Mass}\label{test:CoM}
-			Before the results of a lava flow simulation can be benchmarked or validated, it must be verified to at least prove that conservation of mass is preserved. A lava flow simulation will therefore not be tested against the following benchmark tests until this conservation of mass requirement is shown to be fulfilled. By the design of MOLASSES, this test is performed for each simulation by summing the total volume delivered to vents, as specified by the user in a configuration file, and comparing it to the sum of volume in all cells at the end of the simulation. If the quantities are not equal, the test fails, mass is not conserved, and the code is not able to be validated.
+			Before the results of a lava flow simulation can be validated, it must be verified to at least prove that conservation of mass is preserved. A lava flow simulation will therefore not be tested against the following benchmark tests until this conservation of mass requirement is shown to be fulfilled.
+			
+			In MOLASSES, the code is verified within the DRIVER module, which manages each subordinate module. The erupted volume, $V_{in}$, is given as the total eruption volume specified by the user in the configuration file. If multiple source locations are given in this file, $V_{in}$ is the sum of total eruption volumes. $V_{in}$ is compared at the end of the module to the total volume of the flow, or $V_{out}$. The volume $V_{out}$ is calculated by summing the volume in all inundated grid cells. MOLASSES reports success if $V_{in}-V_{out} \le 10^{-8}$~m$^3$, which is the precision of a 64-bit double. If this test fails, MOLASSES reports failure and the excess volume found in the flow.
 	
 			\begin{center}
 				\begin{tabular}{l}
 					\toprule
-					\textbf{Test \ref{test:CoM} Algorithm}\\
+					\textbf{MOLASSES Conservation of Mass Test}\\
 					\midrule
-					Implemented in MOLASSES:\\
-					1.~$V_{in}\leftarrow \displaystyle\sum^{Vents} V_{v}$, for each vent, $v$.\\
-					2.~$V_{out}\leftarrow \displaystyle\sum^N V_{c}$, for each cell, $c$.\\
-					3.~Test $V_{in}-V_{out}=0$\\
-					~\tabitem \textit{True}: Success\\
-					~\tabitem \textit{False}: Failure\\
+					\textbf{If}~$|V_{in}-V_{out}| \le 10^{-8}$\\
+					~~\textbf{Print}~\verb|SUCCESS: MASS CONSERVED|\\
+					\textbf{Else}\\
+					~~$excess = V_{out}-V_{in}$\\
+					~~\textbf{Print}~\verb|ERROR: MASS NOT CONSERVED! Excess: |$excess$ \verb|m^3|\\
 					\bottomrule
 				\end{tabular}
 			\end{center}
 
-	\subsection{Level 1: Self similarity given ersatz parameter space variation}
-		The first level of model validation tests that a lava spreading algorithm remains the same given dummy, or ersatz, changes in parameter space. To evaluate the performance of algorithms at this level, parameters such as elevation values of the underlying surface model are changed in a way that should not effect model output. Model output is then compared with model output from effectively identical parameters to see if model output is also effectively identical. For instance, a slope to the west and an identically dipping slope to the east should produce lava flows of equal length and shape, all other flow parameters remaining equal. Because the larger goal of this level is simply to test the ability for algorithms to remain unchanged and they are not yet expected to be realistic flows, parameter space can be arbitrarily assigned initially.
+	\subsection{Level 1: Repeatability given meaningless parameter variation}
+		Once the code has been verified to conserve mass, the flow can be validated. This first validation level tests that lava flow simulations are repeatable, regardless of changes in parameter space that should have no effect on the flow. Parameters that ideally should not effect lava flows include slope direction and elevation model resolution. For instance, a slope to the west and an identically dipping slope to the east should produce lava flows of equal length and shape (given identical flow attributes).
 		
-		\subsubsection{Rotating Sloped DEM}
-			Miyamoto and Sasaki (1997) performed a simple validation test on two CA-like flow simulators (Ishihara, 1990 and Miyamoto and Sasaki, 1997) where a sloped DEM was rotated 45 degrees from ``south'' to ``southeast''. This test was performed to verify that the flow models had the same run-out regardless of the arbitrary slope direction. The DEM rotation scheme by Miyamoto and Sasaki (1997) is adopted and expanded, so that a DEM with a simple sloping face is rotated 180 times at an increment of 2$^{\circ}$. The farthest point of a simulated flow from a given model is reported for each slope direction. A perfect flow model will have no variation in distance traveled with respect to slope direction.
+		\citet{miyamoto1997simulating} performed a simple validation test on two CA-like flow simulators \citep{ishihara1990numerical,miyamoto1997simulating} where a sloped DEM was rotated 45 degrees from ``south'' to ``southeast''. This benchmark was performed to demonstrate that the flow models had the same run-out length regardless of the arbitrary slope direction. Here, the DEM rotation scheme by \citet{miyamoto1997simulating} is adopted and expanded, so that a DEM of a simple slope is rotated 19 times at increments of 5$^{\circ}$. Flows are simulated on each of these slopes and the locations of inundated cells are output from the model.
+		
+		Three characteristics of the simulated flows are determined for each slope direction: flow length, orientation, and aspect ratio. Flow length is defined as the distance between the vent and the furthest inundated point from the vent. Flow orientation is defined as the direction that furthest point lies, with respect to North. Flow aspect ratio is the ratio of maximum flow width to flow length. Perfect success for this benchmark is when simulated flows, regardless of slope direction, 1) do not change in length, 2) have an orientation identical to the slope direction, and 3) do not change in aspect ratio. Failure is more subjective, but I will define failure as 1) more than 10\% variation in flow length depending on slope direction, 2) more than 5$^{\circ}$ offset between the slope and the flow orientation on average, or 3) more than 10\% variation in flow aspect ratio.
+		
+		\paragraph{Benchmark Parameters} The underlying DEM for this benchmark has a simple 18$^{\circ}$ slope, dipping to the North. The DEM has a spatial resolution of 1~m. The source cell is placed at the center of the DEM, is given a total volume of 1000~m$^3$, and is given a pulse volume of 1~m$^3$. When the simulation is finished, model output is used to determing the three flow characteristics used in this benchmark (length, orientation, and aspect ratio). The DEM is rotated 5$^{\circ}$ clockwise and the process is repeated 19 times until the flow is simulated on an East-facing slope.
 
-			\begin{center}
-				\begin{tabular}{l}
-					\toprule
-					\textbf{Rotating Slope Test Algorithm}\\
-					\midrule
-					1.~Assing constant DEM and Flow parameters\\
-						~\tabitem $\phi:=$DEM slope\\
-					2.~Write configuration file\\
-					3.~For 180 azimuths, $\theta$, from 0-360$^{\circ}$\\
-						~\tabitem create DEM dipping $\phi$, $\theta$ from N.\\
-						~\tabitem run \textbf{MOLASSES} over DEM\\
-						~\tabitem $l$:=i,max dist$\{C_0-C_i\}$\\
-						~\tabitem $d_{l,\theta}$:=dist$\{C_0-C_l\}$\\
-						~\tabitem $w$:=i,max dist$\{\overrightarrow{C_0C_l}-C_i\}$\\
-						~\tabitem $d_{w,\theta}$:=dist$\{\overrightarrow{C_0C_l}-C_w\}$\\
-					4.~Find average, $\mu$, standard deviation, $\sigma$ of $d_l$,$d_w$\\
-						~\tabitem CV$_l$:= $\sigma_l/\mu_l$\\
-						~\tabitem CV$_w$:= $\sigma_w/\mu_w$\\
-					5.~Define success, failure based on CV.\\
-					\bottomrule
-				\end{tabular}
-			\end{center}
-
-
-		\subsubsection{Potential Level 1 Tests}
-		\paragraph{Scaling Spatial Resolution}
-			A second DEM-altering test would be where lava flows will be simulated over surfaces of different spatial resolutions. These surfaces could either be flat or a slope. The largest inhibitor of this test currently is a parameter in MOLASSES known as the Pulse Volume. At differing spatial resolutions, the choice of Pulse Volume changes the flow runout length in a way that is not necessarily proportional to resolution, so it is not yet known how to choose this parameter for this test.
 
 	\subsection{Level 2: Replication of flow morphologies on simple physical surfaces}
 	
@@ -289,7 +268,7 @@ The set of cellular automata is defined as
 
 \section{Results}\label{sec:BMResults}
 	
-	In order to be considered for benchmark validation, all algorithms had to conserve mass, so the verification level 0 will not be further discussed here. For the following tests, algorithms are described using the components discussed in Section \ref{mod:DISTRIBUTE}. The three letter codes thus describe whether the spreading algorithm uses 1) 4 or 8 neighbors, 2) Parent-child relationships or not, and 3) Slope-proportional or Equal spreading. For the algorithm used by LavaPL in \citet{connor2012}, the code would therefore be 4/P/S.
+	In order to be considered for benchmark validation, all algorithms had to conserve mass, so the verification level 0 will not be further discussed here. For the following tests, algorithms are described using the components discussed in Section \ref{sec:MOLASSES}. The three letter codes thus describe whether the spreading algorithm uses 1) 4 or 8 neighbors, 2) Parent-child relationships or not, and 3) Slope-proportional or Equal spreading. For the algorithm used by LavaPL in \citet{connor2012}, the code would therefore be 4/P/S.
 
 	\subsection{Level 1: Self-similarity}
 	To perform the self-similarity test given a rotating surface model, a simple slope was created, dipping 18$^{\circ}$. DEMs with a spatial resolution of 1~m and a height and width of 750~m were created for this surface with slope azimuths at 5$^{\circ}$ increments from 0-90$^{\circ}$. Eight different transition functions were run over this slope, with a source vent at the DEM centroid which erupted 1000 cubic meters. Pulse volume was 1~cubic~meter and the residual thickness was 1~m.
@@ -581,7 +560,7 @@ The set of cellular automata is defined as
 
 		\paragraph{Hazard Response Implications} The higher $P(\neg Lava|\neg Sim)$ is for a lava spreading algorithm, simulated safety (i.e. the similation does not predict inundation) at a given location more certainly predicts real safety at that location. This is the obverse of the previously discussed posterior metric, which relates simulated damage to actual damage. Algorithms known to have high $P(\neg Lava|\neg Sim)$ values should influence fewer people to evacuate an area that is predicted by those algorithms to be safe. If $P(\neg Lava|\neg Sim)$ is low however, it is more likely that necessary evacuations would not occur, resulting in greater loss of infrastructure or even life.
 
-	\subsection{Incorporating Model Uncertainty with Monte Carlo}
+	\subsection{Incorporating Model Uncertainty with Monte Carlo}\label{sec:lava_MC}
 		In this section I will explore how model uncertainty might be incorporated in model validation. Model uncertainty is a result of input parameter uncertainty, such as elevation error, and may be estimated using the Monte Carlo method for the MOLASSES code. Elevation uncertainty is added to the MOLASSES code and each model of 1,000 unique model runs is analyzed using the above statistics. The distribution of these results will first be discussed. Then different levels of simulated inundation probability will be compared to the Tolbachik flow extent.
 
 		MOLASSES flow parameters for the Monte Carlo model are listed below. 
