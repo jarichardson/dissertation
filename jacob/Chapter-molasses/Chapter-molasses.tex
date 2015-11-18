@@ -57,7 +57,7 @@
 
 	In this paper, multiple lava flow algorithms are tested using a new modular lava flow code, which I have named MOLASSES (standing for \textit{MOdular LAva Simulation Software in Earth Science}). This code, implemented in C, is a Cellular Automata code which tracks a population of equal-area spaced cells over a grid, that is defined by a digital elevation model (DEM). These cells may or may not be inundated with lava and they are governed by universal rules. Because MOLASSES has been designed in a modular way, it is relatively quick to modify the flow algorithm. Using this code while changing methods of lava distribution enables code output in a constant format, which simplifies the comparison of methods.
 	
-	In Section \ref{sec:MOLASSES}, I will demonstrate how CA is applied to lava flows and detail how a CA simulation is carried out in the MOLASSES code. I will introduce a hierarchy of benchmarks in Section \ref{sec:benchmark} that can be used to verify and validate different lava flow algorithms using increasingly complex model parameters. Results from applying these benchmarks to six flow algorithms will be presented in Section \ref{sec:BMResults}. In Section \ref{sec:Bayesian}, I will expand on the final benchmark level (validation against real flows) with a Bayesian approach to improving model performance for the 2012-3 Tolbachik Lava Flow. The results from these Sections will be discussed in Section \ref{sec:discussion}.
+	In Section \ref{sec:MOLASSES}, I will demonstrate how CA is applied to lava flows and detail how a CA simulation is carried out in the MOLASSES code. I will introduce a hierarchy of benchmarks in Section \ref{sec:benchmark} that can be used to verify and validate different lava flow algorithms using increasingly complex model parameters. In Section \ref{sec:Bayesian}, I will expand on the final benchmark level (validation against real flows) with a Bayesian approach to improving model performance for the 2012-3 Tolbachik Lava Flow. The results from these Sections will be discussed in Section \ref{sec:discussion}.
 	
 	\subsection{Case Study Area: 2012-3 Tolbachik Lava Flow}\label{sec:tolb_back}
 The Tolbachik lava flow began in November 2012, originally being sourced from a long fissure vent south of Tolbachik Dol. Initial magma flux was estimated to be 440~m$^3$~s$^{-1}$ \citep{belousov2015overview}. The fissure vent ultimately coalesced into two main vents, seen in TanDEM-X data and the flux dropped significantly to between 100 and 200~m$^3$~s$^{-1}$. Early stages of the flow carried lava west to a maximum runout of 14.5~km and later stages beginning in January or February, carried lava east. The total emplacement volume is $\sim$0.5~cu.~km. with 0.38~cu.~km. of that being to the west. TanDEM-X data show that the modal thickness of the flow is 7.8~m, and that the overall thickness distribution is log-normal. After the flow ceased, the total emplacement area was mapped using orthophotos and TanDEM-X data where clouds were present in the images by \citet{kubanek2015lava}.
@@ -97,7 +97,7 @@ The set of cellular automata is defined as
 		
 		Model parameters are specified by a user through a text configuration file, which must include 1) a digital elevation model (DEM), 2) a residual lava flow thickness, 3) at least one vent location, 4) the total volume and ``pulse volume'' of this vent, and 5) an output file path. The lava flow thickness defines the CA value of S$_{h0}$, where cells with flow thicknesses S$_h>$S$_{h0}$ will spread all lava to their neighboring cells, while cells with less lava will retain their lava. The ``pulse volume'' defines $\gamma$ and the amount of lava to emit at the source location at each time step. The total volume constrains $\gamma$ as lava will not be introduced to the source location after the total volume has been delivered. Modules within MOLASSES that further execute the CA simulation are detailed below.
 		
-	\subsection{Cells in E$^2$}
+	\subsection[Cells in E2]{Cells in E$^2$}
 		%DEM_LOADER
 		%INITFLOW
 		%ACTIVATE
@@ -105,14 +105,14 @@ The set of cellular automata is defined as
 
 		The second information storage method is a list defined in the \textbf{INITFLOW} module. The ``Active List'' is declared with a length that corresponds to the theoretical maximum number of cells that can be inundated by lava. This list contains data that is updated during the simulation, including lava thicknesses, $S_h$, within cells. As cells are determined within the simulation to be inundated with lava for the first time, their row and column addresses, as well as their lava thicknesses are appended to the Active List with the module \textbf{ACTIVATE}.
 		
-	\subsection{Source Locations, V, and the Source Function, $\gamma$}
+	\subsection[Source Locations and the Source Function]{Source Locations, V, and the Source Function, $\gamma$}
 		%INITFLOW
 		%PULSE
 		Initially in the Active List, \textbf{INITFLOW} only declares source location(s) as the first few elements of the list. These source locations are flagged in the list to be identified as source locations by other modules.
 
 		The \textbf{PULSE} module carries out the source function, $\gamma$. In this module, a separate array stores each source vent's volume parameters. The pulse volume is added to the quantity of lava in the source cell and is subtracted from the remaining volume. The remaining volume is initially set as the total volume given in the configuration file, so PULSE continues to add lava to the source locations at each time step until remaining volume is 0.
 		
-	\subsection{Substates, S, and the Transition Function, $\sigma$}
+	\subsection[Substates and the Transition Function]{Substates, S, and the Transition Function, $\sigma$}
 		%INITFLOW
 		%DISTRIBUTE
 		Substates which cannot change, such as the cell elevation S$_e$ and the residual flow thickness S$_{h0}$, are stored within the Global Data Grid. Substates which do change, primarily flow thickness, S$_h$, are stored in the Active List and are allowed to change from timestep to timestep. These values are initialized in \textbf{INITFLOW} where thicknesses are set to 0.
@@ -144,9 +144,34 @@ The set of cellular automata is defined as
 %HIERARCHY
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-	\section{A Benchmarking Hierarchy}\label{sec:benchmark}
+	\section{Benchmarking Hierarchy}\label{sec:benchmark}
 	
-	The strategy implemented in this paper follows the advice of \citet{bayarri2007framework} for validating computer models, namely ``1) defining the problem; 2) establishing evaluation criteria; 3) designing experiments; 4) approximating computer model output; 5) analyzing the combination of field and computer run data.'' The sixth step in their validation process, feeding results back to revise models, has been done informally in determining how to alter spreading algorithms in future benchmarking attempts. Each level below presents a problem for a lava spreading algorithm to complete. These fundamental problems (e.g. replicating a Bingham flow) are evaluated using simple tests that demonstrate the problem. The relevant model output for each of these tests is a list of locations that have been inundated by lava. Planned future tests will also require the thickness of lava at each location inundated by lava in a given test. Lastly, tests compare model output with expected output. After verification (Level 0), the first validation level tests model results with other model results; the second tests model output against expected analytical solutions; and the third level tests model output from field data.
+	The strategy implemented in this paper follows the advice of \citet{bayarri2007framework} for validating computer models, namely ``1) defining the problem; 2) establishing evaluation criteria; 3) designing experiments; 4) approximating computer model output; 5) analyzing the combination of field and computer run data.'' The sixth step in their validation process, feeding results back to revise models, has been done informally to determine how to alter spreading algorithms in future benchmarking attempts. Each level below presents a problem for a lava spreading algorithm to complete. These fundamental problems (e.g. replicating a Bingham flow) are evaluated using simple tests that demonstrate the problem. The relevant model output for each of these tests is a list of locations (i.e. a list of x and y coordinates) that have been inundated by lava. After verification (Level 0), the first validation level tests model results with other model results; the second level tests model output against expected analytical solutions; and the third level tests model output from field data.
+
+	\begin{center}
+		\begin{table}[h]
+		\caption{Transition Algorithm Codes and Descriptions}
+		\begin{tabular}{l c p{5cm} p{5cm}}
+			\toprule
+			Transition&Neighborhood&Parent-Child&Slope-proportional\\
+			Function&&Relationships Preserved?&Sharing?\\
+			\midrule
+			\textbf{4/P/S} &4-directions & Yes, ``parents'' do not accept lava from ``children.'' & Yes, lower cells receive lava based on relative relief.\\
+			\textbf{8/P/S} &8-directions & Yes & Yes\\
+			\textbf{4/N/S} &4-directions & No, ``parents'' are not defined. & Yes\\
+			\textbf{8/N/S} &8-directions & No  & Yes\\
+			\textbf{4/P/E} &4-directions & Yes & No, all lower cells receive equal quantities of lava.\\
+			\textbf{8/P/E} &8-directions & Yes & No\\
+			\textbf{4/N/E} &4-directions & No  & No\\
+			\textbf{8/N/E} &8-directions & No  & No\\
+			
+			\bottomrule
+		\end{tabular}
+		\label{tab_algorithmcodes}
+		\end{table}
+	\end{center}
+
+\paragraph{Test Algorithms} Combining three variations of the Transition Function described in Section \ref{sec:MOLASSES}, I have created eight MOLASSES lava flow algorithms. Each variation has been made by modifying one module in the MOLASSES framework: The neighborhood is changed between 4- and 8- directions using the NEIGHBOR\_ID module, classifying one cell as a ``parent'' cell when a location is initially inundated is within the ACTIVATE module, and dividing lava amongst neighboring cells proportional to slope or equally is carried out in the DISTRIBUTE module. These eight algorithms will be referred to using three character codes, listed in Table \ref{tab_algorithmcodes}. For the algorithm used by LavaPL in \citet{connor2012}, the code would therefore be 4/P/S, as it spreads lava in 4-directions from a central cell, all inundated cells have designated parents to whom they cannot spread lava, and the quantity of lava to spread from a central cell is higher for lower neighboring cells.
 
 	\subsection{Level 0: Conservation of Mass}
 			Before the results of a lava flow simulation can be validated, it must be verified to at least prove that conservation of mass is preserved. A lava flow simulation will therefore not be tested against the following benchmark tests until this conservation of mass requirement is shown to be fulfilled.
@@ -172,63 +197,101 @@ The set of cellular automata is defined as
 		
 		\citet{miyamoto1997simulating} performed a simple validation test on two CA-like flow simulators \citep{ishihara1990numerical,miyamoto1997simulating} where a sloped DEM was rotated 45 degrees from ``south'' to ``southeast''. This benchmark was performed to demonstrate that the flow models had the same run-out length regardless of the arbitrary slope direction. Here, the DEM rotation scheme by \citet{miyamoto1997simulating} is adopted and expanded, so that a DEM of a simple slope is rotated 19 times at increments of 5$^{\circ}$. Flows are simulated on each of these slopes and the locations of inundated cells are output from the model.
 		
-		Three characteristics of the simulated flows are determined for each slope direction: flow length, orientation, and aspect ratio. Flow length is defined as the distance between the vent and the furthest inundated point from the vent. Flow orientation is defined as the direction that furthest point lies, with respect to North. Flow aspect ratio is the ratio of maximum flow width to flow length. Perfect success for this benchmark is when simulated flows, regardless of slope direction, 1) do not change in length, 2) have an orientation identical to the slope direction, and 3) do not change in aspect ratio. Failure is more subjective, but I will define failure as 1) more than 10\% variation in flow length depending on slope direction, 2) more than 5$^{\circ}$ offset between the slope and the flow orientation on average, or 3) more than 10\% variation in flow aspect ratio.
+		Three characteristics of the simulated flows are determined for each slope direction: flow length, orientation, and aspect ratio. Flow length is defined as the distance between the vent and the furthest inundated point from the vent. Flow orientation is defined as the direction that furthest point lies, with respect to North. Flow aspect ratio is the ratio of maximum flow width to flow length. Perfect success for this benchmark is when simulated flows, regardless of slope direction, 1) do not change in length, 2) have an orientation identical to the slope direction, and 3) do not change in aspect ratio. Failure is more subjective, but I will define failure as 1) more than 10\% variation in flow length depending on slope direction, 2) more than 5$^{\circ}$ offset between the slope and the flow orientation on average, or 3) more than 15\% variation in flow aspect ratio.
 		
-		\paragraph{Benchmark Parameters} The underlying DEM for this benchmark has a simple 18$^{\circ}$ slope, dipping to the North. The DEM has a spatial resolution of 1~m. The source cell is placed at the center of the DEM, is given a total volume of 1000~m$^3$, and is given a pulse volume of 1~m$^3$. When the simulation is finished, model output is used to determing the three flow characteristics used in this benchmark (length, orientation, and aspect ratio). The DEM is rotated 5$^{\circ}$ clockwise and the process is repeated 19 times until the flow is simulated on an East-facing slope.
-
-
-	\subsection{Level 2: Replication of flow morphologies on simple physical surfaces}
-	
-	The second benchmarking level is the first step in validating lava flow algorithms against realistic flow expectations. Instead of parameter space being arbitrarily defined, which was the case in Level 1, the defined parameter space informs tests at this level as to what the model output should be.
-	
-		\subsubsection{Flow areal extent approximates a circle on a flat plane}\label{test:Bing_circ}
+		\begin{figure}[h!]
+			\centering
+			\includegraphics[width=\linewidth]{figures/lava_C_4N_slope}
+			\caption{\textit{Rotating slope test for algorithm \textbf{4/P/S}. Slope dip is 18$^{\circ}$, with dip-directions 0N, 30N, and 80N from left to right. The flow length and aspect ratio are similar and the flow direction is in the slope direction, so even though the flow is oddly shaped, it passes Level 1 criteria.}}
+			\label{fig:slope}
+		\end{figure}
 		
-			As lava flows on a large scale are well described as Bingham fluids, a flow simulation can be further tested by being compared to analytical solutions or experimental observations of these fluids under simple conditions. For instance, a lava flow on a perfectly flat surface might be expected to create a circular areal extent. Another example is that lava flows are expected to thicken up-slope when encountering a vertical obstacle.
-	
-			Here we measure flow algorithm performance on a flat surface from a single vent source location. Two tests measure this performance. First, it is expected that the flow will be circular. To measure the extent to which the simulated flow replicates a circle, we measure the inundated area and compare that to the area of a circle which circumscribes the flow exactly. This can be described as
-			\begin{equation}
-				Fit = \frac{A_{flow}}{\pi d_{max}^2}
-			\end{equation}
-			where $d_{max}$ is the farthest extent of the simulated flow from the vent. A perfect match to a circle would result in a $Fit=1$. With the same maximum distance from the vent (i.e. the distance from the center to a vertex) a perfect square would cover 64\% of the area of a circle, ergo $Fit=0.64$. An octagon would have a fit of 0.90. We consider a model to successfully pass this test if it produces a flow of $Fit>0.90$, or if the flow approximates a circle better than an octagon. The model fails this test if if produces a flow of $Fit<0.64$, where a square better describes a circle than a flow generated from the model.
+		\subsubsection{Benchmark Parameters} The underlying DEM for this benchmark has a simple 18$^{\circ}$ slope, dipping to the North. The DEM has a spatial resolution of 1~m. The source cell is placed at the center of the DEM, is given a total volume of 1000~m$^3$, and is given a pulse volume of 1~m$^3$. When the simulation is finished, model output is used to determing the three flow characteristics used in this benchmark (length, orientation, and aspect ratio). The DEM is rotated 5$^{\circ}$ clockwise and the process is repeated 19 times until the flow is simulated on an East-facing slope.
+		
+		
+		
+		\subsubsection{Results}
+
+		For all eight flow algorithms, flow length, aspect ratio, and orientation were calculated 19 times, corresponding to the 19 dip directions sampled between 0$^{\circ}$N and 90$^{\circ}$N. Variance for length and aspect ratio were calculated as the ratio of their standard deviations to their means. For instance, if mean runout length for the 18 flows is 100~m and the standard deviation of the 18 lengths is 2~m, the runout length variance is 2\%. The mean direction error is also calculated for the set of flows from each algorithm. These are reported in the table below.
 
 			\begin{center}
-				\begin{tabular}{l}
+				\textbf{DEM Rotation Results}
+				
+				\begin{tabular}{l c c c}
 					\toprule
-					\textbf{Test \ref{test:Bing_circ} Algorithm}\\
+					Transition&Run-out&Aspect Ratio&Mean Direction\\
+					Function&Variance&Variance&Error\\
 					\midrule
-					1.~Create flat DEM with spatial resolution, $R$\\
-					2.~Write configuration file for flow\\
-					3.~Run \textbf{MOLASSES} over DEM\\
-					4.~Define results:\\
-						~\tabitem $d_{max}$~:=~max dist$\{\overrightarrow{C_0C_l}-C_i\}$\\
-						~\tabitem $N$~:=~Number of cells, $C$, inundated\\
-					5.~Compare $N$ with $N_{circle}$,$N_{octagon}$,$N_{square}$ where:\\
-						~\tabitem $N_{circle}:=\pi d_{max}^2/R$\\
-						~\tabitem $N_{octagon}:=2.82842 d_{max}^2/R$\\
-						~\tabitem $N_{square}:=2d_{max}^2/R$\\
-						~1. If $N>N_{octagon}$: Success\\
-						~1. If $N<N_{square}$: Failure\\
+					4/P/S &2.7\%&6.7\%&1.2$^{\circ}$\\
+					8/P/S &4.4&12.2&0.9\\
+					4/N/S &9.6&19.7&1.3\\
+					8/N/S &3.9&7.5&0.6\\
+					4/P/E &21.6&38.6&14.2\\
+					8/P/E &7.2&13.8&5.4\\
+					4/N/E &21.6&38.7&14.1\\
+					8/N/E &7.2&13.8&5.5\\
+			
 					\bottomrule
 				\end{tabular}
 			\end{center}
 
+			While with an ideal spreading algorithm, variances and direction error would be 0 under a rotating slope, every spreading algorithm tested performed differently as DEM direction changed. Following from the above pass-fail standards, five of the eight algorithms can be rejected. Algorithms 4/P/E and 4/N/E have high run-out length variance. Algorithms 4/N/S, 4/P/E and 4/N/E have large aspect-ratio variance. Algorithms 4/P/E, 8/P/E, 4/N/E, and 8/N/E all systematically deviate from running downslope by $>5^{\circ}$ on average. This implies that algorithms which share lavas equally from central cells to all lower neighboring cells perform worse than algorithms which share lavas proportional to slope.
+			
+			For the eight different transition functions tested, runout length varied between 60-160~m. The flow algorithm with the least flow length variance was the 4-connected, parent-child, slope-proportional strategy implemented in LavaPL. Algorithms 4/P/S, 8/P/S, and 8/N/S cannot be rejected because of any of the three standards set in this benchmark.
 
-		\subsubsection{Potential Level 2 Tests}
-			\paragraph{Flow thickness profile approximates a Bingham fluid on a flat plane}
-				A second flat-surface test compares the averaged flow thickness profile away from the vent from a theoretical axisymmetric thickness profile of a viscoplastic fluid. The analytical solution for height with respect to radius is given by Griffiths (2000) as
-				\begin{equation}
-					h(r)^2 = \frac{2\sigma_0(R-r)}{\rho g}
-				\end{equation}
-				where $\sigma_0$ is the yield strength of the flow, R is the outer radius, and $\rho$ is the fluid density. As $\sigma_0$ and $\rho$ are not generally given \textit{a priori} in CA codes, we will use $C$ where $C=\sigma_0/\rho$ as a placeholder. For each model, a flow will be generated on a flat plane, a $\chi^2$ test will be used to find the best fit $C$, which will have the least error between the analytical and the simulated axisymmetric thickness profiles, and the misfit will be reported.
+	\subsection{Level 2: Replication of flow morphologies on simple physical surfaces}
+	
+	The second benchmarking level is the first step in validating lava flow algorithms against realistic flow expectations. Instead of parameter space being arbitrarily defined, which was the case in Level 1, the defined parameter space informs tests at this level as to what the model output should be. As lava flows on a large scale are well described as Bingham fluids, simulations can be tested against analytical solutions or experimental observations of these fluids in simple conditions. For instance, a lava flow on a perfectly flat surface might be expected to create a circular areal extent \citep{griffiths2000dynamics}.
+	
+			Here I measure flow algorithm performance on a flat surface from a single vent source location. To measure the extent to which the simulated flow replicates a circle, the inundated area is compared to the area of a circle which circumscribes the flow exactly. This can be described as
+			\begin{equation}
+				Fit = \frac{A_{flow}}{\pi d_{max}^2}
+			\end{equation}
+			where $d_{max}$ is the farthest extent of the simulated flow from the vent. A perfect match to a circle would result in a $Fit=1$. With the same maximum distance from the vent (i.e. the distance from the center to a vertex) a perfect square would cover 64\% of the area of a circle, ergo $Fit=0.64$. An octagon would have a fit of 0.90. We consider a model to successfully pass this test if it produces a flow of $Fit>0.90$, or if the flow approximates a circle better than an octagon. The model unambiguously fails this test if if produces a flow of $Fit<0.64$, where a square better describes a circle than a flow generated from the model.
 
-			\paragraph{Flow morphology approximates a Bingham fluid on a slope}
-				Another Level 2 test tests algorithms' abilities to recreate viscoplastic flow morphology for a flow on a slope. Following Osmond and Griffiths (2001), the areal footprint of a yield strength fluid can be solved by comparing its strength, total volume, and the underlying surface slope. Because it might be hard to scale the model to findings from Osmond and Griffiths \textit{a priori}, the best fitting Bingham parameters can be found for a given model output and the error from this best fit can be compared to the error from the output of other flow algorithms. This would likely also inform how flow spreading algorithms scale to real world dimensions.
+			\begin{center}
+				\textbf{Circular Flow Test}
+				
+				\begin{tabular}{l l}
+					\toprule
+					Fit = 1.0 & Best Possible Score; perfectly circular.\\
+					Fit $>$ 0.90 & Success; better than an octagon. \\
+					Fit $<$ 0.64 & Failure; worse than a square.\\
+					\bottomrule
+				\end{tabular}
+			\end{center}
+		
+		\begin{figure}[!h]
+		\centering
+		\includegraphics[width=0.7\linewidth]{figures/pancake}
+		\caption{\textit{Two flat surface tests for slope proportional spreading algorithms with parent rules. On the left the flow is 4-connected (4/P/S), while on the right the flow is 8-connected (8/P/S).}}
+		\label{fig:pancake}
+	\end{figure}
+	
+		\subsubsection{Benchmark Parameters} The DEM used in this benchmark is a horizontal plane (all grid locations have the same elevation) with a spatial resolution of 1~m. A single vent is located at the DEM center with a total volume of 1000~m$^3$, and a pulse volume of 1~m$^3$. When the simulation is finished, model output is used to find the inundated cell farthest from the vent ($d_{max}$). The total inundated area is divided by the area of a circle with radius $d_{max}$ to provide the Fit score.
+		
+		\subsubsection{Results}
 
-			\paragraph{Thickness profile approximates a Bingham fluid behind an obstacle}
-				Bingham fluids flowing over a significant obstacle on a slope exhibit a bow shock upslope from the obstacle. Using an obstacle such as a cylinder or a triangle, the thickness profile along the flow axis upslope of the obstacle as determined by a numerical solution can be compared with model output from a flow algorithm.
-
-
-
+		Five of the eight algorithms unambiguously passed the test of performing better than an octagon. Two algorithms unambiguously failed, one of which is the LavaPL algorithm (N/P/S) that outperfomed other models in the previous validation level. In this test 8-connected algorithms outperformed 4-connected algorithms.
+		
+		\begin{center}
+			\textbf{Bingham Circle Results}\\
+			\begin{tabular}{l c l}
+				\toprule
+				Algorithm&Circularity&\\
+				\midrule
+				4/P/S & 0.55 & Worse than a square.\\
+				8/P/S & 0.95 & Better than an octagon.\\
+				4/N/S & 0.55 & Worse than a square.\\
+				8/N/S & 0.98 & Better than an octagon.\\
+				4/P/E & 0.77 & Between a square and an octagon.\\
+				4/N/E & 1.00 & Perfectly circular.\\
+				8/N/E & 0.99 & Better than an octagon.\\
+				
+				\bottomrule
+			\end{tabular}
+		\end{center}
+		
 	\subsection{Level 3: Replication of real lava flows over complex topography}
 		The recent availability of global or near-global topographic datasets, such as SRTM or ASTER GDEM has enabled the direct observation of the underlying surface of even more recent lava flows. The extents of lava flows such as the 2012-3 Tolbachik lava flow, in conjunction with available pre-eruption DEMs, is the final benchmarking test for lava flow algorithms. At this level, model inputs must reflect reality, which naturally makes parameter spaces used in applicable tests more complex than those used in previous levels. Ultimately, if a lava spreading algorithm succeeds at this level after performing well in previous levels, the algorithm is considered validated against field data.
 
@@ -253,92 +316,7 @@ The set of cellular automata is defined as
 				\end{tabular}
 			\end{center}
 			
-		\subsubsection{Potential Level 3 Tests}
-		\paragraph{Glass Pours}
-			A potentially simple test for Level 3 that bridges Level 2 with 3 would use glass pour experiments over simple topography in real life. The experimental data would be collected using measurements taken from the USF magma lab where molten glass is poured over sand surfaces. The surfaces created would be simplifications of real lava flows, similar to the perfectly simple surfaces used in Level 2, but would use real life data instead of numerical solutions to perfectly Bingham fluid motion. Flow morphology of glass pours could be measured after flows have cooled or through new photogrammetric approaches called Structure from Motion.
-			
-		\paragraph{Nornahraun, Iceland and other real lava flows}
-			Validating a lava flow algorithm against just one real life example of a lava flow does not necessarily give confidence that the flow algorithm will perform well for all lava flows. To test the robustness of the model for multiple types of lava flows, it would be beneficial to validate the model against other lava flows like the Pahoa flow in Hawaii, or the new Nornahraun flow in Iceland.
-			
-		
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%RESULTS
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-\section{Results}\label{sec:BMResults}
-	
-	In order to be considered for benchmark validation, all algorithms had to conserve mass, so the verification level 0 will not be further discussed here. For the following tests, algorithms are described using the components discussed in Section \ref{sec:MOLASSES}. The three letter codes thus describe whether the spreading algorithm uses 1) 4 or 8 neighbors, 2) Parent-child relationships or not, and 3) Slope-proportional or Equal spreading. For the algorithm used by LavaPL in \citet{connor2012}, the code would therefore be 4/P/S.
-
-	\subsection{Level 1: Self-similarity}
-	To perform the self-similarity test given a rotating surface model, a simple slope was created, dipping 18$^{\circ}$. DEMs with a spatial resolution of 1~m and a height and width of 750~m were created for this surface with slope azimuths at 5$^{\circ}$ increments from 0-90$^{\circ}$. Eight different transition functions were run over this slope, with a source vent at the DEM centroid which erupted 1000 cubic meters. Pulse volume was 1~cubic~meter and the residual thickness was 1~m.
-	
-	\begin{figure}[h!]
-		\centering
-		\includegraphics[width=\linewidth]{figures/lava_C_4N_slope}
-		\caption{\textit{Rotating slope test for a 4-connected flow algorithm with parent-child relationships which spreads lava proportional to slope (4/P/S). Slope dip is 18$^{\circ}$, dipping 0N, 30N, and 80N from left to right. The flow length and aspect ratio are similar and the flow direction is in the slope direction, so even though the flow is oddly shaped, it passes Level 1 criteria.}}
-		\label{fig:slope}
-	\end{figure}
-	
-	Flow runout lengths were calculated by finding the distance between the vent location and the farthest location recorded in the ASCII flow output file. For the eight different transition functions tested, runout length varied between 60-160~m. Flow widths were calculated by finding the farthest point away from a line between the farthest flow point and the vent location on either side. Aspect ratio is calculated as the ratio between runout length and flow width. Direction error is calculated as the degree difference between the slope direction and the direction of the farthest flow point from the vent.
-	
-	For each flow algorithm, these statistics were calculated 18 times, for each DEM created. Variance for length and aspect ratio were calculated as the ratio of their standard deviations to their means. For instance, if mean runout length for the 18 flows is 100~m and the standard deviation of the 18 lengths is 2~m, the runout length variance is 2\%. The mean direction error is also calculated for the set of flows from each algorithm. These are reported in the table below.
-
-		\begin{center}
-			\textbf{DEM Rotation Results}
-			\begin{tabular}{l c c c}
-				\toprule
-				Transition&Run-out&Aspect Ratio&Mean Direction\\
-				Function&Variance&Variance&Error\\
-				\midrule
-				4/P/S &2.7\%&6.7\%&1.2$^{\circ}$\\
-				8/P/S &4.4&12.2&0.9\\
-				4/N/S &9.6&19.7&1.3\\
-				8/N/S &3.9&7.5&0.6\\
-				4/P/E &21.6&38.6&14.2\\
-				8/P/E &7.2&13.8&5.4\\
-				4/N/E &21.6&38.7&14.1\\
-				8/N/E &7.2&13.8&5.5\\
-				
-				\bottomrule
-			\end{tabular}
-		\end{center}
-		
-		While with an ideal spreading algorithm, variances and direction error would be 0 under a rotating slope, all spreading algorithms tested performed differently as DEM direction changed. Deciding which pass or fail this test is not necessarily clear from the above results. However, some algorithms can be discarded from their high mean direction error; algorithms with mean direction errors larger than 2$^{\circ}$ can be visually seen, when the flow is mapped, to have a systematic flow direction. This independence from the slope direction suggests that the dummy direction parameter changes the performance of these flows. The flow algorithm with the least flow length variance was the 4-connected, parent-child, slope-proportional strategy implemented in LavaPL.
-
-	\subsection{Level 2: Bingham Flow Approximation}
-		
-		A flat surface DEM is created with a spatial resolution of 1~m and a height and width of 1300~m to run flows from the centroid. These flows should replicate a circle, which is judged by comparing the number of inundated locations given in the ASCII model output with the number of locations in the DEM within a circle circumscribing the lava flow. A result of 1.0 indicates the flow performs as well as a circle, a result of 0.90 indicates that the flow replicates a circle as well as an octagon, and a result of 0.64 indicates that the flow replicates a circle as well as a square.
-		
-		\begin{figure}[!h]
-		\centering
-		\includegraphics[width=0.7\linewidth]{figures/pancake}
-		\caption{\textit{Two flat surface tests for slope proportional spreading algorithms with parent rules. On the left the flow is 4-connected (4/P/S), while on the right the flow is 8-connected (8/P/S).}}
-		\label{fig:pancake}
-	\end{figure}
-	
-		
-		\begin{center}
-			\textbf{Bingham Circle Results}\\
-			\begin{tabular}{l c c c}
-				\toprule
-				Transition Function&Circularity\\
-				\midrule
-				4/P/S & 0.55\\
-				8/P/S & 0.95\\
-				4/N/S & 0.55\\
-				8/N/S & 0.98\\
-				4/P/E & 0.77\\
-				4/N/E & 1.00\\
-				8/N/E & 0.99\\
-				
-				\bottomrule
-			\end{tabular}
-		\end{center}
-		
-		All but three flow algorithms tested above unambiguously passed the test of performing better than an octagon. Two algorithms unambiguously failed, one of which is the LavaPL algorithm that outperfomed other models in the previous test. In this test 8-connected algorithms outperformed 4-connected algorithms.
-
-	\subsection{Level 3: Replicating Real Flows}
+	\subsubsection{Results}
 	
 	Each transition function was tested over SRTM topography and a TanDEM-X DEM using values gathered from TanDEM-X analysis. Two vents were situated over the topography at UTM coordinates of the two active vents created in the 2012-3 Tolbachik eruption. The total combined volume output from these two vents were 0.38~cubic~km. The residual thickness of the flow is 7.8~m and the pulse volumes were defined as the product of the thickness and the spatial resolution of the underlying DEM. The Jaccard fit for each flow algorithm is listed below for both DEMs.
 		\begin{figure}[!h]
