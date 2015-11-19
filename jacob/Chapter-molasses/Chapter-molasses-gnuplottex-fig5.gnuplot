@@ -1,11 +1,11 @@
 set terminal latex rotate
 set output 'Chapter-molasses-gnuplottex-fig5.tex'
 unset key
-set size 0.65,1
+set size 0.6,0.7
 set format xy "$%g$"
-set xlabel "$P(Sim)$" rotate by 90
-set ylabel "$P(Lava|Sim)$"
-set ytics 0.2
-set xtics 0.2
-set yrange [0:1]
-plot "results_parsed.dat" using 1:6 with points pt 7,  "results_parsed.dat" using 1:1 with lines lt 1
+set xlabel "Pulse Volume" rotate by 90
+set ylabel "Combined Score"
+set ytics 0.1
+set xtics 5000
+plot "results_combinedpost.dat" using 1:7 with linespoints lt 4 pt 1, "results_combinedpost.dat" using 1:5 with linespoints lt 4 pt 7, "results_combinedpost.dat" using 1:6 with linespoints lt 4 pt 3, "results_combinedpost.dat" using 1:4 with linespoints lt 4 pt 6,
+

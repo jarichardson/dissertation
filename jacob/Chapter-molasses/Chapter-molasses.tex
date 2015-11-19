@@ -82,7 +82,7 @@ The set of cellular automata is defined as
 	Practically, E$^2$ is a set of coordinate pairs denoting row and column addresses of cells in a larger grid. S($i$,$j$), which represents the set of substates for the cell at row $i$, column $j$, includes S$_e$, the underlying elevation of an automaton; S$_h$, the thickness of lava within the cell; and S$_{h0}$, the critical thickness, above which lava will spread from a cell. Some algorithms include S$_T$, or the cell temperature in this set. X, in a four-connected neighborhood scheme, is given as \{(0,1), (0,-1), (1,0), (-1,0)\}, where (0,0) is the location of a cell under evaluation. $\sigma$ is the change of substates in S for each cell from timestep $t$ to $t+1$, or S$^{t}\rightarrow$S$^{t+1}$. $\gamma$ specifies the lava emitted at locations within V. The implementation of these sets within the CA structure \textbf{A} is described in detail below.
 	
 	\subsection{MOLASSES Algorithm Outline}
-		MOLASSES is constructed with nine modules which each have a specific task, either carrying out the CA simulation, reading model input, or writing model output. The nine modules are:
+		MOLASSES is constructed with nine modules which each have a specific task, either carrying out the CA simulation, reading model input, or writing model output (Figure \ref{fig_flowchart}). The nine modules are:
 		\begin{enumerate}
 			\item{\textbf{DRIVER}} Calls modules in sequence to execute the flow algorithm.
 			\item{\textbf{INITIALIZE}} Reads a user-provided configuration file to define model parameters.
@@ -94,6 +94,14 @@ The set of cellular automata is defined as
 			\item{\textbf{ACTIVATE}} Adds newly inundated cells to the list of active cells.
 			\item{\textbf{OUTPUT}} Writes model results to a file using user-specified formats.
 		\end{enumerate}
+		
+		\begin{figure}[!h]
+			\centering
+			\includegraphics[width=0.2\linewidth]{figures/Flow_Chart}
+			\caption{A flow chart of MOLASSES carried out within the \textbf{DRIVER} module.}
+			\label{fig_flowchart}
+		\end{figure}
+		
 		
 		Model parameters are specified by a user through a text configuration file, which must include 1) a digital elevation model (DEM), 2) a residual lava flow thickness, 3) at least one vent location, 4) the total volume and ``pulse volume'' of this vent, and 5) an output file path. The lava flow thickness defines the CA value of S$_{h0}$, where cells with flow thicknesses S$_h>$S$_{h0}$ will spread all lava to their neighboring cells, while cells with less lava will retain their lava. The ``pulse volume'' defines $\gamma$ and the amount of lava to emit at the source location at each time step. The total volume constrains $\gamma$ as lava will not be introduced to the source location after the total volume has been delivered. Modules within MOLASSES that further execute the CA simulation are detailed below.
 		
@@ -119,23 +127,102 @@ The set of cellular automata is defined as
 		
 		The transition function, $\sigma$, is defined in the \textbf{DISTRIBUTE} module. Cells in this module are evaluated in order of their inundation (i.e. vents are evaluated first and distal cells are evaluated last). The incoming and outgoing quantity of lava from each cell is stored in the Active List. Generally, if a cell has a flow thicknesses S$_h>$S$_{h0}$, it will spread the lava above S$_{h0}$ to any neighbors lower in elevation than itself. When all inundated cells have been evaluated, the incoming and outgoing quantities of lava of each cell are applied to the cells. This flow transition represents a timestep as all cells are updated at once.
 		
-		Multiple possible transition functions can effectively spread lava from and to cells in a manner that might replicate lava in real life. Selecting the best transition function is the purpose of the validation benchmarks described in Section \ref{sec:benchmark}. In this project three main variations are combined and tested which vary how slopes are treated, the neighborhood size, and if any neighbors are eliminated from the neighborhood based on their relationship to the cell.
-			
-		In the LavaPL algorithm given by \citet{connor2012}, lava is apportioned from one cell to its neighboring cells proportional to slope. The total relief between a cell and its lower neighboring cells is measured and each lower cell gets the amount of lava given by the central cell, S$(\alpha)_h-$~S$(\alpha)_{h0}$, multiplied by its proportional relief given by 
+		Multiple possible transition functions can effectively spread lava from and to cells in a manner that might replicate lava in real life. Selecting the best transition function is the purpose of the validation benchmarks described in Section \ref{sec:benchmark}. In this project three main variations are combined and tested which vary 1) how local slope affects spreading, 2) the neighborhood size, and 3) if any neighbors are eliminated from the neighborhood based on their relationship to the cell.
+		
+		\begin{figure}[!h]
+			\centering
+			\includegraphics[width=0.5\linewidth]{figures/slope-proportional-example}
+			\caption{A 2-D example of two transition functions. At timestep $t$ (top), Two cells are inundated with lava. The central cell (Cell 0) has 1 block of lava higher than the residual thickness, S$_{h0}$. In a slope-proportional sharing scheme, timestep $t+1$ will follow the path to the right; because Cell -1 has twice the relief as Cell 1, it receives twice as much of the residual lava (2/3 blocks vs. 1/3 to the right). In an equal-sharing scheme, the left path will be followed, and half the block will be added to both neighbor cells.}
+			\label{fig_BernieSanders}
+		\end{figure}
+		
+		\paragraph{Local slope-based spreading} In the LavaPL algorithm given by \citet{connor2012}, lava is apportioned from cells to their neighboring cells proportional to slope. To give a specific case, let a cell at location $c$ be the central cell, with a set of neighbor cells, X. The total relief between cell $c$ and its lower neighboring cells is 
 		\begin{equation}
-			\mathrm{S}(\alpha)_h-\left(\mathrm{S}(\xi)_h\times\sum^{i=N^x}(\mathrm{S}(\alpha)_h-\mathrm{S}(i)_h\right)
+			\text{TR}(c) = \sum^{n\in \text{X}}(\text{S}_h(c)+\text{S}_e(c))-(\text{S}_h(n)+\text{S}_e(n))
+			\label{eq_TR}
 		\end{equation}
-		where $N^x$ is the number of lower neighbors. Another spreading strategy would be to spread lava independent of the slope, or ``slope-blind'' where all lower neighbors receive the same amount of lava.
+		where $\text{S}_h$ is the height or thickness of the lava in a cell, $\text{S}_e$ is the underlying elevation of the cell, and $n$ is a neighbor in X. The total lava to spread away from the central cell is the difference between thickness of lava (S$_h$) at $c$ the residual thickness (S$_{h0}$), unless the lava thickness is lower than the residual thickness, giving
+		\begin{equation}
+			\[ \text{Outbound}(c) =
+			\begin{cases}
+			\text{S}_h(c)-\text{S}_{h0}(c) & \quad \text{if } {S}_h(c)-\text{S}_{h0}(c) > 0\\
+			0 & \quad \text{if } {S}_h(c)-\text{S}_{h0}(c) \le 0\\
+			\end{cases}
+			\]
+			\label{eq_excess}
+		\end{equation}
 		
-		The size of the neighborhood, X, in CA algorithms is commonly 4 or 8 in cardinal or ordinal directions. Here both have been implemented, which enables the benchmarks to test whether 8 spreading directions increases the performance of these tests.
+		In LavaPL, the excess flow, ``Outbound'', is delivered to neighbors $n$ based on the proportion of total relief, TR, found at each neighbor location (the right path of Figure \ref{fig_BernieSanders}). For each $n\in$X,
+		\begin{equation}
+			\text{Inbound}(n) = \text{Outbound}(c)\left(\frac{(\text{S}_h(c)+\text{S}_e(c))-(\text{S}_h(n)+\text{S}_e(n))}{\text{TR}}\right)
+			\label{eq_propshare}
+		\end{equation}
+		This is the slope-proportional spreading equation. Another method would be ``slope-blind,'' and would spread lava to all lower neighbors equally following the equation
+		\begin{equation}
+			\text{Inbound}(n) = \left(\frac{\text{Outbound}(c)}{|\text{X}|}\right)
+			\label{eq_equalshare}
+		\end{equation}
+		where $|\text{X}|$ is the size of the neighborhood, or the number of elements in the neighborhood. This is illustrated as the left path of Figure \ref{fig_BernieSanders}.
+		
+		\paragraph{Neighborhood size} The size of the neighborhood, X, in CA algorithms is commonly 4 or 8 in cardinal or ordinal directions. Here both have been implemented, which enables the benchmarks to test whether 8 spreading directions increases the performance of these tests. This is further described in the next section (\ref{sec_X}).
 
-		Though the size of the neighborhood is set identically for each cell, fewer neighboring cells will actually receive lava from a central cell due to the transition function. For instance, only neighboring cells lower than the central cell receive lava, as described above. However, other neighbor elimination rules can be implemented. One has been designed by \citet{connor2012}, where the cell that initially gives lava to another cell is forever eliminated from the receiving cell's neighborhood. This is done by creating a ``parent-child'' relationship for each activated cell in \textbf{A}. Simply, child cells cannot give lava to their parent cells. This transition function rule is tested against no parentage rules in competing MOLASSES algorithms.
+		\paragraph{Spreading inhibited by special relationships} Though the size of the neighborhood is set globally for all cells, neighbors are not guaranteed to receive lava from central cells. In all algorithms, for example, cells in the neighborhood that are higher than the central cell, including lava thicknesses, are excluded from the neighborhood set.
 		
-	\subsection{Cell Neighborhood, X}
+		\begin{figure}[!h]
+			\centering
+			\includegraphics[width=0.5\linewidth]{figures/parent-child-example}
+			\caption{Another 2-D example of different transition functions. In the first timestep (top), Cell -1 initially inundates Cell 0, creating the Parent-Child relationship shown in the next illustrated timestep (middle). If Parents cannot receive lava from Child cells, all residual lava in Cell 0 will flow to Cell 1, following the path to the right. If these relationships are ignored, as shown in the left path, Cell 0 will spread lava in both directions.}
+			\label{fig_ParentTrap}
+		\end{figure}
+		
+		Other neighbor elimination rules can also be implemented. One has been designed by \citet{connor2012}, where the cell that initially gives lava to another cell is forever eliminated from the receiving cell's neighborhood. This is done by creating a ``parent-child'' relationship for each activated cell in the flow. Simply put, child cells cannot give lava to their parent cells (right path in Figure \ref{fig_ParentTrap}). This transition function rule is tested against no parentage rules in competing MOLASSES algorithms (left path in Figure \ref{fig_ParentTrap}).
+		
+	\subsection{Cell Neighborhood, X}\label{sec_X}
+	
+	\begin{figure}[!h]
+		\centering
+		\includegraphics[width=0.5\linewidth]{figures/neighborhoods}
+		\caption{Cellular Automata neighborhoods. To the left, in a 4-connected neighborhood, a central cell may influence or be influenced by cells in cardinal directions. To the right, in an 8-connected neighborhood, the zone of influence is expanded to include ordinal directions. Numbers in each cell are relative weights (determined by distance from the central cell), so diagonal neighbors are weighted less than orthogonal cells.}
+		\label{fig_MrRogers}
+	\end{figure}
+	
 		%NEIGHBOR_ID
-		The final set in the CA is the cell neighborhood X and is defined by the \textbf{NEIGHBOR\_ID} module. This neighborhood is usually either 4-connected (von Neumann neighborhood) or 8-connected (Moore neighborhood). Four-connected neighborhoods are defined as the row, column coordinates \{(0,1), (0,-1), (1,0), (-1,0)\}, where (0,0) is the location of a cell under evaluation, while the set elements might correspond to North, South, East, and West. Eight-connected neighbors include the ordinal directions, Northeast, Southeast, Northwest, and Southwest: \{(0,1), (0,-1), (1,0), (-1,0), (1,1), (-1,-1), (1,-1), (-1,-1)\}.
+		The final set in the CA is the cell neighborhood X and is defined by the \textbf{NEIGHBOR\_ID} module. This neighborhood is usually either 4-connected (von Neumann neighborhood) or 8-connected (Moore neighborhood) as illustrated in Figure \ref{fig_MrRogers}. Four-connected neighborhoods are defined as the row, column coordinates \{(0,1), (0,-1), (1,0), (-1,0)\}, where (0,0) is the location of a cell under evaluation, while the set elements might correspond to North, South, East, and West. Eight-connected neighbors include the ordinal directions, Northeast, Southeast, Northwest, and Southwest: \{(0,1), (0,-1), (1,0), (-1,0), (1,1), (-1,-1), (1,-1), (-1,-1)\}.
 		
-		NEIGHBOR\_ID is implemented within the DISTRIBUTE module to evaluate cells within X, and determine whether they are lower in elevation (including their lava) than the central cell. If one is lower, NEIGHBOR\_ID returns their relief, or the difference in elevation between the cell and the central cell, to the DISTRIBUTE module.
+		NEIGHBOR\_ID is implemented within the DISTRIBUTE module to evaluate cells within X, and determine whether they are lower in elevation (including their lava) than the central cell. If one is lower, NEIGHBOR\_ID returns their relief, or the difference in elevation between the cell and the central cell, to the DISTRIBUTE module. Depending on whether parent-child relationships are recorded or ignored in the transition function, NEIGHBOR\_ID can follow one of two algorithms below.
+		\begin{center}
+		\begin{tabular}{l}
+			\toprule
+			\textbf{4-connected NEIGHBOR\_ID}\\
+			\textbf{module}\\
+			\midrule
+			X = \{(0,1), (0,-1), (1,0), (-1,0)\}\\\\
+			X' = \{\}\\
+			$c$ = (0,0)\qquad (central cell location)\\
+			\textbf{For} $n\in$ X\\
+			~~\textbf{If}~$(\text{S}_h(c)+\text{S}_e(c))-(\text{S}_h(n)+\text{S}_e(n)) > 0$\\
+			~~~~\textbf{Append}~$n$ to X'\\\\
+			\textbf{Return}~X'\\
+			\bottomrule
+		\end{tabular}
+		\begin{tabular}{l}
+			\toprule
+			\textbf{8-connected NEIGHBOR\_ID}\\
+			\textbf{with Parent-Child Relationships}\\
+			\midrule
+			X = \{(0,1), (0,-1), (1,0), (-1,0), \\
+			\qquad~(1,1), (-1,-1), (1,-1), (-1,-1)\}\\
+			X' = \{\}\\
+			$c$ = (0,0)\qquad (central cell location)\\
+			\textbf{For} $n\in$ X\\
+			~~\textbf{If}~$(\text{S}_h(c)+\text{S}_e(c))-(\text{S}_h(n)+\text{S}_e(n)) > 0$\\
+			~~~~\textbf{If} $n$ is \textbf{not} Parent of $c$\\
+			~~~~~~\textbf{Append}~$n$ to X'\\
+			\textbf{Return}~X'\\
+			\bottomrule
+		\end{tabular}
+		\end{center}
+
 
 			
 			
@@ -263,9 +350,9 @@ The set of cellular automata is defined as
 		
 		\begin{figure}[!h]
 		\centering
-		\includegraphics[width=0.7\linewidth]{figures/pancake}
-		\caption{\textit{Two flat surface tests for slope proportional spreading algorithms with parent rules. On the left the flow is 4-connected (4/P/S), while on the right the flow is 8-connected (8/P/S).}}
-		\label{fig:pancake}
+		\includegraphics[width=\linewidth]{figures/pancake}
+		\caption{Fitness scores of different shapes. From left to right: A circle has a perfect fit score of 1.00; an octagon has 0.90 times the area of a circumscribing circle; a square has a score of 0.64; Two flat surface tests for slope proportional spreading algorithms with parent rules. The flow second to the right is 4-connected (4/P/S) and has a score of 0.55, while the rightmost flow is 8-connected (8/P/S) with a score of 0.95. The 4/P/S flow fails the test as it scores worse than a square, while the 8/P/S flow passes the test as it scores better than an octagon.}
+		\label{fig_pancake}
 	\end{figure}
 	
 		\subsubsection{Benchmark Parameters} The DEM used in this benchmark is a horizontal plane (all grid locations have the same elevation) with a spatial resolution of 1~m. A single vent is located at the DEM center with a total volume of 1000~m$^3$, and a pulse volume of 1~m$^3$. When the simulation is finished, model output is used to find the inundated cell farthest from the vent ($d_{max}$). The total inundated area is divided by the area of a circle with radius $d_{max}$ to provide the Fit score.
@@ -373,15 +460,15 @@ The set of cellular automata is defined as
 
 		Three related statistical measures of model fit to a phenomenon are model sensitivity, specificity, and the Jaccard similarity coefficient. \textit{Model sensitivity} is defined as the percent of the total population within $A$ that the test $B$ correctly characterizes or models, or
 		\begin{equation}
-		\mathrm{Sensitivity} = \frac{|A\cap B|}{|A|}\label{eq_sensitivity}
+		\text{Sensitivity} = \frac{|A\cap B|}{|A|}\label{eq_sensitivity}
 		\end{equation}
 		\textit{Model specificity} on the other hand is defined as the percent of the total population where $A$ does not occur that the lack of event $B$ correctly characterizes, or 
 		\begin{equation}
-		\mathrm{Specificity} = \frac{|\neg A\cap \neg B|}{|\neg A|}
+		\text{Specificity} = \frac{|\neg A\cap \neg B|}{|\neg A|}
 		\end{equation}
 		The \textit{Jaccard similarity coefficient}, or Jaccard Index, is defined as the ratio of the intersecting population of $A$ and $B$ to the union of the two populations, or
 		\begin{equation}
-		\mathrm{Jaccard~Index} = \frac{|A\cap B|}{|A\cup B|}
+		\text{Jaccard~Index} = \frac{|A\cap B|}{|A\cup B|}
 		\end{equation}
 
 		Consider that $A$ is a natural phenomenon occuring within a population $N$ and $B$ is a test to predict $A$ for elements within the population $N$. 
@@ -404,7 +491,7 @@ The set of cellular automata is defined as
 
 		The posterior probability of $A$ given the positive outcome of $B$, or $P(A|B)$ can then be calculated by substituting terms in Equation \ref{eq_bayes} with Equations \ref{eq_sensitivity}, \ref{eq_PA}, and \ref{eq_PB}:
 		\begin{align}
-		P(A|B)&=\frac{\frac{|A\cap B|}{|A|}\frac{|A|}{|N|}}{\frac{|B|}{|N|}}~\mathrm{,~or~simplified,}\label{eq_unsimplepost}\\
+		P(A|B)&=\frac{\frac{|A\cap B|}{|A|}\frac{|A|}{|N|}}{\frac{|B|}{|N|}}~\text{,~or~simplified,}\label{eq_unsimplepost}\\
 		&=\frac{|A\cap B|}{|B|}.\label{eq_simplepost}
 		\end{align}
 		$P(A|B)$ can therefore be thought of as the percentage of true positives within the subpopulation characterized by $B$. This posterior probability is not dependent on the size of the population $N$, nor does it quantify false negatives (where $A$ occurs even though $B$ does not predict $A$) in any way.
@@ -452,7 +539,11 @@ The set of cellular automata is defined as
 		\label{fig:pulse_map}
 		\end{figure}
 
-
+		\paragraph{Potential Hazard Area} The hazard area for the 2012-3 Tolbachik Lava Flows are simply assumed to be any location below the vent elevation plus modal flow thickness (7.8~m), within a given radius. The hazard radius is calculated from the equation given by \citet{kilburn2000lava} to predict the theoretical maximum distance, $R_{max}$ of a lava flow
+		\begin{equation}
+		R_{max}=\sqrt{\frac{3\epsilon SQ}{\rho g\kappa}}
+		\end{equation}
+		where $\epsilon$ is an empirical value related to the amount of extension of lava crust allowed before it fails (10$^{-3}$), $S$ is the tensile strength of this crust (10$^7$~Pa), $\rho$ is the lava crust density (2200~kg~m$^{-3}$), $g$ is gravitational acceleration, $\kappa$ is the bulk thermal diffusivity ($4\times 10^{-7}$~m$^{2}$~s$^{-1}$) and $Q$ is the mean volumetric flow rate from the vent. From this, the hazard radius for Tolbachik is calculated to be 39 km given a magma flux of 440~m$^3$~s from the vent as was estimated early in the eruption \citep{belousov2015overview}. The total area within this radius that is also below the vent-plus-modal-flow-thickness elevation is 1,415~km$^2$. Note that the mapped flow area of 26~km$^2$ only covers 1.9\% of this defined hazard area.
 
 		\subsubsection{$P(Sim|Lava)$ (model sensitivity): Lava destroyed my home, but did the simulation predict it?}
 
@@ -508,12 +599,6 @@ The set of cellular automata is defined as
 		P(\neg Lava|\neg Sim)=\frac{P(\neg Sim|\neg Lava)P(\neg Lava)}{P(\neg Sim)}
 		\end{equation}
 		A perfect negative posterior would indicate that, if a model does not simulate a hit for a location, lava will certainly not inundate that location. While the posterior $P(Lava|Sim)$ is essentially population size blind, and does not rely on the number of true negatives (Equations \ref{eq_unsimplepost} and \ref{eq_simplepost}), this posterior does rely on true negatives. Thus, the size of the population, here referred to as the Potential Hazard Area, must be estimated \textit{a priori}.
-
-		\paragraph{Potential Hazard Area} The hazard area for the 2012-3 Tolbachik Lava Flows are simply assumed to be any location below the vent elevation plus modal flow thickness (7.8~m), within a given radius. The hazard radius is calculated from the equation given by \citet{kilburn2000lava} to predict the theoretical maximum distance, $R_{max}$ of a lava flow
-		\begin{equation}
-		R_{max}=\sqrt{\frac{3\epsilon SQ}{\rho g\kappa}}
-		\end{equation}
-		where $\epsilon$ is an empirical value related to the amount of extension of lava crust allowed before it fails (10$^{-3}$), $S$ is the tensile strength of this crust (10$^7$~Pa), $\rho$ is the lava crust density (2200~kg~m$^{-3}$), $g$ is gravitational acceleration, $\kappa$ is the bulk thermal diffusivity ($4\times 10^{-7}$~m$^{2}$~s$^{-1}$) and $Q$ is the mean volumetric flow rate from the vent. From this, the hazard radius for Tolbachik is calculated to be 39 km given a magma flux of 440~m$^3$~s from the vent as was estimated early in the eruption \citep{belousov2015overview}. The total area within this radius that is also below the vent-plus-modal-flow-thickness elevation is 1,415~km$^2$. Note that the mapped flow area of 26~km$^2$ only covers 1.9\% of this defined hazard area.
 
 		\paragraph{Results}
 
@@ -585,40 +670,13 @@ The set of cellular automata is defined as
 \subsection{Model fit at different simulated inundation probabilities}
 By creating a cumulative map of lava flow simulations in the Monte Carlo (Figure \ref{fig:MC_map}), $P(Sim)$ may be estimated for every location as opposed to for the entire hazard area.
 
-\begin{figure}[h!]
-	\centering
-	\begin{gnuplot}[terminal=latex, terminaloptions=rotate]
-		unset key
-		set size 0.7,0.7
-		set format xy "$%g$"
-		set xlabel "Minimum $P(Sim)$" rotate by 90
-		set ylabel "$P(Lava|Sim)$"
-		set ytics 0.1
-		set ytics nomirror
-		set y2tics 0.005
-		set y2label "$P($not $Lava|$not $Sim)$"
-		plot "results_cum.dat" using 1:6 with linespoints lt 4 pt 7 axes x1y1, "results_cum.dat" using 1:7 with linespoints lt 4 pt 6 axes x1y2, 
-	\end{gnuplot}
-	\caption{Bayesian Posteriors calculated for subsets of the cumulative distribution of 1,000 simulated flows in a Monte Carlo model. Black circles are posterior, $P(Lava|Sim)$ values; hollow circles are negative posterior, $P(\neg Lava|\neg Sim)$ values. Subsets are defined by all locations which have been hit by a minimum percentage of simulated flows. For instance, the far right dots are the posteriors calculated for locations inundated by every simulated flow.}
-	\label{fig:MC_cum}
-\end{figure}
 
-\begin{figure}[h!]
-	\centering
-	\begin{gnuplot}[terminal=latex, terminaloptions=rotate]
-		unset key
-		set size 0.65,1
-		set format xy "$%g$"
-		set xlabel "$P(Sim)$" rotate by 90
-		set ylabel "$P(Lava|Sim)$"
-		set ytics 0.2
-		set xtics 0.2
-		set yrange [0:1]
-		plot "results_parsed.dat" using 1:6 with points pt 7,  "results_parsed.dat" using 1:1 with lines lt 1
-	\end{gnuplot}
-	\caption{$P(Lava)$ calculated for locations given locations' $P(Sim)$, estimated using 1,000 simulated flows. Areas hit by 100\% of simulations are 88\% likely to be actually inundated. Areas hit by 1-5\% of simulations are about 5\% likely to be actually inundated. $P(Sim)$ is correlated with $P(Lava)$, but $P(Lava|Sim)$ rolls off at about $P(Sim)=65$\%.}
-	\label{fig:MC_split}
-\end{figure}
+\begin{figure}[!h]
+		\centering
+		\includegraphics[width=0.7\linewidth]{figures/LR_bayes}
+		\caption{Whether you should believe the MC or not}
+		\label{fig_bayesfactor}
+	\end{figure}
 
 I have selected different subsets of the cumulative distribution of lava flows to evaluate using both posterior statistics, based on how many simulations hit given locations. Subsets are defined as all locations where at least a given percentage of simulated flows hit (e.g. the set of locations hit by more than 60\% of simulations, the set of locations hit by all simulations). The model fit between these subsets and the Tolbachik Flows are charted in Figure \ref{fig:MC_cum}. Points in this figure represent the probability of lava flow inundation at locations within each of these subsets. For example, 88\% of locations hit by every simulation are mapped as inundated; 75\% of locations hit by at least half of all simulations were inundated by lava; and 44\% of locations hit by at least one simulation were inundated by lava. The negative posterior is also charted in the same way: locations within the hazard area that were never hit by simulations were 99.9\% likely to remain uninundated; locations hit by fewer than half of all simulations were 99.6\% likely to not be inundated by lava; while only 98.7\% of areas remained uninundated when only locations hit by 100\% of simulations were removed.
 
@@ -632,8 +690,8 @@ By using this Monte Carlo method to incorporate uncertainty for an advancing lav
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\section{Discussion and Conclusion}\label{sec:discussion}
-	\subsection{Benchmark Validation}
+\section{Discussion}\label{sec:discussion}
+	\subsection{Validation levels 1 and 2}
 	A valid model can be determined by elimination. Spreading algorithms that are not slope-proportional spreading methods can be eliminated in the Level 1 test. Of the four remaining algorithms, only 8-connected transition functions succeed in Level 2. Luckily, both of these 8-connected, slope-proportional spreading funtions also perform best in replicating the Tolbachik flows over SRTM. However, they do not pass the 50\% fit test over TanDEM-X.
 	
 	One reason why most flows do worse over the TanDEM-X DEM could be due to the Pulse Volume used. While this pulse volume is convenient, as it is defined by parameters known \textit{a priori}, it might be essential to test a range of pulse parameters to refine this parameter and find the best possible fit of flows over TanDEM-X data. This is the sixth and final step of the validation guide given by \citet{bayarri2007framework}.
@@ -642,10 +700,10 @@ By using this Monte Carlo method to incorporate uncertainty for an advancing lav
 	
 	The strength of the MOLASSES code is that new algorithms, such as those used in the SCIARA model, can be implemented relatively quickly and run through the Benchmarking tests, which are written in Python. Combinations of implementation strategies can also be created on the fly by adjusting the makefile of the MOLASSES code instead of the code itself.
 
-	\subsection{Bayesian Applications}
+	\subsection{Validation level 3: Bayesian applications for real lava flows}
 		Validation of lava flow models is important as a method of increasing the value of models to forecast lava flow processes, thereby decreasing preventable loss. Preventable loss can either be loss of property due to lava or expenditure of resources on a lava flow that never comes. Because loss of property is necessarily more valuable than a loss of resources to protect that property (since, if the resources to protect the property were more valuable, it would not make sense to use those resources), the posterior probability $P(\neg Lava|\neg Sim)$ is more important that the posterior probability $P(Lava|Sim)$. However, because $P(\neg Lava|\neg Sim)$ is dependent on the population size (i.e. the potential hazard area), it is harder to quantify.
 
-		\paragraph{Using Bayesian statistics to compare models}
+		\subsubsection{Using Bayesian statistics to compare models}
 
 		In the pulse volume exercise, both the posterior and the negative posterior metrics were calculated for a number of simulations with differing pulse volumes. One pulse volume, 14040~m$^3$ per loop, performed best using the posterior statistic (Figure \ref{fig_lavaGsim}) and another, 4387~m$^3$ per loop, performed best using the negative posterior (Figure \ref{fig_neglavaGsim}). An optimal pulse volume can be identified if these metrics are given weight and compared. Because it is likely more important to have fewer false negatives (where destruction is unexpected) than false positives (where evacuation occurs but is not eventually needed), one might weight the negative posterior more importantly than the other posterior.
 
@@ -694,23 +752,6 @@ By using this Monte Carlo method to incorporate uncertainty for an advancing lav
 		\label{fig:jaccard_combined}
 		\end{figure}
 
-		\subsubsection{Falsely improving value metrics}
-
-			It is possible to game the value metrics (i.e. model sensitivity and both posteriors), making a model appear better than it actually is at replicating the true flow, though steps can be taken to avoid this. Model sensitivity can be increased by increasing true positives regardless of false positives. The posterior $P(Lava|Sim)$ can be increased by reducing false positives regardless of false negatives. The posterior $P(\neg Lava|\neg Sim)$ can be decreased by artificially reducing the potential hazard area or increased by artificially increasing this area. Examples are given below.
-
-			\paragraph{Gaming examples}
-			As a flow simulation increases in areal extent, its model sensitivity will not decrease as long as inundated locations remain inundated. Because of this, a large flow that covers the entire hazard area will have a perfect model sensitivity score as it correctly predicts destruction of lava everywhere where lava actually will result. This hypothetical model however has little to no value in actually forecasting lava flow inundation. Again, model sensitivity can be gamed by increasing true positives without concern for false positives. 
-
-			The posterior $P(Lava|Sim)$ can also be increased at the expense of actual model value. If the lava simulation extent covers a very small area centered, perhaps, at the lava source vents, the lava simulation will be less likely to have false positives. By reducing false positives, closer to 100\% of the simulation will actually be inundated by lava, increasing $P(Lava|Sim)$.
-
-			As the posterior $P(\neg Lava|\neg Sim)$ is dependent on the hazard area size, changing this size can make this value better or worse for a model. By increasing the potential hazard area, the ``safe''-simulated area agrees more with the true ``safe'' area, as the true negatives increase proportional to false negatives. However, the usefulness of the model with increased hazard area decreases simply because $P(Lava)$ also decreases dramatically. If a house, for instance, is 100~km away and uphill from an erupting volcanic vent, $P(\neg Lava|\neg Sim)$ at the house's address does not impact the belief of its owners as $P(\neg Lava)$ is already almost certain. Also, after a certain hazard area size, it appears that models can be accurately compared against each other independent of hazard area size.
-
-			Decreasing hazard area size however can make the  $P(\neg Lava|\neg Sim)$ of certain models worse artificially. As the hazard area approaches the area of the union between the lava flow and the simulation, true negatives are removed from the population. As $P(\neg Lava|\neg Sim)$ relies on only true negatives and false negatives, false negatives gain a higher proportion in this situation. If the hazard area is defined as the model and flow union area, the only model negative locations will be false negatives, and $P(\neg Lava|\neg Sim)$ will be 0. A model with 1 false negative in this situation will be worse than a model with 0 false negatives and hundreds of false positives.
-
-			\paragraph{Avoiding value metric gaming} Several steps can be taken to insure the above metrics are useful in analyzing the value of lava flow models. First and foremost, the flow simulation results should replicate reality in more ways than areal extent. Specifically, simulation volume and ultimate flow thickness should be similar to the actual lava flow or potential flow. Constraining and checking these two values post-simulation will constrain the simulated areal extent to be similar to the actual lava flow. This secures the validity of model sensitivity and the posterior $P(Lava|Sim)$. 
-
-			Second, the hazard area should be defined based on geographic and geologic information, which essentially creates a more simple lava flow model (possibly ``Type II'' from \citet{harris2013lava}) that encompasses all possible lava-affected areas (i.e. it has a near 100\% model sensitivity and a low specificity on purpose). In Section \ref{sec_negpost} for instance, I follow Kilburn's maximum runout distance equation and assign the hazard area to be anywhere below the vent within the maximum distance in any direction. This however gives very high $P(\neg Lava|\neg Sim)$ values, $P(Lava)$ is small for the entire area, so a better hazard area might be defined some other way. One possibility is by identifying catchments that the lava flow could possibly enter \citep{kauahikaua1995applications} and using the maximum distance method on those smaller areas.
-		
 		\subsubsection{Bayesian Conclusions}
 			Regardless of how a lava flow model is chosen, its value in forecasting lava flow hazards can be quantified using Bayesian statistics. Whether the model is bad or good, if it can be compared against a real life lava flow such as the 2012-3 Tolbachik flow, the two posteriors discussed in this paper can be calculated.
 
@@ -719,6 +760,11 @@ By using this Monte Carlo method to incorporate uncertainty for an advancing lav
 			By comparing the posterior values of multiple lava flow algorithms, the best lava flow algorithm can be identified. The more important posterior metric is the $P(\neg Lava|\neg Sim)$, as a low value would indicate more false negatives, resulting in more unpredicted destruction. $P(Lava|Sim)$ is important but less so as low values indicate more false positives, which results in greater levels of unpredicted non-destruction. While these are a trade off, selecting the best model to decrease economic loss can be achieved by taking a weighted average of the two statistics. The weight given to each would depend on potential social or economic loss from evacuation or destruction of property. In this report, the best Pulse Volume was identified to be 4387~m$^3$ over TanDEM-X data in this area.
 
 The two Bayesian posteriors are an improvement over model sensitivity and specificity as they provide a probability estimate that a simulated result is correct. By incorporating model uncertainty and performing a Monte Carlo for the MOLASSES lava flow algorithm, $P(Sim)$ can be estimated for each given location, improving the usefulness of Bayesian statistics in hazard analysis.
+	
+		\subsubsection{Decision Making with Bayes Factor}
+		Figure \ref{fig_bayesfactor}.
+	
+\section{Conclusions}
 	
 \section{Data Statement}
 This code is available for free use on GitHub at the USFVolcanology page located at \url{https://github.com/USFvolcanology}, while the benchmarking codes can be found at \url{https://github.com/jarichardson/MOLASSES_benchmarking}. The MOLASSES code and the Benchmarking algorithms are kept in seperate self-contained repositories.
