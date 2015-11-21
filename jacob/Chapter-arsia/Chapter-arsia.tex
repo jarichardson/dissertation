@@ -15,6 +15,8 @@
 \usepackage{titlesec}
 \titleformat*{\section}{\large\bfseries} %LARGE, Large, large
 \titleformat*{\subsection}{\normalsize\bfseries} %LARGE, Large, large
+\usepackage{booktabs}
+\newcommand{\tabitem}{~~\llap{\textbullet}~~}
 
 \title{Recurrence rate and magma effusion rate for the latest volcanism on Arsia Mons, Mars}
 \date{}
@@ -80,7 +82,7 @@ Mapped flows which abut each other have an inherent superposition relationship. 
 
 \subsection{Crater retention age modeling}
 
-Mapped units within the caldera (29 lava flow units and 1 ``undifferentiated lavas'' unit) have been assigned model ages based on the distribution of impact craters within their boundaries. \citet{robbins2011volcanic} previously found that, in the Arsia Mons caldera, crater frequency decreases for craters with diameters (D) of $\le$ 93~m, due to dust cover. \citet{robbins2011volcanic} also hypothesized that a background population of secondary craters in this area might contaminate the crater distribution at D $<$ 130 m. We have counted all craters in the caldera with D $\ge$ 100 m to avoid both of these systematic biases. For four small lava flows, $<$15~km$^2$ in areal extent, craters at D $\ge$ 30 m were counted, in order to provide an age estimate using a significant number of craters. The diameter and location of craters were mapped in ArcGIS~10.2 using a basemap of CTX images.
+Mapped units within the caldera (29 lava flow units and 1 ``undifferentiated lavas'' unit) have been assigned model ages based on the distribution of impact craters within their boundaries. \citet{robbins2011volcanic} previously found that, in the Arsia Mons caldera, crater frequency decreases for craters with diameters (D) of $\le$ 93~m, due to dust cover. \citet{robbins2011volcanic} also hypothesized that a background population of secondary craters in this area might contaminate the crater distribution at D $<$ 130 m. We have counted all craters in the caldera with D $\ge$ 100 m to avoid both of these systematic biases. Four lava flows have an exposed area smaller than 15 km$^2$ and an insignificant number of craters larger than 100~m were found on their surfaces (10 or fewer), so no crater age date was determined. The diameter and location of craters were mapped in ArcGIS~10.2 using a basemap of CTX images.
 
 Modeled ages based on a impact production function, which is a model of the relative production rate of different impact crater sizes, and a chronology function, which models the change of impact frequency with time. Ages were modeled in the Craterstats2 software \citep{michael2013planetary}. For each mapped unit, craters are separated by diameter into bins of minimum diameter $2d$~km where $d$ increments by 0.5 between each bin, following the Hartmann 2004 iteration Production Function \citep{hartmann2005martian}. Ages are modeled based on this Production Function and the \citet{michael2013planetary} Chronology Function. Uncertainty of crater frequency in each bin is defined as $\sqrt{N}/S$, where $N$ is the number of craters and $S$ is the area of the mapped unit. The cumulative crater-size frequency distribution (and associated uncertainty) is assembled from each $2d$ km bin and is used to model a best fit age (see Figure \ref{fig_craterct}. Ages and uncertainties for each mapped unit are reported in Ma.
 
@@ -124,6 +126,50 @@ The normalized product of the the Gaussian age function and the binary stratigra
 
 \section{Results}
 
+	\begin{center}
+		\begin{table}[h]
+		\caption{Lava Flow Data}
+		\begin{tabular}{l c c c c c c c}
+			\toprule
+				 & \multicolumn{2}{c}{Vent Location}  & Area & Volume & Modeled & Overlying & Underlying\\
+				Flow & Long. & Lat. & (km$^2$) & (km$^3$) & Age (Ma) & Flows & Flows\\
+			\midrule
+				v00 & -120.48$^{\circ}$ & -10.09$^{\circ}$ & 102.27 & 0.37 & 98.4$\pm$27 & --- & 02,01\\
+				v01 & -120.55 & -10.02 & 31.21 & 0.032 & 71.4$\pm$41 & 00,02 & ---\\
+				v02 & -120.45 & -9.98 & 538.86 & 2.3 & 117$\pm$12 & 00 & 01,03,04\\
+				v03 & -120.81 & -9.76 & 283.32 & 0.91 & 99.1$\pm$15 & 02,07 & 04\\
+				v04 & -120.45 & -9.78 & 242.29 & 1.6 & 126$\pm$18 & 02,03 & 05\\
+				v05 & -120.30 & -9.45 & 353.98 & 0.89 & 145$\pm$17 & 04,07,10 & 06\\
+				v06 & -120.33 & -9.41 & 69.40 & 0.31 & 122$\pm$49 & 05,10 & 11\\
+				v07 & -120.82 & -9.65 & 479.32 & 5.0 & 94.7$\pm$11 & 09 & 03,05\\
+				v08 & -120.23 & -9.30 & 4.00 & 0.0017 & --- & 11,10 & ---\\
+				v09 & -120.92 & -9.30 & 21.08 & 0.013 & 218$\pm$110 & --- & 07\\
+				v10 & -120.24 & -9.42 & 858.69 & 3.2 & 102$\pm$9.3 & --- & 05,06,08,11,13\\
+				v11 & -120.17 & -9.26 & 228.09 & 1.0 & 154$\pm$22 & 06,10,13 & 08\\
+				v12 & -120.24 & -9.03 & 528.14 & 1.6 & 134$\pm$12 & 13 & 14\\
+				v13 & -120.17 & -8.99 & 679.49 & 3.2 & 146$\pm$12 & 10,17 & 12,15,11\\
+				v14 & -120.44 & -8.87 & 96.78 & 0.14 & 122$\pm$32 & 12,15 & ---\\
+				v15 & -120.08 & -8.81 & 460.75 & 2.5 & 117$\pm$13 & 13,17 & 14,16,21\\
+				v16 & -119.92 & -8.65 & 18.11 & 0.0053 & 313$\pm$110 & 15,17 & 21\\
+				v17 & -119.90 & -8.63 & 300.03 & 0.64 & 148$\pm$18 & --- & 13,15,16,21,25,28\\
+				v18 & -120.46 & -8.55 & 64.29 & 0.16 & 186$\pm$53 & 20,21 & ---\\
+				v19 & -120.36 & -8.46 & 13.12 & 0.0047 & --- & 20,21 & 23\\
+				v20 & -120.40 & -8.46 & 70.51 & 0.14 & 186$\pm$53 & 21 & 18,19,23\\
+				v21 & -120.06 & -8.63 & 354.97 & 1.6 & 146$\pm$16 & 15,16,17 & 20,18,19,23,22,25\\
+				v22 & -119.88 & -8.44 & 53.20 & 0.31 & 73.2$\pm$36 & 21,25 & ---\\
+				v23 & -120.25 & -8.40 & 204.71 & 0.53 & 135$\pm$20 & 19,20,21 & 26,27\\
+				v24 & -119.92 & -8.32 & 11.70 & 0.037 & --- & 25 & ---\\
+				v25 & -119.79 & -8.37 & 281.19 & 2.0 & 104$\pm$16 & 17,21 & 22,24,28\\
+				v26 & -120.21 & -8.21 & 5.61 & 0.0026 & --- & 23 & ---\\
+				v27 & -120.55 & -8.17 & 158.16 & 1.75 & 112$\pm$25 & 23 & ---\\
+				v28 & -119.57 & -8.52 & 176.53 & 0.58 & 158$\pm$24 & 17,25 & ---\\
+			\bottomrule
+		\end{tabular}
+		\label{tab_database}
+		\end{table}
+	\end{center}
+
+
 \begin{figure}
 \centering
 \includegraphics[width=0.4\linewidth]{figures/volumeandstratigraphy}
@@ -131,7 +177,7 @@ The normalized product of the the Gaussian age function and the binary stratigra
 \label{fig_volumeandstrat}
 \end{figure}
 
-The 29 lava flows in our catalog are mapped to cover 6700 km$^2$, $\sim$70\%, of the caldera, representing the majority of surface lavas within the caldera walls (Figure \ref{fig_lavamap}). Individual lava flow volume estimates range from $1.6\cdot 10^{-3}$ to 5 km$^3$, with an average of 1.1 km$^3$ per flow (Figure \ref{fig_volumehistogram}). Buried flows are, on average, smaller in volume, but not all stratigraphically lower flows are small in volume (Figure \ref{fig_volumeandstrat}). The total volume using the individual volume estimations, again assumed to be a minimum, is 31 km$^3$. The total volume using the convex hull approach over the entire caldera is 400 km$^3$. This estimate is more than an order of magnitude larger than the minimum volume estimate and would mean each vent expelled roughly 13 km$^3$ of lava. 
+The 29 lava flows in our catalog are mapped to cover 6700 km$^2$, $\sim$70\%, of the caldera, representing the majority of surface lavas within the caldera walls (Figure \ref{fig_lavamap}). Individual lava flow volume estimates range from $1.6\cdot 10^{-3}$ to 5 km$^3$, with an average of 1.1 km$^3$ per flow (Figure \ref{fig_volumehistogram}). Buried flows are, on average, smaller in volume, but not all stratigraphically lower flows are small in volume (Figure \ref{fig_volumeandstrat}). The total volume using the individual volume estimations, again assumed to be a minimum, is 31 km$^3$. The total volume using the convex hull approach over the entire caldera is 400 km$^3$. This estimate is more than an order of magnitude larger than the minimum volume estimate and would mean each vent expelled roughly 13 km$^3$ of lava. Results for each lava flow are recorded in Table (\ref{tab_database}).
 
 Dividing the total minimum volume estimate by the mapped flow coverage area, and the total maximum volume by the entire caldera floor area (9500 km$^2$), average flow thickness is calculated to be 8.5 and 40~m, respectively. These averages are in agreement with other studies of lava flow thickness, including flows  in Elysium Mons with thicknesses of 7-35 m \citep{pasckert2012rheologies}, flows on Ascreaus Mons between 24-88 m \citep{hiesinger2007young}, 37 m and 50 m thick flows in the Elysium region and on Pavonis Mons \citep{glaze2003methodology,baloga2003rheology}, and average flow thicknesses on the Arsia Mons flanks of 10-30 m \citep{mouginis2008lava}.
 
@@ -144,7 +190,7 @@ Modeled ages of these flows with our crater counts lay between 70-400 Ma, with u
 
 \begin{figure}
 \centering
-\includegraphics[width=0.4\linewidth]{figures/craterstats/120-81W_09-76S_100m_cum.eps}
+\includegraphics[width=0.5\linewidth]{figures/craterstats/120-81W_09-76S_100m_cum.eps}
 \caption{An example cumulative crater frequency distribution. This flow (v03) had been previously estimated to be 97$\pm$49 Ma from crater counting performed on a HiRISE image \citep{robbins2011volcanic}. Our age of 99$\pm$15 Ma agrees with this previous finding.}
 \label{fig_craterct}
 \end{figure}
@@ -167,13 +213,13 @@ If recent Arsia volcanism transitioned from explosive to effusive at about 200 M
 
 Volcanism elsewhere in Tharsis has occurred recently in a more distributed fashion \citep{hauber2011very}, including a lava field filling the southeast ``moat'' of Olympus Mons \citep{chadwick2015late}. Indeed, \citet{chadwick2015late} identified lava flows at the base of Olympus emplaced between 64-210 Ma, roughly during the same period as the lava flows in this study. The emplacement direction of these lavas are systematically offset from the current downward direction, due to recent subsidence of Olympus Mons. The required magma to be injected in the past 200 Myr into Olympus Mons to cause this subsidence might be 10$^5$-10$^6$ km$^3$ \citep{chadwick2015late}, suggesting that the large volcanoes of the Tharsis Region are not yet extinct.
 
-
-
 %\begin{figure}
 %\centering
 %\includegraphics[width=\linewidth]{map_diff}
 %\label{fig:map_diff}
 %\end{figure}
+
+
 
 \bibliographystyle{plainnat}
 \bibliography{arsia}
