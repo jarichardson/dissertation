@@ -440,61 +440,148 @@ The set of cellular automata is defined as
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{Bayesian Applications to the Tolbachik Flow}\label{sec:Bayesian}
-	Bayesian statistics are a primary tool by which scientists can update their belief in a certain phenomenon given new information, such as model output. Simple examples of this are often medical in nature. For instance, if a woman's female relatives have had breast cancer in their lives, she has a certain probability (i.e.~$P$(Cancer)) of having breast cancer herself. If a reliable medical test is administered and gives a positive result for breast cancer, the patient will rationally increase her belief in potentially having breast cancer, above the probability, $P$(Cancer) she assumed prior to the test. This belief updating occurs as long as the test is reliable, even if the test is not perfect. Likewise, if the test gave a negative result for cancer, she would rationally decrease her belief in having breast cancer, below $P$(Cancer).
-
-	In hazard analysis, this tool can be similarly used to test the reliability of lava flow models. Toward this, I examine the different ways that Bayesian analysis can test the capability of related lava flow spreading algorithms in forecasting the areal extent of the 2012-3 Tolbachik lava flow in Kamchakta Russia. First, I will give an outline of this eruption in Section \ref{sec:tolb_back} and a basic background on Bayesian statistics in Section \ref{sec:bayes_back}. Then I will test results from the MOLASSES lava flow model with varying ``Pulse Volume'' parameters using Bayesian statistics in Section \ref{sec:lava_app}. I will further explore the applications of Bayesian statistics when dealing with model uncertainty in a Monte Carlo fashion in Section \ref{sec:lava_MC}. The following Discussion Section will look at a way to use multiple metrics to identify an optimal model, defined as a model that most reduces unexpected economic loss, and will describe best practices to avoid artificially improving model fit statistics.
-
-	\subsection{Bayes Theorem Background}\label{sec:bayes_back}
-		Bayes theorem holds that, given events $A$ and $B$ (where $A$ might be a phenomenon and $B$ might be a test result), the conditional probability of $A$ given $B$ can be described as
+\section{Bayesian Applications for Lava Flow Models}\label{sec:Bayesian}
+	The final step \citet{bayarri2007framework} give for validating computer models is ``feeding [observations and results] back to revise the model.''
+	
+	The use of computer models to forecast hazards is a fundamentally Bayesian strategy: there is an initial concern due to hazards and computer models help us inform, constrain, and update this concern. Using Bayesian statistics can therefore be an improvement in testing lava flow models, over the two commonly used fitness tests, model sensitivity and the Jaccard index, because of their more direct application to informing perceived risk. 
+	
+	Three tools will be used in this section: A posterior probability, a ``negative'' posterior probability, and a Bayes factor. Bayes theorem connects a phenomenon $A$ to observations $B$ through the function
+	\begin{equation}
+		\text{Pr}(A|B)=\frac{\text{Pr}(B|A)\text{Pr}(A)}{\text{Pr}(B)}\label{eq_bayes}
+	\end{equation}
+	where $\text{Pr}(A)$ is the general probability of $A$ occuring, $\text{Pr}(B)$ is the probability of $B$ being observed, and $\text{Pr}(B|A)$ is the conditional probability of $B$ given the occurence of $A$. $\text{Pr}(B|A)$ is also known as model sensitivity and, in the specific case of lava flow modeling, can be stated as ``the percentage of the lava flow that the model correctly forecasted.''
+	
+	The left side of Equation \ref{eq_bayes}, $\text{Pr}(A|B)$, is the Posterior probability of $A$ and can be stated as ``the probability that lava will inundate a location if the model forecasted inundation at that location.'' A second posterior, which I call the negative posterior, is $\text{Pr}(\neg A|\neg B)$ and is the obverse of $\text{Pr}(A|B)$. This negative posterior relates not being inundated by lava at a given location to a safe outcome forecasted by a simulation and can be calculated by modifying Equation \ref{eq_bayes} and substituting $A$ for $Lava$ (the lava flow) and $B$ for $Sim$ (the simulation), resulting in the formula
+	\begin{equation}
+		\text{Pr}(\neg Lava|\neg Sim)=\frac{\text{Pr}(\neg Sim|\neg Lava)\text{Pr}(\neg Lava)}{\text{Pr}(\neg Sim)}
+	\end{equation}
+	where the $\neg$ symbol indicates the event or observation not happening, and $\text{Pr}(\neg Sim|\neg Lava)$ is model specificity.
+	
+	The negative posterior is important in hazard forecasting as it is in some sense a probability of safety. The more common posterior $\text{Pr}(A|B)$ (or $\text{Pr}(Lava|Sim)$) does not contain information about areas that the simulation does not inundate; while it can support the hypothesis that lava will hit a location given a simulated hit, it cannot estimate one's relative risk if the simulation forecasts a safe outcome. The negative posterior $\text{Pr}(\neg Lava|\neg Sim)$ does just this, and informs a user whether to rely on a safe outcome from a simulation. If, for example, the posterior probability $\text{Pr}(Lava|Sim)$ is high while the negative posterior probability $\text{Pr}(\neg Lava|\neg Sim)$ is low for a given lava flow simulator, areas that are evacuated due to the simulation outcome will be evacuated for good reason, but many areas will likely be inundated that were not evacuated due to the simulation outcome. This is why it is important to estimate and ultimately try to improve both posterior metrics.
+	
+	Bayes factors provide a tool to test the relative likelihood of a hypothesis against another. \citet{aspinall2003evidence} introduced this tool to volcano hazard forecasting by testing whether the onset of particular seismic events before the 1993 Galeras catastrophe was a significant indicator of the eruption or not. A Bayes Factor (BF) relating two models is given by \citet{jeffreys1961theory} as
+	\begin{equation}
+		\text{BF} = \frac{\text{Pr}(\text{Data}|\text{Model~1})}{\text{Pr}(\text{Data}|\text{Model~2})}
+		\label{eq_BF}
+	\end{equation}
+	In the example of Galeras, the ``data'' are the seismic events, Model 1 is ``imminent explosion,'' and Model 2 is ``not imminent explosion'' \citep{aspinall2003evidence}. Below, I will apply this with the data being the probability of simulated inundation and the models ``lava inundation'' and ``not lava inundation.'' \citet{jeffreys1961theory} provided a log-scale interpretation to the value of BF in Equation \ref{eq_BF}, given in the table below.
+	
+	\begin{center}
+			\textbf{Bayes Factor Interpretations (modified from \citet{aspinall2003evidence})}\\
+			\begin{tabular}{l l}
+				\toprule
+				BF Value & Description\\
+				\midrule
+				$BF>10^2$ & Evidence for Model 1 is Decisive.\\
+				$10^{1.5}<BF<10^2$ & Evidence for Model 1 is Very Strong.\\
+				$10^{1}<BF<10^{1.5}$ & Evidence for Model 1 is Strong.\\
+				$10^{0.5}<BF<10^{1}$ & Evidence for Model 1 is Substantial.\\
+				$10^{0}<BF<10^{0.5}$ & Evidence for Model 1 is just worth a mention.\\\\
+				$10^{-0.5}<BF<10^{0}$ & Evidence for Model 2 is just worth a mention.\\
+				$10^{-1}<BF<10^{-0.5}$ & Evidence for Model 2 is Substantial.\\
+				$10^{-1.5}<BF<10^{-1}$ & Evidence for Model 2 is Strong.\\
+				$10^{-2}<BF<10^{-1.5}$ & Evidence for Model 2 is Very Strong.\\
+				$BF<10^{-2}$ & Evidence for Model 2 is Decisive.\\
+				\bottomrule
+			\end{tabular}
+		\end{center}
+	
+		In the same manner as the final validation level, the statistics discussed above will be calculated based on the areal extent of flows and simulations. The probability of the lava flow inundating an area $N$ can be given as
 		\begin{equation}
-		P(A|B)=\frac{P(B|A)P(A)}{P(B)}\label{eq_bayes}
+			\text{Pr}(A)=\frac{|Lava|}{|N|}\label{eq_PA}
 		\end{equation}
-		In this equation:
-		\begin{itemize}
-			\item $P(A)$ is the \textit{prior}, the general probability of the $A$ occuring.
-			\item $P(B)$ is the general probability of $B$ occuring. If $B$ is a test result, this might be referred to as model information.
-			\item $P(B|A)$ is the conditional probability of the occurence of $B$ given the occurence of $A$.
-			\item $P(A|B)$ is the \textit{posterior} probability of $A$ occurring given the occurence of $B$.
-		\end{itemize}
-
-		Three related statistical measures of model fit to a phenomenon are model sensitivity, specificity, and the Jaccard similarity coefficient. \textit{Model sensitivity} is defined as the percent of the total population within $A$ that the test $B$ correctly characterizes or models, or
+		where $|Lava|$ is the areal size of the flow (i.e. literally the number of DEM grid cells the lava inundates) and $|N|$ is the size of the area of interest, or the potential hazard area. The probability of the simulation is similarly found to be
 		\begin{equation}
-		\text{Sensitivity} = \frac{|A\cap B|}{|A|}\label{eq_sensitivity}
+			\text{Pr}(Sim)=\frac{|Sim|}{|N|}.\label{eq_PB}
 		\end{equation}
-		\textit{Model specificity} on the other hand is defined as the percent of the total population where $A$ does not occur that the lack of event $B$ correctly characterizes, or 
-		\begin{equation}
-		\text{Specificity} = \frac{|\neg A\cap \neg B|}{|\neg A|}
-		\end{equation}
-		The \textit{Jaccard similarity coefficient}, or Jaccard Index, is defined as the ratio of the intersecting population of $A$ and $B$ to the union of the two populations, or
-		\begin{equation}
-		\text{Jaccard~Index} = \frac{|A\cap B|}{|A\cup B|}
-		\end{equation}
-
-		Consider that $A$ is a natural phenomenon occuring within a population $N$ and $B$ is a test to predict $A$ for elements within the population $N$. 
-		\begin{itemize}
-		\item \textit{True positives} exist where $A$ occurs in elements and $B$ correctly predicts $A$. This can also be phrased as the intersection of $A$ and $B$, or $A\cap B$.
-		\item \textit{True negatives} exist where $A$ does not occur and $B$ correctly predicts the absence of $A$. This can be expressed as $\neg A\cap\neg B$.
-		\item \textit{False positives} exist where $A$ does not occur but $B$ incorrectly predicts $A$. This is $\neg A\cap B$.
-		\item \textit{False negatives} exist where $A$ does occur but $B$ incorrectly predicts the absence of $A$. This is $A\cap\neg B$.
-		\end{itemize}
-
-		A Bayesian treatment can use the results from $B$ to update belief of $A$, using Equation \ref{eq_bayes}. The prior probability of $A$, $P(A)$, within population $N$ is given as
-		\begin{equation}
-		P(A)=\frac{|A|}{|N|}.\label{eq_PA}
-		\end{equation}
-		The model information $P(B)$ is the percent of the population where $B$ predicts $A$ (whether correctly or not), or 
-		\begin{equation}
-		P(B)=\frac{|B|}{|N|}.\label{eq_PB}
-		\end{equation}
-		The conditional probability $P(B|A)$ is the probability of $B$ predicting $A$, given $A$. This is the percentage of true positives within the population of $A$ and is equivalent to model sensitivity.
-
-		The posterior probability of $A$ given the positive outcome of $B$, or $P(A|B)$ can then be calculated by substituting terms in Equation \ref{eq_bayes} with Equations \ref{eq_sensitivity}, \ref{eq_PA}, and \ref{eq_PB}:
+		By substituting these definitions and model sensitivity (Equation \ref{eq_sensitivity}, $|Lava \cap Sim|/|Lava|$) in Equation \ref{eq_bayes}, the posterior probability of lava flow inundation, given a simulation that forecasts inundation can be recast as
 		\begin{align}
-		P(A|B)&=\frac{\frac{|A\cap B|}{|A|}\frac{|A|}{|N|}}{\frac{|B|}{|N|}}~\text{,~or~simplified,}\label{eq_unsimplepost}\\
-		&=\frac{|A\cap B|}{|B|}.\label{eq_simplepost}
+		\text{Pr}(Lava|Sim)&=\frac{\frac{|Lava\cap Sim|}{|Lava|}\frac{|Lava|}{|N|}}{\frac{|Sim|}{|N|}}~\text{,~or~simplified,}\label{eq_unsimplepost}\\
+		&=\frac{|Lava\cap Sim|}{|Sim|}.\label{eq_simplepost}
 		\end{align}
-		$P(A|B)$ can therefore be thought of as the percentage of true positives within the subpopulation characterized by $B$. This posterior probability is not dependent on the size of the population $N$, nor does it quantify false negatives (where $A$ occurs even though $B$ does not predict $A$) in any way.
+		where $|Lava\cap Sim|$ is the size of the intersection of the lava flow and simulated flow (again, the number of DEM grid cells). Note that this posterior probability is independent of the potential hazard area.
+		
+		The negative posterior can be stated in terms of the sizes of the lava flow and simulated flow as well.
+		\begin{equation}
+			\text{Pr}(\neg Lava|\neg Sim)=\frac{|\neg Lava\cap \neg Sim|}{|\neg Sim|}\label{eq_simplenegpost}
+		\end{equation}
+		Calculating the size or number of grid cells of $\neg Lava$ or $\neg Sim$ is fundamentally dependent on the potential hazard area, as $|\neg Lava|$ is defined as
+		\begin{equation}
+			|\neg Lava| = |N| - |Lava|.
+		\end{equation}
+		Because of this, we must define the size of the potential hazard area $N$ ($|N|$).	
+	
+	\paragraph{Potential Hazard Area} There are multiple strategies to estimating an \textit{a priori} hazard area. \citet{kauahikaua1995applications} for instance identified catchments or ``lava sheds'' in which a volcanic vent was erupting, and identified these lava sheds as the hazard area. \citet{kilburn2000lava} provided a theoretical maximum distance that a lava flow can travel given the mass flux of magma erupting at the vent location. A combination of these two would provide an objective hazard area defined as the area within the ``Kilburn distance'' that is topographically below the volcanic vent. The theoretical maximum distance, or hazard radius, given by \citet{kilburn2000lava} is
+		\begin{equation}
+		R_{max}=\sqrt{\frac{3\epsilon SQ}{\rho g\kappa}}
+		\end{equation}
+	where $\epsilon$ is an empirical value related to the amount of extension of lava crust allowed before it fails (10$^{-3}$), $S$ is the tensile strength of this crust (10$^7$~Pa), $\rho$ is the lava crust density (2200~kg~m$^{-3}$), $g$ is gravitational acceleration, $\kappa$ is the bulk thermal diffusivity ($4\times 10^{-7}$~m$^{2}$~s$^{-1}$) and $Q$ is the mean volumetric flow rate from the vent. From this, the hazard radius for the Tolbachik 2012-3 flow is calculated to be 39~km, given a magma flux of 440~m$^3$~s from the vent as was estimated early in the eruption \citep{belousov2015overview}. The total area within this radius that is also below the vent-plus-modal-flow-thickness elevation is 1,415~km$^2$. Note that the mapped flow area of 26~km$^2$ only covers 1.9\% of this defined hazard area (i.e. $\text{Pr}(Lava) = 0.019$).
+	
+	A second strategy would be to run many lava flow models from the known vent location(s) while varying input parameters. This would give a range of flows and the true flow might be completely contained within the region given by this range of simulations. Below, a Monte Carlo (MC) method will be used to simulate a large range of flows. If we define a potential hazard area as any location inundated by at least one simulated flow in this MC approach, the hazard area would be \ref{kmmm}~km$^2$. As the mapped flow area from the Tolbachik eruption is \ref{perrr}\% of this area, it would be more beneficial to use this as the \textit{a priori} hazard area because it more reasonably reflects the potential inundation area. Both the Kilburn-Kauahikaua method and this MC method are illustrated in Figure \ref{fig_hazardarea}.
+	
+	\paragraph{Review of Validation Level 3} Instead of using model sensitivity and the Jaccard index as benchmarks for the various lava flow models, now the two posteriors will be used. The potential hazard area is defined as the distribution of MC simulations (\ref{kmmm}~km$^2$).
+	
+	
+	For the rest of this section, the preferred model, 8/N/P (the 8-connected, no parent-child relationships, with slope-proportional spreading) algorithm will be used. By applying this model to the Tolbachik lava flows, Bayesian methods will be used to improve the ``Pulse Volume'' parameter and will later be used to constrain model uncertainty at Tolbachik.
+	
+	\subsection{Improving model performance on one model parameter}
+	
+	
+	\subsection{Incorporating Model Uncertainty with a Monte Carlo method}
+		Model uncertainty is a result of input parameter uncertainty, such as uncertainty in the underlying DEM. This can be distinguished from model error, which might be defined as the difference between the true lava flow and a simulation carried out with perfect input parameters, and is created by the inherent deviations between a computer model and real life processes. Because there is parameter uncertainty, it is essential to quantify the range of model solutions given the likely range of each parameter.
+		
+		In this example, elevation uncertainty will be examined. Elevation uncertainty is an element in the MOLASSES module \textbf{INITFLOW}, where each grid cell elevation can be defined randomly before the lava flow simulation begins. The user can add an elevation uncertainty, in meters, to the configuration file. If this value is provided, each grid cell will receive a new elevation value randomly selected from a normal distribution whose mean is the DEM elevation and the standard deviation is the uncertainty value.
+		
+		The Monte Carlo method runs MOLASSES 100,000 times over a 75-m SRTM DEM. Vertical uncertainty of this data is estimated by \citet{rodriguez2006global} for Eurasia to be 6.2~m at a 90\% confidence level and is shown to be randomly distributed. With this result, elevation uncertainty in the MOLASSES model is given a value of $1\sigma=3$~m. Other input parameters remain unchanged from the benchmark exercise above; MOLASSES flow parameters for the Monte Carlo model are listed below. The combined 100,000 simulations are mapped in Figure \ref{fig:MC_map} where flow color indicates the number of flows that impacted each location.
+		
+		\begin{center}
+			\textbf{Monte Carlo MOLASSES Flow Parameters}\\
+			\begin{tabular}{l l}
+				\toprule
+				Elevation Model & 75-m SRTM\\
+				Elevation Uncertainty, $1\sigma$ & 3~m\\
+				Residual Thickness & 7.8~m\\
+				Pulse Volumes & 44200 m$^3$\\
+				\midrule
+				Vent$_N$ Easting & 582800~m (UTM Zone 57)\\
+				Vent$_N$ Northing & 6182100~m\\
+				Vent$_N$ Total Volume & 4.63$\cdot10^7$~m$^3$\\
+				\midrule
+				Vent$_S$ Easting & 582475~m\\
+				Vent$_S$ Northing & 6180700~m\\
+				Vent$_S$ Total Volume & 1.737$\cdot10^8$~m$^3$\\
+				\bottomrule
+			\end{tabular}
+		\end{center}
+
+		%Map of the MC flows
+		\begin{figure}
+			\centering
+			\includegraphics[width=0.7\linewidth]{figures/MC_map}
+			\caption{Cumulative distribution of 1,000 simulated lava flows over SRTM topography with 3~m elevation uncertainty. The red outline is the mapped flow extent of the 2012-3 Tolbachik flow. The flow source vents are mapped as red triangles.}
+			\label{fig:MC_map}
+		\end{figure}
+				
+		\subsubsection{Bayesian distribution of MC results}
+				Again, the reliability of a model can be better understood by showing the distribution of model performance given model uncertainty, as opposed to treating model parameters, and thus model output, as completely certain. Figure \ref{fig:MC_dist} shows the distribution of the posterior and the negative posterior.  
+		
+		\paragraph{Discuss distribution compared to the} lines drawn for the original simulation (0 m elev uncert).
+
+
+		%Graph of the performances
+		\begin{figure}
+			\centering
+			\includegraphics[width=0.7\linewidth]{figures/bayes_graphs}
+			\caption{Distributions of fitness statistics between the 2012-3 Tolbachik Lava Flows and 1,000 simulated lava flows over SRTM topography with 3~m standard elevation uncertainty. Vertical lines are the fitness of a simulated lava flow run over SRTM data assuming 0~m elevation uncertainty. The better than average fit for this simulation might suggest that topography is locally known better than 3~m.}
+			\label{fig:MC_dist}
+		\end{figure}
+
+		\subsubsection{Estimating inundation risk from the simulated frequency of inundation}
+		
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%55
+%%%%%%%%%%%%%%%%OLD BAYES SECTION%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%55
+\section{Old Bayes Section}
 
 	\subsection{Improving Model Performance}\label{sec:lava_app}
 		A primary way that hazard forecasting models have been validated in the past has been asking the question ``What percentage of the hazard phenomenon did the model correctly forecast?'' This is essentially asking for the model sensitivity. A person at risk of loss due to the hazard might instead want to know ``If the model forecasts loss for me, what is the likelihood that loss will actually occur?'' This is the posterior probability, $P(A|B)$ discussed above.
@@ -528,8 +615,6 @@ The set of cellular automata is defined as
 		\end{center}
 		All variables are fixed except the ``Pulse Volume'' parameter, which is the amount of lava delivered to source cells in the Cellular Automata grid of MOLASSES.
 
-		The MOLASSES algorithm used is also fixed. The algorithm spreads lava proportional to the local slope on each side of the automaton in question, but does not have parent-child relationship laws. It is 8-connected, meaning each automaton with lava may spread lava in any or all of 8 directions in a grid around it. The chosen output of MOLASSES is an x,y,z ASCII list where x and y are easting and northing in UTM and z is the flow thickness.
-
 		Model output is compared to a list of x,y locations in the Tolbachik area that have been inundated or not. This location list is stored in a raster with the same projection and extent as the elevation model used in MOLASSES. ASCII locations output by MOLASSES are also listed in the same projection within the same extent as the elevation model. This enables direct comparison between the Model information (i.e. $Sim$) and the mapped lava flow (i.e. $Lava$). True Positives, False Positives, and False Negatives are reported as cell counts (number of grid locations where $Lava$ and $Sim$ agree or not). Three examples of these simulations are mapped in Figure \ref{fig:pulse_map}.
 
 		\begin{figure}
@@ -538,12 +623,6 @@ The set of cellular automata is defined as
 		\caption{MOLASSES Simulations of the 2012-3 Tolbachik Lava Flows. Vents are shown as blue triangles and the mapped flow is outlined in black. a) Pulse Volume = 1755 m$^3$, the simulation far exceeds the true runout distance; b) Pulse Volume = 4387 m$^3$, this simulation performs best under the negative posterior $P(\neg Lava|\neg Sim)$ test; c) Pulse Volume = 14040 m$^3$, this simulation performs best under the posterior $P(Lava|Sim)$ test, but does not have a runout length similar to the mapped flow.}
 		\label{fig:pulse_map}
 		\end{figure}
-
-		\paragraph{Potential Hazard Area} The hazard area for the 2012-3 Tolbachik Lava Flows are simply assumed to be any location below the vent elevation plus modal flow thickness (7.8~m), within a given radius. The hazard radius is calculated from the equation given by \citet{kilburn2000lava} to predict the theoretical maximum distance, $R_{max}$ of a lava flow
-		\begin{equation}
-		R_{max}=\sqrt{\frac{3\epsilon SQ}{\rho g\kappa}}
-		\end{equation}
-		where $\epsilon$ is an empirical value related to the amount of extension of lava crust allowed before it fails (10$^{-3}$), $S$ is the tensile strength of this crust (10$^7$~Pa), $\rho$ is the lava crust density (2200~kg~m$^{-3}$), $g$ is gravitational acceleration, $\kappa$ is the bulk thermal diffusivity ($4\times 10^{-7}$~m$^{2}$~s$^{-1}$) and $Q$ is the mean volumetric flow rate from the vent. From this, the hazard radius for Tolbachik is calculated to be 39 km given a magma flux of 440~m$^3$~s from the vent as was estimated early in the eruption \citep{belousov2015overview}. The total area within this radius that is also below the vent-plus-modal-flow-thickness elevation is 1,415~km$^2$. Note that the mapped flow area of 26~km$^2$ only covers 1.9\% of this defined hazard area.
 
 		\subsubsection{$P(Sim|Lava)$ (model sensitivity): Lava destroyed my home, but did the simulation predict it?}
 
@@ -624,50 +703,8 @@ The set of cellular automata is defined as
 		\paragraph{Hazard Response Implications} The higher $P(\neg Lava|\neg Sim)$ is for a lava spreading algorithm, simulated safety (i.e. the similation does not predict inundation) at a given location more certainly predicts real safety at that location. This is the obverse of the previously discussed posterior metric, which relates simulated damage to actual damage. Algorithms known to have high $P(\neg Lava|\neg Sim)$ values should influence fewer people to evacuate an area that is predicted by those algorithms to be safe. If $P(\neg Lava|\neg Sim)$ is low however, it is more likely that necessary evacuations would not occur, resulting in greater loss of infrastructure or even life.
 
 	\subsection{Incorporating Model Uncertainty with Monte Carlo}\label{sec:lava_MC}
-		In this section I will explore how model uncertainty might be incorporated in model validation. Model uncertainty is a result of input parameter uncertainty, such as elevation error, and may be estimated using the Monte Carlo method for the MOLASSES code. Elevation uncertainty is added to the MOLASSES code and each model of 1,000 unique model runs is analyzed using the above statistics. The distribution of these results will first be discussed. Then different levels of simulated inundation probability will be compared to the Tolbachik flow extent.
 
-		MOLASSES flow parameters for the Monte Carlo model are listed below. 
-		\begin{center}
-			\textbf{Monte Carlo MOLASSES Flow Parameters}\\
-			\begin{tabular}{l l}
-				\toprule
-				Elevation Model & 75-m SRTM\\
-				Elevation Uncertainty, $1\sigma$ & 3~m\\
-				Residual Thickness & 7.8~m\\
-				Pulse Volumes & 44200 m$^3$\\
-				\midrule
-				Vent$_N$ Easting & 582800~m (UTM Zone 57)\\
-				Vent$_N$ Northing & 6182100~m\\
-				Vent$_N$ Total Volume & 4.63$\cdot10^7$~m$^3$\\
-				\midrule
-				Vent$_S$ Easting & 582475~m\\
-				Vent$_S$ Northing & 6180700~m\\
-				Vent$_S$ Total Volume & 1.737$\cdot10^8$~m$^3$\\
-				\bottomrule
-			\end{tabular}
-		\end{center}
-		In this section SRTM data is used, with a spatial resolution of 75~m per pixel. Vertical uncertainty is estimated by \citet{rodriguez2006global} for Eurasia to be 6.2~m at a 90\% confidence level and is shown to be randomly distributed. Because of this, elevation uncertainty in the MOLASSES model is given a value of $1\sigma=3$~m. Each elevation value from the SRTM grid is initially assigned a value that deviates from the given elevation by a random amount with a gaussian standard deviation, $\sigma$, again set at 3~m. A lava flow is simulated over this surface. For the Monte Carlo process, this is repeated 1,000 times.
-
-		\subsection{Model fit distribution of 1,000 simulations}
-		The reliability of a model can be better understood by showing the distribution of model performance given model uncertainty, as opposed to treating model parameters and thus model output as completely certain. The metrics discussed above, specifically the posterior, the negative posterior, model sensitivity, and the Jaccard fit are calculated for each flow simulation based on the 2012-3 Tolbachik mapped flow. The distributions of each of these metrics is graphed in Figure \ref{fig:MC_dist}.
-
-\begin{figure}
-\centering
-\includegraphics[width=0.7\linewidth]{figures/MC_map}
-\caption{Cumulative distribution of 1,000 simulated lava flows over SRTM topography with 3~m elevation uncertainty. The red outline is the mapped flow extent of the 2012-3 Tolbachik flow. The flow source vents are mapped as red triangles.}
-\label{fig:MC_map}
-\end{figure}
-
-%Graph of the performances
-\begin{figure}
-\centering
-\includegraphics[width=0.7\linewidth]{figures/bayes_graphs}
-\caption{Distributions of fitness statistics between the 2012-3 Tolbachik Lava Flows and 1,000 simulated lava flows over SRTM topography with 3~m standard elevation uncertainty. Vertical lines are the fitness of a simulated lava flow run over SRTM data assuming 0~m elevation uncertainty. The better than average fit for this simulation might suggest that topography is locally known better than 3~m.}
-\label{fig:MC_dist}
-\end{figure}
-
-
-\subsection{Model fit at different simulated inundation probabilities}
+\subsubsection{Model fit at different simulated inundation probabilities}
 By creating a cumulative map of lava flow simulations in the Monte Carlo (Figure \ref{fig:MC_map}), $P(Sim)$ may be estimated for every location as opposed to for the entire hazard area.
 
 
