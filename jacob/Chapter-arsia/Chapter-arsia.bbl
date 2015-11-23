@@ -1,4 +1,4 @@
-\begin{thebibliography}{37}
+\begin{thebibliography}{38}
 \providecommand{\natexlab}[1]{#1}
 \providecommand{\url}[1]{\texttt{#1}}
 \expandafter\ifx\csname urlstyle\endcsname\relax
@@ -137,6 +137,14 @@ Seth~J Kadish, James~W Head, James~L Fastook, and David~R Marchant.
   of the tharsis montes fan-shaped deposits.
 \newblock \emph{Planetary and Space Science}, 91:\penalty0 52--59, 2014.
 \newblock \doi{10.1016/j.pss.2013.12.005}.
+
+\bibitem[Karlstrom et~al.(2009)Karlstrom, Dufek, and
+  Manga]{karlstrom2009organization}
+Leif Karlstrom, Josef Dufek, and Michael Manga.
+\newblock Organization of volcanic plumbing through magmatic lensing by magma
+  chambers and volcanic loads.
+\newblock \emph{Journal of Geophysical Research: Solid Earth (1978--2012)},
+  114\penalty0 (B10), 2009.
 
 \bibitem[Malin et~al.(2007)Malin, Bell, Cantor, Caplinger, Calvin, Clancy,
   Edgett, Edwards, Haberle, James, Lee, Ravine, Thomas, and

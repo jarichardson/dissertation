@@ -65,6 +65,12 @@ Through Mariner 9 and Viking Orbiter images of the Tharsis region, \citet{crumpl
 
 On the flank of Arsia Mons, \citet{mouginis2008lava} identified $>$1000 layered units in a graben, which were interpreted to be lava flows. Using MOLA data, they were able to estimate the height of the graben wall, enabling the estimation of layer thicknesses between 10-80 m, with most being $>$30 m. As no unique and laterally extensive layers were observed in the stack of $<$2 km wide layers, \citet{mouginis2008lava} concluded that no major glacial events were emplaced between the deposition of these layers, perhaps indicating relatively rapid emplacement of 885 m of lava. By instead assuming constant activity of Arsia Mons for either 2 or 3 billion years, \citet{mouginis2008lava} estimated that the stack could have been emplaced over 290 or 435 million years, respectively. 
 
+\subsection{Other recent volcanism in the Tharsis Region}
+
+Outside of Arsia, several volcanic events and trends in the Amazonian Period ($<$3~Ga) have been identified. On Olympus Mons, the latest flank lava flows appear to have transitioned from long tube-fed flows to shorter, channel-fed flows, suggesting that magma flux per flow emplacement event waned over the late Amazonian \citep{bleacher2007olympus}. \citet{bleacher2007olympus} concluded that this might be evidence of a larger waning of activity at Olympus and might also signal a transition from a deep mantle source of volcanism to shallower sources, based on long-term volcanic patterns observed at the Hawaiian volcanic chain. These observations might be consistent with the \citet{wilson2001evidence} model that most of the history of these volcanoes is spent dormant after hyper-active edifice building episodes wane and end.
+
+Recent volcanism elsewhere in Tharsis has occurred in a more distributed fashion \citep{hauber2011very}, including a lava field filling the southeast ``moat'' of Olympus Mons \citep{chadwick2015late}. \citet{chadwick2015late} identified lava flows at the base of Olympus emplaced between 64-210 Ma, similar in time to previous age estimates of the study area in this paper ($\sim$130~Ma). The emplacement direction of these lavas are systematically offset from the current downward direction, due to recent subsidence of Olympus Mons. This might provide evidence contrart to he findings of \citet{bleacher2007olympus}, as \citet{chadwick2015late} estimate that the magma required to be injected into Olympus Mons the past 200 Myr in order to cause this subsidence might be 10$^5$-10$^6$ km$^3$. This would suggest that Olympus is not yet extinct.
+
 \section{Methods}
 
 \subsection{Unit and stratigraphic mapping}
@@ -88,7 +94,7 @@ Modeled ages based on a impact production function, which is a model of the rela
 
 For the four small flows where craters at D$>$30~m have been counted, the crater frequency roll-off is observed to occur between 35 and 60~m. To model the ages of these flows, only craters larger than this roll-off diameter are included. If a background population of secondary craters $\ge$130~m is present, the  cumulative crater-size frequency distribution should have an increased slope below this diameter. This slope increase was not visually seen in individual mapped units, though if it is present then the four small flows will have modeled ages that are older than the actual flow age. 
 
-\subsection{Volume estimation}
+\subsection{Volume estimation}\label{sec_volume}
 Two volume estimation methods are used to provide minimum and maximum volume constraints for each lava flow (Figure \ref{fig_crosssection}). A primary initial assumption of these methods is that the erupted material was predominantly effusive, while insignificant material would have been advected far from the source.
 
 First, volumes are estimated for each individual flow. Elevation values are assigned to the mapped perimeter of each flow from the gridded-MOLA topographic dataset. The subsurface of the flow is modeled with a triangular irregular network (TIN) where mesh faces are generated with the Delaunay triangulation of vertices along the perimeter. The modeled subsurface is then subtracted from the MOLA grid, producing a thickness map which is integrated to estimate flow volume. This estimate should be considered to be a minimum estimate of flow volume, because the modeled sub-flow surface tightly connects the lava flow margins, while in real life lava flows invert topography and should likely have a deeper, more concave upward subsurface. Though these volumes are underestimates, their advantage is that they are carried out for each flow.
@@ -110,7 +116,6 @@ Second, volume is estimated for the entire caldera using a convex hull of the MO
 \label{fig_crosssection}
 \end{figure}
 
-
 \subsection{Volcanic Event Recurrence Rate Model (VERRM)}
 
 Together, stratigraphic information and crater retention age estimates can be consolidated to improve age uncertainty estimation for volcanic events. This is especially applicable to recent volcanic landforms on Mars as crater-based dates alone might be biased due to crater burial, local topography, or secondary crater background populations \citep{robbins2011volcanic,platz2011eruption}.
@@ -119,56 +124,62 @@ To accomplish the task of constraining modeled age estimates with stratigraphy, 
 
 The normalized product of the the Gaussian age function and the binary stratigraphy function gives an age distribution function which does not violate stratigraphy but is informed by crater retention age estimates. This function is sampled to date an event and the process repeats for the next event. By repeating this process 10,000 times, the potential age ranges for each event is determined.
 
-\paragraph{Recurrence Rate}
+Volcanic recurrence rate $\text{RR}$ is modeled with respect to time for each MC simulation, where 
+\begin{equation}
+\text{RR}(t) = \frac{n}{\text{max}\{\mathbf{T}\} - \text{min}\{\mathbf{T}\}}
+\label{eq_RR}
+\end{equation}
+where $\mathbf{T}$ is a set of simulated times of the $n$ events closest in time to $t$. The denominator in Equation \ref{eq_RR} is the time range of the $n$ closest events. The number of events $n$ is essentially a window and we have decided to use $n=4$~events.
 
-\paragraph{Volumes}
+While recurrence rate for any one simulation might be bad, the range of recurrence rates for all simulations can provide a confidence envelope of recurrence rate with respect to time. The recurrence rate for the field is defined as the median recurrence rate of all simulations over time, with a 95\% confidence envelope serving as the rate's uncertainty.
+
+Volume flux is also modeled with the VERRM output. Each event is assigned a volume between the minimum and maximum volume estimates (discussed above in section \ref{sec_volume}) for the lava flow it produced. Volume flux for the field is defined similarly using a 95\% confidence envelope and median value of the volume of erupted lava per million year time bin.
+
+
+	\begin{table}[h!]
+	\centering
+	\caption{Lava Flow Data}
+	\begin{tabular}{l c c c c c c c}
+		\toprule
+			 & \multicolumn{2}{c}{Vent Location}  & Area & Volume & Modeled & Overlying & Underlying\\
+			Flow & Long. & Lat. & (km$^2$) & (km$^3$) & Age (Ma) & Flows & Flows\\
+		\midrule
+			v00 & -120.48$^{\circ}$ & -10.09$^{\circ}$ & 102.27 & 0.37 & 98.4$\pm$27 & --- & 02,01\\
+			v01 & -120.55 & -10.02 & 31.21 & 0.032 & 71.4$\pm$41 & 00,02 & ---\\
+			v02 & -120.45 & -9.98 & 538.86 & 2.3 & 117$\pm$12 & 00 & 01,03,04\\
+			v03 & -120.81 & -9.76 & 283.32 & 0.91 & 99.1$\pm$15 & 02,07 & 04\\
+			v04 & -120.45 & -9.78 & 242.29 & 1.6 & 126$\pm$18 & 02,03 & 05\\
+			v05 & -120.30 & -9.45 & 353.98 & 0.89 & 145$\pm$17 & 04,07,10 & 06\\
+			v06 & -120.33 & -9.41 & 69.40 & 0.31 & 122$\pm$49 & 05,10 & 11\\
+			v07 & -120.82 & -9.65 & 479.32 & 5.0 & 94.7$\pm$11 & 09 & 03,05\\
+			v08 & -120.23 & -9.30 & 4.00 & 0.0017 & --- & 11,10 & ---\\
+			v09 & -120.92 & -9.30 & 21.08 & 0.013 & 218$\pm$110 & --- & 07\\
+			v10 & -120.24 & -9.42 & 858.69 & 3.2 & 102$\pm$9.3 & --- & 05,06,08,11,13\\
+			v11 & -120.17 & -9.26 & 228.09 & 1.0 & 154$\pm$22 & 06,10,13 & 08\\
+			v12 & -120.24 & -9.03 & 528.14 & 1.6 & 134$\pm$12 & 13 & 14\\
+			v13 & -120.17 & -8.99 & 679.49 & 3.2 & 146$\pm$12 & 10,17 & 12,15,11\\
+			v14 & -120.44 & -8.87 & 96.78 & 0.14 & 122$\pm$32 & 12,15 & ---\\
+			v15 & -120.08 & -8.81 & 460.75 & 2.5 & 117$\pm$13 & 13,17 & 14,16,21\\
+			v16 & -119.92 & -8.65 & 18.11 & 0.0053 & 313$\pm$110 & 15,17 & 21\\
+			v17 & -119.90 & -8.63 & 300.03 & 0.64 & 148$\pm$18 & --- & 13,15,16,21,25,28\\
+			v18 & -120.46 & -8.55 & 64.29 & 0.16 & 186$\pm$53 & 20,21 & ---\\
+			v19 & -120.36 & -8.46 & 13.12 & 0.0047 & --- & 20,21 & 23\\
+			v20 & -120.40 & -8.46 & 70.51 & 0.14 & 186$\pm$53 & 21 & 18,19,23\\
+			v21 & -120.06 & -8.63 & 354.97 & 1.6 & 146$\pm$16 & 15,16,17 & 20,18,19,23,22,25\\
+			v22 & -119.88 & -8.44 & 53.20 & 0.31 & 73.2$\pm$36 & 21,25 & ---\\
+			v23 & -120.25 & -8.40 & 204.71 & 0.53 & 135$\pm$20 & 19,20,21 & 26,27\\
+			v24 & -119.92 & -8.32 & 11.70 & 0.037 & --- & 25 & ---\\
+			v25 & -119.79 & -8.37 & 281.19 & 2.0 & 104$\pm$16 & 17,21 & 22,24,28\\
+			v26 & -120.21 & -8.21 & 5.61 & 0.0026 & --- & 23 & ---\\
+			v27 & -120.55 & -8.17 & 158.16 & 1.75 & 112$\pm$25 & 23 & ---\\
+			v28 & -119.57 & -8.52 & 176.53 & 0.58 & 158$\pm$24 & 17,25 & ---\\
+		\bottomrule
+	\end{tabular}
+	\label{tab_database}
+	\end{table}
 
 
 \section{Results}
-
-	\begin{center}
-		\begin{table}[h]
-		\caption{Lava Flow Data}
-		\begin{tabular}{l c c c c c c c}
-			\toprule
-				 & \multicolumn{2}{c}{Vent Location}  & Area & Volume & Modeled & Overlying & Underlying\\
-				Flow & Long. & Lat. & (km$^2$) & (km$^3$) & Age (Ma) & Flows & Flows\\
-			\midrule
-				v00 & -120.48$^{\circ}$ & -10.09$^{\circ}$ & 102.27 & 0.37 & 98.4$\pm$27 & --- & 02,01\\
-				v01 & -120.55 & -10.02 & 31.21 & 0.032 & 71.4$\pm$41 & 00,02 & ---\\
-				v02 & -120.45 & -9.98 & 538.86 & 2.3 & 117$\pm$12 & 00 & 01,03,04\\
-				v03 & -120.81 & -9.76 & 283.32 & 0.91 & 99.1$\pm$15 & 02,07 & 04\\
-				v04 & -120.45 & -9.78 & 242.29 & 1.6 & 126$\pm$18 & 02,03 & 05\\
-				v05 & -120.30 & -9.45 & 353.98 & 0.89 & 145$\pm$17 & 04,07,10 & 06\\
-				v06 & -120.33 & -9.41 & 69.40 & 0.31 & 122$\pm$49 & 05,10 & 11\\
-				v07 & -120.82 & -9.65 & 479.32 & 5.0 & 94.7$\pm$11 & 09 & 03,05\\
-				v08 & -120.23 & -9.30 & 4.00 & 0.0017 & --- & 11,10 & ---\\
-				v09 & -120.92 & -9.30 & 21.08 & 0.013 & 218$\pm$110 & --- & 07\\
-				v10 & -120.24 & -9.42 & 858.69 & 3.2 & 102$\pm$9.3 & --- & 05,06,08,11,13\\
-				v11 & -120.17 & -9.26 & 228.09 & 1.0 & 154$\pm$22 & 06,10,13 & 08\\
-				v12 & -120.24 & -9.03 & 528.14 & 1.6 & 134$\pm$12 & 13 & 14\\
-				v13 & -120.17 & -8.99 & 679.49 & 3.2 & 146$\pm$12 & 10,17 & 12,15,11\\
-				v14 & -120.44 & -8.87 & 96.78 & 0.14 & 122$\pm$32 & 12,15 & ---\\
-				v15 & -120.08 & -8.81 & 460.75 & 2.5 & 117$\pm$13 & 13,17 & 14,16,21\\
-				v16 & -119.92 & -8.65 & 18.11 & 0.0053 & 313$\pm$110 & 15,17 & 21\\
-				v17 & -119.90 & -8.63 & 300.03 & 0.64 & 148$\pm$18 & --- & 13,15,16,21,25,28\\
-				v18 & -120.46 & -8.55 & 64.29 & 0.16 & 186$\pm$53 & 20,21 & ---\\
-				v19 & -120.36 & -8.46 & 13.12 & 0.0047 & --- & 20,21 & 23\\
-				v20 & -120.40 & -8.46 & 70.51 & 0.14 & 186$\pm$53 & 21 & 18,19,23\\
-				v21 & -120.06 & -8.63 & 354.97 & 1.6 & 146$\pm$16 & 15,16,17 & 20,18,19,23,22,25\\
-				v22 & -119.88 & -8.44 & 53.20 & 0.31 & 73.2$\pm$36 & 21,25 & ---\\
-				v23 & -120.25 & -8.40 & 204.71 & 0.53 & 135$\pm$20 & 19,20,21 & 26,27\\
-				v24 & -119.92 & -8.32 & 11.70 & 0.037 & --- & 25 & ---\\
-				v25 & -119.79 & -8.37 & 281.19 & 2.0 & 104$\pm$16 & 17,21 & 22,24,28\\
-				v26 & -120.21 & -8.21 & 5.61 & 0.0026 & --- & 23 & ---\\
-				v27 & -120.55 & -8.17 & 158.16 & 1.75 & 112$\pm$25 & 23 & ---\\
-				v28 & -119.57 & -8.52 & 176.53 & 0.58 & 158$\pm$24 & 17,25 & ---\\
-			\bottomrule
-		\end{tabular}
-		\label{tab_database}
-		\end{table}
-	\end{center}
-
 
 \begin{figure}
 \centering
@@ -181,6 +192,8 @@ The 29 lava flows in our catalog are mapped to cover 6700 km$^2$, $\sim$70\%, of
 
 Dividing the total minimum volume estimate by the mapped flow coverage area, and the total maximum volume by the entire caldera floor area (9500 km$^2$), average flow thickness is calculated to be 8.5 and 40~m, respectively. These averages are in agreement with other studies of lava flow thickness, including flows  in Elysium Mons with thicknesses of 7-35 m \citep{pasckert2012rheologies}, flows on Ascreaus Mons between 24-88 m \citep{hiesinger2007young}, 37 m and 50 m thick flows in the Elysium region and on Pavonis Mons \citep{glaze2003methodology,baloga2003rheology}, and average flow thicknesses on the Arsia Mons flanks of 10-30 m \citep{mouginis2008lava}.
 
+Event ages modeled with craters on each lava flow lay between 70 and 300~Ma. However, the oldest modeled ages do not appear at the bottom of the stratigraphic column, and the youngest modeled ages do not appear at the top (Figure \ref{fig_stratweb}). This can either be due to error in identifying superposition relationships or due to bias in the crater population. By relying on stratigraphy more than crater counts, which are known to be unreliable at small diameters \citep[e.g.]{robbins2011volcanic,neukum2004recent}, the VERRM model can probabilistically improve the estimated timing of events, while also better characterizing age uncertainty through a Monte Carlo method.
+
 \section{Discussion}
 
 \subsection{Comparisons to other studies}
@@ -190,8 +203,16 @@ Modeled ages of these flows with our crater counts lay between 70-400 Ma, with u
 
 \begin{figure}
 \centering
-\includegraphics[width=0.5\linewidth]{figures/craterstats/120-81W_09-76S_100m_cum.eps}
-\caption{An example cumulative crater frequency distribution. This flow (v03) had been previously estimated to be 97$\pm$49 Ma from crater counting performed on a HiRISE image \citep{robbins2011volcanic}. Our age of 99$\pm$15 Ma agrees with this previous finding.}
+\begin{subfigure}{.33\textwidth}
+  \includegraphics[width=\linewidth,clip,trim=1cm 1cm 1.5cm 1cm]{figures/craterstats/120-81W_09-76S_100m_cum.eps}
+\end{subfigure}%
+\begin{subfigure}{.33\textwidth}
+  \includegraphics[width=\linewidth,clip,trim=1cm 1cm 1.5cm 1cm]{figures/craterstats/arsia_all29_cum.eps}
+\end{subfigure}
+\begin{subfigure}{.33\textwidth}
+  \includegraphics[width=\linewidth,clip,trim=1cm 1cm 1.5cm 1cm]{figures/craterstats/arsia_fullarea_100m_cum.eps}
+\end{subfigure}
+\caption{Cumulative crater frequency distributions for (left) one lava flow, (center) all mapped lava flows, (right) the entire caldera). The example flow, v03 in our database, had been previously estimated to be 97$\pm$49 Ma from crater counting performed on a HiRISE image \citep{robbins2011volcanic}. Our age of 99$\pm$15 Ma agrees with this previous finding. The age of the entire caldera also generally agrees with previous estimates of 130~Ma. The mapped vents plot younger than the entire caldera, which is expected as they are the most recent resurfacing events on the caldera.}
 \label{fig_craterct}
 \end{figure}
 
@@ -207,11 +228,21 @@ Recent analysis of smooth facies deposits to the northwest of the Arsia summit h
 
 The presence of volcanic ash on remaining tropical mountain glaciers on the flank of Arsia might be a result of the most recent volcanism in the Arsia caldera. If this is the case, our volume estimates would likely be severely underestimated, as a large portion of erupted material would have been transported away from the vent as tephra. However, as \citet{kadish2014middle} estimated the resurfacing age of the fan-shaped deposits to be about 200 Ma, roughly our interpreted age of onset of effusive activity within the caldera, it is possible that the ash on the flanks and the lavas in the caldera represent a transition from explosive to effusive volcanism at Arsia Mons. The provenance of the ash might be buried by the recent lavas or might be the ``parasitic calderas'' observed by \citet{crumpler1996calderas}, which form a rift of the south and north caldera walls of Arsia, in line with the shield volcanoes in our catalog.
 
-\subsection{Other recent volcanism in the Tharsis Region}
+\subsection{Transition of volcanic style and waning of Arsia volcanism}
+From our findings and evidence of prodigious amounts of ash to the west \citep{mouginis2002prodigious}, we interpret the intra-caldera lava flows to represent the waning of activity at Arsia Mons, which effectively ended $\sim$70~million years ago. Preceding the formation of the large basaltic caldera, magmatic activity would have mainly been related to a large magma chamber, which was active at a heightened rate \citep{wilson2001evidence}. Dikes ascending below this chamber are expected to propagate towards the chamber and ultimately assimilate with it \citep{karlstrom2009organization}, effectively suppressing monogenetic volcanism directly above the chamber during its molten history. Instead, large events related to the central chamber would have occurred, perhaps supplying the provenance of ash now mantling ice-rich material on Arsia's west flanks.
 
-If recent Arsia volcanism transitioned from explosive to effusive at about 200 Ma, it might be analogous to transitions in eruption dynamics at other major volcanic edifices on Mars. The latest lava flows on the flanks of Olympus Mons appear to have also changed from long tube-fed flows to shorter, channel-fed flows, suggesting that magma flux per flow emplacement event has waned over the late Amazonian \citep{bleacher2007olympus}. \citet{bleacher2007olympus} concluded that this might be evidence of a larger waning of activity at Olympus and might also signal a transition from a deep mantle source of volcanism to shallower sources, based on long-term volcanic patterns observed at the Hawaiian volcanic chain. While the morphologies of the most recent lava flows on Arsia and Olympus might both indicate waning magma production, these observations might be consistent with the \citet{wilson2001evidence} model that most of the history of these volcanoes is spent dormant after hyper-active edifice building episodes wane and end.
+The relatively small volumes and distributed nature of the lavas within the caldera, as well as the caldera itself, are evidence that the magma chamber has cooled and that dikes are able to ascend individually through the center of the caldera. The magma supply rate to the base of Arsia must therefore have waned to below $\sim$12~m$^3$~s$-1$ (plus or minus a factor of three) \citep{wilson2001evidence}. The long-term average surface flux of distributed volcanism in this study, $3.6\cdot 10^{-4}$ m$^3$ s$^{-1}$, is five orders of magnitude below this minimum supply rate.
 
-Volcanism elsewhere in Tharsis has occurred recently in a more distributed fashion \citep{hauber2011very}, including a lava field filling the southeast ``moat'' of Olympus Mons \citep{chadwick2015late}. Indeed, \citet{chadwick2015late} identified lava flows at the base of Olympus emplaced between 64-210 Ma, roughly during the same period as the lava flows in this study. The emplacement direction of these lavas are systematically offset from the current downward direction, due to recent subsidence of Olympus Mons. The required magma to be injected in the past 200 Myr into Olympus Mons to cause this subsidence might be 10$^5$-10$^6$ km$^3$ \citep{chadwick2015late}, suggesting that the large volcanoes of the Tharsis Region are not yet extinct.
+The confidence envelope for volcanic recurrence rate for times older than the peak of volcanism in this study (XXX~Ma) is largely unconstrained; while the envelope suggests that recurrence among the 29 volcanoes waxes during this time, it cannot be used to imply that volcanic activity in general waxed during this time. It is beyond likely that below the 29 lava flows, other flows and volcanic vents are buried. The waxing trend seen in our results might be erroneous because of a lack of data on buried events. However, it is likely that the waning trend observed since XXX~Ma is real.
+
+\section{Conclusions}
+
+The 29 lava flows mapped in the caldera create a volcanic field that was active since at least 230~Ma and became inactive at around 70~Ma. These flows represent 30-400~km$^3$, giving a surfacial magma flux rate of $3.6\cdot 10^{-4}$ m$^3$ s$^{-1}$, averaged over the entire history of the 29 events.
+
+Our main conclusion is that the recurrence rate of intra-caldera volcanism on Arsia Mons has waned since XXX~Ma and that this waning, as well as the presence of distributed lava flows in the caldera alone, represent the tail-end of an episode of activity in Arsia Mons that formed the large basaltic caldera and a corresponding magma chamber hypothesized by \citet{wilson2001evidence}.
+
+
+
 
 %\begin{figure}
 %\centering
@@ -221,7 +252,102 @@ Volcanism elsewhere in Tharsis has occurred recently in a more distributed fashi
 
 
 
+\addcontentsline{toc}{section}{References}
 \bibliographystyle{plainnat}
 \bibliography{arsia}
+
+\section{Appendix: cumulative crater charts}\label{sec_cccharts}
+\begin{figure}[h]
+\centering
+\begin{subfigure}{.33\textwidth}
+  \includegraphics[width=\linewidth,clip,trim=1cm 1cm 1.5cm 1cm]{figures/craterstats/119-57W_08-52S_100m_cum.eps}
+\end{subfigure}%
+\begin{subfigure}{.33\textwidth}
+  \includegraphics[width=\linewidth,clip,trim=1cm 1cm 1.5cm 1cm]{figures/craterstats/119-79W_08-37S_100m_cum.eps}
+\end{subfigure}
+\begin{subfigure}{.33\textwidth}
+  \includegraphics[width=\linewidth,clip,trim=1cm 1cm 1.5cm 1cm]{figures/craterstats/119-88W_08-44S_100m_cum.eps}
+\end{subfigure}
+\begin{subfigure}{.33\textwidth}
+  \includegraphics[width=\linewidth,clip,trim=1cm 1cm 1.5cm 1cm]{figures/craterstats/119-90W_08-63S_100m_cum.eps}
+\end{subfigure}%
+\begin{subfigure}{.33\textwidth}
+  \includegraphics[width=\linewidth,clip,trim=1cm 1cm 1.5cm 1cm]{figures/craterstats/119-92W_08-65S_100m_cum.eps}
+\end{subfigure}
+\begin{subfigure}{.33\textwidth}
+  \includegraphics[width=\linewidth,clip,trim=1cm 1cm 1.5cm 1cm]{figures/craterstats/120-06W_08-63S_100m_cum.eps}
+\end{subfigure}
+\begin{subfigure}{.33\textwidth}
+  \includegraphics[width=\linewidth,clip,trim=1cm 1cm 1.5cm 1cm]{figures/craterstats/120-08W_08-81S_100m_cum.eps}
+\end{subfigure}%
+\begin{subfigure}{.33\textwidth}
+  \includegraphics[width=\linewidth,clip,trim=1cm 1cm 1.5cm 1cm]{figures/craterstats/120-17W_08-99S_100m_cum.eps}
+\end{subfigure}
+\begin{subfigure}{.33\textwidth}
+  \includegraphics[width=\linewidth,clip,trim=1cm 1cm 1.5cm 1cm]{figures/craterstats/120-17W_09-26S_100m_cum.eps}
+\end{subfigure}
+\end{figure}
+
+\begin{figure}[h]
+\centering
+\begin{subfigure}{.33\textwidth}
+  \includegraphics[width=\linewidth,clip,trim=1cm 1cm 1.5cm 1cm]{figures/craterstats/120-24W_09-03S_100m_cum.eps}
+\end{subfigure}%
+\begin{subfigure}{.33\textwidth}
+  \includegraphics[width=\linewidth,clip,trim=1cm 1cm 1.5cm 1cm]{figures/craterstats/120-24W_09-42S_100m_cum.eps}
+\end{subfigure}
+\begin{subfigure}{.33\textwidth}
+  \includegraphics[width=\linewidth,clip,trim=1cm 1cm 1.5cm 1cm]{figures/craterstats/120-25W_08-40S_100m_cum.eps}
+\end{subfigure}
+\begin{subfigure}{.33\textwidth}
+  \includegraphics[width=\linewidth,clip,trim=1cm 1cm 1.5cm 1cm]{figures/craterstats/120-30W_09-45S_100m_cum.eps}
+\end{subfigure}%
+\begin{subfigure}{.33\textwidth}
+  \includegraphics[width=\linewidth,clip,trim=1cm 1cm 1.5cm 1cm]{figures/craterstats/120-33W_09-41S_100m_cum.eps}
+\end{subfigure}
+\begin{subfigure}{.33\textwidth}
+  \includegraphics[width=\linewidth,clip,trim=1cm 1cm 1.5cm 1cm]{figures/craterstats/120-40W_08-46S_100m_cum.eps}
+\end{subfigure}
+\begin{subfigure}{.33\textwidth}
+  \includegraphics[width=\linewidth,clip,trim=1cm 1cm 1.5cm 1cm]{figures/craterstats/120-44W_08-87S_100m_cum.eps}
+\end{subfigure}%
+\begin{subfigure}{.33\textwidth}
+  \includegraphics[width=\linewidth,clip,trim=1cm 1cm 1.5cm 1cm]{figures/craterstats/120-45W_09-78S_100m_cum.eps}
+\end{subfigure}
+\begin{subfigure}{.33\textwidth}
+  \includegraphics[width=\linewidth,clip,trim=1cm 1cm 1.5cm 1cm]{figures/craterstats/120-45W_09-98S_100m_cum.eps}
+\end{subfigure}
+\end{figure}
+
+\begin{figure}[h]
+\centering
+\begin{subfigure}{.33\textwidth}
+  \includegraphics[width=\linewidth,clip,trim=1cm 1cm 1.5cm 1cm]{figures/craterstats/120-46W_08-55S_100m_cum.eps}
+\end{subfigure}%
+\begin{subfigure}{.33\textwidth}
+  \includegraphics[width=\linewidth,clip,trim=1cm 1cm 1.5cm 1cm]{figures/craterstats/120-48W_10-09S_100m_cum.eps}
+\end{subfigure}
+\begin{subfigure}{.33\textwidth}
+  \includegraphics[width=\linewidth,clip,trim=1cm 1cm 1.5cm 1cm]{figures/craterstats/120-55W_08-17S_100m_cum.eps}
+\end{subfigure}
+\begin{subfigure}{.33\textwidth}
+  \includegraphics[width=\linewidth,clip,trim=1cm 1cm 1.5cm 1cm]{figures/craterstats/120-55W_10-02S_100m_cum.eps}
+\end{subfigure}%
+\begin{subfigure}{.33\textwidth}
+  \includegraphics[width=\linewidth,clip,trim=1cm 1cm 1.5cm 1cm]{figures/craterstats/120-81W_09-76S_100m_cum.eps}
+\end{subfigure}
+\begin{subfigure}{.33\textwidth}
+  \includegraphics[width=\linewidth,clip,trim=1cm 1cm 1.5cm 1cm]{figures/craterstats/120-82W_09-65S_100m_cum.eps}
+\end{subfigure}
+\begin{subfigure}{.33\textwidth}
+  \includegraphics[width=\linewidth,clip,trim=1cm 1cm 1.5cm 1cm]{figures/craterstats/120-92W_09-30S_100m_cum.eps}
+\end{subfigure}%
+\begin{subfigure}{.33\textwidth}
+  \includegraphics[width=\linewidth,clip,trim=1cm 1cm 1.5cm 1cm]{figures/craterstats/arsia_caldera_floor_100m_cum.eps}
+\end{subfigure}
+\begin{subfigure}{.33\textwidth}
+  \includegraphics[width=\linewidth,clip,trim=1cm 1cm 1.5cm 1cm]{figures/craterstats/arsia_fullarea_100m_cum.eps}
+\end{subfigure}
+\end{figure}
 
 \end{document}
