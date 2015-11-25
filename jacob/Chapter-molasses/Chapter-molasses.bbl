@@ -1,9 +1,17 @@
-\begin{thebibliography}{20}
+\begin{thebibliography}{21}
 \providecommand{\natexlab}[1]{#1}
 \providecommand{\url}[1]{\texttt{#1}}
 \expandafter\ifx\csname urlstyle\endcsname\relax
   \providecommand{\doi}[1]{doi: #1}\else
   \providecommand{\doi}{doi: \begingroup \urlstyle{rm}\Url}\fi
+
+\bibitem[Aspinall et~al.(2003)Aspinall, Woo, Voight, and
+  Baxter]{aspinall2003evidence}
+WP~Aspinall, G~Woo, B~Voight, and PJ~Baxter.
+\newblock Evidence-based volcanology: application to eruption crises.
+\newblock \emph{Journal of Volcanology and Geothermal Research}, 128\penalty0
+  (1):\penalty0 273--285, 2003.
+\newblock \doi{10.1016/S0377-0273(03)00260-9}.
 
 \bibitem[Avolio et~al.(2006)Avolio, Crisci, Di~Gregorio, Rongo, Spataro, and
   Trunfio]{avolio2006sciara}
@@ -91,13 +99,6 @@ RW~Griffiths.
 \newblock \emph{Annual Review of Fluid Mechanics}, 32\penalty0 (1):\penalty0
   477--518, 2000.
 
-\bibitem[Harris(2013)]{harris2013lava}
-AJL Harris.
-\newblock Lava flows.
-\newblock In Sarah~A Fagents, Tracy~KP Gregg, and Rosaly~MC Lopes, editors,
-  \emph{Modeling volcanic processes: the physics and mathematics of volcanism},
-  chapter Lava Flows. Cambridge University Press, 2013.
-
 \bibitem[Harris and Rowland(2001)]{harris2001flowgo}
 Andrew~J Harris and S~Rowland.
 \newblock Flowgo: a kinematic thermo-rheological model for lava flowing in a
@@ -116,6 +117,11 @@ Masataka Hidaka, Akio Goto, Susumu Umino, and Eisuke Fujita.
 Kazuhiro Ishihara, Masato Iguchi, and Kosuke Kamo.
 \newblock Numerical simulation of lava flows on some volcanoes in japan.
 \newblock In \emph{Lava Flows and Domes}, pages 174--207. Springer, 1990.
+
+\bibitem[Jeffreys(1998)]{jeffreys1998theory}
+Harold Jeffreys.
+\newblock \emph{The theory of probability}.
+\newblock OUP Oxford, 1998.
 
 \bibitem[Kauahikaua et~al.(1995)Kauahikaua, Margriter, Lockwood, and
   Trusdell]{kauahikaua1995applications}

@@ -1,0 +1,314 @@
+% This file was created with JabRef 2.11.1.
+% Encoding: ISO8859_1
+
+
+@Article{aspinall2003evidence,
+  Title                    = {Evidence-based volcanology: application to eruption crises},
+  Author                   = {Aspinall, WP and Woo, G and Voight, B and Baxter, PJ},
+  Journal                  = {Journal of Volcanology and Geothermal Research},
+  Year                     = {2003},
+  Number                   = {1},
+  Pages                    = {273--285},
+  Volume                   = {128},
+  Doi                      = {10.1016/S0377-0273(03)00260-9},
+  File                     = {:Earth/Aspinall et al 2003 - Evidence-based volcanology.pdf:PDF},
+  Owner                    = {jacob},
+  Timestamp                = {2015.11.25}
+}
+
+@Article{avolio2006sciara,
+  Title                    = {SCIARA $\gamma$2: An improved cellular automata model for lava flows and applications to the 2002 Etnean crisis},
+  Author                   = {Avolio, Maria Vittoria and Crisci, Gino Mirocle and Di Gregorio, Salvatore and Rongo, Rocco and Spataro, William and Trunfio, Giuseppe A},
+  Journal                  = {Computers \& Geosciences},
+  Year                     = {2006},
+  Number                   = {7},
+  Pages                    = {876--889},
+  Volume                   = {32},
+  Owner                    = {jacob},
+  Publisher                = {Elsevier},
+  Timestamp                = {2015.05.03}
+}
+
+@Article{barca1994cellular,
+  Title                    = {Cellular Automata for simulating lava flows: a method and examples of the Etnean eruptions},
+  Author                   = {Barca, D and Crisci, GM and Gregorio, S Di and Nicoletta, F},
+  Journal                  = {Transport theory and statistical physics},
+  Year                     = {1994},
+  Number                   = {1-3},
+  Pages                    = {195--232},
+  Volume                   = {23},
+  Owner                    = {jacob},
+  Publisher                = {Taylor \& Francis},
+  Timestamp                = {2015.05.03}
+}
+
+@Article{bayarri2007framework,
+  Title                    = {A framework for validation of computer models},
+  Author                   = {Bayarri, Maria J and Berger, James O and Paulo, Rui and Sacks, Jerry and Cafeo, John A and Cavendish, James and Lin, Chin-Hsu and Tu, Jian},
+  Journal                  = {Technometrics},
+  Year                     = {2007},
+  Number                   = {2},
+  Volume                   = {49},
+  Owner                    = {jacob},
+  Timestamp                = {2015.05.03}
+}
+
+@Article{belousov2015overview,
+  Title                    = {Overview of the precursors and dynamics of the 2012--13 basaltic fissure eruption of Tolbachik Volcano, Kamchatka, Russia},
+  Author                   = {Belousov, Alexander and Belousova, Marina and Edwards, Benjamin and Volynets, Anna and Melnikov, Dmitry},
+  Journal                  = {Journal of Volcanology and Geothermal Research},
+  Year                     = {2015},
+  Pages                    = {19--34},
+  Volume                   = {299},
+  Owner                    = {jacob},
+  Publisher                = {Elsevier},
+  Timestamp                = {2015.07.09}
+}
+
+@Article{connor2012,
+  Title                    = {Probabilistic approach to modeling lava flow inundation: a lava flow hazard assessment for a nuclear facility in Armenia},
+  Author                   = {Connor, Laura J and Connor, Charles B and Meliksetian, Khachatur and Savov, Ivan},
+  Journal                  = {Journal of Applied Volcanology},
+  Year                     = {2012},
+  Number                   = {1},
+  Pages                    = {1--19},
+  Volume                   = {1},
+  Doi                      = {10.1186/2191-5040-1-3},
+  File                     = {:/home/jacob/academic/Papers/Earth/Connor et al 2012 - Lava Flow Hazards Assessment in Armenia.pdf:PDF},
+  Keywords                 = {volcanism, Earth, hazards},
+  Owner                    = {jacob},
+  Publisher                = {Springer},
+  Timestamp                = {2013.07.17}
+}
+
+@Article{crisci2008lava,
+  Title                    = {Lava-flow hazard on the SE flank of Mt. Etna (Southern Italy)},
+  Author                   = {Crisci, GM and Iovine, G and Di Gregorio, S and Lupiano, V},
+  Journal                  = {Journal of Volcanology and Geothermal Research},
+  Year                     = {2008},
+  Number                   = {4},
+  Pages                    = {778--796},
+  Volume                   = {177},
+  Owner                    = {jacob},
+  Publisher                = {Elsevier},
+  Timestamp                = {2015.05.03}
+}
+
+@Article{crisci2004simulation,
+  Title                    = {The simulation model SCIARA: the 1991 and 2001 lava flows at Mount Etna},
+  Author                   = {Crisci, Gino M and Rongo, Rocco and Di Gregorio, Salvatore and Spataro, William},
+  Journal                  = {Journal of Volcanology and Geothermal Research},
+  Year                     = {2004},
+  Number                   = {2},
+  Pages                    = {253--267},
+  Volume                   = {132},
+  Owner                    = {jacob},
+  Publisher                = {Elsevier},
+  Timestamp                = {2015.05.03}
+}
+
+@Article{damiani2006lava,
+  Title                    = {A lava flow simulation model for the development of volcanic hazard maps for Mount Etna (Italy)},
+  Author                   = {Damiani, Maria Luisa and Groppelli, G and Norini, G and Bertino, Elisa and Gigliuto, A and Nucita, Andrea},
+  Journal                  = {Computers \& geosciences},
+  Year                     = {2006},
+  Number                   = {4},
+  Pages                    = {512--526},
+  Volume                   = {32},
+  Owner                    = {jacob},
+  Publisher                = {Elsevier},
+  Timestamp                = {2015.05.03}
+}
+
+@Article{del2008simulations,
+  Title                    = {Simulations of the 2004 lava flow at Etna volcano using the magflow cellular automata model},
+  Author                   = {Del Negro, Ciro and Fortuna, Luigi and Herault, Alexis and Vicari, Annamaria},
+  Journal                  = {Bulletin of Volcanology},
+  Year                     = {2008},
+  Number                   = {7},
+  Pages                    = {805--812},
+  Volume                   = {70},
+  Owner                    = {jacob},
+  Publisher                = {Springer},
+  Timestamp                = {2015.05.03}
+}
+
+@Article{Glaze2003,
+  Title                    = {DEM flow path prediction algorithm for geologic mass movements},
+  Author                   = {Glaze, LS and Baloga, SM},
+  Journal                  = {Environmental \& Engineering Geoscience},
+  Year                     = {2003},
+  Number                   = {3},
+  Pages                    = {225--240},
+  Volume                   = {9},
+  Doi                      = {10.2113/9.3.225},
+  File                     = {:/home/jacob/academic/Papers/Earth/Glaze and Baloga 2003 - Path Finding.pdf:PDF},
+  Keywords                 = {volcanism, Earth},
+  Owner                    = {jacob},
+  Publisher                = {Assoc Eng Geologists},
+  Timestamp                = {2013.07.17}
+}
+
+@Article{griffiths2000dynamics,
+  Title                    = {The dynamics of lava flows},
+  Author                   = {Griffiths, RW},
+  Journal                  = {Annual Review of Fluid Mechanics},
+  Year                     = {2000},
+  Number                   = {1},
+  Pages                    = {477--518},
+  Volume                   = {32},
+  Owner                    = {jacob},
+  Timestamp                = {2015.11.18}
+}
+
+@InCollection{harris2013lava,
+  Title                    = {Lava Flows},
+  Author                   = {Harris, AJL},
+  Booktitle                = {Modeling volcanic processes: the physics and mathematics of volcanism},
+  Publisher                = {Cambridge University Press},
+  Year                     = {2013},
+  Chapter                  = {Lava Flows},
+  Editor                   = {Fagents, Sarah A and Gregg, Tracy KP and Lopes, Rosaly MC},
+  Owner                    = {jacob},
+  Timestamp                = {2015.07.09}
+}
+
+@Article{harris2001flowgo,
+  Title                    = {FLOWGO: a kinematic thermo-rheological model for lava flowing in a channel},
+  Author                   = {Harris, Andrew J and Rowland, S},
+  Journal                  = {Bulletin of Volcanology},
+  Year                     = {2001},
+  Number                   = {1},
+  Pages                    = {20--44},
+  Volume                   = {63},
+  Owner                    = {jacob},
+  Publisher                = {Springer},
+  Timestamp                = {2015.05.03}
+}
+
+@Article{hidaka2005vtfs,
+  Title                    = {VTFS project: Development of the lava flow simulation code LavaSIM with a model for three-dimensional convection, spreading, and solidification},
+  Author                   = {Hidaka, Masataka and Goto, Akio and Umino, Susumu and Fujita, Eisuke},
+  Journal                  = {Geochemistry, Geophysics, Geosystems},
+  Year                     = {2005},
+  Number                   = {7},
+  Volume                   = {6},
+  Owner                    = {jacob},
+  Publisher                = {Wiley Online Library},
+  Timestamp                = {2015.05.03}
+}
+
+@InCollection{ishihara1990numerical,
+  Title                    = {Numerical simulation of lava flows on some volcanoes in Japan},
+  Author                   = {Ishihara, Kazuhiro and Iguchi, Masato and Kamo, Kosuke},
+  Booktitle                = {Lava Flows and Domes},
+  Publisher                = {Springer},
+  Year                     = {1990},
+  Pages                    = {174--207},
+  Owner                    = {jacob},
+  Timestamp                = {2015.11.16}
+}
+
+@Article{kauahikaua1995applications,
+  Title                    = {Applications of GIS to the estimation of lava flow hazards on Mauna Loa Volcano, Hawai'i},
+  Author                   = {Kauahikaua, Jim and Margriter, Sandy and Lockwood, Jack and Trusdell, Frank},
+  Journal                  = {Mauna Loa Revealed: structure, composition, history, and hazards},
+  Year                     = {1995},
+  Pages                    = {315--325},
+  Owner                    = {jacob},
+  Publisher                = {Wiley Online Library},
+  Timestamp                = {2015.07.09}
+}
+
+@InCollection{kilburn2000lava,
+  Title                    = {Lava flow and flow fields},
+  Author                   = {Kilburn, CRJ},
+  Booktitle                = {Encyclopedia of Volcanoes},
+  Publisher                = {Academic Press},
+  Year                     = {2000},
+  Address                  = {San Diego, CA},
+  Editor                   = {Sigurdsson, H.},
+  Pages                    = {331--343},
+  Keywords                 = {volcanism, Earth},
+  Owner                    = {jacob},
+  Timestamp                = {2013.07.17}
+}
+
+@Article{kubanek2015lava,
+  Title                    = {Lava flow mapping and volume calculations of the 2012-13 {Tolbachik, Kamchatka} fissure eruption using bistatic {TanDEM-X InSAR}},
+  Author                   = {Kubanek, J. and Richardson, J. A. and Charbonnier, S. and Connor, L.},
+  Journal                  = {Bulletin of Volcanology},
+  Year                     = {Submitted},
+  Owner                    = {jacob},
+  Timestamp                = {2015.07.09}
+}
+
+@Article{marzocchi2007probabilistic,
+  Title                    = {Probabilistic eruption forecasting and the call for an evacuation},
+  Author                   = {Marzocchi, Warner and Woo, Gordon},
+  Journal                  = {Geophysical Research Letters},
+  Year                     = {2007},
+  Note                     = {L22310},
+  Number                   = {22},
+  Pages                    = {n/a--n/a},
+  Volume                   = {34},
+  Doi                      = {10.1029/2007GL031922},
+  ISSN                     = {1944-8007},
+  Keywords                 = {Probabilistic forecasting, Uncertainty quantification, Decision making under uncertainty, Benefit-cost analysis, Volcanic hazards and risks, eruption forecasting, cost/benefit analysis, evacuation},
+  Owner                    = {jacob},
+  Timestamp                = {2015.11.25}
+}
+
+@Article{miyamoto1997simulating,
+  Title                    = {Simulating lava flows by an improved cellular automata method},
+  Author                   = {Miyamoto, Hideaki and Sasaki, Sho},
+  Journal                  = {Computers \& Geosciences},
+  Year                     = {1997},
+  Number                   = {3},
+  Pages                    = {283--292},
+  Volume                   = {23},
+  Owner                    = {jacob},
+  Timestamp                = {2015.11.16}
+}
+
+@InCollection{peterson2000lava,
+  Title                    = {Lava flow hazards},
+  Author                   = {Peterson, D.W. and Tilling, R.I.},
+  Booktitle                = {Encyclopedia of Volcanoes},
+  Publisher                = {Academic Press},
+  Year                     = {2000},
+  Address                  = {San Diego, CA},
+  Editor                   = {Sigurdsson, H.},
+  Pages                    = {957--971},
+  Keywords                 = {volcanism, Earth},
+  Owner                    = {jacob},
+  Timestamp                = {2013.07.17}
+}
+
+@Article{rodriguez2006global,
+  Title                    = {A global assessment of the SRTM performance},
+  Author                   = {Rodr\'{i}guez, Ernesto and Morris, Charles S and Belz, J Eric},
+  Journal                  = {Photogrammetric Engineering \& Remote Sensing},
+  Year                     = {2006},
+  Number                   = {3},
+  Pages                    = {249--260},
+  Volume                   = {72},
+  Owner                    = {jacob},
+  Publisher                = {American Society for Photogrammetry and Remote Sensing},
+  Timestamp                = {2015.07.09}
+}
+
+@Article{woo2008probabilistic,
+  Title                    = {Probabilistic criteria for volcano evacuation decisions},
+  Author                   = {Woo, Gordon},
+  Journal                  = {Natural Hazards},
+  Year                     = {2008},
+  Number                   = {1},
+  Pages                    = {87--97},
+  Volume                   = {45},
+  Doi                      = {10.1007/s11069-007-9171-9},
+  File                     = {:Earth/Woo 2008 - Criteria for volcano evacuation decisions.pdf:PDF},
+  Owner                    = {jacob},
+  Timestamp                = {2015.11.25}
+}
+

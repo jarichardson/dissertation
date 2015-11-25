@@ -372,6 +372,7 @@ The set of cellular automata is defined as
 				4/N/S & 0.55 & Worse than a square.\\
 				8/N/S & 0.98 & Better than an octagon.\\
 				4/P/E & 0.77 & Between a square and an octagon.\\
+				8/P/E & 0.80 & Between a square and an octagon.\\
 				4/N/E & 1.00 & Perfectly circular.\\
 				8/N/E & 0.99 & Better than an octagon.\\
 				
@@ -413,20 +414,21 @@ The set of cellular automata is defined as
 			\label{fig:tolbachik}
 		\end{figure}
 		
-		\newpage
 		\begin{center}
 			\textbf{Tolbachik Flow Results}\\
-			\begin{tabular}{l c c c}
+			\begin{tabular}{l c c | c c}
 				\toprule
-				Transition Function&SRTM DEM Fit&TanDEM-X DEM Fit\\
+				Transition&\multicolumn{2}{c}{\textbf{SRTM DEM}}&\multicolumn{2}{c}{\textbf{TanDEM-X DEM}}\\
+				Function& Jaccard & Sensitivity& Jaccard & Sensitivity\\
 				\midrule
-				4/P/S & 57.7\%& 53.0\%\\
-				8/P/S & 61.1  & 46.8\\
-				4/N/S & 57.2  & 44.0\\
-				8/N/S & 61.6  & 48.3\\
-				4/P/E & 51.2  & 54.2\\
-				4/N/E & 54.5  & 55.7\\
-				8/N/E & 59.6  & 56.3\\
+				4/P/S & 56.7\%& 76.4\%& 53.0\%& 72.4\% \\
+				8/P/S & 61.1  & 80.8  & 46.8  & 67.2   \\
+				4/N/S & 57.2  & 77.5  & 44.0  & 64.0   \\
+				8/N/S & 63.1  & 82.8  & 46.7  & 67.4   \\
+				4/P/E & 51.2  & 71.5  & 54.2  & 73.4   \\
+				8/P/E & 58.8  & 78.2  & 56.3  & 76.0   \\
+				4/N/E & 54.5  & 74.5  & 55.7  & 73.7   \\
+				8/N/E & 59.6  & 78.8  & 56.2  & 75.3   \\
 				
 				\bottomrule
 			\end{tabular}
@@ -459,12 +461,12 @@ The set of cellular automata is defined as
 	
 	The negative posterior is important in hazard forecasting as it is in some sense a probability of safety. The more common posterior $\text{Pr}(A|B)$ (or $\text{Pr}(Lava|Sim)$) does not contain information about areas that the simulation does not inundate; while it can support the hypothesis that lava will hit a location given a simulated hit, it cannot estimate one's relative risk if the simulation forecasts a safe outcome. The negative posterior $\text{Pr}(\neg Lava|\neg Sim)$ does just this, and informs a user whether to rely on a safe outcome from a simulation. If, for example, the posterior probability $\text{Pr}(Lava|Sim)$ is high while the negative posterior probability $\text{Pr}(\neg Lava|\neg Sim)$ is low for a given lava flow simulator, areas that are evacuated due to the simulation outcome will be evacuated for good reason, but many areas will likely be inundated that were not evacuated due to the simulation outcome. This is why it is important to estimate and ultimately try to improve both posterior metrics.
 	
-	Bayes factors provide a tool to test the relative likelihood of a hypothesis against another. \citet{aspinall2003evidence} introduced this tool to volcano hazard forecasting by testing whether the onset of particular seismic events before the 1993 Galeras catastrophe was a significant indicator of the eruption or not. A Bayes Factor (BF) relating two models is given by \citet{jeffreys1961theory} as
+	Bayes factors provide a tool to test the relative likelihood of a hypothesis against another. \citet{aspinall2003evidence} introduced this tool to volcano hazard forecasting by testing whether the onset of particular seismic events before the 1993 Galeras catastrophe was a significant indicator of the eruption or not. A Bayes Factor (BF) relating two models is given by \citet{jeffreys1998theory} as
 	\begin{equation}
 		\text{BF} = \frac{\text{Pr}(\text{Data}|\text{Model~1})}{\text{Pr}(\text{Data}|\text{Model~2})}
 		\label{eq_BF}
 	\end{equation}
-	In the example of Galeras, the ``data'' are the seismic events, Model 1 is ``imminent explosion,'' and Model 2 is ``not imminent explosion'' \citep{aspinall2003evidence}. Below, I will apply this with the data being the probability of simulated inundation and the models ``lava inundation'' and ``not lava inundation.'' \citet{jeffreys1961theory} provided a log-scale interpretation to the value of BF in Equation \ref{eq_BF}, given in the table below.
+	In the example of Galeras, the ``data'' are the seismic events, Model 1 is ``imminent explosion,'' and Model 2 is ``not imminent explosion'' \citep{aspinall2003evidence}. Below, I will apply this with the data being the probability of simulated inundation and the models ``lava inundation'' and ``not lava inundation.'' \citet{jeffreys1998theory} provided a log-scale interpretation to the value of BF in Equation \ref{eq_BF}, given in the table below.
 	
 	\begin{center}
 			\textbf{Bayes Factor Interpretations (modified from \citet{aspinall2003evidence})}\\
@@ -517,12 +519,31 @@ The set of cellular automata is defined as
 		\end{equation}
 	where $\epsilon$ is an empirical value related to the amount of extension of lava crust allowed before it fails (10$^{-3}$), $S$ is the tensile strength of this crust (10$^7$~Pa), $\rho$ is the lava crust density (2200~kg~m$^{-3}$), $g$ is gravitational acceleration, $\kappa$ is the bulk thermal diffusivity ($4\times 10^{-7}$~m$^{2}$~s$^{-1}$) and $Q$ is the mean volumetric flow rate from the vent. From this, the hazard radius for the Tolbachik 2012-3 flow is calculated to be 39~km, given a magma flux of 440~m$^3$~s from the vent as was estimated early in the eruption \citep{belousov2015overview}. The total area within this radius that is also below the vent-plus-modal-flow-thickness elevation is 1,415~km$^2$. Note that the mapped flow area of 26~km$^2$ only covers 1.9\% of this defined hazard area (i.e. $\text{Pr}(Lava) = 0.019$).
 	
-	A second strategy would be to run many lava flow models from the known vent location(s) while varying input parameters. This would give a range of flows and the true flow might be completely contained within the region given by this range of simulations. Below, a Monte Carlo (MC) method will be used to simulate a large range of flows. If we define a potential hazard area as any location inundated by at least one simulated flow in this MC approach, the hazard area would be \ref{kmmm}~km$^2$. As the mapped flow area from the Tolbachik eruption is \ref{perrr}\% of this area, it would be more beneficial to use this as the \textit{a priori} hazard area because it more reasonably reflects the potential inundation area. Both the Kilburn-Kauahikaua method and this MC method are illustrated in Figure \ref{fig_hazardarea}.
+	A second strategy would be to run many lava flow models from the known vent location(s) while varying input parameters. This would give a range of flows and the true flow might be completely contained within the region given by this range of simulations. Below, a Monte Carlo (MC) method will be used to simulate a large range of flows. If we define a potential hazard area as any location inundated by at least one simulated flow in this MC approach, the hazard area would be 72~km$^2$. As the mapped flow area from the Tolbachik eruption is 39\% of this area, it would be more practical to use this as the \textit{a priori} hazard area because it more reasonably reflects the potential inundation area. Both the Kilburn-Kauahikaua method and this MC method are illustrated in Figure \ref{fig_hazardarea}.
 	
-	\paragraph{Review of Validation Level 3} Instead of using model sensitivity and the Jaccard index as benchmarks for the various lava flow models, now the two posteriors will be used. The potential hazard area is defined as the distribution of MC simulations (\ref{kmmm}~km$^2$).
+	\paragraph{Review of Validation Level 3} Instead of using model sensitivity and the Jaccard index as benchmarks for the various lava flow models, now the two posteriors will be used. The potential hazard area is defined as the distribution of MC simulations (72~km$^2$).
 	
+		\begin{center}
+		\textbf{Traditional Fit Metrics and Bayesian Posterior Functions}\\
+		\begin{tabular}{l c c c c}
+			\toprule
+			Transition&\multicolumn{4}{c}{\textbf{Results of simulations over SRTM DEM}}\\
+			Function& Jaccard & Sensitivity & $\text{Pr}(Lava|Sim)$ & $\text{Pr}(\neg Lava|\neg Sim)$\\
+			\midrule
+			4/P/S & 56.7\%& 76.4\%& 70.4\%& 84.5\% \\
+			8/P/S & 61.1  & 80.8  & 73.2  & 87.3   \\
+			4/N/S & 57.2  & 77.5  & 70.3  & 85.1   \\
+			8/N/S & 63.1  & 82.8  & 74.4  & 88.5   \\
+			4/P/E & 51.2  & 71.5  & 66.0  & 81.4   \\
+			8/P/E & 58.8  & 78.2  & 72.0  & 85.7   \\
+			4/N/E & 54.5  & 74.5  & 68.7  & 83.3   \\
+			8/N/E & 59.6  & 78.8  & 72.8  & 86.2   \\
+			
+			\bottomrule
+		\end{tabular}
+	\end{center}
 	
-	For the rest of this section, the preferred model, 8/N/P (the 8-connected, no parent-child relationships, with slope-proportional spreading) algorithm will be used. By applying this model to the Tolbachik lava flows, Bayesian methods will be used to improve the ``Pulse Volume'' parameter and will later be used to constrain model uncertainty at Tolbachik.
+	For the rest of this section, the preferred model, 8/N/S (the 8-connected, no parent-child relationships, with slope-proportional spreading) algorithm will be used. By applying this model to the Tolbachik lava flows, Bayesian methods will be used to improve the ``Pulse Volume'' parameter and will later be used to constrain model uncertainty at Tolbachik.
 	
 	\subsection{Improving model performance on one model parameter}
 	
@@ -627,21 +648,6 @@ The set of cellular automata is defined as
 		\subsubsection{$P(Sim|Lava)$ (model sensitivity): Lava destroyed my home, but did the simulation predict it?}
 
 		Model sensitivity is the percentage of the true phenomenon $Lava$ that the test $Sim$ accurately predicted. A model sensitivity of 0\% would indicate that between $Lava$ and $Sim$ there were no true positives. Mathematically, the size of the union, $|Lava\cap Sim|$ is 0. A model sensitivity of 100\% would indicate that $|Lava\cap Sim|$ is the same size as $Lava$, or $|Lava\cap Sim|=|Lava|$. If model sensitivity is perfect, there are no false negatives, though there might be false positives.
-		\begin{figure}[h!]
-			\centering
-			\begin{gnuplot}[terminal=latex, terminaloptions=rotate]
-				unset key
-				set size 0.7, 0.7
-				set format xy "$%g$"
-				set xlabel "Pulse Volume" rotate by 90
-				set ylabel "Sensitivity"
-				set ytics 0.05
-				set xtics 4000
-				plot "results_bayes.dat" using 1:2 with linespoints lt 4 pt 7
-			\end{gnuplot}
-			\caption{Model Sensitivity for MOLASSES flows with differing Pulse Volumes.}
-			\label{fig_sensitivity}
-		\end{figure}
 
 		\subsubsection{$P(Lava|Sim)$: If the simulation predicts lava inundation for a given location, what is the actual chance of lava inundation at the location?}
 
@@ -654,11 +660,11 @@ The set of cellular automata is defined as
 				unset key
 				set size 0.7,0.7
 				set format xy "$%g$"
-				set xlabel "Pulse Volume" rotate by 90
+				set xlabel "Pulse Volume (m$^3$)" rotate by 90
 				set ylabel "$P(Lava|Sim)$"
 				set ytics 0.05
 				set xtics 4000
-				plot "results_bayes.dat" using 1:3 with linespoints lt 4 pt 7
+				plot "results_bayes.dat" using 1:2 with linespoints lt 4 pt 7
 			\end{gnuplot}
 			\caption{Posterior $P(Lava|Sim)$ for MOLASSES flows with differing Pulse Volumes.}
 			\label{fig_lavaGsim}
@@ -688,11 +694,11 @@ The set of cellular automata is defined as
 				unset key
 				set size 0.7,0.7
 				set format xy "$%g$"
-				set xlabel "Pulse Volume" rotate by 90
+				set xlabel "Pulse Volume (m$^3$)" rotate by 90
 				set ylabel "$P($not $Lava|$not $Sim)$"
-				set ytics 0.001
+				set ytics 0.01
 				set xtics 4000
-				plot "results_bayes.dat" using 1:4 with linespoints lt 4 pt 7
+				plot "results_bayes.dat" using 1:3 with linespoints lt 4 pt 7
 			\end{gnuplot}
 			\caption{Negative posterior $P(\neg Lava|\neg Sim)$ for MOLASSES flows with differing Pulse Volumes.}
 			\label{fig_neglavaGsim}
@@ -753,42 +759,22 @@ By using this Monte Carlo method to incorporate uncertainty for an advancing lav
 		%Changing Population size (Improvement in neg Post and Improvement in learning)
 		%Weighted average
 
-
-		\begin{figure}
-		\centering
-		\begin{subfigure}{.5\textwidth}
+		\begin{figure}[h!]
 			\centering
 			\begin{gnuplot}[terminal=latex, terminaloptions=rotate]
 				unset key
-				set size 0.6,0.7
+				set size 0.7,0.7
 				set format xy "$%g$"
-				set xlabel "Pulse Volume" rotate by 90
-				set ylabel "Jaccard Fit"
+				set xlabel "Pulse Volume (m$^3$)" rotate by 90
+				set ylabel "Model Score"
 				set ytics 0.02
-				set xtics 5000
-				plot "results_bayes.dat" using 1:5 with linespoints lt 4 pt 7
+				set xtics 4000
+				plot "results_bayes.dat" using 1:7 with points pt 1, "results_bayes.dat" using 1:5 with points pt 7, "results_bayes.dat" using 1:6 with points pt 3, "results_bayes.dat" using 1:4 with points pt 6
 			\end{gnuplot}
-			\label{fig:sub1}
-		\end{subfigure}%
-		\begin{subfigure}{.5\textwidth}
-			\centering
-			\begin{gnuplot}[terminal=latex, terminaloptions=rotate]
-				unset key
-				set size 0.6,0.7
-				set format xy "$%g$"
-				set xlabel "Pulse Volume" rotate by 90
-				set ylabel "Combined Score"
-				set ytics 0.1
-				set xtics 5000
-				plot "results_combinedpost.dat" using 1:7 with linespoints lt 4 pt 1, "results_combinedpost.dat" using 1:5 with linespoints lt 4 pt 7, "results_combinedpost.dat" using 1:6 with linespoints lt 4 pt 3, "results_combinedpost.dat" using 1:4 with linespoints lt 4 pt 6,
-		
-			\end{gnuplot}
-			\label{fig:sub2}
-		\end{subfigure}
-		\caption{Left, Jaccard Fit for MOLASSES flows with differing Pulse Volumes. Right, model score based on weighted averages between the posterior metric and the negative posterior metric. Hollow circles, negative posterior is 10 times weight of posterior; solid circles, 5 times weight; asterisks, 2 times weight; plusses, equal weight between posteriors.}
-		\label{fig:jaccard_combined}
+			\caption{Weighted averages of $\text{Pr}(Lava|Sim)$ and $\text{Pr}(\neg Lava|\neg Sim)$ for different pulse volumes. Hollow circles, negative posterior ($\text{Pr}(Lava|Sim)$) is given 10$\times$ the weight of the posterior ($\text{Pr}(\neg Lava|\neg Sim)$); solid circles, 5$\times$ weight; asterisks, 2$\times$ weight; plusses, equal weight between posteriors. The ``best'' Pulse Volume is 4387 (m$^3$) for all weight ratios except when both posterior values are weighted equally.}
+			\label{fig_weightedposteriors}
 		\end{figure}
-
+		
 		\subsubsection{Bayesian Conclusions}
 			Regardless of how a lava flow model is chosen, its value in forecasting lava flow hazards can be quantified using Bayesian statistics. Whether the model is bad or good, if it can be compared against a real life lava flow such as the 2012-3 Tolbachik flow, the two posteriors discussed in this paper can be calculated.
 
