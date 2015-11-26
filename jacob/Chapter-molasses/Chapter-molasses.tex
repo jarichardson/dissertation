@@ -516,10 +516,19 @@ The set of cellular automata is defined as
 	\paragraph{Potential Hazard Area} There are multiple strategies to estimating an \textit{a priori} hazard area. \citet{kauahikaua1995applications} for instance identified catchments or ``lava sheds'' in which a volcanic vent was erupting, and identified these lava sheds as the hazard area. \citet{kilburn2000lava} provided a theoretical maximum distance that a lava flow can travel given the mass flux of magma erupting at the vent location. A combination of these two would provide an objective hazard area defined as the area within the ``Kilburn distance'' that is topographically below the volcanic vent. The theoretical maximum distance, or hazard radius, given by \citet{kilburn2000lava} is
 		\begin{equation}
 		R_{max}=\sqrt{\frac{3\epsilon SQ}{\rho g\kappa}}
+		\label{eq_kilburn}
 		\end{equation}
 	where $\epsilon$ is an empirical value related to the amount of extension of lava crust allowed before it fails (10$^{-3}$), $S$ is the tensile strength of this crust (10$^7$~Pa), $\rho$ is the lava crust density (2200~kg~m$^{-3}$), $g$ is gravitational acceleration, $\kappa$ is the bulk thermal diffusivity ($4\times 10^{-7}$~m$^{2}$~s$^{-1}$) and $Q$ is the mean volumetric flow rate from the vent. From this, the hazard radius for the Tolbachik 2012-3 flow is calculated to be 39~km, given a magma flux of 440~m$^3$~s from the vent as was estimated early in the eruption \citep{belousov2015overview}. The total area within this radius that is also below the vent-plus-modal-flow-thickness elevation is 1,415~km$^2$. Note that the mapped flow area of 26~km$^2$ only covers 1.9\% of this defined hazard area (i.e. $\text{Pr}(Lava) = 0.019$).
 	
 	A second strategy would be to run many lava flow models from the known vent location(s) while varying input parameters. This would give a range of flows and the true flow might be completely contained within the region given by this range of simulations. Below, a Monte Carlo (MC) method will be used to simulate a large range of flows. If we define a potential hazard area as any location inundated by at least one simulated flow in this MC approach, the hazard area would be 72~km$^2$. As the mapped flow area from the Tolbachik eruption is 39\% of this area, it would be more practical to use this as the \textit{a priori} hazard area because it more reasonably reflects the potential inundation area. Both the Kilburn-Kauahikaua method and this MC method are illustrated in Figure \ref{fig_hazardarea}.
+	
+	\begin{figure}
+			\centering
+			\includegraphics[width=0.7\linewidth]{figures/hazard_areas_72dpi}
+			\caption{Potential hazard areas of the 2012-3 Tolbachik Flows in light green, defined by a maximum flow radius (left, Equation \ref{eq_kilburn}) and the total areal coverage of 100,000 random flow simulations (top-right, Section \ref{sec_MC}). The mapped lava flow is red. The chart to the bottom right shows four regions defined by the presence or absense of lava and simulated lava across a map grid.}
+			\label{fig_hazardarea}
+		\end{figure}
+				
 	
 	\paragraph{Review of Validation Level 3} Instead of using model sensitivity and the Jaccard index as benchmarks for the various lava flow models, now the two posteriors will be used. The potential hazard area is defined as the distribution of MC simulations (72~km$^2$).
 	
@@ -548,12 +557,12 @@ The set of cellular automata is defined as
 	\subsection{Improving model performance on one model parameter}
 	
 	
-	\subsection{Incorporating Model Uncertainty with a Monte Carlo method}
+	\subsection{Incorporating Model Uncertainty with a Monte Carlo method}\label{sec_MC}
 		Model uncertainty is a result of input parameter uncertainty, such as uncertainty in the underlying DEM. This can be distinguished from model error, which might be defined as the difference between the true lava flow and a simulation carried out with perfect input parameters, and is created by the inherent deviations between a computer model and real life processes. Because there is parameter uncertainty, it is essential to quantify the range of model solutions given the likely range of each parameter.
 		
 		In this example, elevation uncertainty will be examined. Elevation uncertainty is an element in the MOLASSES module \textbf{INITFLOW}, where each grid cell elevation can be defined randomly before the lava flow simulation begins. The user can add an elevation uncertainty, in meters, to the configuration file. If this value is provided, each grid cell will receive a new elevation value randomly selected from a normal distribution whose mean is the DEM elevation and the standard deviation is the uncertainty value.
 		
-		The Monte Carlo method runs MOLASSES 100,000 times over a 75-m SRTM DEM. Vertical uncertainty of this data is estimated by \citet{rodriguez2006global} for Eurasia to be 6.2~m at a 90\% confidence level and is shown to be randomly distributed. With this result, elevation uncertainty in the MOLASSES model is given a value of $1\sigma=3$~m. Other input parameters remain unchanged from the benchmark exercise above; MOLASSES flow parameters for the Monte Carlo model are listed below. The combined 100,000 simulations are mapped in Figure \ref{fig:MC_map} where flow color indicates the number of flows that impacted each location.
+		The Monte Carlo method runs MOLASSES 100,000 times over a 75-m SRTM DEM. Vertical uncertainty of this data is estimated by \citet{rodriguez2006global} for Eurasia to be 6.2~m at a 90\% confidence level and is shown to be randomly distributed. With this result, elevation uncertainty in the MOLASSES model is given a value of $1\sigma=3$~m. Other input parameters remain unchanged from the benchmark exercise above; MOLASSES flow parameters for the Monte Carlo model are listed below. The combined 100,000 simulations are mapped in Figure \ref{fig_MC_map} where flow color indicates the number of flows that impacted each location.
 		
 		\begin{center}
 			\textbf{Monte Carlo MOLASSES Flow Parameters}\\
@@ -578,9 +587,9 @@ The set of cellular automata is defined as
 		%Map of the MC flows
 		\begin{figure}
 			\centering
-			\includegraphics[width=0.7\linewidth]{figures/MC_map}
-			\caption{Cumulative distribution of 1,000 simulated lava flows over SRTM topography with 3~m elevation uncertainty. The red outline is the mapped flow extent of the 2012-3 Tolbachik flow. The flow source vents are mapped as red triangles.}
-			\label{fig:MC_map}
+			\includegraphics[width=0.7\linewidth]{figures/MC_probmap_300dpi}
+			\caption{Cumulative distribution of 100,000 simulated lava flows over SRTM topography with 3~m elevation uncertainty. The red outline is the mapped flow extent of the 2012-3 Tolbachik flow. Darker purple areas represent more simulation hits (i.e. higher $\text{Pr}(Sim)$).}
+			\label{fig_MC_map}
 		\end{figure}
 				
 		\subsubsection{Bayesian distribution of MC results}
@@ -592,12 +601,26 @@ The set of cellular automata is defined as
 		%Graph of the performances
 		\begin{figure}
 			\centering
-			\includegraphics[width=0.7\linewidth]{figures/bayes_graphs}
-			\caption{Distributions of fitness statistics between the 2012-3 Tolbachik Lava Flows and 1,000 simulated lava flows over SRTM topography with 3~m standard elevation uncertainty. Vertical lines are the fitness of a simulated lava flow run over SRTM data assuming 0~m elevation uncertainty. The better than average fit for this simulation might suggest that topography is locally known better than 3~m.}
+			\includegraphics[width=0.7\linewidth]{figures/MC_posteriors_300dpi}
+			\caption{Fitness statistic distribution between for 100,000 simulations of the 2012-3 Tolbachik Lava Flows, over SRTM topography with 3~m standard elevation uncertainty. Each point represents the posterior probabilities of inundation/non-inundation for one simulation. Red lines are the fitness values of a simulated flow over SRTM data assuming 0~m elevation uncertainty. Black lines are placed at the median values of each posterior probability.}
 			\label{fig:MC_dist}
 		\end{figure}
 
 		\subsubsection{Estimating inundation risk from the simulated frequency of inundation}
+		
+	\begin{figure}[!h]
+		\centering
+		\includegraphics[width=0.7\linewidth]{figures/PR_sim_examples_300dpi}
+		\caption{Sub-regions within the Monte Carlo solution, defined by $\text{Pr}(Sim)$. At the top, all areas inundated by $\ge$90\% of all simulations are shown in green (True Positives) and orange (False Positives). The remaining mapped lava flow (False Negatives) is red. The underlying region is the total Monte Carlo Hazard Area. At center, A thin band represents all areas inundated by 40-50\% of all Simulations. At bottom, a thick shell of areas rarely inundated by simulated lava is mostly orange, indicating rarely simulated flow areas are unlikely to have been inundated in real life.}
+		\label{fig_MCsubregions}
+	\end{figure}	
+		
+	\begin{figure}[!h]
+		\centering
+		\includegraphics[width=0.7\linewidth]{figures/LR_bayes}
+		\caption{Whether you should believe the MC or not}
+		\label{fig_bayesfactor}
+	\end{figure}
 		
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%55
 %%%%%%%%%%%%%%%%OLD BAYES SECTION%%%%%%%%%%%%%%%%%
@@ -661,12 +684,12 @@ The set of cellular automata is defined as
 				set size 0.7,0.7
 				set format xy "$%g$"
 				set xlabel "Pulse Volume (m$^3$)" rotate by 90
-				set ylabel "$P(Lava|Sim)$"
+				set ylabel "Pr$(Lava|Sim)$"
 				set ytics 0.05
 				set xtics 4000
 				plot "results_bayes.dat" using 1:2 with linespoints lt 4 pt 7
 			\end{gnuplot}
-			\caption{Posterior $P(Lava|Sim)$ for MOLASSES flows with differing Pulse Volumes.}
+			\caption{Posterior $\text{Pr}(Lava|Sim)$ for MOLASSES flows with differing Pulse Volumes.}
 			\label{fig_lavaGsim}
 		\end{figure}
 
@@ -695,12 +718,12 @@ The set of cellular automata is defined as
 				set size 0.7,0.7
 				set format xy "$%g$"
 				set xlabel "Pulse Volume (m$^3$)" rotate by 90
-				set ylabel "$P($not $Lava|$not $Sim)$"
+				set ylabel "Pr(not $Lava|$not $Sim)$"
 				set ytics 0.01
 				set xtics 4000
 				plot "results_bayes.dat" using 1:3 with linespoints lt 4 pt 7
 			\end{gnuplot}
-			\caption{Negative posterior $P(\neg Lava|\neg Sim)$ for MOLASSES flows with differing Pulse Volumes.}
+			\caption{Negative posterior $\text{Pr}(\neg Lava|\neg Sim)$ for MOLASSES flows with differing Pulse Volumes.}
 			\label{fig_neglavaGsim}
 		\end{figure}
 
@@ -708,18 +731,11 @@ The set of cellular automata is defined as
 
 		\paragraph{Hazard Response Implications} The higher $P(\neg Lava|\neg Sim)$ is for a lava spreading algorithm, simulated safety (i.e. the similation does not predict inundation) at a given location more certainly predicts real safety at that location. This is the obverse of the previously discussed posterior metric, which relates simulated damage to actual damage. Algorithms known to have high $P(\neg Lava|\neg Sim)$ values should influence fewer people to evacuate an area that is predicted by those algorithms to be safe. If $P(\neg Lava|\neg Sim)$ is low however, it is more likely that necessary evacuations would not occur, resulting in greater loss of infrastructure or even life.
 
-	\subsection{Incorporating Model Uncertainty with Monte Carlo}\label{sec:lava_MC}
+	\subsection{Incorporating Model Uncertainty with Monte Carlo}
 
 \subsubsection{Model fit at different simulated inundation probabilities}
-By creating a cumulative map of lava flow simulations in the Monte Carlo (Figure \ref{fig:MC_map}), $P(Sim)$ may be estimated for every location as opposed to for the entire hazard area.
+By creating a cumulative map of lava flow simulations in the Monte Carlo (Figure \ref{fig_MC_map}), $P(Sim)$ may be estimated for every location as opposed to for the entire hazard area.
 
-
-\begin{figure}[!h]
-		\centering
-		\includegraphics[width=0.7\linewidth]{figures/LR_bayes}
-		\caption{Whether you should believe the MC or not}
-		\label{fig_bayesfactor}
-	\end{figure}
 
 I have selected different subsets of the cumulative distribution of lava flows to evaluate using both posterior statistics, based on how many simulations hit given locations. Subsets are defined as all locations where at least a given percentage of simulated flows hit (e.g. the set of locations hit by more than 60\% of simulations, the set of locations hit by all simulations). The model fit between these subsets and the Tolbachik Flows are charted in Figure \ref{fig:MC_cum}. Points in this figure represent the probability of lava flow inundation at locations within each of these subsets. For example, 88\% of locations hit by every simulation are mapped as inundated; 75\% of locations hit by at least half of all simulations were inundated by lava; and 44\% of locations hit by at least one simulation were inundated by lava. The negative posterior is also charted in the same way: locations within the hazard area that were never hit by simulations were 99.9\% likely to remain uninundated; locations hit by fewer than half of all simulations were 99.6\% likely to not be inundated by lava; while only 98.7\% of areas remained uninundated when only locations hit by 100\% of simulations were removed.
 
