@@ -97,8 +97,8 @@ The set of cellular automata is defined as
 		
 		\begin{figure}[!h]
 			\centering
-			\includegraphics[width=0.2\linewidth]{figures/Flow_Chart}
-			\caption{A flow chart of MOLASSES carried out within the \textbf{DRIVER} module.}
+			\includegraphics[width=0.3\linewidth]{figures/Flow_Chart}
+			\caption{A flow chart of MOLASSES carried out within the \textbf{DRIVER} module. Gray boxes denote various modules, with major inputs and outputs given above and below. Parallelograms are checks performed within DRIVER itself. Rounded boxes represent external input and output files.}
 			\label{fig_flowchart}
 		\end{figure}
 		
@@ -289,7 +289,7 @@ The set of cellular automata is defined as
 		\begin{figure}[h!]
 			\centering
 			\includegraphics[width=\linewidth]{figures/lava_C_4N_slope}
-			\caption{\textit{Rotating slope test for algorithm \textbf{4/P/S}. Slope dip is 18$^{\circ}$, with dip-directions 0N, 30N, and 80N from left to right. The flow length and aspect ratio are similar and the flow direction is in the slope direction, so even though the flow is oddly shaped, it passes Level 1 criteria.}}
+			\caption{Rotating slope test for algorithm \textbf{4/P/S}. Slope dip is 18$^{\circ}$, with dip-directions 0N, 30N, and 80N from left to right. The flow length and aspect ratio are similar and the flow direction is in the slope direction, so even though the flow is oddly shaped, it passes Level 1 criteria.}
 			\label{fig:slope}
 		\end{figure}
 		
@@ -409,8 +409,8 @@ The set of cellular automata is defined as
 	Each transition function was tested over SRTM topography and a TanDEM-X DEM using values gathered from TanDEM-X analysis. Two vents were situated over the topography at UTM coordinates of the two active vents created in the 2012-3 Tolbachik eruption. The total combined volume output from these two vents were 0.38~cubic~km. The residual thickness of the flow is 7.8~m and the pulse volumes were defined as the product of the thickness and the spatial resolution of the underlying DEM. The Jaccard fit for each flow algorithm is listed below for both DEMs.
 		\begin{figure}[!h]
 			\centering
-			\includegraphics[width=0.7\linewidth]{figures/tolbachik}
-			\caption{\textit{Two models run over two DEMs (SRTM, top; TanDEM-X, bottom) in the Tolbachik area. Left: An 8-connected, slope-proportional, no parent algorithm (8/N/S). Right: A 4-connected, equal spreading, no parent algorithm (4/N/E). Most spreading algorithms that had appropriate runout lengths in the SRTM test simulated very long flows over the TanDEM-X DEM. The mapped flow is plotted in black.}}
+			\includegraphics[width=\linewidth]{figures/tolb_lvl3_examples_72dpi}
+			\caption{Three simulation algorithms (4/P/S, 4/N/E, and 8/N/S) applied to two elevation models (SRTM and TanDEM-X) to simulate the 2012-3 Tolbachick lava flows, outlined in black. Lava is emitted from two vent locations marked as blue triangles in the simulation. Diagrams showing the relative True Positives (green), False Positives (orange), and False Negatives (red) are illustrated in the top left of each simulation.}
 			\label{fig:tolbachik}
 		\end{figure}
 		
@@ -663,8 +663,8 @@ The set of cellular automata is defined as
 
 		\begin{figure}
 		\centering
-		\includegraphics[width=\linewidth]{figures/3flows_h}
-		\caption{MOLASSES Simulations of the 2012-3 Tolbachik Lava Flows. Vents are shown as blue triangles and the mapped flow is outlined in black. a) Pulse Volume = 1755 m$^3$, the simulation far exceeds the true runout distance; b) Pulse Volume = 4387 m$^3$, this simulation performs best under the negative posterior $P(\neg Lava|\neg Sim)$ test; c) Pulse Volume = 14040 m$^3$, this simulation performs best under the posterior $P(Lava|Sim)$ test, but does not have a runout length similar to the mapped flow.}
+		\includegraphics[width=\linewidth]{figures/pulse_examples_72dpi}
+		\caption{MOLASSES Simulations of the 2012-3 Tolbachik Lava Flows. Vents are shown as blue triangles and the mapped flow is outlined in black. a) Pulse Volume = 1755 m$^3$, the simulation far exceeds the true runout distance; b) Pulse Volume = 4387 m$^3$, this simulation performs best under the negative posterior $\text{Pr}(\neg Lava|\neg Sim)$ test; c) Pulse Volume = 14040 m$^3$, this simulation performs best under the posterior $\text{Pr}(Lava|Sim)$ test, but does not have a runout length similar to the mapped flow.}
 		\label{fig:pulse_map}
 		\end{figure}
 
