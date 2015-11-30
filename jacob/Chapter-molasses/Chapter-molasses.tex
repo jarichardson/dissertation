@@ -59,7 +59,7 @@
 	
 	In Section \ref{sec:MOLASSES}, I will demonstrate how CA is applied to lava flows and detail how a CA simulation is carried out in the MOLASSES code. I will introduce a hierarchy of benchmarks in Section \ref{sec:benchmark} that can be used to verify and validate different lava flow algorithms using increasingly complex model parameters. In Section \ref{sec:Bayesian}, I will expand on the final benchmark level (validation against real flows) with a Bayesian approach to improving model performance for the 2012-3 Tolbachik Lava Flow. The results from these Sections will be discussed in Section \ref{sec:discussion}.
 	
-	\subsection{Case Study Area: 2012-3 Tolbachik Lava Flow}\label{sec:tolb_back}
+	\subsection{Case Study Area: 2012-3 Tolbachik Lava Flow}\label{sec_tolb_back}
 The Tolbachik lava flow began in November 2012, originally being sourced from a long fissure vent south of Tolbachik Dol. Initial magma flux was estimated to be 440~m$^3$~s$^{-1}$ \citep{belousov2015overview}. The fissure vent ultimately coalesced into two main vents, seen in TanDEM-X data and the flux dropped significantly to between 100 and 200~m$^3$~s$^{-1}$. Early stages of the flow carried lava west to a maximum runout of 14.5~km and later stages beginning in January or February, carried lava east. The total emplacement volume is $\sim$0.5~cu.~km. with 0.38~cu.~km. of that being to the west. TanDEM-X data show that the modal thickness of the flow is 7.8~m, and that the overall thickness distribution is log-normal. After the flow ceased, the total emplacement area was mapped using orthophotos and TanDEM-X data where clouds were present in the images by \citet{kubanek2015lava}.
 	
 
@@ -380,33 +380,48 @@ The set of cellular automata is defined as
 			\end{tabular}
 		\end{center}
 		
-	\subsection{Level 3: Replication of real lava flows over complex topography}
-		The recent availability of global or near-global topographic datasets, such as SRTM or ASTER GDEM has enabled the direct observation of the underlying surface of even more recent lava flows. The extents of lava flows such as the 2012-3 Tolbachik lava flow, in conjunction with available pre-eruption DEMs, is the final benchmarking test for lava flow algorithms. At this level, model inputs must reflect reality, which naturally makes parameter spaces used in applicable tests more complex than those used in previous levels. Ultimately, if a lava spreading algorithm succeeds at this level after performing well in previous levels, the algorithm is considered validated against field data.
+	\subsection{Level 3: Replication of real lava flows over complex topography}\label{sec_tolb_bench}
+		The recent availability of global or near-global topographic datasets, such as SRTM or ASTER GDEM has enabled the direct observation of the underlying surface of even more recent lava flows. Flow algorithms can be validated against recent lava flows by simulating lava over these surfaces with parameters defined by the new lava flows. The 2012-3 Tolbachik lava flows will be used as a benchmark for the eight flow algorithms. As discussed above (Section \ref{sec_tolb_back}), the earliest lavas flowed from a fissure to the west. Before later stage flows began moving to the east, the volume of the lavas were 0.22~km$^3$. The modal thickness of the flow has been found to be 7.8~m and the areal extent was mapped with orthoimages \citep{kubanek2015lava}.
 
-		\subsubsection{2012-3 Tolbachik, Russia lava flows}\label{test:Real_Tolbachik}
-			The goodness of fit between a simulated flow and a mapped lava flow can be simply measured by the Jaccard coefficient. This parameter is the ratio of the intersection area inundated by both the simulation and the real flows by the union area inundated by either. To illustrate, this test has been performed recently by Kubanek et al. (submitted) for the 2012-3 Tolbachik flow where a MOLASSES model configuration, explained later, produced a lava flow with a 59\% fit to the mapped flow. This result means that 59\% of the area inundated by either the simulated flow or the mapped flow, the union, was inundated by both the simulated and the mapped flows. Conversely, 41\% of the area was either modeled to have been inundated but wasn't or was modeled to be lava-free but actually was inundated by lava. These are generally known as false positives or false negatives, respectively.
-			
-
-			%Go on about how the Jaccard DEM is constructed maybe? or maybe this is results material.
-			\begin{center}
-				\begin{tabular}{l}
-					\toprule
-					\textbf{Test \ref{test:Real_Tolbachik} Algorithm}\\
-					\midrule
-					1.~$C_{real}$~:=~Locations of grid cells in Tolbachik DEM inundated by 2012-3 Flow.\\
-					2.~Run \textbf{MOLASSES} over Tolbachik DEM\\
-					3.~Define results:\\
-						~\tabitem $C_{model}$~:=~Locations of cells, $C_i,...,C_N$, inundated by \textbf{MOLASSES} flow.\\
-					4.~$Fit:=\cap_C/\cup_C$\\
-						~\tabitem If $Fit\ge0.5$: Success\\
-						~\tabitem If $Fit<0.5$: Failure\\
-					\bottomrule
-				\end{tabular}
-			\end{center}
+		For this example, two metrics which are commonly employed to validate lava flow simulators against real flows will be used: model sensitivity and a fitness metric called the ``Jaccard coefficient.'' An alternative bayesian approach to these metrics is discussed in Section \ref{sec:Bayesian}.  Model sensitivity is defined as
+		\begin{equation}
+			\text{Model~Sensitivity}=\frac{|Lava\cap Sim|}{|Lava|}
+		\end{equation}
+		where $|Lava\cap Sim|$ is the size of the interesection of the simulation and the true lava flow (the True Positives) and $|Lava|$ is the size of the lava flow. This gives a percentage of the true lava flow that the simulation correctly predicted. 
+		
+		The Jaccard coefficient, or fit, is defined as 
+		\begin{equation}
+			\text{Jaccard~Fit}=\frac{|Lava\cap Sim|}{|Lava\cup Sim|}
+		\end{equation}
+		where $|Lava\cup Sim|$ is the size of the union of the lava flow and a simulated flow. This gives a percentage of the total area covered by either the simulated flow or the true flow that is covered by both.
+		
+		Each flow algorithm is run using the following parameters. Flows are run over both 3-arcsecond SRTM topography (75 m grid resolution at 56$^{\circ}$N) and bistatic TanDEM-X topography processed by \citet{kubanek2015lava}. Both fitness metrics are calculated with the resulting model output, given as a list of inundated locations. ``Failure'' can be defined here as either metric falling below 50\% for the sake of example.
+		
+		\begin{center}
+			\textbf{Tolbachik Validation Flow Parameters}\\
+			\begin{tabular}{l l}
+				\toprule
+				Elevation Model & 75-m SRTM or 15-m TanDEM-X\\
+				Residual Thickness & 7.8~m\\
+				Pulse Volumes & 44200 m$^3$ (SRTM) or 1800 m$^3$ (TanDEM-X)\\
+				\midrule
+				Vent$_N$ Easting & 582800~m (UTM Zone 57)\\
+				Vent$_N$ Northing & 6182100~m\\
+				Vent$_N$ Total Volume & 4.63$\cdot10^7$~m$^3$\\
+				\midrule
+				Vent$_S$ Easting & 582475~m\\
+				Vent$_S$ Northing & 6180700~m\\
+				Vent$_S$ Total Volume & 1.737$\cdot10^8$~m$^3$\\
+				\bottomrule
+			\end{tabular}
+		\end{center}
 			
 	\subsubsection{Results}
 	
-	Each transition function was tested over SRTM topography and a TanDEM-X DEM using values gathered from TanDEM-X analysis. Two vents were situated over the topography at UTM coordinates of the two active vents created in the 2012-3 Tolbachik eruption. The total combined volume output from these two vents were 0.38~cubic~km. The residual thickness of the flow is 7.8~m and the pulse volumes were defined as the product of the thickness and the spatial resolution of the underlying DEM. The Jaccard fit for each flow algorithm is listed below for both DEMs.
+	%Each transition function was tested over SRTM topography and a TanDEM-X DEM. Two vents were situated over the topography at UTM coordinates of the two active vents created in the 2012-3 Tolbachik eruption. The total combined volume output from these two vents were 0.38~cubic~km. The residual thickness of the flow is 7.8~m and the pulse volumes were defined as the product of the thickness and the spatial resolution of the underlying DEM. The Jaccard fit for each flow algorithm is listed below for both DEMs.
+	
+	Three example algorithms are illustrated in Figure \ref{fig:tolbachik}. One primary observation is that all simulations had a longer run-out length on the finer TanDEM-X grid than on the coarser SRTM grid. Despite this, all flows took the correct major pathways taken by the true lava flow. A small diagram in the top left corner of each map in Figure \ref{fig:tolbachik} shows the true positives, false positives, and false negatives in each simulation. True positives are areas inundated by both flow and simulation, false positives are areas simulated as being inundated but are not mapped as such, and false negatives are areas hit by lava that the simulation failed to forecast. 
+	
 		\begin{figure}[!h]
 			\centering
 			\includegraphics[width=\linewidth]{figures/tolb_lvl3_examples_72dpi}
@@ -414,6 +429,10 @@ The set of cellular automata is defined as
 			\label{fig:tolbachik}
 		\end{figure}
 		
+			The best algorithm and DEM pair were the 8/N/S algorithm over SRTM (top left of Figure \ref{fig:tolbachik}), while this same algorithm performed fairly poorly over TanDEM-X topography. For the SRTM simulation, this algorithm achieved a model sensitivity of 82.8\% and a Jaccard fitness score of 63.1\%. Graphically, sensitivity is calculated as the green area in the Figure \ref{fig:tolbachik} diagram divided by the green and red areas. The Jaccard fitness is the green area divided by the total area of the diagram. Because the Jaccard fitness statistic essentially expands the denomenator of model sensitivity, it will never be higher than model sensitivity.
+			
+			If success and failure are defined by having a fits of greater or less than 50\%, all models tested would pass for the SRTM DEM and about half would pass for the TanDEM-X DEM. All but one model (4/P/E) performed worse on the TanDEM-X DEM. The Jaccard fit and Sensitivity for all models are given below.
+					
 		\begin{center}
 			\textbf{Tolbachik Flow Results}\\
 			\begin{tabular}{l c c | c c}
@@ -434,8 +453,6 @@ The set of cellular automata is defined as
 			\end{tabular}
 		\end{center}
 
-		If success and failure are defined by having a fits of greater or less than 50\%, all models tested would pass for the SRTM DEM and about half would pass for the TanDEM-X DEM. All but one model performed worse on the TanDEM-X DEM.
-
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %BAYESIAN APPROACH
@@ -451,7 +468,7 @@ The set of cellular automata is defined as
 	\begin{equation}
 		\text{Pr}(A|B)=\frac{\text{Pr}(B|A)\text{Pr}(A)}{\text{Pr}(B)}\label{eq_bayes}
 	\end{equation}
-	where $\text{Pr}(A)$ is the general probability of $A$ occuring, $\text{Pr}(B)$ is the probability of $B$ being observed, and $\text{Pr}(B|A)$ is the conditional probability of $B$ given the occurence of $A$. $\text{Pr}(B|A)$ is also known as model sensitivity and, in the specific case of lava flow modeling, can be stated as ``the percentage of the lava flow that the model correctly forecasted.''
+	where $\text{Pr}(A)$ is the general probability of $A$ occuring, $\text{Pr}(B)$ is the probability of $B$ being observed, and $\text{Pr}(B|A)$ is the conditional probability of $B$ given the occurence of $A$. $\text{Pr}(B|A)$ is also known as model sensitivity, which is a common fitness statistic and was discussed in Section \ref{sec_tolb_bench}
 	
 	The left side of Equation \ref{eq_bayes}, $\text{Pr}(A|B)$, is the Posterior probability of $A$ and can be stated as ``the probability that lava will inundate a location if the model forecasted inundation at that location.'' A second posterior, which I call the negative posterior, is $\text{Pr}(\neg A|\neg B)$ and is the obverse of $\text{Pr}(A|B)$. This negative posterior relates not being inundated by lava at a given location to a safe outcome forecasted by a simulation and can be calculated by modifying Equation \ref{eq_bayes} and substituting $A$ for $Lava$ (the lava flow) and $B$ for $Sim$ (the simulation), resulting in the formula
 	\begin{equation}
@@ -530,7 +547,7 @@ The set of cellular automata is defined as
 		\end{figure}
 				
 	
-	\paragraph{Review of Validation Level 3} Instead of using model sensitivity and the Jaccard index as benchmarks for the various lava flow models, now the two posteriors will be used. The potential hazard area is defined as the distribution of MC simulations (72~km$^2$).
+	\paragraph{Review of Validation Level 3} Instead of using model sensitivity and the Jaccard index as benchmarks for the various lava flow models, now the two posteriors will be used. The potential hazard area is defined as the distribution of MC simulations (72~km$^2$). To give an example calculation, $\text{Pr}(Lava|Sim)$ is found with Equation \ref{eq_simplepost} by dividing true positives (green boxes in \ref{fig:tolbachik}) by the simulation area (green and red boxes). The negative posterior, $\text{Pr}(\neg Lava|\neg Sim)$, is found by diving true negatives (blue area, in bottom right diagram of Figure \ref{fig_hazardarea}), by the area not simulated (top half of bottom right diagram of Figure \ref{fig_hazardarea}).
 	
 		\begin{center}
 		\textbf{Traditional Fit Metrics and Bayesian Posterior Functions}\\
@@ -552,7 +569,7 @@ The set of cellular automata is defined as
 		\end{tabular}
 	\end{center}
 	
-	For the rest of this section, the preferred model, 8/N/S (the 8-connected, no parent-child relationships, with slope-proportional spreading) algorithm will be used. By applying this model to the Tolbachik lava flows, Bayesian methods will be used to improve the ``Pulse Volume'' parameter and will later be used to constrain model uncertainty at Tolbachik.
+	For the rest of this section, the 8/N/S (the 8-connected, no parent-child relationships, with slope-proportional spreading) algorithm will be used. This is preferred because it out-performed other algorithms over the SRTM DEM. By applying this model to the Tolbachik lava flows, Bayesian methods will be used to improve the ``Pulse Volume'' parameter and will later be used to constrain model uncertainty at Tolbachik.
 	
 	\subsection{Improving model performance on one model parameter}
 	
@@ -602,7 +619,7 @@ The set of cellular automata is defined as
 		\begin{figure}
 			\centering
 			\includegraphics[width=0.7\linewidth]{figures/MC_posteriors_300dpi}
-			\caption{Fitness statistic distribution between for 100,000 simulations of the 2012-3 Tolbachik Lava Flows, over SRTM topography with 3~m standard elevation uncertainty. Each point represents the posterior probabilities of inundation/non-inundation for one simulation. Red lines are the fitness values of a simulated flow over SRTM data assuming 0~m elevation uncertainty. Black lines are placed at the median values of each posterior probability.}
+			\caption{Fitness statistic distribution between for 100,000 simulations of the 2012-3 Tolbachik Lava Flows, over SRTM topography with 3~m standard elevation uncertainty. Each point represents the posterior probabilities of inundation/non-inundation for one simulation. Red lines are the fitness values of a simulated flow over SRTM data assuming 0~m elevation uncertainty (top right corner of Figure \ref{fig:tolbachik}). Black lines are placed at the median values of each posterior probability.}
 			\label{fig:MC_dist}
 		\end{figure}
 
