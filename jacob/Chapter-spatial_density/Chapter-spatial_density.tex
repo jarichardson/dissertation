@@ -8,6 +8,15 @@
 \usepackage{natbib}
 \usepackage{graphicx}
 \usepackage{hyperref}
+\usepackage{subcaption}
+\usepackage{caption}
+\captionsetup{font={sf,small},labelfont=bf,width=0.95\textwidth}
+
+\usepackage{titlesec}
+\titleformat*{\section}{\large\bfseries} %LARGE, Large, large
+\titleformat*{\subsection}{\normalsize\bfseries} %LARGE, Large, large
+\usepackage{booktabs}
+\newcommand{\tabitem}{~~\llap{\textbullet}~~}
 
 \title{Uses of kernel statistics on volcanic vents}
 \date{}
@@ -41,9 +50,50 @@ Who has tackled these questions before, who has tried to figure out spatial stat
 of volcanic fields? What is the strength and weakness of different methods?
 
 
+
+
+
+
+
+
 \section{Methods}
 
 \subsection{Data collection}
+
+\begin{table}
+\centering
+\caption{Data Sources}
+\begin{tabular}{p{2cm} p{2.5cm} p{2cm} l l p{3.5cm}}
+\toprule
+Cluster	&	Region, &	Location	&	Vent &	Bandwidth	&	Data\\
+Name		& Country	&	Lat, Long	&	Count	&	Matrix (km$^2$)	&Source\\
+\midrule
+Egrikuyu	&	Central Anatolia, Turkey	&	34$^{\circ}$W, 38$^{\circ}$E	&	77	&	$\bigl[\begin{smallmatrix} 10.8&1.00\\1.00&7.57 \end{smallmatrix}\bigr]$	&	Uslular et al. 2015\\
+San Francisco	&	Arizona, USA	&	35$^{\circ}$20'N, 111$^{\circ}$50'W	&	583	&	$\bigl[\begin{smallmatrix} 34.4&-0.0396\\-0.0396&13.0 \end{smallmatrix}\bigr]$	&	Harburger 2013\\
+%B San Francisco Volcanic Field	&	Arizona, USA	&	35$^{\circ}$20'N, 111$^{\circ}$30'W	&	239	&	$\bigl[\begin{smallmatrix} 21.6&-5.66\\-5.66&11.7 \end{smallmatrix}\bigr]$	&	Harburger 2013\\
+%M San Francisco Volcanic Field	&	Arizona, USA	&	36$^{\circ}$20'N, 112$^{\circ}$W	&	209	&	$\bigl[\begin{smallmatrix} 15.0&1.38\\1.38&25.4 \end{smallmatrix}\bigr]$	&	Harburger 2013\\
+%P San Francisco Volcanic Field	&	Arizona, USA	&	36$^{\circ}$20'N, 112$^{\circ}$15'W	&	135	&	$\bigl[\begin{smallmatrix} 13.3&-3.10\\-3.10&12.5 \end{smallmatrix}\bigr]$	&	Harburger 2013\\
+San Rafael	&	Utah, USA	&	38$^{\circ}$35'N, 111$^{\circ}$15'W	&	63	&	$\bigl[\begin{smallmatrix} 2.31&0.720\\0.720&3.12 \end{smallmatrix}\bigr]$	&	Kiyosugi et al 2012\\
+Black Rock Desert &	Utah, USA		&	39$^{\circ}$N, 112$^{\circ}$30'W&	39	&	$\bigl[\begin{smallmatrix} 3.51&0.500\\0.500&10.6 \end{smallmatrix}\bigr]$	&	Kiyosugi et al 2012, Hintz 2008\\
+Springerville &	Arizona, USA	&	34$^{\circ}$15'N, 109$^{\circ}$45'W	&	400	&	$\bigl[\begin{smallmatrix} 4.07&-0.300\\-0.300&3.14 \end{smallmatrix}\bigr]$	&	Kiyosugi et al 2012, Condit 2010\\
+Yucca Mountain &	Nevada, USA	&	36$^{\circ}$40'N, 116$^{\circ}$30'W	&	39	&	$\bigl[\begin{smallmatrix} 8.35&0.42\\0.42&8.75 \end{smallmatrix}\bigr]$	&	Kiyosugi et al 2012, Connor \& Hill 1995\\
+Abu		&	Ch\={u}goku, Japan	&	34$^{\circ}$30'N, 131$^{\circ}$35'E	&	56	&	$\bigl[\begin{smallmatrix} 3.81&0.230\\0.230&2.05 \end{smallmatrix}\bigr]$	&	Kiyosugi et al 2012, Kiyosugi 2010\\
+Izu-Tobu	&	Ch\={u}bu, Japan	&	35$^{\circ}$N, 139$^{\circ}$20'E	&	126	&	$\bigl[\begin{smallmatrix} 3.29&-0.200\\-0.200&2.27 \end{smallmatrix}\bigr]$	&	Kiyosugi et al 2012\\
+Adams		&	Washington, USA	&	46$^{\circ}$10'N, 121$^{\circ}$30'W	&	89	&	$\bigl[\begin{smallmatrix} 3.25&0.989\\0.989&13.9 \end{smallmatrix}\bigr]$	&	Barron et al 2014\\
+Newberry	&	Oregon, USA	&	43$^{\circ}$45'N, 121$^{\circ}$15'W	&	327	&	$\bigl[\begin{smallmatrix} 5.57&-2.43\\-2.43&17.3 \end{smallmatrix}\bigr]$	&	Bard et al 2013\\
+Field-A	&	Atalanta Planitia, Venus	&	54$^{\circ}$N, 168$^{\circ}$E	&	344	&	$\bigl[\begin{smallmatrix} 115&7.74\\7.74&238 \end{smallmatrix}\bigr]$	&	Miller\\
+Field-B1	&	Vellamo Planitia, Venus	&	27$^{\circ}$N, 137$^{\circ}$E	&	135	&	$\bigl[\begin{smallmatrix} 88.7&-35.4\\-35.4&71.4 \end{smallmatrix}\bigr]$	&	Miller\\
+Field-B2	&	Vellamo Planitia, Venus	&	328$^{\circ}$N, 139$^{\circ}$E	&	169	&	$\bigl[\begin{smallmatrix} 125&51.7\\51.7&116 \end{smallmatrix}\bigr]$	&	Miller\\
+Field-C	&	Mylitta Fluctus, Venus	&	52$^{\circ}$N, 58$^{\circ}$W	&	290	&	$\bigl[\begin{smallmatrix} 140&2.93\\2.93&138 \end{smallmatrix}\bigr]$	&	Miller\\
+Plain-A	&	Greenaway, Venus	&	11$^{\circ}$N, 130$^{\circ}$E	&	2919	&	$\bigl[\begin{smallmatrix} 2440&164\\164&1120 \end{smallmatrix}\bigr]$	&	Miller\\
+Plain-B	&	Atalanta Planitia, Venus	&	60$^{\circ}$N, 150$^{\circ}$E	&	10225	&	$\bigl[\begin{smallmatrix} 2470&709\\709&1000 \end{smallmatrix}\bigr]$	&	Miller\\
+Plain-C	&	Greenaway, Venus	&	20$^{\circ}$N, 135$^{\circ}$E	&	3460	&	$\bigl[\begin{smallmatrix} 1860&232\\232&1460 \end{smallmatrix}\bigr]$	&	Miller\\
+Syria		&	Tharsis, Mars	&	14$^{\circ}$S, 100$^{\circ}$W	&	263	&	$\bigl[\begin{smallmatrix} 2810&-1720\\-1720&2620 \end{smallmatrix}\bigr]$	&	Richardson et al 2013\\
+Arsia		&	Tharsis, Mars	&	9$^{\circ}$S, 120$^{\circ}$W	&	29	&	$\bigl[\begin{smallmatrix} 81.4&105\\105&347 \end{smallmatrix}\bigr]$	&	Chapter X\\
+Pavonis	&	Tharsis, Mars	&	4$^{\circ}$S, 114$^{\circ}$W	&	89	&	$\bigl[\begin{smallmatrix} 579&-0.616\\-0.616&2520 \end{smallmatrix}\bigr]$	&	Bleacher et al\\
+\bottomrule
+\end{tabular}
+\end{table}
 %List the points and how we gathered them.
 %Several Earth Catalogs
 %	Lassen (ask Aurelie)
@@ -89,14 +139,22 @@ This function is normalized to unity by including the sum of all weights in the 
 \section{Discussion}
 The major finding of this study is that the spatial density of vents between planets is generally different by an order of magnitude. On Earth, six monogenetic volcano clusters are shown to all cluster on the order of 0.1 vents per km$^2$. On Mars, two clusters have a vent density of around 0.001 vents per km$^2$. One cluster, in the basaltic caldera of Arsia Mons, is more focused by a factor of five. In between these vent densities, Venus shield fields have densities of 0.01 vent per km$^2$. Venus shield fields are still more focused than the regional shield plains, which have an average density of 0.003 vents per km$^2$, similar to the Arsia Mons cluster. Essentially, volcanic vents in Earth fields have 10s km$^2$ of space between neighboring vents, on Venus, distributed volcanoes have 100s km$^2$ of individual space, and on Mars, two of three fields have 1000s  km$^2$ of space between neighboring vents, while one is clustered on a ``Venusian'' scale.
 
-Each bandwidth ellipse mimicks attributes of its corresponding vent cluster and likely reflects geologic properties which effect the volcano cluster. The bandwidth ellipse area at one standard deviation (1-sigma) reflects both the vent density (a smaller bandwidth denotes higher vent density) and the cluster size (a larger bandwidth can correspond to a larger cluster areal extent). Because bandwidth area is perfectly correlated with these two characteristics, it is better to refer to each characteristic directly. 
+\subsection{Geologic implications of the kernel bandwidth}
+Each bandwidth ellipse mimicks attributes of its corresponding vent cluster and likely reflects geologic properties which effect the volcano cluster. The bandwidth ellipse area at one standard deviation (1-sigma) reflects both the spatial extent of volcanoes in the cluster and the number of vents in the cluster. Larger volcano clusters correlate with larger bandwidths ellipses, while clusters with more volcanoes in the same amount of space have smaller bandwidths. Because bandwidth area is perfectly correlated with these two characteristics, it is better to refer to each characteristic directly. Similarly, bandwidth ellipse elongation, or the difference in the major and minor axis standard deviations, is a function of the anisotropy in vent production through the cluster, either because of a farther extent of volcanoes in one direction or because of more vents per km in one direction. The anisotropy of vent production in a cluster can be explored using bandwidth elongation as a proxy.
 
-However, the shape or elongation of the bandwidth ellipse does reflect anisotropic vent production. If the ellipse is elongated in the N-S direction, for instance, either the field is elongated in this direction or vents are more closely packed in the E-W direction. Elongation of the bandwidth ellipse can be related to three possible geologic interpretations: 1) The magma source region elongated in the same direction; 2) the magma source region migrated in the direction of elongation or multiple independent magma sources formed along the ellipse's axis, overprinting previous volcanic vent populations; or 3) magma flow through the crust was anisotropic due to heterogeneities in the hydraulic conductivity of the lithosphere below the vent cluster.
+Elongation of the bandwidth of a volcano cluster can be explained by one or a combination of at least three geologic processes. First, the magma source region underlying the volcano cluster might be elongated, matching the distribution of volcanoes observed at the planet's surface. Second, the magma source region might have migrated with time or multiple magma source regions that are spatially adjacent might be overprinting pre-existing populations. Third, the hydrodynamic conductivity of the crust might itself be anisotropic, preferrentially focusing magma in one direction or enabling magma to spread laterally away from a source region. While all three of these might apply to all volcanic fields in varying degrees of magnitude, I will discuss how the anisotropy seen in the bandwidth ellipse might be explained by one of these processes for example clusters.
+
+\subsubsection{Elongated Source Region}
+Cascadian volcanic fields are a good example of this.
+
+\subsubsection{Magma source migration or multiple overprinting sources}
+Springerville and San Francisco volcanic field are great examples of this, but Syria Planum might also be applicable.
+
+\subsubsection{Anisotropic crustal conductivity}
+San Rafael and Arsia Mons are perfect for this example. Maybe the cascadian volcanoes as well but I'm not too sure.
 
 
-
-Clustering vs. packing. topology trees, profiles, and histograms
-
+\subsection{Volume Flux Density}
 Volume can also be compared with this method.
 Spatial vent density and volume density compared across planets
 We can compare km3/km2-a between the caribou field and arsia. We can compare km3/km2 between arsia and egrikuyu
