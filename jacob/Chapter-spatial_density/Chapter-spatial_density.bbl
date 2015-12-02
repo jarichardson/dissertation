@@ -1,0 +1,97 @@
+\begin{thebibliography}{12}
+\providecommand{\natexlab}[1]{#1}
+\providecommand{\url}[1]{\texttt{#1}}
+\expandafter\ifx\csname urlstyle\endcsname\relax
+  \providecommand{\doi}[1]{doi: #1}\else
+  \providecommand{\doi}{doi: \begingroup \urlstyle{rm}\Url}\fi
+
+\bibitem[Bard et~al.(2013)Bard, Ramsey, MacLeod, Sherrod, Chitwood, and
+  Jensen]{bard2013database}
+Joseph~A Bard, David~W Ramsey, Norman~S MacLeod, David~R Sherrod, Lawrence~A
+  Chitwood, and Robert~A Jensen.
+\newblock Database for the geologic map of newberry volcano, deschutes,
+  klamath, and lake counties, oregon.
+\newblock Technical report, US Geological Survey Data Series 771, 2013.
+
+\bibitem[Barron et~al.(2014)Barron, Ramsey, and Smith]{barron2014database}
+Andrew~D Barron, David~W Ramsey, and James~G Smith.
+\newblock Database for the geologic map of upper eocene to holocene volcanic
+  and related rocks in the cascade range, washington.
+\newblock Technical report, US Geological Survey, 2014.
+
+\bibitem[Bleacher et~al.(2009)Bleacher, Glaze, Greeley, Hauber, Baloga,
+  Sakimoto, Williams, and Glotch]{bleacher2009spatial}
+Jacob~E. Bleacher, Lori~S. Glaze, Ronald Greeley, Ernst Hauber, Stephen~M.
+  Baloga, Susan E.~H. Sakimoto, David~A. Williams, and Timothy~D. Glotch.
+\newblock {Spatial and alignment analyses for a field of small volcanic vents
+  south of Pavonis Mons and implications for the Tharsis province, Mars}.
+\newblock \emph{Journal of Volcanology and Geothermal Research}, 185\penalty0
+  (1--2):\penalty0 96--102, 2009.
+\newblock \doi{10.1016/j.jvolgeores.2009.04.008}.
+
+\bibitem[Condit(2010)]{condit2010dynamic}
+Christopher~D Condit.
+\newblock Dynamic digital map of the springerville volcanic field and the
+  ddm-template: An example of an open-source tool to distribute maps, data,
+  articles, and multi-media materials.
+\newblock \emph{Geosphere}, 6\penalty0 (4):\penalty0 430--443, 2010.
+
+\bibitem[Connor and Hill(1995)]{connor1995three}
+Charles~B Connor and Brittain~E Hill.
+\newblock Three nonhomogeneous poisson models for the probability of basaltic
+  volcanism: application to the yucca mountain region, nevada.
+\newblock \emph{Journal of Geophysical Research: Solid Earth (1978--2012)},
+  100\penalty0 (B6):\penalty0 10107--10125, 1995.
+
+\bibitem[Harburger(2014)]{harburger2014probabilistic}
+Aleeza~M Harburger.
+\newblock Probabilistic modeling of lava flows: A hazard assessment for the san
+  francisco volcanic field, arizona.
+\newblock Master's thesis, University of South Florida, 2014.
+
+\bibitem[Hintz(2008)]{hintz2008physical}
+A.R. Hintz.
+\newblock Physical volcanology and hazard analysis of a young monogenetic
+  volcanic field: {Black Rock Desert, Utah}.
+\newblock Master's thesis, University of South Florida, 2008.
+
+\bibitem[Kiyosugi et~al.(2012)Kiyosugi, Connor, Wetmore, Ferwerda, Germa,
+  Connor, and Hintz]{kiyosugi2012relationship}
+K.~Kiyosugi, C.B. Connor, P.H. Wetmore, B.P. Ferwerda, A.M. Germa, L.J. Connor,
+  and A.R. Hintz.
+\newblock Relationship between dike and volcanic conduit distribution in a
+  highly eroded monogenetic volcanic field: {San Rafael, Utah, USA}.
+\newblock \emph{Geology}, 40\penalty0 (8):\penalty0 695--698, 2012.
+\newblock \doi{10.1130/G33074.1}.
+
+\bibitem[Kiyosugi et~al.(2010)Kiyosugi, Connor, Zhao, Connor, and
+  Tanaka]{kiyosugi2010relationships}
+Koji Kiyosugi, CB~Connor, D~Zhao, LJ~Connor, and K~Tanaka.
+\newblock Relationships between volcano distribution, crustal structure, and
+  p-wave tomography: an example from the abu monogenetic volcano group, sw
+  japan.
+\newblock \emph{Bulletin of volcanology}, 72\penalty0 (3):\penalty0 331--340,
+  2010.
+
+\bibitem[Miller(2012)]{miller2012shield}
+Diana~M Miller.
+\newblock Shield fields and shield plains on venus geologic characteristics and
+  spatial relationships.
+\newblock Thesis (m.s.), State University of New York at Buffalo, 2012.
+
+\bibitem[Richardson et~al.(2013)Richardson, Bleacher, and
+  Glaze]{richardson2013volcanic}
+Jacob~A Richardson, Jacob~E Bleacher, and Lori~S Glaze.
+\newblock The volcanic history of syria planum, mars.
+\newblock \emph{Journal of Volcanology and Geothermal Research}, 252:\penalty0
+  1--13, 2013.
+
+\bibitem[Uslular et~al.(2015)Uslular, Gen{\c{c}}alio{\u{g}}lu-Ku{\c{s}}cu, and
+  Arcasoy]{uslular2015size}
+G~Uslular, G~Gen{\c{c}}alio{\u{g}}lu-Ku{\c{s}}cu, and A~Arcasoy.
+\newblock Size-distribution of scoria cones within the e{\u{g}}rikuyu
+  monogenetic field (central anatolia, turkey).
+\newblock \emph{Journal of Volcanology and Geothermal Research}, 2015.
+\newblock \doi{10.1016/j.jvolgeores.2015.05.006}.
+
+\end{thebibliography}

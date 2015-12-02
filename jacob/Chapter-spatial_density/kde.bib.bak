@@ -1,0 +1,129 @@
+% This file was created with JabRef 2.11.1.
+% Encoding: ISO8859_1
+
+
+@TechReport{bard2013database,
+  Title                    = {Database for the Geologic Map of Newberry Volcano, Deschutes, Klamath, and Lake Counties, Oregon},
+  Author                   = {Bard, Joseph A and Ramsey, David W and MacLeod, Norman S and Sherrod, David R and Chitwood, Lawrence A and Jensen, Robert A},
+  Institution              = {US Geological Survey Data Series 771},
+  Year                     = {2013},
+  Owner                    = {jacob},
+  Timestamp                = {2015.12.02}
+}
+
+@TechReport{barron2014database,
+  Title                    = {Database for the geologic map of upper Eocene to Holocene volcanic and related rocks in the Cascade Range, Washington},
+  Author                   = {Barron, Andrew D and Ramsey, David W and Smith, James G},
+  Institution              = {US Geological Survey},
+  Year                     = {2014},
+  Doi                      = {10.3133/ds842},
+  Owner                    = {jacob},
+  Timestamp                = {2015.12.02}
+}
+
+@Article{bleacher2009spatial,
+  Title                    = {{Spatial and alignment analyses for a field of small volcanic vents south of Pavonis Mons and implications for the Tharsis province, Mars}},
+  Author                   = {Bleacher, Jacob E. and Glaze, Lori S. and Greeley, Ronald and Hauber, Ernst and Baloga, Stephen M. and Sakimoto, Susan E. H. and Williams, David A. and Glotch, Timothy D.},
+  Journal                  = {Journal of Volcanology and Geothermal Research},
+  Year                     = {2009},
+  Number                   = {1--2},
+  Pages                    = {96--102},
+  Volume                   = {185},
+  Doi                      = {10.1016/j.jvolgeores.2009.04.008}
+}
+
+@Article{condit2010dynamic,
+  Title                    = {Dynamic Digital Map of the Springerville Volcanic Field and the DDM-Template: An example of an open-source tool to distribute maps, data, articles, and multi-media materials},
+  Author                   = {Condit, Christopher D},
+  Journal                  = {Geosphere},
+  Year                     = {2010},
+  Number                   = {4},
+  Pages                    = {430--443},
+  Volume                   = {6},
+  Publisher                = {Geological Society of America}
+}
+
+@Article{connor1995three,
+  Title                    = {Three nonhomogeneous Poisson models for the probability of basaltic volcanism: application to the Yucca Mountain region, Nevada},
+  Author                   = {Connor, Charles B and Hill, Brittain E},
+  Journal                  = {Journal of Geophysical Research: Solid Earth (1978--2012)},
+  Year                     = {1995},
+  Number                   = {B6},
+  Pages                    = {10107--10125},
+  Volume                   = {100},
+  Publisher                = {Wiley Online Library}
+}
+
+@MastersThesis{harburger2014probabilistic,
+  Title                    = {Probabilistic Modeling of Lava Flows: A Hazard Assessment for the San Francisco Volcanic Field, Arizona},
+  Author                   = {Harburger, Aleeza M},
+  School                   = {University of South Florida},
+  Year                     = {2014},
+  Owner                    = {jacob},
+  Timestamp                = {2015.12.02}
+}
+
+@MastersThesis{hintz2008physical,
+  Title                    = {Physical volcanology and hazard analysis of a young monogenetic volcanic field: {Black Rock Desert, Utah}},
+  Author                   = {Hintz, A.R.},
+  School                   = {University of South Florida},
+  Year                     = {2008},
+  File                     = {:home/jacob/academic/Papers/Earth/Hintz 2008 - Physical volcanology and hazard analysis of Black Rock desert Utah.pdf:PDF},
+  Owner                    = {jacob},
+  Timestamp                = {2015.02.13}
+}
+
+@Article{kiyosugi2012relationship,
+  Title                    = {Relationship between dike and volcanic conduit distribution in a highly eroded monogenetic volcanic field: {San Rafael, Utah, USA}},
+  Author                   = {Kiyosugi, K. and Connor, C.B. and Wetmore, P.H. and Ferwerda, B.P. and Germa, A.M. and Connor, L.J. and Hintz, A.R.},
+  Journal                  = {Geology},
+  Year                     = {2012},
+  Number                   = {8},
+  Pages                    = {695--698},
+  Volume                   = {40},
+  Doi                      = {10.1130/G33074.1},
+  File                     = {:/home/jacob/academic/Papers/Earth/Kiyosugi et al 2012 - San Rafael Volcanic Field.pdf:PDF},
+  Keywords                 = {Earth, volcanism, dikes, conduits, San Rafael},
+  Owner                    = {jacob},
+  Publisher                = {Geological Society of America},
+  Timestamp                = {2013.07.17}
+}
+
+@Article{kiyosugi2010relationships,
+  Title                    = {Relationships between volcano distribution, crustal structure, and P-wave tomography: an example from the Abu Monogenetic Volcano Group, SW Japan},
+  Author                   = {Kiyosugi, Koji and Connor, CB and Zhao, D and Connor, LJ and Tanaka, K},
+  Journal                  = {Bulletin of volcanology},
+  Year                     = {2010},
+  Number                   = {3},
+  Pages                    = {331--340},
+  Volume                   = {72},
+  Publisher                = {Springer}
+}
+
+@MastersThesis{miller2012shield,
+  Title                    = {Shield fields and shield plains on venus geologic characteristics and spatial relationships},
+  Author                   = {Miller, Diana M},
+  School                   = {State University of New York at Buffalo},
+  Year                     = {2012},
+  Type                     = {Thesis (M.S.)}
+}
+
+@Article{richardson2013volcanic,
+  Title                    = {The volcanic history of Syria Planum, Mars},
+  Author                   = {Richardson, Jacob A and Bleacher, Jacob E and Glaze, Lori S},
+  Journal                  = {Journal of Volcanology and Geothermal Research},
+  Year                     = {2013},
+  Pages                    = {1--13},
+  Volume                   = {252}
+}
+
+@Article{uslular2015size,
+  Title                    = {Size-distribution of scoria cones within the E{\u{g}}rikuyu Monogenetic Field (Central Anatolia, Turkey)},
+  Author                   = {Uslular, G and Gen{\c{c}}alio{\u{g}}lu-Ku{\c{s}}cu, G and Arcasoy, A},
+  Journal                  = {Journal of Volcanology and Geothermal Research},
+  Year                     = {2015},
+  Doi                      = {10.1016/j.jvolgeores.2015.05.006},
+  Owner                    = {jacob},
+  Timestamp                = {2015.12.02}
+}
+
