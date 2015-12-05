@@ -1,4 +1,4 @@
-\begin{thebibliography}{21}
+\begin{thebibliography}{24}
 \providecommand{\natexlab}[1]{#1}
 \providecommand{\url}[1]{\texttt{#1}}
 \expandafter\ifx\csname urlstyle\endcsname\relax
@@ -146,11 +146,26 @@ Julia Kubanek, Jacob~A. Richardson, Sylvain~J. Charbonnier, and Laura~J.
 \newblock \emph{Bulletin of Volcanology}, 77\penalty0 (12), 2015.
 \newblock \doi{10.1007/s00445-015-0989-9}.
 
+\bibitem[Marzocchi and Woo(2007)]{marzocchi2007probabilistic}
+Warner Marzocchi and Gordon Woo.
+\newblock Probabilistic eruption forecasting and the call for an evacuation.
+\newblock \emph{Geophysical Research Letters}, 34\penalty0 (22):\penalty0
+  n/a--n/a, 2007.
+\newblock ISSN 1944-8007.
+\newblock \doi{10.1029/2007GL031922}.
+\newblock L22310.
+
 \bibitem[Miyamoto and Sasaki(1997)]{miyamoto1997simulating}
 Hideaki Miyamoto and Sho Sasaki.
 \newblock Simulating lava flows by an improved cellular automata method.
 \newblock \emph{Computers \& Geosciences}, 23\penalty0 (3):\penalty0 283--292,
   1997.
+
+\bibitem[Peterson and Tilling(2000)]{peterson2000lava}
+D.W. Peterson and R.I. Tilling.
+\newblock Lava flow hazards.
+\newblock In H.~Sigurdsson, editor, \emph{Encyclopedia of Volcanoes}, pages
+  957--971. Academic Press, San Diego, CA, 2000.
 
 \bibitem[Rodr\'{i}guez et~al.(2006)Rodr\'{i}guez, Morris, and
   Belz]{rodriguez2006global}
@@ -158,5 +173,11 @@ Ernesto Rodr\'{i}guez, Charles~S Morris, and J~Eric Belz.
 \newblock A global assessment of the srtm performance.
 \newblock \emph{Photogrammetric Engineering \& Remote Sensing}, 72\penalty0
   (3):\penalty0 249--260, 2006.
+
+\bibitem[Woo(2008)]{woo2008probabilistic}
+Gordon Woo.
+\newblock Probabilistic criteria for volcano evacuation decisions.
+\newblock \emph{Natural Hazards}, 45\penalty0 (1):\penalty0 87--97, 2008.
+\newblock \doi{10.1007/s11069-007-9171-9}.
 
 \end{thebibliography}
