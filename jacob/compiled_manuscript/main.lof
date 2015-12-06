@@ -1,0 +1,40 @@
+\renewcommand *\addvspace [1]{}
+\gdef \the@ipfilectr {@-1}
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {1.1}{\ignorespaces Shaded relief map of airborne laser scanning data, San Rafael Swell, Utah (USA).}}{3}{figure.caption.1}
+\contentsline {figure}{\numberline {1.2}{\ignorespaces Northwest-facing panoramic diagram of Central Cedar sill}}{6}{figure.caption.2}
+\contentsline {figure}{\numberline {1.3}{\ignorespaces Sill thickness contour plots of Hebes and Central Cedar sills}}{7}{figure.caption.4}
+\contentsline {figure}{\numberline {1.4}{\ignorespaces Chart of measured thicknesses and elevations of Central Cedar sill}}{9}{figure.caption.5}
+\contentsline {figure}{\numberline {1.5}{\ignorespaces Photograph and lidar point cloud of the east face of Cedar Mountain}}{11}{figure.caption.7}
+\contentsline {figure}{\numberline {1.6}{\ignorespaces Contour plots of thickness models over ALSM hillshade data for additional sills}}{12}{figure.caption.8}
+\gdef \the@ipfilectr {}
+\gdef \the@ipfilectr {@-2}
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {2.1}{\ignorespaces The Tolbachik region of Kamchackta, Russia}}{28}{figure.caption.10}
+\contentsline {figure}{\numberline {2.2}{\ignorespaces MOLASSES flow chart}}{31}{figure.caption.11}
+\contentsline {figure}{\numberline {2.3}{\ignorespaces A 2-D example of two transition functions with different slope treatments}}{34}{figure.caption.12}
+\contentsline {figure}{\numberline {2.4}{\ignorespaces A 2-D example of different transition functions with different ``parentage'' rules}}{36}{figure.caption.13}
+\contentsline {figure}{\numberline {2.5}{\ignorespaces Cellular Automata neighborhoods}}{37}{figure.caption.14}
+\contentsline {figure}{\numberline {2.6}{\ignorespaces Rotating slope test for the LavaPL algorithm}}{41}{figure.caption.16}
+\contentsline {figure}{\numberline {2.7}{\ignorespaces Fitness scores of different shaped flows on a flat surface}}{44}{figure.caption.17}
+\contentsline {figure}{\numberline {2.8}{\ignorespaces Three transition function algorithms simulating the 2012-3 Tolbachik lava flows}}{47}{figure.caption.18}
+\contentsline {figure}{\numberline {2.9}{\ignorespaces Potential hazard areas of the 2012-3 Tolbachik Flows}}{54}{figure.caption.20}
+\contentsline {figure}{\numberline {2.10}{\ignorespaces MOLASSES Simulations with different Pulse Volume parameter values of the 2012-3 Tolbachik Lava Flows}}{57}{figure.caption.22}
+\contentsline {figure}{\numberline {2.11}{\ignorespaces Posterior $\text {Pr}(Lava|Sim)$ for MOLASSES flows with differing Pulse Volumes.\relax }}{58}{figure.caption.23}
+\contentsline {figure}{\numberline {2.12}{\ignorespaces Negative posterior $\text {Pr}(\neg Lava|\neg Sim)$ for MOLASSES flows with differing Pulse Volumes.\relax }}{58}{figure.caption.24}
+\contentsline {figure}{\numberline {2.13}{\ignorespaces Map of Monte Carlo simulations of the 2012-3 Tolbachik lava flows}}{60}{figure.caption.26}
+\contentsline {figure}{\numberline {2.14}{\ignorespaces Fitness statistic distribution of Monte Carlo simulations of the 2012-3 Tolbachik lava flows}}{61}{figure.caption.27}
+\contentsline {figure}{\numberline {2.15}{\ignorespaces Sub-regions within the Monte Carlo solution, defined by $\text {Pr}(Sim)$}}{62}{figure.caption.28}
+\contentsline {figure}{\numberline {2.16}{\ignorespaces Relative likelihood of inundation given $\text {Pr}(Sim)$}}{64}{figure.caption.30}
+\contentsline {figure}{\numberline {2.17}{\ignorespaces Weighted averages of $\text {Pr}(Lava|Sim)$ and $\text {Pr}(\neg Lava|\neg Sim)$ for different pulse volumes}}{68}{figure.caption.32}
+\gdef \the@ipfilectr {}
+\gdef \the@ipfilectr {@-3}
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {3.1}{\ignorespaces Geologic Map of Syria Planum}}{78}{figure.caption.33}
+\contentsline {figure}{\numberline {3.2}{\ignorespaces Graphical summary of age--dating results by unit.\relax }}{89}{figure.caption.36}
+\contentsline {figure}{\numberline {3.3}{\ignorespaces Plot of vents with lines drawn to their nearest neighbors.\relax }}{89}{figure.caption.37}
+\contentsline {figure}{\numberline {3.4}{\ignorespaces Plots of skewness vs. kurtosis values for 95\% of 1000 simulated Poisson spatial distributions}}{91}{figure.caption.39}
+\contentsline {figure}{\numberline {3.5}{\ignorespaces Plot of vents and all inter--vent relationships less than the minimum significant distance.\relax }}{92}{figure.caption.40}
+\contentsline {figure}{\numberline {3.6}{\ignorespaces Distribution of inter--vent distances and inter--vent alignments}}{93}{figure.caption.41}
+\contentsline {figure}{\numberline {3.7}{\ignorespaces Map of tectonic centers from \citet {Anderson2001}}}{99}{figure.caption.42}
+\gdef \the@ipfilectr {}

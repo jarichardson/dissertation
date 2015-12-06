@@ -1,0 +1,78 @@
+\contentsline {chapter}{List of Figures}{iii}{Doc-Start}
+\contentsline {chapter}{Abstract}{vi}{Doc-Start}
+\gdef \the@ipfilectr {@-1}
+\contentsline {chapter}{\numberline {1}Role of sills in the development of volcanic fields: Insights from lidar mapping surveys of the San Rafael Swell, Utah}{1}{chapter.1}
+\contentsline {section}{\numberline {1.1}Abstract}{1}{section.1.1}
+\contentsline {section}{\numberline {1.2}Introduction}{1}{section.1.2}
+\contentsline {section}{\numberline {1.3}Geologic Description}{2}{section.1.3}
+\contentsline {section}{\numberline {1.4}Lidar Reconnaissance and Analysis}{4}{section.1.4}
+\contentsline {section}{\numberline {1.5}Igneous System Reconstruction}{6}{section.1.5}
+\contentsline {subsection}{\numberline {1.5.1}Hebes Sill}{6}{subsection.1.5.1}
+\contentsline {subsection}{\numberline {1.5.2}Central Cedar Sill}{8}{subsection.1.5.2}
+\contentsline {section}{\numberline {1.6}Discussion and Conclusions}{10}{section.1.6}
+\contentsline {section}{\numberline {1.7}Acknowledgments}{14}{section.1.7}
+\contentsline {section}{\numberline {1.8}References}{14}{section.1.8}
+\gdef \the@ipfilectr {}
+\gdef \the@ipfilectr {@-2}
+\contentsline {chapter}{\numberline {2}Validating Lava Flow Simulators using a Validation Hierarchy and Bayesian Analysis}{25}{chapter.2}
+\contentsline {section}{\numberline {2.1}Introduction}{25}{section.2.1}
+\contentsline {subsection}{\numberline {2.1.1}Case Study Area: 2012-3 Tolbachik Lava Flow}{28}{subsection.2.1.1}
+\contentsline {section}{\numberline {2.2}A Modular Cellular Automata Algorithm for lava flows}{29}{section.2.2}
+\contentsline {subsection}{\numberline {2.2.1}MOLASSES Algorithm Outline}{30}{subsection.2.2.1}
+\contentsline {subsection}{\numberline {2.2.2}Cells in E2}{32}{subsection.2.2.2}
+\contentsline {subsection}{\numberline {2.2.3}Source Locations and the Source Function}{33}{subsection.2.2.3}
+\contentsline {subsection}{\numberline {2.2.4}Substates and the Transition Function}{33}{subsection.2.2.4}
+\contentsline {paragraph}{\numberline {2.2.4.0.1}Local slope-based spreading}{34}{paragraph.2.2.4.0.1}
+\contentsline {paragraph}{\numberline {2.2.4.0.2}Neighborhood size}{35}{paragraph.2.2.4.0.2}
+\contentsline {paragraph}{\numberline {2.2.4.0.3}Spreading inhibited by special relationships}{35}{paragraph.2.2.4.0.3}
+\contentsline {subsection}{\numberline {2.2.5}Cell Neighborhood, X}{36}{subsection.2.2.5}
+\contentsline {section}{\numberline {2.3}Benchmarking Hierarchy}{38}{section.2.3}
+\contentsline {paragraph}{\numberline {2.3.0.0.4}Test Algorithms}{39}{paragraph.2.3.0.0.4}
+\contentsline {subsection}{\numberline {2.3.1}Level 0: Conservation of Mass}{39}{subsection.2.3.1}
+\contentsline {subsection}{\numberline {2.3.2}Level 1: Repeatability given meaningless parameter variation}{40}{subsection.2.3.2}
+\contentsline {subsubsection}{\numberline {2.3.2.1}Benchmark Parameters}{41}{subsubsection.2.3.2.1}
+\contentsline {subsubsection}{\numberline {2.3.2.2}Results}{42}{subsubsection.2.3.2.2}
+\contentsline {subsection}{\numberline {2.3.3}Level 2: Replication of flow morphologies on simple physical surfaces}{43}{subsection.2.3.3}
+\contentsline {subsubsection}{\numberline {2.3.3.1}Benchmark Parameters}{44}{subsubsection.2.3.3.1}
+\contentsline {subsubsection}{\numberline {2.3.3.2}Results}{45}{subsubsection.2.3.3.2}
+\contentsline {subsection}{\numberline {2.3.4}Level 3: Replication of real lava flows over complex topography}{45}{subsection.2.3.4}
+\contentsline {subsubsection}{\numberline {2.3.4.1}Results}{47}{subsubsection.2.3.4.1}
+\contentsline {section}{\numberline {2.4}Bayesian Applications for Lava Flow Models}{49}{section.2.4}
+\contentsline {paragraph}{\numberline {2.4.0.1.1}Potential Hazard Area}{52}{paragraph.2.4.0.1.1}
+\contentsline {paragraph}{\numberline {2.4.0.1.2}Review of Validation Level 3}{54}{paragraph.2.4.0.1.2}
+\contentsline {subsection}{\numberline {2.4.1}Improving model performance on one model parameter}{55}{subsection.2.4.1}
+\contentsline {subsubsection}{\numberline {2.4.1.1}Model Execution}{56}{subsubsection.2.4.1.1}
+\contentsline {subsubsection}{\numberline {2.4.1.2}Results}{57}{subsubsection.2.4.1.2}
+\contentsline {subsection}{\numberline {2.4.2}Incorporating Model Uncertainty with a Monte Carlo method}{59}{subsection.2.4.2}
+\contentsline {subsubsection}{\numberline {2.4.2.1}Bayesian distribution of MC results}{60}{subsubsection.2.4.2.1}
+\contentsline {subsubsection}{\numberline {2.4.2.2}Estimating inundation risk from the simulated frequency of inundation}{61}{subsubsection.2.4.2.2}
+\contentsline {section}{\numberline {2.5}Discussion}{65}{section.2.5}
+\contentsline {subsection}{\numberline {2.5.1}Benchmark Validation}{65}{subsection.2.5.1}
+\contentsline {subsection}{\numberline {2.5.2}Bayesian applications for real lava flows}{66}{subsection.2.5.2}
+\contentsline {subsubsection}{\numberline {2.5.2.1}Using Bayesian statistics to compare models}{67}{subsubsection.2.5.2.1}
+\contentsline {subsubsection}{\numberline {2.5.2.2}Decision Making with the Bayes Factor}{67}{subsubsection.2.5.2.2}
+\contentsline {section}{\numberline {2.6}Conclusions}{69}{section.2.6}
+\contentsline {section}{\numberline {2.7}Data Statement}{71}{section.2.7}
+\contentsline {section}{\numberline {2.8}References}{71}{section.2.8}
+\gdef \the@ipfilectr {}
+\gdef \the@ipfilectr {@-3}
+\contentsline {chapter}{\numberline {3}The Volcanic History of Syria Planum, Mars}{74}{chapter.3}
+\contentsline {section}{\numberline {3.1}Abstract}{74}{section.3.1}
+\contentsline {section}{\numberline {3.2}Introduction}{75}{section.3.2}
+\contentsline {subsection}{\numberline {3.2.1}Geologic Description}{76}{subsection.3.2.1}
+\contentsline {section}{\numberline {3.3}Methods}{79}{section.3.3}
+\contentsline {subsection}{\numberline {3.3.1}Study Area}{79}{subsection.3.3.1}
+\contentsline {subsection}{\numberline {3.3.2}Catalog of Volcanic Vents}{80}{subsection.3.3.2}
+\contentsline {subsection}{\numberline {3.3.3}Crater Counting}{82}{subsection.3.3.3}
+\contentsline {subsection}{\numberline {3.3.4}Nearest Neighbor Analysis}{83}{subsection.3.3.4}
+\contentsline {subsection}{\numberline {3.3.5}Two--point azimuthal analysis}{85}{subsection.3.3.5}
+\contentsline {section}{\numberline {3.4}Results}{86}{section.3.4}
+\contentsline {subsection}{\numberline {3.4.1}Mapping}{86}{subsection.3.4.1}
+\contentsline {subsection}{\numberline {3.4.2}Age--Dating}{88}{subsection.3.4.2}
+\contentsline {subsection}{\numberline {3.4.3}Nearest Neighbor Analysis}{90}{subsection.3.4.3}
+\contentsline {subsection}{\numberline {3.4.4}Two--point azimuthal analysis}{92}{subsection.3.4.4}
+\contentsline {section}{\numberline {3.5}Discussion}{94}{section.3.5}
+\contentsline {section}{\numberline {3.6}Conclusion}{101}{section.3.6}
+\contentsline {section}{\numberline {3.7}Acknowledgments}{103}{section.3.7}
+\contentsline {section}{\numberline {3.8}References}{104}{section.3.8}
+\gdef \the@ipfilectr {}
