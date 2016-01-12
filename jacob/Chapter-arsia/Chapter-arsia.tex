@@ -95,6 +95,16 @@ Modeled ages based on a impact production function, which is a model of the rela
 For the four small flows where craters at D$>$30~m have been counted, the crater frequency roll-off is observed to occur between 35 and 60~m. To model the ages of these flows, only craters larger than this roll-off diameter are included. If a background population of secondary craters $\ge$130~m is present, the  cumulative crater-size frequency distribution should have an increased slope below this diameter. This slope increase was not visually seen in individual mapped units, though if it is present then the four small flows will have modeled ages that are older than the actual flow age. 
 
 \subsection{Volume estimation}\label{sec_volume}
+%Volume
+
+%The thicknesses of the mapped flows are unknown, which makes estimating flow volume a challenge. Thicknesses of lava flows on the flanks of Arsia Mons have been measured to be several to tens of meters (Moug.). If this range is taken to be upper and lower thickness bounds for each lava flow, a volume range can be calculated for each flow by multiplying these bounds by the exposed area.
+
+%An alternative volume estimation method would be to (TIN)
+
+
+%As each event in the catalog has a modeled volume, the volume flux through time can be estimated for each MC result. Th
+
+
 Two volume estimation methods are used to provide minimum and maximum volume constraints for each lava flow (Figure \ref{fig_crosssection}). A primary initial assumption of these methods is that the erupted material was predominantly effusive, while insignificant material would have been advected far from the source.
 
 First, volumes are estimated for each individual flow. Elevation values are assigned to the mapped perimeter of each flow from the gridded-MOLA topographic dataset. The subsurface of the flow is modeled with a triangular irregular network (TIN) where mesh faces are generated with the Delaunay triangulation of vertices along the perimeter. The modeled subsurface is then subtracted from the MOLA grid, producing a thickness map which is integrated to estimate flow volume. This estimate should be considered to be a minimum estimate of flow volume, because the modeled sub-flow surface tightly connects the lava flow margins, while in real life lava flows invert topography and should likely have a deeper, more concave upward subsurface. Though these volumes are underestimates, their advantage is that they are carried out for each flow.
