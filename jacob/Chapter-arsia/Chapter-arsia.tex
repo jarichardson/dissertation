@@ -9,6 +9,7 @@
 \usepackage{graphicx}
 \usepackage{hyperref}
 \usepackage{subcaption}
+\usepackage{gnuplottex}
 \usepackage{caption}
 \captionsetup{font={sf,small},labelfont=bf,width=0.95\textwidth}
 
@@ -75,10 +76,10 @@ Recent volcanism elsewhere in Tharsis has occurred in a more distributed fashion
 
 \subsection{Unit and stratigraphic mapping}
 
-\begin{figure}
+\begin{figure}[h]
 \centering
-\includegraphics[width=0.6\linewidth]{figures/stratigraphy_web.png}
-\caption{Stratigraphic relationships within the Arsia Mons Caldera. Higher flows (e.g. v00) are higher stratigraphically. Each line is one stratigraphic relationship connecting an overlying and an underlying flow. Gray lines are mapped, but can be inferred indirectly by other relationships. Age estimates from craterstats2 are given in superscript; * symbols indicate no age was estimated due to a lack of craters with D$\ge$100~m.}
+\includegraphics[width=0.7\linewidth]{figures/stratigraphy_web_300dpi.png}
+\caption{A directed graph of stratigraphic relationships within the Arsia Mons Caldera. Graphically higher flows (e.g. v00) are higher stratigraphically and directly overlay flows that have connecting lines to them. Each line is one mapped stratigraphic relationship connecting an overlying flow and an adjacent underlying flow. Age estimates from craterstats2 are given in superscript; * symbols indicate no age was estimated due to a lack of craters with D$\ge$100~m.}
 \label{fig_stratweb}
 \end{figure}
 
@@ -92,49 +93,31 @@ Mapped units within the caldera (29 lava flow units and 1 ``undifferentiated lav
 
 Modeled ages based on a impact production function, which is a model of the relative production rate of different impact crater sizes, and a chronology function, which models the change of impact frequency with time. Ages were modeled in the Craterstats2 software \citep{michael2013planetary}. For each mapped unit, craters are separated by diameter into bins of minimum diameter $2d$~km where $d$ increments by 0.5 between each bin, following the Hartmann 2004 iteration Production Function \citep{hartmann2005martian}. Ages are modeled based on this Production Function and the \citet{michael2013planetary} Chronology Function. Uncertainty of crater frequency in each bin is defined as $\sqrt{N}/S$, where $N$ is the number of craters and $S$ is the area of the mapped unit. The cumulative crater-size frequency distribution (and associated uncertainty) is assembled from each $2d$ km bin and is used to model a best fit age (see Figure \ref{fig_craterct}. Ages and uncertainties for each mapped unit are reported in Ma.
 
-For the four small flows where craters at D$>$30~m have been counted, the crater frequency roll-off is observed to occur between 35 and 60~m. To model the ages of these flows, only craters larger than this roll-off diameter are included. If a background population of secondary craters $\ge$130~m is present, the  cumulative crater-size frequency distribution should have an increased slope below this diameter. This slope increase was not visually seen in individual mapped units, though if it is present then the four small flows will have modeled ages that are older than the actual flow age. 
-
 \subsection{Volume estimation}\label{sec_volume}
 %Volume
 
-%The thicknesses of the mapped flows are unknown, which makes estimating flow volume a challenge. Thicknesses of lava flows on the flanks of Arsia Mons have been measured to be several to tens of meters (Moug.). If this range is taken to be upper and lower thickness bounds for each lava flow, a volume range can be calculated for each flow by multiplying these bounds by the exposed area.
+The thicknesses of the mapped flows are unknown, which makes estimating flow volume a challenge. Thicknesses of lava flows on the flanks of Arsia Mons have been measured to be 10-80~m \citep{mouginis2008lava}. These thicknesses are in agreement with other studies of lava flow thickness, including flows in Elysium Mons with thicknesses of 7-35 m \citep{pasckert2012rheologies}, flows on Ascreaus Mons between 24-88 m \citep{hiesinger2007young}, and 37 m and 50 m thick flows in the Elysium region and on Pavonis Mons \citep{glaze2003methodology,baloga2003rheology}. If the range reported by \citet{mouginis2008lava} is taken to be upper and lower thickness bounds for each lava flow, a volume range can be calculated for each flow by multiplying these bounds by the exposed area.
 
-%An alternative volume estimation method would be to (TIN)
-
-
-%As each event in the catalog has a modeled volume, the volume flux through time can be estimated for each MC result. Th
-
-
-Two volume estimation methods are used to provide minimum and maximum volume constraints for each lava flow (Figure \ref{fig_crosssection}). A primary initial assumption of these methods is that the erupted material was predominantly effusive, while insignificant material would have been advected far from the source.
-
-First, volumes are estimated for each individual flow. Elevation values are assigned to the mapped perimeter of each flow from the gridded-MOLA topographic dataset. The subsurface of the flow is modeled with a triangular irregular network (TIN) where mesh faces are generated with the Delaunay triangulation of vertices along the perimeter. The modeled subsurface is then subtracted from the MOLA grid, producing a thickness map which is integrated to estimate flow volume. This estimate should be considered to be a minimum estimate of flow volume, because the modeled sub-flow surface tightly connects the lava flow margins, while in real life lava flows invert topography and should likely have a deeper, more concave upward subsurface. Though these volumes are underestimates, their advantage is that they are carried out for each flow.
-
+An alternative volume estimation method would be to derive flow thickness using a subsurface model of each mapped unit. In this method, elevation values are assigned to the mapped perimeter of each flow from the gridded-MOLA topographic dataset. The subsurface of the flow is modeled with a triangular irregular network (TIN) where mesh faces are generated with the Delaunay triangulation of vertices along the perimeter. The modeled subsurface is then subtracted from the MOLA grid, producing a thickness map which is integrated to estimate flow volume. This estimate should be considered to be a minimum estimate of flow volume, because the modeled sub-flow surface tightly connects the lava flow margins, while in real life lava flows invert topography and should likely have a deeper, more concave upward subsurface. Though these volumes are likely underestimates, they are modeled using the topography of each edifice instead of using nearby flow measurements of different lavas as is described above.
 
 \begin{figure}
 \centering
-\includegraphics[width=0.4\linewidth]{figures/volumehist.png}
+\includegraphics[width=0.5\linewidth]{figures/volumehist.png}
 \caption{Minimum estimated volumes of each lava flow using an interpolated mesh as a theoretical subsurface. All lavas are estimated to be between 10$^{-3}$-1~km$^3$, with most volumes centering around 1~km$^3$.}
 \label{fig_volumehistogram}
-\end{figure}
-
-Second, volume is estimated for the entire caldera using a convex hull of the MOLA topography. The topographic convex hull includes the lowest points in and along the perimeter of the caldera. Points in the hull are again used to model a subsurface using a Delaunay-generated TIN and the volume of the caldera lavas are estimated by subtracting this subsurface from the MOLA topography. Unlike the previous method, this volume cannot easily be divided amongst the mapped flows, might include buried events, and does include distal flows that are not included in the catalog but might correspond to mapped vents. Because of these potential biases, the resulting volume is likely a maximum estimate and does not provide volume estimates for individual events. The estimated caldera volume is therefore divided equally between the 29 mapped vents to provide a maximum estimate.
-
-\begin{figure}
-\centering
-\includegraphics[width=0.6\linewidth]{figures/vol_estimation_cross.png}
-\caption{A cross-section of Arsia Mons showing the MOLA topography (black), ``minimum estimate'' subsurface for two volcanoes (red), and the ``maximum estimate'' subsurface underlying the entire caldera (blue).}
-\label{fig_crosssection}
 \end{figure}
 
 \subsection{Volcanic Event Recurrence Rate Model (VERRM)}
 
 Together, stratigraphic information and crater retention age estimates can be consolidated to improve age uncertainty estimation for volcanic events. This is especially applicable to recent volcanic landforms on Mars as crater-based dates alone might be biased due to crater burial, local topography, or secondary crater background populations \citep{robbins2011volcanic,platz2011eruption}.
 
-To accomplish the task of constraining modeled age estimates with stratigraphy, and ultimately to describe the repose interval of volcanic events in the region, we have devised an algorithm, which we call the Volcanic Event Recurrence Rate Model (VERRM). VERRM implements a Monte Carlo algorithm that assigns a potential age to each volcanic event by defining an event age distribution function, $A$, with an event's modeled crater retention rate age and age uncertainty, as reported by Craterstats2. The age distribution function for each event is modeled as a Gaussian distribution, which is a suitable for the events in this study as they are relatively recent and the crater impact rate during the time of their emplacement is thought to be constant \citep{vaucher2009volcanic}. The initial age function is given as $A_i(\mu_i,\sigma_i^2)$ where $\mu$ is the estimated age determined by crater retention and σ is the uncertainty of the estimated age of cataloged event i. VERRM then constrains A with a binary stratigraphy function, with possible ages having a value of 1 and ages outside an acceptable age range having a value of 0. Possible ages are defined by previously dated events in the VERRM simulation; stratigraphically higher events connected to the event at hand give a minimum age of the stratigraphy function, while lower events give a maximum age. If no stratigraphically-related events have been dated, the minimum age bound is set to the present, and the maximum age bound is set to three times older than the oldest crater retention rate modeled age in this field (330 Ma), or 1 Ga.
+To accomplish the task of constraining modeled age estimates with stratigraphy, and ultimately to describe the repose interval of volcanic events in the region, we have devised an algorithm, which we call the Volcanic Event Recurrence Rate Model (VERRM). VERRM implements a Monte Carlo algorithm that assigns a potential age to each volcanic event by defining an event age distribution function, $A$, with an event's modeled crater retention rate age and age uncertainty, as reported by Craterstats2. The age distribution function for each event is modeled as a Gaussian distribution, which is a suitable for the events in this study as they are relatively recent and the crater impact rate during the time of their emplacement is thought to be constant \citep{vaucher2009volcanic}. The initial age function is given as $A_i(\mu_i,\sigma_i^2)$ where $\mu$ is the estimated age determined by crater retention and σ is the uncertainty of the estimated age of cataloged event i. If no crater retention age estimate is given (e.g. for smaller flows with an insignificant number of impact craters), the initial age function is assumed to be a uniform probability function bounded by a minimum and maximum possible age described next.
+
+VERRM then constrains A with a binary stratigraphy function, with possible ages having a value of 1 and ages outside an acceptable age range having a value of 0. Possible ages are defined by previously dated events in the VERRM simulation; stratigraphically higher events connected to the event at hand give a minimum age of the stratigraphy function, while lower events give a maximum age. If no stratigraphically-related events have been dated, the minimum age bound is set to the present, and the maximum age bound is set to three times older than the oldest crater retention rate modeled age in this field (330 Ma), or 1 Ga.
 
 The normalized product of the the Gaussian age function and the binary stratigraphy function gives an age distribution function which does not violate stratigraphy but is informed by crater retention age estimates. This function is sampled to date an event and the process repeats for the next event. By repeating this process 10,000 times, the potential age ranges for each event is determined.
 
-Volcanic recurrence rate RR at any time $t$ is modeled for each MC solution as
+\paragraph{Recurrence rate calculation} Volcanic recurrence rate RR at any time $t$ is modeled for each MC solution as
 \begin{equation}
 \text{RR}(t) = \frac{n-1}{\text{max}\{\mathbf{T}\} - \text{min}\{\mathbf{T}\}}
 \label{eq_RR}
@@ -145,67 +128,157 @@ The set $\mathbf{T}$ is also modified for early and late times in the MC solutio
 
 While recurrence rate for any one MC simulation might be bad, the range of recurrence rates for all simulations can provide a confidence envelope of recurrence rate with respect to time. The recurrence rate for the field is defined as the median recurrence rate of all simulations over time, with a 95\% confidence envelope serving as the rate's uncertainty.
 
-Volume flux is also modeled with the VERRM output. Each event is assigned a volume between the minimum and maximum volume estimates (discussed above in section \ref{sec_volume}) for the lava flow it produced. Volume flux for the field is defined similarly using a 95\% confidence envelope and median value of the volume of erupted lava per million year time bin.
+\paragraph{Volume flux calculation} Volume flux is also modeled with the VERRM output. Each event is assigned a volume (discussed above in section \ref{sec_volume}) for the lava flow it produced. Volume flux for the field is defined as the volume of erupted lava per million year time bin. A 95\% confidence envelope and median flux through time are obtained using all MC solutions.
 
 
 	\begin{table}[h!]
 	\centering
-	\caption{Lava Flow Data}
-	\begin{tabular}{l c c c c c c c}
+	\caption{Lava Flow Age Information}
+	\begin{tabular}{l c c c c c}
 		\toprule
-			 & \multicolumn{2}{c}{Vent Location}  & Area & Volume & Modeled & Overlying & Underlying\\
-			Flow & Long. & Lat. & (km$^2$) & (km$^3$) & Age (Ma) & Flows & Flows\\
+			 & \multicolumn{2}{c}{Vent Location}  & Modeled & Overlying & Underlying\\
+			Flow & Long. & Lat. & Age (Ma) & Flows & Flows\\
 		\midrule
-			v00 & -120.48$^{\circ}$ & -10.09$^{\circ}$ & 102.27 & 0.37 & 98.4$\pm$27 & --- & 02,01\\
-			v01 & -120.55 & -10.02 & 31.21 & 0.032 & 71.4$\pm$41 & 00,02 & ---\\
-			v02 & -120.45 & -9.98 & 538.86 & 2.3 & 117$\pm$12 & 00 & 01,03,04\\
-			v03 & -120.81 & -9.76 & 283.32 & 0.91 & 99.1$\pm$15 & 02,07 & 04\\
-			v04 & -120.45 & -9.78 & 242.29 & 1.6 & 126$\pm$18 & 02,03 & 05\\
-			v05 & -120.30 & -9.45 & 353.98 & 0.89 & 145$\pm$17 & 04,07,10 & 06\\
-			v06 & -120.33 & -9.41 & 69.40 & 0.31 & 122$\pm$49 & 05,10 & 11\\
-			v07 & -120.82 & -9.65 & 479.32 & 5.0 & 94.7$\pm$11 & 09 & 03,05\\
-			v08 & -120.23 & -9.30 & 4.00 & 0.0017 & --- & 11,10 & ---\\
-			v09 & -120.92 & -9.30 & 21.08 & 0.013 & 218$\pm$110 & --- & 07\\
-			v10 & -120.24 & -9.42 & 858.69 & 3.2 & 102$\pm$9.3 & --- & 05,06,08,11,13\\
-			v11 & -120.17 & -9.26 & 228.09 & 1.0 & 154$\pm$22 & 06,10,13 & 08\\
-			v12 & -120.24 & -9.03 & 528.14 & 1.6 & 134$\pm$12 & 13 & 14\\
-			v13 & -120.17 & -8.99 & 679.49 & 3.2 & 146$\pm$12 & 10,17 & 12,15,11\\
-			v14 & -120.44 & -8.87 & 96.78 & 0.14 & 122$\pm$32 & 12,15 & ---\\
-			v15 & -120.08 & -8.81 & 460.75 & 2.5 & 117$\pm$13 & 13,17 & 14,16,21\\
-			v16 & -119.92 & -8.65 & 18.11 & 0.0053 & 313$\pm$110 & 15,17 & 21\\
-			v17 & -119.90 & -8.63 & 300.03 & 0.64 & 148$\pm$18 & --- & 13,15,16,21,25,28\\
-			v18 & -120.46 & -8.55 & 64.29 & 0.16 & 186$\pm$53 & 20,21 & ---\\
-			v19 & -120.36 & -8.46 & 13.12 & 0.0047 & --- & 20,21 & 23\\
-			v20 & -120.40 & -8.46 & 70.51 & 0.14 & 186$\pm$53 & 21 & 18,19,23\\
-			v21 & -120.06 & -8.63 & 354.97 & 1.6 & 146$\pm$16 & 15,16,17 & 20,18,19,23,22,25\\
-			v22 & -119.88 & -8.44 & 53.20 & 0.31 & 73.2$\pm$36 & 21,25 & ---\\
-			v23 & -120.25 & -8.40 & 204.71 & 0.53 & 135$\pm$20 & 19,20,21 & 26,27\\
-			v24 & -119.92 & -8.32 & 11.70 & 0.037 & --- & 25 & ---\\
-			v25 & -119.79 & -8.37 & 281.19 & 2.0 & 104$\pm$16 & 17,21 & 22,24,28\\
-			v26 & -120.21 & -8.21 & 5.61 & 0.0026 & --- & 23 & ---\\
-			v27 & -120.55 & -8.17 & 158.16 & 1.75 & 112$\pm$25 & 23 & ---\\
-			v28 & -119.57 & -8.52 & 176.53 & 0.58 & 158$\pm$24 & 17,25 & ---\\
+			v00 & -120.48$^{\circ}$ & -10.09$^{\circ}$ & 98.4$\pm$27 & --- & 02,01\\
+			v01 & -120.55 & -10.02 & 71.4$\pm$41 & 00,02 & ---\\
+			v02 & -120.45 & -9.98 & 117$\pm$12 & 00 & 01,03,04\\
+			v03 & -120.81 & -9.76 & 99.1$\pm$15 & 02,07 & 04\\
+			v04 & -120.45 & -9.78 & 126$\pm$18 & 02,03 & 05\\
+			v05 & -120.30 & -9.45 & 145$\pm$17 & 04,07,10 & 06\\
+			v06 & -120.33 & -9.41 & 122$\pm$49 & 05,10 & 11\\
+			v07 & -120.82 & -9.65 & 94.7$\pm$11 & 09 & 03,05\\
+			v08 & -120.23 & -9.30 & --- & 11,10 & ---\\
+			v09 & -120.92 & -9.30 & 218$\pm$110 & --- & 07\\
+			v10 & -120.24 & -9.42 & 102$\pm$9.3 & --- & 05,06,08,11,13\\
+			v11 & -120.17 & -9.26 & 154$\pm$22 & 06,10,13 & 08\\
+			v12 & -120.24 & -9.03 & 134$\pm$12 & 13 & 14\\
+			v13 & -120.17 & -8.99 & 146$\pm$12 & 10,17 & 12,15,11\\
+			v14 & -120.44 & -8.87 & 122$\pm$32 & 12,15 & ---\\
+			v15 & -120.08 & -8.81 & 117$\pm$13 & 13,17 & 14,16,21\\
+			v16 & -119.92 & -8.65 & 313$\pm$110 & 15,17 & 21\\
+			v17 & -119.90 & -8.63 & 148$\pm$18 & --- & 13,15,16,21,25,28\\
+			v18 & -120.46 & -8.55 & 186$\pm$53 & 20,21 & ---\\
+			v19 & -120.36 & -8.46 & --- & 20,21 & 23\\
+			v20 & -120.40 & -8.46 & 186$\pm$53 & 21 & 18,19,23\\
+			v21 & -120.06 & -8.63 & 146$\pm$16 & 15,16,17 & 20,18,19,23,22,25\\
+			v22 & -119.88 & -8.44 & 73.2$\pm$36 & 21,25 & ---\\
+			v23 & -120.25 & -8.40 & 135$\pm$20 & 19,20,21 & 26,27\\
+			v24 & -119.92 & -8.32 & --- & 25 & ---\\
+			v25 & -119.79 & -8.37 & 104$\pm$16 & 17,21 & 22,24,28\\
+			v26 & -120.21 & -8.21 & --- & 23 & ---\\
+			v27 & -120.55 & -8.17 & 112$\pm$25 & 23 & ---\\
+			v28 & -119.57 & -8.52 & 158$\pm$24 & 17,25 & ---\\
 		\bottomrule
 	\end{tabular}
-	\label{tab_database}
+	\label{tab_agedatabase}
 	\end{table}
 
 
+	\begin{table}[h!]
+	\centering
+	\caption{Lava Flow Morphometry}
+	\begin{tabular}{l c c c c c c}
+		\toprule
+			 & \multicolumn{2}{c}{Vent Location}  & Area & \multicolumn{3}{c}{Volume Estimates$^*$ (km$^3$)}\\
+			Flow & Long. & Lat. & (km$^2$) & subs. model & 10~m & 80~m\\
+		\midrule
+			v00 & -120.48$^{\circ}$ & -10.09$^{\circ}$ & 102.27 & 0.37 & 1.0 & 8.2\\
+			v01 & -120.55 & -10.02 & 31.21 & 0.032 & 0.31 & 2.5\\
+			v02 & -120.45 & -9.98 & 538.86 & 2.3 & 5.4 & 43\\
+			v03 & -120.81 & -9.76 & 283.32 & 0.91 & 2.8 & 23\\
+			v04 & -120.45 & -9.78 & 242.29 & 1.6 & 2.4 & 19\\
+			v05 & -120.30 & -9.45 & 353.98 & 0.89 & 3.5 & 28\\
+			v06 & -120.33 & -9.41 & 69.40 & 0.31 & 0.69 & 5.6\\
+			v07 & -120.82 & -9.65 & 479.32 & 5.0 & 4.8 & 38\\
+			v08 & -120.23 & -9.30 & 4.00 & 0.0017 & 0.04 & 0.32\\
+			v09 & -120.92 & -9.30 & 21.08 & 0.013 & 0.21 & 1.7\\
+			v10 & -120.24 & -9.42 & 858.69 & 3.2 & 8.6 & 69\\
+			v11 & -120.17 & -9.26 & 228.09 & 1.0 & 2.3 & 18\\
+			v12 & -120.24 & -9.03 & 528.14 & 1.6 & 5.3 & 42\\
+			v13 & -120.17 & -8.99 & 679.49 & 3.2 & 6.8 & 54\\
+			v14 & -120.44 & -8.87 & 96.78 & 0.14 & 0.97 & 7.7\\
+			v15 & -120.08 & -8.81 & 460.75 & 2.5 & 4.6 & 37\\
+			v16 & -119.92 & -8.65 & 18.11 & 0.0053 & 0.18 & 1.4\\
+			v17 & -119.90 & -8.63 & 300.03 & 0.64 & 3.0 & 24\\
+			v18 & -120.46 & -8.55 & 64.29 & 0.16 & 0.64 & 5.1\\
+			v19 & -120.36 & -8.46 & 13.12 & 0.0047 & 0.13 & 1.0\\
+			v20 & -120.40 & -8.46 & 70.51 & 0.14 & 0.71 & 5.6\\
+			v21 & -120.06 & -8.63 & 354.97 & 1.6 & 3.5 & 28\\
+			v22 & -119.88 & -8.44 & 53.20 & 0.31 & 0.53 & 4.3\\
+			v23 & -120.25 & -8.40 & 204.71 & 0.53 & 2.0 & 16\\
+			v24 & -119.92 & -8.32 & 11.70 & 0.037 & 0.12 & 0.94\\
+			v25 & -119.79 & -8.37 & 281.19 & 2.0 & 2.8 & 22\\
+			v26 & -120.21 & -8.21 & 5.61 & 0.0026 & 0.056 & 0.45\\
+			v27 & -120.55 & -8.17 & 158.16 & 1.8 & 1.6 & 13\\
+			v28 & -119.57 & -8.52 & 176.53 & 0.58 & 1.8 & 14\\
+		\bottomrule
+		\multicolumn{6}{p{0.65\linewidth}}{$^*$The three volume estimates are found using 1) a modeled subsurface, 2) assuming an average thickness of 10~m and 3) 80~m.}
+	\end{tabular}
+	\label{tab_morphdatabase}
+	\end{table}
+
 \section{Results}
 
-\begin{figure}
-\centering
-\includegraphics[width=0.4\linewidth]{figures/volumeandstratigraphy}
-\caption{Minimum estimated flow volumes compared to stratigraphic level (See Figure \ref{fig_stratweb}). The y-axis counts the number of indirectly overlaying flows. While flow volume increases with fewer overlapping lava flows, large volumes have been estimated for stratigraphically lower flows.}
-\label{fig_volumeandstrat}
-\end{figure}
+The 29 lava flows in our catalog are mapped to cover 6700 km$^2$, $\sim$70\%, of the caldera, representing the majority of surface lavas within the caldera walls (Figure \ref{fig_lavamap}). Each flow has at least one neighboring flow, which enables a stratigraphic web to be produced that connects all volcanic events to other events \ref{fig_stratweb}. Age estimates modeled from crater retention ranged from 71-313~Ma, though the youngest and oldest ages are not observed at the top or bottom of the stratigraphic web. This indicates that the crater ages might not be well constrained for small and relatively young surface units on Mars, but that ages for these units might be better constrained with stratigraphic information. These data are detailed for each edifice in Table \ref{tab_agedatabase}.
 
-The 29 lava flows in our catalog are mapped to cover 6700 km$^2$, $\sim$70\%, of the caldera, representing the majority of surface lavas within the caldera walls (Figure \ref{fig_lavamap}). Individual lava flow volume estimates range from $1.6\cdot 10^{-3}$ to 5 km$^3$, with an average of 1.1 km$^3$ per flow (Figure \ref{fig_volumehistogram}). Buried flows are, on average, smaller in volume, but not all stratigraphically lower flows are small in volume (Figure \ref{fig_volumeandstrat}). The total volume using the individual volume estimations, again assumed to be a minimum, is 31 km$^3$. The total volume using the convex hull approach over the entire caldera is 400 km$^3$. This estimate is more than an order of magnitude larger than the minimum volume estimate and would mean each vent expelled roughly 13 km$^3$ of lava. Results for each lava flow are recorded in Table (\ref{tab_database}).
+Lava flow volume estimates using the subsurface modeling method range from $1.6\cdot 10^{-3}$ to 5 km$^3$, with an average of 1.1 km$^3$ per flow (Figure \ref{fig_volumehistogram}). The total volume using this method, again assumed to be a minimum volume estimate, is 31 km$^3$. Average flow thickness for the 29 flows is 4.6~m, which is thinner than the thinnest flows identified by \citet{mouginis2008lava} by a factor of two. Individual volumes are reported in Table \ref{tab_morphdatabase}. We also report the volumes of each flow assuming an average thickness of 10 and 80~m, which might be more reasonable volume bounds. Assuming these two thicknesses gives the flow field a total modeled volume of 67 or 540~km$^3$, respectively.
 
-Dividing the total minimum volume estimate by the mapped flow coverage area, and the total maximum volume by the entire caldera floor area (9500 km$^2$), average flow thickness is calculated to be 8.5 and 40~m, respectively. These averages are in agreement with other studies of lava flow thickness, including flows  in Elysium Mons with thicknesses of 7-35 m \citep{pasckert2012rheologies}, flows on Ascreaus Mons between 24-88 m \citep{hiesinger2007young}, 37 m and 50 m thick flows in the Elysium region and on Pavonis Mons \citep{glaze2003methodology,baloga2003rheology}, and average flow thicknesses on the Arsia Mons flanks of 10-30 m \citep{mouginis2008lava}.
+	\begin{figure}[h!]
+		\centering
+		\begin{gnuplot}[terminal=latex, terminaloptions=rotate]
+			unset key
+			set size 1,1
+			set xlabel "Time before present, Ma" rotate by 90
+			set ylabel "Recurrence rate (events Ma$^{-1}$)"
+			set xrange [350:0]
+			set y2tics 0.25
+			set ytics 0.25
+			set xtics 100
+			plot "Arsia_Mons_FOR_PUBLICATION_MA_RR_4_crater_neighbor.dat" using 1:2 with lines lt 4, "Arsia_Mons_FOR_PUBLICATION_MA_RR_4_crater_neighbor.dat" using 1:4 with lines lt 4, "Arsia_Mons_FOR_PUBLICATION_MA_RR_4_crater_neighbor.dat" using 1:3 with lines lt 5
+		\end{gnuplot}
+		\caption{Subsurface Volume Method}
+		\label{fig_VERRMRES}
+	\end{figure}
 
-Event ages modeled with craters on each lava flow lay between 70 and 300~Ma. However, the oldest modeled ages do not appear at the bottom of the stratigraphic column, and the youngest modeled ages do not appear at the top (Figure \ref{fig_stratweb}). This can either be due to error in identifying superposition relationships or due to bias in the crater population. By relying on stratigraphy more than crater counts, which are known to be unreliable at small diameters \citep[e.g.]{robbins2011volcanic,neukum2004recent}, the VERRM model can probabilistically improve the estimated timing of events, while also better characterizing age uncertainty through a Monte Carlo method.
-
+	\begin{figure}[h!]
+		\centering
+		\begin{gnuplot}[terminal=latex, terminaloptions=rotate]
+			unset key
+			set size 1,1
+			set xlabel "Time before present, Ma" rotate by 90
+			set ylabel "Volume Flux (km$^3$ Ma$^{-1}$)"
+			set xrange [350:0]
+			set y2tics 0.5
+			set ytics 0.5
+			set xtics 100
+			plot "Arsia_Mons_MIN_VOLUME_CORRECTED_time_predict_crater_neighbor.dat" using 1:2 with lines lt 4, "Arsia_Mons_MIN_VOLUME_CORRECTED_time_predict_crater_neighbor.dat" using 1:4 with lines lt 4, "Arsia_Mons_MIN_VOLUME_CORRECTED_time_predict_crater_neighbor.dat" using 1:3 with lines lt 5
+		\end{gnuplot}
+		\caption{Subsurface Volume Method}
+		\label{fig_VERRMRES}
+	\end{figure}
+	
+	\begin{figure}[h!]
+		\centering
+		\begin{gnuplot}[terminal=latex, terminaloptions=rotate]
+			unset key
+			set size 1,1
+			set format xy "$%g$"
+			set xlabel "Time before present, Ma" rotate by 90
+			set ylabel "Volume Flux, 10 m flows (km$^3$ Ma$^{-1}$)"
+			set y2label "Volume Flux, 80 m flows (km$^3$ Ma$^{-1}$)"
+			set xrange [350:0]
+			set yrange [0:4.5]
+			set y2range [0:36]
+			set ytics 1
+			set y2tics 8
+			set xtics 100
+			plot "Arsia_Mons_10m_THICK_CORRECTED_time_predict_crater_neighbor.dat" using 1:2 with lines lt 4, "Arsia_Mons_10m_THICK_CORRECTED_time_predict_crater_neighbor.dat" using 1:4 with lines lt 4, "Arsia_Mons_10m_THICK_CORRECTED_time_predict_crater_neighbor.dat" using 1:3 with lines lt 5
+		\end{gnuplot}
+		\caption{Subsurface Volume Method}
+		\label{fig_VERRMRES}
+	\end{figure}
+	
+%"Arsia_Mons_MIN_VOLUME_CORRECTED_time_predict_crater_neighbor.dat" using 1:2:4 with filledcurves closed
 \section{Discussion}
 
 \subsection{Comparisons to other studies}
