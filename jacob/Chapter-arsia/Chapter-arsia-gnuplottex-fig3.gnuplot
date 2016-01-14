@@ -4,8 +4,8 @@ unset key
 set size 1,1
 set format xy "$%g$"
 set xlabel "Time before present, Ma" rotate by 90
-set ylabel "Volume Flux, 10 m flows (km$^3$ Ma$^{-1}$)"
-set y2label "Volume Flux, 80 m flows (km$^3$ Ma$^{-1}$)"
+set ylabel "Volume Flux, 10 m flows (km$^3$ Myr$^{-1}$)"
+set y2label "Volume Flux, 80 m flows (km$^3$ Myr$^{-1}$)"
 set xrange [350:0]
 set yrange [0:4.5]
 set y2range [0:36]

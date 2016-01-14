@@ -3,7 +3,7 @@ set output 'Chapter-arsia-gnuplottex-fig2.tex'
 unset key
 set size 1,1
 set xlabel "Time before present, Ma" rotate by 90
-set ylabel "Volume Flux (km$^3$ Ma$^{-1}$)"
+set ylabel "Volume Flux (km$^3$ Myr$^{-1}$)"
 set xrange [350:0]
 set y2tics 0.5
 set ytics 0.5

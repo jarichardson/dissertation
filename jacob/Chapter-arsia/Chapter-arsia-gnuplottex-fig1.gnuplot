@@ -3,7 +3,7 @@ set output 'Chapter-arsia-gnuplottex-fig1.tex'
 unset key
 set size 1,1
 set xlabel "Time before present, Ma" rotate by 90
-set ylabel "Recurrence rate (events Ma$^{-1}$)"
+set ylabel "Recurrence rate (events Myr$^{-1}$)"
 set xrange [350:0]
 set y2tics 0.25
 set ytics 0.25
