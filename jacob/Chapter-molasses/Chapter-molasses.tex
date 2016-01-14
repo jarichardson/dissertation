@@ -42,7 +42,7 @@
 \maketitle
 
 \section*{Abstract}
-	Modeling lava flows through cellular automata (CA) methods enables a computationally inexpensive means to quickly forecast lava flow paths and ultimate areal extents. A CA program has been created in the program language C that is modular, which enables a combination of governing CA rules to be evaluated against each other. My objective is to find a successful combination of automata behaviors that behaves like a bingham fluid and accurately forecasts lava inundation. To fulfill this objective, four validation levels have been devised, into which different benchmarks can be applied to test lava spreading algorithms against increasingly complex tests. These levels are 1) verification of the code by testing for conservation of mass; 2) testing for flow self-similarity given inconsequential variations in input parameters; 3) testing for replication of Bingham flow morphology on simple surfaces; and 4) testing for replication of real lava flow morphologies on pre-eruption elevation models. Two Bayesian posterior statistics $\text{Pr}(Lava|Sim)$ and $\text{Pr}(\neg Lava|\neg Sim)$ are then used to further charactarize model performance against the 2012-3 Tolbachik lava flow. These metrics can provide insight into improving model performance and decision making in volcanic crises.
+	Modeling lava flows through cellular automata (CA) methods enables a computationally inexpensive means to quickly forecast lava flow paths and ultimate areal extents. A CA program has been created in the program language C that is modular, which enables a combination of governing CA rules to be evaluated against each other. My objective is to find a successful combination of automata behaviors that behaves like a bingham fluid and accurately forecasts lava inundation. To fulfill this objective, four validation levels have been devised, into which different tests can be applied to evaluate lava spreading algorithms against increasingly complex tests. These levels are 1) verification of the code by testing for conservation of mass; 2) testing for flow self-similarity given inconsequential variations in input parameters; 3) testing for replication of Bingham flow morphology on simple surfaces; and 4) testing for replication of real lava flow morphologies on pre-eruption elevation models. Two Bayesian posterior statistics, the Positive Predictive Value ($\text{Pr}(Lava|Sim)$) and the Negative Predictive Value ($\text{Pr}(\neg Lava|\neg Sim)$) are then used to further charactarize model performance against the 2012-3 Tolbachik lava flow. These metrics can provide insight into improving model performance and decision making in volcanic crises.
 
 \section{Introduction}
 	Lava flows as a gravity current on the surface of the Earth when liquid magma is effused at the surface with little or no explosivity. In the vacinity of active volcanoes, lava flows represent significant long term impact to infrastructure \citep{peterson2000lava}. In the past, lava flow hazard has been mitigated with the construction of physical diversions and at least once in 252 A.D. by the supernatural grace of St. Agatha of Sicily who died the year prior. Modern science suggests, however, that forecasting the flow path of lava from active volcanoes might be more useful than St. Agatha for communities impacted by effusive volcanism.
@@ -53,14 +53,14 @@
 	
 	Multiple CA lava flow algorithms exist, such as SCIARA \citep{crisci2004simulation}, MAGFLOW \citep{del2008simulations}, ELFM \citep{damiani2006lava}, and LavaPL \citep{connor2012}. These algorithms are variations on a theme, where the largest difference between each is how lava is distributed from one automaton to its neighbors. For instance, three versions of SCIARA allow for lava to spread in cardinal directions \citep{barca1994cellular}, in hexagonal directions \citep{crisci2008lava}, or in directions based on an inherent velocity calculated in an eulerian way for each automaton \citep{avolio2006sciara}. MAGFLOW and ELFM by contrast to the original SCIARA algorithm implements 8 directions of spreading. LavaPL and SCIARA both spread in four directions but the apportionment of lava from one automaton to neighbors is based on a different algorithm.
 
-	While several lava flow simulators now exist, each have been made and tested with different lava flows or aspects of flows in mind. Because of this, selecting a specific algorithm to effectively model lava flow hazards can be a necessary, if unwanted challenge. To address this problem, we propose a hierarchical validation scheme to objectively test different flow spreading algorithms. Benchmark tests can be designed with different validation levels in mind, to compare lava flow simulations to increasingly complex models, from simply conserving mass to replicating the paths and ultimate areal extents of real lava flows. The benchmarks described in this project can be applied to any flow algorithm that provides at least a list or map of inundated locations over various topographies.
+	While several lava flow simulators now exist, each have been made and tested with different lava flows or aspects of flows in mind. Because of this, selecting a specific algorithm to effectively model lava flow hazards can be a necessary, if unwanted challenge. To address this problem, we propose a hierarchical validation scheme to objectively test different flow spreading algorithms. Tests can be designed with different validation levels in mind, to compare lava flow simulations to increasingly complex models, from simply conserving mass to replicating the paths and ultimate areal extents of real lava flows. The tests described in this project can be applied to any flow algorithm that provides at least a list or map of inundated locations over various topographies.
 
-	In this paper, multiple lava flow algorithms are tested using a new modular lava flow code, which I have named MOLASSES (standing for \textit{MOdular LAva Simulation Software in Earth Science}). This code, implemented in C, is a Cellular Automata code which tracks a population of equal-area spaced cells over a grid, that is defined by a digital elevation model (DEM). These cells may or may not be inundated with lava and they are governed by universal rules. Because MOLASSES has been designed in a modular way, it is relatively quick to modify the flow algorithm. Using this code while changing methods of lava distribution enables code output in a constant format, which simplifies the comparison of methods.
+	In this paper, multiple lava flow algorithms are tested using a new modular lava flow code, which I have named MOLASSES (standing for \textit{MOdular LAva Simulation Software in Earth Science}). This code, implemented in C, is a Cellular Automata code which tracks a population of equal-area spaced cells over a grid, that is defined by a digital elevation model (DEM). These cells may or may not be inundated with lava and they are governed by universal rules. Because MOLASSES has been designed in a modular way, it is relatively quick to modify the flow algorithm. Using this code enables code output in a constant format, despite changing methods of lava distribution, which simplifies the comparison of methods.
 	
-	In Section \ref{sec:MOLASSES}, I will demonstrate how CA is applied to lava flows and detail how a CA simulation is carried out in the MOLASSES code. I will introduce a validation hierarchy in Section \ref{sec:benchmark} that can be used to verify and validate different lava flow algorithms using increasingly complex model parameters. In Section \ref{sec:Bayesian}, I will expand on the final validation level (validation against real lava flows) with a Bayesian approach to improving model performance for the 2012-3 Tolbachik Lava Flow. The results from these Sections will be discussed in Section \ref{sec:discussion}.
+	In Section \ref{sec:MOLASSES}, I will demonstrate how CA is applied to lava flows and detail how a CA simulation is carried out in the MOLASSES code. I will introduce a validation hierarchy in Section \ref{sec_validationb} that can be used to verify and validate different lava flow algorithms using increasingly complex model parameters. In Section \ref{sec:Bayesian}, I will expand on the final validation level (validation against real lava flows) with a Bayesian approach to improving model performance for the 2012-3 Tolbachik Lava Flow. The results from these Sections will be discussed in Section \ref{sec:discussion}.
 	
 	\subsection{Case Study Area: 2012-3 Tolbachik Lava Flow}\label{sec_tolb_back}
-	In the third validation level (Section \ref{sec_tolb_bench}), the recent lava flows at Tolbachik will be used as an example benchmark test to validate flow algorithms against a real lava flow. These flows will then be used in Section \ref{sec:Bayesian} as examples of how a Bayesian approach to evaluating model performance can improve model performance. 
+	In the third validation level (Section \ref{sec_tolb_bench}), the recent lava flows at Tolbachik will be used as an example validation test to evaluate flow algorithms against a real lava flow. These flows will then be used in Section \ref{sec:Bayesian} as examples of how a Bayesian approach to evaluating model performance can improve model performance. 
 	
 \begin{figure}[!h]
 	\centering
@@ -138,7 +138,7 @@ The set of cellular automata is defined as
 		
 		The transition function, $\sigma$, is defined in the \textbf{DISTRIBUTE} module. Cells in this module are evaluated in order of their inundation (i.e. vents are evaluated first and distal cells are evaluated last). The incoming and outgoing quantity of lava from each cell is stored in the Active List. Generally, if a cell has a flow thicknesses S$_h>$S$_{h0}$, it will spread the lava above S$_{h0}$ to any neighbors lower in elevation than itself. When all inundated cells have been evaluated, the incoming and outgoing quantities of lava of each cell are applied to the cells. This flow transition represents a timestep as all cells are updated at once.
 		
-		Multiple possible transition functions can effectively spread lava from and to cells in a manner that might replicate lava in real life. Selecting the best transition function is the purpose of the validation benchmarks described in Section \ref{sec:benchmark}. In this project three main variations are combined and tested which vary 1) how local slope affects spreading, 2) the neighborhood size, and 3) if any neighbors are eliminated from the neighborhood based on their relationship to the cell.
+		Multiple possible transition functions can effectively spread lava from and to cells in a manner that might replicate lava in real life. Identifying transition functions that spread lava in a realistic way is the purpose of the validation tests described in Section \ref{sec_validationb}. In this project three main variations are combined and tested which vary 1) how local slope affects spreading, 2) the neighborhood size, and 3) if any neighbors are eliminated from the neighborhood based on their relationship to the cell.
 		
 		\begin{figure}[!h]
 			\centering
@@ -175,7 +175,7 @@ The set of cellular automata is defined as
 		\end{equation}
 		where $|\text{X}|$ is the size of the neighborhood, or the number of elements in the neighborhood. This is illustrated as the left path of Figure \ref{fig_BernieSanders}.
 		
-		\paragraph{Neighborhood size} The size of the neighborhood, X, in CA algorithms is commonly 4 or 8 in cardinal or ordinal directions. Here both have been implemented, which enables the benchmarks to test whether 8 spreading directions increases the performance of these tests. This is further described in the next section (\ref{sec_X}).
+		\paragraph{Neighborhood size} The size of the neighborhood, X, in CA algorithms is commonly 4 or 8 in cardinal or ordinal directions. Here both have been implemented and both 4- and 8- connected neighborhoods are evaluated in validation exercises later. Neighborhood size is further described in the next section (\ref{sec_X}).
 
 		\paragraph{Spreading inhibited by special relationships} Though the size of the neighborhood is set globally for all cells, neighbors are not guaranteed to receive lava from central cells. In all algorithms, for example, cells in the neighborhood that are higher than the central cell, including lava thicknesses, are excluded from the neighborhood set.
 		
@@ -242,9 +242,11 @@ The set of cellular automata is defined as
 %HIERARCHY
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-	\section{Benchmarking Hierarchy}\label{sec:benchmark}
+	\section{Validation Hierarchy}\label{sec_validationb}
 	
-	The strategy implemented in this paper follows the advice of \citet{bayarri2007framework} for validating computer models, namely ``1) defining the problem; 2) establishing evaluation criteria; 3) designing experiments; 4) approximating computer model output; 5) analyzing the combination of field and computer run data.'' The sixth step in their validation process, feeding results back to revise models, has been done informally to determine how to alter spreading algorithms in future benchmarking attempts. Each level below presents a problem for a lava spreading algorithm to complete. These fundamental problems (e.g. replicating a Bingham flow) are evaluated using simple tests that demonstrate the problem. The relevant model output for each of these tests is a list of locations (i.e. a list of x and y coordinates) that have been inundated by lava. After verification (Level 0), the first validation level tests model results with other model results; the second level tests model output against expected analytical solutions; and the third level tests model output from field data.
+	The validation strategy implemented in this paper follows the advice of \citet{bayarri2007framework} for validating computer models, namely ``1) defining the problem; 2) establishing evaluation criteria; 3) designing experiments; 4) approximating computer model output; 5) analyzing the combination of field and computer run data.'' The sixth step in their validation process, feeding results back to revise models, has been done informally to determine how to alter spreading algorithms in the future. Each level below presents a problem for a lava spreading algorithm to complete. These fundamental problems (e.g. replicating a Bingham flow) are evaluated using simple tests that demonstrate the problem. The relevant model output for each of these tests is a list of locations (i.e. a list of x and y coordinates) that have been inundated by lava. After verification (Level 0), the first validation level tests model results with other model results; the second level tests model output against expected analytical solutions; and the third level tests model output from field data. 
+	
+	Multiple flow algorithms can pass all of these tests, illustrating that they are valid under certain conditions and can be relied on. Choosing between algorithms which have been validated is based on the needs of the user, but algorithms that do not perform well in these validation tests might not be reliable for other applications.
 
 	\begin{center}
 		\begin{table}[h]
@@ -272,7 +274,7 @@ The set of cellular automata is defined as
 \paragraph{Test Algorithms} Combining three variations of the Transition Function described in Section \ref{sec:MOLASSES}, I have created eight MOLASSES lava flow algorithms. Each variation has been made by modifying one module in the MOLASSES framework: The neighborhood is changed between 4- and 8- directions using the NEIGHBOR\_ID module, classifying one cell as a ``parent'' cell when a location is initially inundated is within the ACTIVATE module, and dividing lava amongst neighboring cells proportional to slope or equally is carried out in the DISTRIBUTE module. These eight algorithms will be referred to using three character codes, listed in Table \ref{tab_algorithmcodes}. For the algorithm used by LavaPL in \citet{connor2012}, the code would therefore be 4/P/S, as it spreads lava in 4-directions from a central cell, all inundated cells have designated parents to whom they cannot spread lava, and the quantity of lava to spread from a central cell is higher for lower neighboring cells.
 
 	\subsection{Level 0: Conservation of Mass}
-			Before the results of a lava flow simulation can be validated, it must be verified to at least prove that conservation of mass is preserved. A lava flow simulation will therefore not be tested against the following benchmark tests until this conservation of mass requirement is shown to be fulfilled.
+			Before the results of a lava flow simulation can be validated, it must be verified to at least prove that conservation of mass is preserved. A lava flow simulation will therefore not be tested against the following tests until this conservation of mass requirement is shown to be fulfilled.
 			
 			In MOLASSES, the code is verified within the DRIVER module, which manages each subordinate module. The erupted volume, $V_{in}$, is given as the total eruption volume specified by the user in the configuration file. If multiple source locations are given in this file, $V_{in}$ is the sum of total eruption volumes. $V_{in}$ is compared at the end of the module to the total volume of the flow, or $V_{out}$. The volume $V_{out}$ is calculated by summing the volume in all inundated grid cells. MOLASSES reports success if $V_{in}-V_{out} \le 10^{-8}$~m$^3$, which is the precision of a 64-bit double. If this test fails, MOLASSES reports failure and the excess volume found in the flow.
 	
@@ -293,9 +295,9 @@ The set of cellular automata is defined as
 	\subsection{Level 1: Repeatability given meaningless parameter variation}
 		Once the code has been verified to conserve mass, the flow can be validated. This first validation level tests that lava flow simulations are repeatable, regardless of changes in parameter space that should have no effect on the flow. Parameters that ideally should not effect lava flows include slope direction and elevation model resolution. For instance, a slope to the west and an identically dipping slope to the east should produce lava flows of equal length and shape (given identical flow attributes).
 		
-		\citet{miyamoto1997simulating} performed a simple validation test on two CA-like flow simulators \citep{ishihara1990numerical,miyamoto1997simulating} where a sloped DEM was rotated 45 degrees from ``south'' to ``southeast''. This benchmark was performed to demonstrate that the flow models had the same run-out length regardless of the arbitrary slope direction. Here, the DEM rotation scheme by \citet{miyamoto1997simulating} is adopted and expanded, so that a DEM of a simple slope is rotated 19 times at increments of 5$^{\circ}$. Flows are simulated on each of these slopes and the locations of inundated cells are output from the model.
+		\citet{miyamoto1997simulating} performed a simple validation test on two CA-like flow simulators \citep{ishihara1990numerical,miyamoto1997simulating} where a sloped DEM was rotated 45 degrees from ``south'' to ``southeast''. This test was performed to demonstrate that the flow models had the same run-out length regardless of the arbitrary slope direction. Here, the DEM rotation scheme by \citet{miyamoto1997simulating} is adopted and expanded, so that a DEM of a simple slope is rotated 19 times at increments of 5$^{\circ}$. Flows are simulated on each of these slopes and the locations of inundated cells are output from the model.
 		
-		Three characteristics of the simulated flows are determined for each slope direction: flow length, orientation, and aspect ratio. Flow length is defined as the distance between the vent and the furthest inundated point from the vent. Flow orientation is defined as the direction that furthest point lies, with respect to North. Flow aspect ratio is the ratio of maximum flow width to flow length. Perfect success for this benchmark is when simulated flows, regardless of slope direction, 1) do not change in length, 2) have an orientation identical to the slope direction, and 3) do not change in aspect ratio. Failure is more subjective, but I will define failure as 1) more than 10\% variation in flow length depending on slope direction, 2) more than 5$^{\circ}$ offset between the slope and the flow orientation on average, or 3) more than 15\% variation in flow aspect ratio.
+		Three characteristics of the simulated flows are determined for each slope direction: flow length, orientation, and aspect ratio. Flow length is defined as the distance between the vent and the furthest inundated point from the vent. Flow orientation is defined as the direction that furthest point lies, with respect to North. Flow aspect ratio is the ratio of maximum flow width to flow length. Perfect success for this exercise is when simulated flows, regardless of slope direction, 1) do not change in length, 2) have an orientation identical to the slope direction, and 3) do not change in aspect ratio. Failure is more subjective, but I will define failure as 1) more than 10\% variation in flow length depending on slope direction, 2) more than 5$^{\circ}$ offset between the slope and the flow orientation on average, or 3) more than 15\% variation in flow aspect ratio.
 		
 		\begin{figure}[h!]
 			\centering
@@ -304,7 +306,7 @@ The set of cellular automata is defined as
 			\label{fig:slope}
 		\end{figure}
 		
-		\subsubsection{Benchmark Parameters} The underlying DEM for this benchmark has a simple 18$^{\circ}$ slope, dipping to the North. The DEM has a spatial resolution of 1~m. The source cell is placed at the center of the DEM, is given a total volume of 1000~m$^3$, and is given a pulse volume of 1~m$^3$. When the simulation is finished, model output is used to determing the three flow characteristics used in this benchmark (length, orientation, and aspect ratio). The DEM is rotated 5$^{\circ}$ clockwise and the process is repeated 19 times until the flow is simulated on an East-facing slope.
+		\subsubsection{Exercise Parameters} The underlying DEM for this exercise has a simple 18$^{\circ}$ slope, dipping to the North. The DEM has a spatial resolution of 1~m. The source cell is placed at the center of the DEM, is given a total volume of 1000~m$^3$, and is given a pulse volume of 1~m$^3$. When the simulation is finished, model output is used to determing the three flow characteristics used in this test (length, orientation, and aspect ratio). The DEM is rotated 5$^{\circ}$ clockwise and the process is repeated 19 times until the flow is simulated on an East-facing slope.
 		
 		
 		
@@ -335,11 +337,11 @@ The set of cellular automata is defined as
 
 			While with an ideal spreading algorithm, variances and direction error would be 0 under a rotating slope, every spreading algorithm tested performed differently as DEM direction changed. Following from the above pass-fail standards, five of the eight algorithms can be rejected. Algorithms 4/P/E and 4/N/E have high run-out length variance. Algorithms 4/N/S, 4/P/E and 4/N/E have large aspect-ratio variance. Algorithms 4/P/E, 8/P/E, 4/N/E, and 8/N/E all systematically deviate from running downslope by $>5^{\circ}$ on average. This implies that algorithms which share lavas equally from central cells to all lower neighboring cells perform worse than algorithms which share lavas proportional to slope.
 			
-			For the eight different transition functions tested, runout length varied between 60-160~m. The flow algorithm with the least flow length variance was the 4-connected, parent-child, slope-proportional strategy implemented in LavaPL. Algorithms 4/P/S (LavaPL), 8/P/S, and 8/N/S cannot be rejected because of any of the three standards set in this benchmark.
+			For the eight different transition functions tested, runout length varied between 60-160~m. The flow algorithm with the least flow length variance was the 4-connected, parent-child, slope-proportional strategy implemented in LavaPL. Algorithms 4/P/S (LavaPL), 8/P/S, and 8/N/S cannot be rejected because of any of the three standards set in this exercise.
 
 	\subsection{Level 2: Replication of flow morphologies on simple physical surfaces}
 	
-	The second benchmarking level is the first step in validating lava flow algorithms against realistic flow expectations. Instead of parameter space being arbitrarily defined, which was the case in Level 1, the defined parameter space informs tests at this level as to what the model output should be. As lava flows on a large scale are well described as Bingham fluids, simulations can be tested against analytical solutions or experimental observations of these fluids in simple conditions. For instance, a lava flow on a perfectly flat surface might be expected to create a circular areal extent \citep{griffiths2000dynamics}.
+	The second validation level is the first step in validating lava flow algorithms against realistic flow expectations. Instead of parameter space being arbitrarily defined, which was the case in Level 1, the defined parameter space informs tests at this level as to what the model output should be. As lava flows on a large scale are well described as Bingham fluids, simulations can be tested against analytical solutions or experimental observations of these fluids in simple conditions. For instance, a lava flow on a perfectly flat surface might be expected to create a circular areal extent \citep{griffiths2000dynamics}.
 	
 			Here I measure flow algorithm performance on a flat surface from a single vent source location. To measure the extent to which the simulated flow replicates a circle, the inundated area is compared to the area of a circle which circumscribes the flow exactly. This can be described as
 			\begin{equation}
@@ -366,7 +368,7 @@ The set of cellular automata is defined as
 		\label{fig_pancake}
 	\end{figure}
 	
-		\subsubsection{Benchmark Parameters} The DEM used in this benchmark is a horizontal plane (all grid locations have the same elevation) with a spatial resolution of 1~m. A single vent is located at the DEM center with a total volume of 1000~m$^3$, and a pulse volume of 1~m$^3$. When the simulation is finished, model output is used to find the inundated cell farthest from the vent ($d_{max}$). The total inundated area is divided by the area of a circle with radius $d_{max}$ to provide the Fit score.
+		\subsubsection{Exercise Parameters} The DEM used in this exercise is a horizontal plane (all grid locations have the same elevation) with a spatial resolution of 1~m. A single vent is located at the DEM center with a total volume of 1000~m$^3$, and a pulse volume of 1~m$^3$. When the simulation is finished, model output is used to find the inundated cell farthest from the vent ($d_{max}$). The total inundated area is divided by the area of a circle with radius $d_{max}$ to provide the Fit score.
 		
 		\subsubsection{Results}
 
@@ -392,20 +394,30 @@ The set of cellular automata is defined as
 		\end{center}
 		
 	\subsection{Level 3: Replication of real lava flows over complex topography}\label{sec_tolb_bench}
-		The recent availability of global or near-global topographic datasets, such as SRTM or ASTER GDEM has enabled the direct observation of the underlying surface of even more recent lava flows. Flow algorithms can be validated against recent lava flows by simulating lava over these surfaces with parameters defined by the new lava flows. The 2012-3 Tolbachik lava flows will be used as a benchmark for the eight flow algorithms. As discussed above (Section \ref{sec_tolb_back}), the earliest lavas flowed from a fissure to the west. Before later stage flows began moving to the east, the volume of the lavas were 0.22~km$^3$. The modal thickness of the flow has been found to be 7.8~m and the areal extent was mapped with orthoimages \citep{kubanek2015lava}.
+		The recent availability of global or near-global topographic datasets, such as SRTM or ASTER GDEM has enabled the direct observation of the underlying surface of even more recent lava flows. Flow algorithms can be validated against recent lava flows by simulating lava over these surfaces with parameters defined by the new lava flows. The 2012-3 Tolbachik lava flows will be used as a validation exercise for the eight flow algorithms. As discussed above (Section \ref{sec_tolb_back}), the earliest lavas flowed from a fissure to the west. Before later stage flows began moving to the east, the volume of the lavas were 0.22~km$^3$. The modal thickness of the flow has been found to be 7.8~m and the areal extent was mapped with orthoimages \citep{kubanek2015lava}.
 
-		For this example, two metrics which are commonly employed to validate lava flow simulators against real flows will be used: model sensitivity and a fitness metric called the ``Jaccard coefficient.'' An alternative bayesian approach to these metrics is discussed in Section \ref{sec:Bayesian}.  Model sensitivity is defined as
+		For this example, two metrics which are commonly employed to validate lava flow simulators against real flows will be used: model sensitivity and a fitness metric called the ``Jaccard coefficient.'' An alternative bayesian approach to these metrics is discussed in Section \ref{sec:Bayesian}. These two metrics fundamentally attempt to quantify the amount of agreement between the lava flow and a simulated flow. This is visualized as a 2x2 matrix (Figure \ref{fig_2x2}), where agreement between a simulation and an actual lava flow (i.e. locations inundated by lava in real life and the simulation) are known as True Positives. Areas inundated by only the simulation are False Positives, while areas inundated by the lava flow that the simulation fails to forecast as being inundated are False Negatives. Locations that neither the flow or simulation inundate are True Negatives. 
+		
+		
+\begin{figure}
+			\centering
+			\includegraphics[width=0.4\linewidth]{figures/2xtable_300dpi.png}
+			\caption[2x2 table comparing regions inundated by real lava and a simulated flow]{2x2 table comparing regions inundated by real lava and a simulated flow. In the bottom left, True Positives are areas engulfed by lava both in real life and in the simulation. In the top left, False Negatives are areas hit by lava where the simulation failed to model inundation. In the bottom right, False Positives are locations where the simulation forecast inundation, but which remained untouched by lava in reality. Finally, in the top right, True Negatives are areas which were not inundated by lava and the simulation successfully forecast their safety.}
+			\label{fig_2x2}
+		\end{figure}
+		
+		Model sensitivity is defined as
 		\begin{equation}
 			\text{Model~Sensitivity}=\frac{|Lava\cap Sim|}{|Lava|}
 		\label{eq_sensitivity}
 		\end{equation}
-		where $|Lava\cap Sim|$ is the size of the interesection of the simulation and the true lava flow (the True Positives) and $|Lava|$ is the size of the lava flow. This gives a percentage of the true lava flow that the simulation correctly predicted. 
+		where $|Lava\cap Sim|$ is the areal size of the interesection of the simulation and the true lava flow (i.e. the True Positives) and $|Lava|$ is the areal size of the lava flow (True Positives and False Negatives). This gives a percentage of the true lava flow that the simulation correctly predicted. 
 		
-		The Jaccard coefficient, or fit, is defined as 
+		The Jaccard coefficient, or Jaccard fit, also uses True Positives as the numerator, but expands the denominator to include all areas inundated by either the lava flow or the simulated flow. This is defined as 
 		\begin{equation}
 			\text{Jaccard~Fit}=\frac{|Lava\cap Sim|}{|Lava\cup Sim|}
 		\end{equation}
-		where $|Lava\cup Sim|$ is the size of the union of the lava flow and a simulated flow. This gives a percentage of the total area covered by either the simulated flow or the true flow that is covered by both.
+		where $|Lava\cup Sim|$ is the size of the union of the lava flow and a simulated flow (i.e. True Positives, False Negatives, and False Positives). This gives a percentage of the total area covered by simulated flows and/or true flows that is covered by both.
 		
 		Each flow algorithm is run using the following parameters. Flows are run over both 3-arcsecond SRTM topography (75 m grid resolution at 56$^{\circ}$N) and bistatic TanDEM-X topography processed by \citet{kubanek2015lava}. The pulse volume, the volume added to vent cells at each code loop (i.e. each instance of the PULSE module), is set at the product of the grid-cell area (5600 m$^2$ for the SRTM DEM and 225 m$^2$ for the TanDEM-X DEM) and the residual thickness (7.8~m). Both fitness metrics are calculated with the resulting model output, given as a list of inundated locations. ``Failure'' can be defined here as either metric falling below 50\% for the sake of example.
 		
@@ -439,7 +451,7 @@ The set of cellular automata is defined as
 	
 	Three example algorithms are illustrated in Figure \ref{fig:tolbachik}. One primary observation is that all simulations had a longer run-out length on the finer TanDEM-X grid than on the coarser SRTM grid. Despite this, all flows took the correct major pathways taken by the true lava flow. A small diagram in the top left corner of each map in Figure \ref{fig:tolbachik} shows the true positives, false positives, and false negatives in each simulation. True positives are areas inundated by both flow and simulation, false positives are areas simulated as being inundated but are not mapped as such, and false negatives are areas hit by lava that the simulation failed to forecast. 
 		
-			The best algorithm and DEM pair were the 8/N/S algorithm over SRTM (top left of Figure \ref{fig:tolbachik}), while this same algorithm performed fairly poorly over TanDEM-X topography. For the SRTM simulation, this algorithm achieved a model sensitivity of 82.8\% and a Jaccard fitness score of 63.1\%. Graphically, sensitivity is calculated as the green area in the Figure \ref{fig:tolbachik} diagram divided by the green and red areas. The Jaccard fitness is the green area divided by the total area of the diagram. Because the Jaccard fitness statistic essentially expands the denomenator of model sensitivity, it will never be higher than model sensitivity.
+			The best algorithm and DEM pair were the 8/N/S algorithm over SRTM (top left of Figure \ref{fig:tolbachik}), while this same algorithm performed fairly poorly over TanDEM-X topography. For the SRTM simulation, this algorithm achieved a model sensitivity of 82.8\% and a Jaccard fitness score of 63.1\%. Graphically, sensitivity is calculated as the green area in the Figure \ref{fig:tolbachik} diagram divided by the green and red areas. The Jaccard fitness is the green area divided by the total area of the diagram. Because the Jaccard fitness statistic essentially expands the denominator of model sensitivity, it will never be higher than model sensitivity.
 			
 			If success and failure are defined by having a fits of greater or less than 50\%, all models tested would pass for the SRTM DEM and about half would pass for the TanDEM-X DEM. All but one model (4/P/E) performed worse on the TanDEM-X DEM. The Jaccard fit and Sensitivity for all models are given below.
 					
@@ -474,26 +486,26 @@ The set of cellular automata is defined as
 	
 	The use of computer models to forecast hazards is a fundamentally Bayesian strategy: there is an initial concern due to hazards and computer models help us inform, constrain, and update this concern. Using Bayesian statistics can therefore be an improvement in testing lava flow models, over the two commonly used fitness tests, model sensitivity and the Jaccard index, because of their more direct application to informing perceived risk. 
 	
-	Three tools will be used in this section: A posterior probability, a ``negative'' posterior probability, and a Bayes factor. Bayes theorem connects a phenomenon $A$ to observations $B$ through the function
+	Three tools will be used in this section: the Positive Predictive Value, the Negative Predictive Value, and a Bayes factor. Bayes theorem connects a phenomenon $A$ to observations $B$ through the function
 	\begin{equation}
 		\text{Pr}(A|B)=\frac{\text{Pr}(B|A)\text{Pr}(A)}{\text{Pr}(B)}\label{eq_bayes}
 	\end{equation}
 	where $\text{Pr}(A)$ is the general probability of $A$ occuring, $\text{Pr}(B)$ is the probability of $B$ being observed, and $\text{Pr}(B|A)$ is the conditional probability of $B$ given the occurence of $A$. $\text{Pr}(B|A)$ is also known as model sensitivity, which is a common fitness statistic and was discussed in Section \ref{sec_tolb_bench}
 	
-	The left side of Equation \ref{eq_bayes}, $\text{Pr}(A|B)$, is the Posterior probability of $A$ and can be stated as ``the probability that lava will inundate a location if the model forecasted inundation at that location.'' A second posterior, which I call the negative posterior, is $\text{Pr}(\neg A|\neg B)$ and is the obverse of $\text{Pr}(A|B)$. This negative posterior relates not being inundated by lava at a given location to a safe outcome forecasted by a simulation and can be calculated by modifying Equation \ref{eq_bayes} and substituting $A$ for $Lava$ (the lava flow) and $B$ for $Sim$ (the simulation), resulting in the formula
+	The left side of Equation \ref{eq_bayes}, $\text{Pr}(A|B)$, is the Posterior probability of $A$ and can be stated as ``the probability that lava will inundate a location if the model forecasted inundation at that location,'' or the Positive Predictive Value (PPV) of the model. A second posterior is the Negative Predictive Value (NPV) and is $\text{Pr}(\neg A|\neg B)$, the obverse of $\text{Pr}(A|B)$. This negative predictive value relates not being inundated by lava at a given location to a safe outcome forecasted by a simulation and can be calculated by modifying Equation \ref{eq_bayes} and substituting $A$ for $Lava$ (the lava flow) and $B$ for $Sim$ (the simulation), resulting in the formula
 	\begin{equation}
 		\text{Pr}(\neg Lava|\neg Sim)=\frac{\text{Pr}(\neg Sim|\neg Lava)\text{Pr}(\neg Lava)}{\text{Pr}(\neg Sim)}
 	\end{equation}
 	where the $\neg$ symbol indicates the event or observation not happening, and $\text{Pr}(\neg Sim|\neg Lava)$ is model specificity.
 	
-	The negative posterior is important in hazard forecasting as it is in some sense a probability of safety. The more common posterior $\text{Pr}(A|B)$ (or $\text{Pr}(Lava|Sim)$) does not contain information about areas that the simulation does not inundate; while it can support the hypothesis that lava will hit a location given a simulated hit, it cannot estimate one's relative risk if the simulation forecasts a safe outcome. The negative posterior $\text{Pr}(\neg Lava|\neg Sim)$ does just this, and informs a user whether to rely on a safe outcome from a simulation. If, for example, the posterior probability $\text{Pr}(Lava|Sim)$ is high while the negative posterior probability $\text{Pr}(\neg Lava|\neg Sim)$ is low for a given lava flow simulator, areas that are evacuated due to the simulation outcome will be evacuated for good reason, but many areas will likely be inundated that were not evacuated due to the simulation outcome. This is why it is important to estimate and ultimately try to improve both posterior metrics.
+	The negative predictive value is important in hazard forecasting as it is in some sense a probability of safety. The more common positive predictive value $\text{Pr}(A|B)$ (or $\text{Pr}(Lava|Sim)$) does not contain information about areas that the simulation does not inundate, as it is essentially the True Positive area divided by the area of simulated inundation (defined later in Equation \ref{eq_simplepost}). While the PPV can support the hypothesis that lava will hit a location given a simulated hit, it cannot estimate one's relative risk if the simulation forecasts a safe outcome. The NPV, $\text{Pr}(\neg Lava|\neg Sim)$, does just this, and informs a user whether to rely on a safe outcome from a simulation. If, for example, the PPV $\text{Pr}(Lava|Sim)$ is high while the NPV $\text{Pr}(\neg Lava|\neg Sim)$ is low for a given lava flow simulator, areas that are evacuated due to the simulation outcome will be evacuated for good reason, but many areas will likely be inundated that were not evacuated due to the simulation outcome. It is important to estimate and ultimately try to improve both predictive values, because it is important to understand both how well a simulation matches areas inundated by lava and how well it matches areas not inundated by lava.
 	
-	Bayes factors provide a tool to test the relative likelihood of a hypothesis against another. \citet{aspinall2003evidence} introduced this tool to volcano hazard forecasting by testing whether the onset of particular seismic events before the 1993 Galeras catastrophe was a significant indicator of the eruption or not. A Bayes Factor (BF) relating two models is given by \citet{jeffreys1998theory} as
+	Bayes factors provide a tool to test the relative likelihood of a hypothesis against another. \citet{aspinall2003evidence} introduced this tool to volcano hazard forecasting by testing whether the onset of particular seismic events before the 1993 Galeras catastrophe was a significant indicator of the eruption or not. A Bayes Factor (BF) relating two hypotheses is given by \citet{jeffreys1998theory} as
 	\begin{equation}
-		\text{BF} = \frac{\text{Pr}(\text{Data}|\text{Model~1})}{\text{Pr}(\text{Data}|\text{Model~2})}
+		\text{BF} = \frac{\text{Pr}(\text{Evidence}|\text{Hypothesis~1})}{\text{Pr}(\text{Evidence}|\text{Hypothesis~2})}
 		\label{eq_BF}
 	\end{equation}
-	In the example of Galeras, the ``data'' are the seismic events, Model 1 is ``imminent explosion,'' and Model 2 is ``not imminent explosion'' \citep{aspinall2003evidence}. Below, I will apply this with the data being the probability of simulated inundation and the models ``lava inundation'' and ``not lava inundation.'' \citet{jeffreys1998theory} provided a log-scale interpretation to the value of BF in Equation \ref{eq_BF}, given in the Table \ref{tab_BFinterps}.
+	In the example of Galeras, the Evidence in Equation \ref{eq_BF} are new seismic events, Hypothesis 1 is ``imminent explosion,'' and Hypothesis 2 is its complement ``not imminent explosion'' \citep{aspinall2003evidence}. Below, I will apply this with the Evidence being the probability of simulated inundation and the Hypotheses ``lava inundation'' and ``not lava inundation.'' Essentially, the Bayes Factor approach identifies whether an area, given evidence provided by flow simulations, is better described as inundated by lava or not inundated by lava. \citet{jeffreys1998theory} provided a log-scale interpretation to the value of BF in Equation \ref{eq_BF}, given in the Table \ref{tab_BFinterps}.
 	
 	\begin{table}[h]
 		\centering
@@ -502,22 +514,22 @@ The set of cellular automata is defined as
 			\toprule
 			BF Value & Description\\
 			\midrule
-			$BF>10^2$ & Evidence for Model 1 is Decisive.\\
-			$10^{1.5}<BF<10^2$ & Evidence for Model 1 is Very Strong.\\
-			$10^{1}<BF<10^{1.5}$ & Evidence for Model 1 is Strong.\\
-			$10^{0.5}<BF<10^{1}$ & Evidence for Model 1 is Substantial.\\
-			$10^{0}<BF<10^{0.5}$ & Evidence for Model 1 is just worth a mention.\\\\
-			$10^{-0.5}<BF<10^{0}$ & Evidence for Model 2 is just worth a mention.\\
-			$10^{-1}<BF<10^{-0.5}$ & Evidence for Model 2 is Substantial.\\
-			$10^{-1.5}<BF<10^{-1}$ & Evidence for Model 2 is Strong.\\
-			$10^{-2}<BF<10^{-1.5}$ & Evidence for Model 2 is Very Strong.\\
-			$BF<10^{-2}$ & Evidence for Model 2 is Decisive.\\
+			$BF>10^2$ & Evidence for Hypothesis 1 is Decisive.\\
+			$10^{1.5}<BF<10^2$ & Evidence for Hypothesis 1 is Very Strong.\\
+			$10^{1}<BF<10^{1.5}$ & Evidence for Hypothesis 1 is Strong.\\
+			$10^{0.5}<BF<10^{1}$ & Evidence for Hypothesis 1 is Substantial.\\
+			$10^{0}<BF<10^{0.5}$ & Evidence for Hypothesis 1 is just worth a mention.\\\\
+			$10^{-0.5}<BF<10^{0}$ & Evidence for Hypothesis 2 is just worth a mention.\\
+			$10^{-1}<BF<10^{-0.5}$ & Evidence for Hypothesis 2 is Substantial.\\
+			$10^{-1.5}<BF<10^{-1}$ & Evidence for Hypothesis 2 is Strong.\\
+			$10^{-2}<BF<10^{-1.5}$ & Evidence for Hypothesis 2 is Very Strong.\\
+			$BF<10^{-2}$ & Evidence for Hypothesis 2 is Decisive.\\
 			\bottomrule
 		\end{tabular}
 		\label{tab_BFinterps}
 	\end{table}
 	
-		In the same manner as the final validation level, the statistics discussed above will be calculated based on the areal extent of flows and simulations. The probability of the lava flow inundating an area $N$ can be given as
+		\paragraph{Calculating Predictive Values} In the same manner as the final validation level, the statistics discussed above will be calculated based on the areal extent of flows and simulations. The probability of the lava flow inundating an area $N$ can be given as
 		\begin{equation}
 			\text{Pr}(A)=\frac{|Lava|}{|N|}\label{eq_PA}
 		\end{equation}
@@ -525,18 +537,18 @@ The set of cellular automata is defined as
 		\begin{equation}
 			\text{Pr}(Sim)=\frac{|Sim|}{|N|}.\label{eq_PB}
 		\end{equation}
-		By substituting these definitions and model sensitivity (Equation \ref{eq_sensitivity}, $|Lava \cap Sim|/|Lava|$) in Equation \ref{eq_bayes}, the posterior probability of lava flow inundation, given a simulation that forecasts inundation can be recast as
+		By substituting these definitions and model sensitivity (Equation \ref{eq_sensitivity}, $|Lava \cap Sim|/|Lava|$) in Equation \ref{eq_bayes}, the posterior probability of lava flow inundation (i.e. the PPV), given a simulation that forecasts inundation can be recast as
 		\begin{align}
 		\text{Pr}(Lava|Sim)&=\frac{\frac{|Lava\cap Sim|}{|Lava|}\frac{|Lava|}{|N|}}{\frac{|Sim|}{|N|}}~\text{,~or~simplified,}\label{eq_unsimplepost}\\
 		&=\frac{|Lava\cap Sim|}{|Sim|}.\label{eq_simplepost}
 		\end{align}
-		where $|Lava\cap Sim|$ is the size of the intersection of the lava flow and simulated flow (again, the number of DEM grid cells). Note that this posterior probability is independent of the potential hazard area.
+		where $|Lava\cap Sim|$ is the size of the intersection of the lava flow and simulated flow (again, the number of DEM grid cells that are True Positives). Note that PPV is independent of the potential hazard area.
 		
-		The negative posterior can be stated in terms of the sizes of the lava flow and simulated flow as well.
+		the NPV can be stated in terms of the sizes of the lava flow and simulated flow as well.
 		\begin{equation}
 			\text{Pr}(\neg Lava|\neg Sim)=\frac{|\neg Lava\cap \neg Sim|}{|\neg Sim|}\label{eq_simplenegpost}
 		\end{equation}
-		Calculating the size or number of grid cells of $\neg Lava$ or $\neg Sim$ is fundamentally dependent on the potential hazard area, as $|\neg Lava|$ is defined as
+		In this equation the numerator is the total area of True Negatives, where neither real flows or simulated flows reached. The denominator is the area not hit by the simulated flows, or the True and False Negatives. Calculating the size or number of grid cells of $\neg Lava$ or $\neg Sim$ is fundamentally dependent on the potential hazard area, as $|\neg Lava|$ is defined as
 		\begin{equation}
 			|\neg Lava| = |N| - |Lava|.
 		\end{equation}
@@ -552,20 +564,20 @@ The set of cellular automata is defined as
 		\begin{figure}
 			\centering
 			\includegraphics[width=0.7\linewidth]{figures/hazard_areas_72dpi}
-			\caption[Potential hazard areas of the 2012-3 Tolbachik Flows]{Potential hazard areas of the 2012-3 Tolbachik Flows in light green, defined by a maximum flow radius (left, Equation \ref{eq_kilburn}) and the total areal coverage of 100,000 random flow simulations (top-right, Section \ref{sec_MC}). The mapped lava flow is red. The chart to the bottom right shows four regions defined by the presence or absense of lava and simulated lava across a map grid.}
+			\caption[Potential hazard areas of the 2012-3 Tolbachik Flows]{Potential hazard areas of the 2012-3 Tolbachik Flows in light green, defined by a maximum flow radius (left, Equation \ref{eq_kilburn}) and the total areal coverage of 100,000 random flow simulations (top-right, Section \ref{sec_MC}). The mapped lava flow is red. The chart to the bottom right shows the 2x2 grid illustrated in Figure \ref{fig_2x2}.}
 			\label{fig_hazardarea}
 		\end{figure}
 	
 	A second strategy would be to run many lava flow models from the known vent location(s) while varying input parameters. This would give a range of flows and the true flow might be completely contained within the region given by this range of simulations. Below, a Monte Carlo (MC) method will be used to simulate a large range of flows. If we define a potential hazard area as any location inundated by at least one simulated flow in this MC approach, the hazard area would be 72~km$^2$. As the mapped flow area from the Tolbachik eruption is 39\% of this area, it would be more practical to use this as the \textit{a priori} hazard area because it more reasonably reflects the potential inundation area. Both the Kilburn-Kauahikaua method and this MC method are illustrated in Figure \ref{fig_hazardarea}.				
 	
-	\paragraph{Review of Validation Level 3} Instead of using model sensitivity and the Jaccard index as benchmarks for the various lava flow models, now the two posteriors will be used. The potential hazard area is defined as the distribution of MC simulations (72~km$^2$). To give an example calculation, $\text{Pr}(Lava|Sim)$ is found with Equation \ref{eq_simplepost} by dividing true positives (green boxes in \ref{fig:tolbachik}) by the simulation area (green and red boxes). The negative posterior, $\text{Pr}(\neg Lava|\neg Sim)$, is found by diving true negatives (blue area, in bottom right diagram of Figure \ref{fig_hazardarea}), by the area not simulated (top half of bottom right diagram of Figure \ref{fig_hazardarea}).
+	\paragraph{Review of Validation Level 3} Instead of using model sensitivity and the Jaccard index as fitness values for the various lava flow models, now the two predictive values will be used. The potential hazard area is defined as the distribution of MC simulations (72~km$^2$). To give an example calculation, $\text{Pr}(Lava|Sim)$ is found with Equation \ref{eq_simplepost} by dividing true positives (green boxes in \ref{fig:tolbachik}) by the simulation area (green and red boxes). The NPV, $\text{Pr}(\neg Lava|\neg Sim)$, is found by diving true negatives (top right of Figure \ref{fig_2x2}), by the area not simulated (top half of Figure \ref{fig_2x2}).
 	
 		\begin{center}
 		\textbf{Traditional Fit Metrics and Bayesian Posterior Functions}\\
 		\begin{tabular}{l c c c c}
 			\toprule
 			Transition&\multicolumn{4}{c}{\textbf{Results of simulations over SRTM DEM}}\\
-			Function& Jaccard & Sensitivity & $\text{Pr}(Lava|Sim)$ & $\text{Pr}(\neg Lava|\neg Sim)$\\
+			Function& Jaccard & Sensitivity & Pos. Pred. Value & Neg. Pred. Value\\
 			\midrule
 			4/P/S & 56.7\%& 76.4\%& 70.4\%& 84.5\% \\
 			8/P/S & 61.1  & 80.8  & 73.2  & 87.3   \\
@@ -583,9 +595,9 @@ The set of cellular automata is defined as
 	For the rest of this section, the 8/N/S (the 8-connected, no parent-child relationships, with slope-proportional spreading) algorithm will be used. This is preferred because it out-performed other algorithms over the SRTM DEM. By applying this model to the Tolbachik lava flows, Bayesian methods will be used to improve the ``Pulse Volume'' parameter and will later be used to constrain model uncertainty at Tolbachik.
 	
 	\subsection{Improving model performance on one model parameter}\label{sec_bayespulse}
-	In the Tolbachik benchmark tests given as examples of comparing simulation algorithms against real lava flows (Section \ref {sec_tolb_bench}), all but one algorithm performed worse on the TanDEM-X derived elevation model. This was in part due to large run-out distances in the simulations (e.g. bottom right of Figure \ref{fig:tolbachik}), which considerably increased simulation false positives. The large run-out distances might be due to the pulse volume, the volume of lava given to source cells at each code loop in MOLASSES, being poorly chosen. Here, the Bayesian statistics defined above will be used to compare different pulse volumes and identify an optimal pulse volume. 
+	In the Tolbachik validation tests given as examples of comparing simulation algorithms against real lava flows (Section \ref {sec_tolb_bench}), all but one algorithm performed worse on the TanDEM-X derived elevation model. This was in part due to large run-out distances in the simulations (e.g. bottom right of Figure \ref{fig:tolbachik}), which considerably increased simulation false positives. The large run-out distances might be due to the pulse volume, the volume of lava given to source cells at each code loop in MOLASSES, being poorly chosen. Here, the Bayesian statistics defined above will be used to compare different pulse volumes and identify an optimal pulse volume. 
 		
-		An optimal pulse volume will ideally produce a flow simulation with the highest posterior and negative posterior value. Pulse volumes with high associated posterior values will produce simulations where areas simulated as inundated by lava will have a high likelihood of actually being inundated by lava. Pulse volumes with high associated negative posterior values will produce simulations where areas simulated to not be inundated will hava a high likelihood of actually not being inundated.
+		An optimal pulse volume will ideally produce a flow simulation with the highest PPV and NPV. Pulse volumes with high associated PPVs will produce simulations where areas simulated as inundated by lava will have a high likelihood of actually being inundated by lava. Pulse volumes with high associated NPVs will produce simulations where areas simulated to not be inundated will hava a high likelihood of actually not being inundated.
 		
 		\subsubsection{Model Execution} 
 		To populate $Sim$, I have run the MOLASSES lava flow code using TanDEM-X derived parameters listed in Table \ref{tab_parameters_pulsebayes}. All variables are fixed except the pulse volume parameter, which is the amount of lava delivered to source cells in the Cellular Automata grid of MOLASSES. The lowest pulse volume, 1755 m$^3$ per pulse, is approximately the product of the TanDEM-X DEM grid cell size (225~m$^2$) and the residual flow thickness (7.8~m). The other 15 pulse volumes are multiples of this volume (i.e. they are 1.5 to 8.5$\times$ 1775 m$^3$).
@@ -617,7 +629,7 @@ The set of cellular automata is defined as
 		\begin{figure}
 		\centering
 		\includegraphics[width=\linewidth]{figures/pulse_examples_72dpi}
-		\caption[MOLASSES Simulations with different Pulse Volume parameter values of the 2012-3 Tolbachik Lava Flows]{MOLASSES Simulations of the 2012-3 Tolbachik Lava Flows. Vents are shown as blue triangles and the mapped flow is outlined in black. a) Pulse Volume = 1755 m$^3$, the simulation far exceeds the true runout distance; b) Pulse Volume = 4387 m$^3$, this simulation performs best under the negative posterior $\text{Pr}(\neg Lava|\neg Sim)$ test; c) Pulse Volume = 14040 m$^3$, this simulation performs best under the posterior $\text{Pr}(Lava|Sim)$ test, but does not have a runout length similar to the mapped flow.}
+		\caption[MOLASSES Simulations with different Pulse Volume parameter values of the 2012-3 Tolbachik Lava Flows]{MOLASSES Simulations of the 2012-3 Tolbachik Lava Flows. Vents are shown as blue triangles and the mapped flow is outlined in black. a) Pulse Volume = 1755 m$^3$, the simulation far exceeds the true runout distance; b) Pulse Volume = 4387 m$^3$, this simulation performs best under the NPV $\text{Pr}(\neg Lava|\neg Sim)$ test; c) Pulse Volume = 14040 m$^3$, this simulation performs best under the PPV $\text{Pr}(Lava|Sim)$ test, but does not have a runout length similar to the mapped flow.}
 		\label{fig:pulse_map}
 		\end{figure}
 
@@ -625,7 +637,7 @@ The set of cellular automata is defined as
 		
 		Three example simulations are shown in Figure \ref{fig:pulse_map} using simulation parameters from Table \ref{tab_parameters_pulsebayes} and different pulse volume values. With increased pulse volume, simulated run-out distance is shorter. This is because the MOLASSES code ends once all volume is delivered to the vents and the DISTRIBUTE module has run once more. In other words, if the pulse volume is doubled, the number of times the PULSE and DISTRIBUTE modules will be run will be halved, as the total volume will be delivered to the vents in half the code loops (see Figure \ref{fig_flowchart}). By running DISTRIBUTE fewer times, cells have fewer opportunities to advect lava downslope.
 
-		The posterior statistical measure is the fundamental tool of Bayesian statistics, and quantifying it enables an update of belief in risk of lava inundation. A perfect posterior value would mean that if the model simulates lava inundating a location, lava will certainly inundate that location. The posterior is calculated for simulated lava flows of different Pulse Volumes and is graphed in Figure \ref{fig_lavaGsim}. From this, it can be seen that the highest pulse volumes, which coincidentally form the shortest flow simulations, perform best with this test, with the best fit having a pulse volume of 14040~m$^3$ per algorithm loop (Figure \ref{fig:pulse_map},c). A local maximum does exist in the low pulse volumes at 4387~m$^3$ per loop.
+		The positive predictive value is the fundamental tool of Bayesian statistics, and quantifying it enables an update of belief in risk of lava inundation. A perfect PPV would mean that if the model simulates lava inundating a location, lava will certainly inundate that location. PPV is calculated for simulated lava flows of different Pulse Volumes and is graphed in Figure \ref{fig_lavaGsim}. From this, it can be seen that the highest pulse volumes, which coincidentally form the shortest flow simulations, perform best with this test, with the best fit having a pulse volume of 14040~m$^3$ per algorithm loop (Figure \ref{fig:pulse_map},c). A local maximum does exist in the low pulse volumes at 4387~m$^3$ per loop.
 
 
 		\begin{figure}[h!]
@@ -640,11 +652,11 @@ The set of cellular automata is defined as
 				set xtics 4000
 				plot "results_bayes.dat" using 1:2 with linespoints lt 4 pt 7
 			\end{gnuplot}
-			\caption{Posterior $\text{Pr}(Lava|Sim)$ for MOLASSES flows with differing Pulse Volumes.}
+			\caption{PPV, $\text{Pr}(Lava|Sim)$, for MOLASSES flows with differing Pulse Volumes.}
 			\label{fig_lavaGsim}
 		\end{figure}
 		
-		The negative posterior $\text{Pr}(\neg Lava|\neg Sim)$, is the percentage of non-inundated area in the simulation that is also not inundated in real life. A perfect negative posterior would indicate that, if a model does not simulate a hit for a location, lava will certainly not inundate that location. The negative posteriors of simulations with different pulse values are shown in Figure \ref{fig_neglavaGsim}. Unlike the previous posterior analyzed, the best performing flows have smaller pulse volumes and the best performing volume is 4387~m$^3$ per model pulse loop (Figure \ref{fig:pulse_map},b).
+		The negative predictive value $\text{Pr}(\neg Lava|\neg Sim)$, is the percentage of non-inundated area in the simulation that is also not inundated in real life. A perfect NPV would indicate that, if a model does not simulate a hit for a location, lava will certainly not inundate that location. The NPV of simulations with different pulse values are shown in Figure \ref{fig_neglavaGsim}. Unlike the previous predictive value analyzed, the best performing flows, according to NPV, have smaller pulse volumes and the best performing volume is 4387~m$^3$ per model pulse loop (Figure \ref{fig:pulse_map},b).
 
 		\begin{figure}[h!]
 			\centering
@@ -658,7 +670,7 @@ The set of cellular automata is defined as
 				set xtics 4000
 				plot "results_bayes.dat" using 1:3 with linespoints lt 4 pt 7
 			\end{gnuplot}
-			\caption{Negative posterior $\text{Pr}(\neg Lava|\neg Sim)$ for MOLASSES flows with differing Pulse Volumes.}
+			\caption{NPV, $\text{Pr}(\neg Lava|\neg Sim)$, for MOLASSES flows with differing Pulse Volumes.}
 			\label{fig_neglavaGsim}
 		\end{figure}
 	
@@ -697,22 +709,22 @@ The set of cellular automata is defined as
 			\label{fig_MC_map}
 		\end{figure}
 		
-		The Monte Carlo method runs MOLASSES 100,000 times over a 75-m SRTM DEM. Vertical uncertainty of this data is estimated by \citet{rodriguez2006global} for Eurasia to be 6.2~m at a 90\% confidence level and is shown to be randomly distributed. With this result, elevation uncertainty in the MOLASSES model is given a value of $1\sigma=3$~m. Other input parameters remain unchanged from the benchmark exercise above; MOLASSES flow parameters for the Monte Carlo model are listed in Table \ref{tab_parameters_MC}. The combined 100,000 simulations are mapped in Figure \ref{fig_MC_map} where flow color indicates the number of flows that impacted each location.
+		The Monte Carlo method runs MOLASSES 100,000 times over a 75-m SRTM DEM. Vertical uncertainty of this data is estimated by \citet{rodriguez2006global} for Eurasia to be 6.2~m at a 90\% confidence level and is shown to be randomly distributed. With this result, elevation uncertainty in the MOLASSES model is given a value of $1\sigma=3$~m. Other input parameters remain unchanged from the validation exercise above; MOLASSES flow parameters for the Monte Carlo model are listed in Table \ref{tab_parameters_MC}. The combined 100,000 simulations are mapped in Figure \ref{fig_MC_map} where flow color indicates the number of flows that impacted each location.
 		
 
 				
 		\subsubsection{Bayesian distribution of MC results}
-			The reliability of a model can be better understood by showing the distribution of model performance given model uncertainty, as opposed to treating model parameters, and thus model output, as completely certain.  Figure \ref{fig:MC_dist} shows the distribution of the posterior and the negative posterior scores. Each dot in the main chart of Figure \ref{fig:MC_dist} represents a single flow simulation over a partially randomly generated DEM. The clustering of these points shows a positive correlation between the two posterior metrics, and both metrics are not normally distributed as shown on the histograms on either side of the main chart of Figure \ref{fig:MC_dist}. The flow simulation assuming no elevation uncertainty (shown in the top right corner of Figure \ref{fig:tolbachik}) fits the mapped flow better than the median value of both posteriors in the distribution, though it still lays within the MC distribution.
+			The reliability of a model can be better understood by showing the distribution of model performance given model uncertainty, as opposed to treating model parameters, and thus model output, as completely certain.  Figure \ref{fig:MC_dist} shows the distribution of PPV and NPV scores. Each dot in the main chart of Figure \ref{fig:MC_dist} represents a single flow simulation over a partially randomly generated DEM. The clustering of these points shows a positive correlation between the two predictive values, and both metrics are not normally distributed as shown on the histograms on either side of the main chart of Figure \ref{fig:MC_dist}. The flow simulation assuming no elevation uncertainty (shown in the top right corner of Figure \ref{fig:tolbachik}) fits the mapped flow better than the median value of both predictive values in the distribution, though it still lays within the MC distribution.
 			
 		%Graph of the performances
 		\begin{figure}[h!]
 			\centering
 			\includegraphics[width=0.7\linewidth]{figures/MC_posteriors_300dpi}
-			\caption[Fitness statistic distribution of Monte Carlo simulations of the 2012-3 Tolbachik lava flows]{Fitness statistic distribution for 100,000 simulations of the 2012-3 Tolbachik Lava Flows, over SRTM topography with 3~m standard elevation uncertainty. Each point represents the posterior probabilities of inundation/non-inundation for one simulation. Red lines are the fitness values of a simulated flow over SRTM data assuming 0~m elevation uncertainty (top right corner of Figure \ref{fig:tolbachik}). Black lines are placed at the median values of each posterior probability.}
+			\caption[Fitness statistic distribution of Monte Carlo simulations of the 2012-3 Tolbachik lava flows]{Fitness statistic distribution for 100,000 simulations of the 2012-3 Tolbachik Lava Flows, over SRTM topography with 3~m standard elevation uncertainty. Each point represents the predictive values of inundation/non-inundation for one simulation. Red lines are the fitness values of a simulated flow over SRTM data assuming 0~m elevation uncertainty (top right corner of Figure \ref{fig:tolbachik}). Black lines are placed at the median values of each predictive value.}
 			\label{fig:MC_dist}
 		\end{figure}
 			
-			If the elevation model used were perfect, the posterior values would be a single number ($\text{Pr}(Lava|Sim)=74.4$\% and $\text{Pr}(\neg Lava|\neg Sim)=88.5$\%). However, because elevation values have inherent uncertainty, model fitness, as defined by the posterior values, can be given as a range. Including elevation uncertainty, the $\text{Pr}(Lava|Sim)$ fitness has a range of 59-76\% and the $\text{Pr}(\neg Lava|\neg Sim)$ has a range of 77-91\%.
+			If the elevation model used were perfect, the predictive values would be a single number ($\text{Pr}(Lava|Sim)=74.4$\% and $\text{Pr}(\neg Lava|\neg Sim)=88.5$\%). However, because elevation values have inherent uncertainty, model fitness, as defined by the predictive values, can be given as a range. Including elevation uncertainty, the $\text{Pr}(Lava|Sim)$ fitness has a range of 59-76\% and the $\text{Pr}(\neg Lava|\neg Sim)$ has a range of 77-91\%.
 
 
 		\subsubsection{Estimating inundation risk from the simulated frequency of inundation}
@@ -729,11 +741,11 @@ The set of cellular automata is defined as
 		
 		It can be seen in Figure \ref{fig_MCsubregions} that most of the mapped flow is covered by the $\text{Pr}(Sim\ge90\%)$ sub-region, as the green true positive region is larger than the red false negative region. The sub-region defined as $\text{Pr}(0<Sim<10\%)$ does not spatially intersect with the mapped flow area as much as the $\text{Pr}(Sim\ge90\%)$ sub-region, and this can be seen in the lower right of Figure \ref{fig_MCsubregions} as the sub-region area is mostly orange false positives with small green true positive areas.
 		
-		The relative risk of inundation can be calculated for each subregion by comparing the probability of actual flow inundation $\text{Pr}(Lava)$ against the probability of not inundation $\text{Pr}(\neg Lava)$ using the Bayes Factor of Equation \ref{eq_BF}. Here ``Data'' is the probability of simulated inundation $\text{Pr}(Sim=\text{X})$, Model 1 is Real Flow Inundation and the opposing Model 2 is No Real Flow Inundation. For example, the relative probability of inundation for the sub-region defined by $\text{Pr}(40\le Sim<50\%)$ can be given as
+		The relative risk of inundation can be calculated for each subregion by comparing the probability of actual flow inundation $\text{Pr}(Lava)$ against the probability of not inundation $\text{Pr}(\neg Lava)$ using the Bayes Factor of Equation \ref{eq_BF}. Here the Evidence provided by the MC simulation is the probability of simulated inundation $\text{Pr}(Sim=\text{X})$ for a given area. Hypothesis 1 is that an area with a given probability of simulated inundation can be described as inundated by actual lava (``Inundation''). The opposing and complementary Hypothesis 2 is that this area can be described as not being inundated by actual lava (``Not Inundation''). For example, the relative probability of inundation for the sub-region defined by $\text{Pr}(40\le Sim<50\%)$ can be given as
 		\begin{equation}
 			\text{BF} = \frac{\text{Pr}(0.4\le Sim<0.5~|~\text{Inundation})}{\text{Pr}(0.4\le Sim<0.5~|~\text{Not~Inundation})}.
 		\end{equation}
-		The numerator $\text{Pr}(0.4\le Sim<0.5~|~\text{Inundation})$ is the probability of 40-50\% of simulations hitting a given location, given the location actually being hit by lava. Graphically, this is the percent of the true flow (red and green areas in the center example of Figure \ref{fig_MCsubregions}) that are within the simulated sub-region (green areas in the center example of Figure \ref{fig_MCsubregions}). The denominator $\text{Pr}(0.4\le Sim<0.5~|~\text{Not Inundation})$ is probability of 40-50\% of simulations hitting a location, given the location is not inundated in the real flow. This is the percent of the area not hit by the flow (light gray and orange areas in Figure \ref{fig_MCsubregions}) that is within the subregion (orange areas in Figure \ref{fig_MCsubregions}). 
+		The numerator $\text{Pr}(0.4\le Sim<0.5~|~\text{Inundation})$ is the probability of 40-50\% of simulations hitting a given location, given that location is actually engulfed by lava. Graphically, this is the percent of the true flow (red and green areas in the center example of Figure \ref{fig_MCsubregions}) that are within the simulated sub-region (True Positive green areas in the center example of Figure \ref{fig_MCsubregions}). The denominator $\text{Pr}(0.4\le Sim<0.5~|~\text{Not Inundation})$ is probability of 40-50\% of simulations hitting a location, given that location is not actually inundated by the real flow. This is the percent of the area not hit by the flow (light gray and orange areas in Figure \ref{fig_MCsubregions}) that is within the False Positives subregion (orange areas in Figure \ref{fig_MCsubregions}). 
 		
 		The probability that 40-50\% of simulations hit a location that is inundated is 2.7\%. The probability the 40-50\% of simulations hit a location that is not inundated by lava is 2.1\%. The Bayes Factor is then calculated to be 1.3, where the model of Inundation is 1.3 times more likely to describe this subregion than the model of Not Inundation. Referring to Table \ref{tab_BFinterps}, this result means that the preference for Inundation over Not Inundation is ``just worth a mention.'' Results for each 10\% wide sub-region are given in Table \ref{tab_BFresults} and are illustrated in Figure \ref{fig_bayesfactor}.
 		
@@ -779,8 +791,8 @@ The set of cellular automata is defined as
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \section{Discussion}\label{sec:discussion}
-	\subsection{Benchmark Validation}
-	Unique flow algorithms are validated by using common benchmarks that show whether these algorithms replicate expected lava flow morphologies under specific conditions. Different benchmark tests that are applicable to CA codes fall into three validation levels: 1) tests that show that simulations don't change when parameters remain meaningfully identical; 2) tests that show that simulations replicate experimental results or analytical expectations; and 3) tests that show that simulations replicate real world flow examples. A summary of the results of the eight algorithms against the example benchmarks are given below in Table \ref{tab_algorithmresults}.
+	\subsection{Validation of MOLASSES models}
+	Unique flow algorithms are validated by using common tests that show whether these algorithms replicate expected lava flow morphologies under specific conditions. Different tests that are applicable to CA codes fall into three validation levels: 1) tests that show that simulations don't change when parameters remain meaningfully identical; 2) tests that show that simulations replicate experimental results or analytical expectations; and 3) tests that show that simulations replicate real world flow examples. A summary of the results of the eight algorithms against the example validation exercises are given below in Table \ref{tab_algorithmresults}.
 		
 	\begin{table}[h]
 		\centering
@@ -805,11 +817,11 @@ The set of cellular automata is defined as
 		\label{tab_algorithmresults}
 	\end{table}
 	
-	Because these validation levels increase in complexity from Level 1 to Level 3, one possible strategy in validating different algorithms would be to only test algorithms at more complex benchmarks after they successfully pass less complex benchmarks. Valid models might then be determined by elimination. Only 3 of 8 tested algorithms pass the first ``rotating slope'' benchmark: 4/P/S, 8/P/S, and 8/N/S. Although more algorithms passed the second ``bingham flow on a flat surface'' benchmark, only 8/P/S and 8/N/S passed the previous benchmark and this one. Both of these flows then successfully replicated the Tolbachik lava flows over SRTM topography. Therefore the 8/P/S and 8/N/S algorithms hold up to three benchmark tests.
+	Because these validation levels increase in complexity from Level 1 to Level 3, one possible strategy in validating different algorithms would be to only test algorithms at more complex levels after they successfully pass less complex tests. Valid models might then be determined by elimination. Only 3 of 8 tested algorithms pass the first ``rotating slope'' exercise: 4/P/S, 8/P/S, and 8/N/S. Although more algorithms passed the second ``bingham flow on a flat surface'' exercise, only 8/P/S and 8/N/S passed the previous exercise and this one. Both of these flows then successfully replicated the Tolbachik lava flows over SRTM topography. Therefore the 8/P/S and 8/N/S algorithms hold up to three tests.
 	
 	Overall, in all tests 8-connected models outperform 4-connected models. While equal sharing algorithms outperform slope-proportional sharing on a flat slope, they fail on a rotating DEM and perform about the same on real topography. There does not seem to be an unambiguously better choice between using parent-child relationships or not. If future tests continue to show similar performance between models with and without parentage, other reasons can be used to choose a model, such as computer run-time. 
 	
-	The strength of the MOLASSES code is that new algorithms, such as those used in the SCIARA model \citep{crisci2004simulation}, can be implemented relatively quickly and run through the Benchmarking tests, which are written in Python. Combinations of implementation strategies can also be created on the fly by adjusting the makefile of the MOLASSES code instead of the code itself.
+	The strength of the MOLASSES code is that new algorithms, such as those used in the SCIARA model \citep{crisci2004simulation}, can be implemented relatively quickly and run through the validation exercises, which are written in Python. Combinations of implementation strategies can also be created on the fly by adjusting the makefile of the MOLASSES code instead of the code itself.
 
 	\subsection{Bayesian applications for real lava flows}
 		Validation of lava flow models is important as a method of increasing the value of models to forecast lava flow processes, thereby decreasing preventable loss. Flow models are generally improved by reducing false positives and false negatives while increasing the true positive area, which is the union of a flow simulation and real, mapped lava flows. Often, reducing one type of error comes at the cost of increasing another type. For example, by increasing the pulse volume parameter, false positives can be reduced while false negatives are increased (Figure \ref{fig:pulse_map}).
@@ -817,11 +829,11 @@ The set of cellular automata is defined as
 		A decision can be made as to whether false positives or false negatives are more important to reduce in calibrating a lava flow model. One possible decision would be to prefer the reduction of false negatives over the reduction of false positives, with the reason being that a forecast of inundation without eventual engulfment by lava (a false positive result) is bad, but an unexpected engulfment by lava (a false negative) would be worse.
 		
 		\subsubsection{Using Bayesian statistics to compare models}
-		In Section \ref{sec_bayespulse}, an optimal pulse volume was defined as a volume that produced a simulated lava flow that had the highest posterior and negative posterior values. However, the pulse volume 14040 m$^3$ had the highest posterior value, while the pulse volume 4387 m$^3$ had the highest negative posterior value. The simple definition of ``optimal'' pulse volume does not seem to work.
+		In Section \ref{sec_bayespulse}, an optimal pulse volume was defined as a volume that produced a simulated lava flow that had the highest PPV and NPV. However, the pulse volume 14040 m$^3$ had the highest PPV, while the pulse volume 4387 m$^3$ had the highest NPV. The simple definition of ``optimal'' pulse volume does not seem to work.
 		
-		The best pulse volume might be decided based on a preference for reducing false negatives as discussed above. The posterior probability of inundation, $\text{Pr}(Lava|Sim)$ increases with increased true positives and decreases with increased false positives (Equation \ref{eq_simplepost}). It is essentially blind to false negatives. The negative posterior $\text{Pr}(\neg Lava|\neg Sim)$ probability is the opposite, increasing with increased true negative results, while decreasing with increased false negative results (Equation \ref{eq_simplenegpost}). 
+		The best pulse volume might be decided based on a preference for reducing false negatives as discussed above. The PPV of inundation, $\text{Pr}(Lava|Sim)$ increases with increased true positives and decreases with increased false positives (Equation \ref{eq_simplepost}). It is essentially blind to false negatives. The NPV $\text{Pr}(\neg Lava|\neg Sim)$ is the opposite, increasing with increased true negative results, while decreasing with increased false negative results (Equation \ref{eq_simplenegpost}). 
 		
-		If false negatives are more important to reduce than false positives, more weight can be given to the negative posterior value of a simulation than the positive posterior value. In Figure \ref{fig_weightedposteriors}, the posterior and negative posterior values for each pulse volume (Figures \ref{fig_lavaGsim} and \ref{fig_neglavaGsim}) are used to produce weighted average scores of pulse volume. The extent to which false negative reduction might be preferred over false positive reduction is unknown, so four hypothetical weights are used. One of the weighted averages that is plotted assumes both posteriors are equally important in determining the best pulse volume parameter. The other three curves weight the negative posterior as being 2, 5, and 10 times as important as the positive posterior in scoring pulse volumes. Using these three weights, the highest scoring pulse volume is 4387 m$^3$ (Figure \ref{fig:pulse_map}b). If the two posteriors have equal importance, the highest scoring pulse volume is 14040 m$^3$ (Figure \ref{fig:pulse_map}c).
+		If false negatives are more important to reduce than false positives, more weight can be given to the NPV of a simulation than the PPV. In Figure \ref{fig_weightedposteriors}, the PPV and NPV for each pulse volume (Figures \ref{fig_lavaGsim} and \ref{fig_neglavaGsim}) are used to produce weighted average scores of pulse volume. The extent to which false negative reduction might be preferred over false positive reduction is unknown, so four hypothetical weights are used. One of the weighted averages that is plotted assumes both predictive values are equally important in determining the best pulse volume parameter. The other three curves weigh NPV as being 2, 5, and 10 times as important as PPV in scoring pulse volumes. Using these three weights, the highest scoring pulse volume is 4387 m$^3$ (Figure \ref{fig:pulse_map}b). If the two values have equal importance, the highest scoring pulse volume is 14040 m$^3$ (Figure \ref{fig:pulse_map}c).
 		
 		\begin{figure}[h!]
 			\centering
@@ -835,7 +847,7 @@ The set of cellular automata is defined as
 				set xtics 4000
 				plot "results_bayes.dat" using 1:7 with points pt 1, "results_bayes.dat" using 1:5 with points pt 7, "results_bayes.dat" using 1:6 with points pt 3, "results_bayes.dat" using 1:4 with points pt 6
 			\end{gnuplot}
-			\caption[Weighted averages of $\text{Pr}(Lava|Sim)$ and $\text{Pr}(\neg Lava|\neg Sim)$ for different pulse volumes]{Weighted averages of $\text{Pr}(Lava|Sim)$ and $\text{Pr}(\neg Lava|\neg Sim)$ for different pulse volumes. Hollow circles, negative posterior ($\text{Pr}(Lava|Sim)$) is given 10$\times$ the weight of the posterior ($\text{Pr}(\neg Lava|\neg Sim)$); solid circles, 5$\times$ weight; asterisks, 2$\times$ weight; plusses, equal weight between posteriors. The highest scoring pulse volume is 4387 m$^3$ for all weight ratios except when both posterior values are weighted equally.}
+			\caption[Weighted averages of $\text{Pr}(Lava|Sim)$ and $\text{Pr}(\neg Lava|\neg Sim)$ for different pulse volumes]{Weighted averages of $\text{Pr}(Lava|Sim)$ and $\text{Pr}(\neg Lava|\neg Sim)$ for different pulse volumes. Hollow circles, NPV ($\text{Pr}(Lava|Sim)$) is given 10$\times$ the weight of the PPV ($\text{Pr}(\neg Lava|\neg Sim)$); solid circles, 5$\times$ weight; asterisks, 2$\times$ weight; plusses, equal weight between predictive values. The highest scoring pulse volume is 4387 m$^3$ for all weight ratios except when both values are weighted equally.}
 			\label{fig_weightedposteriors}
 		\end{figure}
 		
@@ -848,7 +860,7 @@ The set of cellular automata is defined as
 	
 	While lives are not commonly lost due to lava flows with the notable exceptions of Laki (A.D. 1783, Iceland) and Nyiragongo (A.D. 1977 and 2002, Democratic Republic of the Congo) \citep{peterson2000lava}, the ``protection threshold'' $p>0.1$ can still be used as an example. All Monte Carlo sub-regions have a probability of inundation ($\text{Pr}(Lava)$) greater than 0.1 except the sub-region $\text{Pr}(Sim<0.1)$ (Figure \ref{fig_bayesfactor}). If action to protect is made at $\text{Pr}(Lava>0.1)$, then evacuations or fortifications will be made for all locations inundated by $\ge$10\% of Monte Carlo simulations.
 	
-	Two Bayes-factor thresholds in Figure \ref{fig_bayesfactor} have odds against lava inundation at better than 10:1 (i.e. $\text{Pr}(Lava<0.1)$), ``strong evidence'' and ``very strong evidence'' against inundation. Given the hypothetical protection threshold of $p>0.1$, the decision to protect against a lava flow should be made for a location whenever the Bayes factor supporting inundation is $>10^-1$, or when there is less than ``strong evidence'' against inundation for that area. If the protection threshold is decided to be less than 0.1, then the evidence against inundation will have to be even stronger to support a decision to not protect an area. 
+	Two Bayes-factor thresholds in Figure \ref{fig_bayesfactor} have odds against lava inundation at better than 10:1 (i.e. $\text{Pr}(Lava<0.1)$), ``strong evidence'' and ``very strong evidence'' against inundation. Given the hypothetical protection threshold of $p>0.1$, the decision to protect against a lava flow should be made for a location whenever the Bayes factor supporting inundation is $>10^{-1}$, or when there is less than ``strong evidence'' against inundation for that area. If the protection threshold is decided to be less than 0.1, then the evidence against inundation will have to be even stronger to support a decision to not protect an area. 
 	
 	It is unknown whether sub-regions defined as $\text{Pr}(Sim<0.1)$ should be expected to be relatively safe areas when using Monte Carlo results at future lava flow sites. To test the effectiveness of the MOLASSES algorithm used for the Tolbachik flows in other study areas, more example flows around the world will have to be tested.
 		
@@ -856,17 +868,55 @@ The set of cellular automata is defined as
 \section{Conclusions}
 	The MOLASSES framework used in this project provides a modular set of functions that can be interchanged to fundamentally alter the flow simulation algorithm. While only 8 different algorithms, which focused on simple variations in the transition function of Cellular Automata codes, were explored, different modules can feasibly be modified to change other flow characteristics (e.g. vent geometry, mass flux at source locations, temperature dependent flow).
 	
-	All CA and CA-like codes, including SCIARA \citep{crisci2004simulation}, MAGFLOW \citep{del2008simulations}, ELFM \citep{damiani2006lava}, LavaPL \citep{connor2012}, and MOLASSES share similarities. For instance, lava inundation is a binary condition for each location on a grid and source locations are set at defined grid cell coordinates. This enables a common set of benchmarks to be defined, which can be used to test the validity of all CA codes.
+	All CA and CA-like codes, including SCIARA \citep{crisci2004simulation}, MAGFLOW \citep{del2008simulations}, ELFM \citep{damiani2006lava}, LavaPL \citep{connor2012}, and MOLASSES share similarities. For instance, lava inundation is a binary condition for each location on a grid and source locations are set at defined grid cell coordinates. This enables a common set of validation exercises to be defined, which can be used to test the validity of all CA codes.
 	
-	Three validation levels have been identified and different benchmark tests have been given which apply to each level. After a code is successfully demonstrated to conserve mass, the first validation level ensures that the code does not change when parameters are changed in a meaningless way. The example benchmark is that simulated flows should not be slope-direction dependent. The second level compares simulations to analytical or experimental results. As lava flows on large scales are similar to Bingham fluids, a flow simulator should produce a circular pattern on a flat surface. The third and final level tests simulations against true lava flows. Here, the 2012-3 Tolbachik lava flow is used as an example, with flow parameters identified using TanDEM-X analysis \citep{kubanek2015lava}. It might only make sense to validate codes at higher validation levels once they have been sufficiently developed to be validated at lower levels.
+	Three validation levels have been identified and different tests have been given which apply to each level. After a code is successfully demonstrated to conserve mass, the first validation level ensures that the code does not change when parameters are changed in a meaningless way. The example exercise is that simulated flows should not be slope-direction dependent. The second level compares simulations to analytical or experimental results. As lava flows on large scales are similar to Bingham fluids, a flow simulator should produce a circular pattern on a flat surface. The third and final level tests simulations against true lava flows. Here, the 2012-3 Tolbachik lava flow is used as an example, with flow parameters identified using TanDEM-X analysis \citep{kubanek2015lava}. It might only make sense to validate codes at higher validation levels once they have been sufficiently developed to be validated at lower levels.
 	
-	Two common fitness tests for lava flows are the Jaccard coefficient and model sensitivity. Model sensitivity gives the percentage of a mapped lava flow that a simulation successfully forecasts. A possible alternative to these tests is to use Bayesian posterior probabilities to evaluate the positive and negative predictive values of the simulation. These posteriors ($\text{Pr}(Lava|Sim)$ and $\text{Pr}(\neg Lava|\neg Sim)$ give the likelihood of flow inundation or not inundation given the simulation results.
+	Two common fitness tests for lava flows are the Jaccard coefficient and model sensitivity. Model sensitivity gives the percentage of a mapped lava flow that a simulation successfully forecasts. A possible alternative to these tests is to use Bayesian posterior probabilities, or predictive values to evaluate the positive and negative predictive values of the simulation. These predictive values (PPV, $\text{Pr}(Lava|Sim)$; and NPV, $\text{Pr}(\neg Lava|\neg Sim)$) give the likelihood of flow inundation or not inundation given the simulation results.
 	
-	Once lava simulators have been successfully validated through benchmarking, these Bayesian statistics can be used to improve model input parameters and evaluate model uncertainty by incorporating uncertainty inherent in input parameters. It is also possible that the two posterior predictive values can be used to aid in decision making processes associated with active lava flow crises.
+	Once lava simulators have been successfully validated, these Bayesian statistics can be used to improve model input parameters and evaluate model uncertainty by incorporating uncertainty inherent in input parameters. It is also possible that the two predictive values can be used to aid in decision making processes associated with active lava flow crises.
 	
 	
 \section{Data Statement}
-This code is available for free use on GitHub at the USFVolcanology page located at \url{https://github.com/USFvolcanology}, while the benchmarking codes can be found at \url{https://github.com/jarichardson/MOLASSES_benchmarking}. The MOLASSES code and the Benchmarking algorithms are kept in seperate self-contained repositories.
+This code is available for free use on GitHub at the USFVolcanology page located at \url{https://github.com/USFvolcanology}, while the validation codes can be found at \url{https://github.com/jarichardson/MOLASSES_benchmarking}. The MOLASSES code and the validation algorithms are kept in seperate self-contained repositories.
+
+\section{Notation}
+	\begin{table}[h!]
+		\centering
+		\caption{Notation}
+		\begin{tabular}{l l}
+			\toprule
+			\textbf{A}& Cellular Automata (CA) structure\\
+			E$^2$& set of CA point locations\\
+			V & set of source locations in E$^2$\\
+			X & local neighborhood for each cell\\
+			$n$ & an element of X\\
+			S & set of subsets for each cell\\
+			$\sigma$ & transition function of the CA\\
+			$\gamma$ & source function of the CA\\
+			$i$,$j$ & row, column location within E$^2$\\
+			$c$ & the location of a central cell of interest\\
+			$t$ & timestep in the CA\\
+			S$_e$, S$_h$, S$_h0$ & elevation, lava thickness, and critical thickness of a cell\\
+			V$_{in}$ & total volume delivered to source locations\\
+			V$_{out}$ & total volume in all inundated cells\\
+			$A_{flow}$ & total footprint area of a flow simulation\\
+			$d_{max}$ & maximum distance of lava from the source location\\
+			$N$ & the predefined hazard area\\
+			$R_{max}$ & maximum hazard radius\\
+			$\rho$ & density of lava flow crust\\
+			$\epsilon$ & emprical extension-before-failure value\\
+			$S$ & tensile crust strength\\
+			$Q$ & mean volumetric flux\\
+			$g$ & acceleration due to gravity\\
+			$\kappa$ & bulk thermal diffusivity\\
+			$\mathcal{C}$ & the cost of protection\\
+			$\mathcal{L}$ & the cost of loss if protection does not occur\\
+			$p$ & probability of hazard occuring\\
+			\bottomrule
+		\end{tabular}
+		\label{tab_notation}
+	\end{table}
 
 %\section{Acknowledgments}
 %The development of this code was supported by SSI Grant
