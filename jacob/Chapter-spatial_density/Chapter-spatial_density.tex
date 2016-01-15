@@ -50,9 +50,26 @@ Who has tackled these questions before, who has tried to figure out spatial stat
 of volcanic fields? What is the strength and weakness of different methods?
 
 
+\subsection{Kernel Density Estimation}
+Commonly in geology, physical processes create a partially random population of point features, such as sinkholes, volcanoes, or kettle lakes. The spatial distribution of these point features is governed by an underlying physical process, and the physical process can often be modeled to create a probability model of where points are more likely to be created. For instance, sinkholes are more likely to occur in locations where soluble carbonate rock is at or near the water table, so a map showing the probability of sinkhole development might reflect the distribution of shallow carbonate rocks. In contrast, volcanoes are formed from a magma source. If the location, depth, and productivity of the magma source is well known, models can be made to map the potential locations of volcanism on the Earth's surface, where a higher likelihood of eruption would be over the most productive locations of the magma source region. 
 
+Unfortunately for volcanologists, the distribution and characteristics of magma sources in the ground are generally far less well constrained than the distribution of volcanoes on the Earth's surface. Instead of creating a probabilistic spatial model of volcanic events using knowledge of the magma source, the existing distribution of volcanoes can be used. Using only the point locations of volcanoes, one might conclude that new volcanoes are likely to form in areas where more volcanoes already exist, where the spatial density of volcanoes is higher. This is an attempt to estimate the physical model of volcano production when knowledge of the underlying physical process is limited.
 
+The process of estimating the ``true'' point density distribution by assigning probability density functions (PDFs) to a population of randomly sampled points from this distribution is called Kernel Density Estimation (KDE). A kernel is an identical PDF assigned to points to describe their influence on their surrounding region. Essentially, If the kernel is the normal distribution centered on a point, the point has more influence at the point's location (at the maximum value of the normal distribution) and influence decreases away from the point following the value of the normal distribution. In KDE, influence becomes density, so that point density is highest at a point location and decreases away from the point, in effect smoothing the point.
 
+Given a map catalog of volcanoes, a density value, $\lambda$, for each volcano can be calculated for any location on the map, using the associated kernel PDF. If the kernel is normally distributed (i.e. Gaussian), the kernel density of a volcano for location with cartesian coordinates ($x$,$y$) is calculated as
+\begin{equation}
+\lambda(x,y) = \frac{1}{\sigma\sqrt{2\pi}}\exp\left[\frac{-(x-x_v)^2-(y-y_v)^2}{2\sigma^2}\right]
+\end{equation}
+where ($x_v$,$y_v$) is the coordinate pair of the volcano and $\sigma$ is the PDF standard deviation. The total volcano point density at this location can be found by summing the point densities of all volcanoes, $i$, in the catalog of $N$ volcanoes:
+\begin{equation}
+\lambda(x,y) = \frac{1}{\sigma\sqrt{2\pi}}\sum\limits_{i=1}^{N}\exp\left[\frac{-(x-x_i)^2-(y-y_i)^2}{2\sigma^2}\right].
+\end{equation}
+
+Kernel PDFs do not have to be axi-symmetric normal distributions. In this paper, a bivariate normal distribution will be used to model density, so kernels will be Gaussian ellipses instead of circles. These ellipses will also be unconstrained in direction, so their major axes do not have to be aligned in a cardinal direction. This is done by multiplying the distance between locations and volcanoes (here a 1x2 distance matrix) by a covariance matrix defined as
+%Covariance matrix eq.
+
+%We then use Duong's Bandwidth selector. This is used because it has been validated. Unconstrained has also been validated to work better than constrained or circular PDFs in certain distributions...
 
 
 
