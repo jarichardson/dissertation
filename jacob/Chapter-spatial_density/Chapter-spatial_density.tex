@@ -61,21 +61,48 @@ Given a map catalog of volcanoes, a density value, $\lambda$, for each volcano c
 \begin{equation}
 \lambda(x,y) = \frac{1}{\sigma\sqrt{2\pi}}\exp\left[\frac{-(x-x_v)^2-(y-y_v)^2}{2\sigma^2}\right]
 \end{equation}
-where ($x_v$,$y_v$) is the coordinate pair of the volcano and $\sigma$ is the PDF standard deviation. The total volcano point density at this location can be found by summing the point densities of all volcanoes, $i$, in the catalog of $N$ volcanoes:
+where ($x_v$,$y_v$) is the coordinate pair of the volcano and $\sigma$ is the PDF standard deviation, or kernel bandwidth. The larger the kernel bandwidth, the further the density of the point is spread across the map. The total volcano point density at this location can be found by summing the point densities of all volcanoes, $i$, in the catalog of $N$ volcanoes:
 \begin{equation}
-\lambda(x,y) = \frac{1}{\sigma\sqrt{2\pi}}\sum\limits_{i=1}^{N}\exp\left[\frac{-(x-x_i)^2-(y-y_i)^2}{2\sigma^2}\right].
+\lambda(x,y) = \frac{1}{N\sigma\sqrt{2\pi}}\sum\limits_{i=1}^{N}\exp\left[\frac{-(x-x_i)^2-(y-y_i)^2}{2\sigma^2}\right].
+\label{eq_simpleKDE}
 \end{equation}
 
-Kernel PDFs do not have to be axi-symmetric normal distributions. In this paper, a bivariate normal distribution will be used to model density, so kernels will be Gaussian ellipses instead of circles. These ellipses will also be unconstrained in direction, so their major axes do not have to be aligned in a cardinal direction. This is done by multiplying the distance between locations and volcanoes (here a 1x2 distance matrix) by a covariance matrix defined as
-%Covariance matrix eq.
+Kernel PDFs do not have to be axi-symmetric normal distributions. In this paper, a bivariate normal distribution will be used to model density, so kernels will be Gaussian ellipses instead of circles (circular distributions can be considered univariate as they are defined by one standard deviation or bandwidth). These ellipses will also be unconstrained in direction, so their major axes do not have to be aligned in a cardinal direction. This is done by multiplying the distance between locations and volcanoes, treated here a 1x2 distance matrix, by a covariance matrix that defines the standard deviation in the x and y directions and the covariance between these dimensions. The covariance matrix is given as
+\begin{equation}\begin{bmatrix}
+\sigma_x^2 & \sigma_x\sigma_y\rho\\
+\sigma_x\sigma_y\rho & \sigma_y^2
+\label{eq_covariance}
+\end{bmatrix}\end{equation}
+where $\sigma_x$ is the x-direction standard deviation, $\sigma_y$ is the y-direction standard deviation, and $\rho$ is the covariance of these two. A covariance of 0 results in a kernel ellipse with axes aligned with the cardinal directions, while higher covariance skews or rotates the ellipse away from the cardinal directions.
 
-%We then use Duong's Bandwidth selector. This is used because it has been validated. Unconstrained has also been validated to work better than constrained or circular PDFs in certain distributions...
+Kernel bandwidth, the amount that the kernel ellipse is smoothed in any given direction, is an important parameter in estimating the unknown density of point features. Again, the point of KDE is to estimate the underlying spatial probability of a point feature (e.g. a volcano) being created, using only the points that can already be observed. Selecting a bandwidth that is too small will overly concentrate volcano density around each existing volcanoes, underestimating the likelihood of a new volcano in between existing edifices. A bandwidth that is too large will overly smooth volcano density, overestimating the likelihood of new volcanic events far from the existing volcano population.
+
+Several bandwidth selectors have been created for KDE and in this project the Summed Asymptotic Means Square Error (SAMSE) selector will be used Duong, 2003). This selector is chosen because it has been validated using point populations of known distributions (Duong, 2007) and it has been shown to be more stable than similar selectors (Duong and Hazelton, 2003). The SAMSE bandwidth selector also is preferred because it provides an unconstrained bandwidth model using the covariance matrix formula in Equation \ref{eq_covariance}.
+
+Calculating the estimated spatial density, $\hat{\lambda}$, of point features in a location, $s$, using the unconstrained, bivariate bandwidth is done by modifying Equation \ref{eq_simpleKDE}, so that
+\begin{equation}
+\hat{\lambda}(\mathbf{s})=\frac{1}{2N\pi\sqrt{|\mathbf{H}|}}\sum\limits_{i=1}^{N}\exp\left[-\frac{1}{2}\mathbf{b^Tb}\right]
+\label{eq_kde}
+\end{equation}
+where $\mathbf{H}$ is the 2x2 covariance matrix and $|\mathbf{H}|$ is its determinant, $\mathbf{b}=\mathbf{H}^{-0.5}\mathbf{d}$ and $\mathbf{b^T}$ is its transform. $\mathbf{d}$ is the 1x2 distance matrix, with the form
+\begin{equation}\begin{bmatrix}
+x_s-x_i\\
+y_s-y_i
+\label{eq_distancematrix}
+\end{bmatrix}\end{equation}
+where ($x_s$,$y_s$) are the cartesian coordinates of the location of interest and ($x_i$,$y_i$) are the coordinates of the $i^{\text{th}}$ volcano.
 
 
 
 \section{Methods}
 
 \subsection{Data collection}
+Catalogs of 20 volcano clusters have been collected for this study, including 10 volcanic fields on Earth, 3 on Mars, and 7 on Venus. The volcanoes in all clusters are primarily described as monogenetic, though some clusters are formed nearby or on top of central-vent volcanoes (e.g. Mount Adams, WA and Arsia Mons, Mars).
+10 Earth
+3 Mars
+7 Venus
+
+
 
 \begin{table}
 \centering
@@ -122,22 +149,11 @@ Brunhes	&	0.73 - Present	&	35$^{\circ}$20'N, 111$^{\circ}$30'W	&	239	&	$\bigl[\b
 Matuyama	&	2.48 - 0.73	&	36$^{\circ}$20'N, 112$^{\circ}$W	&	209	&	$\bigl[\begin{smallmatrix} 15.0&1.38\\1.38&25.4 \end{smallmatrix}\bigr]$\\
 Pre-Matuyama	&	5-2.48	&	36$^{\circ}$20'N, 112$^{\circ}$15'W	&	135	&	$\bigl[\begin{smallmatrix} 13.3&-3.10\\-3.10&12.5 \end{smallmatrix}\bigr]$\\
 \midrule
-Total	&	5 - Present	&	35$^{\circ}$20'N, 111$^{\circ}$50'W	&	583	&	$\bigl[\begin{smallmatrix} 34.4&-0.0396\\-0.0396&13.0 \end{smallmatrix}\bigr]$\\
+Entire Field	&	5 - Present	&	35$^{\circ}$20'N, 111$^{\circ}$50'W	&	583	&	$\bigl[\begin{smallmatrix} 34.4&-0.0396\\-0.0396&13.0 \end{smallmatrix}\bigr]$\\
 \bottomrule
 \multicolumn{5}{p{0.95\linewidth}}{$^*$Vent locations reported in \citet{harburger2014probabilistic}.}\\
 \end{tabular}
 \end{table}
-
-\subsection{Kernel Density Estimation}
-
-Introduce Kernel Density, mention SAMSE
-\begin{equation}
-\hat{\lambda}(\mathbf{s})=\frac{1}{2N\pi\sqrt{|\mathbf{H}|}}\sum\limits_{i=1}^{N}\exp\left[-\frac{1}{2}\mathbf{b^Tb}\right]
-\label{eq_kde}
-\end{equation}
-
-The bandwidth matrix in this equation describes a gaussian ellipse where 
-
 
 \subsection{The KDtools Python Library}
 
