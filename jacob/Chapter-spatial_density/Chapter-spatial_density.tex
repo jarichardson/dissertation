@@ -93,16 +93,48 @@ y_s-y_i
 where ($x_s$,$y_s$) are the cartesian coordinates of the location of interest and ($x_i$,$y_i$) are the coordinates of the $i^{\text{th}}$ volcano.
 
 
-
+%bu zhi da
 \section{Methods}
 
 \subsection{Data collection}
-Catalogs of 20 volcano clusters have been collected for this study, including 10 volcanic fields on Earth, 3 on Mars, and 7 on Venus. The volcanoes in all clusters are primarily described as monogenetic, though some clusters are formed nearby or on top of central-vent volcanoes (e.g. Mount Adams, WA and Arsia Mons, Mars).
-10 Earth
-3 Mars
-7 Venus
+Catalogs of 20 volcano clusters have been collected for this study, including 10 volcanic fields on Earth, 3 on Mars, and 7 on Venus. The volcanoes in all clusters are primarily described as monogenetic, though some clusters are formed nearby or on top of central-vent volcanoes (e.g. Mount Adams, WA and Arsia Mons, Mars). 
+
+Each cluster catalog includes the locations of volcanic vents that are presently observable in the area. Volcanic vents are generally located at the center of scoria cones, low shields, or tuff rings and are often depressions in the center of topographic rises. Scoria cones, low shields, and tuff rings in these fields are $<1$ to a few km in diameter and are interperetted to be the products of monogenetic volcanic eruptions. One cluster, the San Rafael volcanic field, is heavily eroded to a depth of $\sim$1~km so no edifices remain. In this cluster, diabasic conduit diatremes are mapped and interpretted to be vent locations.
+
+The locations of each volcanic vent are defined as 2D points on their planet's surface, even though volcanic vents are not precisely point features. A vent location point generally describes the center location of the vent. Points are not defined by the center of the volcano edifice, because they are used to identify the location where magma intersected and erupted out of the planet's surface, often as a dike. This point feature can then be used in the KDE method to model volcanic vent density.
+
+\subsubsection{Earth clusters}
+Ten distributed-style volcanic fields on earth have been mapped, producing vent catalogs that can be used to model vent density in the region. These clusters are located in four tectonic regimes: over subduction zones, on the Colorado Plateau, in the extensional Basin and Range region, and in the Anatolian Peninsula (Figure \ref{fig_earthlocator}.
+
+\paragraph{Subduction-related clusters} Distributed volcanic fields in the Cascades Arc have formed in association with the large central volcanoes, inluding Mount Adams \citep{Barron2014} and Newberry Volcano \citep{Bard2013}. This arc is the product of the subducting Juan de Fuca plate. In southern Japan, monogenetic volcano groups have also formed, due to subduction of the Filipino and Pacific plates. Two of these volcano groups, the Abu Monogenetic Volcano Group and the Izu-Tobu Volcano Group have been mapped in this region \citep{Kiyosugi2010} and vent density has been modeled by \citet{Kiyosugi2012} Edifices in these catalogs are scoria cones, low shield volcanoes, and lava domes.
+
+\paragraph{Colorado Plateau} Basaltic volcanism has occurred as an annulus around the Colorado Plateau during the Cenozoic \citep{Tanaka1986}. Most of this volcanism has been distributed in nature, forming isolated volcano clusters. Three of these clusters, the San Francisco Volcanic Field (SFVF), Black Rock Desert, and the San Rafael Volcanic Field, are included in this study. 
+
+Volcanoes in the SFVF, located in and around Flagstaff, AZ, have been mapped by \citet{Harburger2014}, including 583 vents identified as monogenetic. This field has been active for three magnetic epochs, enabling the field to be separated into three sub-fields which can be independently analyzed \citep{Tanaka1986}. Black Rock Desert volcanoes in Utah were cataloged by \citet{Hintz2008} and vent density has been modeled by \citet{Kiyosugi2012}. \citet{Kiyosugi2012} also mapped 126 conduits diatremes in the heavily eroded San Rafael Volcanic Field in central Utah and interpretted these to be previous vent locations when the field was active in the Pliocene.
+
+\paragraph{Other tectonic settings} Two other vent databases have been created for clusters in the Basin and Range, Nevada, and in Central Anatolia, Turkey. In the Basin and Range, \citet{Connor1995} cataloged 39 scoria cones located in a cluster around Yucca Mountain. In Central Anatolia, \citet{Usular2015} mapped 77 cinder cones, which form the E\u{g}rikuyu volcano cluster.
 
 
+\subsubsection{Mars clusters}
+Three distributed-style volcanic fields within the larger Tharsis Province are included in this study: Syria Planum, Southern Pavonis Mons, and Arsia Mons Caldera. The Tharsis Volcanic Province has  been identified as a long lived center for volcanism since early space missions to Mars (Carr, 1977) and makes up about one-quarter of the total global surface. Tharsis is home to many of the largest central-vent style volcanoes in the Solar System, but also has over 1,000 small volcanic vents that are distributed in clusters around Tharsis.
+
+Three clusters of vents have been identified in the southern Tharsis region that are separated from other vents in the database and are treated as isolated populations because of this. Each field, Syria, Pavonis, and Arsia, were potentially formed from one magma generation event, though they might have also been formed from multiple events that created overlapping volcano clusters.
+
+\paragraph{Southern Pavonis Mons}
+Pavonis Mons is a large shield volcano in the Tharsis Montes, a linear chain of three shield volcanoes within the Tharsis Province. To the north and south of each of these volcanoes, lavas have been emplaced on the shield flank, apparently after the main construction phases of each shield (Bleacher, Tharsis). These lavas are known as flank aprons (Bleacher, Tharsis). At Pavonis, a volcano cluster of 88 shield volcanoes (one to tens km in diameter) is present on top of the southern flank apron (Bleacher, Pavonis). This cluster is aligned roughly N-S along the axis of the apron (Bleacher, Pavonis).
+
+
+\paragraph{Arsia Mons Caldera}
+Arsia Mons is the southernmost large shield volcano of the Tharsis Montes and has a 110~km diameter caldera at its summit. Within this caldera, 29 low shield volcanoes have been mapped (Chapter XXX, this dissertation). The caldera and shields within it are thought to be very young due to the absense of any impact craters larger than 1~km in the entire caldera (Crumpler, 1978).
+
+\paragraph{Syria Planum}
+The Syria Planum region is a broad plateau with 263 low shield volcanoes (Richardson et al 2013). One volcano, Syria Mons, has lava flows that travel up to 1,000~km from its vent (Baptista, 2007). The other low shields have been mapped by Richardson et al (2013) and are one to tens of km in diameter with slopes of $<6^{\circ}$. This volcano cluster has been dated using crater retention rate models to have formed between 3.6-2.9~Ga spanning the Hesperian geologic period on Mars.
+
+
+\subsubsection{Venus clusters}
+Seven Venus clusters have been cataloged by \citet{Miller2012}, which fall into two distinct classes: shield fields which are composed of $10^3$-$10^4$ volcanic vents and shield plains which host $10^4$-$10^5$ volcanic vents. Both types of cluster are formed by low sloped ($\sim1-2^{\circ}$) shields $<10$~km in diameter (Richardson et al 2012, agu). These shields are radar bright or dark, enabling their mapping with left-look Magellan radar images, though their vents are often not visible, so vents are mapped as the centroid of the edifice \citep{Miller2012}. Of the seven clusters cataloged, three are shield plains and four are shield fields \citep{Miller2012}.
+
+The large size difference between shield fields and shield plains has been observed since the return of Magellan radar images (Crumpler). Venusian shield fields are similar in size to the shield fields on Mars and have a similar number of vents (several hundreds) to fields on Mars and Earth. Venusian plains, however, are regional in scale and include several thousand vents. The Venusian surface has very few impact craters, indicating that it has recently been resurfaced. The regional volcanic plains would have played an important role in this resurfacing, due to their large footprints.
 
 \begin{table}
 \centering
