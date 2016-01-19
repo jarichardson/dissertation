@@ -38,16 +38,17 @@
 \maketitle
 
 \section{Introduction}
+%The spatial arrangement of volcanic vents in volcano clusters provides evidence about the underlying magmatic processes that formed each cluster and can provide insight into where new vents will form if the cluster is potentially active. While it might be hard to forecast the ability of dikes to propogate to the surface in different areas of a cluster, or difficult to map the distribution of melt currently in the lithosphere presently underneath a cluster, the location and organization of previously formed vents might help in modeling these features of volcanic terrains.
 
-What is important about:
-\begin{enumerate}
-\item The size of volcano clusters?
-\item The density of vents within clusters?
-\item The volume density within clusters?
-\end{enumerate}
+%Because the location of currently mappable vents are a key to modeling where future vents might erupt, several statistical tools and tests have been developed to describe the location of vents. One such test attempts to identify whether a vents in a volcano cluster are randomly spaced, clustered, or packed, in a Poisson sense (Beggan and Hamilton, Richardson, Baloga/Glaze/Bruno?). If vents are spaced in a Poisson-random sense, it indicates that the location of future eruptions cannot be identified from past eruptions within the cluster. If Poisson randomness is rejected, the field can be considered clustered, with different foci of volcanic activity, or packed, where vents are regularly spaced (Beggan and Hamilton).
 
-Who has tackled these questions before, who has tried to figure out spatial statistics
-of volcanic fields? What is the strength and weakness of different methods?
+%Another statistical tool used with vent locations in a cluster identifies potential alignments between vents. Alignments or lineaments of volcanic vents are generally defined as multiple vents, more or less in a line. If a significant number of vent lineaments are observed in a single direction, or narrow range of direction, this might indicate that dikes ascend along preferred pathways. These pathways might be a result of previous joint and/or fault sets from past tectonism, or might be from dynamic stress occurring during the development of the cluster. 
+
+%A third statistical tool is the estimation of vent spatial density, which identifies sub-regions of higher past vent production in a cluster. If it is assumed that sub-regions in a cluster that have seen more volcanic eruptions in the past will see more eruptions in the future, then this tool can help forecast where future eruptions are likely to take place. The spatial vent density in an area is the number of vents per square unit area. 
+
+%A simple estimation of vents/km$^2$ can be carried out by counting the number of volcanoes in each 1~km by 1~km cell of a rectangular grid laid over all the vents in a volcano cluster. Because vents in most clusters are spaced multiple km from each other, however, this would result in a grid of mostly 0 or 1 vents/km$^2$, which would appear similar to a map of vent locations drawn as points. Another disadvantage to this is that sharp lines delineate the change in vent density. On one side of a grid cell boundary, the vent density might be 1 vent/km$2$, while one meter away density might rapidly decrease 100\% to 2 vents/km$2$. In nature, however, it is unlikely that a volcano is twice as likely to erupt in a one meter compared to its adjacent meter.
+
+%An alternative method to measure spatial vent density would be to  
 
 
 \subsection{Kernel Density Estimation}
@@ -92,6 +93,8 @@ y_s-y_i
 \end{bmatrix}\end{equation}
 where ($x_s$,$y_s$) are the cartesian coordinates of the location of interest and ($x_i$,$y_i$) are the coordinates of the $i^{\text{th}}$ volcano.
 
+%Talk about how this integrates to 1 and Spatial Density vs. Intensity.
+%Maybe put the volume weight up here.
 
 %bu zhi da
 \section{Methods}
@@ -187,7 +190,7 @@ Entire Field	&	5 - Present	&	35$^{\circ}$20'N, 111$^{\circ}$50'W	&	583	&	$\bigl[
 \end{tabular}
 \end{table}
 
-\subsection{The KDtools Python Library}
+\subsection{Estimating vent density with the KDtools Python Library}
 
 A python library has been created to map the spatial density of geographic points, with specific functions to deal with geographic projections on Earth, Mars, and Venus. This library, called KDtools, contains seven functions which can be used to pre-process data, identify an optimal kernel bandwidth of the data, evaluate the local point density for locations on a map, and export these results to a raster file. Each function is given in an appendix below (Section \ref{sec_kdtoolscode}). Two functions, explained below, are used to first identify an optimal kernel bandwidth and second evaluate the spatial density of points across a map grid.
 
@@ -259,7 +262,7 @@ Spatial vent density and volume density compared across planets
 We can compare km3/km2-a between the caribou field and arsia. We can compare km3/km2 between arsia and egrikuyu
 
 
-\section{Conclusion}
+\section{Conclusions}
 
 \addcontentsline{toc}{section}{References}
 \bibliographystyle{plainnat}
