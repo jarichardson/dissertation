@@ -116,7 +116,7 @@ The locations of each volcanic vent are defined as 2D points on their planet's s
 
 \begin{figure}
 \centering
-\includegraphics[width=0.5\linewidth]{figures/locators/earth_locator.png}
+\includegraphics[width=0.5\linewidth]{figures/locators/earth_locator.eps}
 \caption{Locations of selected volcano clusters with their kernel bandwidth ellipses drawn over them. Ellipses are enlarged to show regional variation.}
 \label{fig_earthlocator}
 \end{figure}
@@ -133,6 +133,12 @@ Volcanoes in the SFVF, located in and around Flagstaff, AZ, have been mapped by 
 
 \paragraph{Other tectonic settings} Two other vent databases have been created for clusters in the Basin and Range, Nevada, and in Central Anatolia, Turkey. In the Basin and Range, \citet{connor1995three} cataloged 39 scoria cones located in a cluster around Yucca Mountain. In Central Anatolia, \citet{uslular2015size} mapped 77 cinder cones, which form the E\u{g}rikuyu volcano cluster.
 
+\begin{figure}
+\centering
+\includegraphics[width=0.5\linewidth]{figures/locators/mars_locator_72dpi.png}
+\caption{Locations of selected Martian volcano clusters in the Tharsis Volcanic Province. Kernel bandwidth ellipses are drawn at the 1$\sigma$ contour over them. Ellipses are enlarged.}
+\label{fig_marslocator}
+\end{figure}
 
 \subsubsection{Mars clusters}
 Three distributed-style volcanic fields within the larger Tharsis Province are included in this study: Syria Planum, Southern Pavonis Mons, and Arsia Mons Caldera. The Tharsis Volcanic Province has  been identified as a long lived center for volcanism since early space missions to Mars \citep{Carr1977} and makes up about one-quarter of the total global surface. Tharsis is home to many of the largest central-vent style volcanoes in the Solar System, but also has over 1,000 small volcanic vents that are distributed in clusters around Tharsis.
@@ -149,6 +155,12 @@ Arsia Mons is the southernmost large shield volcano of the Tharsis Montes and ha
 \paragraph{Syria Planum}
 The Syria Planum region is a broad plateau with 263 low shield volcanoes \citep{richardson2013volcanic}. One volcano, Syria Mons, has lava flows that travel up to 1,000~km from its vent \citep{baptista2008swarm}. The other low shields have been mapped by \citet{richardson2013volcanic} and are one to tens of km in diameter with slopes of $<6^{\circ}$. This volcano cluster has been dated using crater retention rate models to have formed between 3.6-2.9~Ga spanning the Hesperian geologic period on Mars.
 
+\begin{figure}
+\centering
+\includegraphics[width=0.6\linewidth]{figures/locators/venus_globe_72dpi.png}
+\caption{Locations of seven volcano clusters on Venus. Kernel bandwidth ellipses are drawn at the 1$\sigma$ contour over each cluster and are enlarged.}
+\label{fig_venuslocator}
+\end{figure}
 
 \subsubsection{Venus clusters}
 Seven Venus clusters have been cataloged by \citet{miller2012shield}, which fall into two distinct classes: four are ``shield fields'' which are composed of $10^3$-$10^4$ volcanic vents and three are ``shield plains'' which host $10^4$-$10^5$ volcanic vents. Both types of cluster are formed by low sloped (less than one to a few degrees) shields $<$10~km in diameter \citep{richardson2012comparison}. These shields are radar bright or dark, enabling their mapping with left-look Magellan radar images, though their vents are often not visible, so vents are mapped as the centroid of the edifice \citep{miller2012shield}. Of the seven clusters cataloged, three are shield plains and four are shield fields \citep{miller2012shield}.
@@ -218,6 +230,13 @@ Local vent density is calculated along a grid in the function \textbf{KD} with t
 
 \section{Results}
 The locations, vent counts, and kernel bandwidths for each volcano cluster analyzed are reported in Table \ref{tab_clusterdata}. Data and results for four clusters, Abu Monogenetic Volcano Group, Izu-Tobu Monogenetic Volcano Group, Black Rock Desert, and the Yucca Mountain Volcano Group are duplicated in Table \ref{tab_clusterdata} from \citet{kiyosugi2012relationship}. Vent density was modeled for the San Francisco Volcanic Field as a whole and as three separate sub-regions defined by magnetic epoch. These results are listed in Table \ref{tab_sfvfdata}.
+
+\begin{figure}
+\centering
+\includegraphics[width=0.7\linewidth]{figures/Kernel-Ellipses.eps}
+\caption{Kernel bandwidth ellipses for different clusters on Earth, Venus, and Mars. Each ellipse is drawn to scale, representing the 1$\sigma$ contour of the Gaussian bandwidths. The tightest bandwidths correspond to Earth clusters, while the broadest bandwidths correspond to Venus shield plains and Martian clusters.}
+\label{fig_bandwidths}
+\end{figure}
 
 Because each bandwidth covariance matrix describes a bivariate normal distribution (Equation \ref{eq_covariance}), each bandwidth can be visualized as an ellipse drawn at a contour of the normal distribution. At the $1\sigma$ contour, the ellipse width in the x-direction is the square root of the top left number of the covariance matrix and the height is the square root of the bottom right number. Ellipses have been drawn for each cluster with the \textbf{ellipseGen} function in the KDtools library and are illustrated over each cluster location in Figure \ref{fig_earthlocator}.
 
