@@ -7,6 +7,7 @@
 \usepackage{amsmath}
 \usepackage{natbib}
 \usepackage{graphicx}
+\usepackage{subfigure}
 \usepackage{hyperref}
 \usepackage{subcaption}
 \usepackage{caption}
@@ -58,7 +59,7 @@ An alternative method to measure spatial vent density would be to assign a searc
 Because the goal of modeling vent density is to identify an underlying probabilistic model of vent creation, it is important to select a method that avoids these artificially sharp density changes. The method used should also be able to be validated using known distributions and point samples from these distributions. A third method of estimating spatial density avoids sharp density changes by substituting the search radius with a probability density function, centered on each vent location.
 
 \subsection{Kernel Density Estimation}
-The process of estimating the ``true'' point density distribution by assigning probability density functions (PDFs) to a population of randomly sampled points from this distribution is called Kernel Density Estimation (KDE). A kernel is an identical PDF assigned to points to describe their influence on their surrounding region. Essentially, If the kernel is the normal distribution centered on a point, the point has more influence at the point's location (at the maximum value of the normal distribution) and influence decreases away from the point following the value of the normal distribution. In KDE, density is modeled as influence, so that point density is highest at a point location and decreases away from the point, in effect smoothing the point.
+The process of estimating the ``true'' point density distribution by assigning probability density functions (PDFs) to a population of randomly sampled points from this distribution is called Kernel Density Estimation (KDE) \citep{silverman1986density}. A kernel is an identical PDF assigned to points to describe their influence on their surrounding region. Essentially, If the kernel is the normal distribution centered on a point, the point has more influence at the point's location (at the maximum value of the normal distribution) and influence decreases away from the point following the value of the normal distribution. In KDE, density is modeled as influence, so that point density is highest at a point location and decreases away from the point, in effect smoothing the point.
 
 Given a map catalog of volcanoes, a density value, $\lambda$, for each volcano can be calculated for any location on the map, using the associated kernel PDF. If the kernel is normally distributed (i.e. Gaussian), the kernel density of a volcano for location with cartesian coordinates ($x$,$y$) is calculated as
 \begin{equation}
@@ -82,7 +83,7 @@ where $\sigma_x$ is the x-direction standard deviation, $\sigma_y$ is the y-dire
 
 Kernel bandwidth, the amount that the kernel ellipse is smoothed in any given direction, is an important parameter in estimating the unknown density of point features. Again, the point of KDE is to estimate the underlying spatial probability of a point feature (e.g. a volcano) being created, using only the points that can already be observed. Selecting a bandwidth that is too small will overly concentrate volcano density around each existing volcanoes, underestimating the likelihood of a new volcano in between existing edifices. A bandwidth that is too large will overly smooth volcano density, overestimating the likelihood of new volcanic events far from the existing volcano population.
 
-Several bandwidth selectors have been created for KDE and in this project the Summed Asymptotic Means Square Error (SAMSE) selector will be used Duong, 2003). This selector is chosen because it has been validated using point populations of known distributions (Duong, 2007) and it has been shown to be more stable than similar selectors (Duong and Hazelton, 2003). The SAMSE bandwidth selector also is preferred because it provides an unconstrained bandwidth model using the covariance matrix formula in Equation \ref{eq_covariance}.
+Several bandwidth selectors have been created for KDE and in this project the Summed Asymptotic Means Square Error (SAMSE) selector will be used \citep{duong2007}. This selector is chosen because it has been validated using point populations of known distributions \citep{duong2007} and it has been shown to be more stable than similar selectors \citep{duong2003}. The SAMSE bandwidth selector also is preferred because it provides an unconstrained bandwidth model using the covariance matrix formula in Equation \ref{eq_covariance}.
 
 Calculating the estimated spatial density, $\hat{\lambda}$, of point features in a location, $s$, using the unconstrained, bivariate bandwidth is done by modifying Equation \ref{eq_simpleKDE}, so that
 \begin{equation}
@@ -131,7 +132,7 @@ Distributed volcanic fields in the Cascades Arc have formed in association with 
 
 Volcanoes in the SFVF, located in and around Flagstaff, AZ, have been mapped by \citet{harburger2014probabilistic}, including 583 vents identified as monogenetic. This field has been active for three magnetic epochs, enabling the field to be separated into three sub-fields which can be independently analyzed \citep{tanaka1986migration}. Black Rock Desert volcanoes in Utah were cataloged by \citet{hintz2008physical} and vent density has been modeled by \citet{kiyosugi2012relationship}. \citet{kiyosugi2012relationship} also mapped 126 conduits diatremes in the heavily eroded San Rafael Volcanic Field in central Utah and interpretted these to be previous vent locations when the field was active in the Pliocene.
 
-\paragraph{Other tectonic settings} Two other vent databases have been created for clusters in the Basin and Range, Nevada, and in Central Anatolia, Turkey. In the Basin and Range, \citet{connor1995three} cataloged 39 scoria cones located in a cluster around Yucca Mountain. In Central Anatolia, \citet{uslular2015size} mapped 77 cinder cones, which form the E\u{g}rikuyu volcano cluster.
+\paragraph{Other tectonic settings} Two other vent databases have been created for clusters in the Basin and Range, Nevada, and in Central Anatolia, Turkey. In the Basin and Range, \citet{connor1995three} cataloged 39 scoria cones located in a cluster around Yucca Mountain. In Central Anatolia, \citet{uslular2015size} mapped 77 scoria cones, which form the E\u{g}rikuyu volcano cluster. The volume of each scoria cone is also reported by \citet{uslular2015size}.
 
 \begin{figure}
 \centering
@@ -143,14 +144,14 @@ Volcanoes in the SFVF, located in and around Flagstaff, AZ, have been mapped by 
 \subsubsection{Mars clusters}
 Three distributed-style volcanic fields within the larger Tharsis Province are included in this study: Syria Planum, Southern Pavonis Mons, and Arsia Mons Caldera. The Tharsis Volcanic Province has  been identified as a long lived center for volcanism since early space missions to Mars \citep{Carr1977} and makes up about one-quarter of the total global surface. Tharsis is home to many of the largest central-vent style volcanoes in the Solar System, but also has over 1,000 small volcanic vents that are distributed in clusters around Tharsis.
 
-Three clusters of vents have been identified in the southern Tharsis region that are separated from other vents in the database and are treated as isolated populations because of this. Each field, Syria, Pavonis, and Arsia, were potentially formed from one magma generation event, though they might have also been formed from multiple events that created overlapping volcano clusters.
+Three clusters of vents have been identified in the southern Tharsis region that are separated from other vents in the database and are treated as isolated populations because of this (Figure \ref{fig_marslocator}). Each field, Syria, Pavonis, and Arsia, were potentially formed from one magma generation event, though they might have also been formed from multiple events that created overlapping volcano clusters.
 
 \paragraph{Southern Pavonis Mons}
 Pavonis Mons is a large shield volcano in the Tharsis Montes, a linear chain of three shield volcanoes within the Tharsis Province. To the north and south of each of these volcanoes, lavas have been emplaced on the shield flank, apparently after the main construction phases of each shield \citep{bleacher2007tharsis}. These lavas are known as flank aprons \citep{bleacher2007tharsis}. At Pavonis, a volcano cluster of 88 shield volcanoes (one to tens km in diameter) is present on top of the southern flank apron \citep{bleacher2009spatial}. This cluster is aligned roughly N-S along the axis of the apron \citep{bleacher2009spatial}.
 
 
 \paragraph{Arsia Mons Caldera}
-Arsia Mons is the southernmost large shield volcano of the Tharsis Montes and has a 110~km diameter caldera at its summit. Within this caldera, 29 low shield volcanoes have been mapped (Chapter XXX, this dissertation). The caldera and shields within it are thought to be very young due to the absense of any impact craters larger than 1~km in the entire caldera \citep{crumpler1996calderas}.
+Arsia Mons is the southernmost large shield volcano of the Tharsis Montes and has a 110~km diameter caldera at its summit. Within this caldera, 29 low shield volcanoes have been mapped (Chapter XXX, this dissertation). The caldera and shields within it are thought to be very young due to the absense of any impact craters larger than 1~km in the entire caldera \citep{crumpler1996calderas}. In addition to the 29 vent locations, volumes have been modeled for the lavas effused from each vent using an interpolated subsurface model for each lava flow (Chapter XXX, this dissertation). These volume estimates will be used to compare the spatial vent density of the field to a volume-weighted spatial density model.
 
 \paragraph{Syria Planum}
 The Syria Planum region is a broad plateau with 263 low shield volcanoes \citep{richardson2013volcanic}. One volcano, Syria Mons, has lava flows that travel up to 1,000~km from its vent \citep{baptista2008swarm}. The other low shields have been mapped by \citet{richardson2013volcanic} and are one to tens of km in diameter with slopes of $<6^{\circ}$. This volcano cluster has been dated using crater retention rate models to have formed between 3.6-2.9~Ga spanning the Hesperian geologic period on Mars.
@@ -163,7 +164,7 @@ The Syria Planum region is a broad plateau with 263 low shield volcanoes \citep{
 \end{figure}
 
 \subsubsection{Venus clusters}
-Seven Venus clusters have been cataloged by \citet{miller2012shield}, which fall into two distinct classes: four are ``shield fields'' which are composed of $10^3$-$10^4$ volcanic vents and three are ``shield plains'' which host $10^4$-$10^5$ volcanic vents. Both types of cluster are formed by low sloped (less than one to a few degrees) shields $<$10~km in diameter \citep{richardson2012comparison}. These shields are radar bright or dark, enabling their mapping with left-look Magellan radar images, though their vents are often not visible, so vents are mapped as the centroid of the edifice \citep{miller2012shield}. Of the seven clusters cataloged, three are shield plains and four are shield fields \citep{miller2012shield}.
+Seven Venus clusters have been cataloged by \citet{miller2012shield}, which fall into two distinct classes: four are ``shield fields'' which are composed of $10^3$-$10^4$ volcanic vents and three are ``shield plains'' which host $10^4$-$10^5$ volcanic vents (Figure \ref{fig_venuslocator}). Both types of cluster are formed by low sloped (less than one to a few degrees) shields $<$10~km in diameter \citep{richardson2012comparison}. These shields are radar bright or dark, enabling their mapping with left-look Magellan radar images, though their vents are often not visible, so vents are mapped as the centroid of the edifice \citep{miller2012shield}. Of the seven clusters cataloged, three are shield plains and four are shield fields \citep{miller2012shield}.
 
 The large size difference between shield fields and shield plains has been observed since the return of Magellan radar images \citep{head1992venus}. Venusian shield fields are similar in size to the shield fields on Mars and have a similar number of vents (several hundreds) to fields on Mars and Earth. Venusian plains, however, are regional in scale and include several thousand vents. The Venusian surface has very few impact craters, indicating that it has recently been resurfaced. The regional volcanic plains would have played an important role in this resurfacing, due to their large footprints \citep{guest1992small}.
 
@@ -238,8 +239,42 @@ The locations, vent counts, and kernel bandwidths for each volcano cluster analy
 \label{fig_bandwidths}
 \end{figure}
 
-Because each bandwidth covariance matrix describes a bivariate normal distribution (Equation \ref{eq_covariance}), each bandwidth can be visualized as an ellipse drawn at a contour of the normal distribution. At the $1\sigma$ contour, the ellipse width in the x-direction is the square root of the top left number of the covariance matrix and the height is the square root of the bottom right number. Ellipses have been drawn for each cluster with the \textbf{ellipseGen} function in the KDtools library and are illustrated over each cluster location in Figure \ref{fig_earthlocator}.
+Because each bandwidth covariance matrix describes a bivariate normal distribution (Equation \ref{eq_covariance}), each bandwidth can be visualized as an ellipse drawn at a contour of the normal distribution. At the $1\sigma$ contour, the ellipse width in the x-direction is the square root of the top left number of the covariance matrix and the height is the square root of the bottom right number. Ellipses have been drawn for each cluster with the \textbf{ellipseGen} function in the KDtools library and are illustrated over each cluster location in Figures \ref{fig_earthlocator}, \ref{fig_marslocator}, and \ref{fig_venuslocator}. All bandwidth ellipses are also drawn to the same scale on Figure \ref{fig_bandwidths}.
 
+\subsection{Volume Flux Density}
+Using KDE, vent density of several volcano clusters have been modeled with the implication that the probability of a new vent forming in the cluster is spatially constrained by these density models. In addition to this application, vents have been weighted by erupted volume to model the relative volume flux over the field. Mapping volume density (km$^3$~km$^-2$) can be an important tool to identify regions in a volcanic field where eruptions are disproportionally larger than those in other regions of the field.
+
+\citet{uslular2015size} mapped 77 scoria cones in the E\u{g}rikuyu volcano cluster (Turkey) and provided the volumes for each cone. This enables both the vent density and the erupted volume density to be mapped. Figure \ref{fig_egrikuyu_kdevol} illustrates the two density models. On the left of Figure \ref{fig_egrikuyu_kdevol}, vents are weighted equally producing a vent density model that has a large sub-cluster of densely packed vents in the western half of the vent population though there is also a small cluster of vents packed at a similar density in the far east of the vent population. When vents are weighted by volume, as shown on the right of Figure \ref{fig_egrikuyu_kdevol}, the eastern mode dissapears because the large amount of vents to the east are small in volume compared to the vents in the western mode of vents.
+
+\begin{figure}[h!]
+    \centering
+    \begin{subfigure}
+        \centering
+        \includegraphics[width=0.49\linewidth]{figures/egrikuyu_kde_72dpi}
+    \end{subfigure} 
+    \begin{subfigure}
+        \centering
+        \includegraphics[width=0.49\linewidth]{figures/egrikuyu_vol_72dpi}
+    \end{subfigure}
+    \caption{Left, vent density of the E\u{g}rikuyu volcano cluster, Turkey. Right, erupted volume density. While a large number of vents in the eastern margin of the field make a second mode of vent density, their cumulative erupted volume is much smaller than the volumes erupted from vents in the center of the cluster, so the eastern mode is not seen in the volume density model.}
+\label{fig_egrikuyu_kdevol}
+\end{figure}
+
+The lava flows that make up the distributed vent field in the Arsia Mons Caldera on Mars also have modeled volumes that correspond to each eruptive event. Figure \ref{fig_arsia_kdevol} shows both the vent density plot of the vent field and the modeled volume distribution. Similar to the E\u{g}rikuyu field, this shows the difference in vent productivity, where the eastern half of the field has vents which produced larger eruptions than the western vents.
+
+\begin{figure}[h!]
+    \centering
+    \begin{subfigure}
+        \centering
+        \includegraphics[height=8cm]{figures/arsia_kde_72dpi}
+    \end{subfigure} 
+    \begin{subfigure}
+        \centering
+        \includegraphics[height=8cm]{figures/arsia_vol_72dpi}
+    \end{subfigure}
+    \caption{Left, vent density of the Arsia Mons Caldera volcanic field (Mars). Right, erupted volume density using minimum volume estimates made using interpolated subsurface models for each volcano. The volume density plot shows that lavas from the east lineament of vents, also visible in the vent density model, are more voluminous than those from the east lineament of vents.}
+\label{fig_arsia_kdevol}
+\end{figure}
 
 \section{Discussion}
 The major finding of this study is that the spatial density of vents between planets is generally different by an order of magnitude. On Earth, six monogenetic volcano clusters are shown to all cluster on the order of 0.1 vents per km$^2$. On Mars, two clusters have a vent density of around 0.001 vents per km$^2$. One cluster, in the basaltic caldera of Arsia Mons, is more focused by a factor of five. In between these vent densities, Venus shield fields have densities of 0.01 vent per km$^2$. Venus shield fields are still more focused than the regional shield plains, which have an average density of 0.003 vents per km$^2$, similar to the Arsia Mons cluster. Essentially, volcanic vents in Earth fields have 10s km$^2$ of space between neighboring vents, on Venus, distributed volcanoes have 100s km$^2$ of individual space, and on Mars, two of three fields have 1000s  km$^2$ of space between neighboring vents, while one is clustered on a ``Venusian'' scale.
@@ -247,10 +282,10 @@ The major finding of this study is that the spatial density of vents between pla
 \subsection{Geologic implications of the kernel bandwidth}
 Each bandwidth ellipse mimicks attributes of its corresponding vent cluster and likely reflects geologic properties which effect the volcano cluster. The bandwidth ellipse area at one standard deviation (1-sigma) reflects both the spatial extent of volcanoes in the cluster and the number of vents in the cluster. Larger volcano clusters correlate with larger bandwidths ellipses, while clusters with more volcanoes in the same amount of space have smaller bandwidths. Because bandwidth area is perfectly correlated with these two characteristics, it is better to refer to each characteristic directly. Similarly, bandwidth ellipse elongation, or the difference in the major and minor axis standard deviations, is a function of the anisotropy in vent production through the cluster, either because of a farther extent of volcanoes in one direction or because of more vents per km in one direction. The anisotropy of vent production in a cluster can be explored using bandwidth elongation as a proxy.
 
-Elongation of the bandwidth of a volcano cluster can be explained by one or a combination of at least three geologic processes. First, the magma source region underlying the volcano cluster might be elongated, matching the distribution of volcanoes observed at the planet's surface. Second, the magma source region might have migrated with time or multiple magma source regions that are spatially adjacent might be overprinting pre-existing populations. Third, the hydrodynamic conductivity of the crust might itself be anisotropic, preferrentially focusing magma in one direction or enabling magma to spread laterally away from a source region. While all three of these might apply to all volcanic fields in varying degrees of magnitude, I will discuss how the anisotropy seen in the bandwidth ellipse might be explained by one of these processes for example clusters.
+Elongation of the bandwidth of a volcano cluster can be explained by one or a combination of at least three geologic processes. First, the magma source region underlying the volcano cluster might be elongated, matching the distribution of volcanoes observed at the planet's surface. Second, the magma source region might have migrated with time or multiple magma source regions that are spatially adjacent might be overprinting pre-existing populations. Third, the hydraulic conductivity of the crust might itself be anisotropic, preferrentially focusing magma in one direction or enabling magma to spread laterally away from a source region. While all three of these might apply to all volcanic fields in varying degrees of magnitude, I will discuss how the anisotropy seen in the bandwidth ellipse might be explained by one of these processes for example clusters. Comparing bandwidth orientation and elongation to different magmatic and tectonic processes might help explain the relative power different processes have in governing the shape of volcano clusters in different regions.
 
 \subsubsection{Elongated Source Region}
-Cascadian volcanic fields are a good example of this.
+The bandwidth ellipse of elongated clusters is often elongated in the same direction, such as the ellipse for scoria cones around Mount Adams, Washington (Figure \ref{fig_adamskde}). The distributed volcanic field around Mount Adams runs parallel to the Cascades volcanic arc, possibly because the magma source region of the field runs along the axis of the Arc. As can be seen in Figure \ref{fig_earthlocator}}, both Cascades clusters, Adams and Newberry, have kernel bandwidths that are in line with the volcanic arc. Both Japanese clusters, Abu and Izu-Tobu, also have bandwidths in line with the arc that makes the lower limb of the country's main island, Honshu. For regions where magmatic activity is expected to be elongated, it is possible that bandwidth ellipse orientation is primarily due to the elongation of the magma source region.
 
 \begin{figure}
 \centering
@@ -261,16 +296,13 @@ Cascadian volcanic fields are a good example of this.
 
 
 \subsubsection{Magma source migration or multiple overprinting sources}
-Both the Springerville and the San Francisco volcanic fields have migrated eastward over their respective histories. 
+The eastward migration of volcanism in the San Francisco Volcanic Field is observed from paleomagnetics. The volcano cluster has been active for three magnetic epochs. The most recent volcanoes, including the $\sim$1000 year old Sunset Crater, are located in the eastern portion of the field and were emplaced during a normal-polarity magnetic field \citep{tanaka1986migration}. Volcanic edifices with reverse polarity in this field are located in the center of the field. The oldest volcanoes are to the west and are normally magnetized again. \citet{tanaka1986migration} labeled the most recent sub-group the Brunhes group, the reverse-magnetized sub-group the Matuyama group, and the oldest group the pre-Matuyama group. If the geographic centroid of each group is located, an eastward (93$^{\circ}$N) march of the sub-group centroids of 2.9$\pm$0.3 cm/yr can be observed \citep{tanaka1986migration}.
 
+This eastward march can be compared to the modeled kernel bandwidths of each volcano sub-group. None of the three subgroups' bandwidths are elongated in the direction of the migration identified by \citet{tanaka1986migration}. Bandwidth ellipses of two of the subgroups, the pre-Matuyama and the current Brunhes are elongated in to the northwest, possibly in line with a pre-existing NW-SE fracture set that heavily influences vent geometry  in the field \citep{marshall2015subsurface}. However, the bandwidth ellipse calculated for the entire field is in line with this migration.
 
-%The eastward migration of volcanism in the SFVF is observed from paleomagnetics. The volcano cluster has been active for three magnetic epochs. The most recent volcanoes, including the $\sim$1000 year old Sunset Crater, are located in the eastern portion of the field and were emplaced during a normal-polarity magnetic field (Tanaka). Volcanic edifices with reverse polarity in this field are located in the center of the field. The oldest volcanoes are to the west and are normally magnetized again. Tanaka (1986) labeled the most recent sub-group the Brunhes group, the reverse-magnetized sub-group the Matuyama group, and the oldest group the pre-Matuyama group. If the geographic centroid of each group is located, an eastward march of the sub-group centroids of XX mm/yr can be observed (Tanaka).
+Similarly, formation of scoria cones in the Springerville volcanic field is seen to migrate in an ESE direction, 106$^{\circ}$, by 2.5$\pm$0.8 cm/yr. Unlike the San Francisco Volcanic Field, this field is not divided by magnetic epochs, but the group has been divided into two units, older and younger than 1.2~Ma, using K-AR dating and stratigraphy by \citet{condit1989patterns}. Similar to \citet{tanaka1986migration}, the centroids of the two units, together comprised of 230 scoria cones, are used to calculate the velocity of the migration. Like the San Francisco Volcanic Field, the bandwidth ellipse is elongated in the direction of the migration, though not as noticeably as the former.
 
-%This eastward march can be compared to the modeled kernel bandwidths of each volcano sub-group. None of the three subgroups' bandwidths are elongated in the direction of the migration identified by Tanaka (1986). Bandwidth ellipses of two of the subgroups, the pre-Matuyama and the current Brunhes are elongated in to the northwest, possibly in line with a pre-existing NW-SE fracture set that heavily influences vent geometry  in the field (Marshall, 2015). However, the bandwidth ellipse calculated for the entire field is in line with this migration.
-
-%Similarly, the Springerville volcanic field is seen to migrate in an eastward direction, by XX mm/yr. Unlike the San Francisco Volcanic Field, this field is not divided by magnetic epochs, but the migration has been hypothesized using %%%%strat? chemistry?%%%% by Condit et al (1995). Like the San Francisco Volcanic Field, the bandwidth ellipse is elongated in the direction of the migration, though not as noticeably as the former.
-
-%On Mars, volcanic activity on Syria Planum also migrated over the course of its development. Richardson et al (2013) identified two major sub-clusters of coalesced shield volcanoes, separated by a large lava flow front of one of the clusters, which embayed volcanoes of the other cluster. The embayment suggests that the southeast group of volcanoes was emplaced first, with crater age-date modeling suggesting an age of 3.4-3.2~Ga. The northwest group was then emplaced between 3.2-2.6~Ga (Richardson 2013). Because of the high uncertainty currently associated with crater age-dating, it is possible that the entire field was emplaced without a migration from the southeast to the northwest. In this case, the bandwidth ellipse might be more indicative of the geometry of the magma source region. If, however, there was a migration of magmatic activity or if the two clusters are simply two magmatic events that occured in the same location, the elongation of the bandwidth ellipse would be explained by this migration.
+On Mars, volcanic activity on Syria Planum also migrated over the course of its development. \citet{richardson2013volcanic} identified two major sub-clusters of coalesced shield volcanoes, separated by a large lava flow front of one of the clusters, which embayed volcanoes of the other cluster. The embayment suggests that the southeast group of volcanoes was emplaced first, with crater age-date modeling suggesting an age of 3.4-3.2~Ga. The northwest group was then emplaced between 3.2-2.6~Ga \citep{richardson2013volcanic}. Because of the high uncertainty currently associated with crater age-dating, it is possible that the entire field was emplaced without a migration from the southeast to the northwest. In this case, the bandwidth ellipse might be more indicative of the geometry of the magma source region. If, however, there was a migration of magmatic activity or if the two clusters are simply two magmatic events that occured in the same location, the elongation of the bandwidth ellipse would be explained by this migration.
 
 \begin{figure}
 \centering
@@ -281,12 +313,11 @@ Both the Springerville and the San Francisco volcanic fields have migrated eastw
 
 
 \subsubsection{Anisotropic crustal conductivity}
-San Rafael and Arsia Mons are perfect for this example. Maybe the cascadian volcanoes as well but I'm not too sure.
-
-Bonnafede and Cenni (1997) modeled the crust under Mount Etna as a porous medium through which pressurized magma can freely flow. In this model, magma migrates based on a hydraulic head pressure and the hydraulic conductivity of the crust. If conductivity is low, magma will flow less, while if conductivity is high, magma will flow more easily through the medium. By modeling an anisotropic conductivity, where conductivity is less or more for magma traveling east or west than for magma traveling north or south, Bonnafede and Cenne (1997) were able to match the expected surface output of magma to the historical distribution of flank eruptions at Etna. 
+\citet{bonafede1998porous} modeled the crust under Mount Etna as a porous medium through which pressurized magma can freely flow. In this model, magma migrates based on a hydraulic head pressure and the hydraulic conductivity of the crust. If conductivity is low, magma will flow less, while if conductivity is high, magma will flow more easily through the medium. By modeling an anisotropic conductivity, where conductivity is less or more for magma traveling east or west than for magma traveling north or south, \citet{bonafede1998porous} were able to match the expected surface output of magma to the historical distribution of flank eruptions at Etna. 
 
 Hydraulic conductivity in the crust can be related to pre-existing fracture sets, as aligned fractures enable magma to propagate more easily in the direction parallel to the fractures. Conductivity can also be a product of dynamic stress, since dikes open in the direction of least compressive stress and propagate in directions normal to the least compressive stress. 
 
+If magma can propagate easily in one direction, but not in another direction, then magma will be less focused in the direction of lateral propogation. Were the magma source region a point at depth, then the shape of the field might solely be a product of this anisotropic conductivity in the lithosphere. Because the elliptical bandwidth can be used as a proxy for field elongation, directional conductivity differences can potentially be identified by comparing the bandwidth orientation to the direction of geologic features that would increase or decrease lithospheric conductivity (e.g. direction of crustal strain, pre-existing joints, graben). 
 
 \begin{figure}
 \centering
@@ -295,12 +326,17 @@ Hydraulic conductivity in the crust can be related to pre-existing fracture sets
 \label{fig_sanrafaelkde}
 \end{figure}
 
+The San Rafael volcanic field is one example where existing crustal features likely play a significant role in the overall distribution of volcanic vents. The San Rafael Swell has been eroded in the Holocene to expose the magma plumbing system of the volcanic field \citep{richardson2015sills}. Conduits which formed volcanoes in this field are mapped in Figure \ref{fig_sanrafaelkde} and are located along dikes as locations where a dike widened to create conduit diatreme. Dikes in this field are oriented N15W to N, and were likely oriented in this direction by well-developed joints in the Glen Canyon Group: sedimentary rocks underlying the field \citep{delaney1997physical}. The elliptical bandwidth orientation in this field is 30$^{\circ}$N (Figure \ref{fig_sanrafaelkde}), which is not perfectly in line with the dike orientation. However, it is possible that the primary N-S elongation of this bandwidth is due to the joint orientation, while the E-W component can be explained by some other process (e.g. source region geometry).
 
-\subsection{Volume Flux Density}
-Volume can also be compared with this method.
-Spatial vent density and volume density compared across planets
-We can compare km3/km2-a between the caribou field and arsia. We can compare km3/km2 between arsia and egrikuyu
 
+\begin{figure}
+\centering
+\includegraphics[width=0.6\linewidth]{figures/arsia_kde_72dpi}
+\caption{Volcanic vent density of the Arsia Mons Caldera Volcanic Field (Mars). Each root of the tooth-shaped density model is parallel with large rift graben that cut the flanks of the volcano.}
+\label{fig_arsiakde}
+\end{figure}
+
+On Mars, the volcanic field in the Arsia Mons Caldera is also likely shaped by pre-existing fractures in the volcano. Arsia Mons is located at the southern end of the Tharsis Montes and is cut by two large sets of grabens. These grabens are visible on the upper flanks of the mountain but are not visible in the 110~km caldera of Arsia. Instead the caldera is covered by young lava flows that were emplaced from 29 volcanic vents, mapped in Figure \ref{fig_arsiakde}. The density model of the Arsia field is bimodal with two long, parallel lineaments of vents spanning the diameter of the caldera. The orientation of the bandwidth major axis is 19$^{\circ}$N, which is also the orientation of the two graben sets. In addition to this, the two lineaments of vents in Figure \ref{fig_arsiakde} are each in line with one of the rift graben. This is evidence that the dikes that created this vent field would have preferentially ascended parallel to the existing faults.
 
 \section{Conclusions}
 
