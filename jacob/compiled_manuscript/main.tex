@@ -266,8 +266,15 @@
 \patchcmd{\abstract}{\null\vfil}{\vspace*{37pt}}{}{}
 \begin{abstract}
 \thispagestyle{plain}
-Sills are important, but so is lava. There are volcanoes on Mars around Arsia Mons and Syria Planum. Volcano clusters can be compared with non-parametric statistics even if they are on different planets.
-\setcounter{page}{6} %NEEED TO MANUALLY SET PAGE HERE
+Clusters of tens to hundreds of volcanoes on Earth and Mars form from the ascent and ultimate eruption of individual igneous dikes from depth. The magmatic plumbing systems that feed distributed volcano clusters are composed of dikes and sills. Here, lidar surveys are used to constrain the emplacement of sills in one heavily eroded volcano cluster in the San Rafael Swell (Utah, USA).
+
+Volcanic eruptions in distributed fields often result in lava flows, which can be a significant hazard to nearby populations or infrastructure. Lava flow simulation software is presented to forecast the flow path and final footprint of lava flows. Flow algorithms are evaluated using example validation exercises and a Bayesian validation approach is used to better constrain model output uncertainty. 
+
+Two volcanic fields in the Tharsis Volcanic Province on Mars are mapped and their long term evolution is modeled. First, the Syria Planum volcanic field formed between 3.5-2.6~Ga according to impact crater retention rate models. Over the 900~Ma lifetime of Syria Planum, volcanism transitioned from central-vent dominated to distributed-style clusters of shields. Second, 29 volcanic vents are mapped in the caldera of Arsia Mons along with their associated lava flows. Crater age-dating models and stratigraphic information are combined in order to constrain their ages and model the recurrence rate of volcanism in the caldera.
+
+The spatial density of vents in these two fields and 18 other fields on Earth, Mars, and Venus are compared using Kernel Density Estimation. Spatial vent density is found to be characteristic of clusters on a planetary scale, with vent density being highest at Earth clusters (0.1 vents~km$^{-2}$), lowest at Mars clusters (0.001 vents~km$^{-2}$), and intermediate in Venus clusters (0.01 vents~km$^{-2}$).
+
+\setcounter{page}{10} %NEEED TO MANUALLY SET PAGE HERE
 %force abstract in the TOC
 % \clearpage
 \addcontentsline{toc}{chapter}{Abstract}
@@ -279,12 +286,12 @@ Sills are important, but so is lava. There are volcanoes on Mars around Arsia Mo
 
 %use the intro paragraph here, must define chapter and label in the other tex file
 %need to remove all of the journal-specific formatting stuff from the tex files in the separate chapter files
-%\include{introduction}
+\include{introduction}
 \include{Chapter-sills}
 \include{Chapter-molasses}
-%\include{Chapter-arsia/Chapter-arsia}
 \include{Chapter-syria_planum}
-%\include{Chapter-spatial_density/Chapter-spatial_density}
+\include{Chapter-arsia}
+\include{Chapter-spatial_density}
 %\include{conclusions}
 %\include{appendices}
 
