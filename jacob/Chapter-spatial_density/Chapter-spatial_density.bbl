@@ -1,4 +1,4 @@
-\begin{thebibliography}{25}
+\begin{thebibliography}{28}
 \providecommand{\natexlab}[1]{#1}
 \providecommand{\url}[1]{\texttt{#1}}
 \expandafter\ifx\csname urlstyle\endcsname\relax
@@ -99,6 +99,20 @@ P.~Delaney and A.~Gartner.
   Rafael Swell, Utah}.
 \newblock \emph{GSA Bulletin}, 109\penalty0 (9):\penalty0 1177--1192, 1997.
 
+\bibitem[Duong(2007)]{duong2007}
+Tarn Duong.
+\newblock ks: Kernel density estimation and kernel discriminant analysis for
+  multivariate data in r.
+\newblock \emph{Journal of Statistical Software}, 21\penalty0 (7):\penalty0
+  1--16, 2007.
+
+\bibitem[Duong and Hazelton(2003)]{duong2003}
+Tarn Duong and Martin Hazelton.
+\newblock Plug-in bandwidth matrices for bivariate kernel density estimation.
+\newblock \emph{Journal of Nonparametric Statistics}, 15\penalty0 (1):\penalty0
+  17--30, 2003.
+\newblock \doi{10.1080/10485250306039}.
+
 \bibitem[Guest et~al.(1992)Guest, Bulmer, Aubele, Beratan, Greeley, Head,
   Michaels, Weitz, and Wiles]{guest1992small}
 John~E Guest, Mark~H Bulmer, Jayne Aubele, Kathi Beratan, Ronald Greeley,
@@ -180,6 +194,12 @@ Jacob~A Richardson, Jacob~E Bleacher, and Lori~S Glaze.
 \newblock The volcanic history of syria planum, mars.
 \newblock \emph{Journal of Volcanology and Geothermal Research}, 252:\penalty0
   1--13, 2013.
+
+\bibitem[Silverman(1986)]{silverman1986density}
+Bernard~W Silverman.
+\newblock \emph{Density estimation for statistics and data analysis}, volume~26
+  of \emph{Monographs on Statistics and Applied Probability}.
+\newblock Chapman and Hall, 1986.
 
 \bibitem[Tanaka et~al.(1986)Tanaka, Shoemaker, Ulrich, and
   Wolfe]{tanaka1986migration}
