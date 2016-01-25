@@ -20,7 +20,7 @@
 \usepackage{booktabs}
 \newcommand{\tabitem}{~~\llap{\textbullet}~~}
 
-\title{Uses of kernel statistics on volcanic vents}
+\title{Modeling the spatial density of vents in volcano clusters on Earth, Mars, and Venus}
 \date{}
 \author{}
 
@@ -83,11 +83,11 @@ Kernel PDFs do not have to be axi-symmetric normal distributions. In this paper,
 \sigma_x\sigma_y\rho & \sigma_y^2
 \label{eq_covariance}
 \end{bmatrix}\end{equation}
-where $\sigma_x$ is the x-direction standard deviation, $\sigma_y$ is the y-direction standard deviation, and $\rho$ is the covariance of these two. A covariance of 0 results in a kernel ellipse with axes aligned with the cardinal directions, while higher covariance skews or rotates the ellipse away from the cardinal directions.
+where $\sigma_x$ is the x-direction standard deviation, $\sigma_y$ is the y-direction standard deviation, and $\rho$ is the correlation of these two. A correlation of 0 results in a kernel ellipse with axes aligned with the cardinal directions, while higher correlation skews or rotates the ellipse away from the cardinal directions.
 
 Kernel bandwidth, the amount that the kernel ellipse is smoothed in any given direction, is an important parameter in estimating the unknown density of point features. Again, the point of KDE is to estimate the underlying spatial probability of a point feature (e.g. a volcano) being created, using only the points that can already be observed. Selecting a bandwidth that is too small will overly concentrate volcano density around each existing volcanoes, underestimating the likelihood of a new volcano in between existing edifices. A bandwidth that is too large will overly smooth volcano density, overestimating the likelihood of new volcanic events far from the existing volcano population.
 
-Several bandwidth selectors have been created for KDE and in this project the Summed Asymptotic Means Square Error (SAMSE) selector will be used \citep{duong2007}. This selector is chosen because it has been validated using point populations of known distributions \citep{duong2007} and it has been shown to be more stable than similar selectors \citep{duong2003}. The SAMSE bandwidth selector also is preferred because it provides an unconstrained bandwidth model using the covariance matrix formula in Equation \ref{eq_covariance}.
+Several bandwidth selectors have been created for KDE and in this project the Summed Asymptotic Means Square Error (SAMSE) selector will be used \citep{duong2007}. This selector is chosen because it has been validated using point populations of known distributions and it has been shown to be more stable than similar selectors \citep{duong2003}. The SAMSE bandwidth selector also is preferred because it provides an unconstrained bandwidth model using the covariance matrix formula in Equation \ref{eq_covariance}.
 
 Calculating the estimated spatial density, $\hat{\lambda}$, of point features in a location, $s$, using the unconstrained, bivariate bandwidth is done by modifying Equation \ref{eq_simpleKDE}, so that
 \begin{equation}
@@ -155,7 +155,7 @@ Pavonis Mons is a large shield volcano in the Tharsis Montes, a linear chain of 
 
 
 \paragraph{Arsia Mons Caldera}
-Arsia Mons is the southernmost large shield volcano of the Tharsis Montes and has a 110~km diameter caldera at its summit. Within this caldera, 29 low shield volcanoes have been mapped (Chapter XXX, this dissertation). The caldera and shields within it are thought to be very young due to the absence of any impact craters larger than 1~km in the entire caldera \citep{crumpler1996calderas}. In addition to the 29 vent locations, volumes have been modeled for the lavas effused from each vent using an interpolated subsurface model for each lava flow (Chapter XXX, this dissertation). These volume estimates will be used to compare the spatial vent density of the field to a volume-weighted spatial density model.
+Arsia Mons is the southernmost large shield volcano of the Tharsis Montes and has a 110~km diameter caldera at its summit. Within this caldera, 29 low shield volcanoes have been mapped [Chapter 4, this dissertation]. The caldera and shields within it are thought to be very young due to the absence of any impact craters larger than 1~km in the entire caldera \citep{crumpler1996calderas}. In addition to the 29 vent locations, volumes have been modeled for the lavas effused from each vent using an interpolated subsurface model for each lava flow [Chapter 4, this dissertation]. These volume estimates will be used to compare the spatial vent density of the field to a volume-weighted spatial density model.
 
 \paragraph{Syria Planum}
 The Syria Planum region is a broad plateau with 263 low shield volcanoes \citep{richardson2013volcanic}. One volcano, Syria Mons, has lava flows that travel up to 1,000~km from its vent \citep{baptista2008swarm}. The other low shields have been mapped by \citet{richardson2013volcanic} and are one to tens of km in diameter with slopes of $<6^{\circ}$. This volcano cluster has been dated using crater retention rate models to have formed between 3.6-2.9~Ga spanning the Hesperian geologic period on Mars.
