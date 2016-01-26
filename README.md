@@ -1,10 +1,14 @@
-Papers
+Modeling the Construction and Evolution of Distributed Volcanic Fields on Earth and Mars
 ======
 
-For sharing our in progress or published papers 
+Dissertation for Jacob Richardson, work in progress
 
-<h1> Organization </h1>
+University of South Florida
 
-Create a branch with your name, and work only on that branch if you do not want to store everyone's papers localy
+### To Download current version
 
-If you are happy with the paper feel free to create a new directory with your name in the master and merge it into that
+To download the current working version, use the link here
+http://raw.github.com/jarichardson/dissertation/jacob/jacob/committee_abstracts.pdf
+
+#### This is a work in progress
+This repository is a work in progress, and is full of errors at the moment. Nothing in this work should be considered final and everything in this repository is subject to revision.
