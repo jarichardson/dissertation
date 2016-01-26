@@ -3,6 +3,10 @@
 %:! bibtex individual chapters, not whole document.
 %:! pdflatex -synctex=1 -interaction=nonstopmode --shell-escape %
 
+%to pdflatex individual chapters:
+%main text document: maintex.tex, chapter 1, chap01.tex
+%pdflatex -jobname=thechap01 "\includeonly{chap01}\input{maintex}"
+
 %%%%%%%%%%%%%%%%%%%%%%%%
 %Not sure if these packages can be used
 \usepackage{booktabs}
