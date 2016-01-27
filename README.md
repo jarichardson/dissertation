@@ -8,7 +8,7 @@ University of South Florida
 ### To Download current version
 
 To download the current working version, use the link here
-http://raw.github.com/jarichardson/dissertation/jacob/jacob/committee_abstracts.pdf
+http://raw.github.com/jarichardson/dissertation/master/manuscript/main.pdf
 
 #### This is a work in progress
 This repository is a work in progress, and is full of errors at the moment. Nothing in this work should be considered final and everything in this repository is subject to revision.
