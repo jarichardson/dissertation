@@ -4,7 +4,7 @@
 %:! bibtex %:r
 %:! pdflatex -synctex=1 -interaction=nonstopmode --shell-escape %
 
-\renewcommand*{\FigPath}{../Chapter-molasses/figures}
+\renewcommand*{\FigPath}{figures/chapter-molasses}
 
 \section*{Abstract}
 	Modeling lava flows through cellular automata (CA) methods enables a computationally inexpensive means to quickly forecast lava flow paths and ultimate areal extents. A CA program has been created in the program language C that is modular, which enables a combination of governing CA rules to be evaluated against each other. My objective is to find a successful combination of automata behaviors that behaves like a bingham fluid and accurately forecasts lava inundation. To fulfill this objective, four validation levels have been devised, into which different tests can be applied to evaluate lava spreading algorithms against increasingly complex tests. These levels are 1) verification of the code by testing for conservation of mass; 2) testing for flow self-similarity given inconsequential variations in input parameters; 3) testing for replication of Bingham flow morphology on simple surfaces; and 4) testing for replication of real lava flow morphologies on pre-eruption elevation models. Two Bayesian posterior statistics, the Positive Predictive Value ($\text{Pr}(Lava|Sim)$) and the Negative Predictive Value ($\text{Pr}(\neg Lava|\neg Sim)$) are then used to further charactarize model performance against the 2012-3 Tolbachik lava flow. These metrics can provide insight into improving model performance and decision making in volcanic crises.
@@ -615,7 +615,7 @@ The set of cellular automata is defined as
 				set ylabel "Pr$(Lava|Sim)$"
 				set ytics 0.05
 				set xtics 4000
-				plot "results_bayes.dat" using 1:2 with linespoints lt 4 pt 7
+				plot "data/results_bayes.dat" using 1:2 with linespoints lt 4 pt 7
 			\end{gnuplot}
 			\caption{PPV, $\text{Pr}(Lava|Sim)$, for MOLASSES flows with differing Pulse Volumes.}
 			\label{fig_lavaGsim}
@@ -633,7 +633,7 @@ The set of cellular automata is defined as
 				set ylabel "Pr(not $Lava|$not $Sim)$"
 				set ytics 0.01
 				set xtics 4000
-				plot "results_bayes.dat" using 1:3 with linespoints lt 4 pt 7
+				plot "data/results_bayes.dat" using 1:3 with linespoints lt 4 pt 7
 			\end{gnuplot}
 			\caption{NPV, $\text{Pr}(\neg Lava|\neg Sim)$, for MOLASSES flows with differing Pulse Volumes.}
 			\label{fig_neglavaGsim}
@@ -810,7 +810,7 @@ The set of cellular automata is defined as
 				set ylabel "Model Score"
 				set ytics 0.02
 				set xtics 4000
-				plot "results_bayes.dat" using 1:7 with points pt 1, "results_bayes.dat" using 1:5 with points pt 7, "results_bayes.dat" using 1:6 with points pt 3, "results_bayes.dat" using 1:4 with points pt 6
+				plot "data/results_bayes.dat" using 1:7 with points pt 1, "data/results_bayes.dat" using 1:5 with points pt 7, "data/results_bayes.dat" using 1:6 with points pt 3, "data/results_bayes.dat" using 1:4 with points pt 6
 			\end{gnuplot}
 			\caption[Weighted averages of $\text{Pr}(Lava|Sim)$ and $\text{Pr}(\neg Lava|\neg Sim)$ for different pulse volumes]{Weighted averages of $\text{Pr}(Lava|Sim)$ and $\text{Pr}(\neg Lava|\neg Sim)$ for different pulse volumes. Hollow circles, NPV ($\text{Pr}(Lava|Sim)$) is given 10$\times$ the weight of the PPV ($\text{Pr}(\neg Lava|\neg Sim)$); solid circles, 5$\times$ weight; asterisks, 2$\times$ weight; plusses, equal weight between predictive values. The highest scoring pulse volume is 4387 m$^3$ for all weight ratios except when both values are weighted equally.}
 			\label{fig_weightedposteriors}
