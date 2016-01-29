@@ -145,3 +145,7 @@
 \contentsline {subsection}{\numberline {6.8.7}reproject}{199}{subsection.6.8.7}
 \contentsline {subsection}{\numberline {6.8.8}samse\_bandwidth}{201}{subsection.6.8.8}
 \gdef \the@ipfilectr {}
+\gdef \the@ipfilectr {@-7}
+\contentsline {chapter}{\numberline {7}Conclusion}{203}{chapter.7}
+\contentsline {section}{\numberline {7.1}References}{205}{section.7.1}
+\gdef \the@ipfilectr {}
