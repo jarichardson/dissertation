@@ -33,16 +33,53 @@ Head, J.~W., Crumpler, L., Aubele, J.~C., Guest, J.~E., and Saunders, R.~S.
   associations, and global distribution from magellan data.
 \newblock {\em Journal of Geophysical Research: Planets}, 97(E8):13153--13197.
 
+\bibitem[Hill et~al., 1998]{hill1998cerro}
+Hill, B.~E., Connor, C.~B., Jarzemba, M.~S., La~Femina, P.~C., Navarro, M., and
+  Strauch, W. (1998).
+\newblock 1995 eruptions of cerro negro volcano, nicaragua, and risk assessment
+  for future eruptions.
+\newblock {\em Geological Society of America Bulletin}, 110(10):1231--1241.
+
+\bibitem[Kubanek et~al., 2015]{kubanek2015lava}
+Kubanek, J., Richardson, J.~A., Charbonnier, S.~J., and Connor, L.~J. (2015).
+\newblock Lava flow mapping and volume calculations for the 2012--2013
+  tolbachik, kamchatka, fissure eruption using bistatic tandem-x insar.
+\newblock {\em Bulletin of Volcanology}, 77(12).
+
 \bibitem[Miller, 2012]{miller2012shield}
 Miller, D.~M. (2012).
 \newblock Shield fields and shield plains on venus geologic characteristics and
   spatial relationships.
 \newblock Thesis (m.s.), State University of New York at Buffalo.
 
-\bibitem[Richardson et~al., 2013]{Richardson2013}
+\bibitem[Richardson et~al., 2015a]{richardson2015sills}
+Richardson, J., Connor, C., Wetmore, P., Connor, L., and Gallant, E. (2015a).
+\newblock Role of sills in the development of volcanic fields: {Insights} from
+  {LiDAR} mapping surveys of the {San Rafael Swell, Utah}.
+\newblock {\em Geology}, 43(11):1023--1026.
+
+\bibitem[Richardson et~al., 2012]{richardson2012comparison}
+Richardson, J., Miller, D., Bleacher, J., Connor, C., Gregg, T., Connor, L.,
+  and Glaze, L. (2012).
+\newblock Comparison of monogenetic volcano clusters on earth, venus, and mars.
+\newblock In {\em AGU Fall Meeting Abstracts}, volume~1, page~04.
+
+\bibitem[Richardson et~al., 2015b]{richardson2015recurrence}
+Richardson, J., Wilson, J., Connor, C., and Bleacher, J. (2015b).
+\newblock Recurrence rate estimation of distributed volcanism in arsia caldera,
+  mars.
+\newblock In {\em Lunar and Planetary Science Conference}, volume~46, page
+  2801.
+
+\bibitem[Richardson et~al., 2013]{richardson2013volcanic}
 Richardson, J.~A., Bleacher, J.~E., and Glaze, L.~S. (2013).
 \newblock The volcanic history of syria planum, mars.
 \newblock {\em Journal of Volcanology and Geothermal Research}, 252:1--13.
+
+\bibitem[Settle, 1979]{settle1979structure}
+Settle, M. (1979).
+\newblock The structure and emplacement of cinder cone fields.
+\newblock {\em American Journal of Science}, 279(10):1089--1107.
 
 \bibitem[Valentine and Connor, 2015]{valentine2000basaltic}
 Valentine, G.~A. and Connor, C.~B. (2015).
