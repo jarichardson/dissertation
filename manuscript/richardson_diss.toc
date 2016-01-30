@@ -132,23 +132,23 @@
 \contentsline {section}{\numberline {6.5}Discussion}{171}{section.6.5}
 \contentsline {subsection}{\numberline {6.5.1}Planet-level differences in distributed volcanism}{171}{subsection.6.5.1}
 \contentsline {subsection}{\numberline {6.5.2}Geologic implications of the kernel bandwidth}{173}{subsection.6.5.2}
-\contentsline {subsubsection}{\numberline {6.5.2.1}Elongated Source Region}{174}{subsubsection.6.5.2.1}
+\contentsline {subsubsection}{\numberline {6.5.2.1}Elongated Source Region}{175}{subsubsection.6.5.2.1}
 \contentsline {subsubsection}{\numberline {6.5.2.2}Magma source migration or multiple overprinting sources}{175}{subsubsection.6.5.2.2}
-\contentsline {subsubsection}{\numberline {6.5.2.3}Anisotropic crustal conductivity}{178}{subsubsection.6.5.2.3}
+\contentsline {subsubsection}{\numberline {6.5.2.3}Anisotropic crustal conductivity}{179}{subsubsection.6.5.2.3}
 \contentsline {section}{\numberline {6.6}Conclusions}{181}{section.6.6}
 \contentsline {section}{\numberline {6.7}References}{182}{section.6.7}
-\contentsline {section}{\numberline {6.8}Appendix: KDtools}{187}{section.6.8}
+\contentsline {section}{\numberline {6.8}Appendix: KDtools}{188}{section.6.8}
 \contentsline {subsection}{\numberline {6.8.1}contourBySigma}{188}{subsection.6.8.1}
-\contentsline {subsection}{\numberline {6.8.2}densityToRaster}{189}{subsection.6.8.2}
-\contentsline {subsection}{\numberline {6.8.3}ellipseGen}{194}{subsection.6.8.3}
-\contentsline {subsection}{\numberline {6.8.4}KD}{197}{subsection.6.8.4}
-\contentsline {subsection}{\numberline {6.8.5}main}{199}{subsection.6.8.5}
-\contentsline {subsection}{\numberline {6.8.6}rangeBuffer}{203}{subsection.6.8.6}
-\contentsline {subsection}{\numberline {6.8.7}reproject}{204}{subsection.6.8.7}
-\contentsline {subsection}{\numberline {6.8.8}samse\_bandwidth}{206}{subsection.6.8.8}
-\contentsline {section}{\numberline {6.9}Appendix: Other field density maps}{207}{section.6.9}
+\contentsline {subsection}{\numberline {6.8.2}densityToRaster}{190}{subsection.6.8.2}
+\contentsline {subsection}{\numberline {6.8.3}ellipseGen}{195}{subsection.6.8.3}
+\contentsline {subsection}{\numberline {6.8.4}KD}{198}{subsection.6.8.4}
+\contentsline {subsection}{\numberline {6.8.5}main}{200}{subsection.6.8.5}
+\contentsline {subsection}{\numberline {6.8.6}rangeBuffer}{204}{subsection.6.8.6}
+\contentsline {subsection}{\numberline {6.8.7}reproject}{205}{subsection.6.8.7}
+\contentsline {subsection}{\numberline {6.8.8}samse\_bandwidth}{207}{subsection.6.8.8}
+\contentsline {section}{\numberline {6.9}Appendix: Other field density maps}{208}{section.6.9}
 \gdef \the@ipfilectr {}
 \gdef \the@ipfilectr {@-7}
-\contentsline {chapter}{\numberline {7}Conclusion}{212}{chapter.7}
-\contentsline {section}{\numberline {7.1}References}{214}{section.7.1}
+\contentsline {chapter}{\numberline {7}Conclusion}{213}{chapter.7}
+\contentsline {section}{\numberline {7.1}References}{215}{section.7.1}
 \gdef \the@ipfilectr {}
