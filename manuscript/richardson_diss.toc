@@ -113,39 +113,42 @@
 \contentsline {chapter}{\numberline {6}Modeling the spatial density of vents in volcano clusters on Earth, Mars, and Venus}{153}{chapter.6}
 \contentsline {section}{\numberline {6.1}Abstract}{153}{section.6.1}
 \contentsline {section}{\numberline {6.2}Introduction}{153}{section.6.2}
-\contentsline {subsection}{\numberline {6.2.1}Kernel Density Estimation}{155}{subsection.6.2.1}
-\contentsline {section}{\numberline {6.3}Methods}{158}{section.6.3}
-\contentsline {subsection}{\numberline {6.3.1}Data collection}{158}{subsection.6.3.1}
-\contentsline {subsubsection}{\numberline {6.3.1.1}Earth clusters}{159}{subsubsection.6.3.1.1}
-\contentsline {paragraph}{\numberline {6.3.1.1.1}Subduction-related clusters}{159}{paragraph.6.3.1.1.1}
-\contentsline {paragraph}{\numberline {6.3.1.1.2}Colorado Plateau}{160}{paragraph.6.3.1.1.2}
-\contentsline {paragraph}{\numberline {6.3.1.1.3}Other tectonic settings}{160}{paragraph.6.3.1.1.3}
-\contentsline {subsubsection}{\numberline {6.3.1.2}Mars clusters}{160}{subsubsection.6.3.1.2}
-\contentsline {paragraph}{\numberline {6.3.1.2.1}Southern Pavonis Mons}{161}{paragraph.6.3.1.2.1}
-\contentsline {paragraph}{\numberline {6.3.1.2.2}Arsia Mons Caldera}{162}{paragraph.6.3.1.2.2}
-\contentsline {paragraph}{\numberline {6.3.1.2.3}Syria Planum}{162}{paragraph.6.3.1.2.3}
-\contentsline {subsubsection}{\numberline {6.3.1.3}Venus clusters}{162}{subsubsection.6.3.1.3}
-\contentsline {subsection}{\numberline {6.3.2}Estimating vent density with the KDtools Python Library}{163}{subsection.6.3.2}
-\contentsline {section}{\numberline {6.4}Results}{166}{section.6.4}
-\contentsline {subsection}{\numberline {6.4.1}Volume Flux Density}{168}{subsection.6.4.1}
-\contentsline {section}{\numberline {6.5}Discussion}{170}{section.6.5}
-\contentsline {subsection}{\numberline {6.5.1}Geologic implications of the kernel bandwidth}{171}{subsection.6.5.1}
-\contentsline {subsubsection}{\numberline {6.5.1.1}Elongated Source Region}{172}{subsubsection.6.5.1.1}
-\contentsline {subsubsection}{\numberline {6.5.1.2}Magma source migration or multiple overprinting sources}{173}{subsubsection.6.5.1.2}
-\contentsline {subsubsection}{\numberline {6.5.1.3}Anisotropic crustal conductivity}{176}{subsubsection.6.5.1.3}
-\contentsline {section}{\numberline {6.6}Conclusions}{179}{section.6.6}
-\contentsline {section}{\numberline {6.7}References}{180}{section.6.7}
-\contentsline {section}{\numberline {6.8}Appendix: KDtools}{183}{section.6.8}
-\contentsline {subsection}{\numberline {6.8.1}contourBySigma}{183}{subsection.6.8.1}
-\contentsline {subsection}{\numberline {6.8.2}densityToRaster}{185}{subsection.6.8.2}
-\contentsline {subsection}{\numberline {6.8.3}ellipseGen}{190}{subsection.6.8.3}
-\contentsline {subsection}{\numberline {6.8.4}KD}{193}{subsection.6.8.4}
-\contentsline {subsection}{\numberline {6.8.5}main}{194}{subsection.6.8.5}
-\contentsline {subsection}{\numberline {6.8.6}rangeBuffer}{199}{subsection.6.8.6}
-\contentsline {subsection}{\numberline {6.8.7}reproject}{200}{subsection.6.8.7}
-\contentsline {subsection}{\numberline {6.8.8}samse\_bandwidth}{202}{subsection.6.8.8}
+\contentsline {subsection}{\numberline {6.2.1}Estimating vent intensity}{155}{subsection.6.2.1}
+\contentsline {subsection}{\numberline {6.2.2}Kernel Density Estimation}{156}{subsection.6.2.2}
+\contentsline {section}{\numberline {6.3}Methods}{159}{section.6.3}
+\contentsline {subsection}{\numberline {6.3.1}Data collection}{159}{subsection.6.3.1}
+\contentsline {subsubsection}{\numberline {6.3.1.1}Earth clusters}{160}{subsubsection.6.3.1.1}
+\contentsline {paragraph}{\numberline {6.3.1.1.1}Subduction-related clusters}{160}{paragraph.6.3.1.1.1}
+\contentsline {paragraph}{\numberline {6.3.1.1.2}Colorado Plateau}{161}{paragraph.6.3.1.1.2}
+\contentsline {paragraph}{\numberline {6.3.1.1.3}Other tectonic settings}{161}{paragraph.6.3.1.1.3}
+\contentsline {subsubsection}{\numberline {6.3.1.2}Mars clusters}{161}{subsubsection.6.3.1.2}
+\contentsline {paragraph}{\numberline {6.3.1.2.1}Southern Pavonis Mons}{162}{paragraph.6.3.1.2.1}
+\contentsline {paragraph}{\numberline {6.3.1.2.2}Arsia Mons Caldera}{163}{paragraph.6.3.1.2.2}
+\contentsline {paragraph}{\numberline {6.3.1.2.3}Syria Planum}{163}{paragraph.6.3.1.2.3}
+\contentsline {subsubsection}{\numberline {6.3.1.3}Venus clusters}{163}{subsubsection.6.3.1.3}
+\contentsline {subsection}{\numberline {6.3.2}Estimating vent density with the KDtools Python Library}{164}{subsection.6.3.2}
+\contentsline {section}{\numberline {6.4}Results}{167}{section.6.4}
+\contentsline {subsection}{\numberline {6.4.1}Volume Flux Density}{169}{subsection.6.4.1}
+\contentsline {section}{\numberline {6.5}Discussion}{171}{section.6.5}
+\contentsline {subsection}{\numberline {6.5.1}Planet-level differences in distributed volcanism}{171}{subsection.6.5.1}
+\contentsline {subsection}{\numberline {6.5.2}Geologic implications of the kernel bandwidth}{173}{subsection.6.5.2}
+\contentsline {subsubsection}{\numberline {6.5.2.1}Elongated Source Region}{174}{subsubsection.6.5.2.1}
+\contentsline {subsubsection}{\numberline {6.5.2.2}Magma source migration or multiple overprinting sources}{175}{subsubsection.6.5.2.2}
+\contentsline {subsubsection}{\numberline {6.5.2.3}Anisotropic crustal conductivity}{178}{subsubsection.6.5.2.3}
+\contentsline {section}{\numberline {6.6}Conclusions}{181}{section.6.6}
+\contentsline {section}{\numberline {6.7}References}{182}{section.6.7}
+\contentsline {section}{\numberline {6.8}Appendix: KDtools}{187}{section.6.8}
+\contentsline {subsection}{\numberline {6.8.1}contourBySigma}{188}{subsection.6.8.1}
+\contentsline {subsection}{\numberline {6.8.2}densityToRaster}{189}{subsection.6.8.2}
+\contentsline {subsection}{\numberline {6.8.3}ellipseGen}{194}{subsection.6.8.3}
+\contentsline {subsection}{\numberline {6.8.4}KD}{197}{subsection.6.8.4}
+\contentsline {subsection}{\numberline {6.8.5}main}{199}{subsection.6.8.5}
+\contentsline {subsection}{\numberline {6.8.6}rangeBuffer}{203}{subsection.6.8.6}
+\contentsline {subsection}{\numberline {6.8.7}reproject}{204}{subsection.6.8.7}
+\contentsline {subsection}{\numberline {6.8.8}samse\_bandwidth}{206}{subsection.6.8.8}
+\contentsline {section}{\numberline {6.9}Appendix: Other field density maps}{207}{section.6.9}
 \gdef \the@ipfilectr {}
 \gdef \the@ipfilectr {@-7}
-\contentsline {chapter}{\numberline {7}Conclusion}{204}{chapter.7}
-\contentsline {section}{\numberline {7.1}References}{206}{section.7.1}
+\contentsline {chapter}{\numberline {7}Conclusion}{212}{chapter.7}
+\contentsline {section}{\numberline {7.1}References}{214}{section.7.1}
 \gdef \the@ipfilectr {}
