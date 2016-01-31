@@ -1,0 +1,3021 @@
+% This file was created with JabRef 2.9.2.
+% Encoding: UTF-8
+
+@ARTICLE{anderson2006global,
+  author = {Anderson, F Scott and Smrekar, Suzanne E},
+  title = {Global mapping of crustal and lithospheric thickness on {Venus}},
+  journal = {Journal of Geophysical Research: Planets},
+  year = {2006},
+  volume = {111},
+  number = {E8},
+  note = {doi:10.1029/2004JE002395},
+  owner = {jacob},
+  publisher = {Wiley Online Library},
+  timestamp = {2016.01.31}
+}
+
+@ARTICLE{Anderson2001,
+  author = {Anderson, R. C. and Dohm, J. M. and Golembek, M. P. and Haldemann,
+	A. F. C. and Franklin, B. J. and Tanaka, K. L. and Lias, J. and Peer,
+	B.},
+  title = {Primary centers and secondary concentrations of tectonic activity
+	through time in the western hemisphere of {Mars}},
+  journal = {Journal of Geophysical Research},
+  year = {2001},
+  volume = {106},
+  pages = {20,563--20,585},
+  number = {E9},
+  note = {doi:10.1029/2000JE001278},
+  owner = {jacob},
+  timestamp = {2016.01.31}
+}
+
+@INPROCEEDINGS{Anderson2002,
+  author = {{Anderson}, R.~C. and {Dohm}, J.~M. and {Haldemann}, A.~F.~C. and
+	{Hare}, T.},
+  title = {{Comparative Investigation of the Geological Histories Among Alba
+	Patera and Syria Planum, Mars}},
+  booktitle = {Lunar and Planetary Institute Science Conference Abstracts},
+  year = {2002},
+  volume = {33},
+  series = {Lunar and Planetary Institute Science Conference Abstracts},
+  pages = {1811},
+  month = mar,
+  adsnote = {Provided by the SAO/NASA Astrophysics Data System},
+  adsurl = {http://adsabs.harvard.edu/abs/2002LPI....33.1811A},
+  owner = {jacob},
+  timestamp = {2016.01.31}
+}
+
+@ARTICLE{Anderson2004,
+  author = {Anderson, R. C. and Dohm, J. M. and Haldemann, A. F. C. and Hare,
+	T. M. and Baker, V. R.},
+  title = {Tectonic histories between {Alba Patera} and {Syria Planum}, {Mars}},
+  journal = {Icarus},
+  year = {2004},
+  volume = {171},
+  pages = {31--38},
+  note = {doi:10.1016/j.icarus.2004.04.018},
+  owner = {jacob},
+  timestamp = {2016.01.31}
+}
+
+@ARTICLE{annen2006genesis,
+  author = {Annen, Catherine and Blundy, JD and Sparks, RSJ},
+  title = {The genesis of intermediate and silicic magmas in deep crustal hot
+	zones},
+  journal = {Journal of Petrology},
+  year = {2006},
+  volume = {47},
+  pages = {505--539},
+  number = {3},
+  note = {doi:10.1093/petrology/egi084},
+  owner = {jacob},
+  publisher = {Oxford Univ Press},
+  timestamp = {2016.01.31}
+}
+
+@ARTICLE{aspinall2003evidence,
+  author = {Aspinall, WP and Woo, G and Voight, B and Baxter, PJ},
+  title = {Evidence-based volcanology: application to eruption crises},
+  journal = {Journal of Volcanology and Geothermal Research},
+  year = {2003},
+  volume = {128},
+  pages = {273--285},
+  number = {1},
+  note = {doi:10.1016/S0377-0273(03)00260-9},
+  file = {:Earth/Aspinall et al 2003 - Evidence-based volcanology.pdf:PDF},
+  owner = {jacob},
+  timestamp = {2015.11.25}
+}
+
+@ARTICLE{avolio2006sciara,
+  author = {Avolio, Maria Vittoria and Crisci, Gino Mirocle and Di Gregorio,
+	Salvatore and Rongo, Rocco and Spataro, William and Trunfio, Giuseppe
+	A},
+  title = {SCIARA $\gamma$2: An improved cellular automata model for lava flows
+	and applications to the 2002 Etnean crisis},
+  journal = {Computers \& Geosciences},
+  year = {2006},
+  volume = {32},
+  pages = {876--889},
+  number = {7},
+  note = {doi:10.1016/j.cageo.2005.10.026},
+  owner = {jacob},
+  publisher = {Elsevier},
+  timestamp = {2015.05.03}
+}
+
+@ARTICLE{baloga2003rheology,
+  author = {Baloga, SM and Mouginis-Mark, PJ and Glaze, LS},
+  title = {Rheology of a long lava flow at {Pavonis Mons, Mars}},
+  journal = {Journal of Geophysical Research: Planets},
+  year = {2003},
+  volume = {108},
+  number = {E7},
+  note = {doi:10.1029/2002JE001981},
+  file = {:Mars/Baloga et al 2003 - Rheology of a lava flow at Pavonis.pdf:PDF},
+  owner = {jacob},
+  publisher = {Wiley Online Library},
+  timestamp = {2015.10.07}
+}
+
+@ARTICLE{Baloga2007,
+  author = {Baloga, S. M. and Glaze, L. S. and Bruno, B. C.},
+  title = {{Nearest-neighbor analysis of small features on {Mars}: Applications
+	to tumuli and rootless cones}},
+  journal = {Journal of Geophysical Research},
+  year = {2007},
+  volume = {112},
+  pages = {E03002},
+  number = {E3},
+  note = {{doi:10.1029/2005JE002652}},
+  doi = {10.1029/2005JE002652},
+  owner = {jacob},
+  timestamp = {2016.01.31}
+}
+
+@ARTICLE{baptista2008swarm,
+  author = {Baptista, Ana R. and Mangold, Nicolas and Ansan, V\'{e}ronique and
+	Baratoux, David and Lognonn\'{e}, Philippe and Alves, Eduardo I.
+	and Williams, David A. and Bleacher, Jacob E. and Masson, Philippe
+	and Neukum, Gerhard},
+  title = {{A swarm of small shield volcanoes on Syria Planum, Mars}},
+  journal = {Journal of Geophysical Research},
+  year = {2008},
+  volume = {113},
+  pages = {E09010},
+  number = {E9},
+  note = {{doi:10.1029/2007JE002945}},
+  doi = {10.1029/2007JE002945},
+  keywords = {Tharsis, Syria Planum, Mars, volcanism},
+  owner = {jacob},
+  timestamp = {2013.07.17}
+}
+
+@ARTICLE{Baratoux2009,
+  author = {Baratoux, D. and Pinet, P. and Toplis, M. J. and Mangold, N. and
+	Greeley, R. and Baptista, A. R.},
+  title = {{Shape, rheology and emplacement times of small martian shield volcanoes}},
+  journal = {Journal of Volcanology and Geothermal Research},
+  year = {2009},
+  volume = {185},
+  pages = {47-68},
+  number = {1-2},
+  note = {{doi:10.1016/j.jvolgeores.2009.05.003}},
+  doi = {10.1016/j.jvolgeores.2009.05.003},
+  owner = {jacob},
+  timestamp = {2016.01.31}
+}
+
+@ARTICLE{barca1994cellular,
+  author = {Barca, D and Crisci, GM and Gregorio, S Di and Nicoletta, F},
+  title = {Cellular Automata for simulating lava flows: a method and examples
+	of the Etnean eruptions},
+  journal = {Transport theory and statistical physics},
+  year = {1994},
+  volume = {23},
+  pages = {195--232},
+  number = {1-3},
+  note = {doi:10.1080/00411459408203862},
+  owner = {jacob},
+  publisher = {Taylor \& Francis},
+  timestamp = {2015.05.03}
+}
+
+@TECHREPORT{bard2013database,
+  author = {Bard, Joseph A and Ramsey, David W and MacLeod, Norman S and Sherrod,
+	David R and Chitwood, Lawrence A and Jensen, Robert A},
+  title = {Database for the Geologic Map of Newberry Volcano, Deschutes, Klamath,
+	and Lake Counties, Oregon},
+  institution = {US Geological Survey Data Series 771},
+  year = {2013},
+  owner = {jacob},
+  timestamp = {2015.12.02}
+}
+
+@TECHREPORT{barron2014database,
+  author = {Barron, Andrew D and Ramsey, David W and Smith, James G},
+  title = {Database for the geologic map of upper Eocene to Holocene volcanic
+	and related rocks in the Cascade Range, Washington},
+  institution = {US Geological Survey},
+  year = {2014},
+  note = {doi:10.3133/ds842},
+  owner = {jacob},
+  timestamp = {2015.12.02}
+}
+
+@ARTICLE{bayarri2007framework,
+  author = {Bayarri, Maria J and Berger, James O and Paulo, Rui and Sacks, Jerry
+	and Cafeo, John A and Cavendish, James and Lin, Chin-Hsu and Tu,
+	Jian},
+  title = {A framework for validation of computer models},
+  journal = {Technometrics},
+  year = {2007},
+  volume = {49},
+  number = {2},
+  note = {doi:10.1198/004017007000000092},
+  owner = {jacob},
+  timestamp = {2015.05.03}
+}
+
+@ARTICLE{bebbington2011spatio,
+  author = {Bebbington, Mark S. and Cronin, Shane J.},
+  title = {Spatio-temporal hazard estimation in the {Auckland Volcanic Field},
+	{New Zealand}, with a new event-order model},
+  journal = {Bulletin of Volcanology},
+  year = {2011},
+  volume = {73},
+  pages = {55-72},
+  number = {1},
+  note = {doi:10.1007/s00445-010-0403-6},
+  file = {:Earth/Bebbington and Cronin 2011 - Spatio-temporal hazard estimation Auckland Volcanic Field.pdf:PDF},
+  issn = {0258-8900},
+  keywords = {Monogenetic volcanism; Basaltic volcanic fields; Probabilistic hazard;
+	Tephrostratigraphy},
+  language = {English},
+  owner = {jacob},
+  publisher = {Springer-Verlag},
+  timestamp = {2015.01.26}
+}
+
+@ARTICLE{Beggan2010,
+  author = {Beggan, Ciar\'{a}n and Hamilton, Christopher W.},
+  title = {{New image processing software for analyzing object size-frequency
+	distributions, geometry, orientation, and spatial distribution}},
+  journal = {Computers \& Geosciences},
+  year = {2010},
+  volume = {36},
+  pages = {539-549},
+  number = {4},
+  note = {{doi:10.1016/j.cageo.2009.09.003}},
+  day = {21},
+  doi = {10.1016/j.cageo.2009.09.003},
+  owner = {jacob},
+  timestamp = {2016.01.31}
+}
+
+@ARTICLE{belousov2015overview,
+  author = {Belousov, Alexander and Belousova, Marina and Edwards, Benjamin and
+	Volynets, Anna and Melnikov, Dmitry},
+  title = {Overview of the precursors and dynamics of the 2012--13 basaltic
+	fissure eruption of Tolbachik Volcano, Kamchatka, Russia},
+  journal = {Journal of Volcanology and Geothermal Research},
+  year = {2015},
+  volume = {299},
+  pages = {19--34},
+  note = {doi:10.1016/j.jvolgeores.2015.04.009},
+  owner = {jacob},
+  publisher = {Elsevier},
+  timestamp = {2015.07.09}
+}
+
+@ARTICLE{biggs2010stratovolcano,
+  author = {Biggs, J. and Mothes, P. and Ruiz, M. and Amelung, F. and Dixon,
+	T.H. and Baker, S. and Hong, S.-H.},
+  title = {Stratovolcano growth by co-eruptive intrusion: The 2008 eruption
+	of {Tungurahua Ecuador}},
+  journal = {Geophysical Research Letters},
+  year = {2010},
+  volume = {37},
+  number = {21},
+  note = {doi:10.1029/2010GL044942},
+  file = {:home/jacob/academic/Papers/Earth/Biggs et al 2010 - Co-eruptive intrusion during 2009 eruption of Tungurahua Ecuador.pdf:PDF},
+  keywords = {sills, intrusion, San Rafael},
+  owner = {jacob},
+  publisher = {Wiley Online Library},
+  timestamp = {2014.11.19}
+}
+
+@ARTICLE{Bishop2008,
+  author = {Bishop, M.},
+  title = {{Higher-order neighbor analysis of the Tartarus Colles cone groups,
+	Mars: The application of geographical indices to the understanding
+	of cone pattern evolution}},
+  journal = {Icarus},
+  year = {2008},
+  volume = {197},
+  pages = {73-83},
+  number = {1},
+  note = {{doi:10.1016/j.icarus.2008.04.003}},
+  doi = {10.1016/j.icarus.2008.04.003},
+  owner = {jacob},
+  timestamp = {2016.01.31}
+}
+
+@ARTICLE{Bishop2007,
+  author = {Bishop, M.},
+  title = {{Point pattern analysis of eruption points for the Mount Gambier
+	volcanic sub-province: a quantitative geographical approach to the
+	understanding of volcano distribution}},
+  journal = {Area},
+  year = {2007},
+  volume = {39},
+  pages = {230-241},
+  number = {2},
+  note = {{doi:10.1111/j.1475-4762.2007.00729.x}},
+  doi = {10.1111/j.1475-4762.2007.00729.x},
+  owner = {jacob},
+  publisher = {Blackwell Publishing Ltd},
+  timestamp = {2016.01.31}
+}
+
+@ARTICLE{bleacher2009spatial,
+  author = {Bleacher, Jacob E. and Glaze, Lori S. and Greeley, Ronald and Hauber,
+	Ernst and Baloga, Stephen M. and Sakimoto, Susan E. H. and Williams,
+	David A. and Glotch, Timothy D.},
+  title = {{Spatial and alignment analyses for a field of small volcanic vents
+	south of Pavonis Mons and implications for the Tharsis province,
+	Mars}},
+  journal = {Journal of Volcanology and Geothermal Research},
+  year = {2009},
+  volume = {185},
+  pages = {96--102},
+  number = {1--2},
+  note = {doi:10.1016/j.jvolgeores.2009.04.008},
+  owner = {jacob},
+  timestamp = {2016.01.31}
+}
+
+@ARTICLE{Bleacher2008,
+  author = {Bleacher, Jacob E. and Greeley, Ronald},
+  title = {{Relating volcano morphometry to the developmental progression of
+	Hawaiian shield volcanoes through slope and hypsometric analyses
+	of SRTM data}},
+  journal = {Journal of Geophysical Research},
+  year = {2008},
+  volume = {113},
+  pages = {B09208},
+  note = {{doi:10.1029/2006JB004661}},
+  doi = {10.1029/2006JB004661},
+  owner = {jacob},
+  timestamp = {2016.01.31}
+}
+
+@ARTICLE{bleacher2007tharsis,
+  author = {Bleacher, Jacob E. and Greeley, R. and Williams, D. A. and Cave,
+	S. R. and Neukum, G.},
+  title = {{Trends in effusive style at the Tharsis Montes, Mars, and implication
+	for the development of the Tharsis province}},
+  journal = {Journal of Geophysical Research},
+  year = {2007},
+  volume = {112},
+  pages = {E09005},
+  note = {{doi:10.1029/2006JE002873}},
+  doi = {10.1029/2006JE002873},
+  keywords = {Mars, Tharsis, volcanism},
+  owner = {jacob},
+  timestamp = {2013.07.17}
+}
+
+@ARTICLE{bleacher2007olympus,
+  author = {Bleacher, Jacob E and Greeley, Ronald and Williams, David A and Werner,
+	Stephanie C and Hauber, Ernst and Neukum, Gerhard},
+  title = {{Olympus Mons, Mars: Inferred changes in late Amazonian aged effusive
+	activity from lava flow mapping of Mars Express High Resolution Stereo
+	Camera data}},
+  journal = {Journal of Geophysical Research: Planets},
+  year = {2007},
+  volume = {112},
+  number = {E4},
+  note = {doi:10.1029/2006JE002826},
+  file = {:Mars/Bleacher et al 2007 - Olympus Mons change in effusive style.pdf:PDF},
+  owner = {jacob},
+  timestamp = {2015.10.07}
+}
+
+@ARTICLE{bonafede1998porous,
+  author = {Bonafede, Maurizio and Cenni, Nicola},
+  title = {A porous flow model of magma migration within Mt. Etna: The influence
+	of extended sources and permeability anisotropy},
+  journal = {J. Volc. Geotherm. Res.},
+  year = {1998},
+  volume = {81},
+  pages = {51--68},
+  number = {1},
+  note = {doi:10.1016/S0377-0273(97)00053-X},
+  owner = {jacob},
+  publisher = {Elsevier},
+  timestamp = {2015.06.25}
+}
+
+@ARTICLE{Broz2012,
+  author = {P. {Bro\v{z}} and E. Hauber},
+  title = {{A unique volcanic field in Tharsis, Mars: Pyroclastic cones as evidence
+	for explosive eruptions}},
+  journal = {Icarus},
+  year = {2012},
+  volume = {218},
+  pages = {88 - 99},
+  number = {1},
+  note = {{doi:10.1016/j.icarus.2011.11.030}},
+  doi = {10.1016/j.icarus.2011.11.030},
+  issn = {0019-1035},
+  keywords = {Mars},
+  owner = {jacob},
+  timestamp = {2016.01.31},
+  url = {http://www.sciencedirect.com/science/article/pii/S001910351100457X}
+}
+
+@ARTICLE{carr1977some,
+  author = {Carr, M. H. and Greeley, R. and Blasius, K. R. and Guest, J. E. and
+	Murray, J. B.},
+  title = {{Some Martian volcanic features as viewed from the Viking orbiters}},
+  journal = {Journal of Geophysical Research},
+  year = {1977},
+  volume = {82},
+  pages = {3985--4015},
+  note = {doi:10.1029/JS082i028p03985},
+  keywords = {remote sensing, Mars, volcanism},
+  owner = {jacob},
+  timestamp = {2013.07.17}
+}
+
+@ARTICLE{cashman2005multiple,
+  author = {Cashman, K.V. and McConnell, S.M.},
+  title = {Multiple levels of magma storage during the 1980 summer eruptions
+	of {Mount St. Helens, WA}},
+  journal = {Bulletin of Volcanology},
+  year = {2005},
+  volume = {68},
+  pages = {57-75},
+  number = {1},
+  note = {doi:10.1007/s00445-005-0422-x},
+  file = {:Earth/Cashman and McConnell 2005 - Multiple levels of magma storage 1980 Mt St Helens WA.pdf:PDF},
+  keywords = {Mount St. Helens, Decompression crystallization, Magma storage, Eruption
+	style, San Rafael},
+  language = {English},
+  owner = {jacob},
+  publisher = {Springer-Verlag},
+  timestamp = {2014.09.25}
+}
+
+@ARTICLE{Cebria2011,
+  author = {Cebri\'{a}, J. M. and Mart\'{\i}n-Escorza, C. and L\'{o}pez-Ruiz,
+	J. and Mor\'{a}n-Zenteno, D. J. and Martiny, B. M.},
+  title = {{Numerical recognition of alignments in monogenetic volcanic areas:
+	Examples from the Michoac\'{a}n-Guanajuato Volcanic Field in Mexico
+	and Calatrava in Spain}},
+  journal = {Journal of Volcanology and Geothermal Research},
+  year = {2011},
+  volume = {201},
+  pages = {73--82},
+  number = {1--4},
+  note = {{doi:10.1016/j.jvolgeores.2010.07.016}},
+  doi = {10.1016/j.jvolgeores.2010.07.016},
+  owner = {jacob},
+  timestamp = {2016.01.31}
+}
+
+@ARTICLE{chadwick2015late,
+  author = {Chadwick, John and McGovern, Patrick and Simpson, Mariel and Reeves,
+	Ashleigh},
+  title = {{Late Amazonian subsidence and magmatism of Olympus Mons, Mars}},
+  journal = {Journal of Geophysical Research: Planets},
+  year = {2015},
+  note = {doi:10.1002/2015JE004875},
+  file = {:Mars/Chadwick et al 2015 - Late Amazonian subsidence and magmatism of Olympus Mons.pdf:PDF},
+  owner = {jacob},
+  timestamp = {2015.10.07}
+}
+
+@ARTICLE{Christensen2004,
+  author = {Christensen, Philip and Jakosky, Bruce and Kieffer, Hugh and Malin,
+	Michael and McSween, Harry and Nealson, Kenneth and Mehall, Greg
+	and Silverman, Steven and Ferry, Steven and Caplinger, Michael and
+	Ravine, Michael},
+  title = {{The Thermal Emission Imaging System (THEMIS) for the Mars 2001 Odyssey
+	Mission}},
+  journal = {Space Science Reviews},
+  year = {2004},
+  volume = {110},
+  pages = {85--130},
+  number = {1},
+  note = {{doi:10.1023/B:SPAC.0000021008.16305.94}},
+  doi = {10.1023/B:SPAC.0000021008.16305.94},
+  owner = {jacob},
+  publisher = {Springer Netherlands},
+  timestamp = {2016.01.31}
+}
+
+@ARTICLE{Clark1954,
+  author = {Clark, Philip J. and Evans, Francis C.},
+  title = {{Distance to Nearest Neighbor as a Measure of Spatial Relationships
+	in Populations}},
+  journal = {Ecology},
+  year = {1954},
+  volume = {35},
+  pages = {445--453},
+  number = {4},
+  note = {{doi:10.2307/1931034}},
+  doi = {10.2307/1931034},
+  owner = {jacob},
+  publisher = {Ecological Society of America},
+  timestamp = {2016.01.31}
+}
+
+@ARTICLE{condit2010dynamic,
+  author = {Condit, Christopher D},
+  title = {Dynamic Digital Map of the Springerville Volcanic Field and the DDM-Template:
+	An example of an open-source tool to distribute maps, data, articles,
+	and multi-media materials},
+  journal = {Geosphere},
+  year = {2010},
+  volume = {6},
+  pages = {430--443},
+  number = {4},
+  note = {doi:10.1130/GES00531.1},
+  owner = {jacob},
+  publisher = {Geological Society of America},
+  timestamp = {2016.01.31}
+}
+
+@MISC{Condit1999,
+  author = {Condit, C. D. and Crumpler, L. S. and Aubele, J. C.},
+  title = {{Lithologic, Age Group, Magnetopolarity, and geochecmical maps of
+	the Springerville Volcanic Field, East-Central Arizona}},
+  howpublished = {USGS Miscellaneous Investigations Series Map I-2431},
+  year = {1999},
+  owner = {jacob},
+  timestamp = {2016.01.31}
+}
+
+@ARTICLE{condit1989patterns,
+  author = {Condit, C. D. and Crumpler, L. S. and Aubele, J. C. and Elston, W.
+	E.},
+  title = {{Patterns of Volcanism along the Southern Margin of the Colorado
+	Plateau: The Springerville Field}},
+  journal = {Journal of Geophysical Research},
+  year = {1989},
+  volume = {94},
+  pages = {7975--7986},
+  number = {B6},
+  note = {doi:10.1029/JB094iB06p07975},
+  file = {:Earth/Condit et al 1989 - Patterns of volcanism in southern Colorado Plateau - Springerville.pdf:PDF},
+  keywords = {Earth, volcanism},
+  owner = {jacob},
+  timestamp = {2013.07.17}
+}
+
+@ARTICLE{Connerney2005,
+  author = {Connerney, J. E. P. and Acuna, M. H. and Ness, N. F. and Kletetschka,
+	G. and Mitchell, D. L. and Lin, R. P. and Reme, H.},
+  title = {{Tectonic implications of Mars crustal magnetism}},
+  journal = {Proceedings of the National Academy of Science},
+  year = {2005},
+  volume = {102},
+  pages = {14,970--14,974},
+  number = {42},
+  note = {doi:10.1073/pnas.0507469102},
+  owner = {jacob},
+  timestamp = {2016.01.31}
+}
+
+@INCOLLECTION{connor2015probabilistic,
+  author = {Connor, C. and Bebbington, M and Marzocchi, W.},
+  title = {{Probabilistic Volcanic Hazard Assessment}},
+  booktitle = {Encyclopedia of Volcanoes},
+  publisher = {Academic Press},
+  year = {2015},
+  editor = {Sigurdsson, H. and Houghton, B. and McNutt, S. and Rymer, H. and
+	Styx, J.},
+  pages = {897-910},
+  address = {San Diego, CA},
+  keywords = {volcanism, Earth},
+  owner = {jacob},
+  timestamp = {2015.01.17}
+}
+
+@ARTICLE{connor1990cinder,
+  author = {Connor, Charles B.},
+  title = {{Cinder Cone Clustering in the TransMexican Volcanic Belt: Implications
+	for Structural and Petrologic Models}},
+  journal = {Journal of Geophysical Research},
+  year = {1990},
+  volume = {95},
+  pages = {19,395--19,405},
+  number = {B12},
+  note = {{doi:10.1029/JB095iB12p19395}},
+  doi = {10.1029/JB095iB12p19395},
+  keywords = {Earth, volcanism},
+  owner = {jacob},
+  timestamp = {2013.07.17}
+}
+
+@ARTICLE{connor1987structure,
+  author = {Connor, Charles B},
+  title = {Structure of the {M}ichoac{\'a}n-{Guanajuato} volcanic field, {Mexico}},
+  journal = {Journal of Volcanology and Geothermal Research},
+  year = {1987},
+  volume = {33},
+  pages = {191--200},
+  number = {1},
+  note = {doi:10.1016/0377-0273(87)90061-8},
+  owner = {jacob},
+  timestamp = {2016.01.31}
+}
+
+@INCOLLECTION{Connor2000,
+  author = {Connor, C. B. and Conway, M. F.},
+  title = {{Basaltic volcanic fields}},
+  booktitle = {Encyclopedia of Volcanoes},
+  publisher = {Academic Press},
+  year = {2000},
+  editor = {Sigurdsson, H.},
+  pages = {331--343},
+  address = {San Diego, CA},
+  owner = {jacob},
+  timestamp = {2016.01.31}
+}
+
+@ARTICLE{connor1995three,
+  author = {Connor, Charles B and Hill, Brittain E},
+  title = {Three nonhomogeneous Poisson models for the probability of basaltic
+	volcanism: application to the Yucca Mountain region, Nevada},
+  journal = {Journal of Geophysical Research: Solid Earth (1978--2012)},
+  year = {1995},
+  volume = {100},
+  pages = {10107--10125},
+  number = {B6},
+  note = {doi:10.1029/95JB01055},
+  owner = {jacob},
+  publisher = {Wiley Online Library},
+  timestamp = {2016.01.31}
+}
+
+@ARTICLE{connor2000geologic,
+  author = {Connor, Charles B and Stamatakos, John A and Ferrill, David A and
+	Hill, Brittain E and Ofoegbu, Goodluck I and Sagar, Budhi and Conway,
+	FM and Trapp, John},
+  title = {{Geologic factors controlling patterns of small-volume basaltic volcanism-
+	Application to a volcanic hazards assessment at Yucca Mountain, Nevada}},
+  journal = {Journal of Geophysical Research},
+  year = {2000},
+  volume = {105},
+  pages = {417--432},
+  note = {doi:10.1029/1999JB900353},
+  owner = {jacob},
+  timestamp = {2016.01.31}
+}
+
+@ARTICLE{connor2012probabilistic,
+  author = {Connor, Laura J and Connor, Charles B and Meliksetian, Khachatur
+	and Savov, Ivan},
+  title = {{Probabilistic approach to modeling lava flow inundation: a lava
+	flow hazard assessment for a nuclear facility in Armenia}},
+  journal = {Journal of Applied Volcanology},
+  year = {2012},
+  volume = {1},
+  pages = {1--19},
+  number = {1},
+  note = {doi:10.1186/2191-5040-1-3},
+  file = {:/home/jacob/academic/Papers/Earth/Connor et al 2012 - Lava Flow Hazards Assessment in Armenia.pdf:PDF},
+  keywords = {volcanism, Earth, hazards},
+  owner = {jacob},
+  publisher = {Springer},
+  timestamp = {2013.07.17}
+}
+
+@PHDTHESIS{conte2000experimental,
+  author = {Conte, G.},
+  title = {An experimental study for the characterisation of gas/liquid flow
+	splitting at {T-junctions}},
+  school = {The University of Nottingham},
+  year = {2000},
+  keywords = {Two phase flow, T junctions,},
+  owner = {jacob},
+  timestamp = {2015.02.20}
+}
+
+@ARTICLE{conway1998recurrence,
+  author = {Conway, FM and Connor, CB and Hill, BE and Condit, CD and Mullaney,
+	K and Hall, CM},
+  title = {{Recurrence rates of basaltic volcanism in SP cluster, San Francisco
+	volcanic field, Arizona}},
+  journal = {Geology},
+  year = {1998},
+  volume = {26},
+  pages = {655--658},
+  number = {7},
+  note = {doi:10.1130/0091-7613(1998) 026<0655:RROBVI> 2.3.CO;2},
+  owner = {jacob},
+  publisher = {Geological Society of America},
+  timestamp = {2016.01.31}
+}
+
+@ARTICLE{crisci2008lava,
+  author = {Crisci, GM and Iovine, G and Di Gregorio, S and Lupiano, V},
+  title = {{Lava-flow hazard on the SE flank of Mt. Etna (Southern Italy)}},
+  journal = {Journal of Volcanology and Geothermal Research},
+  year = {2008},
+  volume = {177},
+  pages = {778--796},
+  number = {4},
+  note = {doi:10.1016/j.jvolgeores.2008.01.041},
+  owner = {jacob},
+  publisher = {Elsevier},
+  timestamp = {2015.05.03}
+}
+
+@ARTICLE{crisci2004simulation,
+  author = {Crisci, Gino M and Rongo, Rocco and Di Gregorio, Salvatore and Spataro,
+	William},
+  title = {The simulation model SCIARA: the 1991 and 2001 lava flows at Mount
+	Etna},
+  journal = {Journal of Volcanology and Geothermal Research},
+  year = {2004},
+  volume = {132},
+  pages = {253--267},
+  number = {2},
+  note = {doi:10.1016/S0377-0273(03)00349-4},
+  owner = {jacob},
+  publisher = {Elsevier},
+  timestamp = {2015.05.03}
+}
+
+@ARTICLE{crowe1983aspects,
+  author = {Crowe, B. and Self, S. and Vaniman, D. and Amos, R. and Perry, F.},
+  title = {Aspects of potential magmatic disruption of a high-level radioactive
+	waste repository in southern {Nevada}},
+  journal = {The Journal of Geology},
+  year = {1983},
+  pages = {259--276},
+  file = {:home/jacob/academic/Papers/Earth/Crowe et al 1983 - Magmatic disruption of radioactive waste repository Nevada.pdf:PDF},
+  owner = {jacob},
+  publisher = {JSTOR},
+  timestamp = {2015.02.13}
+}
+
+@ARTICLE{crumpler1978structural,
+  author = {Crumpler, LS and Aubele, JC},
+  title = {Structural evolution of {Arsia Mons, Pavonis Mons, and Ascreus Mons:
+	Tharsis region of Mars}},
+  journal = {Icarus},
+  year = {1978},
+  volume = {34},
+  pages = {496--511},
+  number = {3},
+  note = {doi:10.1016/0019-1035(78)90041-6},
+  file = {:Mars/Crumpler and Aubele 1978 - Structural evolution of the Tharsis Montes.pdf:PDF},
+  owner = {jacob},
+  timestamp = {2015.10.07}
+}
+
+@ARTICLE{crumpler1996calderas,
+  author = {Crumpler, LS and Head, James W and Aubele, Jayne C},
+  title = {{Calderas on Mars: Characteristics, structure, and associated flank
+	deformation}},
+  journal = {Geological Society, London, Special Publications},
+  year = {1996},
+  volume = {110},
+  pages = {307--348},
+  number = {1},
+  note = {doi:10.1144/GSL.SP.1996.110.01.24},
+  owner = {jacob},
+  publisher = {Geological Society of London},
+  timestamp = {2015.10.07}
+}
+
+@ARTICLE{damiani2006lava,
+  author = {Damiani, Maria Luisa and Groppelli, G and Norini, G and Bertino,
+	Elisa and Gigliuto, A and Nucita, Andrea},
+  title = {A lava flow simulation model for the development of volcanic hazard
+	maps for Mount Etna (Italy)},
+  journal = {Computers \& geosciences},
+  year = {2006},
+  volume = {32},
+  pages = {512--526},
+  number = {4},
+  note = {doi:10.1016/j.cageo.2005.08.011},
+  owner = {jacob},
+  publisher = {Elsevier},
+  timestamp = {2015.05.03}
+}
+
+@ARTICLE{delaney1997physical,
+  author = {Delaney, P.T. and Gartner, A.E.},
+  title = {Physical processes of shallow mafic dike emplacement near the {San
+	Rafael Swell, Utah}},
+  journal = {Geological Society of America Bulletin},
+  year = {1997},
+  volume = {109},
+  pages = {1177--1192},
+  number = {9},
+  note = {doi:10.1130/0016-7606(1997)109<1177:PPOSMD>2.3.CO;2},
+  file = {:home/jacob/academic/Papers/Earth/Delaney and Gartner 1997 - Dike emplacement near the San Rafael.pdf:PDF},
+  keywords = {dikes, San Rafael},
+  owner = {jacob},
+  publisher = {Geological Society of America},
+  timestamp = {2014.09.25}
+}
+
+@ARTICLE{delaney1986field,
+  author = {Delaney, Paul T and Pollard, David D and Ziony, Joseph I and McKee,
+	Edwin H},
+  title = {Field relations between dikes and joints: emplacement processes and
+	paleostress analysis},
+  journal = {Journal of Geophysical Research: Solid Earth},
+  year = {1986},
+  volume = {91},
+  pages = {4920--4938},
+  number = {B5},
+  note = {doi:10.1029/JB091iB05p04920},
+  file = {:Earth/Delaney et al 1986 - Dikes and joints.pdf:PDF},
+  keywords = {San Rafael, dikes},
+  owner = {jacob},
+  publisher = {Wiley Online Library},
+  timestamp = {2014.09.25}
+}
+
+@ARTICLE{del2008simulations,
+  author = {Del Negro, Ciro and Fortuna, Luigi and Herault, Alexis and Vicari,
+	Annamaria},
+  title = {{Simulations of the 2004 lava flow at Etna volcano using the magflow
+	cellular automata model}},
+  journal = {Bulletin of Volcanology},
+  year = {2008},
+  volume = {70},
+  pages = {805--812},
+  number = {7},
+  note = {doi:10.1007/s00445-007-0168-8},
+  owner = {jacob},
+  publisher = {Springer},
+  timestamp = {2015.05.03}
+}
+
+@ARTICLE{diez2009evidence,
+  author = {Diez, M. and Connor, C.B. and Kruse, S.E. and Connor, L.J. and Savov,
+	I.P.},
+  title = {Evidence of small-volume igneous diapirism in the shallow crust of
+	the {Colorado Plateau, San Rafael Desert, Utah}},
+  journal = {Lithosphere},
+  year = {2009},
+  volume = {1},
+  pages = {328--336},
+  number = {6},
+  note = {doi:10.1130/L61.1},
+  file = {:/home/jacob/academic/Papers/Earth/Diez 2009 - San Rafael Diapirism.pdf:PDF},
+  keywords = {Earth, volcanism},
+  owner = {jacob},
+  publisher = {Geological Society of America},
+  timestamp = {2013.07.17}
+}
+
+@ARTICLE{eldifrawy2013first,
+  author = {M.A. El Difrawy and M.G. Runge and M.R. Moufti and S.J. Cronin and
+	M. Bebbington},
+  title = {A first hazard analysis of the {Quaternary Harrat Al-Madinah volcanic
+	field, Saudi Arabia}},
+  journal = {Journal of Volcanology and Geothermal Research },
+  year = {2013},
+  volume = {267},
+  pages = {39 - 46},
+  number = {0},
+  note = {doi:10.1016/j.jvolgeores.2013.09.006},
+  keywords = {Harrat},
+  owner = {jacob},
+  timestamp = {2015.02.13}
+}
+
+@ARTICLE{Dohm1999,
+  author = {James M. Dohm and Kenneth L. Tanaka},
+  title = {{Geology of the Thaumasia region, Mars: plateau development, valley
+	origins, and magmatic evolution}},
+  journal = {Planetary and Space Science},
+  year = {1999},
+  volume = {47},
+  pages = {411 - 431},
+  number = {3–4},
+  note = {{doi:10.1016/S0032-0633(98)00141-X}},
+  doi = {10.1016/S0032-0633(98)00141-X},
+  issn = {0032-0633},
+  owner = {jacob},
+  timestamp = {2016.01.31},
+  url = {http://www.sciencedirect.com/science/article/pii/S003206339800141X}
+}
+
+@ARTICLE{duong2007,
+  author = {Duong, Tarn},
+  title = {ks: Kernel density estimation and kernel discriminant analysis for
+	multivariate data in R},
+  journal = {Journal of Statistical Software},
+  year = {2007},
+  volume = {21},
+  pages = {1--16},
+  number = {7},
+  note = {doi:},
+  file = {:/home/jacob/academic/Papers/Technology/Duong 2007 - ks library in R.pdf:PDF},
+  keywords = {software, Statistics},
+  owner = {jacob},
+  timestamp = {2013.07.17}
+}
+
+@ARTICLE{duong2003,
+  author = {Duong, Tarn and Hazelton, Martin},
+  title = {Plug-in bandwidth matrices for bivariate kernel density estimation},
+  journal = {Journal of Nonparametric Statistics},
+  year = {2003},
+  volume = {15},
+  pages = {17--30},
+  number = {1},
+  note = {doi:10.1080/10485250306039},
+  keywords = {Statistics},
+  owner = {jacob},
+  publisher = {Taylor \& Francis},
+  timestamp = {2013.07.17}
+}
+
+@INBOOK{elson2007living,
+  chapter = {Living with the volcano: the 11th century AD eruption of Sunset Crater},
+  pages = {107-133},
+  title = {Living Under the Shadow: Cultural Impacts of Volcanic Eruptions},
+  publisher = {Left Coast Press},
+  year = {2007},
+  editor = {Grattan, John and Torrence, Robin},
+  author = {Elson, Mark D and Ort, Michael H and Anderson, Kirk C and Heidke,
+	James M},
+  owner = {jacob},
+  timestamp = {2016.01.25}
+}
+
+@ARTICLE{erlund2010compositional,
+  author = {Erlund, E.J. and Cashman, K.V. and Wallace, P.J. and Pioli, L. and
+	Rosi, M. and Johnson, E. and Granados, H.D.},
+  title = {Compositional evolution of magma from {Par{\'\i}cutin Volcano, Mexico:
+	the tephra record}},
+  journal = {Journal of Volcanology and Geothermal Research},
+  year = {2010},
+  volume = {197},
+  pages = {167--187},
+  number = {1},
+  note = {doi:10.1016/j.jvolgeores.2009.09.015},
+  file = {:/home/jacob/academic/Papers/Earth/Erlund et al 2010 - Compositional evolution of Par\'{i}cutin Mexico.pdf:PDF},
+  owner = {jacob},
+  publisher = {Elsevier},
+  timestamp = {2015.02.03}
+}
+
+@ARTICLE{evarts2009boring,
+  author = {Evarts, R.C. and Conrey, R.M. and Fleck, R.J. and Hagstrum, J.T.},
+  title = {{The Boring Volcanic Field of the Portland-Vancouver area, Oregon
+	and Washington}: {Tectonically} anomalous forearc volcanism in an
+	urban setting},
+  journal = {Field Guides},
+  year = {2009},
+  volume = {15},
+  pages = {253--270},
+  note = {doi:10.1130/2009.fld015(13)},
+  owner = {jacob},
+  publisher = {Geological Society of America},
+  timestamp = {2015.02.13}
+}
+
+@BOOK{gartner1986geometry,
+  title = {Geometry, Emplacement History, Petrography and Chemistry of a Basaltic
+	Intrusive Complex, San Rafael and Capitol Reef Areas, Utah},
+  publisher = {US Department of the Interior, Geological Survey},
+  year = {1986},
+  author = {Gartner, A.E.},
+  file = {:Earth/Gartner 1986 - Basaltic Intusive Complex San Rafael and Capitol Reef Areas Utah.pdf:PDF},
+  keywords = {Sills, Dikes, Conduits, San Rafael},
+  owner = {jacob},
+  timestamp = {2014.09.25}
+}
+
+@ARTICLE{germa2013tectonic,
+  author = {Germa, Aur{\'e}lie and Connor, Laura J. and Ca{\~{n}}on-Tapia, Edgardo
+	and Corvec, Nicolas},
+  title = {{Tectonic and magmatic controls on the location of post-subduction
+	monogenetic volcanoes in Baja California, Mexico, revealed through
+	spatial analysis of eruptive vents}},
+  journal = {Bulletin of Volcanology},
+  year = {2013},
+  volume = {75},
+  pages = {1--14},
+  number = {12},
+  note = {doi:10.1007/s00445-013-0782-6},
+  owner = {jacob},
+  timestamp = {2016.01.31}
+}
+
+@ARTICLE{girard2005managua,
+  author = {Girard, G. and de Vries, B.v.W.},
+  title = {{The Managua Graben and Las Sierras-Masaya volcanic complex (Nicaragua)};
+	pull-apart localization by an intrusive complex: results from analogue
+	modeling},
+  journal = {Journal of Volcanology and Geothermal Research},
+  year = {2005},
+  volume = {144},
+  pages = {37--57},
+  number = {1},
+  note = {doi:10.1016/j.jvolgeores.2004.11.016},
+  owner = {jacob},
+  publisher = {Elsevier},
+  timestamp = {2015.02.13}
+}
+
+@ARTICLE{glaze2005statistical,
+  author = {Glaze, LS and Anderson, SW and Stofan, ER and Baloga, S and Smrekar,
+	SE},
+  title = {{Statistical distribution of tumuli on pahoehoe flow surfaces: Analysis
+	of examples in Hawaii and Iceland and potential applications to lava
+	flows on Mars}},
+  journal = {Journal of Geophysical Research: Solid Earth (1978--2012)},
+  year = {2005},
+  volume = {110},
+  number = {B8},
+  note = {doi:10.1029/2004JB003564},
+  owner = {jacob},
+  timestamp = {2016.01.31}
+}
+
+@ARTICLE{Glaze2003,
+  author = {Glaze, LS and Baloga, SM},
+  title = {DEM flow path prediction algorithm for geologic mass movements},
+  journal = {Environmental \& Engineering Geoscience},
+  year = {2003},
+  volume = {9},
+  pages = {225--240},
+  number = {3},
+  note = {doi:10.2113/9.3.225},
+  file = {:/home/jacob/academic/Papers/Earth/Glaze and Baloga 2003 - Path Finding.pdf:PDF},
+  keywords = {volcanism, Earth},
+  owner = {jacob},
+  publisher = {Assoc Eng Geologists},
+  timestamp = {2013.07.17}
+}
+
+@ARTICLE{glaze2003methodology,
+  author = {Glaze, Lori S and Baloga, Stephen M and Stofan, Ellen R},
+  title = {{A methodology for constraining lava flow rheologies with MOLA}},
+  journal = {Icarus},
+  year = {2003},
+  volume = {165},
+  pages = {26--33},
+  number = {1},
+  note = {doi:10.1016/S0019-1035(03)00171-4},
+  owner = {jacob},
+  publisher = {Elsevier},
+  timestamp = {2015.10.07}
+}
+
+@INCOLLECTION{greeley1977basaltic,
+  author = {Greeley, R.},
+  title = {{Basaltic ``plains'' volcanism}},
+  booktitle = {{Volcanism of the Eastern Snake River Plain, Idaho: A Comparative
+	Planetary Geology Guidebook, NASA CR-154621}},
+  publisher = {NASA},
+  year = {1977},
+  editor = {Greeley, R. and King, J. S.},
+  pages = {23--44},
+  address = {Washington, D. C.},
+  keywords = {Earth, volcanism},
+  owner = {jacob},
+  timestamp = {2013.07.17}
+}
+
+@ARTICLE{Greeley1982,
+  author = {Greeley, Ronald},
+  title = {{The Snake River Plain, Idaho: Representative of a new category of
+	volcanism}},
+  journal = {Journal of Geophysical Research},
+  year = {1982},
+  volume = {87},
+  pages = {2705-2712},
+  number = {B4},
+  note = {{doi:10.1029/JB087iB04p02705}},
+  doi = {10.1029/JB087iB04p02705},
+  owner = {jacob},
+  timestamp = {2016.01.31}
+}
+
+@ARTICLE{greeley1991magma,
+  author = {Greeley, Ronald and Schneid, Byron D},
+  title = {{Magma generation on Mars: Amounts, rates, and comparisons with Earth,
+	Moon, and Venus}},
+  journal = {Science},
+  year = {1991},
+  volume = {254},
+  pages = {996},
+  number = {5034},
+  note = {doi:10.1126/science.254.5034.996},
+  file = {:Mars/Greely and Schneid 1991 - Magma generation on Mars amounts and rates.pdf:PDF},
+  owner = {jacob},
+  timestamp = {2015.10.07}
+}
+
+@ARTICLE{Greeley1981,
+  author = {Greeley, R. and Spudis, P. D.},
+  title = {{Volcanism on Mars}},
+  journal = {Reviews of Geophysics and Space Physics},
+  year = {1981},
+  volume = {19},
+  pages = {13--41},
+  note = {doi:10.1029/RG019i001p00013},
+  owner = {jacob},
+  timestamp = {2016.01.31}
+}
+
+@ARTICLE{griffiths2000dynamics,
+  author = {Griffiths, RW},
+  title = {The dynamics of lava flows},
+  journal = {Annual Review of Fluid Mechanics},
+  year = {2000},
+  volume = {32},
+  pages = {477--518},
+  number = {1},
+  note = {doi:10.1146/annurev.fluid.32.1.477},
+  owner = {jacob},
+  timestamp = {2015.11.18}
+}
+
+@ARTICLE{grott2013long,
+  author = {Grott, Matthias and Baratoux, David and Hauber, Ernst and Sautter,
+	V and Mustard, J and Gasnault, O and Ruff, Steven W and Karato, S-I
+	and Debaille, Vinciane and Knapmeyer, Martin and others},
+  title = {{Long-term evolution of the Martian crust-mantle system}},
+  journal = {Space science reviews},
+  year = {2013},
+  volume = {174},
+  pages = {49--111},
+  number = {1-4},
+  note = {doi:10.1007/s11214-012-9948-3},
+  file = {:Mars/Grott et al 2013 - Long-term evolution of the martian crust-mantle.pdf:PDF},
+  owner = {jacob},
+  timestamp = {2015.10.07}
+}
+
+@ARTICLE{grout1925peculiar,
+  author = {Grout, Frank Fitch},
+  title = {A peculiar shonkinite related to granite},
+  journal = {American Journal of Science},
+  year = {1925},
+  pages = {472--480},
+  number = {54},
+  note = {doi:10.2475/ajs.s5-9.54.472},
+  file = {:Earth/Grout 1925 - Shnokinite related to granite.pdf:PDF},
+  keywords = {geochemistry, petrology, San Rafael},
+  owner = {jacob},
+  publisher = {American Journal of Science},
+  timestamp = {2014.09.25}
+}
+
+@ARTICLE{gudmundsson2012magma,
+  author = {Gudmundsson, Agust},
+  title = {Magma chambers: Formation, local stresses, excess pressures, and
+	compartments},
+  journal = {Journal of Volcanology and Geothermal Research},
+  year = {2012},
+  volume = {237},
+  pages = {19--41},
+  note = {doi:10.1016/j.jvolgeores.2012.05.015},
+  owner = {jacob},
+  timestamp = {2016.01.31}
+}
+
+@ARTICLE{gudmundsson1990emplacement,
+  author = {Gudmundsson, Agust},
+  title = {Emplacement of dikes, sills and crustal magma chambers at divergent
+	plate boundaries},
+  journal = {Tectonophysics},
+  year = {1990},
+  volume = {176},
+  pages = {257--275},
+  number = {3},
+  note = {doi:10.1016/0040-1951(90)90073-H},
+  file = {:Earth/Gudmundsson 1990 - Emplacement of magma at divergent plate poundaries.pdf:PDF},
+  keywords = {sills, dikes, San Rafael},
+  owner = {jacob},
+  publisher = {Elsevier},
+  timestamp = {2014.09.25}
+}
+
+@ARTICLE{guest1992small,
+  author = {Guest, John E and Bulmer, Mark H and Aubele, Jayne and Beratan, Kathi
+	and Greeley, Ronald and Head, James W and Michaels, Gregory and Weitz,
+	Catherine and Wiles, Charles},
+  title = {Small volcanic edifices and volcanism in the plains of {Venus}},
+  journal = {Journal of Geophysical Research: Planets},
+  year = {1992},
+  volume = {97},
+  pages = {15949--15966},
+  number = {E10},
+  note = {doi:10.1029/92JE01438},
+  owner = {jacob},
+  timestamp = {2016.01.31}
+}
+
+@ARTICLE{halevy2014episodic,
+  author = {Halevy, Itay and Head III, James W},
+  title = {{Episodic warming of early Mars by punctuated volcanism}},
+  journal = {Nature Geoscience},
+  year = {2014},
+  note = {doi:10.1038/ngeo2293},
+  owner = {jacob},
+  timestamp = {2015.10.07}
+}
+
+@ARTICLE{Hamilton2011,
+  author = {Hamilton, Christopher W. and Fagents, Sarah A. and Thordarson, Thorvaldur},
+  title = {{Lava–ground ice interactions in Elysium Planitia, Mars: Geomorphological
+	and geospatial analysis of the Tartarus Colles cone groups}},
+  journal = {Journal of Geophysical Research},
+  year = {2011},
+  volume = {116},
+  pages = {E03004},
+  number = {E3},
+  note = {{doi:10.1029/2010JE003657}},
+  doi = {10.1029/2010JE003657},
+  owner = {jacob},
+  timestamp = {2016.01.31}
+}
+
+@ARTICLE{Hamilton2010,
+  author = {Hamilton, Christopher W. and Fagents, Sarah A. and Wilson, Lionel},
+  title = {{Explosive lava-water interactions in Elysium Planitia, Mars: Geologic
+	and thermodynamic constraints on the formation of the Tartarus Colles
+	cone groups}},
+  journal = {Journal of Geophysical Research},
+  year = {2010},
+  volume = {115},
+  pages = {E09006},
+  number = {E9},
+  note = {{doi:10.1029/2009JE003546}},
+  doi = {10.1029/2009JE003546},
+  owner = {jacob},
+  timestamp = {2016.01.31}
+}
+
+@MASTERSTHESIS{harburger2014probabilistic,
+  author = {Harburger, Aleeza M},
+  title = {Probabilistic Modeling of Lava Flows: A Hazard Assessment for the
+	San Francisco Volcanic Field, Arizona},
+  school = {University of South Florida},
+  year = {2014},
+  owner = {jacob},
+  timestamp = {2015.12.02}
+}
+
+@INCOLLECTION{harris2013lava,
+  author = {Harris, AJL},
+  title = {Lava Flows},
+  booktitle = {Modeling volcanic processes: the physics and mathematics of volcanism},
+  publisher = {Cambridge University Press},
+  year = {2013},
+  editor = {Fagents, Sarah A and Gregg, Tracy KP and Lopes, Rosaly MC},
+  chapter = {Lava Flows},
+  owner = {jacob},
+  timestamp = {2015.07.09}
+}
+
+@ARTICLE{harris2001flowgo,
+  author = {Harris, Andrew J and Rowland, S},
+  title = {FLOWGO: a kinematic thermo-rheological model for lava flowing in
+	a channel},
+  journal = {Bulletin of Volcanology},
+  year = {2001},
+  volume = {63},
+  pages = {20--44},
+  number = {1},
+  note = {doi:10.1007/s004450000120},
+  owner = {jacob},
+  publisher = {Springer},
+  timestamp = {2015.05.03}
+}
+
+@ARTICLE{hartmann2005martian,
+  author = {William K. Hartmann},
+  title = {{Martian cratering 8: Isochron refinement and the chronology of {Mars}}},
+  journal = {Icarus},
+  year = {2005},
+  volume = {174},
+  pages = {294 - 320},
+  number = {2},
+  note = {{doi:10.1016/j.icarus.2004.11.023}},
+  doi = {10.1016/j.icarus.2004.11.023},
+  issn = {0019-1035},
+  keywords = {Mars, cratering processes, Mars},
+  owner = {jacob},
+  timestamp = {2013.07.17}
+}
+
+@ARTICLE{Hartmann2001,
+  author = {Hartmann, William K. and Neukum, Gerhard},
+  title = {Cratering Chronology and the Evolution of {Mars}},
+  journal = {Space Science Reviews},
+  year = {2001},
+  volume = {96},
+  pages = {165-194},
+  note = {{doi:10.1023/A:1011945222010}},
+  issn = {0038-6308},
+  issue = {1},
+  keyword = {Physics and Astronomy},
+  owner = {jacob},
+  publisher = {Springer Netherlands},
+  timestamp = {2016.01.31},
+  url = {http://dx.doi.org/10.1023/A:1011945222010}
+}
+
+@ARTICLE{Hauber2009,
+  author = {Hauber, Ernst and Bleacher, Jacob and Gwinner, Klaus and Williams,
+	David and Greeley, R.},
+  title = {{The topography and morphology of low shields and associated landforms
+	of plains volcanism in the Tharsis region of Mars}},
+  journal = {Journal of Volcanology and Geothermal Research},
+  year = {2009},
+  volume = {185},
+  pages = {69-95},
+  number = {1--2},
+  note = {{doi:10.1016/j.jvolgeores.2009.04.015}},
+  doi = {10.1016/j.jvolgeores.2009.04.015},
+  owner = {jacob},
+  timestamp = {2016.01.31}
+}
+
+@ARTICLE{hauber2011very,
+  author = {Hauber, E. and Bro\v{z}, P. and Jagert, F. and Jod\l~owski, P. and
+	Platz, T.},
+  title = {{Very recent and wide-spread basaltic volcanism on Mars}},
+  journal = {Geophysical Research Letters},
+  year = {2011},
+  volume = {38},
+  pages = {L10201},
+  note = {{doi:10.1029/2011GL047310}},
+  doi = {10.1029/2011GL047310},
+  file = {:/home/jacob/academic/Papers/Mars/Hauber et al 2011 - Recent volcanism on Mars.pdf:PDF},
+  keywords = {volcanism, Mars, Tharsis},
+  owner = {jacob},
+  timestamp = {2013.07.17}
+}
+
+@INCOLLECTION{Head1981,
+  author = {Head, J. W. and Bryan, W. B. and Greeley, R. and Guest, J. E. and
+	Shultz, P. H. and Sparks, R. S. J. and Walker, G. P. L. and Whitford-Stark,
+	J. L. and Wood, C. A. and Carr, M. H.},
+  title = {{Basaltic volcanic fields}},
+  booktitle = {{Basaltic Volcanism on the Terrestrial Planets}},
+  publisher = {{Pergamon Press Inc.}},
+  year = {1981},
+  editor = {{W. M. Kaula, et al.}},
+  pages = {702--887},
+  address = {New York},
+  owner = {jacob},
+  timestamp = {2016.01.31}
+}
+
+@ARTICLE{head1992venus,
+  author = {Head, James W and Crumpler, LS and Aubele, Jayne C and Guest, John
+	E and Saunders, R Stephen},
+  title = {Venus volcanism: Classification of volcanic features and structures,
+	associations, and global distribution from Magellan data},
+  journal = {Journal of Geophysical Research: Planets},
+  year = {1992},
+  volume = {97},
+  pages = {13153--13197},
+  number = {E8},
+  note = {doi:10.1029/92JE01273},
+  owner = {jacob},
+  publisher = {Wiley Online Library},
+  timestamp = {2016.01.25}
+}
+
+@ARTICLE{head2003cold,
+  author = {Head, James W and Marchant, David R},
+  title = {{Cold-based mountain glaciers on Mars: western Arsia Mons}},
+  journal = {Geology},
+  year = {2003},
+  volume = {31},
+  pages = {641--644},
+  number = {7},
+  note = {doi:10.1130/0091-7613(2003) 031<0641:CMGOMW> 2.0.CO;2},
+  file = {:Mars/Head and Marchant 2003 - Cold-based glaciers on Arsia.pdf:PDF},
+  owner = {jacob},
+  timestamp = {2015.10.07}
+}
+
+@ARTICLE{head2014preservation,
+  author = {Head, James W and Weiss, David K},
+  title = {{Preservation of ancient ice at Pavonis and Arsia Mons: tropical
+	mountain glacier deposits on Mars}},
+  journal = {Planetary and Space Science},
+  year = {2014},
+  volume = {103},
+  pages = {331--338},
+  note = {doi:10.1016/j.pss.2014.09.004},
+  file = {:Mars/Head and Weiss 2014 - Preservation of ice at Pavonis and Arsia.pdf:PDF},
+  owner = {jacob},
+  timestamp = {2015.10.07}
+}
+
+@ARTICLE{hebert2010generation,
+  author = {Hebert, Laura B and Mont{\'e}si, Laurent GJ},
+  title = {Generation of permeability barriers during melt extraction at mid-ocean
+	ridges},
+  journal = {Geochemistry, Geophysics, Geosystems},
+  year = {2010},
+  volume = {11},
+  number = {12},
+  note = {doi:10.1029/2010GC003270},
+  owner = {jacob},
+  publisher = {Wiley Online Library},
+  timestamp = {2016.01.31}
+}
+
+@ARTICLE{hidaka2005vtfs,
+  author = {Hidaka, Masataka and Goto, Akio and Umino, Susumu and Fujita, Eisuke},
+  title = {VTFS project: Development of the lava flow simulation code LavaSIM
+	with a model for three-dimensional convection, spreading, and solidification},
+  journal = {Geochemistry, Geophysics, Geosystems},
+  year = {2005},
+  volume = {6},
+  number = {7},
+  note = {doi:10.1029/2004GC000869},
+  owner = {jacob},
+  publisher = {Wiley Online Library},
+  timestamp = {2015.05.03}
+}
+
+@ARTICLE{hiesinger2007young,
+  author = {Hiesinger, H and Head, JW and Neukum, G},
+  title = {{Young lava flows on the eastern flank of Ascraeus Mons: Rheological
+	properties derived from High Resolution Stereo Camera (HRSC) images
+	and Mars Orbiter Laser Altimeter (MOLA) data}},
+  journal = {Journal of Geophysical Research: Planets},
+  year = {2007},
+  volume = {112},
+  number = {E5},
+  note = {doi:10.1029/2006JE002717},
+  file = {:Mars/Hiesinger et al 2007 - Young lava flows on Ascraeus Mons.pdf:PDF},
+  owner = {jacob},
+  timestamp = {2015.10.07}
+}
+
+@ARTICLE{hill1998cerro,
+  author = {Hill, Brittain E and Connor, Charles B and Jarzemba, Mark S and La
+	Femina, Peter C and Navarro, M and Strauch, W},
+  title = {{1995 eruptions of Cerro Negro volcano, Nicaragua, and risk assessment
+	for future eruptions}},
+  journal = {Geological Society of America Bulletin},
+  year = {1998},
+  volume = {110},
+  pages = {1231--1241},
+  number = {10},
+  note = {doi:10.1130/0016-7606(1998)110<1231:EOCNVN>2.3.CO;2},
+  owner = {jacob},
+  publisher = {Geological Society of America},
+  timestamp = {2016.01.31}
+}
+
+@MASTERSTHESIS{hintz2008physical,
+  author = {Hintz, A.R.},
+  title = {Physical volcanology and hazard analysis of a young monogenetic volcanic
+	field: {Black Rock Desert, Utah}},
+  school = {University of South Florida},
+  year = {2008},
+  file = {:home/jacob/academic/Papers/Earth/Hintz 2008 - Physical volcanology and hazard analysis of Black Rock desert Utah.pdf:PDF},
+  owner = {jacob},
+  timestamp = {2015.02.13}
+}
+
+@MISC{Hodges1994,
+  author = {Hodges, C. A. and Moore, H. J.},
+  title = {{Atlas of Volcanic Landforms on Mars, USGS Prof. Paper 1534}},
+  howpublished = {U. S. Govt. Printing Office, Washington, D. C.},
+  year = {1994},
+  owner = {jacob},
+  pages = {194},
+  timestamp = {2016.01.31}
+}
+
+@INCOLLECTION{ishihara1990numerical,
+  author = {Ishihara, Kazuhiro and Iguchi, Masato and Kamo, Kosuke},
+  title = {Numerical simulation of lava flows on some volcanoes in Japan},
+  booktitle = {Lava Flows and Domes},
+  publisher = {Springer},
+  year = {1990},
+  pages = {174--207},
+  owner = {jacob},
+  timestamp = {2015.11.16}
+}
+
+@ARTICLE{Ivanov2001,
+  author = {Ivanov, Boris A.},
+  title = {{Mars/Moon Cratering Rate Ratio Estimates}},
+  journal = {Space Science Reviews},
+  year = {2001},
+  volume = {96},
+  pages = {87--104},
+  note = {{doi:10.1023/A:1011941121102}},
+  doi = {10.1023/A:1011941121102},
+  owner = {jacob},
+  publisher = {Springer Netherlands},
+  timestamp = {2016.01.31}
+}
+
+@BOOK{jeffreys1998theory,
+  title = {The theory of probability},
+  publisher = {OUP Oxford},
+  year = {1998},
+  author = {Jeffreys, Harold},
+  owner = {jacob},
+  timestamp = {2015.11.25}
+}
+
+@ARTICLE{johnson2008magmatic,
+  author = {Johnson, E.R. and Wallace, P.J. and Cashman, K.V. and Granados, H.D.
+	and Kent, A.J.R.},
+  title = {Magmatic volatile contents and degassing-induced crystallization
+	at {Volc{\'a}n Jorullo, Mexico}: implications for melt evolution
+	and the plumbing systems of monogenetic volcanoes},
+  journal = {Earth and Planetary Science Letters},
+  year = {2008},
+  volume = {269},
+  pages = {478--487},
+  number = {3},
+  note = {doi:10.1016/j.epsl.2008.03.004},
+  owner = {jacob},
+  publisher = {Elsevier},
+  timestamp = {2015.02.03}
+}
+
+@ARTICLE{kadish2014middle,
+  author = {Kadish, Seth J and Head, James W and Fastook, James L and Marchant,
+	David R},
+  title = {{Middle to Late Amazonian tropical mountain glaciers on Mars: The
+	ages of the Tharsis Montes fan-shaped deposits}},
+  journal = {Planetary and Space Science},
+  year = {2014},
+  volume = {91},
+  pages = {52--59},
+  note = {doi:10.1016/j.pss.2013.12.005},
+  file = {:Mars/Kadish et al 2014 - Amazonian tropical glaciers on Mars.pdf:PDF},
+  owner = {jacob},
+  timestamp = {2015.10.07}
+}
+
+@ARTICLE{karlstrom2009organization,
+  author = {Karlstrom, Leif and Dufek, Josef and Manga, Michael},
+  title = {Organization of volcanic plumbing through magmatic lensing by magma
+	chambers and volcanic loads},
+  journal = {Journal of Geophysical Research: Solid Earth},
+  year = {2009},
+  volume = {114},
+  number = {B10},
+  note = {doi:10.1029/2009JB006339},
+  owner = {jacob},
+  timestamp = {2016.01.31}
+}
+
+@ARTICLE{kauahikaua1995applications,
+  author = {Kauahikaua, Jim and Margriter, Sandy and Lockwood, Jack and Trusdell,
+	Frank},
+  title = {{Applications of GIS to the estimation of lava flow hazards on Mauna
+	Loa Volcano, Hawai'i}},
+  journal = {Mauna Loa Revealed: structure, composition, history, and hazards},
+  year = {1995},
+  pages = {315--325},
+  note = {doi:10.1029/GM092p0315},
+  owner = {jacob},
+  publisher = {Wiley Online Library},
+  timestamp = {2015.07.09}
+}
+
+@ARTICLE{kendrick1981magma,
+  author = {Kendrick, GC and Edmond, CL},
+  title = {{Magma immiscibility in the Shonkin Sag and Square Butte laccoliths}},
+  journal = {Geology},
+  year = {1981},
+  volume = {9},
+  pages = {615--619},
+  number = {12},
+  note = {doi:10.1130/0091-7613(1981)9<615:MIITSS>2.0.CO;2},
+  file = {:Earth/Kendrick and Edmond 1981 - Magma immiscibility in laccoliths.pdf:PDF},
+  keywords = {geochemistry, laccoliths, San Rafael},
+  owner = {jacob},
+  publisher = {Geological Society of America},
+  timestamp = {2014.09.25}
+}
+
+@ARTICLE{kervyn2012geomorphometric,
+  author = {Kervyn, M and Ernst, GGJ and Carracedo, J-C and Jacobs, Patric},
+  title = {{Geomorphometric variability of ``monogenetic'' volcanic cones: evidence
+	from Mauna Kea, Lanzarote and experimental cones}},
+  journal = {Geomorphology},
+  year = {2012},
+  volume = {136},
+  pages = {59--75},
+  number = {1},
+  note = {doi:10.1016/j.geomorph.2011.04.009},
+  file = {:Earth/Kervyn et al 2012 - variability of monogenetic cones Mauna Kea Lanzarote.pdf:PDF},
+  owner = {jacob},
+  publisher = {Elsevier},
+  timestamp = {2015.01.26}
+}
+
+@ARTICLE{Keszthelyi2008,
+  author = {Keszthelyi, Laszlo and Jaeger, Windy and McEwen, Alfred and Tornabene,
+	Livio and Beyer, Ross A. and Dundas, Colin and Milazzo, Moses},
+  title = {{High Resolution Imaging Science Experiment (HiRISE) images of volcanic
+	terrains from the first 6 months of the Mars Reconnaissance Orbiter
+	Primary Science Phase}},
+  journal = {Journal of Geophysical Research},
+  year = {2008},
+  volume = {113},
+  pages = {E04005},
+  number = {E4},
+  note = {{doi:10.1029/2007JE002968}},
+  doi = {10.1029/2007JE002968},
+  owner = {jacob},
+  timestamp = {2016.01.31}
+}
+
+@INCOLLECTION{kilburn2000lava,
+  author = {Kilburn, CRJ},
+  title = {Lava flow and flow fields},
+  booktitle = {Encyclopedia of Volcanoes},
+  publisher = {Academic Press},
+  year = {2000},
+  editor = {Sigurdsson, H.},
+  pages = {331--343},
+  address = {San Diego, CA},
+  keywords = {volcanism, Earth},
+  owner = {jacob},
+  timestamp = {2013.07.17}
+}
+
+@ARTICLE{kiyosugi2012relationship,
+  author = {Kiyosugi, K. and Connor, C.B. and Wetmore, P.H. and Ferwerda, B.P.
+	and Germa, A.M. and Connor, L.J. and Hintz, A.R.},
+  title = {Relationship between dike and volcanic conduit distribution in a
+	highly eroded monogenetic volcanic field: {San Rafael, Utah, USA}},
+  journal = {Geology},
+  year = {2012},
+  volume = {40},
+  pages = {695--698},
+  number = {8},
+  note = {doi:10.1130/G33074.1},
+  file = {:/home/jacob/academic/Papers/Earth/Kiyosugi et al 2012 - San Rafael Volcanic Field.pdf:PDF},
+  keywords = {Earth, volcanism, dikes, conduits, San Rafael},
+  owner = {jacob},
+  publisher = {Geological Society of America},
+  timestamp = {2013.07.17}
+}
+
+@ARTICLE{kiyosugi2010relationships,
+  author = {Kiyosugi, K. and Connor, C.B. and Zhao, D. and Connor, L.J. and Tanaka,
+	K.},
+  title = {Relationships between volcano distribution, crustal structure, and
+	{P-wave} tomography: an example from the {Abu Monogenetic Volcano
+	Group, SW Japan}},
+  journal = {Bulletin of Volcanology},
+  year = {2010},
+  volume = {72},
+  pages = {331--340},
+  number = {3},
+  note = {doi:10.1007/s00445-009-0316-4},
+  file = {:/home/jacob/academic/Papers/Earth/Kiyosugi et al 2010 - Abu Monogenetic Volcanic Field.pdf:PDF},
+  keywords = {volcanism, Earth},
+  owner = {jacob},
+  publisher = {Springer},
+  timestamp = {2013.07.17}
+}
+
+@INCOLLECTION{kreylos2008immersive,
+  author = {Kreylos, O. and Bawden, G.W. and Kellogg, L.H.},
+  title = {{Immersive Visualization and Analysis of LiDAR Data}},
+  booktitle = {Advances in Visual Computing},
+  publisher = {Springer Berlin Heidelberg},
+  year = {2008},
+  editor = {Bebis, George and Boyle, Richard and Parvin, Bahram and Koracin,
+	Darko and Remagnino, Paolo and Porikli, Fatih and Peters, J\"{o}rg
+	and Klosowski, James and Arns, Laura and Chun, YuKa and Rhyne, Theresa-Marie
+	and Monroe, Laura},
+  volume = {5358},
+  series = {Lecture Notes in Computer Science},
+  pages = {846-855},
+  note = {doi:10.1007/978-3-540-89639-5\_81},
+  language = {English},
+  owner = {jacob},
+  timestamp = {2015.01.26}
+}
+
+@ARTICLE{kubanek2015lava,
+  author = {Kubanek, Julia and Richardson, Jacob A. and Charbonnier, Sylvain
+	J. and Connor, Laura J.},
+  title = {{Lava flow mapping and volume calculations for the 2012--2013 Tolbachik,
+	Kamchatka, fissure eruption using bistatic TanDEM-X InSAR}},
+  journal = {Bulletin of Volcanology},
+  year = {2015},
+  volume = {77},
+  number = {12},
+  note = {doi:10.1007/s00445-015-0989-9},
+  language = {English},
+  owner = {jacob},
+  timestamp = {2015.12.04}
+}
+
+@ARTICLE{lecorvec2013,
+  author = {Le Corvec, Nicolas and Sp{\"o}rli, K Bernhard and Rowland, Julie
+	and Lindsay, Jan},
+  title = {Spatial distribution and alignments of volcanic centers: Clues to
+	the formation of monogenetic volcanic fields},
+  journal = {Earth-Science Reviews},
+  year = {2013},
+  note = {doi:10.1016/j.earscirev.2013.05.005},
+  file = {:/home/jacob/academic/Papers/Earth/Le Corvec et al 2013 - Spatial distributions of MVFs.pdf:PDF},
+  keywords = {Earth, volcanism, Statistics, San Rafael},
+  owner = {jacob},
+  publisher = {Elsevier},
+  timestamp = {2013.07.17}
+}
+
+@MISC{Lillis2006,
+  author = {Lillis, R.},
+  title = {{Electron reflectometry as a probe of the Martian crust and atmosphere,
+	doctoral thesis}},
+  howpublished = {Department of Physics, UC Berkeley},
+  year = {2006},
+  owner = {jacob},
+  timestamp = {2016.01.31}
+}
+
+@ARTICLE{Lillis2009,
+  author = {Lillis, Robert J. and Dufek, Josef and Bleacher, Jacob E. and Manga,
+	Michael},
+  title = {{Demagnetization of crust by magmatic intrusion near the Arsia Mons
+	volcano: Magnetic and thermal implications for the development of
+	the Tharsis province, Mars}},
+  journal = {Journal of Volcanology and Geothermal Research},
+  year = {2009},
+  volume = {185},
+  pages = {123--138},
+  number = {1-2},
+  note = {{doi:10.1016/j.jvolgeores.2008.12.007}},
+  doi = {10.1016/j.jvolgeores.2008.12.007},
+  owner = {jacob},
+  timestamp = {2016.01.31}
+}
+
+@ARTICLE{lister1991fluid,
+  author = {Lister, J.R. and Kerr, R.C.},
+  title = {Fluid-mechanical models of crack propagation and their application
+	to magma transport in dykes},
+  journal = {Journal of Geophysical Research: Solid Earth},
+  year = {1991},
+  volume = {96},
+  pages = {10049--10077},
+  number = {B6},
+  note = {doi:10.1029/91JB00600},
+  file = {:home/jacob/academic/Papers/Earth/Lister and Kerr 1991 - Fluid-mechanical models of crack propagation.pdf:PDF},
+  owner = {jacob},
+  publisher = {Wiley Online Library},
+  timestamp = {2015.02.13}
+}
+
+@ARTICLE{Lutz1986,
+  author = {Lutz, Timothy M.},
+  title = {{An Analysis of the Orientations of Large-scale Crustal Structures:A
+	Statistical Approach Based on Areal Distributions of Pointlike Features}},
+  journal = {Journal of Geophysical Research},
+  year = {1986},
+  volume = {91},
+  pages = {421--434},
+  number = {B1},
+  note = {{doi:10.1029/JB091iB01p00421}},
+  doi = {10.1029/JB091iB01p00421},
+  owner = {jacob},
+  timestamp = {2016.01.31}
+}
+
+@ARTICLE{lutz1995improved,
+  author = {Lutz, Timothy M. and Gutmann, James T.},
+  title = {{An improved method for determining and characterizing alignments
+	of pointlike features and its implications for the Pinacate volcanic
+	field, Sonora, Mexico}},
+  journal = {Journal of Geophysical Research},
+  year = {1995},
+  volume = {100},
+  pages = {17,659--17,670},
+  number = {B9},
+  note = {{doi:10.1029/95JB01058}},
+  doi = {10.1029/95JB01058},
+  keywords = {Earth, Statistics, volcanism},
+  owner = {jacob},
+  timestamp = {2013.07.17}
+}
+
+@ARTICLE{mege1996plume,
+  author = {M\`{e}ge, D. and Masson, P.},
+  title = {{A plume tectonics model for the Tharsis Province, Mars}},
+  journal = {Planetary and Space Science},
+  year = {1996},
+  volume = {44},
+  pages = {1499--1546},
+  note = {doi:10.1016/S0032-0633(96)00113-4},
+  file = {:/home/jacob/academic/Papers/Mars/Mege Masson 1996 - Plume tectonics model for Tharsis.pdf:PDF},
+  keywords = {volcanism, Tharsis, Mars},
+  owner = {jacob},
+  timestamp = {2013.07.17}
+}
+
+@ARTICLE{maccaferri2011quantitative,
+  author = {Maccaferri, F and Bonafede, M and Rivalta, E},
+  title = {A quantitative study of the mechanisms governing dike propagation,
+	dike arrest and sill formation},
+  journal = {Journal of Volcanology and Geothermal Research},
+  year = {2011},
+  volume = {208},
+  pages = {39--50},
+  number = {1},
+  note = {doi:10.1016/j.jvolgeores.2011.09.001},
+  file = {:Earth/Maccaferri et al 2011 - Mechanisms governing dike and sill formation.pdf:PDF},
+  keywords = {dikes, sills, San Rafael},
+  owner = {jacob},
+  publisher = {Elsevier},
+  timestamp = {2014.09.25}
+}
+
+@ARTICLE{macedonio2014sill,
+  author = {Macedonio, G and Giudicepietro, F and D'Auria, L and Martini, M},
+  title = {Sill intrusion as a source mechanism of unrest at volcanic calderas},
+  journal = {Journal of Geophysical Research: Solid Earth},
+  year = {2014},
+  volume = {119},
+  pages = {3986--4000},
+  number = {5},
+  note = {doi:10.1002/2013JB010868},
+  owner = {jacob},
+  timestamp = {2016.01.31}
+}
+
+@ARTICLE{malin2007context,
+  author = {Malin, Michael C. and Bell, James F. and Cantor, Bruce A. and Caplinger,
+	Michael A. and Calvin, Wendy M. and Clancy, R. Todd and Edgett, Kenneth
+	S. and Edwards, Lawrence and Haberle, Robert M. and James, Philip
+	B. and Lee, Steven W. and Ravine, Michael A. and Thomas, Peter C.
+	and Wolff, Michael J.},
+  title = {{Context Camera Investigation on board the Mars Reconnaissance Orbiter}},
+  journal = {Journal of Geophysical Research},
+  year = {2007},
+  volume = {112},
+  pages = {E05S04},
+  number = {E5},
+  note = {{doi:10.1029/2006JE002808}},
+  doi = {10.1029/2006JE002808},
+  keywords = {Mars, remote sensing},
+  owner = {jacob},
+  timestamp = {2013.07.17}
+}
+
+@ARTICLE{marks2008alkaline,
+  author = {Marks, Michael AW and Schilling, Julian and Coulson, Ian M and Wenzel,
+	Thomas and Markl, Gregor},
+  title = {{The alkaline--peralkaline Tamazeght complex, High Atlas Mountains,
+	Morocco: mineral chemistry and petrological constraints for derivation
+	from a compositionally heterogeneous mantle source}},
+  journal = {Journal of Petrology},
+  year = {2008},
+  note = {doi:10.1093/petrology/egn019},
+  file = {:Earth/Marks et al 2008 - Alkaline-Peralkaline Tamazeght Complex Atlas Mtns Morocco.pdf:PDF},
+  keywords = {petrology, San Rafael},
+  owner = {jacob},
+  publisher = {Oxford Univ Press},
+  timestamp = {2014.09.25}
+}
+
+@ARTICLE{marshall2015subsurface,
+  author = {Marshall, Anita and Connor, Charles and Kruse, Sarah and Malservisi,
+	Rocco and Richardson, Jacob and Courtland, Leah and Connor, Laura
+	and Wilson, James and Karegar, Makan A},
+  title = {{Subsurface structure of a maar--diatreme and associated tuff ring
+	from a high-resolution geophysical survey, Rattlesnake Crater, Arizona}},
+  journal = {Journal of Volcanology and Geothermal Research},
+  year = {2015},
+  volume = {304},
+  pages = {253--264},
+  note = {doi:10.1016/j.jvolgeores.2015.09.006},
+  owner = {jacob},
+  timestamp = {2015.06.30}
+}
+
+@ARTICLE{marzocchi2007probabilistic,
+  author = {Marzocchi, Warner and Woo, Gordon},
+  title = {Probabilistic eruption forecasting and the call for an evacuation},
+  journal = {Geophysical Research Letters},
+  year = {2007},
+  volume = {34},
+  pages = {L22310},
+  number = {22},
+  note = {doi:10.1029/2007GL031922},
+  issn = {1944-8007},
+  keywords = {Probabilistic forecasting, Uncertainty quantification, Decision making
+	under uncertainty, Benefit-cost analysis, Volcanic hazards and risks,
+	eruption forecasting, cost/benefit analysis, evacuation},
+  owner = {jacob},
+  timestamp = {2015.11.25}
+}
+
+@ARTICLE{menand2008mechanics,
+  author = {Menand, Thierry},
+  title = {The mechanics and dynamics of sills in layered elastic rocks and
+	their implications for the growth of laccoliths and other igneous
+	complexes},
+  journal = {Earth and Planetary Science Letters},
+  year = {2008},
+  volume = {267},
+  pages = {93--99},
+  number = {1},
+  note = {doi:10.1016/j.epsl.2007.11.043},
+  file = {:Earth/Menand 2008 - Sills in layered elastic rocks and implications for laccolith growth.pdf:PDF},
+  keywords = {sills, laccoliths, San Rafael},
+  owner = {jacob},
+  publisher = {Elsevier},
+  timestamp = {2014.09.25}
+}
+
+@ARTICLE{miallier2004volcans,
+  author = {Miallier, D. and Michon, L. and {\'E}vin, J. and Pilleyre, T. and
+	Sanzelle, S. and Vernet, G.},
+  title = {Volcans de la {Cha{\^\i}ne des Puys (Massif central, France)}: Point
+	sur la chronologie {Vasset--Kilian--Pariou--Chopine}},
+  journal = {Comptes Rendus Geoscience},
+  year = {2004},
+  volume = {336},
+  pages = {1345--1353},
+  number = {15},
+  note = {doi:10.1016/j.crte.2004.08.002},
+  owner = {jacob},
+  publisher = {Elsevier},
+  timestamp = {2015.02.13}
+}
+
+@ARTICLE{michael2013planetary,
+  author = {Michael, GG},
+  title = {Planetary surface dating from crater size--frequency distribution
+	measurements: Multiple resurfacing episodes and differential isochron
+	fitting},
+  journal = {Icarus},
+  year = {2013},
+  volume = {226},
+  pages = {885--890},
+  number = {1},
+  note = {doi:10.1016/j.icarus.2013.07.004},
+  owner = {jacob},
+  timestamp = {2015.11.18}
+}
+
+@ARTICLE{Michael2010,
+  author = {G.G. Michael and G. Neukum},
+  title = {{Planetary surface dating from crater size--frequency distribution
+	measurements: Partial resurfacing events and statistical age uncertainty}},
+  journal = {Earth and Planetary Science Letters},
+  year = {2010},
+  volume = {294},
+  pages = {223 - 229},
+  note = {{doi:10.1016/j.epsl.2009.12.041}},
+  doi = {10.1016/j.epsl.2009.12.041},
+  issn = {0012-821X},
+  keywords = {cratering processes, Mars},
+  owner = {jacob},
+  timestamp = {2013.07.17}
+}
+
+@MASTERSTHESIS{miller2012shield,
+  author = {Miller, Diana M},
+  title = {Shield fields and shield plains on venus geologic characteristics
+	and spatial relationships},
+  school = {State University of New York at Buffalo},
+  year = {2012},
+  owner = {jacob},
+  timestamp = {2016.01.31}
+}
+
+@ARTICLE{miyamoto1997simulating,
+  author = {Miyamoto, Hideaki and Sasaki, Sho},
+  title = {Simulating lava flows by an improved cellular automata method},
+  journal = {Computers \& Geosciences},
+  year = {1997},
+  volume = {23},
+  pages = {283--292},
+  number = {3},
+  note = {doi:10.1016/S0098-3004(96)00089-1},
+  owner = {jacob},
+  timestamp = {2015.11.16}
+}
+
+@ARTICLE{Moore2007,
+  author = {Moore, J. G. and Mark, R. K.},
+  title = {{Morphology of the Island of Hawaii}},
+  journal = {GSA Today},
+  year = {1992},
+  volume = {2},
+  pages = {257--262},
+  number = {11},
+  owner = {jacob},
+  timestamp = {2016.01.31}
+}
+
+@ARTICLE{mouginis2002prodigious,
+  author = {Mouginis-Mark, Peter J},
+  title = {{Prodigious ash deposits near the summit of Arsia Mons volcano, Mars}},
+  journal = {Geophysical research letters},
+  year = {2002},
+  volume = {29},
+  pages = {15--1},
+  number = {16},
+  note = {doi:10.1029/2002GL015296},
+  file = {:Mars/Mouginis-Mark 2002 - Ash deposits on Arsia Mons.pdf:PDF},
+  owner = {jacob},
+  timestamp = {2015.10.07}
+}
+
+@ARTICLE{mouginis2008lava,
+  author = {Mouginis-Mark, Peter J and Rowland, Scott K},
+  title = {{Lava flows at Arsia Mons, Mars: Insights from a graben imaged by
+	HiRISE}},
+  journal = {Icarus},
+  year = {2008},
+  volume = {198},
+  pages = {27--36},
+  number = {1},
+  note = {doi:10.1016/j.icarus.2008.06.015},
+  file = {:Mars/Mouginis-Mark and Rowland 2008 - Lava at Arsia Mons in graben HiRISE.pdf:PDF},
+  owner = {jacob},
+  timestamp = {2015.10.07}
+}
+
+@INCOLLECTION{MouginisMark1992,
+  author = {Mouginis-Mark, P. J. and Wilson, L. and Zuber, M. T.},
+  title = {{The physical volcanology of Mars}},
+  booktitle = {Mars},
+  publisher = {The University of Arizona Press},
+  year = {1992},
+  editor = {{H. H. Kieffer, et al.}},
+  pages = {424--452},
+  address = {Tucson},
+  owner = {jacob},
+  timestamp = {2016.01.31}
+}
+
+@ARTICLE{neukum2004recent,
+  author = {Neukum, G. and Jaumann, R. and Hoffmann, H. and Hauber, E. and Head,
+	J. W. and Basilevsky, A. T. and Ivanov, B. A. and Werner, S. C. and
+	van Gasselt, S. and Murray, J. B. and McCord, T. and {The HRSC Co-Investigator
+	Team}},
+  title = {{Recent and episodic volcanic and glacial activity on Mars revealed
+	by the High Resolution Stereo Camera}},
+  journal = {Nature},
+  year = {2004},
+  volume = {432},
+  pages = {971--979},
+  number = {7020},
+  note = {{doi:10.1038/nature03231}},
+  doi = {10.1038/nature03231},
+  file = {:Mars/Neukum et al 2004 - Recent volcanic and glacial activity with HRSC.pdf:PDF},
+  keywords = {remote sensing, Mars},
+  owner = {jacob},
+  publisher = {Nature Publishing Group},
+  timestamp = {2013.07.17}
+}
+
+@ARTICLE{neumann2004crustal,
+  author = {Neumann, GA and Zuber, MT and Wieczorek, MA and McGovern, PJ and
+	Lemoine, FG and Smith, DE},
+  title = {Crustal structure of {Mars} from gravity and topography},
+  journal = {Journal of Geophysical Research: Planets},
+  year = {2004},
+  volume = {109},
+  number = {E8},
+  note = {doi:10.1029/2004JE002262},
+  owner = {jacob},
+  publisher = {Wiley Online Library},
+  timestamp = {2016.01.31}
+}
+
+@ARTICLE{ONeill2007,
+  author = {O'Neill, C. and Lenardic, A. and Jellinek, A. M. and Kiefer, W. S.},
+  title = {{Melt propagation and volcanism in mantle convection simulations,
+	with applications for Martian volcanic and atmospheric evolution}},
+  journal = {Journal of Geophysical Research},
+  year = {2007},
+  volume = {112},
+  pages = {E07003+},
+  number = {E7},
+  note = {{doi:10.1029/2006JE002799}},
+  doi = {10.1029/2006JE002799},
+  owner = {jacob},
+  posted-at = {2012-04-08 21:15:21},
+  priority = {2},
+  timestamp = {2016.01.31},
+  url = {http://dx.doi.org/10.1029/2006JE002799}
+}
+
+@ARTICLE{pallister2010broad,
+  author = {Pallister, J.S. and McCausland, W.A. and J{\'o}nsson, S. and Lu,
+	Z. and Zahran, H.M. and El Hadidy, S. and Aburukbah, A. and Stewart,
+	I.C.F. and Lundgren, P.R. and White, R.A. and others},
+  title = {Broad accommodation of rift-related extension recorded by dyke intrusion
+	in {Saudi Arabia}},
+  journal = {Nature Geoscience},
+  year = {2010},
+  volume = {3},
+  pages = {705--712},
+  number = {10},
+  note = {doi:10.1038/NGEO966},
+  owner = {jacob},
+  publisher = {Nature Publishing Group},
+  timestamp = {2015.02.13}
+}
+
+@ARTICLE{pasckert2012rheologies,
+  author = {Pasckert, Jan Hendrik and Hiesinger, Harald and Reiss, Dennis},
+  title = {{Rheologies and ages of lava flows on Elysium Mons, Mars}},
+  journal = {Icarus},
+  year = {2012},
+  volume = {219},
+  pages = {443--457},
+  number = {1},
+  note = {doi:10.1016/j.icarus.2012.03.014},
+  file = {:Mars/Pasckert et al 2012 - Rheology of lavas on Elysium Mons.pdf:PDF},
+  owner = {jacob},
+  timestamp = {2015.10.07}
+}
+
+@ARTICLE{pederson2002colorado,
+  author = {Pederson, J.L. and Mackley, R.D. and Eddleman, J.L.},
+  title = {{Colorado Plateau} uplift and erosion evaluated using {GIS}},
+  journal = {GSA Today},
+  year = {2002},
+  volume = {12},
+  pages = {4--10},
+  number = {8},
+  file = {:Earth/Pederson et al 2002 - Colorado Plateau uplift and erosion.pdf:PDF},
+  keywords = {San Rafael, Colorado Plateau},
+  owner = {jacob},
+  publisher = {THE GEOLOGICAL SOCIETY OF AMERICA, INC.},
+  timestamp = {2014.11.19}
+}
+
+@INCOLLECTION{peterson2000lava,
+  author = {Peterson, D.W. and Tilling, R.I.},
+  title = {Lava flow hazards},
+  booktitle = {Encyclopedia of Volcanoes},
+  publisher = {Academic Press},
+  year = {2000},
+  editor = {Sigurdsson, H.},
+  pages = {957--971},
+  address = {San Diego, CA},
+  keywords = {volcanism, Earth},
+  owner = {jacob},
+  timestamp = {2013.07.17}
+}
+
+@ARTICLE{pioli2009controls,
+  author = {L. Pioli and B.J. Azzopardi and K.V. Cashman},
+  title = {Controls on the explosivity of scoria cone eruptions: Magma segregation
+	at conduit junctions},
+  journal = {Journal of Volcanology and Geothermal Research },
+  year = {2009},
+  volume = {186},
+  pages = {407 - 415},
+  number = {3-4},
+  note = {doi:10.1016/j.jvolgeores.2009.07.014},
+  file = {:home/jacob/academic/Papers/Earth/Pioli et al 2009 - Explosivity of scoria cone eruptions.pdf:PDF},
+  issn = {0377-0273},
+  keywords = {basaltic volcanism},
+  owner = {jacob},
+  timestamp = {2015.02.20}
+}
+
+@ARTICLE{platz2011eruption,
+  author = {Platz, Thomas and Michael, Gregory},
+  title = {{Eruption history of the Elysium volcanic province, Mars}},
+  journal = {Earth and Planetary Science Letters},
+  year = {2011},
+  volume = {312},
+  pages = {140--151},
+  number = {1},
+  note = {doi:10.1016/j.epsl.2011.10.001},
+  file = {:Mars/Platz and Michael 2011 - Eruption history of Elysium Volcanic Province.pdf:PDF},
+  owner = {jacob},
+  timestamp = {2015.10.07}
+}
+
+@ARTICLE{plescia2004morphometric,
+  author = {Plescia, J. B.},
+  title = {{Morphometric properties of Martian volcanoes}},
+  journal = {Journal of Geophysical Research},
+  year = {2004},
+  volume = {109},
+  pages = {E03003},
+  number = {E3},
+  note = {{doi:10.1029/2002JE002031}},
+  doi = {10.1029/2002JE002031},
+  keywords = {volcanism, Mars},
+  owner = {jacob},
+  timestamp = {2013.07.17}
+}
+
+@ARTICLE{Plescia1982,
+  author = {Plescia, J. B. and Saunders, R. S.},
+  title = {{Tectonic history of the Tharsis region, Mars}},
+  journal = {Journal of Geophysical Research},
+  year = {1982},
+  volume = {87},
+  pages = {9775--9791},
+  number = {B12},
+  note = {doi:10.1029/JB087iB12p09775},
+  owner = {jacob},
+  timestamp = {2016.01.31}
+}
+
+@ARTICLE{pollard1973derivation,
+  author = {Pollard, David D},
+  title = {Derivation and evaluation of a mechanical model for sheet intrusions},
+  journal = {Tectonophysics},
+  year = {1973},
+  volume = {19},
+  pages = {233--269},
+  number = {3},
+  note = {doi:10.1016/0040-1951(73)90021-8},
+  file = {:Earth/Pollard 1973 - Mechanical model for sheet intrusions.pdf:PDF},
+  keywords = {sills, San Rafael},
+  owner = {jacob},
+  publisher = {Elsevier},
+  timestamp = {2014.09.25}
+}
+
+@ARTICLE{pollard1973mechanics,
+  author = {Pollard, David D and Johnson, Arvid M},
+  title = {{Mechanics of growth of some laccolithic intrusions in the Henry
+	Mountains, Utah, II: bending and failure of overburden layers and
+	sill formation}},
+  journal = {Tectonophysics},
+  year = {1973},
+  volume = {18},
+  pages = {311--354},
+  number = {3},
+  note = {doi:10.1016/0040-1951(73)90051-6},
+  file = {:Earth/Pollard and Johnson 1973 - Laccolithic intrusions in the Henry Mountains Utah.pdf:PDF},
+  keywords = {laccoliths, Henry Mountains, San Rafael},
+  owner = {jacob},
+  publisher = {Elsevier},
+  timestamp = {2014.09.25}
+}
+
+@ARTICLE{pollard1975intrusions,
+  author = {Pollard, David D and Muller, Otto H and Dockstader, David R},
+  title = {The form and growth of fingered sheet intrusions},
+  journal = {Geological Society of America Bulletin},
+  year = {1975},
+  volume = {86},
+  pages = {351--363},
+  number = {3},
+  note = {doi:10.1130/0016-7606(1975)86<351:TFAGOF>2.0.CO;2},
+  file = {:Earth/Pollard et al 1975 - Form and growth of fingered sheet intrusions.pdf:PDF},
+  keywords = {laccoliths, sills, San Rafael},
+  owner = {jacob},
+  publisher = {Geological Society of America},
+  timestamp = {2014.09.25}
+}
+
+@MISC{richardson2013alsm,
+  author = {J.A. Richardson},
+  title = {{San Rafael, UT}: Survey of Exposed Subsurface Volcanic Features},
+  month = {August},
+  year = {2013},
+  note = {doi: 10.5069/G908638S},
+  abstract = {NCALM Seed. PI: Jacob Richardson, University of South Florida. The
+	survey area is a rectangular polygon located 85 km southwest of Green
+	River, Utah in the San Rafael region of the state. The polygon is
+	approximately 4.5 km wide by 8.3 km long and encloses 54 square km.
+	The data were collected to look at exposed subsurface volcanic features
+	in San Rafael, Utah. The survey took place on August 14, 2013.},
+  doi = {10.5069/G908638S},
+  owner = {jacob},
+  timestamp = {2015.01.26}
+}
+
+@INPROCEEDINGS{Richardson2010,
+  author = {{Richardson}, J.~A. and {Bleacher}, J.~E. and {Baptista}, A.~R. },
+  title = {{{Identification of Volcanic Ridge in Northern Syria Planum, Mars:
+	Constraint on Geologic History of Syria}}},
+  booktitle = {Lunar and Planetary Institute Science Conference Abstracts},
+  year = {2010},
+  volume = {41},
+  series = {Lunar and Planetary Inst. Technical Report},
+  pages = {1427},
+  month = mar,
+  adsnote = {Provided by the SAO/NASA Astrophysics Data System},
+  adsurl = {http://adsabs.harvard.edu/abs/2010LPI....41.1427R},
+  owner = {jacob},
+  timestamp = {2016.01.31}
+}
+
+@ARTICLE{richardson2013volcanic,
+  author = {Richardson, Jacob A and Bleacher, Jacob E and Glaze, Lori S},
+  title = {{The volcanic history of Syria Planum, Mars}},
+  journal = {Journal of Volcanology and Geothermal Research},
+  year = {2013},
+  volume = {252},
+  pages = {1--13},
+  note = {doi:10.1016/j.jvolgeores.2012.11.007},
+  file = {:Richardson/Richardson et al 2013 - Volcanic History of Syria Planum Mars.pdf:PDF},
+  keywords = {volcanism, Tharsis, Syria Planum, Mars},
+  owner = {jacob},
+  timestamp = {2013.07.17}
+}
+
+@INPROCEEDINGS{richardson2012,
+  author = {Richardson, JA and Bleacher, JE and Connor, CB and Connor, LJ},
+  title = {Using Spatial Density to Characterize Volcanic Fields on Mars},
+  booktitle = {43rd Lunar and Planetary Institute Science Conference},
+  year = {2012},
+  pages = {2314},
+  file = {:Richardson/RichardsonEtAl2012LPSC.pdf:PDF},
+  keywords = {Mars, Statistics, volcanism, Tharsis, Syria Planum},
+  owner = {jacob},
+  timestamp = {2013.07.17}
+}
+
+@ARTICLE{richardson2015sills,
+  author = {Richardson, J and Connor, C. and Wetmore, P. and Connor, L. and Gallant,
+	E.},
+  title = {Role of sills in the development of volcanic fields: {Insights} from
+	{LiDAR} mapping surveys of the {San Rafael Swell, Utah}},
+  journal = {Geology},
+  year = {2015},
+  volume = {43},
+  pages = {1023-1026},
+  number = {11},
+  note = {doi:10.1130/G37094.1},
+  owner = {jacob},
+  timestamp = {2015.06.25}
+}
+
+@INPROCEEDINGS{richardson2012comparison,
+  author = {Richardson, JA and Miller, DM and Bleacher, JE and Connor, C and
+	Gregg, TK and Connor, LJ and Glaze, LS},
+  title = {Comparison of monogenetic volcano clusters on Earth, Venus, and Mars},
+  booktitle = {AGU Fall Meeting Abstracts},
+  year = {2012},
+  owner = {jacob},
+  timestamp = {2016.01.31}
+}
+
+@INPROCEEDINGS{richardson2015recurrence,
+  author = {Richardson, JA and Wilson, JA and Connor, CB and Bleacher, JE},
+  title = {Recurrence Rate Estimation of Distributed Volcanism in Arsia Caldera,
+	Mars},
+  booktitle = {46th Lunar and Planetary Science Conference},
+  year = {2015},
+  pages = {2801},
+  owner = {jacob},
+  timestamp = {2016.01.31}
+}
+
+@ARTICLE{robbins2011volcanic,
+  author = {Robbins, Stuart J and Di Achille, Gaetano and Hynek, Brian M},
+  title = {{The volcanic history of Mars: High-resolution crater-based studies
+	of the calderas of 20 volcanoes}},
+  journal = {Icarus},
+  year = {2011},
+  volume = {211},
+  pages = {1179--1203},
+  number = {2},
+  note = {doi:10.1016/j.icarus.2010.11.012},
+  file = {:Mars/Robbins et al 2011 - Crater-based studies of 20 calderas on Mars.pdf:PDF},
+  owner = {jacob},
+  timestamp = {2015.10.07}
+}
+
+@ARTICLE{Roberts2011,
+  author = {Roberts, Katie S. and Davies, Richard J. and Stewart, Simon A. and
+	Tingay, Mark},
+  title = {{Structural controls on mud volcano vent distributions: examples
+	from Azerbaijan and Lusi, east Java}},
+  journal = {Journal of the Geological Society},
+  year = {2011},
+  volume = {168},
+  pages = {1013-1030},
+  number = {4},
+  note = {{doi:10.1144/0016-76492010-158}},
+  doi = {10.1144/0016-76492010-158},
+  eprint = {http://jgs.lyellcollection.org/content/168/4/1013.full.pdf+html},
+  owner = {jacob},
+  timestamp = {2016.01.31},
+  url = {http://jgs.lyellcollection.org/content/168/4/1013.abstract}
+}
+
+@ARTICLE{rodriguez2006global,
+  author = {Rodr\'{i}guez, Ernesto and Morris, Charles S and Belz, J Eric},
+  title = {A global assessment of the {SRTM} performance},
+  journal = {Photogrammetric Engineering \& Remote Sensing},
+  year = {2006},
+  volume = {72},
+  pages = {249--260},
+  number = {3},
+  note = {doi:10.14358/PERS.72.3.249},
+  owner = {jacob},
+  publisher = {American Society for Photogrammetry and Remote Sensing},
+  timestamp = {2015.07.09}
+}
+
+@ARTICLE{roman2006storage,
+  author = {Roman, D.C. and Cashman, K.V. and Gardner, C.A. and Wallace, P.J.
+	and Donovan, J.J.},
+  title = {Storage, degassing and pre-eruption crystallization of compositionally
+	heterogeneous magmas from the 1986 eruption of {Augustine Volcano,
+	Alaska}},
+  journal = {Bulletin of Volcanology},
+  year = {2006},
+  volume = {68},
+  pages = {240--254},
+  note = {doi:10.1007/s00445-005-0003-z},
+  file = {:Earth/Roman et al 2006 - Heterogeneous magmas 1986 Augustine AK.pdf:PDF},
+  keywords = {San Rafael},
+  owner = {jacob},
+  timestamp = {2014.09.25}
+}
+
+@INCOLLECTION{Rowland2000,
+  author = {Rowland, S. K. and Garbeil, H.},
+  title = {{Slopes of oceanic basalt volcanoes}},
+  booktitle = {{Remote Sensing of Active Volcanism, Geophys. Monogr. Ser.}},
+  publisher = {AGU},
+  year = {2000},
+  editor = {{P. J. Mouginis-Mark, et al.}},
+  volume = {116},
+  address = {Washington, D. C.},
+  note = {{doi:10.1029/GM116p0223}},
+  doi = {10.1029/GM116p0223},
+  owner = {jacob},
+  timestamp = {2016.01.31}
+}
+
+@ARTICLE{rubin1995propagation,
+  author = {Rubin, A.M.},
+  title = {Propagation of magma-filled cracks},
+  journal = {Annual Review of Earth and Planetary Sciences},
+  year = {1995},
+  volume = {23},
+  pages = {287--336},
+  note = {doi:10.1146/annurev.ea.23.050195.001443},
+  file = {:home/jacob/academic/Papers/Earth/Rubin 1995 - Dike propagation.pdf:PDF},
+  owner = {jacob},
+  timestamp = {2015.02.13}
+}
+
+@INPROCEEDINGS{Sakimoto2003,
+  author = {{Sakimoto}, S.~E.~H. and {Gregg}, T.~K.~P. and {Hughes}, S.~S. and
+	{Chadwick}, J.},
+  title = {{Re-Assessing Plains-style Volcanism on Mars}},
+  booktitle = {{Sixth International Conference on Mars}},
+  year = {2003},
+  editor = {{A.~L.~Albee \& H.~H.~Kieffer}},
+  pages = {3197},
+  month = jul,
+  adsnote = {Provided by the SAO/NASA Astrophysics Data System},
+  adsurl = {http://adsabs.harvard.edu/abs/2003mars.conf.3197S},
+  owner = {jacob},
+  timestamp = {2016.01.31}
+}
+
+@ARTICLE{scandone2007magma,
+  author = {Scandone, R. and Cashman, K.V. and Malone, S.D.},
+  title = {Magma supply, magma ascent and the style of volcanic eruptions},
+  journal = {Earth and Planetary Science Letters},
+  year = {2007},
+  volume = {253},
+  pages = {513--529},
+  number = {3},
+  note = {doi:10.1016/j.epsl.2006.11.016},
+  file = {:Earth/Scandone et al 2007 - Magma supply ascent and style of eruption.pdf:PDF},
+  keywords = {San Rafael},
+  owner = {jacob},
+  publisher = {Elsevier},
+  timestamp = {2014.09.25}
+}
+
+@ARTICLE{scandone1985magma,
+  author = {Scandone, R. and Malone, S.D.},
+  title = {Magma supply, magma discharge and readjustment of the feeding system
+	of {Mount St. Helens} during 1980},
+  journal = {Journal of Volcanology and Geothermal Research},
+  year = {1985},
+  volume = {23},
+  pages = {239--262},
+  number = {3},
+  note = {doi:10.1016/0377-0273(85)90036-8},
+  file = {:Earth/Scandone and Malone 1985 - Magma supply and feeding system of Mt St Helens 1980.pdf:PDF},
+  keywords = {San Rafael},
+  owner = {jacob},
+  publisher = {Elsevier},
+  timestamp = {2014.09.25}
+}
+
+@ARTICLE{scanlon2015remnant,
+  author = {Scanlon, Kathleen E and Head, James W and Marchant, David R},
+  title = {{Remnant buried ice in the equatorial regions of Mars: Morphological
+	indicators associated with the Arsia Mons tropical mountain glacier
+	deposits}},
+  journal = {Planetary and Space Science},
+  year = {2015},
+  volume = {111},
+  pages = {144--154},
+  note = {doi:10.1016/j.pss.2015.03.024},
+  file = {:Mars/Scanlon et al 2015 - Remnant ice at equatorial Mars.pdf:PDF},
+  owner = {jacob},
+  timestamp = {2015.10.07}
+}
+
+@ARTICLE{scanlon2015volcanism,
+  author = {Scanlon, Kathleen E and Head, James W and Marchant, David R},
+  title = {{Volcanism-induced, local wet-based glacial conditions recorded in
+	the Late Amazonian Arsia Mons tropical mountain glacier deposits}},
+  journal = {Icarus},
+  year = {2015},
+  volume = {250},
+  pages = {18--31},
+  note = {doi:10.1016/j.icarus.2014.11.016},
+  file = {:Mars/Scanlon et al 2015 - Volcanism wet-based glacial conditions at Arsia.pdf:PDF},
+  owner = {jacob},
+  timestamp = {2015.10.07}
+}
+
+@INCOLLECTION{schmincke2007quaternary,
+  author = {Schmincke, H.-U.},
+  title = {{The Quaternary Volcanic Fields of the East and West Eifel (Germany)}},
+  booktitle = {Mantle Plumes},
+  publisher = {Springer Berlin Heidelberg},
+  year = {2007},
+  editor = {Ritter, J.R.R. and Christensen, U.R.},
+  pages = {241-322},
+  note = {doi:10.1007/978-3-540-68046-8\_8},
+  isbn = {978-3-540-68045-1},
+  language = {English},
+  owner = {jacob},
+  timestamp = {2015.02.13}
+}
+
+@ARTICLE{schofield2012sill,
+  author = {Schofield, Nick J and Brown, David J and Magee, Craig and Stevenson,
+	Carl T},
+  title = {Sill morphology and comparison of brittle and non-brittle emplacement
+	mechanisms},
+  journal = {Journal of the Geological Society},
+  year = {2012},
+  volume = {169},
+  pages = {127--141},
+  number = {2},
+  note = {doi:10.1144/0016-76492011-078},
+  file = {:Earth/Schofield et al 2012 - Sill mophology and comparison of emplacement mechanisms.pdf:PDF},
+  keywords = {sills, San Rafael},
+  owner = {jacob},
+  publisher = {Geological Society of London},
+  timestamp = {2014.09.25}
+}
+
+@MISC{Scott1986,
+  author = {Scott, D. H. and Tanaka, K. L.},
+  title = {{Geologic map of the Western Equatorial region of Mars}},
+  howpublished = {USGS Miscellaneous Investigations Series Map I–1802–A},
+  year = {1986},
+  owner = {jacob},
+  timestamp = {2016.01.31}
+}
+
+@TECHREPORT{scott1995geologic,
+  author = {Scott, David Holcomb and Zimbelman, James R},
+  title = {Geologic map of Arsia Mons volcano, Mars},
+  institution = {USGS},
+  year = {1995},
+  number = {IMAP 2480},
+  file = {:Mars/Scott and Zimbelman 1995 - Geologic map of Arsia Mons Volcano.pdf:PDF},
+  owner = {jacob},
+  timestamp = {2015.10.07}
+}
+
+@ARTICLE{Scott2003,
+  author = {Scott, Eve and Wilson, Lionel},
+  title = {{Did the Alba Patera and Syria Planum regions of Mars lose their
+	lithospheric roots in convective overturn events?}},
+  journal = {Journal of Geophysical Research},
+  year = {2003},
+  volume = {108},
+  pages = {5035+},
+  number = {E5},
+  note = {{doi:10.1029/2002JE001492}},
+  doi = {10.1029/2002JE001492},
+  owner = {jacob},
+  timestamp = {2016.01.31},
+  url = {http://dx.doi.org/10.1029/2002JE001492}
+}
+
+@ARTICLE{settle1979structure,
+  author = {Settle, Mark},
+  title = {The structure and emplacement of cinder cone fields},
+  journal = {American Journal of Science},
+  year = {1979},
+  volume = {279},
+  pages = {1089--1107},
+  number = {10},
+  note = {doi:10.2475/ajs.279.10.1089},
+  owner = {jacob},
+  publisher = {American Journal of Science},
+  timestamp = {2016.01.31}
+}
+
+@ARTICLE{shean2007recent,
+  author = {Shean, David E and Head, James W and Fastook, James L and Marchant,
+	David R},
+  title = {{Recent glaciation at high elevations on Arsia Mons, Mars: Implications
+	for the formation and evolution of large tropical mountain glaciers}},
+  journal = {Journal of Geophysical Research: Planets},
+  year = {2007},
+  volume = {112},
+  number = {E3},
+  note = {doi:10.1029/2006JE002761},
+  file = {:Mars/Shean et al 2007 - Recent glaciation on Arsia Mons.pdf:PDF},
+  owner = {jacob},
+  timestamp = {2015.10.07}
+}
+
+@BOOK{silverman1986density,
+  title = {Density estimation for statistics and data analysis},
+  publisher = {Chapman and Hall},
+  year = {1986},
+  author = {Silverman, Bernard W},
+  volume = {26},
+  series = {Monographs on Statistics and Applied Probability},
+  owner = {jacob},
+  timestamp = {2013.09.08}
+}
+
+@MISC{smith2003mars,
+  author = {Smith, D. E. and M. T. Zuber and G. A. Neumann and E. A. Guinness
+	and S. Slavney},
+  title = {{Mars Global Surveyor Laser Altimeter Mission Experiment Gridded
+	Data Record.}},
+  howpublished = {NASA Planetary Data System, MGS-M-MOLA-5-MEGDR-L3-V1.0.},
+  year = {2003},
+  keywords = {Mars, remote sensing},
+  owner = {jacob},
+  timestamp = {2013.07.17}
+}
+
+@ARTICLE{tamura2002hot,
+  author = {Tamura, Yoshihiko and Tatsumi, Yoshiyuki and Zhao, Dapeng and Kido,
+	Yukari and Shukuno, Hiroshi},
+  title = {Hot fingers in the mantle wedge: new insights into magma genesis
+	in subduction zones},
+  journal = {Earth and Planetary Science Letters},
+  year = {2002},
+  volume = {197},
+  pages = {105--116},
+  number = {1},
+  note = {doi:10.1016/S0012-821X(02)00465-X},
+  owner = {jacob},
+  publisher = {Elsevier},
+  timestamp = {2016.01.31}
+}
+
+@ARTICLE{Tanaka1988,
+  author = {Tanaka, Kenneth L. and Davis, Philip A.},
+  title = {{Tectonic History of the Syria Planum Province of Mars}},
+  journal = {Journal of Geophysical Research},
+  year = {1988},
+  volume = {93},
+  pages = {14,893--14,917},
+  number = {B12},
+  note = {{doi:10.1029/JB093iB12p14893}},
+  doi = {10.1029/JB093iB12p14893},
+  owner = {jacob},
+  timestamp = {2016.01.31}
+}
+
+@ARTICLE{tanaka1986migration,
+  author = {Tanaka, Kenneth L and Shoemaker, Eugene M and Ulrich, George E and
+	Wolfe, Edward W},
+  title = {{Migration of volcanism in the San Francisco volcanic field, Arizona}},
+  journal = {Geological Society of America Bulletin},
+  year = {1986},
+  volume = {97},
+  pages = {129--141},
+  number = {2},
+  note = {doi:10.1130/0016-7606(1986)97<129:MOVITS>2.0.CO;2},
+  file = {:Earth/Tanaka et al 1986 - Migration of volcanism in the San Francisco volcanic field.pdf:PDF},
+  owner = {jacob},
+  publisher = {Geological Society of America},
+  timestamp = {2015.01.26}
+}
+
+@ARTICLE{tarasewicz2012magma,
+  author = {Tarasewicz, Jon and White, Robert S and Woods, Andrew W and Brandsd{\'o}ttir,
+	Brynd{\'\i}s and Gudmundsson, Magn{\'u}s T},
+  title = {Magma mobilization by downward-propagating decompression of the Eyjafjallaj{\"o}kull
+	volcanic plumbing system},
+  journal = {Geophysical Research Letters},
+  year = {2012},
+  volume = {39},
+  number = {19},
+  note = {doi:10.1029/2012GL053518},
+  owner = {jacob},
+  timestamp = {2016.01.31}
+}
+
+@ARTICLE{uslular2015size,
+  author = {Uslular, G and Gen{\c{c}}alio{\u{g}}lu-Ku{\c{s}}cu, G and Arcasoy,
+	A},
+  title = {{Size-distribution of scoria cones within the E{\u{g}}rikuyu Monogenetic
+	Field (Central Anatolia, Turkey)}},
+  journal = {Journal of Volcanology and Geothermal Research},
+  year = {2015},
+  note = {doi:10.1016/j.jvolgeores.2015.05.006},
+  owner = {jacob},
+  timestamp = {2015.12.02}
+}
+
+@INCOLLECTION{valentine2000basaltic,
+  author = {Valentine, G. A. and Connor, C. B.},
+  title = {{Basaltic volcanic fields}},
+  booktitle = {Encyclopedia of Volcanoes},
+  publisher = {Academic Press},
+  year = {2015},
+  editor = {Sigurdsson, H. and Houghton, B. and McNutt, S. and Rymer, H. and
+	Styx, J.},
+  pages = {423-440},
+  address = {San Diego, CA},
+  keywords = {volcanism, Earth},
+  owner = {jacob},
+  timestamp = {2015.01.17}
+}
+
+@ARTICLE{valentine2006emplacement,
+  author = {Valentine, G.A. and Krogh, K.E.C.},
+  title = {Emplacement of shallow dikes and sills beneath a small basaltic volcanic
+	center -- The role of pre-existing structure {(Paiute Ridge, southern
+	Nevada, USA)}},
+  journal = {Earth and Planetary Science Letters},
+  year = {2006},
+  volume = {246},
+  pages = {217 - 230},
+  number = {3--4},
+  note = {doi:10.1016/j.epsl.2006.04.031},
+  file = {:Earth/Valentine and Krogh 2006  Dikes and sills beneath a small volcanic center Paiute Ridge Nevada.pdf:PDF},
+  keywords = {dikes, San Rafael},
+  owner = {jacob},
+  timestamp = {2014.09.25}
+}
+
+@ARTICLE{vaucher2009volcanic,
+  author = {Vaucher, J and Baratoux, D and Mangold, N and Pinet, P and Kurita,
+	K and Gr{\'e}goire, M},
+  title = {{The volcanic history of central Elysium Planitia: Implications for
+	martian magmatism}},
+  journal = {Icarus},
+  year = {2009},
+  volume = {204},
+  pages = {418--442},
+  number = {2},
+  note = {doi:10.1016/j.icarus.2009.06.032},
+  file = {:Mars/Vaucher et al 2009 - Volcanic history of Central Elysium Planitia.pdf:PDF},
+  owner = {jacob},
+  timestamp = {2015.10.07}
+}
+
+@ARTICLE{Wadge1988,
+  author = {Wadge, G. and Cross, A.},
+  title = {{Quantitative methods for detecting aligned points: An application
+	to the volcanic vents of the Michoacan-Guanajuato volcanic field,
+	Mexico}},
+  journal = {Geology},
+  year = {1988},
+  volume = {16},
+  pages = {815--818},
+  number = {9},
+  note = {{doi:10.1130/0091-7613(1988)016$<$0815:QMFDAP$>$2.3.CO;2}},
+  doi = {10.1130/0091-7613(1988)016$<$0815:QMFDAP$>$2.3.CO;2},
+  owner = {jacob},
+  timestamp = {2016.01.31}
+}
+
+@ARTICLE{Wadge1989,
+  author = {Wadge, G. and Cross, A. M.},
+  title = {{Identification and analysis of the alignments of point-like features
+	in remotely-sensed imagery. Volcanic cones in the Pinacate Volcanic
+	Field, Mexico}},
+  journal = {International Journal of Remote Sensing},
+  year = {1989},
+  volume = {10},
+  pages = {455--474},
+  note = {{doi:10.1080/01431168908903885}},
+  doi = {10.1080/01431168908903885},
+  owner = {jacob},
+  timestamp = {2016.01.31}
+}
+
+@ARTICLE{wand1993comparison,
+  author = {Wand, MP and Jones, MC},
+  title = {Comparison of smoothing parameterizations in bivariate kernel density
+	estimation},
+  journal = {Journal of the American Statistical Association},
+  year = {1993},
+  volume = {88},
+  pages = {520--528},
+  number = {422},
+  note = {doi:10.1080/01621459.1993.10476303},
+  owner = {jacob},
+  timestamp = {2016.01.31}
+}
+
+@INPROCEEDINGS{Webb2001,
+  author = {{Webb}, B. and {Head}, III, J.~W. and {Kortz}, B.~E. and {Pratt},
+	S. },
+  title = {{Syria Planum, Mars: A Major Volcanic Construct in the Early History
+	of Tharsis}},
+  booktitle = {Lunar and Planetary Institute Science Conference Abstracts},
+  year = {2001},
+  series = {32nd Lunar and Planetary Institute Science Conference Abstracts},
+  pages = {1145},
+  month = mar,
+  adsnote = {Provided by the SAO/NASA Astrophysics Data System},
+  adsurl = {http://adsabs.harvard.edu/abs/2001LPI....32.1145W},
+  owner = {jacob},
+  timestamp = {2016.01.31}
+}
+
+@ARTICLE{Werner2011,
+  author = {S.C. Werner and K.L. Tanaka},
+  title = {{Redefinition of the crater-density and absolute-age boundaries for
+	the chronostratigraphic system of Mars}},
+  journal = {Icarus},
+  year = {2011},
+  volume = {215},
+  pages = {603 - 607},
+  number = {2},
+  note = {{doi:10.1016/j.icarus.2011.07.024}},
+  doi = {10.1016/j.icarus.2011.07.024},
+  issn = {0019-1035},
+  keywords = {Mars},
+  owner = {jacob},
+  timestamp = {2016.01.31},
+  url = {http://www.sciencedirect.com/science/article/pii/S001910351100296X}
+}
+
+@ARTICLE{werner2009global,
+  author = {Werner, Stephanie C},
+  title = {The global martian volcanic evolutionary history},
+  journal = {Icarus},
+  year = {2009},
+  volume = {201},
+  pages = {44--68},
+  number = {1},
+  note = {doi:10.1016/j.icarus.2008.12.019},
+  file = {:Mars/Werner 2009 - Global martian volcanic history.pdf:PDF},
+  owner = {jacob},
+  timestamp = {2015.10.07}
+}
+
+@ARTICLE{wetmore2009geometry,
+  author = {Wetmore, P.H. and Connor, C.B. and Kruse, S.E. and Callihan, S. and
+	Pignotta, G. and Stremtan, C. and Burke, A.},
+  title = {Geometry of the {Trachyte Mesa} intrusion, {Henry Mountains, Utah}:
+	Implications for the emplacement of small melt volumes into the upper
+	crust},
+  journal = {Geochemistry, Geophysics, Geosystems},
+  year = {2009},
+  volume = {10},
+  number = {8},
+  note = {doi:10.1029/2009GC002469},
+  file = {:Earth/Wetmore et al 2009 - geometry of the trachyte mesa intrusion Utah.pdf:PDF},
+  owner = {jacob},
+  publisher = {Wiley Online Library},
+  timestamp = {2014.09.26}
+}
+
+@ARTICLE{WhitfordStark1982,
+  author = {Whitford-Stark, J. L.},
+  title = {{Factors influencing the morphology of volcanic landforms: An Earth-Moon
+	comparison}},
+  journal = {Earth Science Reviews},
+  year = {1982},
+  volume = {18},
+  pages = {109--168},
+  note = {doi:10.1016/0012-8252(82)90050-2},
+  owner = {jacob},
+  timestamp = {2016.01.31}
+}
+
+@ARTICLE{wilson2009tephra,
+  author = {Wilson, Lionel and Head, James W},
+  title = {Tephra deposition on glaciers and ice sheets on {Mars}: Influence
+	on ice survival, debris content and flow behavior},
+  journal = {Journal of Volcanology and Geothermal Research},
+  year = {2009},
+  volume = {185},
+  pages = {290--297},
+  number = {4},
+  note = {doi:10.1016/j.jvolgeores.2008.10.003},
+  file = {:Mars/Wilson and Head 2009 - Tephra on glaciers on Mars.pdf:PDF},
+  owner = {jacob},
+  timestamp = {2015.10.07}
+}
+
+@ARTICLE{Wilson2002,
+  author = {Wilson, L. and Head, J. W.},
+  title = {{Tharsis-radial graben systems as the surface manifestation of plume-related
+	dike intrusion complexes: Models and implications}},
+  journal = {Journal of Geophysical Research},
+  year = {2002},
+  volume = {107},
+  pages = {5057},
+  number = {E8},
+  note = {{doi:10.1029/2001JE001593}},
+  doi = {10.1029/2001JE001593},
+  owner = {jacob},
+  timestamp = {2016.01.31}
+}
+
+@ARTICLE{wilson1994mars,
+  author = {Wilson, Lionel and Head, James W},
+  title = {Mars: Review and analysis of volcanic eruption theory and relationships
+	to observed landforms},
+  journal = {Reviews of Geophysics},
+  year = {1994},
+  volume = {32},
+  pages = {221--263},
+  number = {3},
+  note = {doi:10.1029/94RG01113},
+  file = {:Mars/Wilson and Head 1994 - Mars Volcanic eruption theory.pdf:PDF},
+  owner = {jacob},
+  timestamp = {2015.10.07}
+}
+
+@ARTICLE{Wilson2009,
+  author = {Wilson, Lionel and Mouginis-Mark, Peter J. and Tyson, Shelly and
+	Mackown, Jennifer and Garbeil, Harold},
+  title = {{Fissure eruptions in Tharsis, Mars: Implications for eruption conditions
+	and magma sources}},
+  journal = {Journal of Volcanology and Geothermal Research},
+  year = {2009},
+  volume = {185},
+  pages = {28--46},
+  number = {1-2},
+  note = {{doi:10.1016/j.jvolgeores.2009.03.006}},
+  doi = {10.1016/j.jvolgeores.2009.03.006},
+  owner = {jacob},
+  timestamp = {2016.01.31}
+}
+
+@ARTICLE{wilson2001evidence,
+  author = {Wilson, Lionel and Scott, Evelyn D and Head, James W},
+  title = {{Evidence for episodicity in the magma supply to the large Tharsis
+	volcanoes}},
+  journal = {Journal of Geophysical Research: Planets},
+  year = {2001},
+  volume = {106},
+  pages = {1423--1433},
+  number = {E1},
+  note = {doi:10.1029/2000JE001280},
+  file = {:Mars/Wilson et al 2001 - Episodic magma supply of Martian shields.pdf:PDF},
+  owner = {jacob},
+  timestamp = {2015.10.07}
+}
+
+@MISC{Wolfe1996,
+  author = {Wolfe, E. W. and Morris, J.},
+  title = {{Geologic map of the Island of Hawaii, scale 1:100,000}},
+  howpublished = {USGS Miscellaneous Investigations Series Map I-2524-A},
+  year = {1996},
+  owner = {jacob},
+  timestamp = {2016.01.31}
+}
+
+@ARTICLE{wolfram1984cellular,
+  author = {Wolfram, Stephen},
+  title = {Cellular automata as models of complexity},
+  journal = {Nature},
+  year = {1984},
+  volume = {311},
+  pages = {419--424},
+  number = {5985},
+  note = {doi:10.1038/311419a0},
+  owner = {jacob},
+  timestamp = {2016.01.31}
+}
+
+@ARTICLE{woo2008probabilistic,
+  author = {Woo, Gordon},
+  title = {Probabilistic criteria for volcano evacuation decisions},
+  journal = {Natural Hazards},
+  year = {2008},
+  volume = {45},
+  pages = {87--97},
+  number = {1},
+  note = {doi:10.1007/s11069-007-9171-9},
+  file = {:Earth/Woo 2008 - Criteria for volcano evacuation decisions.pdf:PDF},
+  owner = {jacob},
+  timestamp = {2015.11.25}
+}
+

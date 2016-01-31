@@ -2,14 +2,16 @@
 
 \bibitem[Anderson and Smrekar, 2006]{anderson2006global}
 Anderson, F.~S. and Smrekar, S.~E. (2006).
-\newblock Global mapping of crustal and lithospheric thickness on venus.
+\newblock Global mapping of crustal and lithospheric thickness on {Venus}.
 \newblock {\em Journal of Geophysical Research: Planets}, 111(E8).
+\newblock doi:10.1029/2004JE002395.
 
 \bibitem[Annen et~al., 2006]{annen2006genesis}
 Annen, C., Blundy, J., and Sparks, R. (2006).
 \newblock The genesis of intermediate and silicic magmas in deep crustal hot
   zones.
 \newblock {\em Journal of Petrology}, 47(3):505--539.
+\newblock doi:10.1093/petrology/egi084.
 
 \bibitem[Baptista et~al., 2008]{baptista2008swarm}
 Baptista, A.~R., Mangold, N., Ansan, V., Baratoux, D., Lognonn\'{e}, P., Alves,
@@ -30,6 +32,7 @@ Barron, A.~D., Ramsey, D.~W., and Smith, J.~G. (2014).
 \newblock Database for the geologic map of upper eocene to holocene volcanic
   and related rocks in the cascade range, washington.
 \newblock Technical report, US Geological Survey.
+\newblock doi:10.3133/ds842.
 
 \bibitem[Bleacher et~al., 2009]{bleacher2009spatial}
 Bleacher, J.~E., Glaze, L.~S., Greeley, R., Hauber, E., Baloga, S.~M.,
@@ -38,6 +41,7 @@ Bleacher, J.~E., Glaze, L.~S., Greeley, R., Hauber, E., Baloga, S.~M.,
   south of Pavonis Mons and implications for the Tharsis province, Mars}.
 \newblock {\em Journal of Volcanology and Geothermal Research},
   185(1--2):96--102.
+\newblock doi:10.1016/j.jvolgeores.2009.04.008.
 
 \bibitem[Bleacher et~al., 2007]{bleacher2007tharsis}
 Bleacher, J.~E., Greeley, R., Williams, D.~A., Cave, S.~R., and Neukum, G.
@@ -52,12 +56,14 @@ Bonafede, M. and Cenni, N. (1998).
 \newblock A porous flow model of magma migration within mt. etna: The influence
   of extended sources and permeability anisotropy.
 \newblock {\em J. Volc. Geotherm. Res.}, 81(1):51--68.
+\newblock doi:10.1016/S0377-0273(97)00053-X.
 
-\bibitem[Carr et~al., 1977]{Carr1977}
+\bibitem[Carr et~al., 1977]{carr1977some}
 Carr, M.~H., Greeley, R., Blasius, K.~R., Guest, J.~E., and Murray, J.~B.
   (1977).
 \newblock {Some Martian volcanic features as viewed from the Viking orbiters}.
 \newblock {\em Journal of Geophysical Research}, 82:3985--4015.
+\newblock doi:10.1029/JS082i028p03985.
 
 \bibitem[Condit, 2010]{condit2010dynamic}
 Condit, C.~D. (2010).
@@ -65,12 +71,14 @@ Condit, C.~D. (2010).
   ddm-template: An example of an open-source tool to distribute maps, data,
   articles, and multi-media materials.
 \newblock {\em Geosphere}, 6(4):430--443.
+\newblock doi:10.1130/GES00531.1.
 
 \bibitem[Condit et~al., 1989]{condit1989patterns}
 Condit, C.~D., Crumpler, L.~S., Aubele, J.~C., and Elston, W.~E. (1989).
 \newblock {Patterns of Volcanism along the Southern Margin of the Colorado
   Plateau: The Springerville Field}.
 \newblock {\em Journal of Geophysical Research}, 94(B6):7975--7986.
+\newblock doi:10.1029/JB094iB06p07975.
 
 \bibitem[Connor et~al., 2015]{connor2015probabilistic}
 Connor, C., Bebbington, M., and Marzocchi, W. (2015).
@@ -81,8 +89,10 @@ Connor, C., Bebbington, M., and Marzocchi, W. (2015).
 
 \bibitem[Connor, 1987]{connor1987structure}
 Connor, C.~B. (1987).
-\newblock Structure of the michoac{\'a}n-guanajuato volcanic field, mexico.
-\newblock {\em Journal of volcanology and geothermal research}, 33(1):191--200.
+\newblock Structure of the {M}ichoac{\'a}n-{Guanajuato} volcanic field,
+  {Mexico}.
+\newblock {\em Journal of Volcanology and Geothermal Research}, 33(1):191--200.
+\newblock doi:10.1016/0377-0273(87)90061-8.
 
 \bibitem[Connor, 1990]{connor1990cinder}
 Connor, C.~B. (1990).
@@ -97,67 +107,77 @@ Connor, C.~B. and Hill, B.~E. (1995).
   volcanism: application to the yucca mountain region, nevada.
 \newblock {\em Journal of Geophysical Research: Solid Earth (1978--2012)},
   100(B6):10107--10125.
+\newblock doi:10.1029/95JB01055.
 
 \bibitem[Connor et~al., 2000]{connor2000geologic}
 Connor, C.~B., Stamatakos, J.~A., Ferrill, D.~A., Hill, B.~E., Ofoegbu, G.~I.,
   Sagar, B., Conway, F., and Trapp, J. (2000).
-\newblock Geologic factors controlling patterns of small-volume basaltic
-  volcanism- application to a volcanic hazards assessment at yucca mountain,
-  nevada.
+\newblock {Geologic factors controlling patterns of small-volume basaltic
+  volcanism- Application to a volcanic hazards assessment at Yucca Mountain,
+  Nevada}.
 \newblock {\em Journal of Geophysical Research}, 105:417--432.
+\newblock doi:10.1029/1999JB900353.
 
 \bibitem[Conway et~al., 1998]{conway1998recurrence}
 Conway, F., Connor, C., Hill, B., Condit, C., Mullaney, K., and Hall, C.
   (1998).
-\newblock Recurrence rates of basaltic volcanism in sp cluster, san francisco
-  volcanic field, arizona.
+\newblock {Recurrence rates of basaltic volcanism in SP cluster, San Francisco
+  volcanic field, Arizona}.
 \newblock {\em Geology}, 26(7):655--658.
+\newblock doi:10.1130/0091-7613(1998) 026<0655:RROBVI> 2.3.CO;2.
 
 \bibitem[Crumpler et~al., 1996]{crumpler1996calderas}
 Crumpler, L., Head, J.~W., and Aubele, J.~C. (1996).
-\newblock Calderas on mars: Characteristics, structure, and associated flank
-  deformation.
+\newblock {Calderas on Mars: Characteristics, structure, and associated flank
+  deformation}.
 \newblock {\em Geological Society, London, Special Publications},
   110(1):307--348.
+\newblock doi:10.1144/GSL.SP.1996.110.01.24.
 
 \bibitem[Delaney and Gartner, 1997]{delaney1997physical}
 Delaney, P. and Gartner, A. (1997).
 \newblock Physical processes of shallow mafic dike emplacement near the {San
   Rafael Swell, Utah}.
-\newblock {\em GSA Bulletin}, 109(9):1177--1192.
+\newblock {\em Geological Society of America Bulletin}, 109(9):1177--1192.
+\newblock doi:10.1130/0016-7606(1997)109<1177:PPOSMD>2.3.CO;2.
 
 \bibitem[Delaney et~al., 1986]{delaney1986field}
 Delaney, P.~T., Pollard, D.~D., Ziony, J.~I., and McKee, E.~H. (1986).
 \newblock Field relations between dikes and joints: emplacement processes and
   paleostress analysis.
-\newblock {\em Journal of Geophysical Research: Solid Earth (1978--2012)},
+\newblock {\em Journal of Geophysical Research: Solid Earth},
   91(B5):4920--4938.
+\newblock doi:10.1029/JB091iB05p04920.
 
 \bibitem[Duong, 2007]{duong2007}
 Duong, T. (2007).
 \newblock ks: Kernel density estimation and kernel discriminant analysis for
   multivariate data in r.
 \newblock {\em Journal of Statistical Software}, 21(7):1--16.
+\newblock doi:.
 
 \bibitem[Duong and Hazelton, 2003]{duong2003}
 Duong, T. and Hazelton, M. (2003).
 \newblock Plug-in bandwidth matrices for bivariate kernel density estimation.
 \newblock {\em Journal of Nonparametric Statistics}, 15(1):17--30.
+\newblock doi:10.1080/10485250306039.
 
 \bibitem[Germa et~al., 2013]{germa2013tectonic}
 Germa, A., Connor, L.~J., Ca{\~{n}}on-Tapia, E., and Corvec, N. (2013).
-\newblock Tectonic and magmatic controls on the location of post-subduction
-  monogenetic volcanoes in baja california, mexico, revealed through spatial
-  analysis of eruptive vents.
+\newblock {Tectonic and magmatic controls on the location of post-subduction
+  monogenetic volcanoes in Baja California, Mexico, revealed through spatial
+  analysis of eruptive vents}.
 \newblock {\em Bulletin of Volcanology}, 75(12):1--14.
+\newblock doi:10.1007/s00445-013-0782-6.
 
 \bibitem[Glaze et~al., 2005]{glaze2005statistical}
 Glaze, L., Anderson, S., Stofan, E., Baloga, S., and Smrekar, S. (2005).
-\newblock Statistical distribution of tumuli on pahoehoe flow surfaces:
-  Analysis of examples in hawaii and iceland and potential applications to lava
-  flows on mars.
+\newblock {Statistical distribution of tumuli on pahoehoe flow surfaces:
+  Analysis of examples in Hawaii and Iceland and potential applications to lava
+  flows on Mars}.
 \newblock {\em Journal of Geophysical Research: Solid Earth (1978--2012)},
   110(B8).
+\newblock doi:10.1029/2004JB003564.
 
 \bibitem[Greeley, 1977]{greeley1977basaltic}
 Greeley, R. (1977).
@@ -169,8 +189,9 @@ Greeley, R. (1977).
 \bibitem[Guest et~al., 1992]{guest1992small}
 Guest, J.~E., Bulmer, M.~H., Aubele, J., Beratan, K., Greeley, R., Head, J.~W.,
   Michaels, G., Weitz, C., and Wiles, C. (1992).
-\newblock Small volcanic edifices and volcanism in the plains of venus.
+\newblock Small volcanic edifices and volcanism in the plains of {Venus}.
 \newblock {\em Journal of Geophysical Research: Planets}, 97(E10):15949--15966.
+\newblock doi:10.1029/92JE01438.
 
 \bibitem[Harburger, 2014]{harburger2014probabilistic}
 Harburger, A.~M. (2014).
@@ -184,12 +205,14 @@ Head, J.~W., Crumpler, L., Aubele, J.~C., Guest, J.~E., and Saunders, R.~S.
 \newblock Venus volcanism: Classification of volcanic features and structures,
   associations, and global distribution from magellan data.
 \newblock {\em Journal of Geophysical Research: Planets}, 97(E8):13153--13197.
+\newblock doi:10.1029/92JE01273.
 
 \bibitem[Hebert and Mont{\'e}si, 2010]{hebert2010generation}
 Hebert, L.~B. and Mont{\'e}si, L.~G. (2010).
 \newblock Generation of permeability barriers during melt extraction at
   mid-ocean ridges.
 \newblock {\em Geochemistry, Geophysics, Geosystems}, 11(12).
+\newblock doi:10.1029/2010GC003270.
 
 \bibitem[Hintz, 2008]{hintz2008physical}
 Hintz, A. (2008).
@@ -203,13 +226,15 @@ Kiyosugi, K., Connor, C., Wetmore, P., Ferwerda, B., Germa, A., Connor, L., and
 \newblock Relationship between dike and volcanic conduit distribution in a
   highly eroded monogenetic volcanic field: {San Rafael, Utah, USA}.
 \newblock {\em Geology}, 40(8):695--698.
+\newblock doi:10.1130/G33074.1.
 
 \bibitem[Kiyosugi et~al., 2010]{kiyosugi2010relationships}
 Kiyosugi, K., Connor, C., Zhao, D., Connor, L., and Tanaka, K. (2010).
 \newblock Relationships between volcano distribution, crustal structure, and
-  p-wave tomography: an example from the abu monogenetic volcano group, sw
-  japan.
-\newblock {\em Bulletin of volcanology}, 72(3):331--340.
+  {P-wave} tomography: an example from the {Abu Monogenetic Volcano Group, SW
+  Japan}.
+\newblock {\em Bulletin of Volcanology}, 72(3):331--340.
+\newblock doi:10.1007/s00445-009-0316-4.
 
 \bibitem[Lister and Kerr, 1991]{lister1991fluid}
 Lister, J. and Kerr, R. (1991).
@@ -217,6 +242,7 @@ Lister, J. and Kerr, R. (1991).
   magma transport in dykes.
 \newblock {\em Journal of Geophysical Research: Solid Earth},
   96(B6):10049--10077.
+\newblock doi:10.1029/91JB00600.
 
 \bibitem[Lutz and Gutmann, 1995]{lutz1995improved}
 Lutz, T.~M. and Gutmann, J.~T. (1995).
@@ -226,51 +252,57 @@ Lutz, T.~M. and Gutmann, J.~T. (1995).
 \newblock {\em Journal of Geophysical Research}, 100(B9):17,659--17,670.
 \newblock {doi:10.1029/95JB01058}.
 
-\bibitem[Marshall et~al., tted]{marshall2015subsurface}
+\bibitem[Marshall et~al., 2015]{marshall2015subsurface}
 Marshall, A., Connor, C., Kruse, S., Malservisi, R., Richardson, J., Courtland,
-  L., Connor, L., Wilson, J., and Karegar, M. (Submitted).
-\newblock Subsurface structure of a maar-diatreme and associated tuff ring from
-  a high-resolution geophysical survey, {Rattlesnake Crater, Arizona}.
-\newblock {\em Journal of Volcanology and Geothermal Research}.
+  L., Connor, L., Wilson, J., and Karegar, M.~A. (2015).
+\newblock {Subsurface structure of a maar--diatreme and associated tuff ring
+  from a high-resolution geophysical survey, Rattlesnake Crater, Arizona}.
+\newblock {\em Journal of Volcanology and Geothermal Research}, 304:253--264.
+\newblock doi:10.1016/j.jvolgeores.2015.09.006.
 
 \bibitem[Miller, 2012]{miller2012shield}
 Miller, D.~M. (2012).
 \newblock Shield fields and shield plains on venus geologic characteristics and
   spatial relationships.
-\newblock Thesis (m.s.), State University of New York at Buffalo.
+\newblock Master's thesis, State University of New York at Buffalo.
 
 \bibitem[Neumann et~al., 2004]{neumann2004crustal}
 Neumann, G., Zuber, M., Wieczorek, M., McGovern, P., Lemoine, F., and Smith, D.
   (2004).
-\newblock Crustal structure of mars from gravity and topography.
+\newblock Crustal structure of {Mars} from gravity and topography.
 \newblock {\em Journal of Geophysical Research: Planets}, 109(E8).
+\newblock doi:10.1029/2004JE002262.
 
 \bibitem[Richardson et~al., 2015]{richardson2015sills}
 Richardson, J., Connor, C., Wetmore, P., Connor, L., and Gallant, E. (2015).
 \newblock Role of sills in the development of volcanic fields: {Insights} from
   {LiDAR} mapping surveys of the {San Rafael Swell, Utah}.
 \newblock {\em Geology}, 43(11):1023--1026.
+\newblock doi:10.1130/G37094.1.
 
 \bibitem[Richardson et~al., 2012]{richardson2012comparison}
 Richardson, J., Miller, D., Bleacher, J., Connor, C., Gregg, T., Connor, L.,
   and Glaze, L. (2012).
 \newblock Comparison of monogenetic volcano clusters on earth, venus, and mars.
-\newblock In {\em AGU Fall Meeting Abstracts}, volume~1, page~04.
+\newblock In {\em AGU Fall Meeting Abstracts}.
 
 \bibitem[Richardson et~al., 2013]{richardson2013volcanic}
 Richardson, J.~A., Bleacher, J.~E., and Glaze, L.~S. (2013).
-\newblock The volcanic history of syria planum, mars.
+\newblock {The volcanic history of Syria Planum, Mars}.
 \newblock {\em Journal of Volcanology and Geothermal Research}, 252:1--13.
+\newblock doi:10.1016/j.jvolgeores.2012.11.007.
 
 \bibitem[Rubin, 1995]{rubin1995propagation}
 Rubin, A. (1995).
 \newblock Propagation of magma-filled cracks.
 \newblock {\em Annual Review of Earth and Planetary Sciences}, 23:287--336.
+\newblock doi:10.1146/annurev.ea.23.050195.001443.
 
 \bibitem[Settle, 1979]{settle1979structure}
 Settle, M. (1979).
 \newblock The structure and emplacement of cinder cone fields.
 \newblock {\em American Journal of Science}, 279(10):1089--1107.
+\newblock doi:10.2475/ajs.279.10.1089.
 
 \bibitem[Silverman, 1986]{silverman1986density}
 Silverman, B.~W. (1986).
@@ -283,17 +315,21 @@ Tamura, Y., Tatsumi, Y., Zhao, D., Kido, Y., and Shukuno, H. (2002).
 \newblock Hot fingers in the mantle wedge: new insights into magma genesis in
   subduction zones.
 \newblock {\em Earth and Planetary Science Letters}, 197(1):105--116.
+\newblock doi:10.1016/S0012-821X(02)00465-X.
 
 \bibitem[Tanaka et~al., 1986]{tanaka1986migration}
 Tanaka, K.~L., Shoemaker, E.~M., Ulrich, G.~E., and Wolfe, E.~W. (1986).
-\newblock Migration of volcanism in the san francisco volcanic field, arizona.
+\newblock {Migration of volcanism in the San Francisco volcanic field,
+  Arizona}.
 \newblock {\em Geological Society of America Bulletin}, 97(2):129--141.
+\newblock doi:10.1130/0016-7606(1986)97<129:MOVITS>2.0.CO;2.
 
 \bibitem[Uslular et~al., 2015]{uslular2015size}
 Uslular, G., Gen{\c{c}}alio{\u{g}}lu-Ku{\c{s}}cu, G., and Arcasoy, A. (2015).
-\newblock Size-distribution of scoria cones within the e{\u{g}}rikuyu
-  monogenetic field (central anatolia, turkey).
+\newblock {Size-distribution of scoria cones within the E{\u{g}}rikuyu
+  Monogenetic Field (Central Anatolia, Turkey)}.
 \newblock {\em Journal of Volcanology and Geothermal Research}.
+\newblock doi:10.1016/j.jvolgeores.2015.05.006.
 
 \bibitem[Wand and Jones, 1993]{wand1993comparison}
 Wand, M. and Jones, M. (1993).
@@ -301,5 +337,6 @@ Wand, M. and Jones, M. (1993).
   estimation.
 \newblock {\em Journal of the American Statistical Association},
   88(422):520--528.
+\newblock doi:10.1080/01621459.1993.10476303.
 
 \end{thebibliography}

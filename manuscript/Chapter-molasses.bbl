@@ -5,6 +5,7 @@ Aspinall, W., Woo, G., Voight, B., and Baxter, P. (2003).
 \newblock Evidence-based volcanology: application to eruption crises.
 \newblock {\em Journal of Volcanology and Geothermal Research},
   128(1):273--285.
+\newblock doi:10.1016/S0377-0273(03)00260-9.
 
 \bibitem[Avolio et~al., 2006]{avolio2006sciara}
 Avolio, M.~V., Crisci, G.~M., Di~Gregorio, S., Rongo, R., Spataro, W., and
@@ -12,18 +13,21 @@ Avolio, M.~V., Crisci, G.~M., Di~Gregorio, S., Rongo, R., Spataro, W., and
 \newblock Sciara $\gamma$2: An improved cellular automata model for lava flows
   and applications to the 2002 etnean crisis.
 \newblock {\em Computers \& Geosciences}, 32(7):876--889.
+\newblock doi:10.1016/j.cageo.2005.10.026.
 
 \bibitem[Barca et~al., 1994]{barca1994cellular}
 Barca, D., Crisci, G., Gregorio, S.~D., and Nicoletta, F. (1994).
 \newblock Cellular automata for simulating lava flows: a method and examples of
   the etnean eruptions.
 \newblock {\em Transport theory and statistical physics}, 23(1-3):195--232.
+\newblock doi:10.1080/00411459408203862.
 
 \bibitem[Bayarri et~al., 2007]{bayarri2007framework}
 Bayarri, M.~J., Berger, J.~O., Paulo, R., Sacks, J., Cafeo, J.~A., Cavendish,
   J., Lin, C.-H., and Tu, J. (2007).
 \newblock A framework for validation of computer models.
 \newblock {\em Technometrics}, 49(2).
+\newblock doi:10.1198/004017007000000092.
 
 \bibitem[Belousov et~al., 2015]{belousov2015overview}
 Belousov, A., Belousova, M., Edwards, B., Volynets, A., and Melnikov, D.
@@ -31,18 +35,21 @@ Belousov, A., Belousova, M., Edwards, B., Volynets, A., and Melnikov, D.
 \newblock Overview of the precursors and dynamics of the 2012--13 basaltic
   fissure eruption of tolbachik volcano, kamchatka, russia.
 \newblock {\em Journal of Volcanology and Geothermal Research}, 299:19--34.
+\newblock doi:10.1016/j.jvolgeores.2015.04.009.
 
-\bibitem[Connor et~al., 2012]{connor2012}
+\bibitem[Connor et~al., 2012]{connor2012probabilistic}
 Connor, L.~J., Connor, C.~B., Meliksetian, K., and Savov, I. (2012).
-\newblock Probabilistic approach to modeling lava flow inundation: a lava flow
-  hazard assessment for a nuclear facility in armenia.
+\newblock {Probabilistic approach to modeling lava flow inundation: a lava flow
+  hazard assessment for a nuclear facility in Armenia}.
 \newblock {\em Journal of Applied Volcanology}, 1(1):1--19.
+\newblock doi:10.1186/2191-5040-1-3.
 
 \bibitem[Crisci et~al., 2008]{crisci2008lava}
 Crisci, G., Iovine, G., Di~Gregorio, S., and Lupiano, V. (2008).
-\newblock Lava-flow hazard on the se flank of mt. etna (southern italy).
+\newblock {Lava-flow hazard on the SE flank of Mt. Etna (Southern Italy)}.
 \newblock {\em Journal of Volcanology and Geothermal Research},
   177(4):778--796.
+\newblock doi:10.1016/j.jvolgeores.2008.01.041.
 
 \bibitem[Crisci et~al., 2004]{crisci2004simulation}
 Crisci, G.~M., Rongo, R., Di~Gregorio, S., and Spataro, W. (2004).
@@ -50,6 +57,7 @@ Crisci, G.~M., Rongo, R., Di~Gregorio, S., and Spataro, W. (2004).
   etna.
 \newblock {\em Journal of Volcanology and Geothermal Research},
   132(2):253--267.
+\newblock doi:10.1016/S0377-0273(03)00349-4.
 
 \bibitem[Damiani et~al., 2006]{damiani2006lava}
 Damiani, M.~L., Groppelli, G., Norini, G., Bertino, E., Gigliuto, A., and
@@ -57,34 +65,40 @@ Damiani, M.~L., Groppelli, G., Norini, G., Bertino, E., Gigliuto, A., and
 \newblock A lava flow simulation model for the development of volcanic hazard
   maps for mount etna (italy).
 \newblock {\em Computers \& geosciences}, 32(4):512--526.
+\newblock doi:10.1016/j.cageo.2005.08.011.
 
 \bibitem[Del~Negro et~al., 2008]{del2008simulations}
 Del~Negro, C., Fortuna, L., Herault, A., and Vicari, A. (2008).
-\newblock Simulations of the 2004 lava flow at etna volcano using the magflow
-  cellular automata model.
+\newblock {Simulations of the 2004 lava flow at Etna volcano using the magflow
+  cellular automata model}.
 \newblock {\em Bulletin of Volcanology}, 70(7):805--812.
+\newblock doi:10.1007/s00445-007-0168-8.
 
 \bibitem[Glaze and Baloga, 2003]{Glaze2003}
 Glaze, L. and Baloga, S. (2003).
 \newblock Dem flow path prediction algorithm for geologic mass movements.
 \newblock {\em Environmental \& Engineering Geoscience}, 9(3):225--240.
+\newblock doi:10.2113/9.3.225.
 
 \bibitem[Griffiths, 2000]{griffiths2000dynamics}
 Griffiths, R. (2000).
 \newblock The dynamics of lava flows.
 \newblock {\em Annual Review of Fluid Mechanics}, 32(1):477--518.
+\newblock doi:10.1146/annurev.fluid.32.1.477.
 
 \bibitem[Harris and Rowland, 2001]{harris2001flowgo}
 Harris, A.~J. and Rowland, S. (2001).
 \newblock Flowgo: a kinematic thermo-rheological model for lava flowing in a
   channel.
 \newblock {\em Bulletin of Volcanology}, 63(1):20--44.
+\newblock doi:10.1007/s004450000120.
 
 \bibitem[Hidaka et~al., 2005]{hidaka2005vtfs}
 Hidaka, M., Goto, A., Umino, S., and Fujita, E. (2005).
 \newblock Vtfs project: Development of the lava flow simulation code lavasim
   with a model for three-dimensional convection, spreading, and solidification.
 \newblock {\em Geochemistry, Geophysics, Geosystems}, 6(7).
+\newblock doi:10.1029/2004GC000869.
 
 \bibitem[Ishihara et~al., 1990]{ishihara1990numerical}
 Ishihara, K., Iguchi, M., and Kamo, K. (1990).
@@ -98,10 +112,11 @@ Jeffreys, H. (1998).
 
 \bibitem[Kauahikaua et~al., 1995]{kauahikaua1995applications}
 Kauahikaua, J., Margriter, S., Lockwood, J., and Trusdell, F. (1995).
-\newblock Applications of gis to the estimation of lava flow hazards on mauna
-  loa volcano, hawai'i.
+\newblock {Applications of GIS to the estimation of lava flow hazards on Mauna
+  Loa Volcano, Hawai'i}.
 \newblock {\em Mauna Loa Revealed: structure, composition, history, and
   hazards}, pages 315--325.
+\newblock doi:10.1029/GM092p0315.
 
 \bibitem[Kilburn, 2000]{kilburn2000lava}
 Kilburn, C. (2000).
@@ -111,20 +126,22 @@ Kilburn, C. (2000).
 
 \bibitem[Kubanek et~al., 2015]{kubanek2015lava}
 Kubanek, J., Richardson, J.~A., Charbonnier, S.~J., and Connor, L.~J. (2015).
-\newblock Lava flow mapping and volume calculations for the 2012--2013
-  tolbachik, kamchatka, fissure eruption using bistatic tandem-x insar.
+\newblock {Lava flow mapping and volume calculations for the 2012--2013
+  Tolbachik, Kamchatka, fissure eruption using bistatic TanDEM-X InSAR}.
 \newblock {\em Bulletin of Volcanology}, 77(12).
+\newblock doi:10.1007/s00445-015-0989-9.
 
 \bibitem[Marzocchi and Woo, 2007]{marzocchi2007probabilistic}
 Marzocchi, W. and Woo, G. (2007).
 \newblock Probabilistic eruption forecasting and the call for an evacuation.
-\newblock {\em Geophysical Research Letters}, 34(22):n/a--n/a.
-\newblock L22310.
+\newblock {\em Geophysical Research Letters}, 34(22):L22310.
+\newblock doi:10.1029/2007GL031922.
 
 \bibitem[Miyamoto and Sasaki, 1997]{miyamoto1997simulating}
 Miyamoto, H. and Sasaki, S. (1997).
 \newblock Simulating lava flows by an improved cellular automata method.
 \newblock {\em Computers \& Geosciences}, 23(3):283--292.
+\newblock doi:10.1016/S0098-3004(96)00089-1.
 
 \bibitem[Peterson and Tilling, 2000]{peterson2000lava}
 Peterson, D. and Tilling, R. (2000).
@@ -134,17 +151,20 @@ Peterson, D. and Tilling, R. (2000).
 
 \bibitem[Rodr\'{i}guez et~al., 2006]{rodriguez2006global}
 Rodr\'{i}guez, E., Morris, C.~S., and Belz, J.~E. (2006).
-\newblock A global assessment of the srtm performance.
+\newblock A global assessment of the {SRTM} performance.
 \newblock {\em Photogrammetric Engineering \& Remote Sensing}, 72(3):249--260.
+\newblock doi:10.14358/PERS.72.3.249.
 
 \bibitem[Wolfram, 1984]{wolfram1984cellular}
 Wolfram, S. (1984).
 \newblock Cellular automata as models of complexity.
 \newblock {\em Nature}, 311(5985):419--424.
+\newblock doi:10.1038/311419a0.
 
 \bibitem[Woo, 2008]{woo2008probabilistic}
 Woo, G. (2008).
 \newblock Probabilistic criteria for volcano evacuation decisions.
 \newblock {\em Natural Hazards}, 45(1):87--97.
+\newblock doi:10.1007/s11069-007-9171-9.
 
 \end{thebibliography}

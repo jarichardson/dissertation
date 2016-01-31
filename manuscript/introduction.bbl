@@ -1,23 +1,25 @@
 \begin{thebibliography}{}
 
-\bibitem[Carr et~al., 1977]{Carr1977}
+\bibitem[Carr et~al., 1977]{carr1977some}
 Carr, M.~H., Greeley, R., Blasius, K.~R., Guest, J.~E., and Murray, J.~B.
   (1977).
 \newblock {Some Martian volcanic features as viewed from the Viking orbiters}.
 \newblock {\em Journal of Geophysical Research}, 82:3985--4015.
+\newblock doi:10.1029/JS082i028p03985.
 
 \bibitem[Connor et~al., 2012]{connor2012probabilistic}
 Connor, L.~J., Connor, C.~B., Meliksetian, K., and Savov, I. (2012).
-\newblock Probabilistic approach to modeling lava flow inundation: a lava flow
-  hazard assessment for a nuclear facility in armenia.
+\newblock {Probabilistic approach to modeling lava flow inundation: a lava flow
+  hazard assessment for a nuclear facility in Armenia}.
 \newblock {\em Journal of Applied Volcanology}, 1(1):1--19.
+\newblock doi:10.1186/2191-5040-1-3.
 
 \bibitem[Elson et~al., 2007]{elson2007living}
 Elson, M.~D., Ort, M.~H., Anderson, K.~C., and Heidke, J.~M. (2007).
-\newblock Living with the volcano: the 11th century ad eruption of sunset
-  crater.
 \newblock {\em Living Under the Shadow: Cultural Impacts of Volcanic
-  Eruptions}, 53:107.
+  Eruptions}, chapter Living with the volcano: the 11th century AD eruption of
+  Sunset Crater, pages 107--133.
+\newblock Left Coast Press.
 
 \bibitem[Greeley, 1977]{greeley1977basaltic}
 Greeley, R. (1977).
@@ -32,54 +34,59 @@ Head, J.~W., Crumpler, L., Aubele, J.~C., Guest, J.~E., and Saunders, R.~S.
 \newblock Venus volcanism: Classification of volcanic features and structures,
   associations, and global distribution from magellan data.
 \newblock {\em Journal of Geophysical Research: Planets}, 97(E8):13153--13197.
+\newblock doi:10.1029/92JE01273.
 
 \bibitem[Hill et~al., 1998]{hill1998cerro}
 Hill, B.~E., Connor, C.~B., Jarzemba, M.~S., La~Femina, P.~C., Navarro, M., and
   Strauch, W. (1998).
-\newblock 1995 eruptions of cerro negro volcano, nicaragua, and risk assessment
-  for future eruptions.
+\newblock {1995 eruptions of Cerro Negro volcano, Nicaragua, and risk
+  assessment for future eruptions}.
 \newblock {\em Geological Society of America Bulletin}, 110(10):1231--1241.
+\newblock doi:10.1130/0016-7606(1998)110<1231:EOCNVN>2.3.CO;2.
 
 \bibitem[Kubanek et~al., 2015]{kubanek2015lava}
 Kubanek, J., Richardson, J.~A., Charbonnier, S.~J., and Connor, L.~J. (2015).
-\newblock Lava flow mapping and volume calculations for the 2012--2013
-  tolbachik, kamchatka, fissure eruption using bistatic tandem-x insar.
+\newblock {Lava flow mapping and volume calculations for the 2012--2013
+  Tolbachik, Kamchatka, fissure eruption using bistatic TanDEM-X InSAR}.
 \newblock {\em Bulletin of Volcanology}, 77(12).
+\newblock doi:10.1007/s00445-015-0989-9.
 
 \bibitem[Miller, 2012]{miller2012shield}
 Miller, D.~M. (2012).
 \newblock Shield fields and shield plains on venus geologic characteristics and
   spatial relationships.
-\newblock Thesis (m.s.), State University of New York at Buffalo.
+\newblock Master's thesis, State University of New York at Buffalo.
 
 \bibitem[Richardson et~al., 2015a]{richardson2015sills}
 Richardson, J., Connor, C., Wetmore, P., Connor, L., and Gallant, E. (2015a).
 \newblock Role of sills in the development of volcanic fields: {Insights} from
   {LiDAR} mapping surveys of the {San Rafael Swell, Utah}.
 \newblock {\em Geology}, 43(11):1023--1026.
+\newblock doi:10.1130/G37094.1.
 
 \bibitem[Richardson et~al., 2012]{richardson2012comparison}
 Richardson, J., Miller, D., Bleacher, J., Connor, C., Gregg, T., Connor, L.,
   and Glaze, L. (2012).
 \newblock Comparison of monogenetic volcano clusters on earth, venus, and mars.
-\newblock In {\em AGU Fall Meeting Abstracts}, volume~1, page~04.
+\newblock In {\em AGU Fall Meeting Abstracts}.
 
 \bibitem[Richardson et~al., 2015b]{richardson2015recurrence}
 Richardson, J., Wilson, J., Connor, C., and Bleacher, J. (2015b).
 \newblock Recurrence rate estimation of distributed volcanism in arsia caldera,
   mars.
-\newblock In {\em Lunar and Planetary Science Conference}, volume~46, page
-  2801.
+\newblock In {\em 46th Lunar and Planetary Science Conference}, page 2801.
 
 \bibitem[Richardson et~al., 2013]{richardson2013volcanic}
 Richardson, J.~A., Bleacher, J.~E., and Glaze, L.~S. (2013).
-\newblock The volcanic history of syria planum, mars.
+\newblock {The volcanic history of Syria Planum, Mars}.
 \newblock {\em Journal of Volcanology and Geothermal Research}, 252:1--13.
+\newblock doi:10.1016/j.jvolgeores.2012.11.007.
 
 \bibitem[Settle, 1979]{settle1979structure}
 Settle, M. (1979).
 \newblock The structure and emplacement of cinder cone fields.
 \newblock {\em American Journal of Science}, 279(10):1089--1107.
+\newblock doi:10.2475/ajs.279.10.1089.
 
 \bibitem[Valentine and Connor, 2015]{valentine2000basaltic}
 Valentine, G.~A. and Connor, C.~B. (2015).
@@ -92,5 +99,6 @@ Valentine, G.~A. and Connor, C.~B. (2015).
 Wolfram, S. (1984).
 \newblock Cellular automata as models of complexity.
 \newblock {\em Nature}, 311(5985):419--424.
+\newblock doi:10.1038/311419a0.
 
 \end{thebibliography}

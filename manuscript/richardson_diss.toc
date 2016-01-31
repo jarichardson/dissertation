@@ -1,5 +1,5 @@
 \contentsline {chapter}{List of Figures}{v}{Doc-Start}
-\contentsline {chapter}{Abstract}{x}{Doc-Start}
+\contentsline {chapter}{Abstract}{ix}{Doc-Start}
 \gdef \the@ipfilectr {@-1}
 \contentsline {chapter}{\numberline {1}Introduction}{1}{chapter.1}
 \contentsline {subsection}{\numberline {1.0.1}Role of sills in the development of volcanic fields}{2}{subsection.1.0.1}
@@ -67,88 +67,88 @@
 \contentsline {section}{\numberline {3.9}References}{80}{section.3.9}
 \gdef \the@ipfilectr {}
 \gdef \the@ipfilectr {@-4}
-\contentsline {chapter}{\numberline {4}The Volcanic History of Syria Planum, Mars}{84}{chapter.4}
-\contentsline {section}{\numberline {4.1}Abstract}{84}{section.4.1}
-\contentsline {section}{\numberline {4.2}Introduction}{85}{section.4.2}
-\contentsline {subsection}{\numberline {4.2.1}Geologic Description}{86}{subsection.4.2.1}
-\contentsline {section}{\numberline {4.3}Methods}{89}{section.4.3}
-\contentsline {subsection}{\numberline {4.3.1}Study Area}{89}{subsection.4.3.1}
-\contentsline {subsection}{\numberline {4.3.2}Catalog of Volcanic Vents}{90}{subsection.4.3.2}
-\contentsline {subsection}{\numberline {4.3.3}Crater Counting}{92}{subsection.4.3.3}
-\contentsline {subsection}{\numberline {4.3.4}Nearest Neighbor Analysis}{93}{subsection.4.3.4}
-\contentsline {subsection}{\numberline {4.3.5}Two--point azimuthal analysis}{95}{subsection.4.3.5}
-\contentsline {section}{\numberline {4.4}Results}{96}{section.4.4}
-\contentsline {subsection}{\numberline {4.4.1}Mapping}{96}{subsection.4.4.1}
-\contentsline {subsection}{\numberline {4.4.2}Age--Dating}{98}{subsection.4.4.2}
-\contentsline {subsection}{\numberline {4.4.3}Nearest Neighbor Analysis}{100}{subsection.4.4.3}
-\contentsline {subsection}{\numberline {4.4.4}Two--point azimuthal analysis}{102}{subsection.4.4.4}
-\contentsline {section}{\numberline {4.5}Discussion}{104}{section.4.5}
-\contentsline {section}{\numberline {4.6}Conclusion}{111}{section.4.6}
-\contentsline {section}{\numberline {4.7}Acknowledgments}{113}{section.4.7}
-\contentsline {section}{\numberline {4.8}References}{114}{section.4.8}
+\contentsline {chapter}{\numberline {4}The Volcanic History of Syria Planum, Mars}{85}{chapter.4}
+\contentsline {section}{\numberline {4.1}Abstract}{85}{section.4.1}
+\contentsline {section}{\numberline {4.2}Introduction}{86}{section.4.2}
+\contentsline {subsection}{\numberline {4.2.1}Geologic Description}{87}{subsection.4.2.1}
+\contentsline {section}{\numberline {4.3}Methods}{90}{section.4.3}
+\contentsline {subsection}{\numberline {4.3.1}Study Area}{90}{subsection.4.3.1}
+\contentsline {subsection}{\numberline {4.3.2}Catalog of Volcanic Vents}{91}{subsection.4.3.2}
+\contentsline {subsection}{\numberline {4.3.3}Crater Counting}{93}{subsection.4.3.3}
+\contentsline {subsection}{\numberline {4.3.4}Nearest Neighbor Analysis}{94}{subsection.4.3.4}
+\contentsline {subsection}{\numberline {4.3.5}Two--point azimuthal analysis}{96}{subsection.4.3.5}
+\contentsline {section}{\numberline {4.4}Results}{97}{section.4.4}
+\contentsline {subsection}{\numberline {4.4.1}Mapping}{97}{subsection.4.4.1}
+\contentsline {subsection}{\numberline {4.4.2}Age--Dating}{99}{subsection.4.4.2}
+\contentsline {subsection}{\numberline {4.4.3}Nearest Neighbor Analysis}{101}{subsection.4.4.3}
+\contentsline {subsection}{\numberline {4.4.4}Two--point azimuthal analysis}{103}{subsection.4.4.4}
+\contentsline {section}{\numberline {4.5}Discussion}{105}{section.4.5}
+\contentsline {section}{\numberline {4.6}Conclusion}{112}{section.4.6}
+\contentsline {section}{\numberline {4.7}Acknowledgments}{114}{section.4.7}
+\contentsline {section}{\numberline {4.8}References}{115}{section.4.8}
 \gdef \the@ipfilectr {}
 \gdef \the@ipfilectr {@-5}
-\contentsline {chapter}{\numberline {5}Recurrence rate and magma effusion rate for the latest volcanism on Arsia Mons, Mars}{123}{chapter.5}
-\contentsline {section}{\numberline {5.1}Abstract}{123}{section.5.1}
-\contentsline {section}{\numberline {5.2}Introduction}{124}{section.5.2}
-\contentsline {section}{\numberline {5.3}Geologic Background of Arsia Mons}{125}{section.5.3}
-\contentsline {subsection}{\numberline {5.3.1}Other recent volcanism in the Tharsis Region}{128}{subsection.5.3.1}
-\contentsline {section}{\numberline {5.4}Methods}{128}{section.5.4}
-\contentsline {subsection}{\numberline {5.4.1}Unit and stratigraphic mapping}{128}{subsection.5.4.1}
-\contentsline {subsection}{\numberline {5.4.2}Crater retention age modeling}{130}{subsection.5.4.2}
-\contentsline {subsection}{\numberline {5.4.3}Volume estimation}{131}{subsection.5.4.3}
-\contentsline {subsection}{\numberline {5.4.4}Volcanic Event Recurrence Rate Model (VERRM)}{131}{subsection.5.4.4}
-\contentsline {paragraph}{\numberline {5.4.4.0.1}Recurrence rate calculation}{133}{paragraph.5.4.4.0.1}
-\contentsline {paragraph}{\numberline {5.4.4.0.2}Volume flux calculation}{134}{paragraph.5.4.4.0.2}
-\contentsline {section}{\numberline {5.5}Results}{134}{section.5.5}
-\contentsline {section}{\numberline {5.6}Discussion}{139}{section.5.6}
-\contentsline {subsection}{\numberline {5.6.1}Comparisons to other studies}{141}{subsection.5.6.1}
-\contentsline {subsection}{\numberline {5.6.2}Effects on tropical mountain glaciers on Arsia Mons}{143}{subsection.5.6.2}
-\contentsline {subsection}{\numberline {5.6.3}Transition of volcanic style and waning of Arsia volcanism}{144}{subsection.5.6.3}
-\contentsline {section}{\numberline {5.7}Conclusions}{144}{section.5.7}
-\contentsline {section}{\numberline {5.8}References}{145}{section.5.8}
-\contentsline {section}{\numberline {5.9}Appendix: cumulative crater charts}{150}{section.5.9}
+\contentsline {chapter}{\numberline {5}Recurrence rate and magma effusion rate for the latest volcanism on Arsia Mons, Mars}{124}{chapter.5}
+\contentsline {section}{\numberline {5.1}Abstract}{124}{section.5.1}
+\contentsline {section}{\numberline {5.2}Introduction}{125}{section.5.2}
+\contentsline {section}{\numberline {5.3}Geologic Background of Arsia Mons}{126}{section.5.3}
+\contentsline {subsection}{\numberline {5.3.1}Other recent volcanism in the Tharsis Region}{129}{subsection.5.3.1}
+\contentsline {section}{\numberline {5.4}Methods}{129}{section.5.4}
+\contentsline {subsection}{\numberline {5.4.1}Unit and stratigraphic mapping}{129}{subsection.5.4.1}
+\contentsline {subsection}{\numberline {5.4.2}Crater retention age modeling}{131}{subsection.5.4.2}
+\contentsline {subsection}{\numberline {5.4.3}Volume estimation}{132}{subsection.5.4.3}
+\contentsline {subsection}{\numberline {5.4.4}Volcanic Event Recurrence Rate Model (VERRM)}{132}{subsection.5.4.4}
+\contentsline {paragraph}{\numberline {5.4.4.0.1}Recurrence rate calculation}{134}{paragraph.5.4.4.0.1}
+\contentsline {paragraph}{\numberline {5.4.4.0.2}Volume flux calculation}{135}{paragraph.5.4.4.0.2}
+\contentsline {section}{\numberline {5.5}Results}{135}{section.5.5}
+\contentsline {section}{\numberline {5.6}Discussion}{140}{section.5.6}
+\contentsline {subsection}{\numberline {5.6.1}Comparisons to other studies}{142}{subsection.5.6.1}
+\contentsline {subsection}{\numberline {5.6.2}Effects on tropical mountain glaciers on Arsia Mons}{144}{subsection.5.6.2}
+\contentsline {subsection}{\numberline {5.6.3}Transition of volcanic style and waning of Arsia volcanism}{145}{subsection.5.6.3}
+\contentsline {section}{\numberline {5.7}Conclusions}{145}{section.5.7}
+\contentsline {section}{\numberline {5.8}References}{146}{section.5.8}
+\contentsline {section}{\numberline {5.9}Appendix: cumulative crater charts}{151}{section.5.9}
 \gdef \the@ipfilectr {}
 \gdef \the@ipfilectr {@-6}
-\contentsline {chapter}{\numberline {6}Modeling the spatial density of vents in volcano clusters on Earth, Mars, and Venus}{153}{chapter.6}
-\contentsline {section}{\numberline {6.1}Abstract}{153}{section.6.1}
-\contentsline {section}{\numberline {6.2}Introduction}{153}{section.6.2}
-\contentsline {subsection}{\numberline {6.2.1}Estimating vent intensity}{155}{subsection.6.2.1}
-\contentsline {subsection}{\numberline {6.2.2}Kernel Density Estimation}{156}{subsection.6.2.2}
-\contentsline {section}{\numberline {6.3}Methods}{159}{section.6.3}
-\contentsline {subsection}{\numberline {6.3.1}Data collection}{159}{subsection.6.3.1}
-\contentsline {subsubsection}{\numberline {6.3.1.1}Earth clusters}{160}{subsubsection.6.3.1.1}
-\contentsline {paragraph}{\numberline {6.3.1.1.1}Subduction-related clusters}{160}{paragraph.6.3.1.1.1}
-\contentsline {paragraph}{\numberline {6.3.1.1.2}Colorado Plateau}{161}{paragraph.6.3.1.1.2}
-\contentsline {paragraph}{\numberline {6.3.1.1.3}Other tectonic settings}{161}{paragraph.6.3.1.1.3}
-\contentsline {subsubsection}{\numberline {6.3.1.2}Mars clusters}{161}{subsubsection.6.3.1.2}
-\contentsline {paragraph}{\numberline {6.3.1.2.1}Southern Pavonis Mons}{162}{paragraph.6.3.1.2.1}
-\contentsline {paragraph}{\numberline {6.3.1.2.2}Arsia Mons Caldera}{163}{paragraph.6.3.1.2.2}
-\contentsline {paragraph}{\numberline {6.3.1.2.3}Syria Planum}{163}{paragraph.6.3.1.2.3}
-\contentsline {subsubsection}{\numberline {6.3.1.3}Venus clusters}{163}{subsubsection.6.3.1.3}
-\contentsline {subsection}{\numberline {6.3.2}Estimating vent density with the KDtools Python Library}{164}{subsection.6.3.2}
-\contentsline {section}{\numberline {6.4}Results}{167}{section.6.4}
-\contentsline {subsection}{\numberline {6.4.1}Volume Flux Density}{169}{subsection.6.4.1}
-\contentsline {section}{\numberline {6.5}Discussion}{171}{section.6.5}
-\contentsline {subsection}{\numberline {6.5.1}Planet-level differences in distributed volcanism}{171}{subsection.6.5.1}
-\contentsline {subsection}{\numberline {6.5.2}Geologic implications of the kernel bandwidth}{173}{subsection.6.5.2}
-\contentsline {subsubsection}{\numberline {6.5.2.1}Elongated Source Region}{175}{subsubsection.6.5.2.1}
-\contentsline {subsubsection}{\numberline {6.5.2.2}Magma source migration or multiple overprinting sources}{175}{subsubsection.6.5.2.2}
-\contentsline {subsubsection}{\numberline {6.5.2.3}Anisotropic crustal conductivity}{179}{subsubsection.6.5.2.3}
-\contentsline {section}{\numberline {6.6}Conclusions}{181}{section.6.6}
-\contentsline {section}{\numberline {6.7}References}{182}{section.6.7}
-\contentsline {section}{\numberline {6.8}Appendix: KDtools}{188}{section.6.8}
-\contentsline {subsection}{\numberline {6.8.1}contourBySigma}{188}{subsection.6.8.1}
-\contentsline {subsection}{\numberline {6.8.2}densityToRaster}{190}{subsection.6.8.2}
-\contentsline {subsection}{\numberline {6.8.3}ellipseGen}{195}{subsection.6.8.3}
-\contentsline {subsection}{\numberline {6.8.4}KD}{198}{subsection.6.8.4}
-\contentsline {subsection}{\numberline {6.8.5}main}{200}{subsection.6.8.5}
-\contentsline {subsection}{\numberline {6.8.6}rangeBuffer}{204}{subsection.6.8.6}
-\contentsline {subsection}{\numberline {6.8.7}reproject}{205}{subsection.6.8.7}
-\contentsline {subsection}{\numberline {6.8.8}samse\_bandwidth}{207}{subsection.6.8.8}
-\contentsline {section}{\numberline {6.9}Appendix: Other field density maps}{208}{section.6.9}
+\contentsline {chapter}{\numberline {6}Modeling the spatial density of vents in volcano clusters on Earth, Mars, and Venus}{155}{chapter.6}
+\contentsline {section}{\numberline {6.1}Abstract}{155}{section.6.1}
+\contentsline {section}{\numberline {6.2}Introduction}{155}{section.6.2}
+\contentsline {subsection}{\numberline {6.2.1}Estimating vent intensity}{157}{subsection.6.2.1}
+\contentsline {subsection}{\numberline {6.2.2}Kernel Density Estimation}{158}{subsection.6.2.2}
+\contentsline {section}{\numberline {6.3}Methods}{161}{section.6.3}
+\contentsline {subsection}{\numberline {6.3.1}Data collection}{161}{subsection.6.3.1}
+\contentsline {subsubsection}{\numberline {6.3.1.1}Earth clusters}{162}{subsubsection.6.3.1.1}
+\contentsline {paragraph}{\numberline {6.3.1.1.1}Subduction-related clusters}{162}{paragraph.6.3.1.1.1}
+\contentsline {paragraph}{\numberline {6.3.1.1.2}Colorado Plateau}{163}{paragraph.6.3.1.1.2}
+\contentsline {paragraph}{\numberline {6.3.1.1.3}Other tectonic settings}{163}{paragraph.6.3.1.1.3}
+\contentsline {subsubsection}{\numberline {6.3.1.2}Mars clusters}{163}{subsubsection.6.3.1.2}
+\contentsline {paragraph}{\numberline {6.3.1.2.1}Southern Pavonis Mons}{164}{paragraph.6.3.1.2.1}
+\contentsline {paragraph}{\numberline {6.3.1.2.2}Arsia Mons Caldera}{165}{paragraph.6.3.1.2.2}
+\contentsline {paragraph}{\numberline {6.3.1.2.3}Syria Planum}{165}{paragraph.6.3.1.2.3}
+\contentsline {subsubsection}{\numberline {6.3.1.3}Venus clusters}{165}{subsubsection.6.3.1.3}
+\contentsline {subsection}{\numberline {6.3.2}Estimating vent density with the KDtools Python Library}{166}{subsection.6.3.2}
+\contentsline {section}{\numberline {6.4}Results}{169}{section.6.4}
+\contentsline {subsection}{\numberline {6.4.1}Volume Flux Density}{171}{subsection.6.4.1}
+\contentsline {section}{\numberline {6.5}Discussion}{173}{section.6.5}
+\contentsline {subsection}{\numberline {6.5.1}Planet-level differences in distributed volcanism}{173}{subsection.6.5.1}
+\contentsline {subsection}{\numberline {6.5.2}Geologic implications of the kernel bandwidth}{175}{subsection.6.5.2}
+\contentsline {subsubsection}{\numberline {6.5.2.1}Elongated Source Region}{177}{subsubsection.6.5.2.1}
+\contentsline {subsubsection}{\numberline {6.5.2.2}Magma source migration or multiple overprinting sources}{177}{subsubsection.6.5.2.2}
+\contentsline {subsubsection}{\numberline {6.5.2.3}Anisotropic crustal conductivity}{181}{subsubsection.6.5.2.3}
+\contentsline {section}{\numberline {6.6}Conclusions}{183}{section.6.6}
+\contentsline {section}{\numberline {6.7}References}{184}{section.6.7}
+\contentsline {section}{\numberline {6.8}Appendix: KDtools}{190}{section.6.8}
+\contentsline {subsection}{\numberline {6.8.1}contourBySigma}{191}{subsection.6.8.1}
+\contentsline {subsection}{\numberline {6.8.2}densityToRaster}{192}{subsection.6.8.2}
+\contentsline {subsection}{\numberline {6.8.3}ellipseGen}{197}{subsection.6.8.3}
+\contentsline {subsection}{\numberline {6.8.4}KD}{200}{subsection.6.8.4}
+\contentsline {subsection}{\numberline {6.8.5}main}{202}{subsection.6.8.5}
+\contentsline {subsection}{\numberline {6.8.6}rangeBuffer}{206}{subsection.6.8.6}
+\contentsline {subsection}{\numberline {6.8.7}reproject}{207}{subsection.6.8.7}
+\contentsline {subsection}{\numberline {6.8.8}samse\_bandwidth}{209}{subsection.6.8.8}
+\contentsline {section}{\numberline {6.9}Appendix: Other field density maps}{211}{section.6.9}
 \gdef \the@ipfilectr {}
 \gdef \the@ipfilectr {@-7}
-\contentsline {chapter}{\numberline {7}Conclusion}{213}{chapter.7}
-\contentsline {section}{\numberline {7.1}References}{215}{section.7.1}
+\contentsline {chapter}{\numberline {7}Conclusion}{214}{chapter.7}
+\contentsline {section}{\numberline {7.1}References}{216}{section.7.1}
 \gdef \the@ipfilectr {}

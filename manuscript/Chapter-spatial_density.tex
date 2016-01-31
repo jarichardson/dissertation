@@ -9,7 +9,7 @@ Kernel Density Estimation is the process of modeling point density as a 2D densi
 
 Commonly in nature, physical processes create a partially random set of point features, such as sinkholes, volcanoes, or kettle lakes. The spatial distribution of these point features is governed by a physical process, which can often be modeled to create a statistical model of where points are more likely to be created. For instance, sinkholes are more likely to occur in locations where soluble carbonate rock is at or near the water table, so a map showing the probability of sinkhole development might reflect the distribution of shallow carbonate rocks. In volcanically active regions, volcanoes are formed from a magma source. If the location, depth, and productivity of the magma source is well known, models can be made to map the potential locations of volcanism on the Earth's surface, where a higher likelihood of eruption would be over the most productive locations of the magma source region. 
 
-The distribution and characteristics of magma sources in the ground, however, are far less constrained than the distribution of volcanoes on the Earth's surface. Instead of creating a probabilistic spatial model of volcanic events using knowledge of the magma source, the existing distribution of volcanoes is used (Connor, canon-tapia, germa). Using only the point locations of volcanoes, one might conclude that new volcanoes are likely to form in areas where more volcanoes already exist, where the number of volcanoes per unit area is higher. Using point locations to create a statistical model of volcano production is an attempt to model one aspect of a magma generation and ascent, when knowledge of the physical processes involved are limited.
+The distribution and characteristics of magma sources in the ground, however, are far less constrained than the distribution of volcanoes on the Earth's surface. Instead of creating a probabilistic spatial model of volcanic events using knowledge of the magma source, the existing distribution of volcanoes is used \citep{connor2015probabilistic,germa2013tectonic}. Using only the point locations of volcanoes, one might conclude that new volcanoes are likely to form in areas where more volcanoes already exist, where the number of volcanoes per unit area is higher. Using point locations to create a statistical model of volcano production is an attempt to model one aspect of a magma generation and ascent, when knowledge of the physical processes involved are limited.
 
 In this Chapter, vent density is modeled as a 2D probability density function (PDF) that integrates to $\lesssim$1 over the volcanic field. This means that, for active volcano clusters, any new vent has a $\sim$100\% chance of being created in the same general area as the current field. The 2D PDF integrates to 1 over the x and y (east-west and north-south) domain. The ``vent intensity function'' is defined as the probability density function of a volcano cluster multiplied by the number of vents cataloged in the cluster. This intensity function integrates to the number of cataloged vents, so the ``vent intensity'' of an area has the units vents/km$^2$.
 
@@ -82,7 +82,7 @@ The locations of each volcanic vent are defined as 2D points on their planet's s
 \begin{figure}
 \centering
 \includegraphics[width=0.5\linewidth]{\FigPath/locators/earth_locator.eps}
-\caption{Locations of selected volcano clusters on Earth with their kernel bandwidth ellipses drawn over them. Ellipses are enlarged to show regional variation.}
+\caption[Locations of selected volcano clusters on Earth.]{Locations of selected volcano clusters on Earth with their kernel bandwidth ellipses drawn over them. Ellipses are enlarged to show regional variation.}
 \label{fig_earthlocator}
 \end{figure}
 
@@ -101,12 +101,12 @@ Volcanic vents in the SFVF, located in and around Flagstaff, AZ, have been catal
 \begin{figure}
 \centering
 \includegraphics[width=0.5\linewidth]{\FigPath/locators/mars_locator_72dpi.png}
-\caption{Locations of selected Martian volcano clusters in the Tharsis Volcanic Province. Kernel bandwidth ellipses are drawn at the 1$\sigma$ contour over them. Ellipses are enlarged.}
+\caption[Locations of selected Martian volcano clusters in the Tharsis Volcanic Province.]{Locations of selected Martian volcano clusters in the Tharsis Volcanic Province. Kernel bandwidth ellipses are drawn at the 1$\sigma$ contour over them. Ellipses are enlarged.}
 \label{fig_marslocator}
 \end{figure}
 
 \subsubsection{Mars clusters}
-Three distributed-style volcanic fields within the larger Tharsis Province are included in this study: Syria Planum, Southern Pavonis Mons, and Arsia Mons Caldera. The Tharsis Volcanic Province has  been identified as a long lived center for volcanism since early space missions to Mars \citep{Carr1977} and makes up about one-quarter of the total global surface. Tharsis is home to many of the largest central-vent style volcanoes in the Solar System, but also has over 1,000 small volcanic vents that are distributed in clusters around Tharsis.
+Three distributed-style volcanic fields within the larger Tharsis Province are included in this study: Syria Planum, Southern Pavonis Mons, and Arsia Mons Caldera. The Tharsis Volcanic Province has  been identified as a long lived center for volcanism since early space missions to Mars \citep{carr1977some} and makes up about one-quarter of the total global surface. Tharsis is home to many of the largest central-vent style volcanoes in the Solar System, but also has over 1,000 small volcanic vents that are distributed in clusters around Tharsis.
 
 Three clusters of vents have been identified in the southern Tharsis region that are separated from other vents in the database and are treated as isolated populations because of this (Figure \ref{fig_marslocator}). Each field, Syria, Pavonis, and Arsia, were potentially formed from one magma generation event, though they might have also been formed from multiple events that created overlapping volcano clusters.
 
@@ -123,7 +123,7 @@ The Syria Planum region is a broad plateau with 263 low shield volcanoes \citep{
 \begin{figure}
 \centering
 \includegraphics[width=0.6\linewidth]{\FigPath/locators/venus_globe_72dpi.png}
-\caption{Locations of seven volcano clusters on Venus. Kernel bandwidth ellipses are drawn at the 1$\sigma$ contour over each cluster and are enlarged.}
+\caption[Locations of seven volcano clusters on Venus.]{Locations of seven volcano clusters on Venus. Kernel bandwidth ellipses are drawn at the 1$\sigma$ contour over each cluster and are enlarged.}
 \label{fig_venuslocator}
 \end{figure}
 
@@ -199,7 +199,7 @@ The locations, vent counts, and kernel bandwidth matrices for each volcano clust
 \begin{figure}
 \centering
 \includegraphics[width=0.7\linewidth]{\FigPath/Kernel-Ellipses.eps}
-\caption{Kernel bandwidth ellipses for different clusters on Earth, Venus, and Mars. Each ellipse is drawn to scale, representing the 1$\sigma$ contour of the Gaussian bandwidths. The tightest bandwidths correspond to Earth clusters, while the broadest bandwidths correspond to Venus shield plains and Martian clusters.}
+\caption[Kernel bandwidth ellipses for different clusters on Earth, Venus, and Mars.]{Kernel bandwidth ellipses for different clusters on Earth, Venus, and Mars. Each ellipse is drawn to scale, representing the 1$\sigma$ contour of the Gaussian bandwidths. The tightest bandwidths correspond to Earth clusters, while the broadest bandwidths correspond to Venus shield plains and Martian clusters.}
 \label{fig_bandwidths}
 \end{figure}
 
@@ -262,7 +262,7 @@ Each planet also has a characteristic range of vent intensity (Table \ref{tab_re
 		"data/ventdens_venus.dat" using 1:2 with points pt 7,\
 		"data/ventdens_mars.dat" using 1:2 with points pt 3
 	\end{gnuplot}
-	\caption{Cluster size, defined by the area within the 2-$\sigma$ contour of vent intensity of each cluster, plotted with respect to the number of vents in the cluster. Earth clusters are drawn as hollow circles, Venus clusters are drawn as solid circles, and Mars clusters are asterisks. Three contours are drawn as dotted lines to show cluster size if there were 10, 100, or 1000 km$^2$ in the cluster area per volcanic vent.}
+	\caption[Cluster size plotted with respect to the number of vents in the cluster.]{Cluster size, defined by the area within the 2-$\sigma$ contour of vent intensity of each cluster, plotted with respect to the number of vents in the cluster. Earth clusters are drawn as hollow circles, Venus clusters are drawn as solid circles, and Mars clusters are asterisks. Three contours are drawn as dotted lines to show cluster size if there were 10, 100, or 1000 km$^2$ in the cluster area per volcanic vent.}
 	\label{fig_ventdens}
 \end{figure}
 	
@@ -277,12 +277,12 @@ Using KDE, vent density of several volcano clusters have been modeled with the i
     \begin{subfigure}{0.49\textwidth}
         \centering
         \includegraphics[width=\linewidth]{\FigPath/egrikuyu_kde_72dpi}
-    \end{subfigure} 
+    \end{subfigure}
     \begin{subfigure}{0.49\textwidth}
         \centering
         \includegraphics[width=\linewidth]{\FigPath/egrikuyu_vol_72dpi}
     \end{subfigure}
-    \caption{Left, vent density of the E\u{g}rikuyu volcano cluster, Turkey. Right, erupted volume density. While a large number of vents in the eastern margin of the field make a second mode of vent density, their cumulative erupted volume is much smaller than the volumes erupted from vents in the center of the cluster, so the eastern mode is not seen in the volume density model.}
+    \caption[Vent density and volume density maps of the E\u{g}rikuyu volcano cluster]{Left, vent density of the E\u{g}rikuyu volcano cluster, Turkey. Right, erupted volume density. While a large number of vents in the eastern margin of the field make a second mode of vent density, their cumulative erupted volume is much smaller than the volumes erupted from vents in the center of the cluster, so the eastern mode is not seen in the volume density model.}
 \label{fig_egrikuyu_kdevol}
 \end{figure}
 
@@ -298,7 +298,7 @@ The lava flows that make up the distributed vent field in the Arsia Mons Caldera
         \centering
         \includegraphics[height=8cm]{\FigPath/arsia_vol_72dpi}
     \end{subfigure}
-    \caption{Left, vent density of the Arsia Mons Caldera volcanic field (Mars). Right, erupted volume density using minimum volume estimates made using interpolated subsurface models for each volcano. The volume density plot shows that lavas from the east lineament of vents, also visible in the vent density model, are more voluminous than those from the east lineament of vents.}
+    \caption[Vent density and volume density maps of the Arsia Mons Caldera volcanic field (Mars).]{Left, vent density of the Arsia Mons Caldera volcanic field (Mars). Right, erupted volume density using minimum volume estimates made using interpolated subsurface models for each volcano. The volume density plot shows that lavas from the east lineament of vents, also visible in the vent density model, are more voluminous than those from the east lineament of vents.}
 \label{fig_arsia_kdevol}
 \end{figure}
 
@@ -338,7 +338,7 @@ Elongation of the bandwidth of a volcano cluster can be explained by one or a co
 \centering
 \includegraphics[width=\linewidth]{\FigPath/newberry_kde_72dpi}
 \end{subfigure}
-\caption{Volcanic vent density of monogenetic volcanoes near (left) Mt. Adams (Washington, USA) and (right) Newberry Volcano (Oregon, USA). If the magma source region is elongated N-S due to the subduction of the Juan de Fuca Plate to the west, this might result in an elongated volcano distribution and kernel bandwidth ellipse.}
+\caption[Volcanic vent density of monogenetic volcanoes near Mt. Adams and Newberry Volcano (USA).]{Volcanic vent density of monogenetic volcanoes near (left) Mt. Adams (Washington, USA) and (right) Newberry Volcano (Oregon, USA). If the magma source region is elongated N-S due to the subduction of the Juan de Fuca Plate to the west, this might result in an elongated volcano distribution and kernel bandwidth ellipse.}
 \label{fig_adams-newbkde}
 \end{figure}
 
@@ -368,7 +368,7 @@ The eastward migration of volcanism in the San Francisco Volcanic Field is obser
 \centering
 \includegraphics[width=\linewidth]{\FigPath/sanfranciscoB_kde_72dpi.png}
 \end{subfigure}
-\caption{Vent density through time for the San Francisco Volcanic Field (Arizona, USA). Top left, the entire volcanic field including 583 vents. Top right, spatial density of vents created during the Pre-Matuyama magnetic chronozone, 5-2.48~Ma \citep{tanaka1986migration}. Bottom left, density of Matuyama-age, 2.48-0.73~Ma vents. Bottom right, Bruhnes-age, 0.73-present, activity. While volcanic activity has migrated eastward, the kernel bandwidth ellipse has also changed. Taking all age vents into account, the bandwidth ellipse is oriented in the direction of migration (top right).}
+\caption[Vent density through time for the San Francisco Volcanic Field (Arizona, USA).]{Vent density through time for the San Francisco Volcanic Field (Arizona, USA). Top left, the entire volcanic field including 583 vents. Top right, spatial density of vents created during the Pre-Matuyama magnetic chronozone, 5-2.48~Ma \citep{tanaka1986migration}. Bottom left, density of Matuyama-age, 2.48-0.73~Ma vents. Bottom right, Bruhnes-age, 0.73-present, activity. While volcanic activity has migrated eastward, the kernel bandwidth ellipse has also changed. Taking all age vents into account, the bandwidth ellipse is oriented in the direction of migration (top right).}
 \label{fig_sfvfkde}
 \end{figure}
 
@@ -381,14 +381,14 @@ On Mars, volcanic activity on Syria Planum also migrated over the course of its 
 \begin{figure}
 \centering
 \includegraphics[width=0.6\linewidth]{\FigPath/springerville_kde_72dpi}
-\caption{Volcanic vent density of the Springerville Monogenetic Volcanic Field (Arizona, USA). The migration of the magma source with respect to the crust over time might be the source of the E-W elongated kernel ellipse.}
+\caption[Volcanic vent density of the Springerville Monogenetic Volcanic Field (Arizona, USA).]{Volcanic vent density of the Springerville Monogenetic Volcanic Field (Arizona, USA). The migration of the magma source with respect to the crust over time might be the source of the E-W elongated kernel ellipse.}
 \label{fig_springervillekde}
 \end{figure}
 
 \begin{figure}
 \centering
 \includegraphics[width=0.6\linewidth]{\FigPath/syria_kde_72dpi}
-\caption{Spatial vent density model of Syria Planum, Mars. A northwest migrating magma source or two overprinting magma sources to the northwest and southeast might explain the elongation of the field.}
+\caption[Spatial vent density model of Syria Planum, Mars.]{Spatial vent density model of Syria Planum, Mars. A northwest migrating magma source or two overprinting magma sources to the northwest and southeast might explain the elongation of the field.}
 \label{fig_syriakde}
 \end{figure}
 
@@ -403,7 +403,7 @@ If magma can propagate easily in one direction, but not in another direction, th
 \begin{figure}
 \centering
 \includegraphics[width=0.6\linewidth]{\FigPath/sanrafael_kde_72dpi}
-\caption{Volcanic conduit density of the San Rafael Volcanic Field (Utah, USA). Dikes are oriented north following pre-existing joint sets in the upper crust, possibly influencing the shape of the kernel ellipse.}
+\caption[Volcanic conduit density of the San Rafael Volcanic Field (Utah, USA).]{Volcanic conduit density of the San Rafael Volcanic Field (Utah, USA). Dikes are oriented north following pre-existing joint sets in the upper crust, possibly influencing the shape of the kernel ellipse.}
 \label{fig_sanrafaelkde}
 \end{figure}
 
@@ -413,7 +413,7 @@ The San Rafael volcanic field is one example where existing crustal features lik
 \begin{figure}
 \centering
 \includegraphics[width=0.6\linewidth]{\FigPath/arsia_kde_72dpi}
-\caption{Volcanic vent density of the Arsia Mons Caldera Volcanic Field (Mars). Each root of the tooth-shaped density model is parallel with large rift graben that cut the flanks of the volcano.}
+\caption[Volcanic vent density of the Arsia Mons Caldera Volcanic Field (Mars).]{Volcanic vent density of the Arsia Mons Caldera Volcanic Field (Mars). Each root of the tooth-shaped density model is parallel with large rift graben that cut the flanks of the volcano.}
 \label{fig_arsiakde}
 \end{figure}
 
@@ -434,7 +434,7 @@ Bandwidth orientation and elongation might also be indicative of underlying char
 %%%%%%%%%%%%%%%%%%%%%
 %References Section
 \section{References}
-\bibliography{kde}
+\bibliography{dissertation_refs}
 \bibliographystyle{apalike} 
 
 \section{Appendix: KDtools}
@@ -1010,52 +1010,56 @@ def samse_bandwidth(coords):
 %\label{fig:map_diff}
 %\end{figure}
 
+\newpage
 \section{Appendix: Other field density maps}
-\begin{figure}
+
+\begin{figure}[h!]
 \centering
-\includegraphics[width=0.6\linewidth]{\FigPath/field-a_kde_72dpi}
-\caption{Field A from \citet{miller2012shield}, in the Atalanta Quadrangle, Venus.}
+\begin{subfigure}{0.49\textwidth}
+\centering
+\includegraphics[width=\linewidth]{\FigPath/field-a_kde_72dpi}
+\end{subfigure}
+\begin{subfigure}{0.49\textwidth}
+\centering
+\includegraphics[width=\linewidth]{\FigPath/field-c_kde_72dpi}
+\end{subfigure}
+\caption[Shield Fields A and C, in the Atalanta and Mylitta Quadrangles, of Venus, respectively]{Shield Field A in the Atalanta Quadrangle (left) and Shield Field C (right) in the Mylitta Quadrangle, Venus from \citet{miller2012shield}.}
 \end{figure}
 
-\begin{figure}
+\begin{figure}[h!]
 \centering
-\includegraphics[width=0.6\linewidth]{\FigPath/field-b1_kde_72dpi}
-\caption{Field B1 from \citet{miller2012shield}, in the Vellamo Quadrangle, Venus.}
+\begin{subfigure}{0.49\textwidth}
+\centering
+\includegraphics[width=\linewidth]{\FigPath/field-b1_kde_72dpi}
+\end{subfigure}
+\begin{subfigure}{0.49\textwidth}
+\centering
+\includegraphics[width=\linewidth]{\FigPath/field-b2_kde_72dpi}
+\end{subfigure}
+\caption[Shield Fields B1 and B2 in the Vellamo Quadrangle, Venus.]{Shield Fields B1 and B2 from \citet{miller2012shield}, in the Vellamo Quadrangle, Venus.}
 \end{figure}
 
-\begin{figure}
+\begin{figure}[h!]
 \centering
-\includegraphics[width=0.6\linewidth]{\FigPath/field-b2_kde_72dpi}
-\caption{Field B2 from \citet{miller2012shield}, in the Vellamo Quadrangle, Venus.}
+\includegraphics[width=0.8\linewidth]{\FigPath/plain-a_kde_72dpi}
+\caption[Shield Plain A in the Greenaway Quadrangle, Venus.]{Shield Plain A from \citet{miller2012shield}, in the Greenaway Quadrangle, Venus.}
 \end{figure}
 
-\begin{figure}
+\begin{figure}[h!]
 \centering
-\includegraphics[width=0.6\linewidth]{\FigPath/field-c_kde_72dpi}
-\caption{Field C from \citet{miller2012shield}, in the Mylitta Quadrangle, Venus.}
+\includegraphics[width=0.8\linewidth]{\FigPath/plain-b_kde_72dpi}
+\caption[Shield Plain B in the Atalanta Quadrangle, Venus.]{Shield Plain B from \citet{miller2012shield}, in the Atalanta Quadrangle, Venus.}
 \end{figure}
 
-\begin{figure}
+\begin{figure}[h!]
 \centering
-\includegraphics[width=0.6\linewidth]{\FigPath/plain-a_kde_72dpi}
-\caption{Plain A from \citet{miller2012shield}, in the Greenaway Quadrangle, Venus.}
+\includegraphics[width=0.8\linewidth]{\FigPath/plain-c_kde_72dpi}
+\caption[Shield Plain C in the Greenaway Quadrangle, Venus.]{Shield Plain C from \citet{miller2012shield}, in the Greenaway Quadrangle, Venus.}
 \end{figure}
 
-\begin{figure}
-\centering
-\includegraphics[width=0.6\linewidth]{\FigPath/plain-b_kde_72dpi}
-\caption{Plain B from \citet{miller2012shield}, in the Atalanta Quadrangle, Venus.}
-\end{figure}
-
-\begin{figure}
-\centering
-\includegraphics[width=0.6\linewidth]{\FigPath/plain-c_kde_72dpi}
-\caption{Plain C from \citet{miller2012shield}, in the Greenaway Quadrangle, Venus.}
-\end{figure}
-
-\begin{figure}
+\begin{figure}[h!]
 \centering
 \includegraphics[width=0.6\linewidth]{\FigPath/pavonis_kde_72dpi}
-\caption{Southern Pavonis Mons Shield Field, cataloged by \citet{bleacher2009spatial} in the Tharsis Volcanic Province, Mars.}
+\caption[Southern Pavonis Mons Shield Field in the Tharsis Volcanic Province, Mars.]{Southern Pavonis Mons Shield Field, cataloged by \citet{bleacher2009spatial} in the Tharsis Volcanic Province, Mars.}
 \end{figure}
 
