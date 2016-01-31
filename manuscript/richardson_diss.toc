@@ -2,12 +2,12 @@
 \contentsline {chapter}{Abstract}{ix}{Doc-Start}
 \gdef \the@ipfilectr {@-1}
 \contentsline {chapter}{\numberline {1}Introduction}{1}{chapter.1}
-\contentsline {subsection}{\numberline {1.0.1}Role of sills in the development of volcanic fields}{2}{subsection.1.0.1}
-\contentsline {subsection}{\numberline {1.0.2}Validating Lava Flow Simulators using a Validation Hierarchy and Bayesian Analysis}{2}{subsection.1.0.2}
-\contentsline {subsection}{\numberline {1.0.3}The Volcanic History of Syria Planum, Mars}{3}{subsection.1.0.3}
-\contentsline {subsection}{\numberline {1.0.4}Waning volcanism on Arsia Mons, Mars}{4}{subsection.1.0.4}
-\contentsline {subsection}{\numberline {1.0.5}Uses of kernel statistics on volcanic vents}{5}{subsection.1.0.5}
-\contentsline {section}{\numberline {1.1}References}{6}{section.1.1}
+\contentsline {section}{\numberline {1.1}Role of sills in the development of volcanic fields}{2}{section.1.1}
+\contentsline {section}{\numberline {1.2}Validating Lava Flow Simulators using a Validation Hierarchy and Bayesian Analysis}{2}{section.1.2}
+\contentsline {section}{\numberline {1.3}The Volcanic History of Syria Planum, Mars}{3}{section.1.3}
+\contentsline {section}{\numberline {1.4}Waning volcanism on Arsia Mons, Mars}{4}{section.1.4}
+\contentsline {section}{\numberline {1.5}Uses of kernel statistics on volcanic vents}{5}{section.1.5}
+\contentsline {section}{\numberline {1.6}References}{6}{section.1.6}
 \gdef \the@ipfilectr {}
 \gdef \the@ipfilectr {@-2}
 \contentsline {chapter}{\numberline {2}Role of sills in the development of volcanic fields: Insights from lidar mapping surveys of the San Rafael Swell, Utah}{9}{chapter.2}
