@@ -131,7 +131,7 @@
 }
 \makeatother
 
-%format the list of figures (if you have list of tables, this needs to be repated)
+%format the list of figures
 \makeatletter
 \def\listoffigures{%
  \newpage
@@ -143,6 +143,17 @@
 }
 \makeatother
 
+%format the list of tables
+\makeatletter
+\def\listoftables{%
+ \newpage
+\vspace*{.80in}
+ \centerline{\bf List of Tables}
+ \vspace*{2em}
+ \@mkboth{CONTENTS}{CONTENTS}
+ \@starttoc{lot}
+}
+\makeatother
 
 
 
@@ -166,11 +177,12 @@
 
 
 %this controls the TOC indentation
-\renewcommand{\cftsecindent}{.5in}
+\renewcommand{\cftsecindent}{0.5in}
 %\renewcommand{\cftsecnumwidth}{1.9 em}
 \renewcommand{\cftsubsecindent}{1in}
 %\renewcommand{\cftsubsecnumwidth}{2.8 em}	
 \renewcommand{\cftfigfont}{Figure }
+\renewcommand{\cfttabfont}{Table }
 %these should change the table of contents main headings to not be bold
 \renewcommand\cftchapfont{\mdseries}
 \renewcommand\cftchappagefont{\mdseries}
@@ -181,11 +193,13 @@
 
 %this should set indent level for Figure X....(0 inches so that its at left margin)
 \setlength{\cftfigindent}{0in}
+\setlength{\cfttabindent}{0in}
 %note that the Figure X and the rest of the text are tied, so the above value should be 0
 
 
 %this controls vertical spacing, NECESSARY FOR DOUBLE SPACING BETWEEN TITLES
 \setlength{\cftbeforefigskip}{1em}
+\setlength{\cftbeforetabskip}{1em}
 %this controls distance between figure X: ____ NAME
 % \setlength{\cftfignumwidth}{.5in}
 
@@ -197,6 +211,11 @@
 \renewcommand{\cftfigpagefont}{}                      
 \renewcommand{\cftfignumwidth}{1in}
 
+\renewcommand{\cfttabfont}{}
+\renewcommand{\cfttabpresnum}{Table }             	
+\renewcommand{\cfttabaftersnum}{}  
+\renewcommand{\cfttabpagefont}{}                      
+\renewcommand{\cfttabnumwidth}{1in}
 
 
 %this may add colon somewhere in the TOC/LOF ???
@@ -212,6 +231,7 @@
 
 %remove extra space in List of Figures between header and the figure list
 \addtocontents{lof}{\protect\renewcommand*\protect\addvspace[1]{}}
+\addtocontents{lot}{\protect\renewcommand*\protect\addvspace[1]{}}
 %MUST DO SAME FOR TOC, NOT YET DONE????????
 
 %control spacing inside LOF
@@ -258,12 +278,16 @@
 
 %LOF needs to have singlespacing between lines continued onto a second line. The extra spacing between each figure is forced elsewhere in the preamble.
 \begin{singlespace}
-% \cleardoublepage
-% \addcontentsline{toc}{chapter}{List of Tables}
-% \listoftables
+\cleardoublepage
+\addcontentsline{toc}{chapter}{List of Tables}
+\listoftables
 \cleardoublepage % Start a new page for the list of figures. Make it right handed for two-sided documents.
 \addcontentsline{toc}{chapter}{List of Figures} % add to table of contents.
 \listoffigures % generate the list of figures
+
+%\cleardoublepage % Start a new page for the list of Tables. Make it right handed for two-sided documents.
+%\addcontentsline{toc}{chapter}{List of Tables} % add to table of contents.
+%\listoftables % generate the list of tables
 \end{singlespace}
 
 % \renewcommand{\abstitleskip}{\vspace{-\baselineskip}}
@@ -272,7 +296,7 @@
 \begin{abstract}
 \thispagestyle{plain}
 Volcanism is a dominant process on Earth and Mars that has significantly modified and evolved the lithospheres of each planet by delivering magma to shallow depths and ultimately to the surface. Two end-members of volcanism are present on both Earth and Mars: central-vent dominated volcanism that creates large edifices from concentrating magma in chambers before eruptions and distributed volcanism that creates many smaller edifices on the surface through the independent ascent of individual magmatic dikes. In a region subject to distributed volcanism, clusters of volcanoes develop over thousands to millions of years. Here, I explore the process of distributed volcanism on Earth and Mars from shallow ($\sim$1~km) depths to the surface. At long time scales, distributed volcanism emplaces magmatic sills below the surface and volcanoes at the surface. The change in spatial distribution and formation rate of volcanoes over time is used to infer the evolution of the source region of magma generation. At short time scales, the emplacement of lava flows in these fields present an urgent hazard for nearby people and infrastructure. I present software that can be used to simulate lava flow inundation and show that individual computer codes can be validated using real-world flows. 
-\setcounter{page}{9} %NEEED TO MANUALLY SET PAGE HERE
+\setcounter{page}{10} %NEEED TO MANUALLY SET PAGE HERE
 %force abstract in the TOC
 % \clearpage
 \addcontentsline{toc}{chapter}{Abstract}

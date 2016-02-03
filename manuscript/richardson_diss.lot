@@ -1,0 +1,41 @@
+\renewcommand *\addvspace [1]{}
+\gdef \the@ipfilectr {@-1}
+\addvspace {10\p@ }
+\gdef \the@ipfilectr {}
+\gdef \the@ipfilectr {@-2}
+\addvspace {10\p@ }
+\contentsline {table}{\numberline {2.1}{\ignorespaces Areas, Thickness, and Volumes for 7 Sills in the Eroded San Rafael Swell Volcanic Field\relax }}{16}{table.caption.3}
+\contentsline {table}{\numberline {2.2}{\ignorespaces Igneous Material Contributions in the Study Area\relax }}{18}{table.caption.6}
+\contentsline {table}{\numberline {2.3}{\ignorespaces Lidar Survey Specifications\relax }}{25}{table.caption.9}
+\gdef \the@ipfilectr {}
+\gdef \the@ipfilectr {@-3}
+\addvspace {10\p@ }
+\contentsline {table}{\numberline {3.1}{\ignorespaces Transition Algorithm Codes and Descriptions\relax }}{47}{table.caption.15}
+\contentsline {table}{\numberline {3.2}{\ignorespaces Bayes Factor Interpretations (modified from \citet {aspinall2003evidence})\relax }}{61}{table.caption.20}
+\contentsline {table}{\numberline {3.3}{\ignorespaces MOLASSES Flow Parameters\relax }}{66}{table.caption.22}
+\contentsline {table}{\numberline {3.4}{\ignorespaces Monte Carlo MOLASSES Flow Parameters\relax }}{69}{table.caption.26}
+\contentsline {table}{\numberline {3.5}{\ignorespaces Relative likelihood of inundation given $\text {Pr}(Sim)$\relax }}{73}{table.caption.30}
+\contentsline {table}{\numberline {3.6}{\ignorespaces Transition Algorithm Results\relax }}{75}{table.caption.32}
+\contentsline {table}{\numberline {3.7}{\ignorespaces Notation\relax }}{81}{table.caption.34}
+\gdef \the@ipfilectr {}
+\gdef \the@ipfilectr {@-4}
+\addvspace {10\p@ }
+\contentsline {table}{\numberline {4.1}{\ignorespaces Summary of Vent Counts in Defined Units\relax }}{99}{table.caption.36}
+\contentsline {table}{\numberline {4.2}{\ignorespaces Crater Retention Rates and Ages for Selected Units\relax }}{99}{table.caption.37}
+\contentsline {table}{\numberline {4.3}{\ignorespaces Summary of Nearest Neighbor Analysis on Cataloged Vents and two Subgroups of Vents\relax }}{101}{table.caption.40}
+\contentsline {table}{\numberline {4.4}{\ignorespaces Notation\relax }}{114}{table.caption.45}
+\gdef \the@ipfilectr {}
+\gdef \the@ipfilectr {@-5}
+\addvspace {10\p@ }
+\contentsline {table}{\numberline {5.1}{\ignorespaces Lava Flow Age Information\relax }}{136}{table.caption.50}
+\contentsline {table}{\numberline {5.2}{\ignorespaces Lava Flow Morphometry\relax }}{137}{table.caption.51}
+\gdef \the@ipfilectr {}
+\gdef \the@ipfilectr {@-6}
+\addvspace {10\p@ }
+\contentsline {table}{\numberline {6.1}{\ignorespaces Distributed-style Volcano Clusters\relax }}{167}{table.caption.62}
+\contentsline {table}{\numberline {6.2}{\ignorespaces Sub-populations of the San Francisco Volcanic Field$^*$\relax }}{168}{table.caption.63}
+\contentsline {table}{\numberline {6.3}{\ignorespaces Size and Mean Vent Intensity of Volcano Clusters\relax }}{171}{table.caption.65}
+\gdef \the@ipfilectr {}
+\gdef \the@ipfilectr {@-7}
+\addvspace {10\p@ }
+\gdef \the@ipfilectr {}
