@@ -1,4 +1,4 @@
-\documentclass{beamer}
+\documentclass[aspectratio=169]{beamer}
 \usepackage[latin1]{inputenc}
 \usepackage{beamerthemesplit}
 \usepackage{graphics,epsfig, subfigure}
@@ -8,10 +8,10 @@
 \setlength\fboxsep{0pt}
 \setlength\fboxrule{1pt}
 
+%pdflatex -synctex=1 -interaction=nonstopmode --shell-escape richardson_def.tex
+
 \definecolor{usfgreen}{RGB}{50, 103, 71}
-\definecolor{usfgreenlys}{RGB}{0, 103, 71}
-\definecolor{usfgreenlyslys}{RGB}{0, 103, 71}
-\definecolor{usfgold}{RGB}{0, 103, 71}
+\definecolor{usfgold}{RGB}{207, 196, 147}
 \setbeamercovered{transparent}
 \mode<presentation>
 {  \usetheme{PaloAlto}
@@ -20,14 +20,16 @@
   \usefonttheme[onlymath]{serif}
   \setbeamercovered{transparent}
   \setbeamertemplate{blocks}[rounded][shadow=true]
+  \setbeamercolor{itemize item}{fg=usfgreen}
+  \setbeamercolor{title}{bg=usfgreen}
+  \setbeamercolor{block title}{fg=white,bg=usfgreen}
 %  \setbeamersize{headline width top=3cm}
 %  \setbeamertemplate{headline}{\vspace{2cm}}
 }
   
-\logo{\includegraphics[width=1.5cm]{figures/USF_SoGeo-logo.eps}}
+\logo{\includegraphics[width=1.25cm]{figures/defense/USF_SoGeo-vertical.eps}}
 
-\title[Volcanic Fields on Earth and Mars]{Modeling the Construction and Evolution of Distributed Volcanic Fields on Earth and Mars}
-%\subtitle{Correcting Bias in Tephra Fallout Hazard Estimates Using Numerical Simulations}
+\title[Volcanic Fields on Earth \& Mars]{Modeling the Construction and Evolution of\\Distributed Volcanic Fields on Earth and Mars}
 \author[Jacob Richardson]{Jacob A. Richardson}
 \institute{School of Geosciences \\ University of South Florida}
 \date{19 February 2016}
@@ -35,11 +37,11 @@
 \begin{document}
 \frame{\titlepage \vspace{-0.6cm}}
 
-\section{Acknowledgments}
+
 \frame{\frametitle{Team}
 }
 
-\section{Intro}
+\section{Introduction}
 \frame{\frametitle{Introduction}
 \begin{itemize}
 \item Distributed Volcanism Definition
@@ -47,68 +49,113 @@
 \end{itemize}
 }
 
-\section{Outline}
 \frame{\frametitle{Outline of Talk}
+\begin{block}{}
 \begin{itemize}
 \item Overview of Dissertation
 \item Arsia Mons
 \item Conclusions
 \end{itemize}
+\end{block}
 }
 
 \section{Overview}
-\frame{\frametitle{Sills in the San Rafael Swell}
-}
+\subsection{Sills}
+	\frame{\frametitle{Sills in the San Rafael Swell}
+\begin{block}{}
+\begin{itemize}
+	\item Lidar
+	\item Sills
+	\item Total volume, geometry
+	\item Modulation of eruption style
+\end{itemize}
+\end{block}
+	}
 
-\frame{\frametitle{Lava Flows/Simulators}
-}
+\subsection{Lava Flows}
+	\frame{\frametitle{Lava Flows/Simulators}
+\begin{block}{}
+\begin{itemize}
+	\item MOLASSES
+	\item Tolbachik
+	\item Validation
+\end{itemize}
+\end{block}
+	}
 
-\frame{\frametitle{Spatial Density of Clusters}
-}
+\subsection{Vent Density}
+	\frame{\frametitle{Spatial Density of Clusters}
+\begin{block}{}
+\begin{itemize}
+	\item Earth
+	\item Mars
+	\item Venus
+	\item Average Intensity
+\end{itemize}
+\end{block}
+	}
+	
+\subsection{Mars Clusters}
+	\frame{\frametitle{Syria Planum}
+\begin{block}{}
+\begin{itemize}
+	\item catalog
+	\item trend in crater age dating
+	\item spatial density, possible reccurrence rate
+\end{itemize}
+\end{block}
+	}
 
-\frame{\frametitle{Syria Planum}
-}
+\section{Arsia Mons Volcanic Field}
+	\frame{\frametitle{Arsia Mons: An introduction}
+		\begin{block}{Questions}
+		\begin{itemize}
+		\item How?
+		\item Can?
+		\end{itemize}
+		\end{block}
+	}
 
-\section{Arsia Mons}
-\frame{\frametitle{Arsia Mons: An introduction}
-}
+\subsection{Methods}
+	\frame{\frametitle{Mapping}
+	
+	}
 
-\frame{\frametitle{Mapping}
-}
+	\frame{\frametitle{Volume}
+	}
 
-\frame{\frametitle{Volume}
-}
+	\frame{\frametitle{Ages}
+	}
 
-\frame{\frametitle{Ages}
-}
+	\frame{\frametitle{VERRM}
+	}
 
-\frame{\frametitle{VERRM}
-}
+\subsection{Results}
+	\frame{\frametitle{Recurrence Rate}
+	}
 
-\frame{\frametitle{Recurrence Rate}
-}
+	\frame{\frametitle{Volume Flux}
+	}
 
-\frame{\frametitle{Volume Flux}
-}
+\subsection{Implications}
+	\frame{\frametitle{Tie in with Ashes and glaciers?}
+	}
 
-\frame{\frametitle{Tie in with Ashes and glaciers?}
-}
-
-\frame{\frametitle{Model of waning volcanism of Arsia}
-}
+	\frame{\frametitle{Model of waning volcanism of Arsia}
+	}
 
 \section{Conclusions}
-\frame{\frametitle{Arsia Specific Conclusions}
-}
+	\frame{\frametitle{Arsia Specific Conclusions}
+	}
 
-\frame{\frametitle{Other Conclusions}
-}
+	\frame{\frametitle{Other Conclusions}
+	}
 
-\section{Additional Thanks}
-\frame{\frametitle{Additional Thanks}
-}
+\section{}
+	\frame{\frametitle{Additional Thanks}
+	}
 
-\frame{\frametitle{Questions?}
-}
+	\frame{\frametitle{Questions?}
+	}
 
 \end{document}
