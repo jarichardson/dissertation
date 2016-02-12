@@ -3,6 +3,7 @@
 \usepackage{beamerthemesplit}
 \usepackage{graphics,epsfig, subfigure}
 \usepackage{amsmath}
+\usepackage{gnuplottex}
 \usepackage{url}
 
 \setlength\fboxsep{0pt}
@@ -62,38 +63,119 @@
 \section{Overview}
 \subsection{Sills}
 	\frame{\frametitle{Sills in the San Rafael Swell}
-\begin{block}{}
-\begin{itemize}
-	\item Lidar
-	\item Sills
-	\item Total volume, geometry
-	\item Modulation of eruption style
-\end{itemize}
-\end{block}
+	\begin{columns}
+	\column{.4\textwidth}
+		\begin{block}{}
+		\begin{itemize}
+			\item Lidar
+			\item Sills
+			\item Total volume, geometry
+			\item Modulation of eruption style
+		\end{itemize}
+		\includegraphics[width=1\textwidth]{figures/defense/ChuckConnor_Zlidar.jpg}
+		\end{block}
+	\column{.6\textwidth}
+		\includegraphics[width=1\textwidth]{figures/defense/CedarMtn-pcloud.png} 
+	\end{columns}
+		
 	}
 
+	\frame{\frametitle{Sills in the San Rafael Swell}
+		\includegraphics[width=1\textwidth]{figures/defense/lidar_screenshot.png}
+	}
+
+	\frame{\frametitle{Sills in the San Rafael Swell}
+	\begin{columns}
+	\column{.6\textwidth}
+		\includegraphics[width=0.5\textwidth]{figures/chapter-sills/Fig4-chart.eps}
+		\includegraphics[width=0.5\textwidth]{figures/defense/ccm_model.eps}
+	\column{.4\textwidth}
+		\begin{block}{}
+		\begin{itemize}
+			\item Lidar
+			\item Sills
+			\item Total volume, geometry
+			\item Modulation of eruption style
+		\end{itemize}
+		\end{block}
+	\end{columns}
+	}
+	
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%LAVA FLOWS
 \subsection{Lava Flows}
 	\frame{\frametitle{Lava Flows/Simulators}
-\begin{block}{}
-\begin{itemize}
-	\item MOLASSES
-	\item Tolbachik
-	\item Validation
-\end{itemize}
-\end{block}
+		\includegraphics[width=1\textwidth,clip,trim=5cm 10cm 5cm 16cm]{figures/defense/tolbachik_eo1.png}
+	}
+	
+	\frame{\frametitle{Lava Flows/Simulators}
+	\begin{columns}
+	\column{.23\textwidth}
+		\includegraphics[width=1\textwidth]{figures/chapter-molasses/Flow_Chart.eps}
+	\column{.77\textwidth}
+		\begin{block}{MOLASSES --- Modular Lava Simulation Software}
+		\begin{columns}
+		\column{.5\textwidth}
+			\begin{itemize}
+				\item MOLASSES
+				\item CA Code
+			\end{itemize}
+		\column{.5\textwidth}
+			\includegraphics[width=1\textwidth]{figures/chapter-molasses/slope-proportional-example.eps}
+		\end{columns}
+		\end{block}
+	\end{columns}
 	}
 
+	\frame{\frametitle{Lava Flows/Simulators}
+	\begin{columns}
+	\column{.5\textwidth}
+		\begin{block}{}
+		\includegraphics[width=1\textwidth]{figures/chapter-molasses/locator_complete.eps}
+		\end{block}
+	\column{.5\textwidth}
+		\begin{block}{}
+		Validation
+		\includegraphics[width=1\textwidth]{figures/defense/pulse_examples.eps}
+		\end{block}
+	\end{columns}
+	}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%Vent Density
 \subsection{Vent Density}
 	\frame{\frametitle{Spatial Density of Clusters}
-\begin{block}{}
-\begin{itemize}
-	\item Earth
-	\item Mars
-	\item Venus
-	\item Average Intensity
-\end{itemize}
-\end{block}
+		\begin{block}{}
+		\end{block}
+		\begin{block}{}
+			\begin{columns}
+			\column{.4\textwidth}
+				\includegraphics[width=0.8\textwidth]{figures/defense/volcano-density.png}
+			\column{.6\textwidth}
+				\includegraphics[width=0.8\textwidth]{figures/chapter-spatial_density/springerville_kde_300dpi.png}
+			\end{columns}
+		\end{block}
 	}
+
+	\frame{\frametitle{Spatial Density of Clusters}
+		\begin{columns}
+		\column{.2\textwidth}
+			\begin{centering}
+			\includegraphics[width=0.8\textwidth]{figures/defense/mars_locator_300dpi}
+			
+			\includegraphics[width=1\textwidth]{figures/defense/venus_globe_300dpi}
+			
+			\includegraphics[width=0.9\textwidth]{figures/chapter-spatial_density/locators/earth_locator.eps}
+			\end{centering}
+		\column{.7\textwidth}
+			\begin{block}{}
+			\includegraphics[width=0.9\textwidth]{figures/defense/cluster_dens.eps}
+			\end{block}
+			%\include{../manuscript/richardson_diss-gnuplottex-fig7.tex}
+		\end{columns}
+	}
+
 	
 \subsection{Mars Clusters}
 	\frame{\frametitle{Syria Planum}
