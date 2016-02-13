@@ -1,9 +1,6 @@
 reset
 set termoption dash
 
-#Problem 1 equation
-
-
 # Axes label
 unset key
 set size 1,1
