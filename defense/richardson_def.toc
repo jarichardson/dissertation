@@ -6,7 +6,7 @@
 \beamer@subsectionintoc {2}{3}{Vent Density}{10}{0}{2}
 \beamer@subsectionintoc {2}{4}{Mars Clusters}{12}{0}{2}
 \beamer@sectionintoc {3}{Arsia Mons Volcanic Field}{13}{0}{3}
-\beamer@subsectionintoc {3}{1}{Methods}{15}{0}{3}
-\beamer@subsectionintoc {3}{2}{Results}{26}{0}{3}
-\beamer@subsectionintoc {3}{3}{Implications}{28}{0}{3}
-\beamer@sectionintoc {4}{Conclusions}{30}{0}{4}
+\beamer@subsectionintoc {3}{1}{Methods}{16}{0}{3}
+\beamer@subsectionintoc {3}{2}{Results}{27}{0}{3}
+\beamer@subsectionintoc {3}{3}{Implications}{29}{0}{3}
+\beamer@sectionintoc {4}{Conclusions}{31}{0}{4}

@@ -292,12 +292,21 @@ NSF SSI
 \section{Arsia Mons Volcanic Field}
 	\frame{\frametitle{Distributed Volcanism of the Tharsis Volcanic Province}
 		\begin{columns}
-		\column{0.6\textwidth}
+		\column{0.5\textwidth}
 		\centering
-		\includegraphics[width=0.8\textwidth]{figures/defense/catalog_whole_planet_150dpi}
-		\column{0.4\textwidth}
+		\includegraphics[width=1\textwidth]{figures/defense/catalog_whole_planet_150dpi}
+		\column{0.5\textwidth}
 		\begin{block}{Tharsis Vent Catalog}
-		Catalog created by J. Bleacher et al.
+			\begin{itemize}
+				\item $>$1,000 small volcanic vents cataloged by J. Bleacher and others
+				\item Vents form in different clusters
+			\end{itemize}
+		\end{block}
+		\begin{block}{Research Questions}
+			\begin{itemize}
+				\item How does distributed-style volcanism occur over time and space in Tharsis?
+				\item How do volcanic fields relate to the larger volcanoes on Mars?
+			\end{itemize}
 		\end{block}
 		\end{columns}
 	}
@@ -306,13 +315,41 @@ NSF SSI
 		\begin{block}{Arsia Mons}
 		\begin{columns}
 		\column{0.4\textwidth}
-		Arsia Mons is here:
+		\begin{itemize}
+			\item Large (1.5$\cdot$10$^6$~km$^3$) shield volcano with 110~km diameter caldera
+			\item A cluster of volcanic vents lay in the caldera!
+		\end{itemize}\\[-1em]
+		\begin{center}\textbf{Motivation}\end{center}\\[-1em]
+		What are the recurrence rate of volcanism and delivery rate of magma to the surface?
 		\column{0.6\textwidth}
 		\centering
 		\includegraphics[width=0.9\textwidth]{figures/defense/arsia_overview.jpg}
 		\end{columns}
 		\end{block}
 	}
+	
+	\frame{\frametitle{Arsia Mons Overview}
+		\begin{block}{Recurrence Rate and Magma Delivery Rate}
+		\begin{columns}
+		\column{0.6\textwidth}
+		\begin{equation*}
+			\text{Recurrence Rate} = \frac{\text{Number of Events - 1}}{\text{Time elapsed}}
+		\end{equation*}
+		\begin{equation*}
+			\text{Delivery Rate} = \frac{\text{Volume per event}}{\text{Number of Events}}\cdot\text{Recurrence Rate}
+		\end{equation*}
+		
+		\begin{itemize}
+		\item Lavas from these vents can be mapped to estimate volume and timing of emplacement
+		\end{itemize}
+		
+		\column{0.4\textwidth}
+		\centering
+		\includegraphics[width=0.9\textwidth]{figures/defense/arsia_overview.jpg}
+		\end{columns}
+		\end{block}
+	}
+
 
 \subsection{Methods}
 	\frame{\frametitle{Mapping}
@@ -332,8 +369,13 @@ NSF SSI
 		\column{0.5\textwidth}
 			\includegraphics[width=1\textwidth]{figures/defense/arsia_maponly_300dpi}
 		\column{0.5\textwidth}
-			\begin{block}{}
-			29 vents are mapped
+			\begin{block}{Mapping results}
+			\begin{itemize}
+			\item 29 vents are cataloged, each with long lava flows
+			\item Lava flow areas are 10s--100s km$^2$
+			\item Flow thicknesses assumed to be 10--80~m {\small (Mouginis-Mark \& Rowland, Icarus, 2008)}
+			\item From this, volumes estimates range from 10$^{-2}$--70~km$^3$
+			\end{itemize}
 			\end{block}
 		\end{columns}
 	}
@@ -345,18 +387,23 @@ NSF SSI
 %	}
 
 	\frame{\frametitle{Ages: Crater Counting}
+		\begin{columns}
+		\column{0.5\textwidth}
+			\includegraphics[width=1\textwidth]{figures/defense/arsia_maponly_300dpi}
+		\column{0.5\textwidth}
+			\includegraphics[width=1\textwidth]{figures/chapter-arsia/craterstats/120-24W_09-42S_100m_cum.eps}
+		\end{columns}
+	}
+	\frame{\frametitle{Ages: Crater Counting}
 	%Crater Stats 2
 	%Examples:
 	%V10 - 120.24W_09.42W
-	\includegraphics[width=0.3\textwidth]{figures/chapter-arsia/craterstats/120-24W_09-42S_100m_cum.eps}
-	\includegraphics[width=0.3\textwidth]{figures/defense/crater_cdfmodel.eps}
-	}
-	
-	\frame{\frametitle{Ages: Crater Counting}
-	%Uncertainty Discussion
-	%Cumulative Function
-	%PDF
-	%Assumes constant impact crater formation rate to be Gaussian
+	\begin{block}
+	\centering
+	craterstats2 results form normally distributed models of emplacement time.
+	\includegraphics[width=0.4\textwidth]{figures/chapter-arsia/craterstats/120-24W_09-42S_100m_cum.eps}
+	\includegraphics[width=0.4\textwidth]{figures/defense/crater_cdfmodel.eps}
+	\end{block}
 	}
 
 	\frame{\frametitle{Ages: Stratigraphy}

@@ -91,6 +91,23 @@ Syria Planum
 -Center of volcanism changed with time
 
 
+Tharsis
+-$>$1,000 small volcanic vents cataloged by J. Bleacher and others
+-Vents form in different clusters
+
+-How does distributed-style volcanism occur over time and space in Tharsis?
+-How do volcanic fields relate to the larger volcanoes on Mars?
+
+Arsia
+-Arsia Mons is a large (1.5$\cdot$10$^6$~km$^3$) shield volcano 
+- Impressive 110~km diameter caldera
+- Caldera might have formed in association with a 10$^5$~km$^3$ magma chamber (Wilson et al., JGR, 2001) 
+-A cluster of volcanic vents lay in the caldera!
+
+-MOTIVATION
+
+-Lavas from these vents can be mapped
+
 
 
 
