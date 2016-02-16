@@ -3,7 +3,6 @@
 \usepackage{beamerthemesplit}
 \usepackage{graphics,epsfig, subfigure}
 \usepackage{amsmath}
-\usepackage{gnuplottex}
 \usepackage{url}
 
 \setlength\fboxsep{0pt}
@@ -44,10 +43,15 @@
 
 \section{Introduction}
 \frame{\frametitle{Introduction}
-\begin{itemize}
-\item Distributed Volcanism Definition
-\item Vertical Subregions can be detailed in volcanic systems
-\end{itemize}
+\begin{columns}
+	\column{.4\textwidth}
+	\begin{itemize}
+	\item Distributed Volcanism Definition
+	\item Vertical Subregions can be detailed in volcanic systems
+	\end{itemize}
+	\column{.6\textwidth}
+		\includegraphics[width=1\textwidth]{figures/defense/distributed_cartoon.eps}
+\end{columns}
 }
 
 \frame{\frametitle{Outline of Talk}
@@ -75,15 +79,32 @@
 		\includegraphics[width=1\textwidth]{figures/defense/ChuckConnor_Zlidar.jpg}
 		\end{block}
 	\column{.6\textwidth}
-		\includegraphics[width=1\textwidth]{figures/defense/CedarMtn-pcloud.png} 
+		\includegraphics[width=1\textwidth]{figures/defense/CedarMtn-photo.png} 
 	\end{columns}
-		
 	}
 
 	\frame{\frametitle{Sills in the San Rafael Swell}
 		\includegraphics[width=1\textwidth]{figures/defense/lidar_screenshot.png}
 	}
 
+	\frame{\frametitle{Sills in the San Rafael Swell}
+	\begin{columns}
+	\column{.4\textwidth}
+		\begin{block}{}
+		\begin{itemize}
+			\item Lidar
+			\item Sills
+			\item Total volume, geometry
+			\item Modulation of eruption style
+		\end{itemize}
+		\includegraphics[width=1\textwidth]{figures/defense/ChuckConnor_Zlidar.jpg}
+		\end{block}
+	\column{.6\textwidth}
+		\includegraphics[width=1\textwidth]{figures/defense/CedarMtn-pcloud.png} 
+	\end{columns}
+	}
+
+\iffalse
 	\frame{\frametitle{Sills in the San Rafael Swell}
 	\begin{columns}
 	\column{.6\textwidth}
@@ -100,6 +121,7 @@
 		\end{block}
 	\end{columns}
 	}
+\fi
 	
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %LAVA FLOWS
@@ -136,7 +158,7 @@
 	\column{.5\textwidth}
 		\begin{block}{}
 		Validation
-		\includegraphics[width=1\textwidth]{figures/defense/pulse_examples.eps}
+		\includegraphics[width=1\textwidth]{figures/defense/pulse_examples_300dpi.png}
 		\end{block}
 	\end{columns}
 	}
@@ -147,29 +169,23 @@
 \subsection{Vent Density}
 	\frame{\frametitle{Spatial Density of Clusters}
 		\begin{block}{}
+		Spatial Density is modeled with KDE
 		\end{block}
-		\begin{block}{}
-			\begin{columns}
-			\column{.4\textwidth}
-				\centering
-				\includegraphics[width=0.8\textwidth]{figures/defense/volcano-density.png}
-			\column{.6\textwidth}
-				\centering
-				\includegraphics[width=0.8\textwidth]{figures/chapter-spatial_density/springerville_kde_300dpi.png}
-			\end{columns}
-		\end{block}
+		\begin{center}
+			\includegraphics[width=0.8\textwidth]{figures/defense/kde_build_300dpi.png}
+		\end{center}
 	}
 
 	\frame{\frametitle{Spatial Density of Clusters}
 		\begin{columns}
 		\column{.2\textwidth}
-			\begin{centering}
+			\begin{center}
 			\includegraphics[width=0.8\textwidth]{figures/defense/mars_locator_300dpi}
 			
 			\includegraphics[width=1\textwidth]{figures/defense/venus_globe_300dpi}
 			
 			\includegraphics[width=0.9\textwidth]{figures/chapter-spatial_density/locators/earth_locator.eps}
-			\end{centering}
+			\end{center}
 		\column{.7\textwidth}
 			\begin{block}{Average Vent Intensity}
 			\includegraphics[width=0.9\textwidth]{figures/defense/cluster_dens.eps}
@@ -199,6 +215,7 @@
 		\end{columns}
 	}
 
+\iffalse
 	\frame{\frametitle{Syria Planum}
 		\begin{columns}
 		\column{.46\textwidth}
@@ -209,6 +226,7 @@
 			%\include{../manuscript/richardson_diss-gnuplottex-fig7.tex}
 		\end{columns}
 	}
+\fi
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%   ARSIA MONS   %%
@@ -218,31 +236,66 @@
 %%%%%%%%%%%%
 
 \section{Arsia Mons Volcanic Field}
-	\frame{\frametitle{Arsia Mons: An introduction}
-		\begin{block}{}
-		\includegraphics[width=0.8\textwidth]{figures/defense/mars_locator_300dpi}
+	\frame{\frametitle{Distributed Volcanism of the Tharsis Volcanic Province}
+		\begin{columns}
+		\column{0.6\textwidth}
+		\centering
+		\includegraphics[width=0.8\textwidth]{figures/defense/catalog_whole_planet_150dpi}
+		\column{0.4\textwidth}
+		\begin{block}{Tharsis Vent Catalog}
+		Catalog created by J. Bleacher et al.
+		\end{block}
+		\end{columns}
+	}
+
+	\frame{\frametitle{Arsia Mons Overview}
+		\begin{block}{Arsia Mons}
+		\begin{columns}
+		\column{0.6\textwidth}
+		Arsia Mons is here:
+		\column{0.4\textwidth}
+		\centering
+		\includegraphics[width=0.8\textwidth]{figures/defense/arsia_overview.jpg}
+		\end{columns}
 		\end{block}
 	}
 
 \subsection{Methods}
 	\frame{\frametitle{Mapping}
-		\begin{block}{}
-		%Change to just the outlines.
-		\includegraphics[width=0.8\textwidth]{figures/chapter-arsia/vent_map-01.png}
-		%Examples
-		\end{block}
+		\centering
+		\includegraphics[width=0.82\textwidth]{figures/defense/V19-V23_view-nooutlines_300dpi.png}\\[-0.5em]
+		\mbox{\tiny \textit{CTX Image: G10\_022160\_1710\_XN\_09S120W (NASA/JPL-Caltech/MSSS)}}
 	}
 
-	\frame{\frametitle{Volume}
+	\frame{\frametitle{Mapping}
+		\centering
+		\includegraphics[width=0.82\textwidth]{figures/defense/V19-V23_view-outlines_300dpi.png}\\[-0.5em]
+		\mbox{\tiny \textit{CTX Image: G10\_022160\_1710\_XN\_09S120W (NASA/JPL-Caltech/MSSS)}}
+	}
+
+	\frame{\frametitle{Mapping}
+		\begin{columns}
+		\column{0.5\textwidth}
+			\includegraphics[width=1\textwidth]{figures/defense/arsia_maponly_300dpi}
+		\column{0.5\textwidth}
+			\begin{block}{}
+			29 vents are mapped
+			\end{block}
+		\end{columns}
+	}
+
+
+%	\frame{\frametitle{Volume}
 	%Mola MIN
 	%Thicknesses
-	}
+%	}
 
 	\frame{\frametitle{Ages: Crater Counting}
 	%Crater Stats 2
 	%Examples:
 	%V10 - 120.24W_09.42W
 	\includegraphics[width=0.3\textwidth]{figures/chapter-arsia/craterstats/120-24W_09-42S_100m_cum.eps}
+	\includegraphics[width=0.3\textwidth]{figures/defense/crater_cdfmodel.eps}
 	}
 	
 	\frame{\frametitle{Ages: Crater Counting}
@@ -253,26 +306,74 @@
 	}
 
 	\frame{\frametitle{Ages: Stratigraphy}
-	%Examples
+	\begin{columns}
+	\column{0.8\textwidth}
+	\includegraphics[width=1\textwidth]{figures/defense/V19-V23_view-outlines-HL_300dpi.png}\\[-0.5em]
+	\mbox{\tiny \textit{CTX Image: G10\_022160\_1710\_XN\_09S120W (NASA/JPL-Caltech/MSSS)}}
+	\column{0.2\textwidth}
 	%Stratigraphy Web Key
-	\includegraphics[width=0.3\textwidth,clip,trim=0.2cm 1cm 11.8cm 9.2cm]{figures/chapter-arsia/stratigraphy_web_300dpi.png} %
+	\includegraphics[width=1\textwidth,clip,trim=0.2cm 1cm 11.8cm 9.2cm]{figures/defense/stratigraphy_web.eps} %
+	\end{columns}
+	}
+	
+	\frame{\frametitle{Ages: Stratigraphy}
+	\begin{columns}
+	\column{0.8\textwidth}
+	\includegraphics[width=1\textwidth]{figures/defense/V19-V23_view-nooutlines_300dpi.png}\\[-0.5em]
+	\mbox{\tiny \textit{CTX Image: G10\_022160\_1710\_XN\_09S120W (NASA/JPL-Caltech/MSSS)}}
+	\column{0.2\textwidth}
+	%Stratigraphy Web Key
+	\includegraphics[width=1\textwidth,clip,trim=0.2cm 1cm 11.8cm 9.2cm]{figures/defense/stratigraphy_web.eps} %
+	\end{columns}
 	}
 
 	\frame{\frametitle{Ages}
 	%Stratigraphy Web
-	\includegraphics[width=0.5\textwidth]{figures/chapter-arsia/stratigraphy_web_300dpi.png}
-	%Stratigraphy Map - Change to get rid of 
-	\includegraphics[width=0.5\textwidth]{figures/chapter-arsia/vent_map-01.png}
+	\column{0.5\textwidth}
+		\begin{block}{Stratigraphy ``Web''}
+		\centering
+		\includegraphics[width=1\textwidth]{figures/defense/stratigraphy_web.eps} %
+		\end{block}
+	\column{0.5\textwidth}
+		\centering
+	%Stratigraphy Map - Change to get rid of volume dots
+	\includegraphics[width=1\textwidth]{figures/defense/arsia_mapstrat_300dpi.png}
+	\end{columns}
 	}
 	
 	%Segue to VERRM
 	\frame{\frametitle{Ages: Information Conflicts}
+	\begin{columns}
+	\column{0.5\textwidth}
 	%Examples: V00, V02, V04
+		\begin{block}{Mean crater ages can agree stratigraphy...}
+		\centering
+		\includegraphics[width=0.8\textwidth]{figures/defense/crater_pdfs-000204.eps}
+		\end{block}
+	\column{0.5\textwidth}
+		\centering
+		\includegraphics[width=1\textwidth]{figures/defense/arsia_0-2-4_300dpi.png}
+	\end{columns}
+	}
+
+	\frame{\frametitle{Ages: Information Conflicts}
+	\begin{columns}
+	\column{0.5\textwidth}
 	%          V25, V17
+		\begin{block}{... or they can disagree}
+		\centering
+		\includegraphics[width=0.8\textwidth]{figures/defense/crater_pdfs-2517.eps}
+		\end{block}
+	\column{0.5\textwidth}
+		\centering
+		\includegraphics[width=1\textwidth]{figures/defense/arsia_17-25_300dpi.png}
+	\end{columns}
 	}
 
 	\frame{\frametitle{VERRM}
 	%LPSC sketch
+	\centering
+	\includegraphics[width=1\textwidth]{figures/defense/verrm_flowchart.eps}
 	}
 
 \subsection{Results}

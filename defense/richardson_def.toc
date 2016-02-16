@@ -5,8 +5,8 @@
 \beamer@subsectionintoc {2}{2}{Lava Flows}{8}{0}{2}
 \beamer@subsectionintoc {2}{3}{Vent Density}{11}{0}{2}
 \beamer@subsectionintoc {2}{4}{Mars Clusters}{13}{0}{2}
-\beamer@sectionintoc {3}{Arsia Mons Volcanic Field}{15}{0}{3}
+\beamer@sectionintoc {3}{Arsia Mons Volcanic Field}{14}{0}{3}
 \beamer@subsectionintoc {3}{1}{Methods}{16}{0}{3}
-\beamer@subsectionintoc {3}{2}{Results}{24}{0}{3}
-\beamer@subsectionintoc {3}{3}{Implications}{26}{0}{3}
-\beamer@sectionintoc {4}{Conclusions}{28}{0}{4}
+\beamer@subsectionintoc {3}{2}{Results}{27}{0}{3}
+\beamer@subsectionintoc {3}{3}{Implications}{29}{0}{3}
+\beamer@sectionintoc {4}{Conclusions}{31}{0}{4}
