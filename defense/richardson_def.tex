@@ -38,29 +38,71 @@
 \frame{\titlepage \vspace{-0.6cm}}
 
 
-\frame{\frametitle{Team}
+\frame{\frametitle{Acknowledgements}
+\begin{block}{Some Collaborators}
+\begin{columns}
+	\column{.2\textwidth}
+	\column{.33\textwidth}
+		Chuck Connor\\
+		Laura Connor\\
+		Sylvain Charbonnier\\
+		Judy McIlrath\\
+		Paul Wetmore\\
+	\column{.4\textwidth}
+		James Wilson\\
+		Lis Gallant\\
+		Julia Kubanek\\
+		Jake Bleacher\\
+		Lori Glaze\\
+\end{columns}
+\end{block}
+\begin{block}{Funding Agencies}
+NASA Mars Data Analysis Program\\
+NSF SSI
+\end{block}
 }
 
 \section{Introduction}
 \frame{\frametitle{Introduction}
+\begin{block}{Distributed-style Volcanism}
 \begin{columns}
 	\column{.4\textwidth}
+	Characteristics:
 	\begin{itemize}
-	\item Distributed Volcanism Definition
-	\item Vertical Subregions can be detailed in volcanic systems
+		\item Clusters of volcanoes are formed
+		\item Single eruptions at each location
+		\item Isolated dikes ascend individually
+		\item Long periods of quiescence
 	\end{itemize}
 	\column{.6\textwidth}
 		\includegraphics[width=1\textwidth]{figures/defense/distributed_cartoon.eps}
 \end{columns}
+\end{block}
 }
 
 \frame{\frametitle{Outline of Talk}
 \begin{block}{}
-\begin{itemize}
-\item Overview of Dissertation
-\item Arsia Mons
-\item Conclusions
-\end{itemize}
+\begin{columns}
+	\column{.55\textwidth}
+	\begin{itemize}
+		\item Overview of Dissertation
+			\begin{itemize}
+				\item The role of sills in the formation of volcanic fields
+				\item Simulating lava flows
+				\item The spatial organization of volcanoes in volcanic fields
+				\item The history of a volcanic field on Mars, Syria Planum
+			\end{itemize}
+		\item Waning volcanism at Arsia Mons, Mars
+			\begin{itemize}
+				\item Mapping the latest volcanism at Arsia
+				\item Estimating eruption timing, magnitude
+				\item Implications of the rate of volcanism
+			\end{itemize}
+		\item Conclusions
+	\end{itemize}
+	\column{.45\textwidth}
+		\includegraphics[width=1\textwidth]{figures/defense/distributed_cartoon.eps}
+\end{columns}
 \end{block}
 }
 
@@ -69,14 +111,14 @@
 	\frame{\frametitle{Sills in the San Rafael Swell}
 	\begin{columns}
 	\column{.4\textwidth}
-		\begin{block}{}
+		\begin{block}{San Rafael Volcanic Field, Utah}
 		\begin{itemize}
-			\item Lidar
-			\item Sills
-			\item Total volume, geometry
-			\item Modulation of eruption style
+			\item Pliocene volcanic activity
+			\item Now eroded to depth of $\sim$1~km
+			\item Sills and Dikes exposed
 		\end{itemize}
-		\includegraphics[width=1\textwidth]{figures/defense/ChuckConnor_Zlidar.jpg}
+		\includegraphics[width=0.9\textwidth]{figures/defense/ChuckConnor_Zlidar.jpg}\\[-0.5em]
+		{\tiny Chuck Connor with a Terrestrial Lidar}
 		\end{block}
 	\column{.6\textwidth}
 		\includegraphics[width=1\textwidth]{figures/defense/CedarMtn-photo.png} 
@@ -90,14 +132,12 @@
 	\frame{\frametitle{Sills in the San Rafael Swell}
 	\begin{columns}
 	\column{.4\textwidth}
-		\begin{block}{}
+		\begin{block}{Results of lidar survey}
 		\begin{itemize}
-			\item Lidar
-			\item Sills
-			\item Total volume, geometry
-			\item Modulation of eruption style
+			\item $>$90\% of igneous rock is stored in sills
+			\item Sill volume comparable to volume thought to have erupted at surface
+			\item Sills had ability to modulate eruption style
 		\end{itemize}
-		\includegraphics[width=1\textwidth]{figures/defense/ChuckConnor_Zlidar.jpg}
 		\end{block}
 	\column{.6\textwidth}
 		\includegraphics[width=1\textwidth]{figures/defense/CedarMtn-pcloud.png} 
@@ -131,24 +171,31 @@
 	}
 	
 	\frame{\frametitle{Lava Flows/Simulators}
-	\begin{columns}
-	\column{.23\textwidth}
-		\includegraphics[width=1\textwidth]{figures/chapter-molasses/Flow_Chart.eps}
-	\column{.77\textwidth}
+	%\begin{columns}
+	%\column{.23\textwidth}
+		%\includegraphics[width=1\textwidth]{figures/chapter-molasses/Flow_Chart.eps}
+	%\column{.77\textwidth}
 		\begin{block}{MOLASSES --- Modular Lava Simulation Software}
 		\begin{columns}
 		\column{.5\textwidth}
 			\begin{itemize}
-				\item MOLASSES
-				\item CA Code
+				\item MOLASSES developed after Connor et al. 2012
+				\item Spreads lava over a grid according to universal rules
 			\end{itemize}
+			\begin{block}{Optional Spreading Rules}
+				\centering
+				\includegraphics[width=0.5\textwidth]{figures/chapter-molasses/slope-proportional-example.eps}
+				\includegraphics[width=0.5\textwidth,clip,trim=0cm 0cm 0cm 0cm]{figures/chapter-molasses/neighborhoods.eps}
+			\end{block}
 		\column{.5\textwidth}
-			\includegraphics[width=1\textwidth]{figures/chapter-molasses/slope-proportional-example.eps}
+		Using TanDEM-X satellite data, flow simulations match the 2012-3 Tolbachik flow between 70-85\%.\\
+		\includegraphics[width=1\textwidth]{figures/defense/pulse_examples_300dpi.png}
 		\end{columns}
 		\end{block}
-	\end{columns}
+	%\end{columns}
 	}
 
+\iffalse
 	\frame{\frametitle{Lava Flows/Simulators}
 	\begin{columns}
 	\column{.5\textwidth}
@@ -158,18 +205,23 @@
 	\column{.5\textwidth}
 		\begin{block}{}
 		Validation
-		\includegraphics[width=1\textwidth]{figures/defense/pulse_examples_300dpi.png}
 		\end{block}
 	\end{columns}
 	}
-
+\fi
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %Vent Density
 \subsection{Vent Density}
 	\frame{\frametitle{Spatial Density of Clusters}
 		\begin{block}{}
-		Spatial Density is modeled with KDE
+		\begin{itemize}
+			\item Spatial density of volcanoes is modeled by Kernel Density Estimation
+			\item Size of volcanic field determined by a set contour (95\%)\\
+			\begin{equation*}
+			\text{Average vent intensity} = \frac{\text{volcanic vents}}{\text{field area}} \end{equation*}
+			\item This is applied to fields on Earth, Mars, and Venus
+		\end{itemize}
 		\end{block}
 		\begin{center}
 			\includegraphics[width=0.8\textwidth]{figures/defense/kde_build_300dpi.png}
@@ -182,12 +234,12 @@
 			\begin{center}
 			\includegraphics[width=0.8\textwidth]{figures/defense/mars_locator_300dpi}
 			
-			\includegraphics[width=1\textwidth]{figures/defense/venus_globe_300dpi}
+			\includegraphics[width=0.9\textwidth]{figures/defense/venus_globe_300dpi}
 			
 			\includegraphics[width=0.9\textwidth]{figures/chapter-spatial_density/locators/earth_locator.eps}
 			\end{center}
 		\column{.7\textwidth}
-			\begin{block}{Average Vent Intensity}
+			\begin{block}{Average Vent Intensity, Colored by Planet}
 			\includegraphics[width=0.9\textwidth]{figures/defense/cluster_dens.eps}
 			\end{block}
 			%\include{../manuscript/richardson_diss-gnuplottex-fig7.tex}
@@ -204,10 +256,12 @@
 			\centering
 			\includegraphics[width=0.95\textwidth]{figures/chapter-syria_planum/fig1.eps}
 		\column{.5\textwidth}
-			\begin{block}{Evolution of a volcano cluster}
+			\begin{block}{Evolution of a Martian volcano cluster}
 			\begin{itemize}
-				\item Here's the rub...
-				\item Another idea...
+				\item Volcanic vents have been cataloged on Syria Planum
+				\item Volcanic units are ID'd with geomorphology and embaying flow fronts
+				\item Region was active for 900~Ma (3.5-2.6~Ga)
+				\item volcanism center shifted with time
 			\end{itemize}
 			\includegraphics[width=1\textwidth]{figures/chapter-syria_planum/fig2.eps}
 			\end{block}
@@ -251,11 +305,11 @@
 	\frame{\frametitle{Arsia Mons Overview}
 		\begin{block}{Arsia Mons}
 		\begin{columns}
-		\column{0.6\textwidth}
-		Arsia Mons is here:
 		\column{0.4\textwidth}
+		Arsia Mons is here:
+		\column{0.6\textwidth}
 		\centering
-		\includegraphics[width=0.8\textwidth]{figures/defense/arsia_overview.jpg}
+		\includegraphics[width=0.9\textwidth]{figures/defense/arsia_overview.jpg}
 		\end{columns}
 		\end{block}
 	}

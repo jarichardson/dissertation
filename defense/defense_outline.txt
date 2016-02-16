@@ -33,3 +33,72 @@ of the field can be explored with (SPATIAL DENSITY). Very diffuse fields are
 found on Mars, for example (SYRIA PLANUM). Another location is (ARSIA)
 
 
+
+Collaborators
+Judy McIlrath
+Chuck Connor
+Laura Connor
+Lis Gallant
+Paul Wetmore
+Sylvain Charbonnier
+Julia Kubanek
+Jake Bleacher
+Lori Glaze
+James Wilson
+
+NASA Mars Data Analysis Program
+NSF SSI
+
+Intro
+Distributed-style volcanism:
+-Isolated dikes ascend individually
+-Single eruptions at each location
+-Long periods of quiescence
+
+-Clusters of volcanoes are formed
+
+Outline
+Overview of Dissertation
+-Sills
+-Lava Flows
+-Spatial Organization of Volcanoes
+-A volcanic field on Mars (Syria)
+Arsia Mons
+
+Sills
+Combined lidar datasets enable precise measurements of intrusive suite (dikes, sills)
+
+90\% of igneous rock is stored in sills
+Sill volume comparable to volume though to have erupted at surface
+
+Lava Flows
+-MOLASSES developed after Connor et al. 2012
+-Spreads lava over a grid according to universal rules
+
+-Using TanDEM-X satellite data, flow simulations match the 2012-3 Tolbachik flow between 70-85\%
+
+Spatial Density of Clusters
+-Spatial density of volcanoes modeled with Kernel Density Estimation
+-Size of volcanic field determined by a set contour (95\%)
+-\begin{equation}
+\text{Average vent intensity} = \frac{\text{volcanic vents}}{\text{field area}}
+-This is applied to fields on Earth, Mars, and Venus
+
+Syria Planum
+-Volcanic vents have been cataloged on Syria Planum
+-Large volcanic units are ID'd with geomorphology and embaying flow fronts
+-Region was active for 900~Ma (3.5-2.6~Ga)
+-Center of volcanism changed with time
+
+
+
+
+
+
+
+
+
+
+
+
+
