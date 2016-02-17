@@ -95,8 +95,7 @@ NSF SSI
 			\end{itemize}
 		\item Evolution of volcanism at Arsia Mons
 			\begin{itemize}
-				\item Major Mars Volcano with a young volcanic field in its caldera
-				\item Estimated eruption timing \& magnitude
+				\item Can its recent rate of volcanism be determined by studying a volcanic field with only satellite data?
 			\end{itemize}
 		\item Conclusions
 	\end{itemize}
@@ -111,7 +110,7 @@ NSF SSI
 
 \section{Overview}
 \subsection{Sills}
-	\frame{\frametitle{Sills in the San Rafael Swell}
+	\frame{\frametitle{The Igneous Plumbing System}
 	\begin{columns}
 	\column{.4\textwidth}
 		\begin{block}{San Rafael Volcanic Field, Utah}
@@ -121,7 +120,7 @@ NSF SSI
 			\item Sills and Dikes exposed
 		\end{itemize}
 		\includegraphics[width=0.9\textwidth]{figures/defense/ChuckConnor_Zlidar.jpg}\\[-0.5em]
-		{\tiny Chuck Connor with a Terrestrial Lidar}
+		{\tiny Chuck Connor with a Terrestrial Lidar (L. Connor)}
 		\end{block}
 	\column{.6\textwidth}
 		\includegraphics[width=1\textwidth]{figures/defense/CedarMtn-photo.png}\\[-0.5em]
@@ -129,12 +128,12 @@ NSF SSI
 	\end{columns}
 	}
 
-	\frame{\frametitle{Sills in the San Rafael Swell}
-		Richardson et al., \textit{Geology}, 2015\\
-		\includegraphics[width=1\textwidth]{figures/defense/lidar_screenshot.png}
-	}
+%	\frame{\frametitle{Sills in the San Rafael Swell}
+%		Richardson et al., \textit{Geology}, 2015\\
+%		\includegraphics[width=1\textwidth]{figures/defense/lidar_screenshot.png}
+%	}
 
-	\frame{\frametitle{Sills in the San Rafael Swell}
+	\frame{\frametitle{The Igneous Plumbing System}
 	\begin{columns}
 	\column{.4\textwidth}
 		\begin{block}{Results of lidar survey}
@@ -172,23 +171,24 @@ NSF SSI
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %Vent Density
-\subsection{Vent Density}
-	\frame{\frametitle{Spatial Density of Clusters}
+\subsection{Vent Intensity}
+	\frame{\frametitle{Volcano organization in fields}
+		\begin{center}
+			The spatial organization of volcanoes is modeled as a density function\\
+			\includegraphics[width=0.8\textwidth]{figures/defense/kde_build_300dpi.png}
+		\end{center}\\[-0.5em]
 		\begin{block}{}
 		\begin{itemize}
-			\item Spatial density of volcanoes is modeled by Kernel Density Estimation
-			\item Size of volcanic field determined by a set contour (95\%)\\
+			\item Size of volcanic field determined by a set contour (95\%)\\[-0.5em]
 			\begin{equation*}
 			\text{Average vent intensity} = \frac{\text{\# volcanic vents}}{\text{field area}} \end{equation*}
 			\item This is applied to fields on Earth, Mars, and Venus
 		\end{itemize}
 		\end{block}
-		\begin{center}
-			\includegraphics[width=0.8\textwidth]{figures/defense/kde_build_300dpi.png}
-		\end{center}
+		
 	}
 
-	\frame{\frametitle{Spatial Density of Clusters}
+	\frame{\frametitle{Vent Spatial Intensity across the Solar System}
 		\begin{columns}
 		\column{.7\textwidth}
 			\begin{block}{Average Vent Intensity, Colored by Planet}
@@ -209,8 +209,9 @@ NSF SSI
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %LAVA FLOWS
 \subsection{Lava Flows}
-	\frame{\frametitle{Lava Flows/Simulators}
-		\includegraphics[width=1\textwidth,clip,trim=5cm 10cm 5cm 16cm]{figures/defense/tolbachik_eo1.png}
+	\frame{\frametitle{The 2012-3 Tolbachik Lava Flow}
+		\includegraphics[width=1\textwidth,clip,trim=5cm 10cm 5cm 16cm]{figures/defense/tolbachik_eo1.png}\\[-0.5em]
+		\mbox{\tiny \textit{NASA Earth Observing-1 Mission, 1 February 2013}}
 	}
 	
 	\frame{\frametitle{Lava Flows/Simulators}
@@ -231,7 +232,7 @@ NSF SSI
 				\includegraphics[width=0.5\textwidth,clip,trim=0cm 0cm 0cm 0cm]{figures/chapter-molasses/neighborhoods.eps}
 			\end{block}
 		\column{.5\textwidth}
-		Using TanDEM-X satellite data, flow simulations match the 2012-3 Tolbachik flow between 70-85\%.\\[-1.5em]
+		Using TanDEM-X satellite data, flow simulations match the 2012-3 Tolbachik flow between 70-85\%.\\[-2em]
 		\begin{center}
 		\includegraphics[width=0.9\textwidth]{figures/defense/pulse_examples_300dpi.png}\\[-0.5em]
 		\mbox{\footnotesize \textit{Kubanek et al., Bull. Volc., 2015}}
@@ -242,7 +243,7 @@ NSF SSI
 	}
 
 \iffalse
-	\frame{\frametitle{Lava Flows/Simulators}
+	\frame{\frametitle{Simulating Lava Flow Emplacement}
 	\begin{columns}
 	\column{.5\textwidth}
 		\begin{block}{}
@@ -364,19 +365,19 @@ NSF SSI
 
 
 \subsection{Methods}
-	\frame{\frametitle{Mapping}
+	\frame{\frametitle{Mapping Volcanic Vents}
 		\centering
 		\includegraphics[width=0.82\textwidth]{figures/defense/V19-V23_view-nooutlines_300dpi.png}\\[-0.5em]
 		\mbox{\tiny \textit{CTX Image: G10\_022160\_1710\_XN\_09S120W (NASA/JPL-Caltech/MSSS)}}
 	}
 
-	\frame{\frametitle{Mapping}
+	\frame{\frametitle{Mapping Lava Flows}
 		\centering
 		\includegraphics[width=0.82\textwidth]{figures/defense/V19-V23_view-outlines_300dpi.png}\\[-0.5em]
 		\mbox{\tiny \textit{CTX Image: G10\_022160\_1710\_XN\_09S120W (NASA/JPL-Caltech/MSSS)}}
 	}
 
-	\frame{\frametitle{Mapping}
+	\frame{\frametitle{Lava Flow Map of Arsia Mons' Caldera}
 		\begin{columns}
 		\column{0.5\textwidth}
 			\includegraphics[width=1\textwidth]{figures/defense/arsia_maponly_300dpi}
@@ -385,7 +386,7 @@ NSF SSI
 			\begin{itemize}
 			\item 29 vents are cataloged, each with long lava flows
 			\item Lava flow areas are 10s--100s km$^2$
-			\item Flow thicknesses assumed to be 10--80~m {\small (Mouginis-Mark \& Rowland, Icarus, 2008)}
+			\item Flow thicknesses assumed to be 10--80~m {\scriptsize (Mouginis-Mark \& Rowland, Icarus, 2008)}
 			\item From this, volumes estimates range from 10$^{-2}$--70~km$^3$
 			\end{itemize}
 			\end{block}
@@ -395,39 +396,59 @@ NSF SSI
 
 	\frame{\frametitle{Ages: Crater Counting}
 	\begin{columns}
-	\column{0.8\textwidth}
+	\column{0.75\textwidth}
 		\begin{tikzpicture}
 			\node (img1) {\includegraphics[width=1\textwidth]{figures/defense/V19-V23_view-outlines_300dpi.png}};
 			%\pause
-			\node (img2) at (img1.center) [xshift=2cm] {\includegraphics[width=0.25\textwidth]{figures/defense/120-25W_08-40S_100m_cum_fordefense.eps}};
+			\node (img2) at (img1.center) [xshift=2cm] {\includegraphics[width=0.27\textwidth]{figures/defense/120-25W_08-40S_100m_cum_fordefense.eps}};
 		\end{tikzpicture}\\[-1em]
 		%\includegraphics[width=0.82\textwidth]{figures/defense/V19-V23_view-outlines_300dpi.png}\\[-0.5em]
 		\mbox{\tiny \textit{CTX Image: G10\_022160\_1710\_XN\_09S120W (NASA/JPL-Caltech/MSSS)}}
-	\column{0.2\textwidth}
-	Craterstats2
+	\column{0.25\textwidth}
+	\begin{block}{}
+	\centering
+	Impact craters on each flow are cataloged\\[1.5em]
+	More craters generally indicates older age\\[1.5em]
+	Ages and uncertainties modeled in \textit{craterstats2} {\scriptsize(Michael, \textit{Icarus}, 2013)}
+	\end{block}
 	\end{columns}
 	}
-	
+
 	\frame{\frametitle{Ages: Crater Counting}
-	%Crater Stats 2
-	%Examples:
-	%V10 - 120.24W_09.42W
-	\begin{block}
-	\centering
-	craterstats2 results form normally distributed models of emplacement time.
-	\includegraphics[width=0.4\textwidth]{figures/chapter-arsia/craterstats/120-24W_09-42S_100m_cum.eps}
-	\includegraphics[width=0.4\textwidth]{figures/defense/crater_cdfmodel.eps}
+	\begin{block}{}
+		Ages of flow emplacement are modeled as Normal Distributions
+		\begin{itemize}
+			\item Estimated age from \textit{craterstats2} is used as the Mean Value
+			\item Age Uncertainty is Standard Deviation
+		\end{itemize}
+		\begin{columns}
+			\column{0.45\textwidth}
+				\centering
+				\includegraphics[width=0.8\textwidth]{figures/defense/120-25W_08-40S_100m_cum_fordefense.eps}
+			\column{0.1\textwidth}
+				\centering
+				{\Huge$\Rightarrow$}
+			\column{0.45\textwidth}
+				\centering
+				\includegraphics[width=0.8\textwidth]{figures/defense/crater_cdfmodel.eps}
+		\end{columns}
 	\end{block}
 	}
 
 	\frame{\frametitle{Ages: Stratigraphy}
 	\begin{columns}
-	\column{0.8\textwidth}
+	\column{0.75\textwidth}
 	\includegraphics[width=1\textwidth]{figures/defense/V19-V23_view-outlines-HL_300dpi.png}\\[-0.5em]
 	\mbox{\tiny \textit{CTX Image: G10\_022160\_1710\_XN\_09S120W (NASA/JPL-Caltech/MSSS)}}
-	\column{0.2\textwidth}
+	\column{0.25\textwidth}
 	%Stratigraphy Web Key
-	\includegraphics[width=1\textwidth,clip,trim=0.2cm 1cm 11.8cm 9.2cm]{figures/defense/stratigraphy_web.eps} %
+	\begin{block}{}
+	\centering
+	Stratigraphic relationships relatively date events.\\[1em]
+	Lava from v19 overlies v23 lavas\\[1em]
+	\textit{Graphical Form}:\\[-0.2em]
+	\includegraphics[width=0.8\textwidth,clip,trim=0.2cm 1cm 11.8cm 9.2cm]{figures/defense/stratigraphy_web.eps} %
+	\end{block}
 	\end{columns}
 	}
 	
@@ -444,7 +465,8 @@ NSF SSI
 	}
 \fi
 
-	\frame{\frametitle{Ages}
+	\frame{\frametitle{Combined Age Information}
+	\begin{columns}
 	%Stratigraphy Web
 	\column{0.5\textwidth}
 		\begin{block}{Stratigraphy ``Web''}
@@ -477,9 +499,11 @@ NSF SSI
 	\begin{columns}
 	\column{0.5\textwidth}
 	%          V25, V17
-		\begin{block}{... or they can disagree}
+		\begin{block}{...or mean age can disagree with strat.}
 		\centering
 		\includegraphics[width=0.8\textwidth]{figures/defense/crater_pdfs-2517.eps}
+		
+		But by probabilistically modeling age, possible ages can still be identified
 		\end{block}
 	\column{0.5\textwidth}
 		\centering
@@ -489,61 +513,132 @@ NSF SSI
 
 	\frame{\frametitle{VERRM}
 	%LPSC sketch
-	\centering
-	\includegraphics[width=1\textwidth]{figures/defense/verrm_flowchart.eps}
+	\begin{block}{\textbf{Step 1:} Find potential ages of all events in the field (Monte Carlo)}
+		\centering
+		\includegraphics[width=1\textwidth]{figures/defense/verrm_flowchart.eps}
+	\end{block}
 	}
 	
 	\frame{\frametitle{VERRM}
-		\begin{block}{}
-		Recurrence rate calculation
-		
-		Volume Flux Calculation
+		\begin{block}{\textbf{Step 2:} Calculate Recurrence Rate of Volcanism}
+			For each Monte Carlo simulation (i.e. each set of potential ages), model Recurrence Rate (RR) through time:\\[-1em]
+			\begin{equation*}
+			\text{RR}(t) = \frac{3}{\text{T}_{e-2} - \text{T}_{e+2}}
+			\end{equation*}
+		\end{block}\\[-1em]
+		\begin{block}{\textbf{Step 3:} Calculate Magma Delivery Rate}
+			Model Magma Delivery Rate (Flux) through time:\\[-0.5em]
+			\begin{equation*}
+			\text{Flux}(t) = \frac{\text{Volume}_e}{\text{T}_e-\text{T}_{e+1}}
+			\end{equation*}
 		\end{block}
 	}
 
 \subsection{Results}
 	\frame{\frametitle{Results}
-	\centering
-	\begin{block}{Recurrence Rate}
-	\includegraphics[width=0.6\textwidth]{figures/defense/VERRM_RR.eps}
+	\begin{block}{Recurrence Rate through time}
+	\begin{columns}
+	\column{0.55\textwidth}
+	\includegraphics[width=1.1\textwidth]{figures/defense/VERRM_RR.eps}
+	\column{0.45\textwidth}
+		\begin{itemize}
+			\item All 10,000 Recurrence Rate functions are combined
+			\item Rate peaks at 150~Ma, producing 1 vent per 1-10~Myr (Median value: 1/4~events~Myr$^{-1}$)
+			\item Rate decreased monotonically since, essentially 0~events~Myr$^{-1}$ today
+		\end{itemize}
+	\end{columns}
 	\end{block}
 	}
 
+\iffalse
 	\frame{\frametitle{Volume Flux}
-	\begin{block}{Discharge rate through time}
+	\begin{block}{Magma Delivery Rate through time}
 	\begin{columns}
-	\column{0.5\textwidth}
-	%\centering
-	%\begin{block}{Sub-surface mesh model}
-	%\includegraphics[width=1\textwidth]{figures/defense/VERRM_VF_MOLA.eps}
-	%\end{block}
-	\column{0.5\textwidth}
+	\column{0.45\textwidth}
+		\begin{itemize}
+			\item All 10,000 Magma Delivery Rate functions are combined
+			\item Median rate plateaus at at 150~Ma (0.4-3 km$^3$~Myr$^{-1}$), remains steady until 100~Ma before rapidly waning.
+			\item Uncertainty in magma delivery rate is about 1~order of magnitude to either side of the median
+		\end{itemize}
+	\column{0.55\textwidth}
 	\centering
 	\includegraphics[width=1\textwidth]{figures/defense/VERRM_VF_THICK.eps}
 	\end{columns}
 	\end{block}
 	}
+\fi
 
 \subsection{Implications}
 	\frame{\frametitle{Tie in with Ashes and glaciers?}
-		\includegraphics[width=0.3\textwidth]{figures/defense/arsia_overview.jpg}
-		\includegraphics[width=0.2\textwidth]{figures/defense/shean_graben.png}
-		\mbox{\tiny \textit{from Shean et al., JGR Planets, 2007}}
+	\begin{columns}
+	\column{0.5\textwidth}
+		\begin{tikzpicture}
+			\node (img1) {\includegraphics[width=1\textwidth]{figures/defense/arsia_overview.jpg}};
+			%\pause
+			\node (img2) at (img1.center) [xshift=2cm] {\includegraphics[height=0.98\textheight]{figures/defense/shean_graben.png}};
+			\draw[red,thick] (-1.75,0.72) rectangle (-1.35,1.3);
+		\end{tikzpicture}
+	\column{0.5\textwidth}
+		\begin{itemize}
+			\item Extant glaciers are preserved on Western flank of Arsia
+			\item Preserved for $\sim$200~Ma by ashes {\scriptsize(Kadish et al., \textit{P\&SS}, 2014)}
+			\item If ashes were sourced near-summit {\scriptsize(Mouginis-Mark, \textit{GRL}, 2002)}, our effusive volcanism might be predated by explosive activity
+		\end{itemize}
+		
+		\mbox{$\leftarrow$\scriptsize \textit{from Shean et al., JGR Planets, 2007}}
+	\end{columns}
+		
 	}
 
 	\frame{\frametitle{Model of waning volcanism of Arsia}
-	Volcanism transitioned from explosive to effusive
+	\begin{columns}
+	\column{0.45\textwidth}
+	\begin{tikzpicture}
+			\node (img1) {\includegraphics[width=1\textwidth]{figures/defense/VERRM_RR.eps}};
+			%\pause
+			\node at (img1.center) [xshift=-1cm,yshift=0.3cm] {\Large ?};
+			\draw[red,thick,dashed] (-2.3,1.4) -- (0.3,-0.8);
+		\end{tikzpicture}
+		\centering
+		\includegraphics[width=0.6\textwidth]{figures/defense/arsia_overview.jpg}
 	
-	Corresponds to a waning of recurrence rate of volcanism
-	
-	\includegraphics[width=0.6\textwidth]{figures/defense/VERRM_RR.eps}
+	\column{0.55\textwidth}
+	\begin{enumerate}
+		\item Large magma chamber fed edifice-building, sometimes explosive eruptions {\scriptsize(Wilson et al., \textit{JGR}, 2001)}
+		\item Ashes coated ice-rich deposits before 200~Ma
+		\item The chamber cooled from waning magma flux
+		\item Volcanism evolved from explosive to effusive as magma waned
+		\item Volcanism is now in haitus (Recurrence Rate is $\sim$0~events~Myr$^{-1}$)
+	\end{enumerate}
+	\end{columns}
 	}
 
 \section{Conclusions}
-	\frame{\frametitle{Arsia Specific Conclusions}
+	\frame{\frametitle{Conclusions}
+	\begin{block}{Arsia Mons}
+	\begin{itemize}
+			\item Late volcanism at Arsia Mons emplaced a volcanic field in its caldera
+			\item Dating methods used on lavas can be combined to estimate rate of volcanism
+			\item Volcanism waned and likely ceased 10-90~million years ago
+			\item This field might be related to a larger waning of volcanism at Arsia
+		\end{itemize}
+	\end{block}
 	}
 
-	\frame{\frametitle{Other Conclusions}
+	\frame{\frametitle{Conclusions}
+	\begin{block}{Overall Conclusions}
+	\begin{itemize}
+			\item Volcanic fields have complex, voluminous roots
+			\item Emplacement of lavas in these fields can be modeled
+			\item Volcanic vent distribution in fields has a wide variation across the solar system
+			\item These tools can be used to gain knowledge about volcanic fields on Mars with spaceborne instruments
+		\end{itemize}
+	\end{block}
+	\centering
+	\includegraphics[width=0.25\textwidth]{figures/defense/CedarMtn-photo.png}
+	\includegraphics[width=0.3\textwidth]{figures/defense/pulse_examples_300dpi.png}
+	\includegraphics[width=0.2\textwidth,clip,trim=0cm 0cm 3.2cm 0cm ]{figures/chapter-spatial_density/arsia_kde_300dpi.png}
+	\includegraphics[width=0.22\textwidth]{figures/defense/arsia_mapstrat_300dpi.png}
 	}
 
 \section{}
