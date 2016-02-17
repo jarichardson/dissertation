@@ -2,6 +2,7 @@
 \usepackage[latin1]{inputenc}
 \usepackage{beamerthemesplit}
 \usepackage{graphics,epsfig, subfigure}
+\usepackage{tikz}
 \usepackage{amsmath}
 \usepackage{url}
 
@@ -67,11 +68,11 @@ NSF SSI
 \begin{block}{Distributed-style Volcanism}
 \begin{columns}
 	\column{.4\textwidth}
-	Characteristics:
+		\begin{center}\textbf{Characteristics}\end{center}\\[-1em]
 	\begin{itemize}
-		\item Clusters of volcanoes are formed
-		\item Single eruptions at each location
-		\item Isolated dikes ascend individually
+		\item Clusters of volcanoes are formed, sometimes associated with large volcanoes
+		\item New eruptions form new vents
+		\item Eruptions are fed by small volume batches of magma
 		\item Long periods of quiescence
 	\end{itemize}
 	\column{.6\textwidth}
@@ -85,23 +86,25 @@ NSF SSI
 \begin{columns}
 	\column{.55\textwidth}
 	\begin{itemize}
-		\item Overview of Dissertation
+		\item Volcanic fields, from the inside out
 			\begin{itemize}
-				\item The role of sills in the formation of volcanic fields
-				\item Simulating lava flows
-				\item The spatial organization of volcanoes in volcanic fields
-				\item The history of a volcanic field on Mars, Syria Planum
+				\item The role of sills in the formation of volcanic fields {\tiny(Richardson et al., \textit{Geology}, 2015)}
+				\item The spatial organization of vents in volcanic fields 
+				\item Simulating lava flow emplacement {\tiny(Kubanek et al., \textit{Bull. Volc.}, 2015)}
+				%\item The history of a volcanic field on Mars, Syria Planum
 			\end{itemize}
-		\item Waning volcanism at Arsia Mons, Mars
+		\item Evolution of volcanism at Arsia Mons
 			\begin{itemize}
-				\item Mapping the latest volcanism at Arsia
-				\item Estimating eruption timing, magnitude
-				\item Implications of the rate of volcanism
+				\item Major Mars Volcano with a young volcanic field in its caldera
+				\item Estimated eruption timing \& magnitude
 			\end{itemize}
 		\item Conclusions
 	\end{itemize}
 	\column{.45\textwidth}
-		\includegraphics[width=1\textwidth]{figures/defense/distributed_cartoon.eps}
+		\centering
+		\includegraphics[width=0.8\textwidth]{figures/defense/distributed_cartoon.eps}
+		
+		\fbox{\includegraphics[width=0.7\textwidth,clip,trim=4.5cm 4.2cm 5cm 3cm]{figures/defense/arsia_overview.jpg}}
 \end{columns}
 \end{block}
 }
@@ -121,11 +124,13 @@ NSF SSI
 		{\tiny Chuck Connor with a Terrestrial Lidar}
 		\end{block}
 	\column{.6\textwidth}
-		\includegraphics[width=1\textwidth]{figures/defense/CedarMtn-photo.png} 
+		\includegraphics[width=1\textwidth]{figures/defense/CedarMtn-photo.png}\\[-0.5em]
+		\mbox{\tiny \textit{Photo Credit: Judy McIlrath}}
 	\end{columns}
 	}
 
 	\frame{\frametitle{Sills in the San Rafael Swell}
+		Richardson et al., \textit{Geology}, 2015\\
 		\includegraphics[width=1\textwidth]{figures/defense/lidar_screenshot.png}
 	}
 
@@ -134,13 +139,15 @@ NSF SSI
 	\column{.4\textwidth}
 		\begin{block}{Results of lidar survey}
 		\begin{itemize}
-			\item $>$90\% of igneous rock is stored in sills
+			%\item $>$90\% of igneous rock is stored in sills
 			\item Sill volume comparable to volume thought to have erupted at surface
-			\item Sills had ability to modulate eruption style
+			\item Sills had ability to modulate eruption style by interacting with volcanic conduits
+			\item Conduits deliver magma from depth to distributed volcanoes
 		\end{itemize}
 		\end{block}
 	\column{.6\textwidth}
-		\includegraphics[width=1\textwidth]{figures/defense/CedarMtn-pcloud.png} 
+		\includegraphics[width=1\textwidth]{figures/defense/CedarMtn-pcloud.png}\\[-0.5em]
+		\mbox{\tiny \textit{Richardson et al., Geology, 2015}}
 	\end{columns}
 	}
 
@@ -162,6 +169,42 @@ NSF SSI
 	\end{columns}
 	}
 \fi
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%Vent Density
+\subsection{Vent Density}
+	\frame{\frametitle{Spatial Density of Clusters}
+		\begin{block}{}
+		\begin{itemize}
+			\item Spatial density of volcanoes is modeled by Kernel Density Estimation
+			\item Size of volcanic field determined by a set contour (95\%)\\
+			\begin{equation*}
+			\text{Average vent intensity} = \frac{\text{\# volcanic vents}}{\text{field area}} \end{equation*}
+			\item This is applied to fields on Earth, Mars, and Venus
+		\end{itemize}
+		\end{block}
+		\begin{center}
+			\includegraphics[width=0.8\textwidth]{figures/defense/kde_build_300dpi.png}
+		\end{center}
+	}
+
+	\frame{\frametitle{Spatial Density of Clusters}
+		\begin{columns}
+		\column{.7\textwidth}
+			\begin{block}{Average Vent Intensity, Colored by Planet}
+			\includegraphics[width=0.9\textwidth]{figures/defense/cluster_dens.eps}
+			\end{block}
+			%\include{../manuscript/richardson_diss-gnuplottex-fig7.tex}
+		\column{.2\textwidth}
+			\begin{center}
+			\includegraphics[width=0.8\textwidth]{figures/defense/mars_locator_300dpi}
+			
+			\includegraphics[width=0.9\textwidth]{figures/defense/venus_globe_300dpi}
+			
+			\includegraphics[width=0.9\textwidth]{figures/chapter-spatial_density/locators/earth_locator.eps}
+			\end{center}
+		\end{columns}
+	}
 	
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %LAVA FLOWS
@@ -179,7 +222,7 @@ NSF SSI
 		\begin{columns}
 		\column{.5\textwidth}
 			\begin{itemize}
-				\item MOLASSES developed after Connor et al. 2012
+				\item MOLASSES developed after \mbox{Connor et al., \textit{JAV}, 2012}
 				\item Spreads lava over a grid according to universal rules
 			\end{itemize}
 			\begin{block}{Optional Spreading Rules}
@@ -188,8 +231,11 @@ NSF SSI
 				\includegraphics[width=0.5\textwidth,clip,trim=0cm 0cm 0cm 0cm]{figures/chapter-molasses/neighborhoods.eps}
 			\end{block}
 		\column{.5\textwidth}
-		Using TanDEM-X satellite data, flow simulations match the 2012-3 Tolbachik flow between 70-85\%.\\
-		\includegraphics[width=1\textwidth]{figures/defense/pulse_examples_300dpi.png}
+		Using TanDEM-X satellite data, flow simulations match the 2012-3 Tolbachik flow between 70-85\%.\\[-1.5em]
+		\begin{center}
+		\includegraphics[width=0.9\textwidth]{figures/defense/pulse_examples_300dpi.png}\\[-0.5em]
+		\mbox{\footnotesize \textit{Kubanek et al., Bull. Volc., 2015}}
+		\end{center}
 		\end{columns}
 		\end{block}
 	%\end{columns}
@@ -211,44 +257,9 @@ NSF SSI
 \fi
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%Vent Density
-\subsection{Vent Density}
-	\frame{\frametitle{Spatial Density of Clusters}
-		\begin{block}{}
-		\begin{itemize}
-			\item Spatial density of volcanoes is modeled by Kernel Density Estimation
-			\item Size of volcanic field determined by a set contour (95\%)\\
-			\begin{equation*}
-			\text{Average vent intensity} = \frac{\text{volcanic vents}}{\text{field area}} \end{equation*}
-			\item This is applied to fields on Earth, Mars, and Venus
-		\end{itemize}
-		\end{block}
-		\begin{center}
-			\includegraphics[width=0.8\textwidth]{figures/defense/kde_build_300dpi.png}
-		\end{center}
-	}
-
-	\frame{\frametitle{Spatial Density of Clusters}
-		\begin{columns}
-		\column{.2\textwidth}
-			\begin{center}
-			\includegraphics[width=0.8\textwidth]{figures/defense/mars_locator_300dpi}
-			
-			\includegraphics[width=0.9\textwidth]{figures/defense/venus_globe_300dpi}
-			
-			\includegraphics[width=0.9\textwidth]{figures/chapter-spatial_density/locators/earth_locator.eps}
-			\end{center}
-		\column{.7\textwidth}
-			\begin{block}{Average Vent Intensity, Colored by Planet}
-			\includegraphics[width=0.9\textwidth]{figures/defense/cluster_dens.eps}
-			\end{block}
-			%\include{../manuscript/richardson_diss-gnuplottex-fig7.tex}
-		\end{columns}
-	}
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %Syria Planum
 %
+\iffalse
 \subsection{Mars Clusters}
 	\frame{\frametitle{Syria Planum}
 		\begin{columns}
@@ -268,6 +279,7 @@ NSF SSI
 			%\include{../manuscript/richardson_diss-gnuplottex-fig7.tex}
 		\end{columns}
 	}
+\fi
 
 \iffalse
 	\frame{\frametitle{Syria Planum}
@@ -292,14 +304,14 @@ NSF SSI
 \section{Arsia Mons Volcanic Field}
 	\frame{\frametitle{Distributed Volcanism of the Tharsis Volcanic Province}
 		\begin{columns}
-		\column{0.5\textwidth}
+		\column{0.48\textwidth}
 		\centering
 		\includegraphics[width=1\textwidth]{figures/defense/catalog_whole_planet_150dpi}
-		\column{0.5\textwidth}
+		\column{0.52\textwidth}
 		\begin{block}{Tharsis Vent Catalog}
 			\begin{itemize}
-				\item $>$1,000 small volcanic vents cataloged by J. Bleacher and others
-				\item Vents form in different clusters
+				\item $>$1,000 small volcanic vents cataloged \mbox{\tiny (Richardson et al., \textit{JVGR}, 2013}, \mbox{\tiny Bleacher et al., \textit{JVGR}, 2009)}
+				\item Groups of vents form isolated clusters
 			\end{itemize}
 		\end{block}
 		\begin{block}{Research Questions}
@@ -336,7 +348,7 @@ NSF SSI
 			\text{Recurrence Rate} = \frac{\text{Number of Events - 1}}{\text{Time elapsed}}
 		\end{equation*}
 		\begin{equation*}
-			\text{Delivery Rate} = \frac{\text{Volume per event}}{\text{Number of Events}}\cdot\text{Recurrence Rate}
+			\text{Delivery Rate} = \frac{\text{Total Volume}}{\text{Number of Events}}\times\text{Recurrence Rate}
 		\end{equation*}
 		
 		\begin{itemize}
@@ -381,19 +393,21 @@ NSF SSI
 	}
 
 
-%	\frame{\frametitle{Volume}
-	%Mola MIN
-	%Thicknesses
-%	}
-
 	\frame{\frametitle{Ages: Crater Counting}
-		\begin{columns}
-		\column{0.5\textwidth}
-			\includegraphics[width=1\textwidth]{figures/defense/arsia_maponly_300dpi}
-		\column{0.5\textwidth}
-			\includegraphics[width=1\textwidth]{figures/chapter-arsia/craterstats/120-24W_09-42S_100m_cum.eps}
-		\end{columns}
+	\begin{columns}
+	\column{0.8\textwidth}
+		\begin{tikzpicture}
+			\node (img1) {\includegraphics[width=1\textwidth]{figures/defense/V19-V23_view-outlines_300dpi.png}};
+			%\pause
+			\node (img2) at (img1.center) [xshift=2cm] {\includegraphics[width=0.25\textwidth]{figures/defense/120-25W_08-40S_100m_cum_fordefense.eps}};
+		\end{tikzpicture}\\[-1em]
+		%\includegraphics[width=0.82\textwidth]{figures/defense/V19-V23_view-outlines_300dpi.png}\\[-0.5em]
+		\mbox{\tiny \textit{CTX Image: G10\_022160\_1710\_XN\_09S120W (NASA/JPL-Caltech/MSSS)}}
+	\column{0.2\textwidth}
+	Craterstats2
+	\end{columns}
 	}
+	
 	\frame{\frametitle{Ages: Crater Counting}
 	%Crater Stats 2
 	%Examples:
@@ -417,6 +431,7 @@ NSF SSI
 	\end{columns}
 	}
 	
+\iffalse
 	\frame{\frametitle{Ages: Stratigraphy}
 	\begin{columns}
 	\column{0.8\textwidth}
@@ -427,6 +442,7 @@ NSF SSI
 	\includegraphics[width=1\textwidth,clip,trim=0.2cm 1cm 11.8cm 9.2cm]{figures/defense/stratigraphy_web.eps} %
 	\end{columns}
 	}
+\fi
 
 	\frame{\frametitle{Ages}
 	%Stratigraphy Web

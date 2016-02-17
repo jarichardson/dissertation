@@ -2,11 +2,10 @@
 \beamer@sectionintoc {1}{Introduction}{3}{0}{1}
 \beamer@sectionintoc {2}{Overview}{5}{0}{2}
 \beamer@subsectionintoc {2}{1}{Sills}{5}{0}{2}
-\beamer@subsectionintoc {2}{2}{Lava Flows}{8}{0}{2}
-\beamer@subsectionintoc {2}{3}{Vent Density}{10}{0}{2}
-\beamer@subsectionintoc {2}{4}{Mars Clusters}{12}{0}{2}
-\beamer@sectionintoc {3}{Arsia Mons Volcanic Field}{13}{0}{3}
-\beamer@subsectionintoc {3}{1}{Methods}{16}{0}{3}
-\beamer@subsectionintoc {3}{2}{Results}{28}{0}{3}
-\beamer@subsectionintoc {3}{3}{Implications}{30}{0}{3}
-\beamer@sectionintoc {4}{Conclusions}{32}{0}{4}
+\beamer@subsectionintoc {2}{2}{Vent Density}{8}{0}{2}
+\beamer@subsectionintoc {2}{3}{Lava Flows}{10}{0}{2}
+\beamer@sectionintoc {3}{Arsia Mons Volcanic Field}{12}{0}{3}
+\beamer@subsectionintoc {3}{1}{Methods}{15}{0}{3}
+\beamer@subsectionintoc {3}{2}{Results}{26}{0}{3}
+\beamer@subsectionintoc {3}{3}{Implications}{28}{0}{3}
+\beamer@sectionintoc {4}{Conclusions}{30}{0}{4}
