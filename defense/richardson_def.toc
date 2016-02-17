@@ -7,5 +7,5 @@
 \beamer@sectionintoc {3}{Arsia Mons Volcanic Field}{11}{0}{3}
 \beamer@subsectionintoc {3}{1}{Methods}{14}{0}{3}
 \beamer@subsectionintoc {3}{2}{Results}{25}{0}{3}
-\beamer@subsectionintoc {3}{3}{Implications}{26}{0}{3}
-\beamer@sectionintoc {4}{Conclusions}{28}{0}{4}
+\beamer@subsectionintoc {3}{3}{Implications}{27}{0}{3}
+\beamer@sectionintoc {4}{Conclusions}{29}{0}{4}

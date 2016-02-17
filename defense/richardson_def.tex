@@ -89,7 +89,7 @@ NSF SSI
 		\item Volcanic fields, from the inside out
 			\begin{itemize}
 				\item The role of sills in the formation of volcanic fields {\tiny(Richardson et al., \textit{Geology}, 2015)}
-				\item The spatial organization of vents in volcanic fields 
+				\item The spatial organization of vents in volcanic fields {\tiny(Richardson et al., \textit{LPSC}, 2012)}
 				\item Simulating lava flow emplacement {\tiny(Kubanek et al., \textit{Bull. Volc.}, 2015)}
 				%\item The history of a volcanic field on Mars, Syria Planum
 			\end{itemize}
@@ -179,10 +179,10 @@ NSF SSI
 		\end{center}\\[-0.5em]
 		\begin{block}{}
 		\begin{itemize}
-			\item Size of volcanic field determined by a set contour (95\%)\\[-0.5em]
+			\item Area of volcanic field defined as 95$^{\text th}$ percentile of density function\\[-0.5em]
 			\begin{equation*}
 			\text{Average vent intensity} = \frac{\text{\# volcanic vents}}{\text{field area}} \end{equation*}
-			\item This is applied to fields on Earth, Mars, and Venus
+			\item This model is applied to fields on Earth, Mars, and Venus
 		\end{itemize}
 		\end{block}
 		
@@ -503,7 +503,7 @@ NSF SSI
 		\centering
 		\includegraphics[width=0.8\textwidth]{figures/defense/crater_pdfs-2517.eps}
 		
-		But by probabilistically modeling age, possible ages can still be identified
+		\textbf{But by probabilistically modeling age, possible ages can still be identified}
 		\end{block}
 	\column{0.5\textwidth}
 		\centering
@@ -511,7 +511,7 @@ NSF SSI
 	\end{columns}
 	}
 
-	\frame{\frametitle{VERRM}
+	\frame{\frametitle{Volcanic Event Recurrence Rate Model (VERRM)}
 	%LPSC sketch
 	\begin{block}{\textbf{Step 1:} Find potential ages of all events in the field (Monte Carlo)}
 		\centering
@@ -519,7 +519,7 @@ NSF SSI
 	\end{block}
 	}
 	
-	\frame{\frametitle{VERRM}
+	\frame{\frametitle{Volcanic Event Recurrence Rate Model (VERRM)}
 		\begin{block}{\textbf{Step 2:} Calculate Recurrence Rate of Volcanism}
 			For each Monte Carlo simulation (i.e. each set of potential ages), model Recurrence Rate (RR) through time:\\[-1em]
 			\begin{equation*}
@@ -543,14 +543,13 @@ NSF SSI
 	\column{0.45\textwidth}
 		\begin{itemize}
 			\item All 10,000 Recurrence Rate functions are combined
-			\item Rate peaks at 150~Ma, producing 1 vent per 1-10~Myr (Median value: 1/4~events~Myr$^{-1}$)
-			\item Rate decreased monotonically since, essentially 0~events~Myr$^{-1}$ today
+			\item Rate peaks at 150~Ma, producing 1 vent per 1-10~Myr (Median value: 0.25~events~Myr$^{-1}$)
+			\item Rate has decreased monotonically: RR$(t=0)\rightarrow0$
 		\end{itemize}
 	\end{columns}
 	\end{block}
 	}
 
-\iffalse
 	\frame{\frametitle{Volume Flux}
 	\begin{block}{Magma Delivery Rate through time}
 	\begin{columns}
@@ -566,10 +565,9 @@ NSF SSI
 	\end{columns}
 	\end{block}
 	}
-\fi
 
 \subsection{Implications}
-	\frame{\frametitle{Tie in with Ashes and glaciers?}
+	\frame{\frametitle{Tie-in with ashes and glaciers}
 	\begin{columns}
 	\column{0.5\textwidth}
 		\begin{tikzpicture}
@@ -596,8 +594,10 @@ NSF SSI
 	\begin{tikzpicture}
 			\node (img1) {\includegraphics[width=1\textwidth]{figures/defense/VERRM_RR.eps}};
 			%\pause
-			\node at (img1.center) [xshift=-1cm,yshift=0.3cm] {\Large ?};
-			\draw[red,thick,dashed] (-2.3,1.4) -- (0.3,-0.8);
+			\node at (-0.9,-0.78) [rotate=35] {\tiny waxing(?)};
+			\node at (1.3,-0.6) [rotate=-23] {\tiny waning};
+			\draw[red,thick,->] (-1.3,-1.25) -- (-0.2,-0.5);
+			\draw[red,thick,->] (0.7,-0.5) -- (2,-1);
 		\end{tikzpicture}
 		\centering
 		\includegraphics[width=0.6\textwidth]{figures/defense/arsia_overview.jpg}
@@ -608,7 +608,7 @@ NSF SSI
 		\item Ashes coated ice-rich deposits before 200~Ma
 		\item The chamber cooled from waning magma flux
 		\item Volcanism evolved from explosive to effusive as magma waned
-		\item Volcanism is now in haitus (Recurrence Rate is $\sim$0~events~Myr$^{-1}$)
+		\item Volcanism is now in haitus (RR$(t=0)\rightarrow0$)
 	\end{enumerate}
 	\end{columns}
 	}
@@ -616,12 +616,14 @@ NSF SSI
 \section{Conclusions}
 	\frame{\frametitle{Conclusions}
 	\begin{block}{Arsia Mons}
-	\begin{itemize}
+	\begin{enumerate}
 			\item Late volcanism at Arsia Mons emplaced a volcanic field in its caldera
-			\item Dating methods used on lavas can be combined to estimate rate of volcanism
+			\item Multiple dating methods used on lavas can be combined to estimate rate of volcanism, which peaked 150~million years ago
 			\item Volcanism waned and likely ceased 10-90~million years ago
 			\item This field might be related to a larger waning of volcanism at Arsia
-		\end{itemize}
+			\item Vents in this field are less concentrated than vents in terrestrial volcanic fields
+			\item Lava flows are an order of magnitude larger in volume than flows in most terrestrial fields
+		\end{enumerate}
 	\end{block}
 	}
 
@@ -646,10 +648,17 @@ NSF SSI
 	%Pictures: Rocco/Judy with a snowman
 	%Solfaterra picnic OROROROR 3981 - solfatera!!
 	%Chuck 4091 - pompei %or 3743 columnar basalts
-	%Tim Colombia w/ antennae
+	\begin{tikzpicture}
+		\node (img1) [rotate=-90] {\includegraphics[width=0.2\textwidth]{figures/defense/vanity/20150224_101348.jpg}};		
+		\node (img2) {\includegraphics[width=0.2\textwidth]{figures/defense/vanity/IMG_4091.JPG}};
+		\node (img3) {\includegraphics[width=0.2\textwidth]{figures/defense/vanity/IMG_4431.JPG}};
+		\node (img4) {\includegraphics[width=0.2\textwidth]{figures/defense/vanity/matt_pasek_500.jpg}};
+		\node (img5) {\includegraphics[width=0.2\textwidth]{figures/defense/vanity/vCrewMissionTraining.jpg}};
+	\end{tikzpicture}
 	}
 
 	\frame{\frametitle{Questions?}
+	\includegraphics[width=0.8\textwidth]{figures/defense/vanity/IMG_3981.JPG}
 	}
 
 \end{document}
