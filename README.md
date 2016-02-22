@@ -10,7 +10,7 @@ University of South Florida
 To download the current working version, use the link here
 http://raw.github.com/jarichardson/dissertation/master/manuscript/richardson_diss.pdf
 
-To download slides of my PhD defense, use this link
+To download slides of my PhD defense presentation, use this link
 http://raw.github.com/jarichardson/dissertation/master/defense/richardson_def.pdf
 
 #### This is a work in progress
