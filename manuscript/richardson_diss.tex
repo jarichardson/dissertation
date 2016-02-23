@@ -1,6 +1,7 @@
 \documentclass[12pt]{report} %use draft mode for rendering tests for formatting but not for the final verson e.g. \documentclass[12pt]
 
 %:! bibtex individual chapters, not whole document.
+% NOW TRY TO BIBTEX WHOLE DOC ALONE
 %:! pdflatex -synctex=1 -interaction=nonstopmode --shell-escape %
 
 %to pdflatex individual chapters:
@@ -14,8 +15,8 @@
 \usepackage{multicol}
 \usepackage{gnuplottex}
 \usepackage{subcaption}
-\usepackage{hyperref}
 \usepackage{multirow}
+\usepackage{bibentry}
 %%%%%%%%%%%%%%%%%%%%%%%%
 
 \newcommand*{\FigPath}{figures}
@@ -26,8 +27,8 @@
 \usepackage{url}
 
 % %avoid widows and orphans - really important for references
-% \widowpenalty10000
-% \clubpenalty10000
+%\widowpenalty10000
+%\clubpenalty10000
 \usepackage[all]{nowidow}
 
 
@@ -43,6 +44,7 @@
 
 \usepackage{natbib}
 \usepackage{chapterbib}
+
 
 
 %this makes references be a section style rather than chapter stile
@@ -119,6 +121,8 @@
 %\renewcommand{\thechapter}{}
 
 
+
+
 %format the table of contents
 \makeatletter
 \def\tableofcontents{%
@@ -152,6 +156,18 @@
  \vspace*{2em}
  \@mkboth{CONTENTS}{CONTENTS}
  \@starttoc{lot}
+}
+\makeatother
+
+%format the References
+\makeatletter
+\def\listofrefs{
+ \newpage
+ \vspace*{.80in}
+ \centerline{\bf References}
+ \vspace*{2em}
+ \@mkboth{CONTENTS}{CONTENTS}
+ \@starttoc{refchap}
 }
 \makeatother
 
@@ -232,6 +248,7 @@
 %remove extra space in List of Figures between header and the figure list
 \addtocontents{lof}{\protect\renewcommand*\protect\addvspace[1]{}}
 \addtocontents{lot}{\protect\renewcommand*\protect\addvspace[1]{}}
+\addtocontents{refchap}{\protect\renewcommand*\protect\addvspace[1]{}}
 %MUST DO SAME FOR TOC, NOT YET DONE????????
 
 %control spacing inside LOF
@@ -256,8 +273,18 @@
 % \patchcmd{\abstract}{\null\vfil}{}{}{}
 
 
-\begin{document}
 
+%Add Hyperref Capabilities
+\usepackage[hidelinks]{hyperref}
+\usepackage{bookmark}
+%But forget about citations, cause it's a CF
+\let\oldcitet\citet
+\let\oldcitep\citep
+\renewcommand{\citet}[2][]{\begin{NoHyper}\oldcitet[#1]{#2}\end{NoHyper}}
+\renewcommand{\citep}[2][]{\begin{NoHyper}\oldcitep[#1]{#2}\end{NoHyper}}
+
+
+\begin{document}
 %TITLE PAGE FILE GOES HERE
 \input{titlepage.tex}
 
@@ -266,6 +293,7 @@
 \begin{singlespace}
 %\vspace*{1in}
 
+\pdfbookmark[section]{\contentsname}{toc}
 \tableofcontents
 
 \end{singlespace}
@@ -279,9 +307,12 @@
 %LOF needs to have singlespacing between lines continued onto a second line. The extra spacing between each figure is forced elsewhere in the preamble.
 \begin{singlespace}
 \cleardoublepage
+\phantomsection
 \addcontentsline{toc}{chapter}{List of Tables}
 \listoftables
+
 \cleardoublepage % Start a new page for the list of figures. Make it right handed for two-sided documents.
+\phantomsection
 \addcontentsline{toc}{chapter}{List of Figures} % add to table of contents.
 \listoffigures % generate the list of figures
 
@@ -292,6 +323,8 @@
 
 % \renewcommand{\abstitleskip}{\vspace{-\baselineskip}}
 %needed to not center abstact vertically on center of page and bring it to top instead
+\cleardoublepage
+\phantomsection
 \patchcmd{\abstract}{\null\vfil}{\vspace*{37pt}}{}{}
 \begin{abstract}
 \thispagestyle{plain}
@@ -315,6 +348,17 @@ Volcanism is a dominant process on Earth and Mars that has significantly modifie
 \include{Chapter-spatial_density}
 \include{conclusion}
 %\include{appendices}
+
+%%%%%%%%%%%%%%%%%%%%%
+%References Section
+\cleardoublepage
+\phantomsection
+\listofrefs
+\addcontentsline{toc}{chapter}{References}
+\bibliographystyle{apalike} 
+\interlinepenalty=10000
+\bibliography{dissertation_refs}
+
 
 
 \end{document}
