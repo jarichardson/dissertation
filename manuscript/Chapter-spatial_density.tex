@@ -22,7 +22,7 @@ An alternative method to measure spatial vent density would be to assign a searc
 
 Because the goal of modeling vent density is to identify an underlying probabilistic model of vent creation, it is important to select a method that avoids these artificially sharp density changes \citep{connor1995three}. The method used should also be able to be validated using known distributions and point samples from these distributions. A third method of estimating spatial density avoids sharp density changes by substituting the search radius with a probability density function, centered on each vent location.
 
-\subsection{Kernel Density Estimation}\label{sec_kde}
+\subsection{Kernel density estimation}\label{sec_kde}
 The process of estimating the ``true'' point density distribution by assigning probability density functions (PDFs) to a population of randomly sampled points from this distribution is called Kernel Density Estimation (KDE) \citep{silverman1986density}. A kernel is an identical PDF assigned to points to describe their influence on their surrounding region. Essentially, If the kernel is the normal distribution centered on a point, the point has more influence at the point's location (at the maximum value of the normal distribution) and influence decreases away from the point following the value of the normal distribution \citep{lutz1995improved}. In KDE, density is modeled as influence, so that point density is highest at a point location and decreases away from the point, in effect smoothing the point.
 
 Given a map catalog of volcanoes, a density value, $\lambda$, for each volcano can be calculated for any location on the map, using the associated kernel PDF. If the kernel is normally distributed \citep{conway1998recurrence}, the kernel density of a volcano for location with Cartesian coordinates ($x$,$y$) is calculated as
@@ -267,7 +267,7 @@ Each planet also has a characteristic range of vent intensity (Table \ref{tab_re
 \end{figure}
 	
 
-\subsection{Volume Flux Density}
+\subsection{Volume flux density}
 Using KDE, vent density of several volcano clusters have been modeled with the implication that the probability of a new vent forming in the cluster is spatially constrained by these density models. In addition to this application, vents have been weighted by erupted volume to model the relative volume flux over the field. Mapping volume intensity (km$^3$~km$^-2$) can be an important tool to identify regions in a volcanic field where eruptions are disproportionally larger than those in other regions of the field.
 
 \citet{uslular2015size} mapped 77 scoria cones in the E\u{g}rikuyu volcano cluster (Turkey) and provided the volumes for each cone. This enables both the vent density and the erupted volume density to be mapped. Figure \ref{fig_egrikuyu_kdevol} illustrates the two density models. On the left of Figure \ref{fig_egrikuyu_kdevol}, vents are weighted equally producing a vent density model that has a large sub-cluster of densely packed vents in the western half of the vent population though there is also a small cluster of vents packed at a similar density in the far east of the vent population. When vents are weighted by volume, as shown on the right of Figure \ref{fig_egrikuyu_kdevol}, the eastern mode disappears because the large amount of vents to the east are small in volume compared to the vents in the western mode of vents.
@@ -342,7 +342,7 @@ Elongation of the bandwidth of a volcano cluster can be explained by one or a co
 \label{fig_adams-newbkde}
 \end{figure}
 
-\subsubsection{Elongated Source Region}
+\subsubsection{Elongated source region}
 The bandwidth ellipse of elongated clusters is often elongated in the same direction, such as the ellipse for scoria cones around Mount Adams, Washington (left, Figure \ref{fig_adams-newbkde}). The distributed volcanic field around Mount Adams runs parallel to the Cascades volcanic arc, possibly because the magma source region of the field runs along the axis of the Arc. As can be seen in Figure \ref{fig_earthlocator}}, both Cascades clusters, Adams and Newberry, have kernel bandwidths that are in line with the volcanic arc (Figure \ref{fig_adams-newbkde}). Both Japanese clusters, Abu and Izu-Tobu, also have bandwidths in line with the arc that makes the lower limb of the country's main island, Honshu. For regions where magmatic activity is expected to be elongated, for example rift valleys and subduction zones, it is possible that bandwidth ellipse orientation is primarily due to the elongation of the magma source region \citep{germa2013tectonic}.
 
 

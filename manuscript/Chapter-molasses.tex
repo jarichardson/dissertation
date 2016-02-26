@@ -1,4 +1,4 @@
-\chapter[Validating Lava Flow Simulators using a Validation Hierarchy and Bayesian Analysis]{Validating Lava Flow Simulators using a Validation Hierarchy and Bayesian Analysis}\label{ch_molasses}
+\chapter[Validating lava flow simulators using a validation hierarchy and bayesian analysis]{Validating lava flow simulators using a validation hierarchy and bayesian analysis}\label{ch_molasses}
 
 %compile with pdflatex:
 %:! bibtex %:r
@@ -24,7 +24,7 @@
 	
 	In Section \ref{sec:MOLASSES}, I will demonstrate how CA is applied to lava flows and detail how a CA simulation is carried out in the MOLASSES code. I will introduce a validation hierarchy in Section \ref{sec_validationb} that can be used to verify and validate different lava flow algorithms using increasingly complex model parameters. In Section \ref{sec:Bayesian}, I will expand on the final validation level (validation against real lava flows) with a Bayesian approach to improving model performance for the 2012-3 Tolbachik Lava Flow. The results from these Sections will be discussed in Section \ref{sec:discussion}.
 	
-	\subsection{Case Study Area: 2012-3 Tolbachik Lava Flow}\label{sec_tolb_back}
+	\subsection{Case study area: 2012-3 Tolbachik Lava Flow}\label{sec_tolb_back}
 	In the third validation level (Section \ref{sec_tolb_bench}), the recent lava flows at Tolbachik will be used as an example validation test to evaluate flow algorithms against a real lava flow. These flows will then be used in Section \ref{sec:Bayesian} as examples of how a Bayesian approach to evaluating model performance can improve model performance. 
 	
 \begin{figure}[!h]
@@ -45,7 +45,7 @@ Figure \ref{fig_locator} shows the outline of the early lava flows, which travel
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\section{A Modular Cellular Automata Algorithm for lava flows}\label{sec:MOLASSES}
+\section{A modular cellular automata algorithm for lava flows}\label{sec:MOLASSES}
 
 CA in lava flows has historically been defined as a 2-dimensional space, which is divided into equal-area grid cells, such as those found in a common digital elevation model (DEM). Within the location of each cell is defined an ``elementary automaton'' (\textit{ea}) that has a set of properties, is governed by a set of global rules, and has a set list of neighboring automata. While the behavior rules that each \textit{ea} follow is identical to those of all other automata, its behavior is only dictated by local phenomena. Specifically, the amount of lava that flows in or out of an \textit{ea} will depend on properties such as lava thickness and elevation within it and its neighbors. Because grid cells and \textit{ea} are fundamentally inseperable in this application, I will refer to \text{ea} as cells.
 
@@ -57,7 +57,7 @@ The set of cellular automata is defined as
 	
 	Practically, E$^2$ is a set of coordinate pairs denoting row and column addresses of cells in a larger grid. S($i$,$j$), which represents the set of substates for the cell at row $i$, column $j$, includes S$_e$, the underlying elevation of an automaton; S$_h$, the thickness of lava within the cell; and S$_{h0}$, the critical thickness, above which lava will spread from a cell. Some algorithms include S$_T$, or the cell temperature in this set. X, in a four-connected neighborhood scheme, is given as \{(0,1), (0,-1), (1,0), (-1,0)\}, where (0,0) is the location of a cell under evaluation. $\sigma$ is the change of substates in S for each cell from timestep $t$ to $t+1$, or S$^{t}\rightarrow$S$^{t+1}$. $\gamma$ specifies the lava emitted at locations within V. The implementation of these sets within the CA structure \textbf{A} is described in detail below.
 	
-	\subsection{MOLASSES Algorithm Outline}
+	\subsection{MOLASSES algorithm outline}
 		MOLASSES is a Cellular Automata code developed in the C programming language based on the CA algorithm ``LavaPL'' of \citet{connor2012probabilistic}. The major change between LavaPL and MOLASSES is that MOLASSES is constructed with nine modules that each have a specific task, either carrying out the CA simulation, reading model input, or writing model output (Figure \ref{fig_flowchart}). The nine modules were designed to replicated major functions in LavaPL and are:
 		\begin{enumerate}
 			\item{\textbf{DRIVER}} Calls modules in sequence to execute the flow algorithm.
@@ -81,7 +81,7 @@ The set of cellular automata is defined as
 		
 		Like LavaPL, model parameters are specified by a user through a text configuration file, which must include 1) a digital elevation model (DEM), 2) a residual lava flow thickness, 3) at least one vent location, 4) the total volume and ``pulse volume'' of this vent, and 5) an output file path. The lava flow thickness defines the CA value of S$_{h0}$, where cells with flow thicknesses S$_h>$S$_{h0}$ will spread all lava to their neighboring cells, while cells with less lava will retain their lava. The ``pulse volume'' defines $\gamma$ and the amount of lava to emit at the source location at each time step. The total volume constrains $\gamma$ as lava will not be introduced to the source location after the total volume has been delivered. Modules within MOLASSES that further execute the CA simulation are detailed below.
 		
-	\subsection[Cells in E$2$]{Cells in E$^2$}
+	\subsection{Cells in E$^2$}
 		%DEM_LOADER
 		%INITFLOW
 		%ACTIVATE
@@ -89,14 +89,14 @@ The set of cellular automata is defined as
 
 		The second information storage method is a list defined in the \textbf{INITFLOW} module. The ``Active List'' is declared with a length that corresponds to the theoretical maximum number of cells that can be inundated by lava. This list contains data that is updated during the simulation, including lava thicknesses, $S_h$, within cells. As cells are determined within the simulation to be inundated with lava for the first time, their row and column addresses, as well as their lava thicknesses are appended to the Active List with the module \textbf{ACTIVATE}.
 		
-	\subsection[Source Locations, V, and the Source Function, $\gamma$]{Source Locations, V, and the Source Function, $\gamma$}
+	\subsection{Source locations, V, and the source function, $\gamma$}
 		%INITFLOW
 		%PULSE
 		Initially in the Active List, \textbf{INITFLOW} only declares source location(s) as the first few elements of the list. These source locations are flagged in the list to be identified as source locations by other modules.
 
 		The \textbf{PULSE} module carries out the source function, $\gamma$. In this module, a separate array stores each source vent's volume parameters. The pulse volume is added to the quantity of lava in the source cell and is subtracted from the remaining volume. The remaining volume is initially set as the total volume given in the configuration file, so PULSE continues to add lava to the source locations at each time step until remaining volume is 0.
 		
-	\subsection[Substates, S, and the Transition Function, $\sigma$]{Substates, S, and the Transition Function, $\sigma$}
+	\subsection{Substates, S, and the transition function, $\sigma$}
 		%INITFLOW
 		%DISTRIBUTE
 		Substates which cannot change, such as the cell elevation S$_e$ and the residual flow thickness S$_{h0}$, are stored within the Global Data Grid. Substates which do change, primarily flow thickness, S$_h$, are stored in the Active List and are allowed to change from timestep to timestep. These values are initialized in \textbf{INITFLOW} where thicknesses are set to 0.
@@ -153,7 +153,7 @@ The set of cellular automata is defined as
 		
 		Other neighbor elimination rules can also be implemented. One has been designed by \citet{connor2012probabilistic}, where the cell that initially gives lava to another cell is forever eliminated from the receiving cell's neighborhood. This is done by creating a ``parent-child'' relationship for each activated cell in the flow. Simply put, child cells cannot give lava to their parent cells (right path in Figure \ref{fig_ParentTrap}). This transition function rule is tested against no parentage rules in competing MOLASSES algorithms (left path in Figure \ref{fig_ParentTrap}).
 		
-	\subsection{Cell Neighborhood, X}\label{sec_X}
+	\subsection{Cell neighborhood, X}\label{sec_X}
 	
 	\begin{figure}[!h]
 		\centering
@@ -206,7 +206,7 @@ The set of cellular automata is defined as
 %HIERARCHY
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-	\section{Validation Hierarchy}\label{sec_validationb}
+	\section{Validation hierarchy}\label{sec_validationb}
 	
 	The validation strategy implemented in this paper follows the advice of \citet{bayarri2007framework} for validating computer models, namely ``1) defining the problem; 2) establishing evaluation criteria; 3) designing experiments; 4) approximating computer model output; 5) analyzing the combination of field and computer run data.'' The sixth step in their validation process, feeding results back to revise models, has been done informally to determine how to alter spreading algorithms in the future. Each level below presents a problem for a lava spreading algorithm to complete. These fundamental problems (e.g. replicating a Bingham flow) are evaluated using simple tests that demonstrate the problem. The relevant model output for each of these tests is a list of locations (i.e. a list of x and y coordinates) that have been inundated by lava. After verification (Level 0), the first validation level tests model results with other model results; the second level tests model output against expected analytical solutions; and the third level tests model output from field data. 
 	
@@ -234,9 +234,9 @@ The set of cellular automata is defined as
 		\label{tab_algorithmcodes}
 		\end{table}
 
-\paragraph{Test Algorithms} Combining three variations of the Transition Function described in Section \ref{sec:MOLASSES}, I have created eight MOLASSES lava flow algorithms. Each variation has been made by modifying one module in the MOLASSES framework: The neighborhood is changed between 4- and 8- directions using the NEIGHBOR\_ID module, classifying one cell as a ``parent'' cell when a location is initially inundated is within the ACTIVATE module, and dividing lava amongst neighboring cells proportional to slope or equally is carried out in the DISTRIBUTE module. These eight algorithms will be referred to using three character codes, listed in Table \ref{tab_algorithmcodes}. For the algorithm used by LavaPL in \citet{connor2012probabilistic}, the code would therefore be 4/P/S, as it spreads lava in 4-directions from a central cell, all inundated cells have designated parents to whom they cannot spread lava, and the quantity of lava to spread from a central cell is higher for lower neighboring cells.
+\paragraph{Test algorithms} Combining three variations of the Transition Function described in Section \ref{sec:MOLASSES}, I have created eight MOLASSES lava flow algorithms. Each variation has been made by modifying one module in the MOLASSES framework: The neighborhood is changed between 4- and 8- directions using the NEIGHBOR\_ID module, classifying one cell as a ``parent'' cell when a location is initially inundated is within the ACTIVATE module, and dividing lava amongst neighboring cells proportional to slope or equally is carried out in the DISTRIBUTE module. These eight algorithms will be referred to using three character codes, listed in Table \ref{tab_algorithmcodes}. For the algorithm used by LavaPL in \citet{connor2012probabilistic}, the code would therefore be 4/P/S, as it spreads lava in 4-directions from a central cell, all inundated cells have designated parents to whom they cannot spread lava, and the quantity of lava to spread from a central cell is higher for lower neighboring cells.
 
-	\subsection{Level 0: Conservation of Mass}
+	\subsection{Level 0: Conservation of mass}
 			Before the results of a lava flow simulation can be validated, it must be verified to at least prove that conservation of mass is preserved. A lava flow simulation will therefore not be tested against the following tests until this conservation of mass requirement is shown to be fulfilled.
 			
 			In MOLASSES, the code is verified within the DRIVER module, which manages each subordinate module. The erupted volume, $V_{in}$, is given as the total eruption volume specified by the user in the configuration file. If multiple source locations are given in this file, $V_{in}$ is the sum of total eruption volumes. $V_{in}$ is compared at the end of the module to the total volume of the flow, or $V_{out}$. The volume $V_{out}$ is calculated by summing the volume in all inundated grid cells. MOLASSES reports success if $V_{in}-V_{out} \le 10^{-8}$~m$^3$, which is the precision of a 64-bit double. If this test fails, MOLASSES reports failure and the excess volume found in the flow (Table \ref{tab_masscons}).
@@ -270,7 +270,7 @@ The set of cellular automata is defined as
 			\label{fig:slope}
 		\end{figure}
 		
-		\subsubsection{Exercise Parameters} The underlying DEM for this exercise has a simple 18$^{\circ}$ slope, dipping to the North. The DEM has a spatial resolution of 1~m. The source cell is placed at the center of the DEM, is given a total volume of 1000~m$^3$, and is given a pulse volume of 1~m$^3$. When the simulation is finished, model output is used to determing the three flow characteristics used in this test (length, orientation, and aspect ratio). The DEM is rotated 5$^{\circ}$ clockwise and the process is repeated 19 times until the flow is simulated on an East-facing slope.
+		\subsubsection{Exercise parameters} The underlying DEM for this exercise has a simple 18$^{\circ}$ slope, dipping to the North. The DEM has a spatial resolution of 1~m. The source cell is placed at the center of the DEM, is given a total volume of 1000~m$^3$, and is given a pulse volume of 1~m$^3$. When the simulation is finished, model output is used to determing the three flow characteristics used in this test (length, orientation, and aspect ratio). The DEM is rotated 5$^{\circ}$ clockwise and the process is repeated 19 times until the flow is simulated on an East-facing slope.
 		
 		
 		
@@ -333,7 +333,7 @@ The set of cellular automata is defined as
 		\label{fig_pancake}
 	\end{figure}
 	
-		\subsubsection{Exercise Parameters} The DEM used in this exercise is a horizontal plane (all grid locations have the same elevation) with a spatial resolution of 1~m. A single vent is located at the DEM center with a total volume of 1000~m$^3$, and a pulse volume of 1~m$^3$. When the simulation is finished, model output is used to find the inundated cell farthest from the vent ($d_{max}$). The total inundated area is divided by the area of a circle with radius $d_{max}$ to provide the Fit score.
+		\subsubsection{Exercise parameters} The DEM used in this exercise is a horizontal plane (all grid locations have the same elevation) with a spatial resolution of 1~m. A single vent is located at the DEM center with a total volume of 1000~m$^3$, and a pulse volume of 1~m$^3$. When the simulation is finished, model output is used to find the inundated cell farthest from the vent ($d_{max}$). The total inundated area is divided by the area of a circle with radius $d_{max}$ to provide the Fit score.
 		
 		\subsubsection{Results}
 
@@ -452,7 +452,7 @@ The set of cellular automata is defined as
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{Bayesian Applications for Lava Flow Models}\label{sec:Bayesian}
+\section{Bayesian applications for lava flow models}\label{sec:Bayesian}
 	The final step \citet{bayarri2007framework} give for validating computer models is ``feeding [observations and results] back to revise the model.''
 	
 	The use of computer models to forecast hazards is a fundamentally Bayesian strategy: there is an initial concern due to hazards and computer models help us inform, constrain, and update this concern. Using Bayesian statistics can therefore be an improvement in testing lava flow models, over the two commonly used fitness tests, model sensitivity and the Jaccard index, because of their more direct application to informing perceived risk. 
@@ -500,7 +500,7 @@ The set of cellular automata is defined as
 		\label{tab_BFinterps}
 	\end{table}
 	
-		\paragraph{Calculating Predictive Values} In the same manner as the final validation level, the statistics discussed above will be calculated based on the areal extent of flows and simulations. The probability of the lava flow inundating an area $N$ can be given as
+		\paragraph{Calculating predictive values} In the same manner as the final validation level, the statistics discussed above will be calculated based on the areal extent of flows and simulations. The probability of the lava flow inundating an area $N$ can be given as
 		\begin{equation}
 			\text{Pr}(A)=\frac{|Lava|}{|N|}\label{eq_PA}
 		\end{equation}
@@ -525,7 +525,7 @@ The set of cellular automata is defined as
 		\end{equation}
 		Because of this, we must define the size of the potential hazard area $N$ ($|N|$).	
 	
-	\paragraph{Potential Hazard Area} There are multiple strategies to estimating an \textit{a priori} hazard area. \citet{kauahikaua1995applications} for instance identified catchments or ``lava sheds'' in which a volcanic vent was erupting, and identified these lava sheds as the hazard area. \citet{kilburn2000lava} provided a theoretical maximum distance that a lava flow can travel given the mass flux of magma erupting at the vent location. A combination of these two would provide an objective hazard area defined as the area within the ``Kilburn distance'' that is topographically below the volcanic vent. The theoretical maximum distance, or hazard radius, given by \citet{kilburn2000lava} is
+	\paragraph{Potential hazard area} There are multiple strategies to estimating an \textit{a priori} hazard area. \citet{kauahikaua1995applications} for instance identified catchments or ``lava sheds'' in which a volcanic vent was erupting, and identified these lava sheds as the hazard area. \citet{kilburn2000lava} provided a theoretical maximum distance that a lava flow can travel given the mass flux of magma erupting at the vent location. A combination of these two would provide an objective hazard area defined as the area within the ``Kilburn distance'' that is topographically below the volcanic vent. The theoretical maximum distance, or hazard radius, given by \citet{kilburn2000lava} is
 		\begin{equation}
 		R_{max}=\sqrt{\frac{3\epsilon SQ}{\rho g\kappa}}
 		\label{eq_kilburn}
@@ -541,7 +541,7 @@ The set of cellular automata is defined as
 	
 	A second strategy would be to run many lava flow models from the known vent location(s) while varying input parameters. This would give a range of flows and the true flow might be completely contained within the region given by this range of simulations. Below, a Monte Carlo (MC) method will be used to simulate a large range of flows. If we define a potential hazard area as any location inundated by at least one simulated flow in this MC approach, the hazard area would be 72~km$^2$. As the mapped flow area from the Tolbachik eruption is 39\% of this area, it would be more practical to use this as the \textit{a priori} hazard area because it more reasonably reflects the potential inundation area. Both the Kilburn-Kauahikaua method and this MC method are illustrated in Figure \ref{fig_hazardarea}.				
 	
-	\paragraph{Review of Validation Level 3} Instead of using model sensitivity and the Jaccard index as fitness values for the various lava flow models, now the two predictive values will be used. The potential hazard area is defined as the distribution of MC simulations (72~km$^2$). To give an example calculation, $\text{Pr}(Lava|Sim)$ is found with Equation \ref{eq_simplepost} by dividing true positives (green boxes in \ref{fig:tolbachik}) by the simulation area (green and red boxes). The NPV, $\text{Pr}(\neg Lava|\neg Sim)$, is found by diving true negatives (top right of Figure \ref{fig_2x2}), by the area not simulated (top half of Figure \ref{fig_2x2}). Table \ref{tab_fitmetriccompare} lists the fitness values from Table \ref{tab_tolbflowresults} as well as the two predictive values for eight flow simulation algorithms.
+	\paragraph{Review of validation level 3} Instead of using model sensitivity and the Jaccard index as fitness values for the various lava flow models, now the two predictive values will be used. The potential hazard area is defined as the distribution of MC simulations (72~km$^2$). To give an example calculation, $\text{Pr}(Lava|Sim)$ is found with Equation \ref{eq_simplepost} by dividing true positives (green boxes in \ref{fig:tolbachik}) by the simulation area (green and red boxes). The NPV, $\text{Pr}(\neg Lava|\neg Sim)$, is found by diving true negatives (top right of Figure \ref{fig_2x2}), by the area not simulated (top half of Figure \ref{fig_2x2}). Table \ref{tab_fitmetriccompare} lists the fitness values from Table \ref{tab_tolbflowresults} as well as the two predictive values for eight flow simulation algorithms.
 	
 		\begin{table}[h]
 		\centering
@@ -572,7 +572,7 @@ The set of cellular automata is defined as
 		
 		An optimal pulse volume will ideally produce a flow simulation with the highest PPV and NPV. Pulse volumes with high associated PPVs will produce simulations where areas simulated as inundated by lava will have a high likelihood of actually being inundated by lava. Pulse volumes with high associated NPVs will produce simulations where areas simulated to not be inundated will hava a high likelihood of actually not being inundated.
 		
-		\subsubsection{Model Execution} 
+		\subsubsection{Model execution} 
 		To populate $Sim$, I have run the MOLASSES lava flow code using TanDEM-X derived parameters listed in Table \ref{tab_parameters_pulsebayes}. All variables are fixed except the pulse volume parameter, which is the amount of lava delivered to source cells in the Cellular Automata grid of MOLASSES. The lowest pulse volume, 1755 m$^3$ per pulse, is approximately the product of the TanDEM-X DEM grid cell size (225~m$^2$) and the residual flow thickness (7.8~m). The other 15 pulse volumes are multiples of this volume (i.e. they are 1.5 to 8.5$\times$ 1775 m$^3$).
 		
 		\begin{table}[h!]
@@ -647,7 +647,7 @@ The set of cellular automata is defined as
 			\label{fig_neglavaGsim}
 		\end{figure}
 	
-	\subsection{Incorporating Model Uncertainty with a Monte Carlo method}\label{sec_MC}
+	\subsection{Incorporating model uncertainty with a Monte Carlo method}\label{sec_MC}
 		Model uncertainty is a result of input parameter uncertainty, such as uncertainty in the underlying DEM. This can be distinguished from model error, which might be defined as the difference between the true lava flow and a simulation carried out with perfect input parameters, and is created by the inherent deviations between a computer model and real life processes. Because there is parameter uncertainty, it is essential to quantify the range of model solutions given the likely range of each parameter.
 		
 		In this example, elevation uncertainty will be examined. Elevation uncertainty is an element in the MOLASSES module \textbf{INITFLOW}, where each grid cell elevation can be defined randomly before the lava flow simulation begins. The user can add an elevation uncertainty, in meters, to the configuration file. If this value is provided, each grid cell will receive a new elevation value randomly selected from a normal distribution whose mean is the DEM elevation and the standard deviation is the uncertainty value.
@@ -824,7 +824,7 @@ The set of cellular automata is defined as
 			\label{fig_weightedposteriors}
 		\end{figure}
 		
-	\subsubsection{Decision Making with the Bayes Factor}
+	\subsubsection{Decision making with the Bayes Factor}
 	By dividing the Monte Carlo set of simulations of the Tolbachik lava flows into sub-regions based on $\text{Pr}(Sim)$, the relative likelihood of inundation was calculated (Figure \ref{fig_bayesfactor}). By using the Bayes Factor to compare likelihood of Indundation to Not Inundation, most sub-regions were not significantly better described by one model or the other. Only the sub-region of locations least likely to be hit by flow simulations had ``strong evidence'' against inundation, and only the sub-region of locations most likely to be hit by simulations had ``substantial risk'' of inundation. These results leave a large amount of ambiguity when making decisions to fortify or evacuate due to a lava flow.
 	
 	In discussing the decision making process for calling an evacuation due to an eruption at Mount Vesuvius, \citet{marzocchi2007probabilistic} provided a cost-loss model where two actions can be taken, protect and do not protect. Two costs are associated with these actions: $\mathcal{C}$ is the cost of protection and $\mathcal{L}$ is the cost of loss if the volcanic hazard occurs while a decision to not protect is made. If $\mathcal{L}$ is incurred, it is assumed to exceed cost $\mathcal{C}$, often because loss due to volcanic hazards includes the loss of life.
@@ -850,7 +850,7 @@ The set of cellular automata is defined as
 	Once lava simulators have been successfully validated, these Bayesian statistics can be used to improve model input parameters and evaluate model uncertainty by incorporating uncertainty inherent in input parameters. It is also possible that the two predictive values can be used to aid in decision making processes associated with active lava flow crises.
 	
 	
-\section{Data Statement}
+\section{Data statement}
 This code is available for free use on GitHub at the USFVolcanology page located at \url{https://github.com/USFvolcanology}, while the validation codes can be found at \url{https://github.com/jarichardson/MOLASSES_benchmarking}. The MOLASSES code and the validation algorithms are kept in seperate self-contained repositories.
 
 \section{Notation}

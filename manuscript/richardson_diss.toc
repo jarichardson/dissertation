@@ -1,77 +1,77 @@
 \contentsline {chapter}{List of Tables}{v}{section*.1}
 \contentsline {chapter}{List of Figures}{vii}{section*.2}
-\contentsline {chapter}{Abstract}{x}{section*.3}
+\contentsline {chapter}{Abstract}{xi}{section*.3}
 \contentsline {chapter}{\numberline {1}Introduction}{1}{chapter.1}
 \contentsline {section}{\numberline {1.1}Role of sills in the development of volcanic fields}{2}{section.1.1}
-\contentsline {section}{\numberline {1.2}Validating Lava Flow Simulators using a Validation Hierarchy and Bayesian Analysis}{2}{section.1.2}
-\contentsline {section}{\numberline {1.3}The Volcanic History of Syria Planum, Mars}{3}{section.1.3}
+\contentsline {section}{\numberline {1.2}Validating lava flow simulators using a validation hierarchy and bayesian analysis}{2}{section.1.2}
+\contentsline {section}{\numberline {1.3}The volcanic history of Syria Planum, Mars}{3}{section.1.3}
 \contentsline {section}{\numberline {1.4}Waning volcanism on Arsia Mons, Mars}{4}{section.1.4}
 \contentsline {section}{\numberline {1.5}Uses of kernel statistics on volcanic vents}{5}{section.1.5}
 \contentsline {chapter}{\numberline {2}Role of sills in the development of volcanic fields: Insights from lidar mapping surveys of the San Rafael Swell, Utah}{7}{chapter.2}
 \contentsline {section}{\numberline {2.1}Abstract}{7}{section.2.1}
 \contentsline {section}{\numberline {2.2}Introduction}{7}{section.2.2}
-\contentsline {section}{\numberline {2.3}Geologic Description}{8}{section.2.3}
-\contentsline {section}{\numberline {2.4}Lidar Reconnaissance and Analysis}{10}{section.2.4}
-\contentsline {section}{\numberline {2.5}Igneous System Reconstruction}{12}{section.2.5}
+\contentsline {section}{\numberline {2.3}Geologic description}{8}{section.2.3}
+\contentsline {section}{\numberline {2.4}Lidar reconnaissance and analysis}{10}{section.2.4}
+\contentsline {section}{\numberline {2.5}Igneous system reconstruction}{12}{section.2.5}
 \contentsline {subsection}{\numberline {2.5.1}Hebes Sill}{12}{subsection.2.5.1}
 \contentsline {subsection}{\numberline {2.5.2}Central Cedar Sill}{14}{subsection.2.5.2}
-\contentsline {section}{\numberline {2.6}Discussion and Conclusions}{16}{section.2.6}
+\contentsline {section}{\numberline {2.6}Discussion and conclusions}{16}{section.2.6}
 \contentsline {section}{\numberline {2.7}Acknowledgments}{20}{section.2.7}
-\contentsline {chapter}{\numberline {3}Validating Lava Flow Simulators using a Validation Hierarchy and Bayesian Analysis}{29}{chapter.3}
+\contentsline {chapter}{\numberline {3}Validating lava flow simulators using a validation hierarchy and bayesian analysis}{29}{chapter.3}
 \contentsline {section}{\numberline {3.1}Introduction}{29}{section.3.1}
-\contentsline {subsection}{\numberline {3.1.1}Case Study Area: 2012-3 Tolbachik Lava Flow}{32}{subsection.3.1.1}
-\contentsline {section}{\numberline {3.2}A Modular Cellular Automata Algorithm for lava flows}{33}{section.3.2}
-\contentsline {subsection}{\numberline {3.2.1}MOLASSES Algorithm Outline}{34}{subsection.3.2.1}
-\contentsline {subsection}{\numberline {3.2.2}Cells in E$2$}{36}{subsection.3.2.2}
-\contentsline {subsection}{\numberline {3.2.3}Source Locations, V, and the Source Function, $\gamma $}{37}{subsection.3.2.3}
-\contentsline {subsection}{\numberline {3.2.4}Substates, S, and the Transition Function, $\sigma $}{37}{subsection.3.2.4}
+\contentsline {subsection}{\numberline {3.1.1}Case study area: 2012-3 Tolbachik Lava Flow}{32}{subsection.3.1.1}
+\contentsline {section}{\numberline {3.2}A modular cellular automata algorithm for lava flows}{33}{section.3.2}
+\contentsline {subsection}{\numberline {3.2.1}MOLASSES algorithm outline}{34}{subsection.3.2.1}
+\contentsline {subsection}{\numberline {3.2.2}Cells in E$^2$}{36}{subsection.3.2.2}
+\contentsline {subsection}{\numberline {3.2.3}Source locations, V, and the source function, $\gamma $}{37}{subsection.3.2.3}
+\contentsline {subsection}{\numberline {3.2.4}Substates, S, and the transition function, $\sigma $}{37}{subsection.3.2.4}
 \contentsline {paragraph}{\numberline {3.2.4.0.1}Local slope-based spreading}{38}{paragraph.3.2.4.0.1}
 \contentsline {paragraph}{\numberline {3.2.4.0.2}Neighborhood size}{39}{paragraph.3.2.4.0.2}
 \contentsline {paragraph}{\numberline {3.2.4.0.3}Spreading inhibited by special relationships}{39}{paragraph.3.2.4.0.3}
-\contentsline {subsection}{\numberline {3.2.5}Cell Neighborhood, X}{40}{subsection.3.2.5}
-\contentsline {section}{\numberline {3.3}Validation Hierarchy}{41}{section.3.3}
-\contentsline {paragraph}{\numberline {3.3.0.0.4}Test Algorithms}{42}{paragraph.3.3.0.0.4}
-\contentsline {subsection}{\numberline {3.3.1}Level 0: Conservation of Mass}{43}{subsection.3.3.1}
+\contentsline {subsection}{\numberline {3.2.5}Cell neighborhood, X}{40}{subsection.3.2.5}
+\contentsline {section}{\numberline {3.3}Validation hierarchy}{41}{section.3.3}
+\contentsline {paragraph}{\numberline {3.3.0.0.4}Test algorithms}{42}{paragraph.3.3.0.0.4}
+\contentsline {subsection}{\numberline {3.3.1}Level 0: Conservation of mass}{43}{subsection.3.3.1}
 \contentsline {subsection}{\numberline {3.3.2}Level 1: Repeatability given meaningless parameter variation}{44}{subsection.3.3.2}
-\contentsline {subsubsection}{\numberline {3.3.2.1}Exercise Parameters}{45}{subsubsection.3.3.2.1}
+\contentsline {subsubsection}{\numberline {3.3.2.1}Exercise parameters}{45}{subsubsection.3.3.2.1}
 \contentsline {subsubsection}{\numberline {3.3.2.2}Results}{45}{subsubsection.3.3.2.2}
 \contentsline {subsection}{\numberline {3.3.3}Level 2: Replication of flow morphologies on simple physical surfaces}{47}{subsection.3.3.3}
-\contentsline {subsubsection}{\numberline {3.3.3.1}Exercise Parameters}{48}{subsubsection.3.3.3.1}
+\contentsline {subsubsection}{\numberline {3.3.3.1}Exercise parameters}{48}{subsubsection.3.3.3.1}
 \contentsline {subsubsection}{\numberline {3.3.3.2}Results}{48}{subsubsection.3.3.3.2}
 \contentsline {subsection}{\numberline {3.3.4}Level 3: Replication of real lava flows over complex topography}{48}{subsection.3.3.4}
 \contentsline {subsubsection}{\numberline {3.3.4.1}Results}{51}{subsubsection.3.3.4.1}
-\contentsline {section}{\numberline {3.4}Bayesian Applications for Lava Flow Models}{53}{section.3.4}
-\contentsline {paragraph}{\numberline {3.4.0.1.1}Calculating Predictive Values}{55}{paragraph.3.4.0.1.1}
-\contentsline {paragraph}{\numberline {3.4.0.1.2}Potential Hazard Area}{57}{paragraph.3.4.0.1.2}
-\contentsline {paragraph}{\numberline {3.4.0.1.3}Review of Validation Level 3}{58}{paragraph.3.4.0.1.3}
+\contentsline {section}{\numberline {3.4}Bayesian applications for lava flow models}{53}{section.3.4}
+\contentsline {paragraph}{\numberline {3.4.0.1.1}Calculating predictive values}{55}{paragraph.3.4.0.1.1}
+\contentsline {paragraph}{\numberline {3.4.0.1.2}Potential hazard area}{57}{paragraph.3.4.0.1.2}
+\contentsline {paragraph}{\numberline {3.4.0.1.3}Review of validation level 3}{58}{paragraph.3.4.0.1.3}
 \contentsline {subsection}{\numberline {3.4.1}Improving model performance on one model parameter}{59}{subsection.3.4.1}
-\contentsline {subsubsection}{\numberline {3.4.1.1}Model Execution}{60}{subsubsection.3.4.1.1}
+\contentsline {subsubsection}{\numberline {3.4.1.1}Model execution}{60}{subsubsection.3.4.1.1}
 \contentsline {subsubsection}{\numberline {3.4.1.2}Results}{60}{subsubsection.3.4.1.2}
-\contentsline {subsection}{\numberline {3.4.2}Incorporating Model Uncertainty with a Monte Carlo method}{62}{subsection.3.4.2}
+\contentsline {subsection}{\numberline {3.4.2}Incorporating model uncertainty with a Monte Carlo method}{62}{subsection.3.4.2}
 \contentsline {subsubsection}{\numberline {3.4.2.1}Bayesian distribution of MC results}{64}{subsubsection.3.4.2.1}
 \contentsline {subsubsection}{\numberline {3.4.2.2}Estimating inundation risk from the simulated frequency of inundation}{65}{subsubsection.3.4.2.2}
 \contentsline {section}{\numberline {3.5}Discussion}{69}{section.3.5}
 \contentsline {subsection}{\numberline {3.5.1}Validation of MOLASSES models}{69}{subsection.3.5.1}
 \contentsline {subsection}{\numberline {3.5.2}Bayesian applications for real lava flows}{70}{subsection.3.5.2}
 \contentsline {subsubsection}{\numberline {3.5.2.1}Using Bayesian statistics to compare models}{71}{subsubsection.3.5.2.1}
-\contentsline {subsubsection}{\numberline {3.5.2.2}Decision Making with the Bayes Factor}{71}{subsubsection.3.5.2.2}
+\contentsline {subsubsection}{\numberline {3.5.2.2}Decision making with the Bayes Factor}{71}{subsubsection.3.5.2.2}
 \contentsline {section}{\numberline {3.6}Conclusions}{73}{section.3.6}
-\contentsline {section}{\numberline {3.7}Data Statement}{75}{section.3.7}
+\contentsline {section}{\numberline {3.7}Data statement}{75}{section.3.7}
 \contentsline {section}{\numberline {3.8}Notation}{75}{section.3.8}
-\contentsline {chapter}{\numberline {4}The Volcanic History of Syria Planum, Mars}{76}{chapter.4}
+\contentsline {chapter}{\numberline {4}The volcanic history of Syria Planum, Mars}{76}{chapter.4}
 \contentsline {section}{\numberline {4.1}Abstract}{76}{section.4.1}
 \contentsline {section}{\numberline {4.2}Introduction}{77}{section.4.2}
-\contentsline {subsection}{\numberline {4.2.1}Geologic Description}{78}{subsection.4.2.1}
+\contentsline {subsection}{\numberline {4.2.1}Geologic description}{78}{subsection.4.2.1}
 \contentsline {section}{\numberline {4.3}Methods}{81}{section.4.3}
-\contentsline {subsection}{\numberline {4.3.1}Study Area}{81}{subsection.4.3.1}
-\contentsline {subsection}{\numberline {4.3.2}Catalog of Volcanic Vents}{82}{subsection.4.3.2}
-\contentsline {subsection}{\numberline {4.3.3}Crater Counting}{84}{subsection.4.3.3}
-\contentsline {subsection}{\numberline {4.3.4}Nearest Neighbor Analysis}{85}{subsection.4.3.4}
+\contentsline {subsection}{\numberline {4.3.1}Study area}{81}{subsection.4.3.1}
+\contentsline {subsection}{\numberline {4.3.2}Catalog of volcanic vents}{82}{subsection.4.3.2}
+\contentsline {subsection}{\numberline {4.3.3}Crater counting}{84}{subsection.4.3.3}
+\contentsline {subsection}{\numberline {4.3.4}Nearest neighbor analysis}{85}{subsection.4.3.4}
 \contentsline {subsection}{\numberline {4.3.5}Two--point azimuthal analysis}{87}{subsection.4.3.5}
 \contentsline {section}{\numberline {4.4}Results}{88}{section.4.4}
 \contentsline {subsection}{\numberline {4.4.1}Mapping}{88}{subsection.4.4.1}
-\contentsline {subsection}{\numberline {4.4.2}Age--Dating}{90}{subsection.4.4.2}
-\contentsline {subsection}{\numberline {4.4.3}Nearest Neighbor Analysis}{92}{subsection.4.4.3}
+\contentsline {subsection}{\numberline {4.4.2}Age--dating}{90}{subsection.4.4.2}
+\contentsline {subsection}{\numberline {4.4.3}Nearest neighbor analysis}{92}{subsection.4.4.3}
 \contentsline {subsection}{\numberline {4.4.4}Two--point azimuthal analysis}{94}{subsection.4.4.4}
 \contentsline {section}{\numberline {4.5}Discussion}{96}{section.4.5}
 \contentsline {section}{\numberline {4.6}Conclusion}{103}{section.4.6}
@@ -99,7 +99,7 @@
 \contentsline {section}{\numberline {6.1}Abstract}{132}{section.6.1}
 \contentsline {section}{\numberline {6.2}Introduction}{132}{section.6.2}
 \contentsline {subsection}{\numberline {6.2.1}Estimating vent intensity}{134}{subsection.6.2.1}
-\contentsline {subsection}{\numberline {6.2.2}Kernel Density Estimation}{135}{subsection.6.2.2}
+\contentsline {subsection}{\numberline {6.2.2}Kernel density estimation}{135}{subsection.6.2.2}
 \contentsline {section}{\numberline {6.3}Methods}{138}{section.6.3}
 \contentsline {subsection}{\numberline {6.3.1}Data collection}{138}{subsection.6.3.1}
 \contentsline {subsubsection}{\numberline {6.3.1.1}Earth clusters}{139}{subsubsection.6.3.1.1}
@@ -113,11 +113,11 @@
 \contentsline {subsubsection}{\numberline {6.3.1.3}Venus clusters}{142}{subsubsection.6.3.1.3}
 \contentsline {subsection}{\numberline {6.3.2}Estimating vent density with the KDtools Python Library}{143}{subsection.6.3.2}
 \contentsline {section}{\numberline {6.4}Results}{146}{section.6.4}
-\contentsline {subsection}{\numberline {6.4.1}Volume Flux Density}{148}{subsection.6.4.1}
+\contentsline {subsection}{\numberline {6.4.1}Volume flux density}{148}{subsection.6.4.1}
 \contentsline {section}{\numberline {6.5}Discussion}{151}{section.6.5}
 \contentsline {subsection}{\numberline {6.5.1}Planet-level differences in distributed volcanism}{151}{subsection.6.5.1}
 \contentsline {subsection}{\numberline {6.5.2}Geologic implications of the kernel bandwidth}{152}{subsection.6.5.2}
-\contentsline {subsubsection}{\numberline {6.5.2.1}Elongated Source Region}{153}{subsubsection.6.5.2.1}
+\contentsline {subsubsection}{\numberline {6.5.2.1}Elongated source region}{153}{subsubsection.6.5.2.1}
 \contentsline {subsubsection}{\numberline {6.5.2.2}Magma source migration or multiple overprinting sources}{154}{subsubsection.6.5.2.2}
 \contentsline {subsubsection}{\numberline {6.5.2.3}Anisotropic crustal conductivity}{156}{subsubsection.6.5.2.3}
 \contentsline {section}{\numberline {6.6}Conclusions}{160}{section.6.6}
