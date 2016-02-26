@@ -1,35 +1,45 @@
 \renewcommand *\addvspace [1]{}
 \addvspace {10\p@ }
 \addvspace {10\p@ }
-\contentsline {table}{\numberline {2.1}{\ignorespaces Areas, Thickness, and Volumes for 7 Sills in the Eroded San Rafael Swell Volcanic Field\relax }}{14}{table.caption.6}
-\contentsline {table}{\numberline {2.2}{\ignorespaces Igneous Material Contributions in the Study Area\relax }}{16}{table.caption.9}
-\contentsline {table}{\numberline {2.3}{\ignorespaces Lidar Survey Specifications\relax }}{21}{table.caption.12}
+\contentsline {table}{\numberline {2.1}{\ignorespaces Lidar Survey Specifications\relax }}{11}{table.caption.5}
+\contentsline {table}{\numberline {2.2}{\ignorespaces Areas, Thickness, and Volumes for 7 Sills in the Eroded San Rafael Swell Volcanic Field\relax }}{13}{table.caption.7}
+\contentsline {table}{\numberline {2.3}{\ignorespaces Igneous Material Contributions in the Study Area\relax }}{16}{table.caption.10}
 \addvspace {10\p@ }
-\contentsline {table}{\numberline {3.1}{\ignorespaces NEIGHBOR\_ID Module Algorithms\relax }}{42}{table.caption.18}
-\contentsline {table}{\numberline {3.2}{\ignorespaces Transition Algorithm Codes and Descriptions\relax }}{43}{table.caption.19}
-\contentsline {table}{\numberline {3.3}{\ignorespaces MOLASSES Conservation of Mass Test\relax }}{44}{table.caption.20}
-\contentsline {table}{\numberline {3.4}{\ignorespaces DEM Rotation Results\relax }}{46}{table.caption.22}
-\contentsline {table}{\numberline {3.5}{\ignorespaces Circular Flow Test Thresholds\relax }}{47}{table.caption.23}
-\contentsline {table}{\numberline {3.6}{\ignorespaces Bingham Circle Results\relax }}{49}{table.caption.25}
-\contentsline {table}{\numberline {3.7}{\ignorespaces Tolbachik Validation Flow Parameters\relax }}{51}{table.caption.27}
-\contentsline {table}{\numberline {3.8}{\ignorespaces Tolbachik Flow Results\relax }}{51}{table.caption.29}
-\contentsline {table}{\numberline {3.9}{\ignorespaces Bayes Factor Interpretations (modified from \citet {aspinall2003evidence})\relax }}{55}{table.caption.30}
-\contentsline {table}{\numberline {3.10}{\ignorespaces Traditional Fit Metrics and Bayesian Posterior Functions\relax }}{59}{table.caption.32}
-\contentsline {table}{\numberline {3.11}{\ignorespaces MOLASSES Flow Parameters\relax }}{60}{table.caption.33}
-\contentsline {table}{\numberline {3.12}{\ignorespaces Monte Carlo MOLASSES Flow Parameters\relax }}{63}{table.caption.37}
-\contentsline {table}{\numberline {3.13}{\ignorespaces Relative likelihood of inundation given $\text {Pr}(Sim)$\relax }}{68}{table.caption.41}
-\contentsline {table}{\numberline {3.14}{\ignorespaces Transition Algorithm Results\relax }}{69}{table.caption.43}
-\contentsline {table}{\numberline {3.15}{\ignorespaces Notation\relax }}{75}{table.caption.45}
+\contentsline {table}{\numberline {3.1}{\ignorespaces NEIGHBOR\_ID Module Algorithms\relax }}{35}{table.caption.18}
+\contentsline {table}{\numberline {3.2}{\ignorespaces Transition Algorithm Codes and Descriptions\relax }}{36}{table.caption.19}
+\contentsline {table}{\numberline {3.3}{\ignorespaces MOLASSES Conservation of Mass Test\relax }}{37}{table.caption.20}
+\contentsline {table}{\numberline {3.4}{\ignorespaces DEM Rotation Results\relax }}{39}{table.caption.22}
+\contentsline {table}{\numberline {3.5}{\ignorespaces Circular Flow Test Thresholds\relax }}{40}{table.caption.23}
+\contentsline {table}{\numberline {3.6}{\ignorespaces Bingham Circle Results\relax }}{42}{table.caption.25}
+\contentsline {table}{\numberline {3.7}{\ignorespaces Tolbachik Validation Flow Parameters\relax }}{44}{table.caption.27}
+\contentsline {table}{\numberline {3.8}{\ignorespaces Tolbachik Flow Results\relax }}{44}{table.caption.29}
+\contentsline {table}{\numberline {3.9}{\ignorespaces Bayes Factor Interpretations (modified from \citet {aspinall2003evidence})\relax }}{48}{table.caption.30}
+\contentsline {table}{\numberline {3.10}{\ignorespaces Traditional Fit Metrics and Bayesian Posterior Functions\relax }}{52}{table.caption.32}
+\contentsline {table}{\numberline {3.11}{\ignorespaces MOLASSES Flow Parameters\relax }}{53}{table.caption.33}
+\contentsline {table}{\numberline {3.12}{\ignorespaces Monte Carlo MOLASSES Flow Parameters\relax }}{56}{table.caption.37}
+\contentsline {table}{\numberline {3.13}{\ignorespaces Relative likelihood of inundation given $\text {Pr}(Sim)$\relax }}{61}{table.caption.41}
+\contentsline {table}{\numberline {3.14}{\ignorespaces Transition Algorithm Results\relax }}{62}{table.caption.43}
+\contentsline {table}{\numberline {3.15}{\ignorespaces Notation\relax }}{68}{table.caption.45}
 \addvspace {10\p@ }
-\contentsline {table}{\numberline {4.1}{\ignorespaces Summary of vent counts in defined units\relax }}{90}{table.caption.47}
-\contentsline {table}{\numberline {4.2}{\ignorespaces Crater retention rates and ages for selected units\relax }}{90}{table.caption.48}
-\contentsline {table}{\numberline {4.3}{\ignorespaces Summary of nearest neighbor analysis on cataloged vents and two subgroups of vents\relax }}{92}{table.caption.51}
-\contentsline {table}{\numberline {4.4}{\ignorespaces Notation\relax }}{105}{table.caption.56}
+\contentsline {table}{\numberline {4.1}{\ignorespaces Summary of vent counts in defined units\relax }}{83}{table.caption.47}
+\contentsline {table}{\numberline {4.2}{\ignorespaces Crater retention rates and ages for selected units\relax }}{83}{table.caption.48}
+\contentsline {table}{\numberline {4.3}{\ignorespaces Summary of nearest neighbor analysis on cataloged vents and two subgroups of vents\relax }}{85}{table.caption.51}
+\contentsline {table}{\numberline {4.4}{\ignorespaces Notation\relax }}{98}{table.caption.56}
 \addvspace {10\p@ }
-\contentsline {table}{\numberline {5.1}{\ignorespaces Lava Flow Age Information\relax }}{118}{table.caption.61}
-\contentsline {table}{\numberline {5.2}{\ignorespaces Lava Flow Morphometry\relax }}{119}{table.caption.62}
+\contentsline {table}{\numberline {5.1}{\ignorespaces Lava Flow Age Information\relax }}{111}{table.caption.61}
+\contentsline {table}{\numberline {5.2}{\ignorespaces Lava Flow Morphometry\relax }}{112}{table.caption.62}
 \addvspace {10\p@ }
-\contentsline {table}{\numberline {6.1}{\ignorespaces Distributed-style Volcano Clusters\relax }}{144}{table.caption.73}
-\contentsline {table}{\numberline {6.2}{\ignorespaces Sub-populations of the San Francisco Volcanic Field$^*$\relax }}{145}{table.caption.74}
-\contentsline {table}{\numberline {6.3}{\ignorespaces Size and Mean Vent Intensity of Volcano Clusters\relax }}{148}{table.caption.76}
+\contentsline {table}{\numberline {6.1}{\ignorespaces Distributed-style Volcano Clusters\relax }}{134}{table.caption.70}
+\contentsline {table}{\numberline {6.2}{\ignorespaces Sub-populations of the San Francisco Volcanic Field}}{135}{table.caption.71}
+\contentsline {table}{\numberline {6.3}{\ignorespaces Size and Mean Vent Intensity of Volcano Clusters\relax }}{138}{table.caption.73}
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\contentsline {table}{\numberline {I.1}{\ignorespaces Thickness measurements made for Cedar Mountain Sill}}{201}{table.a.A.1}
+\contentsline {table}{\numberline {I.2}{\ignorespaces Thickness measurements made for Central Cedar Mountain Sill}}{203}{table.a.A.2}
+\contentsline {table}{\numberline {I.3}{\ignorespaces Thickness measurements made for Razor's Sill}}{203}{table.a.A.3}
+\contentsline {table}{\numberline {I.4}{\ignorespaces Thickness measurements made for Hebes Sill}}{203}{table.a.A.4}
+\contentsline {table}{\numberline {I.5}{\ignorespaces Thickness measurements made for Bad Luck Sill}}{204}{table.a.A.5}
+\contentsline {table}{\numberline {I.6}{\ignorespaces Thickness measurements made for Lower Cedar Mountain Sill}}{204}{table.a.A.6}
+\addvspace {10\p@ }
+\addvspace {10\p@ }
 \addvspace {10\p@ }

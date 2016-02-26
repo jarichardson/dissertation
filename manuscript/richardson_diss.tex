@@ -11,7 +11,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%%
 %Not sure if these packages can be used
 \usepackage{booktabs}
-\usepackage{supertabular}
+\usepackage{longtable}
 \usepackage{multicol}
 \usepackage{gnuplottex}
 \usepackage{subcaption}
@@ -273,6 +273,9 @@
 % \patchcmd{\abstract}{\null\vfil}{}{}{}
 
 
+\usepackage[]{appendix}
+\appendixtitletocon
+\appendixtitleon
 
 %Add Hyperref Capabilities
 \usepackage[hidelinks]{hyperref}
@@ -341,7 +344,6 @@ Volcanism is a dominant process on Earth and Mars that has significantly modifie
 \include{Chapter-arsia}
 \include{Chapter-spatial_density}
 \include{conclusion}
-%\include{appendices}
 
 %%%%%%%%%%%%%%%%%%%%%
 %References Section
@@ -352,6 +354,29 @@ Volcanism is a dominant process on Earth and Mars that has significantly modifie
 \bibliographystyle{apalike} 
 \interlinepenalty=10000
 \bibliography{dissertation_refs}
+
+%%%%%%%%%%%%%%%%%%%%%
+%Appendix
+%
+
+%This puts "Appendix" in front of Chapter Name in the body, while the appendix
+%package adds "Appendix" in front of chapter name in TOC.
+\makeatletter
+\renewcommand{\@makechapterhead}[1]{%
+{ \vspace*{.5in} }
+{\setlength{\parindent}{0pt} \center \normalfont
+\bfseries Appendix \thechapter.\ #1
+\par\nobreak\vspace*{\baselineskip}}}
+\makeatother
+
+\begin{appendices}
+%Number Appendices with fancy roman numerals
+\renewcommand{\thechapter}{\Roman{chapter}}
+\include{appendix-lidar}
+\include{appendix-lavaflow}
+\include{appendix-arsia}
+\include{appendix-kde}
+\end{appendices}
 
 
 

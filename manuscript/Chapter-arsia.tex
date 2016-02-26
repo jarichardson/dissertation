@@ -185,7 +185,7 @@ where $V_e$ is the volume of the most recent event simulated to occur before $t$
 			v27 & -120.55 & -8.17 & 158.16 & 1.8 & 1.6 & 13\\
 			v28 & -119.57 & -8.52 & 176.53 & 0.58 & 1.8 & 14\\
 		\bottomrule
-		\multicolumn{6}{p{0.65\linewidth}}{$^*$The three volume estimates are found using 1) a modeled subsurface, 2) assuming an average thickness of 10~m and 3) 80~m.}
+		\multicolumn{6}{p{0.7\linewidth}}{$^*$The three volume estimates are found using 1) a modeled subsurface, 2) assuming an average thickness of 10~m and 3) 80~m.}
 	\end{tabular}
 	\label{tab_morphdatabase}
 	\end{table}
@@ -209,7 +209,7 @@ where $V_e$ is the volume of the most recent event simulated to occur before $t$
 		\label{fig_VERRMRR}
 	\end{figure}
 	
-The 29 lava flows in our catalog are mapped to cover 6700 km$^2$, $\sim$70\%, of the caldera, representing the majority of surface lavas within the caldera walls (Figure \ref{fig_lavamap}). Each flow has at least one neighboring flow, which enables a stratigraphic web to be produced that connects all volcanic events to other events \ref{fig_stratweb}. Age estimates modeled from crater retention ranged from 71-313~Ma, though the youngest and oldest ages are not observed at the top or bottom of the stratigraphic web. This indicates that the crater ages might not be well constrained for small and relatively young surface units on Mars, but that ages for these units might be better constrained with stratigraphic information. These data are detailed for each edifice in Table \ref{tab_agedatabase}.
+The 29 lava flows in our catalog are mapped to cover 6700 km$^2$, $\sim$70\%, of the caldera, representing the majority of surface lavas within the caldera walls (Figure \ref{fig_lavamap}). Each flow has at least one neighboring flow, which enables a stratigraphic web to be produced that connects all volcanic events to other events \ref{fig_stratweb}. Age estimates modeled from crater retention ranged from 71-313~Ma, though the youngest and oldest ages are not observed at the top or bottom of the stratigraphic web. This indicates that the crater ages might not be well constrained for small and relatively young surface units on Mars, but that ages for these units might be better constrained with stratigraphic information. These data are detailed for each edifice in Table \ref{tab_agedatabase} and crater-size frequency distributions for each lava flow are graphed in Figure \ref{fig_craterct} and Appendix \ref{apdx_arsia}.
 	
 	\begin{figure}[ht]
 		\centering
@@ -250,7 +250,6 @@ The 29 lava flows in our catalog are mapped to cover 6700 km$^2$, $\sim$70\%, of
 	
 Lava flow volume estimates using the subsurface modeling method range from $1.6\cdot 10^{-3}$ to 5 km$^3$, with an average of 1.1 km$^3$ per flow (Figure \ref{fig_volumehistogram}). The total volume using this method, again assumed to be a minimum volume estimate, is 31 km$^3$. Average flow thickness for the 29 flows is 4.6~m, which is thinner than the thinnest flows identified by \citet{mouginis2008lava} by a factor of two. Individual volumes are reported in Table \ref{tab_morphdatabase}. We also report the volumes of each flow assuming an average thickness of 10 and 80~m, which might be more reasonable volume bounds. Assuming these two thicknesses gives the flow field a total modeled volume of 67 or 540~km$^3$, respectively.
 
-%%%ALL YOU HAVE TO DO IS WRITE A FEW LINES ABOUT VERRMMMM COULD IT BE SO HARD? THEN MODIFY THE DISCUSSION AND CONCLUSION AND SEND IT OFF. THEN WORK ON LAVA
 Modeling the recurrence rate of volcanism using both crater retention age dating and the stratigraphic relationships between neighboring lava flows (Figure \ref{fig_stratweb}) in the VERRM algorithm constrains the intra-caldera activity to the most recent 200~Ma. The 29 mapped volcanic events are modeled to have begun erupting around 200~ma, eruption frequency waxed to 150~Ma, and monotonically waned to 10-90~Ma (Figure \ref{fig_VERRMRR}). The peak recurrence rate, estimated as the median of 100,000 MC solutions, was 0.25 events per million years, or an average of 1 vent being created each 4 ~Myr. The 90\% confidence envelope of the recurrence rate through time is generally a factor of 2-4. This means that at peak activity, our model estimates a recurrence rate of vent formation of 0.1-1 events per Myr. The rate of volcanism then decreased to $<$10\% of this rate as early as 90~Ma and  as recently as 10~Ma. We interpret this 90\% decrease in the recurrence rate to signal the cessation of volcanism in the field. These 29 volcanic edifices would have then been emplaced over a time period of 110-190~Myr.
 
 The long term magma supply rate to the surface, or volume flux, is modeled using three separate estimated volumes for each edifice, listed in Table \ref{tab_morphdatabase}. First, volume estimates calculated by modeling a subsurface under each edifice and subtracting the subsurface from the overlying topography is used as edifice volumes in modeling volume flux. This model of volume flux through time is shown in Figure \ref{fig_VERRMMINVOL}. The median flux of all MC solutions here is modeled to increase to a delivery rate of 0.1 km$^3$~Myr$^{-1}$ at 150~Ma before doubling to 0.2 km$^3$~Myr$^{-1}$ around 100~Ma. The delivery rate then dies off quickly. There is significant uncertainty in this model, so that the peak discharge could have occurred at 150~Ma as well. The confidence envelope of 90\% of MC solutions for this model is roughly an order of magnitude on either side.
@@ -308,129 +307,4 @@ We have modeled the recurrence rate of vent production in the Arsia Mons caldera
 Results from the VERRM algorithm suggest that the 29 lava flows mapped in the caldera created a volcanic field that was active since at least 200~Ma and became inactive at between 10-90~Ma. The cumulative volume of flows is modeled to be 30-540~km$^3$. The magma surface delivery rate, or volume flux, of the mapped vents increased to a plateau of 0.1-3~km$^3$~Myr$^{-1}$ by 150~Ma, depending on the assumed thickness of each edifice, and might have peaked at 100~Ma before rapidly waning.
 
 The confidence envelope for volcanic recurrence rate (Figure \ref{fig_VERRMRR}) for times older than the peak of volcanism in this study (150~Ma) is likely unreliable---while the envelope suggests that recurrence among the 29 volcanoes waxes during this time, it is beyond likely that below the 29 lava flows, other flows and volcanic vents are buried. The increasing trend in recurrence rate might be erroneous because of a lack of data on these possible buried events. However, it is likely that the waning trend observed since 150~Ma is real. This waning trend, as well as the presence of distributed lava flows in the caldera, might represent the tail-end of an episode of activity in Arsia Mons that formed the large basaltic caldera and a corresponding magma chamber hypothesized by \citet{wilson2001evidence}. 
-
-
-
-
-
-
-
-%\begin{figure}
-%\centering
-%\includegraphics[width=\linewidth]{map_diff}
-%\label{fig:map_diff}
-%\end{figure}
-
-
-
-%\addcontentsline{toc}{section}{References}
-%\bibliographystyle{plainnat}
-%\bibliography{arsia}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%References
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-%%%%%%%%%%%%%%%%%%%%%
-%%References Section
-%\section{References}
-
-%\nobibliography{dissertation_refs}
-%\bibliographystyle{apalike} 
-
-\section{Appendix: cumulative crater charts}\label{sec_cccharts}
-\begin{figure}[h]
-\centering
-\caption[Individual cumulative crater frequency distributions]{Individual cumulative crater frequency distributions}
-\begin{subfigure}{.33\textwidth}
-  \includegraphics[width=\linewidth,clip,trim=1cm 1cm 1.5cm 1cm]{\FigPath/craterstats/119-57W_08-52S_100m_cum.eps}
-\end{subfigure}%
-\begin{subfigure}{.33\textwidth}
-  \includegraphics[width=\linewidth,clip,trim=1cm 1cm 1.5cm 1cm]{\FigPath/craterstats/119-79W_08-37S_100m_cum.eps}
-\end{subfigure}
-\begin{subfigure}{.33\textwidth}
-  \includegraphics[width=\linewidth,clip,trim=1cm 1cm 1.5cm 1cm]{\FigPath/craterstats/119-88W_08-44S_100m_cum.eps}
-\end{subfigure}
-\begin{subfigure}{.33\textwidth}
-  \includegraphics[width=\linewidth,clip,trim=1cm 1cm 1.5cm 1cm]{\FigPath/craterstats/119-90W_08-63S_100m_cum.eps}
-\end{subfigure}%
-\begin{subfigure}{.33\textwidth}
-  \includegraphics[width=\linewidth,clip,trim=1cm 1cm 1.5cm 1cm]{\FigPath/craterstats/119-92W_08-65S_100m_cum.eps}
-\end{subfigure}
-\begin{subfigure}{.33\textwidth}
-  \includegraphics[width=\linewidth,clip,trim=1cm 1cm 1.5cm 1cm]{\FigPath/craterstats/120-06W_08-63S_100m_cum.eps}
-\end{subfigure}
-\begin{subfigure}{.33\textwidth}
-  \includegraphics[width=\linewidth,clip,trim=1cm 1cm 1.5cm 1cm]{\FigPath/craterstats/120-08W_08-81S_100m_cum.eps}
-\end{subfigure}%
-\begin{subfigure}{.33\textwidth}
-  \includegraphics[width=\linewidth,clip,trim=1cm 1cm 1.5cm 1cm]{\FigPath/craterstats/120-17W_08-99S_100m_cum.eps}
-\end{subfigure}
-\begin{subfigure}{.33\textwidth}
-  \includegraphics[width=\linewidth,clip,trim=1cm 1cm 1.5cm 1cm]{\FigPath/craterstats/120-17W_09-26S_100m_cum.eps}
-\end{subfigure}
-\end{figure}
-
-\begin{figure}[h]
-\centering
-\caption[Continued individual cumulative crater frequency distributions]{Continued individual cumulative crater frequency distributions}
-\begin{subfigure}{.33\textwidth}
-  \includegraphics[width=\linewidth,clip,trim=1cm 1cm 1.5cm 1cm]{\FigPath/craterstats/120-24W_09-03S_100m_cum.eps}
-\end{subfigure}%
-\begin{subfigure}{.33\textwidth}
-  \includegraphics[width=\linewidth,clip,trim=1cm 1cm 1.5cm 1cm]{\FigPath/craterstats/120-24W_09-42S_100m_cum.eps}
-\end{subfigure}
-\begin{subfigure}{.33\textwidth}
-  \includegraphics[width=\linewidth,clip,trim=1cm 1cm 1.5cm 1cm]{\FigPath/craterstats/120-25W_08-40S_100m_cum.eps}
-\end{subfigure}
-\begin{subfigure}{.33\textwidth}
-  \includegraphics[width=\linewidth,clip,trim=1cm 1cm 1.5cm 1cm]{\FigPath/craterstats/120-30W_09-45S_100m_cum.eps}
-\end{subfigure}%
-\begin{subfigure}{.33\textwidth}
-  \includegraphics[width=\linewidth,clip,trim=1cm 1cm 1.5cm 1cm]{\FigPath/craterstats/120-33W_09-41S_100m_cum.eps}
-\end{subfigure}
-\begin{subfigure}{.33\textwidth}
-  \includegraphics[width=\linewidth,clip,trim=1cm 1cm 1.5cm 1cm]{\FigPath/craterstats/120-40W_08-46S_100m_cum.eps}
-\end{subfigure}
-\begin{subfigure}{.33\textwidth}
-  \includegraphics[width=\linewidth,clip,trim=1cm 1cm 1.5cm 1cm]{\FigPath/craterstats/120-44W_08-87S_100m_cum.eps}
-\end{subfigure}%
-\begin{subfigure}{.33\textwidth}
-  \includegraphics[width=\linewidth,clip,trim=1cm 1cm 1.5cm 1cm]{\FigPath/craterstats/120-45W_09-78S_100m_cum.eps}
-\end{subfigure}
-\begin{subfigure}{.33\textwidth}
-  \includegraphics[width=\linewidth,clip,trim=1cm 1cm 1.5cm 1cm]{\FigPath/craterstats/120-45W_09-98S_100m_cum.eps}
-\end{subfigure}
-\end{figure}
-
-\begin{figure}[h]
-\centering
-\caption[Continued individual cumulative crater frequency distributions]{Continued individual cumulative crater frequency distributions}
-\begin{subfigure}{.33\textwidth}
-  \includegraphics[width=\linewidth,clip,trim=1cm 1cm 1.5cm 1cm]{\FigPath/craterstats/120-46W_08-55S_100m_cum.eps}
-\end{subfigure}%
-\begin{subfigure}{.33\textwidth}
-  \includegraphics[width=\linewidth,clip,trim=1cm 1cm 1.5cm 1cm]{\FigPath/craterstats/120-48W_10-09S_100m_cum.eps}
-\end{subfigure}
-\begin{subfigure}{.33\textwidth}
-  \includegraphics[width=\linewidth,clip,trim=1cm 1cm 1.5cm 1cm]{\FigPath/craterstats/120-55W_08-17S_100m_cum.eps}
-\end{subfigure}
-\begin{subfigure}{.33\textwidth}
-  \includegraphics[width=\linewidth,clip,trim=1cm 1cm 1.5cm 1cm]{\FigPath/craterstats/120-55W_10-02S_100m_cum.eps}
-\end{subfigure}%
-\begin{subfigure}{.33\textwidth}
-  \includegraphics[width=\linewidth,clip,trim=1cm 1cm 1.5cm 1cm]{\FigPath/craterstats/120-81W_09-76S_100m_cum.eps}
-\end{subfigure}
-\begin{subfigure}{.33\textwidth}
-  \includegraphics[width=\linewidth,clip,trim=1cm 1cm 1.5cm 1cm]{\FigPath/craterstats/120-82W_09-65S_100m_cum.eps}
-\end{subfigure}
-\begin{subfigure}{.33\textwidth}
-  \includegraphics[width=\linewidth,clip,trim=1cm 1cm 1.5cm 1cm]{\FigPath/craterstats/120-92W_09-30S_100m_cum.eps}
-\end{subfigure}%
-\begin{subfigure}{.33\textwidth}
-  \includegraphics[width=\linewidth,clip,trim=1cm 1cm 1.5cm 1cm]{\FigPath/craterstats/arsia_caldera_floor_100m_cum.eps}
-\end{subfigure}
-\begin{subfigure}{.33\textwidth}
-  \includegraphics[width=\linewidth,clip,trim=1cm 1cm 1.5cm 1cm]{\FigPath/craterstats/arsia_fullarea_100m_cum.eps}
-\end{subfigure}
-\end{figure}
 
