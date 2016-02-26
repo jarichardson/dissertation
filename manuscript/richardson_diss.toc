@@ -112,16 +112,16 @@
 \contentsline {subsubsection}{\numberline {6.3.1.3}Venus clusters}{132}{subsubsection.6.3.1.3}
 \contentsline {subsection}{\numberline {6.3.2}Estimating vent density with the KDtools Python Library}{133}{subsection.6.3.2}
 \contentsline {section}{\numberline {6.4}Results}{136}{section.6.4}
-\contentsline {subsection}{\numberline {6.4.1}Volume flux density}{138}{subsection.6.4.1}
-\contentsline {section}{\numberline {6.5}Discussion}{141}{section.6.5}
-\contentsline {subsection}{\numberline {6.5.1}Planet-level differences in distributed volcanism}{141}{subsection.6.5.1}
-\contentsline {subsection}{\numberline {6.5.2}Geologic implications of the kernel bandwidth}{142}{subsection.6.5.2}
-\contentsline {subsubsection}{\numberline {6.5.2.1}Elongated source region}{143}{subsubsection.6.5.2.1}
-\contentsline {subsubsection}{\numberline {6.5.2.2}Magma source migration or multiple overprinting sources}{144}{subsubsection.6.5.2.2}
-\contentsline {subsubsection}{\numberline {6.5.2.3}Anisotropic crustal conductivity}{146}{subsubsection.6.5.2.3}
-\contentsline {section}{\numberline {6.6}Conclusions}{150}{section.6.6}
+\contentsline {subsection}{\numberline {6.4.1}Volume flux density}{139}{subsection.6.4.1}
+\contentsline {section}{\numberline {6.5}Discussion}{140}{section.6.5}
+\contentsline {subsection}{\numberline {6.5.1}Planet-level differences in distributed volcanism}{140}{subsection.6.5.1}
+\contentsline {subsection}{\numberline {6.5.2}Geologic implications of the kernel bandwidth}{143}{subsection.6.5.2}
+\contentsline {subsubsection}{\numberline {6.5.2.1}Elongated source region}{144}{subsubsection.6.5.2.1}
+\contentsline {subsubsection}{\numberline {6.5.2.2}Magma source migration or multiple overprinting sources}{145}{subsubsection.6.5.2.2}
+\contentsline {subsubsection}{\numberline {6.5.2.3}Anisotropic crustal conductivity}{147}{subsubsection.6.5.2.3}
+\contentsline {section}{\numberline {6.6}Conclusions}{151}{section.6.6}
 \contentsline {chapter}{\numberline {7}Conclusion}{152}{chapter.7}
-\contentsline {chapter}{References}{155}{section*.83}
+\contentsline {chapter}{References}{155}{section*.84}
 \contentsline {chapter}{Appendix \numberline {I}Sill thicknesses in the San Rafael Swell, Utah}{178}{Appendix.a.A}
 \contentsline {chapter}{Appendix \numberline {II}Validation Exercises for Lava Flow Algorithms}{183}{Appendix.a.B}
 \contentsline {chapter}{Appendix \numberline {III}Cumulative crater frequency distribution charts}{184}{Appendix.a.C}

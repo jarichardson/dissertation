@@ -132,9 +132,9 @@ Seven Venus clusters have been cataloged by \citet{miller2012shield}, which fall
 
 The large size difference between shield fields and shield plains has been observed since the return of Magellan radar images \citep{head1992venus}. Venusian shield fields are similar in size to the shield fields on Mars and have a similar number of vents (several hundreds) to fields on Mars and Earth. Venusian plains, however, are regional in scale and include several thousand vents. The Venusian surface has very few impact craters, indicating that it has recently been resurfaced. The regional volcanic plains would have played an important role in this resurfacing, due to their large footprints \citep{guest1992small}.
 
-\begin{table}
+\begin{table}[t!]
 \centering
-\caption{Distributed-style Volcano Clusters}
+\caption{Distributed-style Volcano Clusters on Earth}
 \begin{tabular}{p{2cm} p{2.5cm} p{2cm} c c p{4cm}}
 \toprule
 Cluster	&	Region, &	Location	&	Vent &	Bandwidth	&	Data\\
@@ -150,6 +150,24 @@ San \mbox{Francisco}	&	Arizona, USA	&	35$^{\circ}$20'N, 111$^{\circ}$50'W	&	583	
 San Rafael	&	Utah, USA	&	38$^{\circ}$35'N, 111$^{\circ}$15'W	&	63	&	$\bigl[\begin{smallmatrix} 2.31&0.720\\0.720&3.12 \end{smallmatrix}\bigr]$	&	\citet{kiyosugi2012relationship}\\
 Springerville &	Arizona, USA	&	34$^{\circ}$15'N, 109$^{\circ}$45'W	&	400	&	$\bigl[\begin{smallmatrix} 4.07&-0.300\\-0.300&3.14 \end{smallmatrix}\bigr]$	&	\citet{kiyosugi2012relationship,condit2010dynamic}\\
 Yucca Mountain$^*$ &	Nevada, USA	&	36$^{\circ}$40'N, 116$^{\circ}$30'W	&	39	&	$\bigl[\begin{smallmatrix} 8.35&0.42\\0.42&8.75 \end{smallmatrix}\bigr]$	&	\citet{kiyosugi2012relationship,connor1995three}\\
+\bottomrule
+\multicolumn{6}{p{0.95\linewidth}}{$^*$ Cluster data (including bandwidth matrix) are reported in \citet{kiyosugi2012relationship}, but vent locations are not included in this report.}\\
+\label{tab_clusterdataE}
+\end{tabular}
+\end{table}
+
+\subsection{Estimating vent density with the KDtools Python Library}
+
+A python library has been created to map the spatial density of geographic points, with specific functions to deal with geographic projections on Earth, Mars, and Venus. This library, called KDtools, contains seven functions which can be used to pre-process data, identify an optimal kernel bandwidth of the data, evaluate the local point density for locations on a map, and export these results to a raster file. Each function code is given in Appendix \ref{apdx_kdtoolsmaps}. Two functions, explained below, are used to first identify an optimal kernel bandwidth and second evaluate the spatial density of points across a map grid.
+
+\begin{table}[t!]
+\centering
+\caption{Distributed-style Volcano Clusters on Venus and Mars}
+\begin{tabular}{p{2cm} p{2.5cm} p{2cm} c c p{4cm}}
+\toprule
+Cluster	&	Region, &	Location	&	Vent &	Bandwidth	&	Data\\
+Name		& Country	&	Lat, Long	&	Count	&	Matrix (km$^2$)	&Source\\
+\midrule
 Field-A	&	Atalanta, Venus	&	54$^{\circ}$N, 168$^{\circ}$E	&	344	&	$\bigl[\begin{smallmatrix} 115&7.74\\7.74&238 \end{smallmatrix}\bigr]$	&	\citet{miller2012shield}\\
 Field-B1	&	Vellamo, Venus	&	27$^{\circ}$N, 137$^{\circ}$E	&	135	&	$\bigl[\begin{smallmatrix} 88.7&-35.4\\-35.4&71.4 \end{smallmatrix}\bigr]$	&	\citet{miller2012shield}\\
 Field-B2	&	Vellamo, Venus	&	328$^{\circ}$N, 139$^{\circ}$E	&	169	&	$\bigl[\begin{smallmatrix} 125&51.7\\51.7&116 \end{smallmatrix}\bigr]$	&	\citet{miller2012shield}\\
@@ -162,7 +180,7 @@ Pavonis	&	Tharsis, Mars	&	4$^{\circ}$S, 114$^{\circ}$W	&	89	&	$\bigl[\begin{smal
 Syria		&	Tharsis, Mars	&	14$^{\circ}$S, 100$^{\circ}$W	&	263	&	$\bigl[\begin{smallmatrix} 2810&-1720\\-1720&2620 \end{smallmatrix}\bigr]$	&	\citet{richardson2013volcanic}\\
 \bottomrule
 \multicolumn{6}{p{0.95\linewidth}}{$^*$ Cluster data (including bandwidth matrix) are reported in \citet{kiyosugi2012relationship}, but vent locations are not included in this report.}\\
-\label{tab_clusterdata}
+\label{tab_clusterdataVM}
 \end{tabular}
 \end{table}
 
@@ -185,16 +203,12 @@ Entire Field	&	5 - Present	&	35$^{\circ}$20'N, 111$^{\circ}$50'W	&	583	&	$\bigl[
 \end{tabular}
 \end{table}
 
-\subsection{Estimating vent density with the KDtools Python Library}
-
-A python library has been created to map the spatial density of geographic points, with specific functions to deal with geographic projections on Earth, Mars, and Venus. This library, called KDtools, contains seven functions which can be used to pre-process data, identify an optimal kernel bandwidth of the data, evaluate the local point density for locations on a map, and export these results to a raster file. Each function code is given in Appendix \ref{apdx_kdtoolsmaps}. Two functions, explained below, are used to first identify an optimal kernel bandwidth and second evaluate the spatial density of points across a map grid.
-
 The kernel bandwidth is determined with the SAMSE method in the \textbf{samse\_bandwidth} function, by calling the R statistical language in which the SAMSE bandwidth selector has been programmed. The single input of this function is the list of locations of each volcanic vents projected in meter units. A $2\times 2$, unconstrained covariance matrix is returned from this function.
 
 Local vent density is calculated along a grid in the function \textbf{KD} with the covariance matrix defining the Gaussian kernel ellipse. The smoothed density of each vent is calculated over the grid locations given their distance from the vent. This density is then added to the total density at each location in order to form the summation shown in Equation \ref{eq_kde}. After the density functions attributed to all vents have been calculated over the grid, all density values are normalized with the left half of Equation \ref{eq_kde}. The output of this function is a 2-dimensional array of density values corresponding to the grid surrounding vent locations. The sum of these density values approaches 1.0 as the grid size is increased around the volcano cluster. Volume density can also be modeled with function \textbf{KD} by providing weights to the function, following Equation \ref{eq_weigthedkde}.
 
 \section{Results}
-The locations, vent counts, and kernel bandwidth matrices for each volcano cluster are reported in Table \ref{tab_clusterdata}. Data and results for four clusters, Abu Monogenetic Volcano Group, Izu-Tobu Monogenetic Volcano Group, Black Rock Desert, and the Yucca Mountain Volcano Group are duplicated in Table \ref{tab_clusterdata} from \citet{kiyosugi2012relationship}. In addition to modeling vent density for the entire field, vent density is modeled for each paleomagnetic sub-group in the San Francisco Volcanic Field. Vent count and bandwidth matrices are listed separately in Table \ref{tab_sfvfdata}. Maps of vent density for volcano clusters on Earth, Mars, and Venus are shown in several figures below as well as Appendix \ref{apdx_kdtoolsmaps}.
+The locations, vent counts, and kernel bandwidth matrices for each volcano cluster are reported in Tables \ref{tab_clusterdataE} and \ref{tab_clusterdataVM}. Data and results for four clusters, Abu Monogenetic Volcano Group, Izu-Tobu Monogenetic Volcano Group, Black Rock Desert, and the Yucca Mountain Volcano Group are duplicated in Table \ref{tab_clusterdataE} from \citet{kiyosugi2012relationship}. In addition to modeling vent density for the entire field, vent density is modeled for each paleomagnetic sub-group in the San Francisco Volcanic Field. Vent count and bandwidth matrices are listed separately in Table \ref{tab_sfvfdata}. Maps of vent density for volcano clusters on Earth, Mars, and Venus are shown in several figures below as well as Appendix \ref{apdx_kdtoolsmaps}.
 
 \begin{figure}
 \centering
