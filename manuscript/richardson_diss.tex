@@ -43,7 +43,7 @@
 \setlength{\parindent}{.5in}
 
 \usepackage{natbib}
-\usepackage{chapterbib}
+%\usepackage{chapterbib}
 
 
 
@@ -277,12 +277,6 @@
 %Add Hyperref Capabilities
 \usepackage[hidelinks]{hyperref}
 \usepackage{bookmark}
-%But forget about citations, cause it's a CF
-\let\oldcitet\citet
-\let\oldcitep\citep
-\renewcommand{\citet}[2][]{\begin{NoHyper}\oldcitet[#1]{#2}\end{NoHyper}}
-\renewcommand{\citep}[2][]{\begin{NoHyper}\oldcitep[#1]{#2}\end{NoHyper}}
-
 
 \begin{document}
 %TITLE PAGE FILE GOES HERE
