@@ -405,4 +405,36 @@ The set of cellular automata is defined as
 			
 			If success and failure are defined by having a fits of greater or less than 50\%, all models tested would pass for the SRTM DEM and about half would pass for the TanDEM-X DEM. All but one model (4/P/E) performed worse on the TanDEM-X DEM. The Jaccard fit and Sensitivity for all models are given in Table \ref{tab_tolbflowresults}.
 					
+\section{Conclusions}
+
+Unique flow algorithms are validated by using common tests that show whether these algorithms replicate expected lava flow morphologies under specific conditions. Different tests that are applicable to CA codes fall into three validation levels: 1) tests that show that simulations don't change when parameters remain meaningfully identical; 2) tests that show that simulations replicate experimental results or analytical expectations; and 3) tests that show that simulations replicate real world flow examples. A summary of the results of the eight algorithms against the example validation exercises are given below in Table \ref{tab_algorithmresults}.
+		
+	\begin{table}[h]
+		\centering
+		\caption{Transition Algorithm Results}
+		\begin{tabular}{l | c | c | c c}
+			\toprule
+			Transition&\multicolumn{4}{c}{\textbf{Levels}}\\
+			Function&1&2&\multicolumn{2}{c}{3}\\
+			& DEM Rotation & Pancake & SRTM & TanDEM-X \\
+			\midrule
+			\textbf{4/P/S} & Pass & Fail & Pass & Pass\\
+			\textbf{8/P/S} & Pass & Pass & Pass & Fail\\
+			\textbf{4/N/S} & Fail & Fail & Pass & Fail\\
+			\textbf{8/N/S} & Pass & Pass& Pass & Fail\\
+			\textbf{4/P/E} & Fail & Ambiguous & Pass & Pass\\
+			\textbf{8/P/E} & Fail & Ambiguous & Pass & Pass\\
+			\textbf{4/N/E} & Fail & Pass & Pass & Pass\\
+			\textbf{8/N/E} & Fail & Pass & Pass & Pass\\
+			
+			\bottomrule
+		\end{tabular}
+		\label{tab_algorithmresults}
+	\end{table}
+	
+	Because these validation levels increase in complexity from Level 1 to Level 3, one possible strategy in validating different algorithms would be to only test algorithms at more complex levels after they successfully pass less complex tests. Valid models might then be determined by elimination. Only 3 of 8 tested algorithms pass the first ``rotating slope'' exercise: 4/P/S, 8/P/S, and 8/N/S. Although more algorithms passed the second ``bingham flow on a flat surface'' exercise, only 8/P/S and 8/N/S passed the previous exercise and this one. Both of these flows then successfully replicated the Tolbachik lava flows over SRTM topography. Therefore the 8/P/S and 8/N/S algorithms hold up to three tests.
+	
+	Overall, in all tests 8-connected models outperform 4-connected models. While equal sharing algorithms outperform slope-proportional sharing on a flat slope, they fail on a rotating DEM and perform about the same on real topography. There does not seem to be an unambiguously better choice between using parent-child relationships or not. If future tests continue to show similar performance between models with and without parentage, other reasons can be used to choose a model, such as computer run-time. 
+	
+	The strength of the MOLASSES code is that new algorithms, such as those used in the SCIARA model \citep{crisci2004simulation}, can be implemented relatively quickly and run through the validation exercises, which are written in Python. Combinations of implementation strategies can also be created on the fly by adjusting the makefile of the MOLASSES code instead of the code itself.
 
