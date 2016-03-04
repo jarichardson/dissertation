@@ -12,34 +12,24 @@
 	
 	Cellular Automata (CA) methods \citep{wolfram1984cellular} have been developed to simulate fluid flow, including lava spreading \citep{barca1994cellular}. In contrast to CFD codes, these do not generally attempt to compute Navier-Stokes equations but instead abstract many physical parameters, such as viscosity and temperature, into more or less empirical rules. The benefit of CA methods for simulating lava flows is most noticeable in the reduced computer time necessary for simulation compared to CFD methods.
 	
-	Multiple CA lava flow algorithms exist, such as SCIARA \citep{crisci2004simulation}, MAGFLOW \citep{del2008simulations}, ELFM \citep{damiani2006lava}, and LavaPL \citep{connor2012probabilistic}. These algorithms are variations on a theme, where the largest difference between each is how lava is distributed from one automaton to its neighbors. For instance, three versions of SCIARA allow for lava to spread in cardinal directions \citep{barca1994cellular}, in hexagonal directions \citep{crisci2008lava}, or in directions based on an inherent velocity calculated in an eulerian way for each automaton \citep{avolio2006sciara}. MAGFLOW and ELFM by contrast to the original SCIARA algorithm implements 8 directions of spreading. LavaPL and SCIARA both spread in four directions but the apportionment of lava from one automaton to neighbors is based on a different algorithm.
+	Multiple CA lava flow algorithms exist, such as SCIARA \citep{crisci2004simulation}, MAGFLOW \citep{del2008simulations}, ELFM \citep{damiani2006lava}, and LavaPL \citep{connor2012probabilistic}. These algorithms are variations on a theme, where the largest difference between each is how lava is distributed from one automaton to its neighbors. For instance, three versions of SCIARA allow for lava to spread in cardinal directions \citep{barca1994cellular}, in hexagonal directions \citep{crisci2008lava}, or in directions based on an inherent velocity calculated in an eulerian way for each automaton \citep{avolio2006sciara}. MAGFLOW and ELFM, by contrast to the original SCIARA algorithm, implement 8 directions of spreading. LavaPL and SCIARA both spread in four directions but the apportionment of lava from one automaton to neighbors is based on a different algorithm.
 
 %%%%%%%%%%%%%
 %Everything here down should likely be re-written
 
-	While several lava flow simulators now exist, each have been made and tested with different lava flows or aspects of flows in mind. Because of this, selecting a specific algorithm to effectively model lava flow hazards can be a necessary, if unwanted challenge. To address this problem, we propose a hierarchical validation scheme to objectively test different flow spreading algorithms. Tests can be designed with different validation levels in mind, to compare lava flow simulations to increasingly complex models, from simply conserving mass to replicating the paths and ultimate areal extents of real lava flows. The tests described in this project can be applied to any flow algorithm that provides at least a list or map of inundated locations over various topographies.
 
-	In this paper, multiple lava flow algorithms are tested using a new modular lava flow code, which I have named MOLASSES (standing for \textit{MOdular LAva Simulation Software in Earth Science}). This code, implemented in C, is a Cellular Automata code which tracks a population of equal-area spaced cells over a grid that is defined by a digital elevation model (DEM). These cells may or may not be inundated with lava and they are governed by universal rules. Because MOLASSES has been designed in a modular way, it is relatively quick to modify the flow algorithm. Using this code enables code output in a constant format, despite changing methods of lava distribution, which simplifies the comparison of methods.
+	%While several lava flow simulators now exist, each have been made and tested with different lava flows or aspects of flows in mind. Because of this, selecting a specific algorithm to effectively model lava flow hazards can be a necessary, if unwanted challenge. To address this problem, we propose a hierarchical validation scheme to objectively test different flow spreading algorithms. Tests can be designed with different validation levels in mind, to compare lava flow simulations to increasingly complex models, from simply conserving mass to replicating the paths and ultimate areal extents of real lava flows. The tests described in this project can be applied to any flow algorithm that provides at least a list or map of inundated locations over various topographies.
+
+	In this paper, a lava flow algorithm is tested using a new modular lava flow code, which I have named MOLASSES (standing for \textit{MOdular LAva Simulation Software in Earth Science}). This code, implemented in C, is a Cellular Automata code which tracks a population of equal-area spaced cells over a grid that is defined by a digital elevation model (DEM). These cells may or may not be inundated with lava and they are governed by universal rules. 
 	
-	Several flow algorithms have been designed in MOLASSES. Each algorithm begins a lava flow simulation by delivering a user-defined amount of lava to one or more source cells (i.e. vents). Then another module distributes this lava across the elevation grid, before more lava is added to each source cell. When the total volume of lava defined by a user has been delivered to the flow, the simulation ends. The simulation algorithms vary by changing the rules of how lava is distributed across the map. For instance, some algorithms allow each grid cell in the lava flow to spread lava to neighbors in cardinal directions, while other algorithms spread lava from each cell in 8 directions. More detailed explanations of the MOLASSES code and different example implementations of the code are given in Appendix \ref{apdx_lava}.
+	Because MOLASSES has been designed in a modular way, it is relatively quick to modify the flow algorithm. Using this code enables model output to be consistently formatted, despite changing methods of lava distribution. This simplifies the comparison of methods. Several flow algorithms have been designed in MOLASSES. Each algorithm begins a lava flow simulation by delivering a user-defined amount of lava to one or more source cells (i.e. vents). Then another module distributes this lava across the elevation grid, before more lava is added to each source cell. When the total volume of lava defined by a user has been delivered to the flow, the simulation ends. The simulation algorithms vary by changing the rules of how lava is distributed across the map. For instance, some algorithms allow each grid cell in the lava flow to spread lava to neighbors in four directions, while other algorithms spread lava from each cell in eight directions. More detailed explanations of the MOLASSES code and different example implementations of the code are given in Appendix \ref{apdx_lava}.
 	
-	Eight MOLASSES flow algorithms are tested against a hierarchy of validation tests in Appendix \ref{apdx_lava}. %Validation tests are designed from Bayarri. While no algorithm is perfect, I will continue to use one of these because it performed best for Shuttle Radar Topo Mis topography data, which is what I'll use in the next section. It's called 8/N/S, which means that is shares in 8 dir, it does not have parent rules, and it shares lava prop to slope. This label is described in the appendix.
+	Eight MOLASSES flow algorithms have been tested against validation exercises and the results of these are also described in Appendix \ref{apdx_lava}. These validation exercises have been designed following the advice of \citet{bayarri2007framework} for validating computer models, namely ``1) defining the problem; 2) establishing evaluation criteria; 3) designing experiments; 4) approximating computer model output; 5) analyzing the combination of field and computer run data.'' Each exercise runs a lava flow simulation with a given set of parameters to determine whether a flow algorithm produces the expected flow. For example, one test runs flow simulations on a flat surface and compares the resulting flow shape to a circle, with the assumption that a lava flow on a flat surface would be circular.
 	
-	%In the next subsection, I'll detail the location. In the following sections I will show how bayesian statistics can assess model validity, and estimate validity when parameter uncertainty is taken into account.
-	
-	
-	%Several flow algorithms have been designed in MOLASSES, all of which pulse lava from a vent cell and distribute lava away from that cell across elevation models.
-	%These algorithms have been tested using validation exercises
-	%The outline and validation exercises are described in Appendix \ref{}
-	%
-	%In this paper I will use one of these algorithms which performs well under these exercises and flows in an 8/N/S way
-	%I will use Tolbachik lava flow with SRTM topography
-	%Bayesian section will do X
-	
-	%In Section \ref{sec:MOLASSES}, I will demonstrate how CA is applied to lava flows and detail how a CA simulation is carried out in the MOLASSES code. I will introduce a validation hierarchy in Section \ref{sec_validationb} that can be used to verify and validate different lava flow algorithms using increasingly complex model parameters. In Section \ref{sec:Bayesian}, I will expand on the final validation level (validation against real lava flows) with a Bayesian approach to improving model performance for the 2012-3 Tolbachik Lava Flow. The results from these Sections will be discussed in Section \ref{sec:discussion}.
+	The final step \citet{bayarri2007framework} give for validating computer models is ``feeding [observations and results] back to revise the model.'' In Section \ref{sec:Bayesian}, results from a validation exercise, which employs a real lava flow on complex topography, will be used to improve one parameter of a lava flow algorithm. Then parameter uncertainty will be introduced to the lava flow algorithm to better characterize its performance against this real flow. By incorporating model uncertainty, the reliability of the flow algorithm might be used to make decisions about an ongoing crisis. The lava flow used in Section \ref{sec:Bayesian} is the 2012-3 Tolbachik lava flow, in Kamchakta Russia.
 	
 	\subsection{Case study area: 2012-3 Tolbachik Lava Flow}\label{sec_tolb_back}
-	%In the third validation level (Section \ref{sec_tolb_bench}), the recent lava flows at Tolbachik will be used as an example validation test to evaluate flow algorithms against a real lava flow. These flows will then be used in Section \ref{sec:Bayesian} as examples of how a Bayesian approach to evaluating model performance can improve model performance. 
+	In this paper, the recent lava flows at Tolbachik will be used as an example validation test to evaluate how a Bayesian approach to evaluating model performance can improve model performance. 
 	
 \begin{figure}[!h]
 	\centering
@@ -86,15 +76,14 @@ Figure \ref{fig_locator} shows the outline of the early lava flows, which travel
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Bayesian applications for lava flow models}\label{sec:Bayesian}
-	The final step \citet{bayarri2007framework} give for validating computer models is ``feeding [observations and results] back to revise the model.''
-	
+
 	The use of computer models to forecast hazards is a fundamentally Bayesian strategy: there is an initial concern due to hazards and computer models help us inform, constrain, and update this concern. Using Bayesian statistics can therefore be an improvement in testing lava flow models, over the two commonly used fitness tests, model sensitivity and the Jaccard index, because of their more direct application to informing perceived risk. 
 	
 	Three tools will be used in this section: the Positive Predictive Value, the Negative Predictive Value, and a Bayes factor. Bayes theorem connects a phenomenon $A$ to observations $B$ through the function
 	\begin{equation}
 		\text{Pr}(A|B)=\frac{\text{Pr}(B|A)\text{Pr}(A)}{\text{Pr}(B)}\label{eq_bayes}
 	\end{equation}
-	where $\text{Pr}(A)$ is the general probability of $A$ occuring, $\text{Pr}(B)$ is the probability of $B$ being observed, and $\text{Pr}(B|A)$ is the conditional probability of $B$ given the occurence of $A$. $\text{Pr}(B|A)$ is also known as model sensitivity, which is a common fitness statistic and was discussed in Section \ref{sec_tolb_bench}
+	where $\text{Pr}(A)$ is the general probability of $A$ occuring, $\text{Pr}(B)$ is the probability of $B$ being observed, and $\text{Pr}(B|A)$ is the conditional probability of $B$ given the occurence of $A$. $\text{Pr}(B|A)$ is also known as model sensitivity, which is a common fitness statistic and is discussed in detail in Appendix \ref{apdx_lava} (Section \ref{sec_tolb_bench}).
 	
 	The left side of Equation \ref{eq_bayes}, $\text{Pr}(A|B)$, is the Posterior probability of $A$ and can be stated as ``the probability that lava will inundate a location if the model forecasted inundation at that location,'' or the Positive Predictive Value (PPV) of the model. A second posterior is the Negative Predictive Value (NPV) and is $\text{Pr}(\neg A|\neg B)$, the obverse of $\text{Pr}(A|B)$. This negative predictive value relates not being inundated by lava at a given location to a safe outcome forecasted by a simulation and can be calculated by modifying Equation \ref{eq_bayes} and substituting $A$ for $Lava$ (the lava flow) and $B$ for $Sim$ (the simulation), resulting in the formula
 	\begin{equation}
@@ -102,7 +91,14 @@ Figure \ref{fig_locator} shows the outline of the early lava flows, which travel
 	\end{equation}
 	where the $\neg$ symbol indicates the event or observation not happening, and $\text{Pr}(\neg Sim|\neg Lava)$ is model specificity.
 	
-	The negative predictive value is important in hazard forecasting as it is in some sense a probability of safety. The more common positive predictive value $\text{Pr}(A|B)$ (or $\text{Pr}(Lava|Sim)$) does not contain information about areas that the simulation does not inundate, as it is essentially the True Positive area divided by the area of simulated inundation (defined later in Equation \ref{eq_simplepost}). While the PPV can support the hypothesis that lava will hit a location given a simulated hit, it cannot estimate one's relative risk if the simulation forecasts a safe outcome. The NPV, $\text{Pr}(\neg Lava|\neg Sim)$, does just this, and informs a user whether to rely on a safe outcome from a simulation. If, for example, the PPV $\text{Pr}(Lava|Sim)$ is high while the NPV $\text{Pr}(\neg Lava|\neg Sim)$ is low for a given lava flow simulator, areas that are evacuated due to the simulation outcome will be evacuated for good reason, but many areas will likely be inundated that were not evacuated due to the simulation outcome. It is important to estimate and ultimately try to improve both predictive values, because it is important to understand both how well a simulation matches areas inundated by lava and how well it matches areas not inundated by lava.
+	The negative predictive value is important in hazard forecasting as it is in some sense a probability of safety. The more common positive predictive value $\text{Pr}(A|B)$ (or $\text{Pr}(Lava|Sim)$) does not contain information about areas that the simulation does not inundate, as it is essentially the True Positive area (see Figure \ref{fig_2x2ch}) divided by the area of simulated inundation (defined later in Equation \ref{eq_simplepost}). While the PPV can support the hypothesis that lava will hit a location given a simulated hit, it cannot estimate one's relative risk if the simulation forecasts a safe outcome. The NPV, $\text{Pr}(\neg Lava|\neg Sim)$, does just this, and informs a user whether to rely on a safe outcome from a simulation. If, for example, the PPV $\text{Pr}(Lava|Sim)$ is high while the NPV $\text{Pr}(\neg Lava|\neg Sim)$ is low for a given lava flow simulator, areas that are evacuated due to the simulation outcome will be evacuated for good reason, but many areas will likely be inundated that were not evacuated due to the simulation outcome. It is important to estimate and ultimately try to improve both predictive values, because it is important to understand both how well a simulation matches areas inundated by lava and how well it matches areas not inundated by lava.
+	
+	\begin{figure}
+		\centering
+		\includegraphics[width=0.4\linewidth]{\FigPath/2xtable_300dpi.png}
+		\caption[2x2 table comparing regions inundated by real lava and a simulated flow]{2x2 table comparing regions inundated by real lava and a simulated flow. In the bottom left, True Positives are areas engulfed by lava both in real life and in the simulation. In the top left, False Negatives are areas hit by lava where the simulation failed to model inundation. In the bottom right, False Positives are locations where the simulation forecast inundation, but which remained untouched by lava in reality. Finally, in the top right, True Negatives are areas which were not inundated by lava and the simulation successfully forecast their safety.}
+		\label{fig_2x2ch}
+	\end{figure}
 	
 	Bayes factors provide a tool to test the relative likelihood of a hypothesis against another. \citet{aspinall2003evidence} introduced this tool to volcano hazard forecasting by testing whether the onset of particular seismic events before the 1993 Galeras catastrophe was a significant indicator of the eruption or not. A Bayes Factor (BF) relating two hypotheses is given by \citet{jeffreys1998theory} as
 	\begin{equation}
@@ -133,7 +129,7 @@ Figure \ref{fig_locator} shows the outline of the early lava flows, which travel
 		\label{tab_BFinterps}
 	\end{table}
 	
-		\paragraph{Calculating predictive values} In the same manner as the final validation level, the statistics discussed above will be calculated based on the areal extent of flows and simulations. The probability of the lava flow inundating an area $N$ can be given as
+		\paragraph{Calculating predictive values} The statistics discussed above will be calculated based on the areal extent of flows and simulations. The probability of the lava flow inundating an area $N$ can be given as
 		\begin{equation}
 			\text{Pr}(A)=\frac{|Lava|}{|N|}\label{eq_PA}
 		\end{equation}
@@ -141,14 +137,14 @@ Figure \ref{fig_locator} shows the outline of the early lava flows, which travel
 		\begin{equation}
 			\text{Pr}(Sim)=\frac{|Sim|}{|N|}.\label{eq_PB}
 		\end{equation}
-		By substituting these definitions and model sensitivity (Equation \ref{eq_sensitivity}, $|Lava \cap Sim|/|Lava|$) in Equation \ref{eq_bayes}, the posterior probability of lava flow inundation (i.e. the PPV), given a simulation that forecasts inundation can be recast as
+		By substituting these definitions and model sensitivity ($|Lava \cap Sim|/|Lava|$) in Equation \ref{eq_bayes}, the posterior probability of lava flow inundation (i.e. the PPV), given a simulation that forecasts inundation can be recast as
 		\begin{align}
 		\text{Pr}(Lava|Sim)&=\frac{\frac{|Lava\cap Sim|}{|Lava|}\frac{|Lava|}{|N|}}{\frac{|Sim|}{|N|}}~\text{,~or~simplified,}\label{eq_unsimplepost}\\
 		&=\frac{|Lava\cap Sim|}{|Sim|}.\label{eq_simplepost}
 		\end{align}
 		where $|Lava\cap Sim|$ is the size of the intersection of the lava flow and simulated flow (again, the number of DEM grid cells that are True Positives). Note that PPV is independent of the potential hazard area.
 		
-		the NPV can be stated in terms of the sizes of the lava flow and simulated flow as well.
+		The NPV can be stated in terms of the sizes of the lava flow and simulated flow as well.
 		\begin{equation}
 			\text{Pr}(\neg Lava|\neg Sim)=\frac{|\neg Lava\cap \neg Sim|}{|\neg Sim|}\label{eq_simplenegpost}
 		\end{equation}
@@ -168,13 +164,23 @@ Figure \ref{fig_locator} shows the outline of the early lava flows, which travel
 		\begin{figure}
 			\centering
 			\includegraphics[width=0.7\linewidth]{\FigPath/hazard_areas_72dpi}
-			\caption[Potential hazard areas of the 2012-3 Tolbachik Flows]{Potential hazard areas of the 2012-3 Tolbachik Flows. Hazard areas, shaded light green, are defined by a maximum flow radius (left, Equation \ref{eq_kilburn}) and the total areal coverage of 100,000 random flow simulations (top-right, Section \ref{sec_MC}). The mapped lava flow is red. The chart to the bottom right shows the 2x2 grid illustrated in Figure \ref{fig_2x2}.}
+			\caption[Potential hazard areas of the 2012-3 Tolbachik Flows]{Potential hazard areas of the 2012-3 Tolbachik Flows. Hazard areas, shaded light green, are defined by a maximum flow radius (left, Equation \ref{eq_kilburn}) and the total areal coverage of 100,000 random flow simulations (top-right, Section \ref{sec_MC}). The mapped lava flow is red. The chart to the bottom right shows the 2x2 grid illustrated in Figure \ref{fig_2x2ch}.}
 			\label{fig_hazardarea}
 		\end{figure}
 	
 	A second strategy would be to run many lava flow models from the known vent location(s) while varying input parameters. This would give a range of flows and the true flow might be completely contained within the region given by this range of simulations. Below, a Monte Carlo (MC) method will be used to simulate a large range of flows. If we define a potential hazard area as any location inundated by at least one simulated flow in this MC approach, the hazard area would be 72~km$^2$. As the mapped flow area from the Tolbachik eruption is 39\% of this area, it would be more practical to use this as the \textit{a priori} hazard area because it more reasonably reflects the potential inundation area. Both the Kilburn-Kauahikaua method and this MC method are illustrated in Figure \ref{fig_hazardarea}.				
 	
-	\paragraph{Review of validation level 3} Instead of using model sensitivity and the Jaccard index as fitness values for the various lava flow models, now the two predictive values will be used. The potential hazard area is defined as the distribution of MC simulations (72~km$^2$). To give an example calculation, $\text{Pr}(Lava|Sim)$ is found with Equation \ref{eq_simplepost} by dividing true positives (green boxes in \ref{fig:tolbachik}) by the simulation area (green and red boxes). The NPV, $\text{Pr}(\neg Lava|\neg Sim)$, is found by diving true negatives (top right of Figure \ref{fig_2x2}), by the area not simulated (top half of Figure \ref{fig_2x2}). Table \ref{tab_fitmetriccompare} lists the fitness values from Table \ref{tab_tolbflowresults} as well as the two predictive values for eight flow simulation algorithms.
+	\paragraph{Comparison of predictive values and other statistics}
+	Figure \ref{fig_tolbachik} shows three example simulations of the 2012-3 Tolbachik lava flow, each using modified simulation algorithms in MOLASSES and parameters derived from TanDEM-X data. The performances of these different simulations have been measured in Appendix \ref{apdx_lava} with two common fitness metrics, model sensitivity and the Jaccard index. Model sensitivity is the ratio of true positives areal extent to real flow areal extent, while the Jaccard index is the ratio of true positives to the areal extent of the union of the flow and the simulation.	
+	
+		\begin{figure}[!h]
+			\centering
+			\includegraphics[width=\linewidth]{\FigPath/tolb_lvl3_examples_72dpi}
+			\caption[Three simulation algorithms (4/P/S, 4/N/E, and 8/N/S) applied to two elevation models (SRTM and TanDEM-X) to simulate the 2012-3 Tolbachik lava flows, outlined in black]{Three simulation algorithms (4/P/S, 4/N/E, and 8/N/S) applied to two elevation models (SRTM and TanDEM-X) to simulate the 2012-3 Tolbachik lava flows, outlined in black. Lava is emitted from two vent locations marked as blue triangles in the simulation. Diagrams showing the relative True Positives (green), False Positives (orange), and False Negatives (red) are illustrated in the top left of each simulation.}
+			\label{fig_tolbachik}
+		\end{figure}
+	
+	Instead of using model sensitivity and the Jaccard index as fitness values for the various lava flow models, now the two predictive values will be used. The potential hazard area is defined as the distribution of MC simulations (72~km$^2$). To give an example calculation, $\text{Pr}(Lava|Sim)$ is found with Equation \ref{eq_simplepost} by dividing true positives (green boxes in \ref{fig_tolbachik}) by the simulation area (green and red boxes). The NPV, $\text{Pr}(\neg Lava|\neg Sim)$, is found by diving true negatives (top right of Figure \ref{fig_2x2ch}), by the area not simulated (top half of Figure \ref{fig_2x2ch}). Table \ref{tab_fitmetriccompare} lists the fitness values from the Tolbachik lava flow validation exercise in Appendix \ref{apdx_lava}, as well as the two predictive values for eight flow simulation algorithms.
 	
 		\begin{table}[h]
 		\centering
@@ -182,7 +188,7 @@ Figure \ref{fig_locator} shows the outline of the early lava flows, which travel
 		\begin{tabular}{l c c c c}
 			\toprule
 			Transition&\multicolumn{4}{c}{\textbf{Results of simulations over SRTM DEM}}\\
-			Function& Jaccard & Sensitivity & Pos. Pred. Value & Neg. Pred. Value\\
+			Function$^*$& Jaccard & Sensitivity & Pos. Pred. Value & Neg. Pred. Value\\
 			\midrule
 			4/P/S & 56.7\%& 76.4\%& 70.4\%& 84.5\% \\
 			8/P/S & 61.1  & 80.8  & 73.2  & 87.3   \\
@@ -192,16 +198,16 @@ Figure \ref{fig_locator} shows the outline of the early lava flows, which travel
 			8/P/E & 58.8  & 78.2  & 72.0  & 85.7   \\
 			4/N/E & 54.5  & 74.5  & 68.7  & 83.3   \\
 			8/N/E & 59.6  & 78.8  & 72.8  & 86.2   \\
-			
 			\bottomrule
+			\multicolumn{5}{p{0.8\linewidth}}{$^*$Transition function codes are detailed in Appendix \ref{apdx_lava} in Table \ref{tab_algorithmcodes}.}
 		\end{tabular}
 		\label{tab_fitmetriccompare}
 	\end{table}
 	
-	For the rest of this section, the 8/N/S (the 8-connected, no parent-child relationships, with slope-proportional spreading) algorithm will be used. This is preferred because it out-performed other algorithms over the SRTM DEM. By applying this model to the Tolbachik lava flows, Bayesian methods will be used to improve the ``Pulse Volume'' parameter and will later be used to constrain model uncertainty at Tolbachik.
+	For the rest of this section, the 8/N/S algorithm will be used. This algorithm is 8-connected, so lava can spread from each cell in 8 directions, lava can travel in or out of all cells in all of these directions, and lava is distributed to lower cells proportional to slope. This algorithm is preferred because it out-performed other algorithms over the Shuttle Radar Topography Mission (SRTM) DEM, which will be the elevation model used in the Monte Carlo exercise below. By applying this model to the Tolbachik lava flows, Bayesian methods will be used to improve the ``Pulse Volume'' parameter and will later be used to constrain model uncertainty at Tolbachik.
 	
 	\subsection{Improving model performance on one model parameter}\label{sec_bayespulse}
-	In the Tolbachik validation tests given as examples of comparing simulation algorithms against real lava flows (Section \ref {sec_tolb_bench}), all but one algorithm performed worse on the TanDEM-X derived elevation model. This was in part due to large run-out distances in the simulations (e.g. bottom right of Figure \ref{fig:tolbachik}), which considerably increased simulation false positives. The large run-out distances might be due to the pulse volume, the volume of lava given to source cells at each code loop in MOLASSES, being poorly chosen. Here, the Bayesian statistics defined above will be used to compare different pulse volumes and identify an optimal pulse volume. 
+	In the Tolbachik validation exercise, which compared simulation algorithms against real lava flows (discussed in Appendix \ref{apdx_lava}), all but one algorithm performed worse on a TanDEM-X derived elevation model, compared to the SRTM DEM. This was in part due to large run-out distances in the simulations (e.g. bottom right of Figure \ref{fig_tolbachik}), which considerably increased simulation false positives. The large run-out distances might be due to the pulse volume, the volume of lava given to source cells at each code loop in MOLASSES, being poorly chosen. Here, the Bayesian statistics defined above will be used to compare different pulse volumes and identify an optimal pulse volume. 
 		
 		An optimal pulse volume will ideally produce a flow simulation with the highest PPV and NPV. Pulse volumes with high associated PPVs will produce simulations where areas simulated as inundated by lava will have a high likelihood of actually being inundated by lava. Pulse volumes with high associated NPVs will produce simulations where areas simulated to not be inundated will hava a high likelihood of actually not being inundated.
 		
@@ -241,7 +247,7 @@ Figure \ref{fig_locator} shows the outline of the early lava flows, which travel
 
 		\subsubsection{Results}
 		
-		Three example simulations are shown in Figure \ref{fig:pulse_map} using simulation parameters from Table \ref{tab_parameters_pulsebayes} and different pulse volume values. With increased pulse volume, simulated run-out distance is shorter. This is because the MOLASSES code ends once all volume is delivered to the vents and the DISTRIBUTE module has run once more. In other words, if the pulse volume is doubled, the number of times the PULSE and DISTRIBUTE modules will be run will be halved, as the total volume will be delivered to the vents in half the code loops (see Figure \ref{fig_flowchart}). By running DISTRIBUTE fewer times, cells have fewer opportunities to advect lava downslope.
+		Three example simulations are shown in Figure \ref{fig:pulse_map} using simulation parameters from Table \ref{tab_parameters_pulsebayes} and different pulse volume values. With increased pulse volume, simulated run-out distance is shorter. This is because the MOLASSES code ends once all volume is delivered to the vents and the DISTRIBUTE module has run once more. In other words, if the pulse volume is doubled, the number of times the PULSE and DISTRIBUTE modules will be run will be halved, as the total volume will be delivered to the vents in half the code loops (see Figure \ref{fig_flowchart} in Appendix \ref{apdx_lava} for a flow chart of the code). By running DISTRIBUTE fewer times, cells have fewer opportunities to advect lava downslope.
 
 		The positive predictive value is the fundamental tool of Bayesian statistics, and quantifying it enables an update of belief in risk of lava inundation. A perfect PPV would mean that if the model simulates lava inundating a location, lava will certainly inundate that location. PPV is calculated for simulated lava flows of different Pulse Volumes and is graphed in Figure \ref{fig_lavaGsim}. From this, it can be seen that the highest pulse volumes, which coincidentally form the shortest flow simulations, perform best with this test, with the best fit having a pulse volume of 14040~m$^3$ per algorithm loop (Figure \ref{fig:pulse_map},c). A local maximum does exist in the low pulse volumes at 4387~m$^3$ per loop.
 
@@ -320,13 +326,13 @@ Figure \ref{fig_locator} shows the outline of the early lava flows, which travel
 
 				
 		\subsubsection{Bayesian distribution of MC results}
-			The reliability of a model can be better understood by showing the distribution of model performance given model uncertainty, as opposed to treating model parameters, and thus model output, as completely certain.  Figure \ref{fig:MC_dist} shows the distribution of PPV and NPV scores. Each dot in the main chart of Figure \ref{fig:MC_dist} represents a single flow simulation over a partially randomly generated DEM. The clustering of these points shows a positive correlation between the two predictive values, and both metrics are not normally distributed as shown on the histograms on either side of the main chart of Figure \ref{fig:MC_dist}. The flow simulation assuming no elevation uncertainty (shown in the top right corner of Figure \ref{fig:tolbachik}) fits the mapped flow better than the median value of both predictive values in the distribution, though it still lays within the MC distribution.
+			The reliability of a model can be better understood by showing the distribution of model performance given model uncertainty, as opposed to treating model parameters, and thus model output, as completely certain.  Figure \ref{fig:MC_dist} shows the distribution of PPV and NPV scores. Each dot in the main chart of Figure \ref{fig:MC_dist} represents a single flow simulation over a partially randomly generated DEM. The clustering of these points shows a positive correlation between the two predictive values, and both metrics are not normally distributed as shown on the histograms on either side of the main chart of Figure \ref{fig:MC_dist}. The flow simulation assuming no elevation uncertainty (shown in the top right corner of Figure \ref{fig_tolbachik}) fits the mapped flow better than the median value of both predictive values in the distribution, though it still lays within the MC distribution.
 			
 		%Graph of the performances
 		\begin{figure}[h!]
 			\centering
 			\includegraphics[width=0.7\linewidth]{\FigPath/MC_posteriors_300dpi}
-			\caption[Fitness statistic distribution of Monte Carlo simulations of the 2012-3 Tolbachik lava flows, over SRTM topography with 3~m standard elevation uncertainty]{Fitness statistic distribution for 100,000 simulations of the 2012-3 Tolbachik Lava Flows, over SRTM topography with 3~m standard elevation uncertainty. Each point represents the predictive values of inundation/non-inundation for one simulation. Red lines are the fitness values of a simulated flow over SRTM data assuming 0~m elevation uncertainty (top right corner of Figure \ref{fig:tolbachik}). Black lines are placed at the median values of each predictive value.}
+			\caption[Fitness statistic distribution of Monte Carlo simulations of the 2012-3 Tolbachik lava flows, over SRTM topography with 3~m standard elevation uncertainty]{Fitness statistic distribution for 100,000 simulations of the 2012-3 Tolbachik Lava Flows, over SRTM topography with 3~m standard elevation uncertainty. Each point represents the predictive values of inundation/non-inundation for one simulation. Red lines are the fitness values of a simulated flow over SRTM data assuming 0~m elevation uncertainty (top right corner of Figure \ref{fig_tolbachik}). Black lines are placed at the median values of each predictive value.}
 			\label{fig:MC_dist}
 		\end{figure}
 			
