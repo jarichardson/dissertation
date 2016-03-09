@@ -407,12 +407,24 @@ Diez, M., Connor, C., Kruse, S., Connor, L., and Savov, I. (2009).
 \newblock {\em Lithosphere}, 1(6):328--336.
 \newblock doi:10.1130/L61.1.
 
+\bibitem[Dixon et~al., 2004]{dixon2004lateral}
+Dixon, J.~E., Dixon, T.~H., Bell, D., and Malservisi, R. (2004).
+\newblock Lateral variation in upper mantle viscosity: role of water.
+\newblock {\em Earth and Planetary Science Letters}, 222(2):451--467.
+\newblock doi:10.1016/j.epsl.2004.03.022.
+
 \bibitem[Dohm and Tanaka, 1999]{Dohm1999}
 Dohm, J.~M. and Tanaka, K.~L. (1999).
 \newblock {Geology of the Thaumasia region, Mars: plateau development, valley
   origins, and magmatic evolution}.
 \newblock {\em Planetary and Space Science}, 47(3–4):411 -- 431.
 \newblock {doi:10.1016/S0032-0633(98)00141-X}.
+
+\bibitem[Donahue and Hodges, 1992]{donahue1992past}
+Donahue, T. and Hodges, R. (1992).
+\newblock Past and present water budget of {Venus}.
+\newblock {\em Journal of Geophysical Research: Planets}, 97(E4):6083--6091.
+\newblock doi:10.1029/92JE00343.
 
 \bibitem[Duong, 2007]{duong2007}
 Duong, T. (2007).
@@ -890,6 +902,12 @@ Neumann, G., Zuber, M., Wieczorek, M., McGovern, P., Lemoine, F., and Smith, D.
 \newblock Crustal structure of {Mars} from gravity and topography.
 \newblock {\em Journal of Geophysical Research: Planets}, 109(E8).
 \newblock doi:10.1029/2004JE002262.
+
+\bibitem[Nimmo and McKenzie, 1998]{nimmo1998volcanism}
+Nimmo, F. and McKenzie, D. (1998).
+\newblock Volcanism and tectonics on {Venus}.
+\newblock {\em Annual Review of Earth and Planetary Sciences}, 26(1):23--51.
+\newblock doi:10.1146/annurev.earth.26.1.23.
 
 \bibitem[O'Neill et~al., 2007]{ONeill2007}
 O'Neill, C., Lenardic, A., Jellinek, A.~M., and Kiefer, W.~S. (2007).

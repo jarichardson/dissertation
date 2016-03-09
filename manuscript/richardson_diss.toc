@@ -98,40 +98,40 @@
 \contentsline {subsubsection}{\numberline {6.5.2.2}Magma source migration or multiple overprinting sources}{126}{subsubsection.6.5.2.2}
 \contentsline {subsubsection}{\numberline {6.5.2.3}Anisotropic crustal conductivity}{128}{subsubsection.6.5.2.3}
 \contentsline {section}{\numberline {6.6}Conclusions}{132}{section.6.6}
-\contentsline {chapter}{\numberline {7}Conclusion}{133}{chapter.7}
-\contentsline {chapter}{References}{136}{section*.69}
-\contentsline {chapter}{Appendix \numberline {I}Sill thicknesses in the San Rafael Swell, Utah}{159}{Appendix.a.A}
-\contentsline {chapter}{Appendix \numberline {II}Validation Exercises for Lava Flow Algorithms}{164}{Appendix.a.B}
-\contentsline {section}{\numberline {II.1}A modular cellular automata framework for lava flow simulators}{164}{section.a.B.1}
-\contentsline {subsection}{\numberline {II.1.1}MOLASSES algorithm outline}{165}{subsection.a.B.1.1}
-\contentsline {subsection}{\numberline {II.1.2}Cells in E$^2$}{166}{subsection.a.B.1.2}
-\contentsline {subsection}{\numberline {II.1.3}Source locations, V, and the source function, $\gamma $}{167}{subsection.a.B.1.3}
-\contentsline {subsection}{\numberline {II.1.4}Substates, S, and the transition function, $\sigma $}{167}{subsection.a.B.1.4}
-\contentsline {paragraph}{\numberline {II.1.4.0.1}Local slope-based spreading}{169}{paragraph.a.B.1.4.0.1}
-\contentsline {paragraph}{\numberline {II.1.4.0.2}Neighborhood size}{170}{paragraph.a.B.1.4.0.2}
-\contentsline {paragraph}{\numberline {II.1.4.0.3}Spreading inhibited by special relationships}{170}{paragraph.a.B.1.4.0.3}
-\contentsline {subsection}{\numberline {II.1.5}Cell neighborhood, X}{171}{subsection.a.B.1.5}
-\contentsline {section}{\numberline {II.2}Validation hierarchy}{172}{section.a.B.2}
-\contentsline {paragraph}{\numberline {II.2.0.0.4}Test algorithms}{173}{paragraph.a.B.2.0.0.4}
-\contentsline {subsection}{\numberline {II.2.1}Level 0: Conservation of mass}{173}{subsection.a.B.2.1}
-\contentsline {subsection}{\numberline {II.2.2}Level 1: Repeatability given meaningless parameter variation}{174}{subsection.a.B.2.2}
-\contentsline {subsubsection}{\numberline {II.2.2.1}Exercise parameters}{175}{subsubsection.a.B.2.2.1}
-\contentsline {subsubsection}{\numberline {II.2.2.2}Results}{176}{subsubsection.a.B.2.2.2}
-\contentsline {subsection}{\numberline {II.2.3}Level 2: Replication of flow morphologies on simple physical surfaces}{177}{subsection.a.B.2.3}
-\contentsline {subsubsection}{\numberline {II.2.3.1}Exercise parameters}{178}{subsubsection.a.B.2.3.1}
-\contentsline {subsubsection}{\numberline {II.2.3.2}Results}{179}{subsubsection.a.B.2.3.2}
-\contentsline {subsection}{\numberline {II.2.4}Level 3: Replication of real lava flows over complex topography}{179}{subsection.a.B.2.4}
-\contentsline {subsubsection}{\numberline {II.2.4.1}Results}{182}{subsubsection.a.B.2.4.1}
-\contentsline {section}{\numberline {II.3}Conclusions}{183}{section.a.B.3}
-\contentsline {chapter}{Appendix \numberline {III}Cumulative crater frequency distribution charts}{185}{Appendix.a.C}
-\contentsline {chapter}{Appendix \numberline {IV}Kernel density estimation tools and results}{188}{Appendix.a.D}
-\contentsline {section}{\numberline {IV.1}KDTools}{188}{section.a.D.1}
-\contentsline {subsection}{\numberline {IV.1.1}contourBySigma}{188}{subsection.a.D.1.1}
-\contentsline {subsection}{\numberline {IV.1.2}densityToRaster}{189}{subsection.a.D.1.2}
-\contentsline {subsection}{\numberline {IV.1.3}ellipseGen}{195}{subsection.a.D.1.3}
-\contentsline {subsection}{\numberline {IV.1.4}KD}{197}{subsection.a.D.1.4}
-\contentsline {subsection}{\numberline {IV.1.5}main}{199}{subsection.a.D.1.5}
-\contentsline {subsection}{\numberline {IV.1.6}rangeBuffer}{203}{subsection.a.D.1.6}
-\contentsline {subsection}{\numberline {IV.1.7}reproject}{204}{subsection.a.D.1.7}
-\contentsline {subsection}{\numberline {IV.1.8}samse\_bandwidth}{206}{subsection.a.D.1.8}
-\contentsline {section}{\numberline {IV.2}Other field density maps}{209}{section.a.D.2}
+\contentsline {chapter}{\numberline {7}Conclusion}{134}{chapter.7}
+\contentsline {chapter}{References}{137}{section*.69}
+\contentsline {chapter}{Appendix \numberline {I}Sill thicknesses in the San Rafael Swell, Utah}{161}{Appendix.a.A}
+\contentsline {chapter}{Appendix \numberline {II}Validation Exercises for Lava Flow Algorithms}{166}{Appendix.a.B}
+\contentsline {section}{\numberline {II.1}A modular cellular automata framework for lava flow simulators}{166}{section.a.B.1}
+\contentsline {subsection}{\numberline {II.1.1}MOLASSES algorithm outline}{167}{subsection.a.B.1.1}
+\contentsline {subsection}{\numberline {II.1.2}Cells in E$^2$}{168}{subsection.a.B.1.2}
+\contentsline {subsection}{\numberline {II.1.3}Source locations, V, and the source function, $\gamma $}{169}{subsection.a.B.1.3}
+\contentsline {subsection}{\numberline {II.1.4}Substates, S, and the transition function, $\sigma $}{169}{subsection.a.B.1.4}
+\contentsline {paragraph}{\numberline {II.1.4.0.1}Local slope-based spreading}{171}{paragraph.a.B.1.4.0.1}
+\contentsline {paragraph}{\numberline {II.1.4.0.2}Neighborhood size}{172}{paragraph.a.B.1.4.0.2}
+\contentsline {paragraph}{\numberline {II.1.4.0.3}Spreading inhibited by special relationships}{172}{paragraph.a.B.1.4.0.3}
+\contentsline {subsection}{\numberline {II.1.5}Cell neighborhood, X}{173}{subsection.a.B.1.5}
+\contentsline {section}{\numberline {II.2}Validation hierarchy}{174}{section.a.B.2}
+\contentsline {paragraph}{\numberline {II.2.0.0.4}Test algorithms}{175}{paragraph.a.B.2.0.0.4}
+\contentsline {subsection}{\numberline {II.2.1}Level 0: Conservation of mass}{175}{subsection.a.B.2.1}
+\contentsline {subsection}{\numberline {II.2.2}Level 1: Repeatability given meaningless parameter variation}{176}{subsection.a.B.2.2}
+\contentsline {subsubsection}{\numberline {II.2.2.1}Exercise parameters}{177}{subsubsection.a.B.2.2.1}
+\contentsline {subsubsection}{\numberline {II.2.2.2}Results}{178}{subsubsection.a.B.2.2.2}
+\contentsline {subsection}{\numberline {II.2.3}Level 2: Replication of flow morphologies on simple physical surfaces}{179}{subsection.a.B.2.3}
+\contentsline {subsubsection}{\numberline {II.2.3.1}Exercise parameters}{180}{subsubsection.a.B.2.3.1}
+\contentsline {subsubsection}{\numberline {II.2.3.2}Results}{181}{subsubsection.a.B.2.3.2}
+\contentsline {subsection}{\numberline {II.2.4}Level 3: Replication of real lava flows over complex topography}{181}{subsection.a.B.2.4}
+\contentsline {subsubsection}{\numberline {II.2.4.1}Results}{184}{subsubsection.a.B.2.4.1}
+\contentsline {section}{\numberline {II.3}Conclusions}{185}{section.a.B.3}
+\contentsline {chapter}{Appendix \numberline {III}Cumulative crater frequency distribution charts}{187}{Appendix.a.C}
+\contentsline {chapter}{Appendix \numberline {IV}Kernel density estimation tools and results}{190}{Appendix.a.D}
+\contentsline {section}{\numberline {IV.1}KDTools}{190}{section.a.D.1}
+\contentsline {subsection}{\numberline {IV.1.1}contourBySigma}{190}{subsection.a.D.1.1}
+\contentsline {subsection}{\numberline {IV.1.2}densityToRaster}{191}{subsection.a.D.1.2}
+\contentsline {subsection}{\numberline {IV.1.3}ellipseGen}{197}{subsection.a.D.1.3}
+\contentsline {subsection}{\numberline {IV.1.4}KD}{199}{subsection.a.D.1.4}
+\contentsline {subsection}{\numberline {IV.1.5}main}{201}{subsection.a.D.1.5}
+\contentsline {subsection}{\numberline {IV.1.6}rangeBuffer}{205}{subsection.a.D.1.6}
+\contentsline {subsection}{\numberline {IV.1.7}reproject}{206}{subsection.a.D.1.7}
+\contentsline {subsection}{\numberline {IV.1.8}samse\_bandwidth}{208}{subsection.a.D.1.8}
+\contentsline {section}{\numberline {IV.2}Other field density maps}{211}{section.a.D.2}
