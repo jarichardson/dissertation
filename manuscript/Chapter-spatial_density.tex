@@ -35,7 +35,7 @@ where ($x_v$,$y_v$) is the coordinate pair of the volcano and $\sigma$ is the PD
 \label{eq_simpleKDE}
 \end{equation}
 
-By calculating vent density for all locations in an area, a continuous, differentiable surface is produced, which is the modeled density function for the cluster. Note that in Equation \ref{eq_simpleKDE} the entire formula is divided by the number of vents, $N$. Integrating $\lambda$ over the x and y domains in Equation \ref{eq_simpleKDE} then results in unity \citep{connor2015probabilistic}; given an eruption, there is a probability of 1 that the eruption will take place somewhere on the surface of the planet. This means that $\lambda$ is treated as a 2D probability density function with units of m$^{-2}$. Vent intensity with units of vents~m$^{-2}$ can be found by multiplying the $\lamba$ density curve by $N$.
+By calculating vent density for all locations in an area, a continuous, differentiable surface is produced, which is the modeled density function for the cluster. Note that in Equation \ref{eq_simpleKDE} the entire formula is divided by the number of vents, $N$. Integrating $\lambda$ over the x and y domains in Equation \ref{eq_simpleKDE} then results in unity \citep{connor2015probabilistic}; given an eruption, there is a probability of 1 that the eruption will take place somewhere on the surface of the planet. This means that $\lambda$ is treated as a 2D probability density function with units of m$^{-2}$. Vent intensity with units of vents~m$^{-2}$ can be found by multiplying the $\lambda$ density curve by $N$.
 
 Kernel PDFs do not have to be axi-symmetric normal distributions. In this paper, a bivariate normal distribution will be used to model density, so kernels will be Gaussian ellipses instead of circles (circular distributions can be considered univariate as they are defined by one standard deviation or bandwidth). These ellipses will also be unconstrained in direction, so their major axes do not have to be aligned in a cardinal direction \citep{wand1993comparison}. This is done by multiplying the distance between locations and volcanoes, treated here a 1x2 distance matrix, by a covariance matrix that defines the standard deviation in the x and y directions and the covariance between these dimensions. The covariance matrix is given as
 \begin{equation}\begin{bmatrix}
@@ -100,7 +100,7 @@ Volcanic vents in the SFVF, located in and around Flagstaff, AZ, have been catal
 
 \begin{figure}
 \centering
-\includegraphics[width=0.5\linewidth]{\FigPath/locators/mars_locator_72dpi.png}
+\includegraphics[width=0.5\linewidth]{\FigPath/locators/mars_locator_300dpi.png}
 \caption[Locations of selected Martian volcano clusters in the Tharsis Volcanic Province]{Locations of selected Martian volcano clusters in the Tharsis Volcanic Province. Kernel bandwidth ellipses are drawn at the 1$\sigma$ contour over them. Ellipses are enlarged.}
 \label{fig_marslocator}
 \end{figure}
@@ -122,7 +122,7 @@ The Syria Planum region is a broad plateau with 263 low shield volcanoes \citep{
 
 \begin{figure}
 \centering
-\includegraphics[width=0.6\linewidth]{\FigPath/locators/venus_globe_72dpi.png}
+\includegraphics[width=0.6\linewidth]{\FigPath/locators/venus_globe_300dpi.png}
 \caption[Locations of seven volcano clusters on Venus]{Locations of seven volcano clusters on Venus. Kernel bandwidth ellipses are drawn at the 1$\sigma$ contour over each cluster and are enlarged.}
 \label{fig_venuslocator}
 \end{figure}
@@ -291,11 +291,11 @@ Using KDE, vent density of several volcano clusters has been modeled with the im
     \centering
     \begin{subfigure}{0.49\textwidth}
         \centering
-        \includegraphics[width=\linewidth]{\FigPath/egrikuyu_kde_72dpi}
+        \includegraphics[width=\linewidth]{\FigPath/egrikuyu_kde_300dpi}
     \end{subfigure}
     \begin{subfigure}{0.49\textwidth}
         \centering
-        \includegraphics[width=\linewidth]{\FigPath/egrikuyu_vol_72dpi}
+        \includegraphics[width=\linewidth]{\FigPath/egrikuyu_vol_300dpi}
     \end{subfigure}
     \caption[Vent density and volume density maps of the E\u{g}rikuyu volcano cluster]{Vent density (left) and volume density (right) maps of the E\u{g}rikuyu volcano cluster. While a large number of vents in the eastern margin of the field make a second mode of vent density, their cumulative erupted volume is much smaller than the volumes erupted from vents in the center of the cluster, so the eastern mode is not seen in the volume density model.}
 \label{fig_egrikuyu_kdevol}
@@ -307,11 +307,11 @@ The lava flows that make up the distributed vent field in the Arsia Mons Caldera
     \centering
     \begin{subfigure}{0.49\textwidth}
         \centering
-        \includegraphics[height=8cm]{\FigPath/arsia_kde_72dpi}
+        \includegraphics[height=8cm]{\FigPath/arsia_kde_300dpi}
     \end{subfigure} 
     \begin{subfigure}{0.49\textwidth}
         \centering
-        \includegraphics[height=8cm]{\FigPath/arsia_vol_72dpi}
+        \includegraphics[height=8cm]{\FigPath/arsia_vol_300dpi}
     \end{subfigure}
     \caption[Vent density and volume density maps of the Arsia Mons Caldera volcanic field (Mars)]{Vent density (left) and volume density (right) maps of the Arsia Mons Caldera volcanic field (Mars). Erupted volume density is modeled using minimum volume estimates made using interpolated subsurface models for each volcano. The volume density plot shows that lavas from the east lineament of vents, also visible in the vent density model, are more voluminous than those from the east lineament of vents.}
 \label{fig_arsia_kdevol}
@@ -349,18 +349,18 @@ Elongation of the bandwidth of a volcano cluster can be explained by one or a co
 \centering
 \begin{subfigure}{0.49\textwidth}
 \centering
-\includegraphics[width=\linewidth]{\FigPath/adams_kde_72dpi}
+\includegraphics[width=\linewidth]{\FigPath/adams_kde_300dpi}
 \end{subfigure}
 \begin{subfigure}{0.49\textwidth}
 \centering
-\includegraphics[width=\linewidth]{\FigPath/newberry_kde_72dpi}
+\includegraphics[width=\linewidth]{\FigPath/newberry_kde_300dpi}
 \end{subfigure}
 \caption[Volcanic vent density of monogenetic volcanoes near Mt. Adams (Washington, USA) and Newberry Volcano (Oregon, USA)]{Volcanic vent density of monogenetic volcanoes near (left) Mt. Adams (Washington, USA) and (right) Newberry Volcano (Oregon, USA). If the magma source region is elongated N-S due to the subduction of the Juan de Fuca Plate to the west, this might result in an elongated volcano distribution and kernel bandwidth ellipse.}
 \label{fig_adams-newbkde}
 \end{figure}
 
 \subsubsection{Elongated source region}
-The bandwidth ellipse of elongated clusters is often elongated in the same direction, such as the ellipse for scoria cones around Mount Adams, Washington (left, Figure \ref{fig_adams-newbkde}). The distributed volcanic field around Mount Adams runs parallel to the Cascades volcanic arc, possibly because the magma source region of the field runs along the axis of the Arc. As can be seen in Figure \ref{fig_earthlocator}}, both Cascades clusters, Adams and Newberry, have kernel bandwidths that are in line with the volcanic arc (Figure \ref{fig_adams-newbkde}). Both Japanese clusters, Abu and Izu-Tobu, also have bandwidths in line with the arc that makes the lower limb of the country's main island, Honshu. For regions where magmatic activity is expected to be elongated, for example rift valleys and subduction zones, it is possible that bandwidth ellipse orientation is primarily due to the elongation of the magma source region \citep{germa2013tectonic}.
+The bandwidth ellipse of elongated clusters is often elongated in the same direction, such as the ellipse for scoria cones around Mount Adams, Washington (left, Figure \ref{fig_adams-newbkde}). The distributed volcanic field around Mount Adams runs parallel to the Cascades volcanic arc, possibly because the magma source region of the field runs along the axis of the Arc. As can be seen in Figure \ref{fig_earthlocator}, both Cascades clusters, Adams and Newberry, have kernel bandwidths that are in line with the volcanic arc (Figure \ref{fig_adams-newbkde}). Both Japanese clusters, Abu and Izu-Tobu, also have bandwidths in line with the arc that makes the lower limb of the country's main island, Honshu. For regions where magmatic activity is expected to be elongated, for example rift valleys and subduction zones, it is possible that bandwidth ellipse orientation is primarily due to the elongation of the magma source region \citep{germa2013tectonic}.
 
 
 
@@ -371,19 +371,19 @@ The eastward migration of volcanism in the San Francisco Volcanic Field is obser
 \centering
 \begin{subfigure}{0.49\textwidth}
 \centering
-\includegraphics[width=\linewidth]{\FigPath/sanfrancisco_kde_72dpi.png}
+\includegraphics[width=\linewidth]{\FigPath/sanfrancisco_kde_300dpi.png}
 \end{subfigure}
 \begin{subfigure}{0.49\textwidth}
 \centering
-\includegraphics[width=\linewidth]{\FigPath/sanfranciscoP_kde_72dpi.png}
+\includegraphics[width=\linewidth]{\FigPath/sanfranciscoP_kde_300dpi.png}
 \end{subfigure}
 \begin{subfigure}{0.49\textwidth}
 \centering
-\includegraphics[width=\linewidth]{\FigPath/sanfranciscoM_kde_72dpi.png}
+\includegraphics[width=\linewidth]{\FigPath/sanfranciscoM_kde_300dpi.png}
 \end{subfigure}
 \begin{subfigure}{0.49\textwidth}
 \centering
-\includegraphics[width=\linewidth]{\FigPath/sanfranciscoB_kde_72dpi.png}
+\includegraphics[width=\linewidth]{\FigPath/sanfranciscoB_kde_300dpi.png}
 \end{subfigure}
 \caption[Vent density through time for the San Francisco Volcanic Field (Arizona, USA)]{Vent density through time for the San Francisco Volcanic Field (Arizona, USA). Top left, the entire volcanic field including 583 vents. Top right, spatial density of vents created during the Pre-Matuyama magnetic chronozone, 5-2.48~Ma \citep{tanaka1986migration}. Bottom left, density of Matuyama-age, 2.48-0.73~Ma vents. Bottom right, Bruhnes-age, 0.73-present, activity. While volcanic activity has migrated eastward, the kernel bandwidth ellipse has also changed. Taking all age vents into account, the bandwidth ellipse is oriented in the direction of migration (top right).}
 \label{fig_sfvfkde}
@@ -397,14 +397,14 @@ On Mars, volcanic activity on Syria Planum also migrated over the course of its 
 
 \begin{figure}
 \centering
-\includegraphics[width=0.6\linewidth]{\FigPath/springerville_kde_72dpi}
+\includegraphics[width=0.6\linewidth]{\FigPath/springerville_kde_300dpi}
 \caption[Volcanic vent density of the Springerville Monogenetic Volcanic Field (Arizona, USA)]{Volcanic vent density of the Springerville Monogenetic Volcanic Field (Arizona, USA). The migration of the magma source with respect to the surface over time might be the source of the E-W elongated kernel ellipse.}
 \label{fig_springervillekde}
 \end{figure}
 
 \begin{figure}
 \centering
-\includegraphics[width=0.6\linewidth]{\FigPath/syria_kde_72dpi}
+\includegraphics[width=0.6\linewidth]{\FigPath/syria_kde_300dpi}
 \caption[Spatial vent density model of Syria Planum (Mars)]{Spatial vent density model of Syria Planum (Mars). A northwest migrating magma source or two overprinting magma sources to the northwest and southeast might explain the elongation of the field.}
 \label{fig_syriakde}
 \end{figure}
@@ -419,7 +419,7 @@ Magma will be less focused in a direction if magma can laterally propagate in th
 
 \begin{figure}
 \centering
-\includegraphics[width=0.6\linewidth]{\FigPath/sanrafael_kde_72dpi}
+\includegraphics[width=0.6\linewidth]{\FigPath/sanrafael_kde_300dpi}
 \caption[Volcanic conduit density of the San Rafael Volcanic Field (Utah, USA)]{Volcanic conduit density of the San Rafael Volcanic Field (Utah, USA). Dikes are oriented north following pre-existing joint sets in the elastic lithosphere, possibly influencing the shape of the kernel ellipse.}
 \label{fig_sanrafaelkde}
 \end{figure}
@@ -429,7 +429,7 @@ The San Rafael volcanic field is one example where existing structural features 
 
 \begin{figure}
 \centering
-\includegraphics[width=0.6\linewidth]{\FigPath/arsia_kde_72dpi}
+\includegraphics[width=0.6\linewidth]{\FigPath/arsia_kde_300dpi}
 \caption[Volcanic vent density of the Arsia Mons Caldera Volcanic Field (Mars)]{Volcanic vent density of the Arsia Mons Caldera Volcanic Field (Mars). Each root of the tooth-shaped density model is parallel with large rift graben that cut the flanks of the volcano.}
 \label{fig_arsiakde}
 \end{figure}

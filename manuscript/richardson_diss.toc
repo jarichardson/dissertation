@@ -1,6 +1,6 @@
-\contentsline {chapter}{List of Tables}{v}{section*.1}
-\contentsline {chapter}{List of Figures}{vii}{section*.2}
-\contentsline {chapter}{Abstract}{xi}{section*.3}
+\contentsline {chapter}{List of Tables}{v}{section*.3}
+\contentsline {chapter}{List of Figures}{vii}{section*.4}
+\contentsline {chapter}{Abstract}{xi}{section*.5}
 \contentsline {chapter}{\numberline {1}Introduction}{1}{chapter.1}
 \contentsline {section}{\numberline {1.1}Role of sills in the development of volcanic fields}{2}{section.1.1}
 \contentsline {section}{\numberline {1.2}Validating lava flow simulators using a validation hierarchy and bayesian analysis}{2}{section.1.2}
@@ -99,7 +99,7 @@
 \contentsline {subsubsection}{\numberline {6.5.2.3}Anisotropic crustal conductivity}{128}{subsubsection.6.5.2.3}
 \contentsline {section}{\numberline {6.6}Conclusions}{132}{section.6.6}
 \contentsline {chapter}{\numberline {7}Conclusion}{134}{chapter.7}
-\contentsline {chapter}{References}{137}{section*.69}
+\contentsline {chapter}{References}{137}{section*.71}
 \contentsline {chapter}{Appendix \numberline {I}Sill thicknesses in the San Rafael Swell, Utah}{161}{Appendix.a.A}
 \contentsline {chapter}{Appendix \numberline {II}Validation Exercises for Lava Flow Algorithms}{166}{Appendix.a.B}
 \contentsline {section}{\numberline {II.1}A modular cellular automata framework for lava flow simulators}{166}{section.a.B.1}
@@ -135,3 +135,4 @@
 \contentsline {subsection}{\numberline {IV.1.7}reproject}{206}{subsection.a.D.1.7}
 \contentsline {subsection}{\numberline {IV.1.8}samse\_bandwidth}{208}{subsection.a.D.1.8}
 \contentsline {section}{\numberline {IV.2}Other field density maps}{211}{section.a.D.2}
+\contentsline {chapter}{Appendix \numberline {V}Copyright licenses of previously published works}{214}{Appendix.a.E}
