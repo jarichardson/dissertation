@@ -1,4 +1,4 @@
-\documentclass[12pt]{report} %use draft mode for rendering tests for formatting but not for the final verson e.g. \documentclass[12pt]
+\documentclass[12pt]{article} %use draft mode for rendering tests for formatting but not for the final verson e.g. \documentclass[12pt]
 
 %:! bibtex individual chapters, not whole document.
 % NOW TRY TO BIBTEX WHOLE DOC ALONE
@@ -27,6 +27,7 @@
 \usepackage{setspace}
 \usepackage{float} %needed to force figures in certain place
 \usepackage{url}
+\usepackage{wrapfig}
 
 % %avoid widows and orphans - really important for references
 %\widowpenalty10000
@@ -35,8 +36,8 @@
 
 
 %needed for continuous footnote numbering (requires d/l of chngcntr.sty)
-\usepackage{chngcntr}
-\counterwithout{footnote}{chapter}
+%\usepackage{chngcntr}
+%\counterwithout{footnote}{chapter}
 
 %probably not necessary but may affect output quality if changed
 \pdfcompresslevel=1
@@ -45,7 +46,7 @@
 \setlength{\parindent}{.5in}
 
 \usepackage{natbib}
-%\usepackage{chapterbib}
+\usepackage{chapterbib}
 
 
 
@@ -103,9 +104,9 @@
 % 	{\normalfont\Luge\bfseries\centering}{\chaptertitlename\ \thechapter}{20pt}{\Huge}
 
 %next three blocks control heading indents	
-\titlespacing{\chapter}{0em}{.68in}{2em}
-\titleformat{\chapter}
-  {\normalfont\bfseries\centering}{\thechapter}{1em}{}
+%\titlespacing{\chapter}{0em}{.68in}{2em}
+%\titleformat{\chapter}
+% {\normalfont\bfseries\centering}{\thechapter}{1em}{}
 
 \titlespacing{\section}{0em}{1em}{0em}
 \titleformat{\section}
@@ -195,13 +196,13 @@
 
 
 %this part of the code ensures that there is a period after the number, e.g. 1. CHAPTERNAME
-\makeatletter
-\renewcommand{\@makechapterhead}[1]{%
-{ \vspace*{.5in} }
-{\setlength{\parindent}{0pt} \center \normalfont
-\bfseries\thechapter.\ #1
-\par\nobreak\vspace*{\baselineskip}}}
-\makeatother
+%\makeatletter
+%\renewcommand{\@makechapterhead}[1]{%
+%{ \vspace*{.5in} }
+%{\setlength{\parindent}{0pt} \center \normalfont
+%\bfseries\thechapter\ #1
+%\par\nobreak\vspace*{\baselineskip}}}
+%\makeatother
 
 
 %figure stuff - leave as is (may be important if figures are inside the text rather htan at the end of the chapters)
@@ -217,8 +218,8 @@
 \renewcommand{\cftfigfont}{Figure }
 \renewcommand{\cfttabfont}{Table }
 %these should change the table of contents main headings to not be bold
-\renewcommand\cftchapfont{\mdseries}
-\renewcommand\cftchappagefont{\mdseries}
+%\renewcommand\cftchapfont{\mdseries}
+%\renewcommand\cftchappagefont{\mdseries}
 
 
 %define page nums to be .25" below text
@@ -290,67 +291,16 @@
 % \patchcmd{\abstract}{\null\vfil}{}{}{}
 
 
-\usepackage[]{appendix}
-\appendixtitletocon
-\appendixtitleon
 
 %Add Hyperref Capabilities
 \usepackage[hidelinks]{hyperref}
 \usepackage{bookmark}
 
 \begin{document}
-%TITLE PAGE FILE GOES HERE
-\input{titlepage.tex}
-
-\pagenumbering{gobble}
-\include{dedication}
-\include{acknowledgments}
-
-\pagenumbering{roman}
-\begin{singlespace}
-%\vspace*{1in}
-
-\pdfbookmark[section]{\contentsname}{toc}
-\tableofcontents
-
-\end{singlespace}
-
 
 %not sure what this does
 \renewcommand{\cftsecleader}{\cftdotfill{\cftdotsep}}
 
-
-
-%LOF needs to have singlespacing between lines continued onto a second line. The extra spacing between each figure is forced elsewhere in the preamble.
-\begin{singlespace}
-\cleardoublepage
-\phantomsection
-\addcontentsline{toc}{chapter}{List of Tables}
-\listoftables
-
-\cleardoublepage % Start a new page for the list of figures. Make it right handed for two-sided documents.
-\phantomsection
-\addcontentsline{toc}{chapter}{List of Figures} % add to table of contents.
-\listoffigures % generate the list of figures
-
-%\cleardoublepage % Start a new page for the list of Tables. Make it right handed for two-sided documents.
-%\addcontentsline{toc}{chapter}{List of Tables} % add to table of contents.
-%\listoftables % generate the list of tables
-\end{singlespace}
-
-% \renewcommand{\abstitleskip}{\vspace{-\baselineskip}}
-%needed to not center abstact vertically on center of page and bring it to top instead
-\cleardoublepage
-\phantomsection
-\patchcmd{\abstract}{\null\vfil}{\vspace*{37pt}}{}{}
-\begin{abstract}
-\thispagestyle{plain}
-Magmatism is a dominant process on Earth and Mars that has significantly modified and evolved the lithospheres of each planet by delivering magma to shallow depths and to the surface. Two common modes of volcanism are present on both Earth and Mars: central-vent dominated volcanism that creates large edifices from concentrating magma in chambers before eruptions and distributed volcanism that creates many smaller edifices on the surface through the independent ascent of individual magmatic dikes. In regions of distributed volcanism, clusters of volcanoes develop over thousands to millions of years. This dissertation explores the geology of distributed volcanism on Earth and Mars from shallow depths ($\sim$1~km) to the surface. On long time scales, distributed volcanism emplaces magmatic sills below the surface and feeds volcanoes at the surface. The change in spatial distribution and formation rate of volcanoes over time is used to infer the evolution of the source region of magma generation. At short time scales, the emplacement of lava flows in these fields present an urgent hazard for nearby people and infrastructure. I present software that can be used to simulate lava flow inundation and show that individual computer codes can be validated using real-world flows. On Mars, distributed volcanism occurs in the Tharsis Volcanic Province, sometimes associated with larger, central-vent shield volcanoes. Two volcanic fields in this province are mapped here. The Syria Planum field is composed three major volcanic units, two of which are clusters of 10s to $>$100 shield volcanoes. This area had volcanic activity that spanned 900~million years, from 3.5--2.6~Ga. The Arsia Mons Caldera field is associated with a large shield volcano. Using crater age-dating and mapping stratigraphy between lava flows, activity in this field peaked at $\sim$150~Ma and monotonically waned until 10-90~Ma, when volcanism likely ceased.
-\setcounter{page}{11} %NEEED TO MANUALLY SET PAGE HERE
-%force abstract in the TOC
-% \clearpage
-\addcontentsline{toc}{chapter}{Abstract}
-\end{abstract}
 
 \pagenumbering{arabic}
 
@@ -358,75 +308,6 @@ Magmatism is a dominant process on Earth and Mars that has significantly modifie
 %use the intro paragraph here, must define chapter and label in the other tex file
 %need to remove all of the journal-specific formatting stuff from the tex files in the separate chapter files
 \include{introduction}
-\include{Chapter-sills}
-\include{Chapter-molasses}
-\include{Chapter-syria_planum}
-\include{Chapter-arsia}
-\include{Chapter-spatial_density}
-\include{conclusion}
-
-%%%%%%%%%%%%%%%%%%%%%
-%References Section
-\cleardoublepage
-\phantomsection
-\listofrefs
-\addcontentsline{toc}{chapter}{References}
-\bibliographystyle{apalike} 
-\interlinepenalty=10000
-\bibliography{dissertation_refs}
-
-%%%%%%%%%%%%%%%%%%%%%
-%Appendix
-%
-
-%This puts "Appendix" in front of Chapter Name in the body, while the appendix
-%package adds "Appendix" in front of chapter name in TOC.
-\makeatletter
-\renewcommand{\@makechapterhead}[1]{%
-{ \vspace*{.5in} }
-{\setlength{\parindent}{0pt} \center \normalfont
-\bfseries Appendix \thechapter.\ #1
-\par\nobreak\vspace*{\baselineskip}}}
-\makeatother
-
-\begin{appendices}
-%Number Appendices with fancy roman numerals
-\renewcommand{\thechapter}{\Roman{chapter}}
-\include{appendix-lidar}
-\interlinepenalty=0
-\include{appendix-lavaflow}
-\include{appendix-arsia}
-\include{appendix-kde}
-\chapter{Copyright licenses of previously published works}\label{apdx_copyperm}
-%\includepdf[pages={-}]{../copyright_permission/Geology_CopyrightPerm.pdf}
-%\includepdf[pages={-}]{../copyright_permission/JVGR_Permission.pdf}
-\foreachpage{../copyright_permission/Geology_CopyrightPerm}{%
-  \newpage   
-  \begingroup 
-    \centering
-    \includegraphics[
-      page=\value{imagepage},
-      width=\textwidth,  
-      height=\textheight,
-      keepaspectratio,
-    ]{../copyright_permission/Geology_CopyrightPerm}%
-    \newpage
-  \endgroup
-}
-\foreachpage{../copyright_permission/JVGR_Permission}{%
-  \newpage   
-  \begingroup 
-    \centering
-    \includegraphics[
-      page=\value{imagepage},
-      width=\textwidth,  
-      height=\textheight,
-      keepaspectratio,
-    ]{../copyright_permission/JVGR_Permission}%
-    \newpage
-  \endgroup
-}
-\end{appendices}
 
 
 
